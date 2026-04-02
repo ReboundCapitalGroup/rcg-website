@@ -59,27 +59,29 @@ export default function Home() {
         <div style={{ position:'relative', zIndex:2, width:'100%', maxWidth:'780px' }}>
           {/* Badge */}
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'12px', marginBottom:'28px', flexWrap:'wrap' }}>
-            <div style={{ display:'inline-flex', alignItems:'center', gap:'8px', padding:'6px 16px', border:'1px solid rgba(74,95,212,0.35)', background:'rgba(30,40,127,0.12)', fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#8fa3f0', whiteSpace:'nowrap' }}>
+            <div style={{ display:'inline-flex', alignItems:'center', gap:'8px', padding:'6px 16px', border:'1px solid rgba(30,40,127,0.5)', background:'rgba(30,40,127,0.12)', fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#8fa3f0', whiteSpace:'nowrap' }}>
               <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#1E287F', display:'inline-block', flexShrink:0 }} />
-              Nationwide Surplus &amp; Unclaimed Funds Recovery
+              Nationwide Surplus &amp; Unclaimed Property Recovery
             </div>
-            <span style={{ width:'28px', height:'1px', background:'rgba(74,95,212,0.3)', display:'inline-block' }} />
+            <span style={{ width:'28px', height:'1px', background:'rgba(30,40,127,0.4)', display:'inline-block' }} />
             <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'#5a6890', whiteSpace:'nowrap' }}>Miami Beach, FL — Licensed · BBB A+</span>
           </div>
 
-          {/* Headline */}
-          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(42px,5.5vw,80px)', lineHeight:1, color:'#fff', letterSpacing:'-2px', margin:'0 0 24px' }}>
-            The Court Is{' '}
-            <span style={{ color:'#1E287F' }}>Holding</span>
-            <br />
-            <span style={{ WebkitTextStroke:'1.5px rgba(255,255,255,0.2)', color:'transparent' }}>Your Money.</span>
+          {/* Headline — slogan */}
+          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(36px,4.8vw,72px)', lineHeight:1.05, color:'#fff', letterSpacing:'-2px', margin:'0 0 20px' }}>
+            Turning <span style={{ color:'#1E287F' }}>Forgotten Funds</span><br />
+            Into <span style={{ WebkitTextStroke:'1.5px rgba(255,255,255,0.25)', color:'transparent' }}>Future Opportunities.</span>
           </h1>
 
+          {/* Slogan tag */}
+          <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'10px', letterSpacing:'2px', textTransform:'uppercase', color:'#4a6fd4', marginBottom:'20px' }}>
+            — Rebound Capital Group
+          </div>
+
           {/* Subtext */}
-          <p style={{ fontSize:'16px', color:'#a0aece', lineHeight:1.8, maxWidth:'560px', margin:'0 auto 36px', fontWeight:400 }}>
-            Foreclosure. Tax sale. Unclaimed property. If funds were left behind after the forced sale of your home —{' '}
-            <strong style={{ color:'#e8edf8', fontWeight:600 }}>that money is legally yours.</strong>{' '}
-            We recover it in all 50 states. Zero upfront cost. Ever.
+          <p style={{ fontSize:'16px', color:'#a0aece', lineHeight:1.8, maxWidth:'580px', margin:'0 auto 36px', fontWeight:400 }}>
+            Foreclosure surplus. Tax deed overages. Unclaimed property. State-held funds.<br />
+            If money was left behind — <strong style={{ color:'#e8edf8', fontWeight:600 }}>it legally belongs to you.</strong> We recover it across all 50 states, all claim types. Zero upfront cost. Ever.
           </p>
 
           {/* CTAs */}
