@@ -1,51 +1,44 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const serviceLinks = ['Surplus Funds','Tax Deed Overages','Excess Proceeds','Unclaimed Property','Estate Recovery']
-const resourceLinks = ['How It Works','FAQs','State Laws Map','County Guides','Blog']
-const companyLinks = ['About Us','Our Team','Client Results','Contact','Free Claim Check']
-
 export default function Footer() {
   return (
-    <footer style={{ background: 'var(--bg2)', borderTop: '1px solid var(--rcgline)', padding: '52px 40px 28px' }}>
-      <div className="max-w-[1200px] mx-auto">
-        <div className="grid gap-11 mb-10" style={{ gridTemplateColumns: '2.2fr 1fr 1fr 1fr' }}>
+    <footer style={{ background:'var(--bg2)', borderTop:'1px solid rgba(74,95,212,0.3)', padding:'52px 40px 28px' }}>
+      <style>{`.footer-link:hover { color: #fff !important; }`}</style>
+      <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
+        <div style={{ display:'grid', gridTemplateColumns:'2.2fr 1fr 1fr 1fr', gap:'44px', marginBottom:'36px' }}>
           <div>
-            <Link href="/" className="flex items-center gap-3 no-underline mb-3">
-              <Image src="/rcg-logo.png" alt="RCG" width={44} height={32} style={{ height: '32px', width: 'auto' }} />
+            <Link href="/" style={{ display:'flex', alignItems:'center', gap:'10px', textDecoration:'none', marginBottom:'12px' }}>
+              <Image src="/rcg-logo.png" alt="RCG" width={44} height={36} style={{ height:'36px', width:'auto' }} />
               <div>
-                <div className="text-[11px] font-bold tracking-[2px] uppercase text-white" style={{ fontFamily: 'var(--sans)' }}>Rebound Capital</div>
-                <div className="text-[8px] tracking-[3px]" style={{ fontFamily: 'var(--mono)', color: 'var(--rcglt)' }}>Group LLC</div>
+                <div style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'11px', letterSpacing:'2px', textTransform:'uppercase', color:'#fff' }}>Rebound Capital</div>
+                <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'3px', color:'#8fa3f0' }}>Group LLC</div>
               </div>
             </Link>
-            <p className="text-[12px] leading-relaxed max-w-[240px]" style={{ color: 'var(--mid)' }}>
-              Nationwide surplus funds, excess proceeds, and unclaimed property recovery. We find what&apos;s yours and fight to get it back. No upfront fees. Ever.
-            </p>
-            <p className="text-[9px] mt-3" style={{ fontFamily: 'var(--mono)', color: 'var(--rcg2)' }}>Miami Beach, FL — Licensed · BBB A+ Rated</p>
+            <p style={{ fontSize:'12px', color:'var(--mid)', lineHeight:1.7, maxWidth:'240px' }}>Nationwide surplus funds, excess proceeds, and unclaimed property recovery. No upfront fees. Ever.</p>
+            <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)', marginTop:'10px' }}>Miami Beach, FL — Licensed · BBB A+ Rated</p>
           </div>
           {[
-            { title: 'Services', links: serviceLinks },
-            { title: 'Resources', links: resourceLinks },
-            { title: 'Company', links: companyLinks },
+            { title:'Services', links:[['Surplus Funds','/services/surplus-funds'],['Tax Deed Overages','/services/tax-deed-surplus'],['Excess Proceeds','/services/excess-proceeds'],['Unclaimed Property','/services/unclaimed-property'],['Estate Recovery','/services/estate-recovery']] },
+            { title:'Resources', links:[['How It Works','/resources/how-it-works'],['FAQs','/resources/faqs'],['State Laws Map','/resources/state-laws'],['County Guides','/resources/blog'],['Blog','/resources/blog']] },
+            { title:'Company', links:[['About Us','/about'],['Client Results','/resources/results'],['Contact','/contact'],['Free Claim Check','/contact'],['All States','/states']] },
           ].map(col => (
             <div key={col.title}>
-              <h5 className="text-[8px] font-bold tracking-[2px] uppercase mb-3" style={{ fontFamily: 'var(--mono)', color: 'var(--rcg2)' }}>{col.title}</h5>
-              {col.links.map(l => (
-                <Link key={l} href="/contact" className="block text-[12px] mb-2 transition-colors hover:text-white" style={{ color: 'var(--mid)', textDecoration: 'none' }}>{l}</Link>
+              <h5 style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', fontWeight:700, letterSpacing:'2px', textTransform:'uppercase', color:'var(--rcg2)', marginBottom:'14px' }}>{col.title}</h5>
+              {col.links.map(([label, href]) => (
+                <Link key={label} href={href} className="footer-link" style={{ display:'block', fontSize:'12px', color:'var(--mid)', marginBottom:'8px', textDecoration:'none', transition:'color 0.12s' }}>{label}</Link>
               ))}
             </div>
           ))}
         </div>
-        <div className="flex justify-between flex-wrap gap-2.5 pt-5" style={{ borderTop: '1px solid var(--rcgline)' }}>
-          <p className="text-[9px]" style={{ fontFamily: 'var(--mono)', color: 'var(--dim)' }}>© 2025 Rebound Capital Group LLC. All Rights Reserved.</p>
-          <p className="text-[9px]" style={{ fontFamily: 'var(--mono)', color: 'var(--dim)' }}>
-            <Link href="/privacy" style={{ color: 'var(--dim)', textDecoration: 'none' }}>Privacy</Link>
-            {' · '}
-            <Link href="/terms" style={{ color: 'var(--dim)', textDecoration: 'none' }}>Terms</Link>
+        <div style={{ display:'flex', justifyContent:'space-between', flexWrap:'wrap', gap:'10px', paddingTop:'20px', borderTop:'1px solid rgba(74,95,212,0.3)' }}>
+          <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>© 2025 Rebound Capital Group LLC. All Rights Reserved.</p>
+          <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>
+            <Link href="/privacy" style={{ color:'var(--dim)', textDecoration:'none' }}>Privacy</Link> · <Link href="/terms" style={{ color:'var(--dim)', textDecoration:'none' }}>Terms</Link>
           </p>
         </div>
-        <p className="text-[8px] mt-3 leading-relaxed opacity-50" style={{ fontFamily: 'var(--mono)', color: 'var(--dim)' }}>
-          Rebound Capital Group LLC is not a law firm and does not provide legal advice. Surplus fund recovery services are provided on a contingency fee basis. Results may vary. Consult a licensed attorney for legal matters specific to your situation.
+        <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', color:'var(--dim)', opacity:0.55, lineHeight:1.6, marginTop:'12px' }}>
+          Rebound Capital Group LLC is not a law firm and does not provide legal advice. Surplus fund recovery services are provided on a contingency fee basis. Results may vary.
         </p>
       </div>
     </footer>

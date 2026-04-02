@@ -3,110 +3,67 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const services = [
-  { label: 'Surplus Funds Recovery', href: '/services/surplus-funds' },
-  { label: 'Foreclosure Surplus', href: '/services/foreclosure-surplus' },
-  { label: 'Tax Deed Surplus', href: '/services/tax-deed-surplus' },
-  { label: 'Excess Proceeds / Overages', href: '/services/excess-proceeds' },
-  { label: 'Unclaimed Property', href: '/services/unclaimed-property' },
-  { label: 'State Unclaimed Funds', href: '/services/state-unclaimed-funds' },
-  { label: 'Foreclosure Solutions', href: '/services/foreclosure-solutions' },
-]
-
-const statesNav = [
-  { label: 'Florida — 67 Counties', href: '/states/florida' },
-  { label: 'Arizona — 15 Counties', href: '/states/arizona' },
-  { label: 'Colorado — 64 Counties', href: '/states/colorado' },
-  { label: 'Georgia', href: '/states/georgia' },
-  { label: 'Ohio', href: '/states/ohio' },
-  { label: 'New Jersey', href: '/states/new-jersey' },
-  { label: 'All 50 States →', href: '/states' },
-]
-
-const resources = [
-  { label: 'How It Works', href: '/resources/how-it-works' },
-  { label: 'FAQs', href: '/resources/faqs' },
-  { label: 'Blog / County Guides', href: '/resources/blog' },
-  { label: 'State Laws & Deadlines', href: '/resources/state-laws' },
-  { label: 'Client Results', href: '/resources/results' },
-]
-
-function Dropdown({ label, items }: { label: string; items: { label: string; href: string }[] }) {
-  const [open, setOpen] = useState(false)
-  const isRecovery = ['Surplus Funds Recovery','Foreclosure Surplus','Tax Deed Surplus','Excess Proceeds / Overages'].some(s => items.find(i => i.label === s))
-
+function DDMenu({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button className="nav-link text-[11px] font-semibold tracking-[1px] uppercase px-3 h-16 flex items-center gap-1 bg-transparent border-none cursor-pointer" style={{ fontFamily: 'var(--mono)' }}>
-        {label} <span className="text-[9px] opacity-60">▾</span>
-      </button>
-      {open && (
-        <div className="absolute top-16 left-0 z-50 min-w-[230px] py-1"
-          style={{ background: 'linear-gradient(160deg,#1e2d55 0%,#141e3a 40%,#0d1528 100%)', border: '1px solid rgba(143,163,240,0.25)', borderTop: '2px solid var(--rcg2)', boxShadow: '0 8px 32px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.05)' }}>
-          {label === 'Services' && (
-            <>
-              <div className="px-4 py-2 text-[9px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--rcg2)', fontFamily: 'var(--mono)' }}>Recovery</div>
-              {items.slice(0,4).map(i => <DropItem key={i.href} {...i} />)}
-              <div className="px-4 py-2 text-[9px] font-bold tracking-[2px] uppercase mt-2" style={{ color: 'var(--rcg2)', fontFamily: 'var(--mono)' }}>Asset Recovery</div>
-              {items.slice(4).map(i => <DropItem key={i.href} {...i} />)}
-            </>
-          )}
-          {label === 'States' && (
-            <>
-              <div className="px-4 py-2 text-[9px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--rcg2)', fontFamily: 'var(--mono)' }}>Active Now</div>
-              {items.slice(0,3).map(i => <DropItem key={i.href} {...i} />)}
-              <div className="px-4 py-2 text-[9px] font-bold tracking-[2px] uppercase mt-2" style={{ color: 'var(--rcg2)', fontFamily: 'var(--mono)' }}>Expanding</div>
-              {items.slice(3).map(i => <DropItem key={i.href} {...i} />)}
-            </>
-          )}
-          {label === 'Resources' && items.map(i => <DropItem key={i.href} {...i} />)}
-        </div>
-      )}
+    <div className="dd-wrap">
+      <button className="nav-link-item">{label} <span style={{fontSize:'9px',opacity:0.6}}>▾</span></button>
+      <div className="dd-menu">{children}</div>
     </div>
   )
 }
 
-function DropItem({ label, href }: { label: string; href: string }) {
-  return (
-    <Link href={href} className="block px-4 py-2 text-[11px] font-medium transition-all duration-150 hover:pl-5"
-      style={{ color: '#b8ceff', fontFamily: 'var(--sans)' }}
-      onMouseEnter={e => { (e.target as HTMLElement).style.color = '#fff'; (e.target as HTMLElement).style.background = 'rgba(74,95,212,0.15)' }}
-      onMouseLeave={e => { (e.target as HTMLElement).style.color = '#b8ceff'; (e.target as HTMLElement).style.background = 'transparent' }}>
-      {label}
-    </Link>
-  )
+function DDItem({ href, children }: { href: string; children: React.ReactNode }) {
+  return <Link href={href} className="dd-item">{children}</Link>
 }
 
 export default function Nav() {
   return (
-    <nav className="h-16 sticky top-0 z-50 flex items-center justify-between px-8" style={{ background: '#111827', borderBottom: '1px solid var(--rcgline)' }}>
-      <Link href="/" className="flex items-center gap-3 no-underline">
-        <Image src="/rcg-logo.png" alt="RCG Logo" width={48} height={40} style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
+    <nav>
+      <Link href="/" style={{ display:'flex', alignItems:'center', gap:'10px', textDecoration:'none', flexShrink:0 }}>
+        <Image src="/rcg-logo.png" alt="Rebound Capital Group" width={52} height={44} style={{ height:'44px', width:'auto', objectFit:'contain' }} priority />
         <div>
-          <div className="text-[13px] font-bold tracking-[2px] uppercase text-white" style={{ fontFamily: 'var(--sans)', lineHeight: 1.1 }}>Rebound Capital</div>
-          <div className="text-[8px] tracking-[3px] mt-0.5" style={{ fontFamily: 'var(--mono)', color: 'var(--rcglt)' }}>Group LLC</div>
+          <div style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'13px', letterSpacing:'2px', textTransform:'uppercase', color:'#fff', lineHeight:1.1 }}>Rebound Capital</div>
+          <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'3px', color:'#8fa3f0', marginTop:'2px' }}>Group LLC</div>
         </div>
       </Link>
 
-      <div className="flex items-center gap-0">
-        <Dropdown label="Services" items={services} />
-        <Dropdown label="States" items={statesNav} />
+      <div className="nav-links">
+        <DDMenu label="Services">
+          <div className="dd-label">Recovery</div>
+          <DDItem href="/services/surplus-funds">Surplus Funds Recovery</DDItem>
+          <DDItem href="/services/foreclosure-surplus">Foreclosure Surplus</DDItem>
+          <DDItem href="/services/tax-deed-surplus">Tax Deed Surplus</DDItem>
+          <DDItem href="/services/excess-proceeds">Excess Proceeds / Overages</DDItem>
+          <div className="dd-label" style={{marginTop:'8px'}}>Asset Recovery</div>
+          <DDItem href="/services/unclaimed-property">Unclaimed Property</DDItem>
+          <DDItem href="/services/state-unclaimed-funds">State Unclaimed Funds</DDItem>
+          <DDItem href="/services/foreclosure-solutions">Foreclosure Solutions</DDItem>
+        </DDMenu>
 
-        <Link href="/map" className="nav-link text-[10px] font-bold tracking-[1px] uppercase px-4 py-2 mx-1 cursor-pointer"
-          style={{ fontFamily: 'var(--mono)', border: '1px solid var(--rcgline)', background: 'var(--rcgglow)', color: '#c8d8ff' }}>
-          Unclaimed Funds Map
-        </Link>
+        <DDMenu label="States">
+          <div className="dd-label">Active Now</div>
+          <DDItem href="/states/florida">Florida — 67 Counties</DDItem>
+          <DDItem href="/states/arizona">Arizona — 15 Counties</DDItem>
+          <DDItem href="/states/colorado">Colorado — 64 Counties</DDItem>
+          <div className="dd-label" style={{marginTop:'8px'}}>Expanding</div>
+          <DDItem href="/states/georgia">Georgia</DDItem>
+          <DDItem href="/states/ohio">Ohio</DDItem>
+          <DDItem href="/states/new-jersey">New Jersey</DDItem>
+          <DDItem href="/states">All 50 States →</DDItem>
+        </DDMenu>
 
-        <Dropdown label="Resources" items={resources} />
+        <Link href="/map" className="nav-map-btn">Unclaimed Funds Map</Link>
 
-        <Link href="/about" className="nav-link text-[11px] font-semibold tracking-[1px] uppercase px-3 h-16 flex items-center" style={{ fontFamily: 'var(--mono)', color: '#c8d8ff' }}>
-          About
-        </Link>
+        <DDMenu label="Resources">
+          <DDItem href="/resources/how-it-works">How It Works</DDItem>
+          <DDItem href="/resources/faqs">FAQs</DDItem>
+          <DDItem href="/resources/blog">Blog / County Guides</DDItem>
+          <DDItem href="/resources/state-laws">State Laws & Deadlines</DDItem>
+          <DDItem href="/resources/results">Client Results</DDItem>
+        </DDMenu>
 
-        <Link href="/contact" className="btn-metal text-white text-[11px] font-bold tracking-[1px] uppercase px-5 py-2.5 ml-2 cursor-pointer"
-          style={{ fontFamily: 'var(--sans)' }}>
-          Free Claim Review
-        </Link>
+        <Link href="/about" className="nav-link-item">About</Link>
+        <Link href="/contact" className="nav-cta">Free Claim Review</Link>
       </div>
     </nav>
   )

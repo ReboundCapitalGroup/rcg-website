@@ -22,7 +22,7 @@ const firmStats = [
   { val:'$0', desc:'Upfront cost to any client — ever. Pure contingency model.' },
   { val:'81+', desc:'County court systems actively monitored and scraped daily.' },
   { val:'50', desc:'States we recover funds in across all claim categories.' },
-  { val:'FL·AZ·CO', desc:'Core active states expanding to GA, OH, NJ and beyond.', small: true },
+  { val:'FL · AZ · CO', desc:'Core active states expanding to GA, OH, NJ and beyond.', small: true },
   { val:'A+', desc:'BBB Accredited — Miami Beach, FL. Licensed & compliant.', blue: true },
 ]
 
@@ -35,44 +35,35 @@ export default function Home() {
       <Ticker />
 
       {/* HERO */}
-      <section className="relative overflow-hidden flex flex-col justify-center" style={{ minHeight: 'calc(100vh - 96px)', background: 'var(--bg)', padding: '64px 40px 52px' }}>
-        {/* Grid bg */}
-        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(74,95,212,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.06) 1px,transparent 1px)', backgroundSize: '52px 52px' }} />
-        {/* Glow */}
-        <div className="absolute pointer-events-none" style={{ top:'5%',left:'-8%',width:'55%',height:'90%',background:'radial-gradient(ellipse 55% 65% at 15% 50%,rgba(30,40,127,0.15) 0%,transparent 70%)' }} />
-        {/* Scan */}
-        <div className="absolute left-0 right-0 h-px pointer-events-none animate-scan" style={{ background: 'linear-gradient(90deg,transparent 0%,rgba(74,95,212,0.7) 50%,transparent 100%)' }} />
+      <section style={{ minHeight:'calc(100vh - 96px)', background:'var(--bg)', display:'flex', flexDirection:'column', justifyContent:'center', padding:'64px 40px 52px', position:'relative', overflow:'hidden' }}>
+        <div style={{ position:'absolute', inset:0, backgroundImage:'linear-gradient(rgba(74,95,212,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.06) 1px,transparent 1px)', backgroundSize:'52px 52px', pointerEvents:'none' }} />
+        <div style={{ position:'absolute', top:'5%', left:'-8%', width:'55%', height:'90%', background:'radial-gradient(ellipse 55% 65% at 15% 50%,rgba(30,40,127,0.15) 0%,transparent 70%)', pointerEvents:'none' }} />
+        <div className="scan-animate" style={{ position:'absolute', left:0, right:0, height:'1px', background:'linear-gradient(90deg,transparent 0%,rgba(74,95,212,0.7) 50%,transparent 100%)', pointerEvents:'none' }} />
 
-        <div className="relative z-10 max-w-[1200px] w-full mx-auto">
-          {/* Badge */}
-          <div className="flex items-center gap-3 mb-9">
-            <div className="flex items-center gap-2 px-3 py-1.5 text-[9px] tracking-[1.5px] uppercase border" style={{ fontFamily:'var(--mono)', color:'var(--rcglt)', borderColor:'var(--rcgline)', background:'rgba(30,40,127,0.1)' }}>
-              <span className="w-1.5 h-1.5 rounded-full animate-pulsedot" style={{ background:'var(--rcg2)' }} />
+        <div style={{ position:'relative', zIndex:2, maxWidth:'1200px', width:'100%', margin:'0 auto' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'14px', marginBottom:'36px' }}>
+            <div style={{ display:'flex', alignItems:'center', gap:'8px', padding:'5px 14px', border:'1px solid rgba(74,95,212,0.3)', background:'rgba(30,40,127,0.1)', fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#8fa3f0' }}>
+              <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'var(--rcg2)', display:'inline-block' }} />
               Nationwide Surplus & Unclaimed Funds Recovery
             </div>
-            <div className="w-8 h-px" style={{ background:'var(--rcgline)' }} />
-            <div className="text-[9px] tracking-[1px] uppercase" style={{ fontFamily:'var(--mono)', color:'var(--dim)' }}>Miami Beach, FL — Licensed · BBB A+</div>
+            <div style={{ width:'32px', height:'1px', background:'rgba(74,95,212,0.3)' }} />
+            <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'var(--dim)' }}>Miami Beach, FL — Licensed · BBB A+</div>
           </div>
 
-          {/* H1 */}
-          <h1 className="font-bold mb-7" style={{ fontFamily:'var(--sans)', fontSize:'clamp(50px,7vw,92px)', lineHeight:0.9, color:'var(--bright)', letterSpacing:'-3px', maxWidth:'820px' }}>
+          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(50px,7vw,92px)', lineHeight:0.9, color:'#fff', letterSpacing:'-3px', marginBottom:'28px', maxWidth:'820px' }}>
             The Court Is<br />
             <span style={{ color:'var(--rcg2)' }}>Holding</span><br />
             <span style={{ WebkitTextStroke:'1px rgba(232,237,248,0.3)', color:'transparent' }}>Your Money.</span>
           </h1>
 
-          <p className="mb-10" style={{ fontSize:'16px', color:'var(--mid)', lineHeight:1.75, maxWidth:'500px' }}>
+          <p style={{ fontSize:'16px', color:'var(--mid)', lineHeight:1.75, maxWidth:'500px', marginBottom:'40px' }}>
             Foreclosure. Tax sale. Unclaimed property. If funds were left behind after the forced sale of your home — <strong style={{ color:'#e8edf8', fontWeight:600 }}>that money is legally yours.</strong> We recover it in all 50 states. Zero upfront cost. Ever.
           </p>
 
-          <div className="flex items-center gap-4 flex-wrap">
-            <Link href="/contact" className="btn-metal text-white font-bold tracking-wide uppercase px-9 py-4 cursor-pointer" style={{ fontFamily:'var(--sans)', fontSize:'13px', letterSpacing:'0.8px' }}>
-              Check If You&apos;re Owed Money — Free
-            </Link>
-            <Link href="/resources/how-it-works" className="btn-ghost font-semibold tracking-wide uppercase px-6 py-4 cursor-pointer" style={{ fontFamily:'var(--sans)', fontSize:'12px', letterSpacing:'0.8px' }}>
-              See How It Works
-            </Link>
-            <span className="text-[9px] tracking-[0.8px] uppercase" style={{ fontFamily:'var(--mono)', color:'var(--dim)' }}>// No fees until we recover</span>
+          <div style={{ display:'flex', alignItems:'center', gap:'16px', flexWrap:'wrap' }}>
+            <Link href="/contact" className="btn-primary">Check If You&apos;re Owed Money — Free</Link>
+            <Link href="/resources/how-it-works" className="btn-secondary">See How It Works</Link>
+            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'0.8px', textTransform:'uppercase', color:'var(--dim)' }}>// No fees until we recover</span>
           </div>
         </div>
       </section>
@@ -80,24 +71,26 @@ export default function Home() {
       <CounterBar />
 
       {/* SERVICES */}
-      <div style={{ background:'var(--bg)' }}>
-        <div className="max-w-[1200px] mx-auto px-10 py-20">
-          <div className="flex items-start justify-between gap-10 mb-12 flex-wrap">
+      <div style={{ background:'var(--bg)', padding:'80px 40px' }}>
+        <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
+          <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:'40px', marginBottom:'48px', flexWrap:'wrap' }}>
             <div>
-              <div className="section-tag">// what we recover</div>
-              <h2 className="section-title">Every Dollar.<br /><span className="fade" style={{ color:'var(--dim)' }}>Every Claim.</span></h2>
+              <span className="section-tag">// what we recover</span>
+              <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(30px,4vw,50px)', color:'#fff', letterSpacing:'-1.5px', lineHeight:0.95 }}>
+                Every Dollar.<br /><span style={{ color:'var(--dim)' }}>Every Claim.</span>
+              </h2>
             </div>
-            <p className="text-[14px] leading-relaxed max-w-[480px] mt-2" style={{ color:'var(--mid)' }}>
+            <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, maxWidth:'480px', paddingTop:'8px' }}>
               Every category of courthouse-held and state-held funds — all claim types, all 50 states, 100% contingency. No exceptions.
             </p>
           </div>
           <div className="service-grid">
             {services.map(s => (
-              <Link key={s.id} href={s.href} className="scard block px-7 py-8 no-underline">
-                <div className="text-[8px] tracking-[1.5px] uppercase mb-3.5" style={{ fontFamily:'var(--mono)', color:'var(--dim)' }}>{s.id} / {s.cat}</div>
-                <div className="text-[12px] font-bold tracking-[0.8px] uppercase mb-2 leading-snug" style={{ color:'var(--bright)' }}>{s.title}</div>
-                <div className="text-[12px] leading-relaxed" style={{ color:'var(--mid)' }}>{s.desc}</div>
-                <span className="text-[9px] mt-3.5 block tracking-[0.5px]" style={{ fontFamily:'var(--mono)', color:'var(--rcg2)' }}>LEARN MORE →</span>
+              <Link key={s.id} href={s.href} className="service-card">
+                <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'1.5px', textTransform:'uppercase', color:'var(--dim)', marginBottom:'14px' }}>{s.id} / {s.cat}</div>
+                <div style={{ fontSize:'12px', fontWeight:700, letterSpacing:'0.8px', textTransform:'uppercase', color:'#fff', marginBottom:'8px', lineHeight:1.3 }}>{s.title}</div>
+                <div style={{ fontSize:'12px', color:'var(--mid)', lineHeight:1.6 }}>{s.desc}</div>
+                <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)', marginTop:'14px', display:'block', letterSpacing:'0.5px' }}>LEARN MORE →</span>
               </Link>
             ))}
           </div>
@@ -105,32 +98,34 @@ export default function Home() {
       </div>
 
       {/* WHY US */}
-      <div style={{ background:'var(--bg2)', borderTop:'1px solid var(--rcgline)', borderBottom:'1px solid var(--rcgline)', padding:'80px 40px' }}>
-        <div className="max-w-[1200px] mx-auto grid gap-18" style={{ gridTemplateColumns:'1fr 1fr', gap:'72px', alignItems:'start' }}>
+      <div style={{ background:'var(--bg2)', borderTop:'1px solid rgba(74,95,212,0.3)', borderBottom:'1px solid rgba(74,95,212,0.3)', padding:'80px 40px' }}>
+        <div className="why-grid">
           <div>
-            <div className="section-tag">// why rebound capital group</div>
-            <h2 className="section-title">We Outwork<br />Every<br /><span style={{ color:'var(--dim)' }}>Competitor.</span></h2>
-            <div className="mt-7">
-              {whyUs.map((w,i) => (
-                <div key={w.n} className="grid py-4.5" style={{ gridTemplateColumns:'36px 1fr', gap:'14px', padding:'18px 0', borderBottom:'1px solid var(--rcgline)', borderTop: i===0 ? '1px solid var(--rcgline)' : undefined }}>
-                  <div className="text-[10px] pt-0.5" style={{ fontFamily:'var(--mono)', color:'var(--rcg2)' }}>{w.n}</div>
+            <span className="section-tag">// why rebound capital group</span>
+            <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(30px,4vw,50px)', color:'#fff', letterSpacing:'-1.5px', lineHeight:0.95 }}>
+              We Outwork<br />Every<br /><span style={{ color:'var(--dim)' }}>Competitor.</span>
+            </h2>
+            <div style={{ marginTop:'28px' }}>
+              {whyUs.map((w, i) => (
+                <div key={w.n} style={{ display:'grid', gridTemplateColumns:'36px 1fr', gap:'14px', padding:'18px 0', borderBottom:'1px solid rgba(74,95,212,0.3)', borderTop: i===0 ? '1px solid rgba(74,95,212,0.3)' : undefined }}>
+                  <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'10px', color:'var(--rcg2)', paddingTop:'2px' }}>{w.n}</div>
                   <div>
-                    <div className="text-[12px] font-bold tracking-[0.8px] uppercase mb-1" style={{ color:'var(--bright)' }}>{w.title}</div>
-                    <div className="text-[12px] leading-snug" style={{ color:'var(--mid)' }}>{w.desc}</div>
+                    <div style={{ fontSize:'12px', fontWeight:700, letterSpacing:'0.8px', textTransform:'uppercase', color:'#fff', marginBottom:'4px' }}>{w.title}</div>
+                    <div style={{ fontSize:'12px', color:'var(--mid)', lineHeight:1.5 }}>{w.desc}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div style={{ border:'1px solid var(--rcgline)' }}>
-            <div className="flex items-center justify-between px-5 py-3.5" style={{ background:'var(--rcg3)', borderBottom:'1px solid var(--rcgline)' }}>
-              <span className="text-[9px] font-bold tracking-[2px] uppercase" style={{ fontFamily:'var(--mono)', color:'var(--rcglt)' }}>FIRM STATISTICS</span>
-              <span className="text-[8px] opacity-50" style={{ fontFamily:'var(--mono)', color:'var(--rcglt)' }}>LIVE DATA</span>
+          <div className="stats-panel">
+            <div style={{ background:'var(--rcg3)', padding:'14px 20px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid rgba(74,95,212,0.3)' }}>
+              <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', fontWeight:700, letterSpacing:'2px', textTransform:'uppercase', color:'var(--rcglt)' }}>FIRM STATISTICS</span>
+              <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', color:'var(--rcglt)', opacity:0.5 }}>LIVE DATA</span>
             </div>
-            {firmStats.map((s,i) => (
-              <div key={i} className="flex items-center gap-4 px-5 py-4 transition-colors hover:bg-[var(--rcgglow)]" style={{ borderBottom: i < firmStats.length-1 ? '1px solid var(--rcgline)' : 'none' }}>
-                <div className="font-bold min-w-[80px] leading-none" style={{ fontFamily:'var(--sans)', fontSize: s.small ? '15px' : '26px', letterSpacing: s.small ? '0.5px' : '-1px', color: s.blue ? 'var(--rcg2)' : 'var(--bright)' }}>{s.val}</div>
-                <div className="text-[11px] leading-snug" style={{ color:'var(--mid)' }}>{s.desc}</div>
+            {firmStats.map((s, i) => (
+              <div key={i} className="stats-row">
+                <div style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize: s.small ? '15px' : '26px', minWidth:'80px', letterSpacing: s.small ? '0.5px' : '-1px', lineHeight:1, color: s.blue ? 'var(--rcg2)' : '#fff' }}>{s.val}</div>
+                <div style={{ fontSize:'11px', color:'var(--mid)', lineHeight:1.4 }}>{s.desc}</div>
               </div>
             ))}
           </div>
@@ -138,42 +133,36 @@ export default function Home() {
       </div>
 
       {/* STATES */}
-      <div className="max-w-[1200px] mx-auto px-10 py-20">
-        <div className="section-tag">// coverage</div>
-        <h2 className="section-title">All 50 States.<br /><span style={{ color:'var(--dim)' }}>Every County.</span></h2>
-        <p className="text-[14px] leading-relaxed mt-3 max-w-[480px]" style={{ color:'var(--mid)' }}>Click any state to see local laws, deadlines, the full claim process, and county-level guides.</p>
-        <div className="grid mt-7" style={{ gridTemplateColumns:'repeat(8,1fr)', gap:'4px' }}>
+      <div style={{ padding:'80px 40px', maxWidth:'1200px', margin:'0 auto' }}>
+        <span className="section-tag">// coverage</span>
+        <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(30px,4vw,50px)', color:'#fff', letterSpacing:'-1.5px', lineHeight:0.95 }}>
+          All 50 States.<br /><span style={{ color:'var(--dim)' }}>Every County.</span>
+        </h2>
+        <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, marginTop:'12px', maxWidth:'480px' }}>Click any state to see local laws, deadlines, the full claim process, and county-level guides.</p>
+        <div className="states-grid">
           {allStates.map(s => (
-            <Link key={s} href={`/states/${s.toLowerCase().replace(/\s+/g,'-').replace('.','-')}`}
-              className={`state-pill block no-underline ${activeStates.includes(s) ? 'active' : ''}`}>
-              {s}
-            </Link>
+            <Link key={s} href={`/states/${s.toLowerCase().replace(/\s+/g,'-').replace('.','-')}`} className={`state-pill${activeStates.includes(s) ? ' active' : ''}`}>{s}</Link>
           ))}
         </div>
-        <div className="mt-2.5 text-right text-[9px]" style={{ fontFamily:'var(--mono)', color:'var(--dim)' }}>
+        <div style={{ marginTop:'10px', textAlign:'right', fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>
           + 26 more — <Link href="/map" style={{ color:'var(--rcg2)', textDecoration:'none' }}>View Full Interactive Unclaimed Funds Map →</Link>
         </div>
       </div>
 
-      {/* CTA BAND */}
-      <div className="mx-10 mb-20 relative overflow-hidden" style={{ border:'1px solid var(--rcgline)', background:'var(--bg2)' }}>
-        <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background:'var(--rcg2)' }} />
-        <div className="flex items-center justify-between gap-10 px-14 py-14 flex-wrap">
+      {/* CTA */}
+      <div className="cta-band">
+        <div style={{ padding:'52px 56px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:'40px', flexWrap:'wrap' }}>
           <div>
-            <h2 className="font-bold mb-2.5" style={{ fontFamily:'var(--sans)', fontSize:'clamp(24px,3.5vw,44px)', letterSpacing:'-1.5px', color:'var(--bright)' }}>
+            <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,3.5vw,44px)', letterSpacing:'-1.5px', color:'#fff', marginBottom:'10px' }}>
               Money Was Left Behind<br />After Your <span style={{ color:'var(--rcg2)' }}>Foreclosure.</span>
             </h2>
-            <p className="text-[13px] leading-relaxed max-w-[460px]" style={{ color:'var(--mid)' }}>
+            <p style={{ fontSize:'13px', color:'var(--mid)', maxWidth:'460px', lineHeight:1.6 }}>
               Surplus funds have hard legal deadlines — in many states as short as 60 days. Don&apos;t lose what&apos;s already yours. Free review, no obligation, zero upfront cost.
             </p>
           </div>
-          <div className="flex gap-3 flex-shrink-0">
-            <Link href="/contact" className="btn-metal text-white font-bold tracking-wide uppercase px-8 py-4 cursor-pointer" style={{ fontFamily:'var(--sans)', fontSize:'13px' }}>
-              Free Claim Review
-            </Link>
-            <Link href="tel:+13058001234" className="btn-ghost font-semibold tracking-wide uppercase px-6 py-4 cursor-pointer" style={{ fontFamily:'var(--sans)', fontSize:'12px' }}>
-              Call Us Now
-            </Link>
+          <div style={{ display:'flex', gap:'12px', flexShrink:0 }}>
+            <Link href="/contact" className="btn-primary">Free Claim Review</Link>
+            <Link href="tel:+13058001234" className="btn-secondary">Call Us Now</Link>
           </div>
         </div>
       </div>

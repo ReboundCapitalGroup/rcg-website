@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-function Counter({ target, suffix = '', prefix = '' }: { target: number; suffix?: string; prefix?: string }) {
+function Counter({ target }: { target: number }) {
   const [val, setVal] = useState(0)
   useEffect(() => {
     const dur = 1200
@@ -14,7 +14,7 @@ function Counter({ target, suffix = '', prefix = '' }: { target: number; suffix?
     }, 16)
     return () => clearInterval(t)
   }, [target])
-  return <span>{prefix}{val}{suffix}</span>
+  return <>{val}</>
 }
 
 const stats = [
@@ -26,17 +26,17 @@ const stats = [
 
 export default function CounterBar() {
   return (
-    <div className="flex border-t border-b" style={{ borderColor: 'var(--rcgline)', background: 'var(--bg2)' }}>
-      {stats.map((s, i) => (
-        <div key={s.label} className="flex-1 px-8 py-5 relative" style={{ borderRight: i < stats.length - 1 ? '1px solid var(--rcgline)' : 'none' }}>
-          <div className="text-[9px] font-bold tracking-[1.8px] uppercase mb-2" style={{ fontFamily: 'var(--mono)', color: 'var(--mid)' }}>{s.label}</div>
-          <div className="font-bold leading-none" style={{ fontFamily: 'var(--sans)', fontSize: 'clamp(24px,3vw,40px)', color: 'var(--bright)', letterSpacing: '-1px' }}>
-            {s.prefix && <span className="text-[0.52em] font-semibold align-super" style={{ color: 'var(--rcg2)' }}>{s.prefix}</span>}
+    <div className="counter-bar">
+      {stats.map((s) => (
+        <div key={s.label} className="counter-block">
+          <div className="counter-label">{s.label}</div>
+          <div className="counter-value">
+            {s.prefix && <span style={{ fontSize:'0.52em', color:'var(--rcg2)', verticalAlign:'super', fontWeight:600 }}>{s.prefix}</span>}
             <Counter target={s.value} />
-            {s.suffix && <span className="text-[0.4em] font-medium" style={{ color: 'var(--mid)' }}>{s.suffix}</span>}
+            {s.suffix && <span style={{ fontSize:'0.4em', color:'var(--mid)', fontWeight:500 }}>{s.suffix}</span>}
           </div>
-          <div className="text-[11px] mt-1" style={{ color: 'var(--dim)' }}>{s.sub}</div>
-          <div className="absolute top-3 right-3 text-[8px] tracking-[1px] uppercase" style={{ fontFamily: 'var(--mono)', color: 'var(--rcg2)' }}>{s.tag}</div>
+          <div style={{ fontSize:'11px', color:'var(--dim)', marginTop:'5px' }}>{s.sub}</div>
+          <div className="counter-tag">{s.tag}</div>
         </div>
       ))}
     </div>
