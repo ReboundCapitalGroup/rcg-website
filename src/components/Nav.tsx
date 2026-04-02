@@ -20,30 +20,23 @@ function DDItem({ href, children }: { href: string; children: React.ReactNode })
 export default function Nav() {
   return (
     <header style={{ background:'#000', position:'sticky', top:0, zIndex:100 }}>
-
-      {/* TOP BAR — phone + brand name */}
-      <div style={{ borderBottom:'1px solid rgba(30,40,127,0.3)', padding:'6px 32px', display:'flex', alignItems:'center', justifyContent:'space-between', background:'#000' }}>
-        <div style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'13px', letterSpacing:'2px', textTransform:'uppercase', color:'#fff' }}>
-          Rebound Capital Group
-          <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'3px', color:'#4a6fd4', fontWeight:400, marginLeft:'12px' }}>LLC</span>
-        </div>
-        <a href="tel:+13055634920" style={{ fontFamily:"'Space Mono',monospace", fontSize:'12px', fontWeight:700, letterSpacing:'2px', color:'#1E287F', textDecoration:'none', display:'flex', alignItems:'center', gap:'8px', transition:'color 0.15s' }}
-          onMouseEnter={e => (e.currentTarget.style.color='#4a6fd4')}
-          onMouseLeave={e => (e.currentTarget.style.color='#1E287F')}>
-          <span style={{ fontSize:'14px' }}>📞</span>
+      {/* TOP BAR — phone only */}
+      <div style={{ borderBottom:'1px solid rgba(30,40,127,0.25)', padding:'5px 32px', display:'flex', alignItems:'center', justifyContent:'flex-end', background:'#000' }}>
+        <a href="tel:+13055634920" style={{ fontFamily:"'Space Mono',monospace", fontSize:'12px', fontWeight:700, letterSpacing:'2px', color:'#c8d8ff', textDecoration:'none', display:'flex', alignItems:'center', gap:'8px', transition:'color 0.15s' }}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1E287F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           305-563-4920
         </a>
       </div>
 
       {/* MAIN NAV */}
-      <nav style={{ height:'64px', background:'#000', borderBottom:'1px solid rgba(30,40,127,0.25)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 32px' }}>
+      <nav style={{ height:'68px', background:'#000', borderBottom:'1px solid rgba(30,40,127,0.25)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 32px' }}>
 
-        {/* LEFT — Logo */}
-        <Link href="/" style={{ display:'flex', alignItems:'center', textDecoration:'none', flexShrink:0 }}>
-          <Image src="/rcg-logo.png" alt="Rebound Capital Group" width={80} height={58} style={{ height:'50px', width:'auto', objectFit:'contain' }} priority />
+        {/* LOGO — larger, pushed left */}
+        <Link href="/" style={{ display:'flex', alignItems:'center', textDecoration:'none', flexShrink:0, marginRight:'32px' }}>
+          <Image src="/rcg-logo.png" alt="Rebound Capital Group" width={96} height={70} style={{ height:'60px', width:'auto', objectFit:'contain' }} priority />
         </Link>
 
-        {/* RIGHT — Nav links */}
+        {/* NAV LINKS */}
         <div className="nav-links">
           <DDMenu label="Services">
             <div className="dd-label">Recovery</div>
@@ -56,7 +49,6 @@ export default function Nav() {
             <DDItem href="/services/state-unclaimed-funds">State Unclaimed Funds</DDItem>
             <DDItem href="/services/foreclosure-solutions">Foreclosure Solutions</DDItem>
           </DDMenu>
-
           <DDMenu label="States">
             <div className="dd-label">Active Now</div>
             <DDItem href="/states/florida">Florida — 67 Counties</DDItem>
@@ -68,9 +60,7 @@ export default function Nav() {
             <DDItem href="/states/new-jersey">New Jersey</DDItem>
             <DDItem href="/states">All 50 States →</DDItem>
           </DDMenu>
-
           <Link href="/map" className="nav-map-btn">Unclaimed Funds Map</Link>
-
           <DDMenu label="Resources">
             <DDItem href="/resources/how-it-works">How It Works</DDItem>
             <DDItem href="/resources/faqs">FAQs</DDItem>
@@ -78,7 +68,6 @@ export default function Nav() {
             <DDItem href="/resources/state-laws">State Laws & Deadlines</DDItem>
             <DDItem href="/resources/results">Client Results</DDItem>
           </DDMenu>
-
           <Link href="/about" className="nav-link-item">About</Link>
           <Link href="/contact" className="nav-cta">Free Claim Review</Link>
         </div>
