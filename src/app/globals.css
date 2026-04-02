@@ -53,7 +53,7 @@ body {
 /* NAV */
 nav {
   height: 64px;
-  background: #111827;
+  background: #000000;
   border-bottom: 1px solid rgba(74,95,212,0.3);
   display: flex;
   align-items: center;
@@ -161,7 +161,7 @@ nav {
   top: 64px;
   left: 0;
   min-width: 230px;
-  background: linear-gradient(160deg, #1e2d55 0%, #141e3a 40%, #0d1528 100%);
+  background: #0a0f1e;
   border: 1px solid rgba(143,163,240,0.25);
   border-top: 2px solid var(--rcg2);
   box-shadow: 0 8px 32px rgba(0,0,0,0.6);

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer style={{ background:'var(--bg2)', borderTop:'1px solid rgba(74,95,212,0.3)', padding:'52px 40px 28px' }}>
+    <footer style={{ background:'#000000', borderTop:'1px solid rgba(74,95,212,0.2)', padding:'52px 40px 28px' }}>
       <style>{`.footer-link:hover { color: #fff !important; }`}</style>
       <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
         <div style={{ display:'grid', gridTemplateColumns:'2.2fr 1fr 1fr 1fr', gap:'44px', marginBottom:'36px' }}>
