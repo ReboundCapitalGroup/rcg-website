@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:#181d2e; --bg2:#1e2438; --bg3:#232b44;
+  --rcg:#1E287F; --rcg2:#4a5fd4; --rcg3:#16205e; --rcglt:#8fa3f0;
+  --rcgfade:rgba(30,40,127,0.2); --rcgline:rgba(74,95,212,0.3); --rcgglow:rgba(30,40,127,0.12);
+  --navtxt:#c8d8ff; --bright:#ffffff; --mid:#a0aece; --dim:#5a6890;
+  --mono:'Space Mono',monospace; --sans:'Space Grotesk',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--navtxt);font-family:var(--sans);overflow-x:hidden;font-size:15px;line-height:1.5}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.animate-ticker{animation:tick 32s linear infinite}
+@keyframes scan{0%{top:-1px;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+.animate-scan{animation:scan 6s linear infinite}
+@keyframes pulsedot{0%,100%{opacity:1}50%{opacity:0.2}}
+.animate-pulsedot{animation:pulsedot 2s infinite}
+.btn-metal{background:linear-gradient(135deg,#2a38c8 0%,#1e287f 60%,#1a2268 100%);box-shadow:0 4px 0 rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.12);transition:all 0.15s;position:relative;top:0}
+.btn-metal:hover{background:linear-gradient(135deg,#3a4fd8 0%,#2a38a8 60%,#2030a8 100%);box-shadow:0 2px 0 rgba(0,0,0,0.5);top:2px}
+.btn-metal:active{top:4px;box-shadow:none}
+.btn-ghost{background:transparent;border:1px solid var(--dim);color:var(--mid);transition:all 0.15s}
+.btn-ghost:hover{border-color:var(--rcg2);color:#fff}
+.nav-link{color:#c8d8ff;transition:color 0.15s;position:relative}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--rcg2);transform:scaleX(0);transition:transform 0.2s;transform-origin:center}
+.nav-link:hover{color:#fff}
+.nav-link:hover::after{transform:scaleX(1)}
+.scard{background:var(--bg);transition:background 0.15s;position:relative;overflow:hidden}
+.scard::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--rcg2);transition:height 0.25s}
+.scard:hover{background:var(--bg2)}
+.scard:hover::before{height:100%}
+.section-tag{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--rcg2);margin-bottom:12px}
+.section-title{font-family:var(--sans);font-weight:700;font-size:clamp(30px,4vw,50px);color:var(--bright);letter-spacing:-1.5px;line-height:0.95}
