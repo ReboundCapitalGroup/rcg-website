@@ -19,11 +19,11 @@ function DDItem({ href, children }: { href: string; children: React.ReactNode })
 
 export default function Nav() {
   return (
-    <nav style={{ height:'68px', background:'#000', borderBottom:'1px solid rgba(74,95,212,0.25)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 28px', position:'sticky', top:0, zIndex:100 }}>
+    <nav style={{ height:'68px', background:'#000', borderBottom:'1px solid rgba(30,40,127,0.4)', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 32px', position:'sticky', top:0, zIndex:100 }}>
       
-      {/* LOGO */}
-      <Link href="/" style={{ display:'flex', alignItems:'center', gap:'0px', textDecoration:'none', flexShrink:0 }}>
-        <Image src="/rcg-logo.png" alt="Rebound Capital Group" width={72} height={56} style={{ height:'54px', width:'auto', objectFit:'contain' }} priority />
+      {/* LOGO — just the mark, no awkward gap */}
+      <Link href="/" style={{ display:'flex', alignItems:'center', textDecoration:'none', flexShrink:0 }}>
+        <Image src="/rcg-logo.png" alt="Rebound Capital Group" width={80} height={60} style={{ height:'52px', width:'auto', objectFit:'contain' }} priority />
       </Link>
 
       {/* NAV LINKS */}

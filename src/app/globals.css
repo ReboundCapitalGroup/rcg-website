@@ -9,9 +9,9 @@
   --bg2: #1e2438;
   --bg3: #232b44;
   --rcg: #1E287F;
-  --rcg2: #4a5fd4;
+  --rcg2: #1E287F;
   --rcg3: #16205e;
-  --rcglt: #8fa3f0;
+  --rcglt: #4a6fd4;
   --rcgfade: rgba(30,40,127,0.2);
   --rcgline: rgba(74,95,212,0.3);
   --rcgglow: rgba(30,40,127,0.12);
@@ -127,8 +127,9 @@ nav {
 }
 
 .nav-cta {
-  background: linear-gradient(135deg, #2a38c8 0%, #1e287f 60%, #1a2268 100%);
-  color: #fff !important;
+  background: linear-gradient(180deg, #4a5060 0%, #2a2e38 50%, #1a1d24 100%);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #e8edf8 !important;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 11px;
   font-weight: 700;
@@ -237,26 +238,26 @@ nav {
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(135deg, #2a38c8 0%, #1e287f 60%, #1a2268 100%);
-  color: #fff;
+  background: linear-gradient(180deg, #4a5060 0%, #2a2e38 50%, #1a1d24 100%);
+  color: #e8edf8;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   padding: 16px 34px;
-  border: none;
+  border: 1px solid rgba(255,255,255,0.15);
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 0 rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.12);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.3);
   transition: all 0.15s;
   position: relative;
   top: 0;
 }
 .btn-primary:hover {
-  background: linear-gradient(135deg, #3a4fd8 0%, #2a38a8 60%, #2030a8 100%);
+  background: linear-gradient(180deg, #5a6070 0%, #3a3e48 50%, #2a2d36 100%);
   top: 2px;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2);
   color: #fff;
 }
 

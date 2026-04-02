@@ -60,7 +60,7 @@ export default function Home() {
           {/* Badge */}
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'12px', marginBottom:'28px', flexWrap:'wrap' }}>
             <div style={{ display:'inline-flex', alignItems:'center', gap:'8px', padding:'6px 16px', border:'1px solid rgba(74,95,212,0.35)', background:'rgba(30,40,127,0.12)', fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#8fa3f0', whiteSpace:'nowrap' }}>
-              <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#4a5fd4', display:'inline-block', flexShrink:0 }} />
+              <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#1E287F', display:'inline-block', flexShrink:0 }} />
               Nationwide Surplus &amp; Unclaimed Funds Recovery
             </div>
             <span style={{ width:'28px', height:'1px', background:'rgba(74,95,212,0.3)', display:'inline-block' }} />
@@ -70,7 +70,7 @@ export default function Home() {
           {/* Headline */}
           <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(42px,5.5vw,80px)', lineHeight:1, color:'#fff', letterSpacing:'-2px', margin:'0 0 24px' }}>
             The Court Is{' '}
-            <span style={{ color:'#4a5fd4' }}>Holding</span>
+            <span style={{ color:'#1E287F' }}>Holding</span>
             <br />
             <span style={{ WebkitTextStroke:'1.5px rgba(255,255,255,0.2)', color:'transparent' }}>Your Money.</span>
           </h1>
@@ -168,7 +168,7 @@ export default function Home() {
           ))}
         </div>
         <div style={{ marginTop:'10px', textAlign:'right', fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>
-          + 26 more — <Link href="/map" style={{ color:'var(--rcg2)', textDecoration:'none' }}>View Full Interactive Unclaimed Funds Map →</Link>
+          + 26 more — <Link href="/map" style={{ color:'#1E287F', textDecoration:'none' }}>View Full Interactive Unclaimed Funds Map →</Link>
         </div>
       </div>
 
@@ -177,7 +177,7 @@ export default function Home() {
         <div style={{ padding:'52px 56px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:'40px', flexWrap:'wrap' }}>
           <div>
             <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,3.5vw,44px)', letterSpacing:'-1.5px', color:'#fff', marginBottom:'10px' }}>
-              Money Was Left Behind<br />After Your <span style={{ color:'var(--rcg2)' }}>Foreclosure.</span>
+              Money Was Left Behind<br />After Your <span style={{ color:'#1E287F' }}>Foreclosure.</span>
             </h2>
             <p style={{ fontSize:'13px', color:'var(--mid)', maxWidth:'460px', lineHeight:1.6 }}>
               Surplus funds have hard legal deadlines — in many states as short as 60 days. Don&apos;t lose what&apos;s already yours.
