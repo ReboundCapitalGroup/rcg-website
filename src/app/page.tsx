@@ -29,41 +29,64 @@ const firmStats = [
 const allStates = ['Florida','Arizona','Colorado','Georgia','Ohio','New Jersey','Texas','California','New York','Illinois','Pennsylvania','Michigan','N. Carolina','Virginia','Washington','Nevada','Tennessee','Indiana','Missouri','Maryland','Wisconsin','Minnesota','S. Carolina','Alabama']
 const activeStates = ['Florida','Arizona','Colorado']
 
+const heroStyle: React.CSSProperties = {
+  background: 'var(--bg)',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '0 24px',
+  position: 'relative',
+  overflow: 'hidden',
+  textAlign: 'center',
+  minHeight: 'calc(100vh - 100px)',
+}
+
 export default function Home() {
   return (
     <>
       <Ticker />
 
       {/* HERO */}
-      <section style={{ minHeight:'calc(100vh - 96px)', background:'var(--bg)', display:'flex', flexDirection:'column', justifyContent:'center', padding:'64px 40px 52px', position:'relative', overflow:'hidden' }}>
-        <div style={{ position:'absolute', inset:0, backgroundImage:'linear-gradient(rgba(74,95,212,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.06) 1px,transparent 1px)', backgroundSize:'52px 52px', pointerEvents:'none' }} />
-        <div style={{ position:'absolute', top:'5%', left:'-8%', width:'55%', height:'90%', background:'radial-gradient(ellipse 55% 65% at 15% 50%,rgba(30,40,127,0.15) 0%,transparent 70%)', pointerEvents:'none' }} />
-        <div className="scan-animate" style={{ position:'absolute', left:0, right:0, height:'1px', background:'linear-gradient(90deg,transparent 0%,rgba(74,95,212,0.7) 50%,transparent 100%)', pointerEvents:'none' }} />
+      <section style={heroStyle}>
+        {/* Grid */}
+        <div style={{ position:'absolute', inset:0, backgroundImage:'linear-gradient(rgba(74,95,212,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.05) 1px,transparent 1px)', backgroundSize:'52px 52px', pointerEvents:'none' }} />
+        {/* Center glow */}
+        <div style={{ position:'absolute', top:'50%', left:'50%', transform:'translate(-50%,-50%)', width:'700px', height:'500px', background:'radial-gradient(ellipse at center, rgba(30,40,127,0.2) 0%, transparent 70%)', pointerEvents:'none' }} />
+        {/* Scan line */}
+        <div className="scan-animate" style={{ position:'absolute', left:0, right:0, height:'1px', background:'linear-gradient(90deg,transparent,rgba(74,95,212,0.6),transparent)', pointerEvents:'none' }} />
 
-        <div style={{ position:'relative', zIndex:2, maxWidth:'1200px', width:'100%', margin:'0 auto' }}>
-          <div style={{ display:'flex', alignItems:'center', gap:'14px', marginBottom:'36px' }}>
-            <div style={{ display:'flex', alignItems:'center', gap:'8px', padding:'5px 14px', border:'1px solid rgba(74,95,212,0.3)', background:'rgba(30,40,127,0.1)', fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#8fa3f0' }}>
-              <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'var(--rcg2)', display:'inline-block' }} />
-              Nationwide Surplus & Unclaimed Funds Recovery
+        <div style={{ position:'relative', zIndex:2, width:'100%', maxWidth:'780px' }}>
+          {/* Badge */}
+          <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'12px', marginBottom:'28px', flexWrap:'wrap' }}>
+            <div style={{ display:'inline-flex', alignItems:'center', gap:'8px', padding:'6px 16px', border:'1px solid rgba(74,95,212,0.35)', background:'rgba(30,40,127,0.12)', fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#8fa3f0', whiteSpace:'nowrap' }}>
+              <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#4a5fd4', display:'inline-block', flexShrink:0 }} />
+              Nationwide Surplus &amp; Unclaimed Funds Recovery
             </div>
-            <div style={{ width:'32px', height:'1px', background:'rgba(74,95,212,0.3)' }} />
-            <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'var(--dim)' }}>Miami Beach, FL — Licensed · BBB A+</div>
+            <span style={{ width:'28px', height:'1px', background:'rgba(74,95,212,0.3)', display:'inline-block' }} />
+            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'#5a6890', whiteSpace:'nowrap' }}>Miami Beach, FL — Licensed · BBB A+</span>
           </div>
 
-          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(50px,7vw,92px)', lineHeight:0.9, color:'#fff', letterSpacing:'-3px', marginBottom:'28px', maxWidth:'820px' }}>
-            The Court Is<br />
-            <span style={{ color:'var(--rcg2)' }}>Holding</span><br />
-            <span style={{ WebkitTextStroke:'1px rgba(232,237,248,0.3)', color:'transparent' }}>Your Money.</span>
+          {/* Headline */}
+          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(42px,5.5vw,80px)', lineHeight:1, color:'#fff', letterSpacing:'-2px', margin:'0 0 24px' }}>
+            The Court Is{' '}
+            <span style={{ color:'#4a5fd4' }}>Holding</span>
+            <br />
+            <span style={{ WebkitTextStroke:'1.5px rgba(255,255,255,0.2)', color:'transparent' }}>Your Money.</span>
           </h1>
 
-          <p style={{ fontSize:'16px', color:'var(--mid)', lineHeight:1.75, maxWidth:'500px', marginBottom:'40px' }}>
-            Foreclosure. Tax sale. Unclaimed property. If funds were left behind after the forced sale of your home — <strong style={{ color:'#e8edf8', fontWeight:600 }}>that money is legally yours.</strong> We recover it in all 50 states. Zero upfront cost. Ever.
+          {/* Subtext */}
+          <p style={{ fontSize:'16px', color:'#a0aece', lineHeight:1.8, maxWidth:'560px', margin:'0 auto 36px', fontWeight:400 }}>
+            Foreclosure. Tax sale. Unclaimed property. If funds were left behind after the forced sale of your home —{' '}
+            <strong style={{ color:'#e8edf8', fontWeight:600 }}>that money is legally yours.</strong>{' '}
+            We recover it in all 50 states. Zero upfront cost. Ever.
           </p>
 
-          <div style={{ display:'flex', alignItems:'center', gap:'16px', flexWrap:'wrap' }}>
+          {/* CTAs */}
+          <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'14px', flexWrap:'wrap' }}>
             <Link href="/contact" className="btn-primary">Check If You&apos;re Owed Money — Free</Link>
             <Link href="/resources/how-it-works" className="btn-secondary">See How It Works</Link>
-            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'0.8px', textTransform:'uppercase', color:'var(--dim)' }}>// No fees until we recover</span>
+            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'#5a6890' }}>// No fees until we recover</span>
           </div>
         </div>
       </section>
@@ -81,7 +104,7 @@ export default function Home() {
               </h2>
             </div>
             <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, maxWidth:'480px', paddingTop:'8px' }}>
-              Every category of courthouse-held and state-held funds — all claim types, all 50 states, 100% contingency. No exceptions.
+              Every category of courthouse-held and state-held funds — all claim types, all 50 states, 100% contingency.
             </p>
           </div>
           <div className="service-grid">
@@ -90,7 +113,7 @@ export default function Home() {
                 <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'1.5px', textTransform:'uppercase', color:'var(--dim)', marginBottom:'14px' }}>{s.id} / {s.cat}</div>
                 <div style={{ fontSize:'12px', fontWeight:700, letterSpacing:'0.8px', textTransform:'uppercase', color:'#fff', marginBottom:'8px', lineHeight:1.3 }}>{s.title}</div>
                 <div style={{ fontSize:'12px', color:'var(--mid)', lineHeight:1.6 }}>{s.desc}</div>
-                <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)', marginTop:'14px', display:'block', letterSpacing:'0.5px' }}>LEARN MORE →</span>
+                <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)', marginTop:'14px', display:'block' }}>LEARN MORE →</span>
               </Link>
             ))}
           </div>
@@ -149,7 +172,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CTA */}
+      {/* CTA BAND */}
       <div className="cta-band">
         <div style={{ padding:'52px 56px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:'40px', flexWrap:'wrap' }}>
           <div>
@@ -157,7 +180,7 @@ export default function Home() {
               Money Was Left Behind<br />After Your <span style={{ color:'var(--rcg2)' }}>Foreclosure.</span>
             </h2>
             <p style={{ fontSize:'13px', color:'var(--mid)', maxWidth:'460px', lineHeight:1.6 }}>
-              Surplus funds have hard legal deadlines — in many states as short as 60 days. Don&apos;t lose what&apos;s already yours. Free review, no obligation, zero upfront cost.
+              Surplus funds have hard legal deadlines — in many states as short as 60 days. Don&apos;t lose what&apos;s already yours.
             </p>
           </div>
           <div style={{ display:'flex', gap:'12px', flexShrink:0 }}>
