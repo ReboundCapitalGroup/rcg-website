@@ -70,9 +70,11 @@ export default function Home() {
             Into <span style={{ WebkitTextStroke:'1.5px rgba(255,255,255,0.22)', color:'transparent' }}>Future Opportunities.</span>
           </h1>
 
-          {/* Subtext — no dashes, clean single block */}
-          <p style={{ fontSize:'15px', color:'#a0aece', lineHeight:1.75, maxWidth:'520px', margin:'0 auto 32px', fontWeight:400 }}>
-            Foreclosure surplus. Tax deed overages. Unclaimed property. State-held funds. If money was left behind, <strong style={{ color:'#e8edf8', fontWeight:600 }}>it legally belongs to you.</strong> We recover it in all 50 states, all claim types. Zero upfront cost. Ever.
+          {/* Subtext — 3 clean lines matching notepad layout */}
+          <p style={{ fontSize:'15px', color:'#a0aece', lineHeight:2, maxWidth:'560px', margin:'0 auto 32px', fontWeight:400, textAlign:'center' }}>
+            Foreclosure surplus. Tax deed overages. Unclaimed property. State-held funds.<br />
+            If money was left behind, <strong style={{ color:'#e8edf8', fontWeight:600 }}>it legally belongs to you.</strong><br />
+            We recover it in all 50 states, all claim types. Zero upfront cost. Ever.
           </p>
 
           {/* CTAs */}

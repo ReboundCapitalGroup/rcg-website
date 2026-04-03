@@ -22,27 +22,28 @@ export default function Nav() {
     <header style={{ background:'#000', position:'sticky', top:0, zIndex:100, borderBottom:'1px solid rgba(30,40,127,0.25)' }}>
       <nav style={{ height:'88px', background:'#000', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 32px' }}>
 
-        {/* LEFT — Logo + Company Name centered under logo */}
-        <Link href="/" style={{ display:'flex', flexDirection:'column', alignItems:'center', textDecoration:'none', flexShrink:0, gap:'4px', minWidth:'180px' }}>
+        {/* LEFT — Logo large, company name centered below */}
+        <Link href="/" style={{ display:'flex', flexDirection:'column', alignItems:'center', textDecoration:'none', flexShrink:0, gap:'3px', width:'210px' }}>
           <Image
             src="/rcg-logo.png"
             alt="Rebound Capital Group"
-            width={120}
-            height={76}
-            style={{ height:'66px', width:'auto', objectFit:'contain' }}
+            width={150}
+            height={90}
+            style={{ height:'74px', width:'auto', objectFit:'contain' }}
             priority
           />
           <span style={{
-            fontFamily:"Arial Black, 'Arial Bold', sans-serif",
+            fontFamily:"'Arial Black', Arial, sans-serif",
             fontWeight: 900,
-            fontSize: '11px',
-            letterSpacing: '0.5px',
+            fontSize: '10px',
+            letterSpacing: '1.8px',
             textTransform: 'uppercase',
             color: '#ffffff',
             lineHeight: 1,
             whiteSpace: 'nowrap',
             textAlign: 'center',
             display: 'block',
+            width: '100%',
           }}>
             Rebound Capital Group
           </span>
