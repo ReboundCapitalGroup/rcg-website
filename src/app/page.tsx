@@ -71,7 +71,7 @@ export default function Home() {
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
-          <p style={{ fontSize:'15px', color:'#a0aece', lineHeight:2, maxWidth:'560px', margin:'0 auto 32px', fontWeight:400, textAlign:'center' }}>
+          <p style={{ fontSize:'15px', color:'#a0aece', lineHeight:2, maxWidth:'680px', margin:'0 auto 32px', fontWeight:400, textAlign:'center' }}>
             Foreclosure surplus. Tax deed overages. Unclaimed property. State-held funds.<br />
             If money was left behind, <strong style={{ color:'#e8edf8', fontWeight:600 }}>it legally belongs to you.</strong><br />
             We recover it in all 50 states, all claim types. Zero upfront cost. Ever.

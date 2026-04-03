@@ -23,13 +23,13 @@ export default function Nav() {
       <nav style={{ height:'88px', background:'#000', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 32px' }}>
 
         {/* LEFT — Logo large, company name centered below */}
-        <Link href="/" style={{ display:'flex', flexDirection:'column', alignItems:'center', textDecoration:'none', flexShrink:0, gap:'3px', width:'210px' }}>
+        <Link href="/" style={{ display:'flex', flexDirection:'column', alignItems:'center', textDecoration:'none', flexShrink:0, gap:'8px', width:'210px' }}>
           <Image
             src="/rcg-logo.png"
             alt="Rebound Capital Group"
-            width={150}
-            height={90}
-            style={{ height:'74px', width:'auto', objectFit:'contain' }}
+            width={120}
+            height={74}
+            style={{ height:'58px', width:'auto', objectFit:'contain' }}
             priority
           />
           <span style={{
