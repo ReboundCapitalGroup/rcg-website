@@ -53,10 +53,10 @@ export default function Nav() {
         <div style={{ display:'flex', alignItems:'center', gap:'0' }}>
           {/* Phone */}
           <a href="tel:+13055634920" style={{
-            fontFamily:"'Space Mono',monospace",
-            fontSize:'12px',
-            fontWeight:700,
-            letterSpacing:'2px',
+            fontFamily:"'Arial Black', Arial, sans-serif",
+            fontSize:'11px',
+            fontWeight:900,
+            letterSpacing:'1.5px',
             color:'#ffffff',
             textDecoration:'none',
             display:'flex',
