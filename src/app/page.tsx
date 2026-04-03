@@ -39,7 +39,7 @@ const heroStyle: React.CSSProperties = {
   position: 'relative',
   overflow: 'hidden',
   textAlign: 'center',
-  minHeight: 'calc(100vh - 112px)',
+  minHeight: 'calc(100vh - 88px)',
 }
 
 export default function Home() {
