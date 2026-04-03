@@ -33,10 +33,10 @@ export default function Nav() {
             priority
           />
           <span style={{
-            fontFamily:"'Space Grotesk', sans-serif",
-            fontWeight: 700,
-            fontSize: '12px',
-            letterSpacing: '2px',
+            fontFamily:"Arial Black, 'Arial Bold', sans-serif",
+            fontWeight: 900,
+            fontSize: '11px',
+            letterSpacing: '0.5px',
             textTransform: 'uppercase',
             color: '#ffffff',
             lineHeight: 1,
@@ -53,19 +53,21 @@ export default function Nav() {
           {/* Phone */}
           <a href="tel:+13055634920" style={{
             fontFamily:"'Space Mono',monospace",
-            fontSize:'11px',
+            fontSize:'12px',
             fontWeight:700,
-            letterSpacing:'1.5px',
-            color:'#c8d8ff',
+            letterSpacing:'2px',
+            color:'#ffffff',
             textDecoration:'none',
             display:'flex',
             alignItems:'center',
-            gap:'6px',
-            padding:'0 16px',
-            borderRight:'1px solid rgba(30,40,127,0.3)',
-            marginRight:'4px',
+            gap:'8px',
+            padding:'8px 16px',
+            marginRight:'8px',
+            background:'#1E287F',
+            border:'1px solid rgba(255,255,255,0.12)',
+            boxShadow:'0 2px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1E287F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
             305-563-4920
