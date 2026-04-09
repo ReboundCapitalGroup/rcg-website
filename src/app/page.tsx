@@ -64,14 +64,14 @@ export default function Home() {
           </div>
 
           {/* Headline — two clean lines */}
-          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(32px,4vw,60px)', lineHeight:1.05, color:'#fff', letterSpacing:'-2px', margin:'0 0 22px' }}>
+          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(28px,5vw,60px)', lineHeight:1.08, color:'#fff', letterSpacing:'clamp(-1px,-0.15em,-2px)', margin:'0 0 20px', textAlign:'center' }}>
             Turning <span style={{ color:'#ffffff' }}>Forgotten Funds</span>
             <br />
             Into <span style={{ color:'#344f8a', letterSpacing:'-0.5px', fontWeight:600 }}>Future Opportunities.</span>
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
-          <p style={{ fontSize:'15px', color:'#a8bedd', lineHeight:1.9, maxWidth:'600px', margin:'0 auto 28px', fontWeight:400, textAlign:'center' }}>
+          <p style={{ fontSize:'clamp(14px,3.5vw,15px)', color:'#a8bedd', lineHeight:1.85, maxWidth:'600px', width:'100%', margin:'0 auto 28px', fontWeight:400, textAlign:'center', padding:'0 4px' }}>
             Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds.<br />
             If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong><br />
             We recover it across FL, AZ, CO, OH, MI and expanding. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong>
@@ -89,12 +89,12 @@ export default function Home() {
       <CounterBar />
 
       {/* SERVICES */}
-      <div style={{ background:'var(--bg)', padding:'80px 40px' }}>
+      <div style={{ background:'var(--bg)', padding:'clamp(40px,6vw,80px) clamp(16px,4vw,40px)' }}>
         <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
           <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:'40px', marginBottom:'48px', flexWrap:'wrap' }}>
             <div>
               <span className="section-tag">// what we recover</span>
-              <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(30px,4vw,50px)', color:'#fff', letterSpacing:'-1.5px', lineHeight:0.95 }}>
+              <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,4vw,50px)', color:'#fff', letterSpacing:'-1px', lineHeight:1.0 }}>
                 Full Recovery.<br /><span style={{ color:'var(--dim)' }}>Every Claim Type.</span>
               </h2>
             </div>
@@ -123,11 +123,11 @@ export default function Home() {
       </div>
 
       {/* WHY US */}
-      <div style={{ background:'var(--bg2)', borderTop:'1px solid rgba(74,95,212,0.3)', borderBottom:'1px solid rgba(74,95,212,0.3)', padding:'80px 40px' }}>
+      <div style={{ background:'var(--bg2)', borderTop:'1px solid rgba(74,95,212,0.3)', borderBottom:'1px solid rgba(74,95,212,0.3)', padding:'clamp(40px,6vw,80px) clamp(16px,4vw,40px)' }}>
         <div className="why-grid">
           <div>
             <span className="section-tag">// why rebound capital group</span>
-            <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(30px,4vw,50px)', color:'#fff', letterSpacing:'-1.5px', lineHeight:0.95 }}>
+            <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,4vw,50px)', color:'#fff', letterSpacing:'-1px', lineHeight:1.0 }}>
               We Outwork<br />Every<br /><span style={{ color:'var(--dim)' }}>Competitor.</span>
             </h2>
             <div style={{ marginTop:'28px' }}>
@@ -160,8 +160,8 @@ export default function Home() {
       {/* STATES */}
       <div style={{ padding:'80px 40px', maxWidth:'1200px', margin:'0 auto' }}>
         <span className="section-tag">// coverage</span>
-        <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(30px,4vw,50px)', color:'#fff', letterSpacing:'-1.5px', lineHeight:0.95 }}>
-          Coming to All 50 States.<br /><span style={{ color:'var(--dim)' }}>Active Now: FL · AZ · CO · OH</span>
+        <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,4vw,50px)', color:'#fff', letterSpacing:'-1px', lineHeight:1.0 }}>
+          Coming to All 50 States.<br /><span style={{ color:'var(--dim)' }}>FL · AZ · CO · OH · MI Active Now</span>
         </h2>
         <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, marginTop:'12px', maxWidth:'480px' }}>Currently active in Florida, Arizona, Colorado, Ohio, and Michigan with live court monitoring. Expanding to all 50 states.</p>
         <div className="states-grid">

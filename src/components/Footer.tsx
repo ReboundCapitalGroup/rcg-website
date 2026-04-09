@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer style={{ background:'#000000', borderTop:'1px solid rgba(74,95,212,0.2)', padding:'52px 40px 28px' }}>
+    <footer style={{ background:'#000000', borderTop:'1px solid rgba(74,95,212,0.2)', padding:'clamp(32px,5vw,52px) clamp(16px,4vw,40px) 28px' }}>
       <style>{`.footer-link:hover { color: #fff !important; }`}</style>
       <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
-        <div style={{ display:'grid', gridTemplateColumns:'2.2fr 1fr 1fr 1fr', gap:'44px', marginBottom:'36px' }}>
+        <div className='footer-grid' style={{ marginBottom:'36px' }}>
           <div>
             <Link href="/" style={{ display:'flex', alignItems:'center', gap:'10px', textDecoration:'none', marginBottom:'12px' }}>
               <Image src="/rcg-logo.png" alt="RCG" width={44} height={36} style={{ height:'36px', width:'auto' }} />

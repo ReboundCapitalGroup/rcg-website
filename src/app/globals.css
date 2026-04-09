@@ -668,3 +668,159 @@ nav {
   nav { padding: 0 20px !important; }
 }
 /* ===================== END MOBILE NAV ===================== */
+
+/* ===================== MOBILE HOMEPAGE FIXES ===================== */
+@media (max-width: 768px) {
+
+  /* Hero section */
+  .hero-section {
+    padding: 32px 20px 48px !important;
+    min-height: auto !important;
+  }
+
+  /* Counter bar - prevent overflow */
+  .counter-bar-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Services grid */
+  .service-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Why us grid */
+  .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Firm stats panel */
+  .firm-stats-panel {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  /* States grid */
+  .states-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* State pills text */
+  .state-pill {
+    font-size: 7px !important;
+    padding: 6px 4px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* Footer grid */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* CTA buttons - full width on mobile */
+  .hero-cta-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero-cta-row .btn-primary,
+  .hero-cta-row .btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Bottom CTA section */
+  .bottom-cta-flex {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+  .bottom-cta-flex .btn-primary,
+  .bottom-cta-flex .btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Section padding */
+  section, [class*="section"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* States grid even tighter */
+  .states-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Footer single column */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Counter bar single column */
+  .counter-bar-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+/* ===================== END MOBILE HOMEPAGE FIXES ===================== */
+
+@media (max-width: 700px) {
+  .counter-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .counter-block {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(74,95,212,0.15);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+    padding: 40px 20px !important;
+  }
+  .why-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 !important;
+  }
+  .why-list { 
+    padding-right: 0 !important;
+    border-right: none !important;
+    margin-bottom: 32px;
+  }
+  .firm-stats {
+    min-width: unset !important;
+    width: 100% !important;
+  }
+}
+@media (max-width: 400px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .counter-bar {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr;
+  gap: 44px;
+}
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+}
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
