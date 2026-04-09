@@ -65,9 +65,9 @@ export default function Home() {
 
           {/* Headline — two clean lines */}
           <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(32px,4vw,60px)', lineHeight:1.1, color:'#fff', letterSpacing:'-2px', margin:'0 0 28px' }}>
-            Turning <span style={{ color:'#4a7fd4' }}>Forgotten Funds</span>
+            Turning <span style={{ color:'#ffffff' }}>Forgotten Funds</span>
             <br />
-            Into <span style={{ color:'rgba(255,255,255,0.35)' }}>Future Opportunities.</span>
+            Into <span style={{ color:'#3a5a9a', textShadow:'0 0 60px rgba(74,127,212,0.4)' }}>Future Opportunities.</span>
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
@@ -79,7 +79,7 @@ export default function Home() {
 
           {/* CTAs */}
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'14px', flexWrap:'wrap' }}>
-            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#2a3fa0 0%,#1a2a7a 100%)', borderColor:'rgba(74,127,212,0.6)', boxShadow:'0 0 20px rgba(30,40,127,0.4), 0 4px 0 rgba(0,0,0,0.5)' }}>Check If You&apos;re Owed Money — Free</Link>
+            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#1e2d6a 0%,#131d4a 100%)', border:'1px solid rgba(74,127,212,0.4)', boxShadow:'0 0 12px rgba(30,40,127,0.3), 0 4px 0 rgba(0,0,0,0.6)', letterSpacing:'1px' }}>Check If You&apos;re Owed Money — Free</Link>
             <Link href="/resources/how-it-works" className="btn-secondary">See How It Works</Link>
             <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'#5a6890' }}>// No fees until we recover</span>
           </div>
@@ -179,7 +179,7 @@ export default function Home() {
             </p>
           </div>
           <div style={{ display:'flex', gap:'12px', flexShrink:0 }}>
-            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#2a3fa0 0%,#1a2a7a 100%)', borderColor:'rgba(74,127,212,0.6)', boxShadow:'0 0 20px rgba(30,40,127,0.4), 0 4px 0 rgba(0,0,0,0.5)' }}>Free Claim Review</Link>
+            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#1e2d6a 0%,#131d4a 100%)', border:'1px solid rgba(74,127,212,0.4)', boxShadow:'0 0 12px rgba(30,40,127,0.3), 0 4px 0 rgba(0,0,0,0.6)', letterSpacing:'1px' }}>Free Claim Review</Link>
             <Link href="tel:+13058001234" className="btn-secondary">Call Us Now</Link>
           </div>
         </div>

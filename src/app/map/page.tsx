@@ -56,7 +56,7 @@ export default function MapPage() {
               <div style={{ width: '30px', height: '1px', background: 'rgba(74,95,212,0.4)' }} />
             </div>
 
-            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(32px,5vw,58px)', color: '#ffffff', letterSpacing: '-2px', lineHeight: 1, marginBottom: '20px' }}>
+            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(32px,5vw,58px)', color: '#ffffff', letterSpacing: '-2px', lineHeight: 1, marginBottom: '20px', textShadow: '0 0 80px rgba(74,127,212,0.25)' }}>
               Your Money Is Out There.
             </h1>
 
@@ -68,11 +68,11 @@ export default function MapPage() {
             </p>
 
             {/* COUNTER */}
-            <div style={{ display: 'inline-block', background: 'rgba(30,40,127,0.12)', border: '1px solid rgba(74,95,212,0.3)', padding: '24px 48px' }}>
+            <div style={{ display: 'inline-block', background: 'rgba(20,30,80,0.2)', border: '1px solid rgba(74,127,212,0.25)', padding: '24px 48px', boxShadow: '0 0 40px rgba(30,40,127,0.15), inset 0 1px 0 rgba(255,255,255,0.05)' }}>
               <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5f94', marginBottom: '10px' }}>
                 Estimated Unclaimed Property — U.S. States
               </div>
-              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,5vw,52px)', color: 'var(--text)', letterSpacing: '-2px', lineHeight: 1, marginBottom: '10px' }}>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,5vw,52px)', color: '#c8d8ff', letterSpacing: '-2px', lineHeight: 1, marginBottom: '10px', textShadow: '0 0 40px rgba(74,127,212,0.3)' }}>
                 $70,847,000,000+
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
