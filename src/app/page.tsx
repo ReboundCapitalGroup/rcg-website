@@ -3,12 +3,12 @@ import Ticker from '@/components/Ticker'
 import CounterBar from '@/components/CounterBar'
 
 const services = [
-  { id:'01', cat:'Foreclosure', title:'Foreclosure Surplus Funds', desc:'Your home sold for more than the debt owed. That overage is yours by law. We file, fight, and pull it from the court.', href:'/services/foreclosure-surplus' },
-  { id:'02', cat:'Tax Deed', title:'Tax Deed Surplus & Overages', desc:'Tax sales generate excess proceeds every day. Most former owners never know. We find it before it escheats to the state.', href:'/services/tax-deed-surplus' },
-  { id:'03', cat:'Proceeds', title:'Excess Proceeds Recovery', desc:'Any forced-sale overage belongs to the owner of record. We manage the entire legal process with strict deadline enforcement.', href:'/services/excess-proceeds' },
-  { id:'04', cat:'Unclaimed', title:'Unclaimed Property Recovery', desc:'Billions held in state divisions. Bank accounts, insurance policies, wages. We locate and recover them nationwide.', href:'/services/unclaimed-property' },
-  { id:'05', cat:'Estate', title:'Estate & Heir Recovery', desc:'Heirs of foreclosed homeowners are entitled to surplus. We handle probate coordination, heir ID, and claim filing.', href:'/services/estate-recovery' },
-  { id:'06', cat:'Solutions', title:'Foreclosure Solutions', desc:'Still in the process? We may be able to preserve equity or explore alternatives before the auction date. Call now.', href:'/services/foreclosure-solutions' },
+  { id:'01', cat:'Foreclosure Recovery', title:'Foreclosure Surplus & Overages', desc:'When a property sells for more than the debt owed, the overage belongs to the former owner by law. We file and recover courthouse-held surplus funds across all active states.', href:'/services/foreclosure-surplus', tag: 'Core Service' },
+  { id:'02', cat:'Tax Deed Recovery', title:'Tax Deed & Excess Proceeds', desc:'Tax sales generate excess proceeds daily. Most former owners never know the money exists. We locate it, file before deadlines, and pull every dollar before it escheats to the state.', href:'/services/tax-deed-surplus', tag: 'Core Service' },
+  { id:'03', cat:'Unclaimed Property', title:'State-Held & Unclaimed Assets', desc:'Dormant bank accounts, uncashed checks, insurance payouts, utility deposits. Billions sit in state treasury divisions. We search, locate, and recover on your behalf — nationwide.', href:'/services/unclaimed-property', tag: 'Nationwide' },
+  { id:'04', cat:'Estate & Heir Recovery', title:'Probate, Heirs & Estate Claims', desc:'Heirs and estates are often entitled to surplus funds they never knew existed. We coordinate probate documentation, identify rightful heirs, and manage the full claim process.', href:'/services/estate-recovery', tag: 'Specialized' },
+  { id:'05', cat:'Business & Trust Recovery', title:'LLC, Trust & Business Assets', desc:'Unclaimed property held under business names, dissolved entities, or trust accounts. We recover assets from dormant LLCs, closed corporations, and inactive trusts.', href:'/services/business-asset-recovery', tag: 'Specialized' },
+  { id:'06', cat:'Foreclosure Solutions', title:'Pre-Sale & Property Options', desc:'Still in the foreclosure process? We may be able to preserve equity, explore mortgage assumptions, connect you with buyers, or structure a cash offer before the auction date.', href:'/services/cash-offer', tag: 'Pre-Foreclosure' },
 ]
 
 const whyUs = [
@@ -95,20 +95,27 @@ export default function Home() {
             <div>
               <span className="section-tag">// what we recover</span>
               <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(30px,4vw,50px)', color:'#fff', letterSpacing:'-1.5px', lineHeight:0.95 }}>
-                Every Dollar.<br /><span style={{ color:'var(--dim)' }}>Every Claim.</span>
+                Full Recovery.<br /><span style={{ color:'var(--dim)' }}>Every Claim Type.</span>
               </h2>
             </div>
             <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, maxWidth:'480px', paddingTop:'8px' }}>
-              Every category of courthouse-held and state-held funds — all claim types, 100% contingency. Currently active in FL, AZ, CO &amp; OH.
+              Foreclosure surplus. Tax deed overages. Unclaimed assets. Estate recovery. Business and trust claims. Every dollar we recover is on a pure contingency basis — nothing out of pocket, ever.
             </p>
           </div>
           <div className="service-grid">
             {services.map(s => (
               <Link key={s.id} href={s.href} className="service-card">
-                <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'1.5px', textTransform:'uppercase', color:'var(--dim)', marginBottom:'14px' }}>{s.id} / {s.cat}</div>
-                <div style={{ fontSize:'12px', fontWeight:700, letterSpacing:'0.8px', textTransform:'uppercase', color:'#fff', marginBottom:'8px', lineHeight:1.3 }}>{s.title}</div>
-                <div style={{ fontSize:'12px', color:'var(--mid)', lineHeight:1.6 }}>{s.desc}</div>
-                <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)', marginTop:'14px', display:'block' }}>LEARN MORE →</span>
+                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'20px' }}>
+                  <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'2px', textTransform:'uppercase', color:'var(--dim)' }}>{s.id}</span>
+                  <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'7px', letterSpacing:'1.5px', textTransform:'uppercase', color:'rgba(74,127,212,0.5)', border:'1px solid rgba(74,127,212,0.2)', padding:'2px 7px' }}>{(s as any).tag}</span>
+                </div>
+                <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'2px', textTransform:'uppercase', color:'var(--rcg2)', marginBottom:'10px', opacity:0.7 }}>{s.cat}</div>
+                <div style={{ fontFamily:"'Space Grotesk',sans-serif", fontSize:'16px', fontWeight:700, letterSpacing:'-0.3px', color:'#fff', marginBottom:'12px', lineHeight:1.2 }}>{s.title}</div>
+                <div style={{ fontSize:'13px', color:'var(--mid)', lineHeight:1.7, flexGrow:1 }}>{s.desc}</div>
+                <div style={{ marginTop:'20px', display:'flex', alignItems:'center', gap:'8px' }}>
+                  <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'var(--rcg2)' }}>Explore</span>
+                  <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)' }}>→</span>
+                </div>
               </Link>
             ))}
           </div>
