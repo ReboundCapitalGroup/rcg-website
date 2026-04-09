@@ -67,12 +67,12 @@ export default function Home() {
           <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(32px,4vw,60px)', lineHeight:1.05, color:'#fff', letterSpacing:'-2px', margin:'0 0 32px' }}>
             Turning <span style={{ color:'#ffffff' }}>Forgotten Funds</span>
             <br />
-            Into <span style={{ color:'#2e4a88', letterSpacing:'-1px' }}>Future Opportunities.</span>
+            Into <span style={{ color:'#344f8a', letterSpacing:'-0.5px', fontWeight:600 }}>Future Opportunities.</span>
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
-          <p style={{ fontSize:'15px', color:'#a8bedd', lineHeight:1.9, maxWidth:'520px', margin:'0 auto 40px', fontWeight:400, textAlign:'center' }}>
-            Foreclosure surplus. Tax deed overages. Unclaimed property. State-held funds.<br />
+          <p style={{ fontSize:'15px', color:'#a8bedd', lineHeight:1.9, maxWidth:'600px', margin:'0 auto 40px', fontWeight:400, textAlign:'center' }}>
+            Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds.<br />
             If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong><br />
             We recover it across FL, AZ, CO, OH and MI. Expanding to all 50 states. Zero upfront cost. Ever.
           </p>
