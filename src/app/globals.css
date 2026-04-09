@@ -824,3 +824,132 @@ nav {
     gap: 28px !important;
   }
 }
+
+/* COUNTER BAR MOBILE - flex wrap to 2x2 */
+@media (max-width: 700px) {
+  .counter-bar {
+    flex-wrap: wrap;
+  }
+  .counter-block {
+    flex: 1 1 50%;
+    max-width: 50%;
+    box-sizing: border-box;
+    padding: 18px 16px;
+  }
+  .counter-block:nth-child(2) { border-right: none; }
+  .counter-block:nth-child(3) { border-top: 1px solid rgba(74,95,212,0.3); }
+  .counter-block:nth-child(4) { border-top: 1px solid rgba(74,95,212,0.3); border-right: none; }
+  .counter-tag { font-size: 7px; }
+}
+
+/* FOOTER MOBILE */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .footer-grid > *:first-child {
+    grid-column: 1 / -1;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(74,95,212,0.12);
+    margin-bottom: 28px;
+  }
+  .footer-cols-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 420px) {
+  .footer-cols-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+/* HERO MOBILE FIXES */
+@media (max-width: 768px) {
+  .hero-eyebrow-row {
+    flex-wrap: nowrap !important;
+    white-space: nowrap;
+    font-size: 7px !important;
+    letter-spacing: 1px !important;
+    overflow: hidden;
+  }
+  .hero-eyebrow-text {
+    font-size: 7px !important;
+    letter-spacing: 1px !important;
+    white-space: nowrap;
+  }
+  .mobile-break {
+    display: block;
+    height: 0;
+  }
+}
+@media (min-width: 769px) {
+  .mobile-break { display: none; }
+}
+
+/* MOBILE DRAWER FIXES */
+.mobile-cta-row {
+  flex-direction: column !important;
+  gap: 10px;
+}
+.mobile-cta-primary, .mobile-cta-secondary {
+  text-align: center;
+  justify-content: center;
+}
+
+/* FOOTER GRID - 2 col desktop, stacked mobile */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 2fr;
+  gap: 48px;
+}
+.footer-cols-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .footer-cols-row {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 16px !important;
+  }
+}
+@media (max-width: 420px) {
+  .footer-cols-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* MAP PAGE MOBILE */
+@media (max-width: 768px) {
+  /* Active states 5-col -> 2-col */
+  .map-active-states {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Top states 4-col -> 2-col */
+  .map-top-states {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Stats bar 4-col -> 2-col */
+  .map-stats-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Counter card */
+  .map-counter-card {
+    min-width: unset !important;
+    width: 90% !important;
+  }
+  /* Counter number smaller */
+  .map-counter-number {
+    font-size: clamp(28px, 8vw, 52px) !important;
+    letter-spacing: -2px !important;
+  }
+}

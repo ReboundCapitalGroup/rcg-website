@@ -45,7 +45,7 @@ export default function MapPage() {
       <div style={{ position: 'relative', zIndex: 2 }}>
 
         {/* HERO */}
-        <div style={{ padding: '60px 40px 44px', textAlign: 'center', borderBottom: '1px solid rgba(74,95,212,0.1)' }}>
+        <div style={{ padding: 'clamp(32px,5vw,60px) clamp(16px,4vw,40px) clamp(28px,4vw,44px)', textAlign: 'center', borderBottom: '1px solid rgba(74,95,212,0.1)' }}>
           <div style={{ maxWidth: '860px', margin: '0 auto' }}>
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '20px' }}>
@@ -68,7 +68,7 @@ export default function MapPage() {
             </p>
 
             {/* COUNTER */}
-            <div style={{ display: 'inline-block', background: 'linear-gradient(180deg,rgba(18,28,70,0.3) 0%,rgba(8,12,28,0.5) 100%)', border: '1px solid rgba(74,127,212,0.25)', borderTop: '2px solid rgba(74,127,212,0.5)', padding: '32px 64px', boxShadow: '0 0 80px rgba(15,25,80,0.25), 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)', minWidth: '440px' }}>
+            <div style={{ display: 'inline-block', background: 'linear-gradient(180deg,rgba(18,28,70,0.3) 0%,rgba(8,12,28,0.5) 100%)', border: '1px solid rgba(74,127,212,0.25)', borderTop: '2px solid rgba(74,127,212,0.5)', padding: 'clamp(20px,4vw,32px) clamp(24px,6vw,64px)', boxShadow: '0 0 80px rgba(15,25,80,0.25), 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)', minWidth: '440px' }}>
               <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '3px', textTransform: 'uppercase', color: '#3a4f7a', marginBottom: '12px' }}>
                 Estimated Unclaimed Property — U.S. States
               </div>

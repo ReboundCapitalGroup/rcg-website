@@ -18,6 +18,7 @@ export default function Footer() {
             <p style={{ fontSize:'12px', color:'var(--mid)', lineHeight:1.7, maxWidth:'240px' }}>Nationwide surplus funds, excess proceeds, and unclaimed property recovery. No upfront fees. Ever.</p>
             <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)', marginTop:'10px' }}>Miami Beach, FL — Licensed · BBB A+ Rated</p>
           </div>
+          <div className="footer-cols-row">
           {[
             { title:'Services', links:[['Surplus Funds','/services/surplus-funds'],['Tax Deed Overages','/services/tax-deed-surplus'],['Excess Proceeds','/services/excess-proceeds'],['Unclaimed Property','/services/unclaimed-property'],['Estate Recovery','/services/estate-recovery']] },
             { title:'Resources', links:[['How It Works','/resources/how-it-works'],['FAQs','/resources/faqs'],['State Laws Map','/resources/state-laws'],['County Guides','/resources/blog'],['Blog','/resources/blog']] },
@@ -30,6 +31,7 @@ export default function Footer() {
               ))}
             </div>
           ))}
+          </div>
         </div>
         <div style={{ display:'flex', justifyContent:'space-between', flexWrap:'wrap', gap:'10px', paddingTop:'20px', borderTop:'1px solid rgba(74,95,212,0.3)' }}>
           <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>© 2025 Rebound Capital Group LLC. All Rights Reserved.</p>
