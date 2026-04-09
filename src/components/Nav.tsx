@@ -24,10 +24,10 @@ function DDLabel({ children, mt }: { children: React.ReactNode; mt?: boolean }) 
 export default function Nav() {
   return (
     <header style={{ background: '#000', position: 'sticky', top: 0, zIndex: 100, borderBottom: '1px solid rgba(30,40,127,0.25)' }}>
-      <nav style={{ height: '88px', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 32px' }}>
+      <nav style={{ height: '88px', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 32px 0 0' }}>
 
         {/* LOGO */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0, marginLeft: '24px' }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0, marginLeft: '48px' }}>
           <Image src="/rcg-logo.png" alt="Rebound Capital Group" width={150} height={90} style={{ height: '68px', width: 'auto', objectFit: 'contain' }} priority />
         </Link>
 

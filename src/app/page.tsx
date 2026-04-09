@@ -65,13 +65,13 @@ export default function Home() {
 
           {/* Headline — two clean lines */}
           <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(32px,4vw,60px)', lineHeight:1.1, color:'#fff', letterSpacing:'-2px', margin:'0 0 28px' }}>
-            Turning <span style={{ color:'#1E287F' }}>Forgotten Funds</span>
+            Turning <span style={{ color:'#4a7fd4' }}>Forgotten Funds</span>
             <br />
-            Into <span style={{ WebkitTextStroke:'1.5px rgba(255,255,255,0.22)', color:'transparent' }}>Future Opportunities.</span>
+            Into <span style={{ color:'rgba(255,255,255,0.35)' }}>Future Opportunities.</span>
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
-          <p style={{ fontSize:'15px', color:'#a0aece', lineHeight:2, maxWidth:'680px', margin:'0 auto 32px', fontWeight:400, textAlign:'center' }}>
+          <p style={{ fontSize:'15px', color:'#b8ccec', lineHeight:2, maxWidth:'680px', margin:'0 auto 32px', fontWeight:400, textAlign:'center' }}>
             Foreclosure surplus. Tax deed overages. Unclaimed property. State-held funds.<br />
             If money was left behind, <strong style={{ color:'#e8edf8', fontWeight:600 }}>it legally belongs to you.</strong><br />
             We recover it across FL, AZ, CO, OH and MI. Expanding to all 50 states. Zero upfront cost. Ever.
@@ -79,7 +79,7 @@ export default function Home() {
 
           {/* CTAs */}
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'14px', flexWrap:'wrap' }}>
-            <Link href="/contact" className="btn-primary">Check If You&apos;re Owed Money — Free</Link>
+            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#2a3fa0 0%,#1a2a7a 100%)', borderColor:'rgba(74,127,212,0.6)', boxShadow:'0 0 20px rgba(30,40,127,0.4), 0 4px 0 rgba(0,0,0,0.5)' }}>Check If You&apos;re Owed Money — Free</Link>
             <Link href="/resources/how-it-works" className="btn-secondary">See How It Works</Link>
             <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'#5a6890' }}>// No fees until we recover</span>
           </div>
@@ -179,7 +179,7 @@ export default function Home() {
             </p>
           </div>
           <div style={{ display:'flex', gap:'12px', flexShrink:0 }}>
-            <Link href="/contact" className="btn-primary">Free Claim Review</Link>
+            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#2a3fa0 0%,#1a2a7a 100%)', borderColor:'rgba(74,127,212,0.6)', boxShadow:'0 0 20px rgba(30,40,127,0.4), 0 4px 0 rgba(0,0,0,0.5)' }}>Free Claim Review</Link>
             <Link href="tel:+13058001234" className="btn-secondary">Call Us Now</Link>
           </div>
         </div>
