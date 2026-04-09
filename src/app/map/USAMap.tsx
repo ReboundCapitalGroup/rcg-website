@@ -3,77 +3,75 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { statePaths, stateCentroids } from './stateData'
 
-const stateInfo: Record<string, { name: string; slug: string; deadline: string; active: boolean; attorney: boolean }> = {
-  AL: { name: 'Alabama', slug: 'alabama', deadline: '3 years', active: false, attorney: false },
-  AK: { name: 'Alaska', slug: 'alaska', deadline: '10 years', active: false, attorney: false },
-  AZ: { name: 'Arizona', slug: 'arizona', deadline: '3 years', active: true, attorney: false },
-  AR: { name: 'Arkansas', slug: 'arkansas', deadline: '5 years', active: false, attorney: false },
-  CA: { name: 'California', slug: 'california', deadline: '1 year', active: false, attorney: true },
-  CO: { name: 'Colorado', slug: 'colorado', deadline: '2.5 years', active: true, attorney: false },
-  CT: { name: 'Connecticut', slug: 'connecticut', deadline: '3 years', active: false, attorney: false },
-  DC: { name: 'Washington D.C.', slug: 'washington-dc', deadline: '3 years', active: false, attorney: false },
-  DE: { name: 'Delaware', slug: 'delaware', deadline: '5 years', active: false, attorney: false },
-  FL: { name: 'Florida', slug: 'florida', deadline: '60 days', active: true, attorney: false },
-  GA: { name: 'Georgia', slug: 'georgia', deadline: '5 years', active: false, attorney: false },
-  HI: { name: 'Hawaii', slug: 'hawaii', deadline: '10 years', active: false, attorney: false },
-  ID: { name: 'Idaho', slug: 'idaho', deadline: '3 years', active: false, attorney: false },
-  IL: { name: 'Illinois', slug: 'illinois', deadline: '7 years', active: false, attorney: true },
-  IN: { name: 'Indiana', slug: 'indiana', deadline: '3 years', active: false, attorney: false },
-  IA: { name: 'Iowa', slug: 'iowa', deadline: '10 years', active: false, attorney: false },
-  KS: { name: 'Kansas', slug: 'kansas', deadline: '5 years', active: false, attorney: false },
-  KY: { name: 'Kentucky', slug: 'kentucky', deadline: '5 years', active: false, attorney: false },
-  LA: { name: 'Louisiana', slug: 'louisiana', deadline: '5 years', active: false, attorney: false },
-  ME: { name: 'Maine', slug: 'maine', deadline: '6 years', active: false, attorney: false },
-  MD: { name: 'Maryland', slug: 'maryland', deadline: '3 years', active: false, attorney: false },
-  MA: { name: 'Massachusetts', slug: 'massachusetts', deadline: '3 years', active: false, attorney: true },
-  MI: { name: 'Michigan', slug: 'michigan', deadline: '1 year', active: true, attorney: false },
-  MN: { name: 'Minnesota', slug: 'minnesota', deadline: '5 years', active: false, attorney: false },
-  MS: { name: 'Mississippi', slug: 'mississippi', deadline: '3 years', active: false, attorney: false },
-  MO: { name: 'Missouri', slug: 'missouri', deadline: '10 years', active: false, attorney: false },
-  MT: { name: 'Montana', slug: 'montana', deadline: '5 years', active: false, attorney: false },
-  NE: { name: 'Nebraska', slug: 'nebraska', deadline: '5 years', active: false, attorney: false },
-  NV: { name: 'Nevada', slug: 'nevada', deadline: '1 year', active: false, attorney: false },
-  NH: { name: 'New Hampshire', slug: 'new-hampshire', deadline: '3 years', active: false, attorney: false },
-  NJ: { name: 'New Jersey', slug: 'new-jersey', deadline: '3 years', active: false, attorney: false },
-  NM: { name: 'New Mexico', slug: 'new-mexico', deadline: '9 months', active: false, attorney: false },
-  NY: { name: 'New York', slug: 'new-york', deadline: '3 years', active: false, attorney: true },
-  NC: { name: 'North Carolina', slug: 'north-carolina', deadline: '3 years', active: false, attorney: false },
-  ND: { name: 'North Dakota', slug: 'north-dakota', deadline: '10 years', active: false, attorney: false },
-  OH: { name: 'Ohio', slug: 'ohio', deadline: '5 years', active: true, attorney: false },
-  OK: { name: 'Oklahoma', slug: 'oklahoma', deadline: '5 years', active: false, attorney: false },
-  OR: { name: 'Oregon', slug: 'oregon', deadline: '5 years', active: false, attorney: false },
-  PA: { name: 'Pennsylvania', slug: 'pennsylvania', deadline: '2 years', active: false, attorney: true },
-  RI: { name: 'Rhode Island', slug: 'rhode-island', deadline: '3 years', active: false, attorney: false },
-  SC: { name: 'South Carolina', slug: 'south-carolina', deadline: '5 years', active: false, attorney: false },
-  SD: { name: 'South Dakota', slug: 'south-dakota', deadline: '6 years', active: false, attorney: false },
-  TN: { name: 'Tennessee', slug: 'tennessee', deadline: '2 years', active: false, attorney: false },
-  TX: { name: 'Texas', slug: 'texas', deadline: '2 years', active: false, attorney: false },
-  UT: { name: 'Utah', slug: 'utah', deadline: '3 years', active: false, attorney: false },
-  VT: { name: 'Vermont', slug: 'vermont', deadline: '6 years', active: false, attorney: false },
-  VA: { name: 'Virginia', slug: 'virginia', deadline: '2 years', active: false, attorney: false },
-  WA: { name: 'Washington', slug: 'washington', deadline: '3 years', active: false, attorney: false },
-  WV: { name: 'West Virginia', slug: 'west-virginia', deadline: '10 years', active: false, attorney: false },
-  WI: { name: 'Wisconsin', slug: 'wisconsin', deadline: '3 years', active: false, attorney: false },
-  WY: { name: 'Wyoming', slug: 'wyoming', deadline: '5 years', active: false, attorney: false },
+const stateInfo: Record<string, { name: string; slug: string; funds: string; active: boolean; counties: number }> = {
+  AL: { name: 'Alabama', slug: 'alabama', funds: '$892M', active: false, counties: 67 },
+  AK: { name: 'Alaska', slug: 'alaska', funds: '$210M', active: false, counties: 30 },
+  AZ: { name: 'Arizona', slug: 'arizona', funds: '$1.8B', active: true, counties: 15 },
+  AR: { name: 'Arkansas', slug: 'arkansas', funds: '$421M', active: false, counties: 75 },
+  CA: { name: 'California', slug: 'california', funds: '$15B', active: false, counties: 58 },
+  CO: { name: 'Colorado', slug: 'colorado', funds: '$980M', active: true, counties: 64 },
+  CT: { name: 'Connecticut', slug: 'connecticut', funds: '$940M', active: false, counties: 8 },
+  DC: { name: 'Washington D.C.', slug: 'washington-dc', funds: '$180M', active: false, counties: 1 },
+  DE: { name: 'Delaware', slug: 'delaware', funds: '$310M', active: false, counties: 3 },
+  FL: { name: 'Florida', slug: 'florida', funds: '$2.4B', active: true, counties: 67 },
+  GA: { name: 'Georgia', slug: 'georgia', funds: '$1.6B', active: false, counties: 159 },
+  HI: { name: 'Hawaii', slug: 'hawaii', funds: '$290M', active: false, counties: 5 },
+  ID: { name: 'Idaho', slug: 'idaho', funds: '$218M', active: false, counties: 44 },
+  IL: { name: 'Illinois', slug: 'illinois', funds: '$3.2B', active: false, counties: 102 },
+  IN: { name: 'Indiana', slug: 'indiana', funds: '$892M', active: false, counties: 92 },
+  IA: { name: 'Iowa', slug: 'iowa', funds: '$412M', active: false, counties: 99 },
+  KS: { name: 'Kansas', slug: 'kansas', funds: '$390M', active: false, counties: 105 },
+  KY: { name: 'Kentucky', slug: 'kentucky', funds: '$580M', active: false, counties: 120 },
+  LA: { name: 'Louisiana', slug: 'louisiana', funds: '$720M', active: false, counties: 64 },
+  ME: { name: 'Maine', slug: 'maine', funds: '$310M', active: false, counties: 16 },
+  MD: { name: 'Maryland', slug: 'maryland', funds: '$1.1B', active: false, counties: 24 },
+  MA: { name: 'Massachusetts', slug: 'massachusetts', funds: '$2.4B', active: false, counties: 14 },
+  MI: { name: 'Michigan', slug: 'michigan', funds: '$1.2B', active: true, counties: 83 },
+  MN: { name: 'Minnesota', slug: 'minnesota', funds: '$1.0B', active: false, counties: 87 },
+  MS: { name: 'Mississippi', slug: 'mississippi', funds: '$280M', active: false, counties: 82 },
+  MO: { name: 'Missouri', slug: 'missouri', funds: '$890M', active: false, counties: 115 },
+  MT: { name: 'Montana', slug: 'montana', funds: '$148M', active: false, counties: 56 },
+  NE: { name: 'Nebraska', slug: 'nebraska', funds: '$310M', active: false, counties: 93 },
+  NV: { name: 'Nevada', slug: 'nevada', funds: '$840M', active: false, counties: 17 },
+  NH: { name: 'New Hampshire', slug: 'new-hampshire', funds: '$320M', active: false, counties: 10 },
+  NJ: { name: 'New Jersey', slug: 'new-jersey', funds: '$2.8B', active: false, counties: 21 },
+  NM: { name: 'New Mexico', slug: 'new-mexico', funds: '$340M', active: false, counties: 33 },
+  NY: { name: 'New York', slug: 'new-york', funds: '$13B', active: false, counties: 62 },
+  NC: { name: 'North Carolina', slug: 'north-carolina', funds: '$1.3B', active: false, counties: 100 },
+  ND: { name: 'North Dakota', slug: 'north-dakota', funds: '$118M', active: false, counties: 53 },
+  OH: { name: 'Ohio', slug: 'ohio', funds: '$4.8B', active: true, counties: 88 },
+  OK: { name: 'Oklahoma', slug: 'oklahoma', funds: '$520M', active: false, counties: 77 },
+  OR: { name: 'Oregon', slug: 'oregon', funds: '$780M', active: false, counties: 36 },
+  PA: { name: 'Pennsylvania', slug: 'pennsylvania', funds: '$4.5B', active: false, counties: 67 },
+  RI: { name: 'Rhode Island', slug: 'rhode-island', funds: '$290M', active: false, counties: 5 },
+  SC: { name: 'South Carolina', slug: 'south-carolina', funds: '$620M', active: false, counties: 46 },
+  SD: { name: 'South Dakota', slug: 'south-dakota', funds: '$112M', active: false, counties: 66 },
+  TN: { name: 'Tennessee', slug: 'tennessee', funds: '$980M', active: false, counties: 95 },
+  TX: { name: 'Texas', slug: 'texas', funds: '$10.5B', active: false, counties: 254 },
+  UT: { name: 'Utah', slug: 'utah', funds: '$490M', active: false, counties: 29 },
+  VT: { name: 'Vermont', slug: 'vermont', funds: '$150M', active: false, counties: 14 },
+  VA: { name: 'Virginia', slug: 'virginia', funds: '$1.5B', active: false, counties: 95 },
+  WA: { name: 'Washington', slug: 'washington', funds: '$1.4B', active: false, counties: 39 },
+  WV: { name: 'West Virginia', slug: 'west-virginia', funds: '$280M', active: false, counties: 55 },
+  WI: { name: 'Wisconsin', slug: 'wisconsin', funds: '$890M', active: false, counties: 72 },
+  WY: { name: 'Wyoming', slug: 'wyoming', funds: '$98M', active: false, counties: 23 },
 }
-
-const urgentDeadlines = new Set(['60 days', '9 months', '1 year'])
 
 export default function USAMap() {
   const [hovered, setHovered] = useState<string | null>(null)
-  const [tooltip, setTooltip] = useState({ x: 0, y: 0 })
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
   const router = useRouter()
 
   const getStateFill = (code: string, isHovered: boolean) => {
     const info = stateInfo[code]
-    if (!info) return '#2a3350'
-    if (isHovered) return info.active ? '#2a40c0' : '#3d4f72'
-    return info.active ? '#1E287F' : '#243055'
+    if (!info) return '#1e2438'
+    if (isHovered) return info.active ? '#2a40c0' : '#2e3a5a'
+    return info.active ? '#1E287F' : '#1e2d4a'
   }
 
   const getStroke = (code: string, isHovered: boolean) => {
     if (isHovered) return '#8fa3f0'
-    return stateInfo[code]?.active ? '#3a5fd4' : '#1a2540'
+    return stateInfo[code]?.active ? '#3a5fd4' : '#131d35'
   }
 
   const hInfo = hovered ? stateInfo[hovered] : null
@@ -84,35 +82,48 @@ export default function USAMap() {
       {hovered && hInfo && (
         <div style={{
           position: 'absolute',
-          left: Math.min(tooltip.x + 12, 820),
-          top: Math.max(tooltip.y - 80, 0),
-          background: '#0d1220',
-          border: '1px solid rgba(30,40,127,0.7)',
-          padding: '12px 16px',
+          left: Math.min(mouse.x + 14, 760),
+          top: Math.max(mouse.y - 100, 4),
+          background: 'linear-gradient(135deg, #0d1220 0%, #111828 100%)',
+          border: `1px solid ${hInfo.active ? 'rgba(30,40,127,0.8)' : 'rgba(255,255,255,0.06)'}`,
+          padding: '14px 18px',
           pointerEvents: 'none',
           zIndex: 20,
-          minWidth: '190px',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.7)',
+          minWidth: '200px',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.8)',
         }}>
-          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '14px', color: '#fff', marginBottom: '6px' }}>
-            {hInfo.name}
-          </div>
-          <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', color: '#8fa3f0', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '2px' }}>
-            Claim Deadline:{' '}
-            <span style={{ color: urgentDeadlines.has(hInfo.deadline) ? '#f0a500' : '#c8d8ff' }}>
-              {hInfo.deadline}
-            </span>
-          </div>
-          {hInfo.attorney && (
-            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', color: '#f0a500', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '2px' }}>
-              ⚠ Attorney Required
+          {/* Active badge */}
+          {hInfo.active && (
+            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a7fd4', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4a7fd4', boxShadow: '0 0 6px #4a7fd4' }} />
+              Active — Live Monitoring
             </div>
           )}
-          <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', marginTop: '6px', color: hInfo.active ? '#4a6fd4' : '#4a5890' }}>
-            {hInfo.active ? '● Active — Live Court Monitoring' : '○ Coming Soon — Expanding Nationwide'}
+
+          {/* State name */}
+          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '15px', color: '#fff', marginBottom: '10px', letterSpacing: '-0.3px' }}>
+            {hInfo.name}
           </div>
-          <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: '#1E287F', marginTop: '6px', letterSpacing: '0.5px' }}>
-            Click to view state guide →
+
+          {/* Funds */}
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '6px' }}>
+            <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '22px', color: hInfo.active ? '#6a90f0' : '#4a6090', letterSpacing: '-1px' }}>
+              {hInfo.funds}
+            </span>
+            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1px', textTransform: 'uppercase', color: '#3a5080' }}>
+              unclaimed
+            </span>
+          </div>
+
+          {/* Counties */}
+          {hInfo.active && (
+            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', color: '#3a5070', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>
+              {hInfo.counties} counties monitored
+            </div>
+          )}
+
+          <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: hInfo.active ? '#1E287F' : '#1a2540', letterSpacing: '0.5px', marginTop: '8px', paddingTop: '8px', borderTop: `1px solid ${hInfo.active ? 'rgba(30,40,127,0.3)' : 'rgba(255,255,255,0.04)'}` }}>
+            {hInfo.active ? 'Click to view state guide →' : 'Coming soon — we can still help →'}
           </div>
         </div>
       )}
@@ -122,25 +133,18 @@ export default function USAMap() {
         style={{ width: '100%', height: 'auto', display: 'block', cursor: 'pointer' }}
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect()
-          const scaleX = 960 / rect.width
-          const scaleY = 600 / rect.height
-          setTooltip({
-            x: (e.clientX - rect.left) / scaleX * (rect.width / 960),
-            y: (e.clientY - rect.top) / scaleY * (rect.height / 600),
+          setMouse({
+            x: (e.clientX - rect.left) * (960 / rect.width),
+            y: (e.clientY - rect.top) * (600 / rect.height),
           })
         }}
         onMouseLeave={() => setHovered(null)}
       >
-        {/* Dark background */}
-        <rect width="960" height="600" fill="#111827" />
+        <rect width="960" height="600" fill="#0d1220" />
 
-        {/* Render all states */}
         {Object.entries(statePaths).map(([code, path]) => {
           const isHovered = hovered === code
-          const info = stateInfo[code]
           const centroid = stateCentroids[code]
-
-          // Skip tiny states that overlap badly at this zoom
           const skipLabel = ['DC', 'RI', 'DE', 'CT', 'NJ', 'MD', 'MA', 'VT', 'NH']
 
           return (
@@ -150,21 +154,19 @@ export default function USAMap() {
                 fill={getStateFill(code, isHovered)}
                 stroke={getStroke(code, isHovered)}
                 strokeWidth={isHovered ? 1.5 : 0.5}
-                style={{ transition: 'fill 0.12s ease', cursor: 'pointer' }}
+                style={{ transition: 'fill 0.1s ease', cursor: 'pointer' }}
                 onMouseEnter={() => setHovered(code)}
-                onClick={() => info && router.push(`/states/${info.slug}`)}
+                onClick={() => stateInfo[code] && router.push(`/states/${stateInfo[code].slug}`)}
               />
-              {/* State label — skip tiny NE states */}
               {centroid && !skipLabel.includes(code) && (
                 <text
-                  x={centroid[0]}
-                  y={centroid[1] + 3}
+                  x={centroid[0]} y={centroid[1] + 3}
                   textAnchor="middle"
                   style={{
                     fontFamily: "'Space Mono', monospace",
-                    fontSize: code === 'AK' || code === 'TX' || code === 'CA' || code === 'MT' ? '9px' : '7px',
+                    fontSize: ['TX','CA','MT','AK'].includes(code) ? '9px' : '7px',
                     fontWeight: 700,
-                    fill: info?.active ? '#c8d8ff' : isHovered ? '#e8edf8' : '#6a80b0',
+                    fill: stateInfo[code]?.active ? '#8ab0f0' : '#2a3d6a',
                     pointerEvents: 'none',
                     userSelect: 'none',
                     letterSpacing: '0.5px',
@@ -177,23 +179,19 @@ export default function USAMap() {
           )
         })}
 
-        {/* Small NE state callout lines */}
-        {['DC', 'RI', 'DE', 'CT', 'NJ', 'MD', 'MA', 'VT', 'NH'].map(code => {
-          const c = stateCentroids[code]
+        {/* NE state callout lines */}
+        {[
+          ['DC', 820, 325], ['RI', 870, 278], ['DE', 855, 303],
+          ['CT', 855, 258], ['NJ', 868, 328], ['MD', 855, 343],
+          ['MA', 868, 233], ['VT', 870, 208], ['NH', 870, 223],
+        ].map(([code, ox, oy]) => {
+          const c = stateCentroids[code as string]
           if (!c) return null
-          const info = stateInfo[code]
-          // Label positions offset to the right
-          const offsets: Record<string, [number,number]> = {
-            DC: [820, 325], RI: [870, 280], DE: [855, 305], CT: [855, 260],
-            NJ: [865, 330], MD: [855, 345], MA: [865, 235], VT: [870, 210], NH: [870, 225],
-          }
-          const off = offsets[code]
-          if (!off) return null
           return (
             <g key={code}>
-              <line x1={c[0]} y1={c[1]} x2={off[0] - 18} y2={off[1]} stroke="#2a3a60" strokeWidth={0.5} />
-              <text x={off[0]} y={off[1] + 3} textAnchor="start"
-                style={{ fontFamily: "'Space Mono',monospace", fontSize: '7px', fontWeight: 700, fill: info?.active ? '#c8d8ff' : '#6a80b0', pointerEvents: 'none', userSelect: 'none' }}>
+              <line x1={c[0]} y1={c[1]} x2={(ox as number) - 16} y2={oy as number} stroke="#1a2540" strokeWidth={0.5} />
+              <text x={ox as number} y={(oy as number) + 3} textAnchor="start"
+                style={{ fontFamily: "'Space Mono',monospace", fontSize: '7px', fontWeight: 700, fill: stateInfo[code as string]?.active ? '#8ab0f0' : '#2a3d6a', pointerEvents: 'none', userSelect: 'none' }}>
                 {code}
               </text>
             </g>
@@ -203,18 +201,13 @@ export default function USAMap() {
 
       {/* Legend */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px', marginTop: '16px', flexWrap: 'wrap' }}>
-        {[
-          { color: '#1E287F', border: '#3a5fd4', label: 'Active — Live Monitoring' },
-          { color: '#243055', border: '#1a2540', label: 'Coming Soon' },
-        ].map((item, i) => (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '1px', textTransform: 'uppercase', color: '#5a6890' }}>
-            <div style={{ width: '18px', height: '12px', background: item.color, border: `1px solid ${item.border}`, flexShrink: 0 }} />
-            {item.label}
-          </div>
-        ))}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '1px', textTransform: 'uppercase', color: '#5a6890' }}>
-          <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f0a500', flexShrink: 0 }} />
-          Urgent Deadline
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#4a6090' }}>
+          <div style={{ width: '18px', height: '12px', background: '#1E287F', border: '1px solid #3a5fd4' }} />
+          Active — Live Monitoring
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#4a6090' }}>
+          <div style={{ width: '18px', height: '12px', background: '#1e2d4a', border: '1px solid #131d35' }} />
+          Coming Soon — We Can Still Help
         </div>
       </div>
     </div>

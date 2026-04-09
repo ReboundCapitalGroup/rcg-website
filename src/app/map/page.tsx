@@ -40,10 +40,10 @@ export default function MapPage() {
           // interactive unclaimed funds map
         </span>
         <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,3.5vw,48px)', color: '#fff', letterSpacing: '-1.5px', lineHeight: 0.95, marginBottom: '14px' }}>
-          Surplus Fund Laws.<br /><span style={{ color: '#5a6890' }}>Coming to All 50 States.</span>
+          $70 Billion.<br /><span style={{ color: '#5a6890' }}>Sitting in State Treasuries.</span>
         </h1>
         <p style={{ fontSize: '14px', color: '#5a6890', maxWidth: '520px', margin: '0 auto', lineHeight: 1.6 }}>
-          Currently active in Florida, Arizona, Colorado, Ohio, and Michigan — with live case monitoring and daily court scraping. Expanding nationwide. Hover any state to see claim deadlines.
+          Unclaimed bank accounts. Forgotten checks. Insurance payouts. Court-held funds. Every state is holding money that legally belongs to someone. Hover any state to see how much. Click to start a claim.
         </p>
       </div>
 

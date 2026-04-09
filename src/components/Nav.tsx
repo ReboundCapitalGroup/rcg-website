@@ -83,7 +83,7 @@ export default function Nav() {
             <DDItem href="/states">All 50 States →</DDItem>
           </DDMenu>
 
-          <Link href="/map" className="nav-map-btn">Unclaimed Funds Map</Link>
+          <Link href="/map" className="nav-map-btn">Unclaimed Property Map</Link>
 
           {/* RESOURCES */}
           <DDMenu label="Resources">
