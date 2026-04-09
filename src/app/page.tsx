@@ -64,14 +64,14 @@ export default function Home() {
           </div>
 
           {/* Headline — two clean lines */}
-          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(32px,4vw,60px)', lineHeight:1.1, color:'#fff', letterSpacing:'-2px', margin:'0 0 28px' }}>
+          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(32px,4vw,60px)', lineHeight:1.05, color:'#fff', letterSpacing:'-2px', margin:'0 0 32px' }}>
             Turning <span style={{ color:'#ffffff' }}>Forgotten Funds</span>
             <br />
-            Into <span style={{ color:'#3a5a9a', textShadow:'0 0 60px rgba(74,127,212,0.4)' }}>Future Opportunities.</span>
+            Into <span style={{ color:'#2e4a88' }}>Future Opportunities.</span>
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
-          <p style={{ fontSize:'15px', color:'#b8ccec', lineHeight:2, maxWidth:'680px', margin:'0 auto 32px', fontWeight:400, textAlign:'center' }}>
+          <p style={{ fontSize:'15px', color:'#a8bedd', lineHeight:1.85, maxWidth:'560px', margin:'0 auto 36px', fontWeight:400, textAlign:'center' }}>
             Foreclosure surplus. Tax deed overages. Unclaimed property. State-held funds.<br />
             If money was left behind, <strong style={{ color:'#e8edf8', fontWeight:600 }}>it legally belongs to you.</strong><br />
             We recover it across FL, AZ, CO, OH and MI. Expanding to all 50 states. Zero upfront cost. Ever.
@@ -79,8 +79,8 @@ export default function Home() {
 
           {/* CTAs */}
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'14px', flexWrap:'wrap' }}>
-            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#1e2d6a 0%,#131d4a 100%)', border:'1px solid rgba(74,127,212,0.4)', boxShadow:'0 0 12px rgba(30,40,127,0.3), 0 4px 0 rgba(0,0,0,0.6)', letterSpacing:'1px' }}>Check If You&apos;re Owed Money — Free</Link>
-            <Link href="/resources/how-it-works" className="btn-secondary">See How It Works</Link>
+            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#1a2860 0%,#0f1a40 100%)', border:'1px solid rgba(74,127,212,0.35)', boxShadow:'0 0 24px rgba(20,35,100,0.5), 0 4px 0 rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.07)', letterSpacing:'1.2px', padding:'16px 40px' }}>Check If You&apos;re Owed Money — Free</Link>
+            <Link href="/resources/how-it-works" className="btn-secondary" style={{ background:'linear-gradient(180deg,#1a1f2e 0%,#0f1218 100%)', border:'1px solid rgba(74,127,212,0.2)', color:'#7090c0', boxShadow:'0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)', letterSpacing:'1px', padding:'16px 32px' }}>See How It Works</Link>
             <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'#5a6890' }}>// No fees until we recover</span>
           </div>
         </div>
@@ -179,8 +179,8 @@ export default function Home() {
             </p>
           </div>
           <div style={{ display:'flex', gap:'12px', flexShrink:0 }}>
-            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#1e2d6a 0%,#131d4a 100%)', border:'1px solid rgba(74,127,212,0.4)', boxShadow:'0 0 12px rgba(30,40,127,0.3), 0 4px 0 rgba(0,0,0,0.6)', letterSpacing:'1px' }}>Free Claim Review</Link>
-            <Link href="tel:+13058001234" className="btn-secondary">Call Us Now</Link>
+            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#1a2860 0%,#0f1a40 100%)', border:'1px solid rgba(74,127,212,0.35)', boxShadow:'0 0 24px rgba(20,35,100,0.5), 0 4px 0 rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.07)', letterSpacing:'1.2px', padding:'16px 40px' }}>Free Claim Review</Link>
+            <Link href="tel:+13058001234" className="btn-secondary" style={{ background:'linear-gradient(180deg,#1a1f2e 0%,#0f1218 100%)', border:'1px solid rgba(74,127,212,0.2)', color:'#7090c0', boxShadow:'0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)', letterSpacing:'1px', padding:'16px 32px' }}>Call Us Now</Link>
           </div>
         </div>
       </div>

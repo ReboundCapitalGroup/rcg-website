@@ -45,7 +45,7 @@ export default function MapPage() {
       <div style={{ position: 'relative', zIndex: 2 }}>
 
         {/* HERO */}
-        <div style={{ padding: '52px 40px 36px', textAlign: 'center', borderBottom: '1px solid rgba(74,95,212,0.12)' }}>
+        <div style={{ padding: '60px 40px 44px', textAlign: 'center', borderBottom: '1px solid rgba(74,95,212,0.1)' }}>
           <div style={{ maxWidth: '860px', margin: '0 auto' }}>
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '20px' }}>
@@ -60,7 +60,7 @@ export default function MapPage() {
               Your Money Is Out There.
             </h1>
 
-            <p style={{ fontSize: '15px', color: 'var(--mid)', lineHeight: 1.8, maxWidth: '580px', margin: '0 auto 12px' }}>
+            <p style={{ fontSize: '15px', color: '#a0b8d8', lineHeight: 1.85, maxWidth: '520px', margin: '0 auto 14px' }}>
               Banks, insurers, courts, and employers report billions in unclaimed funds to state governments every year. Most people never know it exists.
             </p>
             <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '11px', color: '#4a5f94', marginBottom: '32px', letterSpacing: '0.5px' }}>
@@ -68,11 +68,11 @@ export default function MapPage() {
             </p>
 
             {/* COUNTER */}
-            <div style={{ display: 'inline-block', background: 'rgba(20,30,80,0.2)', border: '1px solid rgba(74,127,212,0.25)', padding: '24px 48px', boxShadow: '0 0 40px rgba(30,40,127,0.15), inset 0 1px 0 rgba(255,255,255,0.05)' }}>
-              <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5f94', marginBottom: '10px' }}>
+            <div style={{ display: 'inline-block', background: 'linear-gradient(135deg,rgba(20,30,80,0.25) 0%,rgba(10,15,35,0.4) 100%)', border: '1px solid rgba(74,127,212,0.3)', padding: '28px 56px', boxShadow: '0 0 60px rgba(20,35,100,0.2), 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)', minWidth:'420px' }}>
+              <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '3px', textTransform: 'uppercase', color: '#3a4f7a', marginBottom: '12px' }}>
                 Estimated Unclaimed Property — U.S. States
               </div>
-              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,5vw,52px)', color: '#c8d8ff', letterSpacing: '-2px', lineHeight: 1, marginBottom: '10px', textShadow: '0 0 40px rgba(74,127,212,0.3)' }}>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,5vw,52px)', color: '#dce8ff', letterSpacing: '-3px', lineHeight: 1, marginBottom: '12px', textShadow: '0 2px 20px rgba(74,127,212,0.2)' }}>
                 $70,847,000,000+
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
@@ -94,8 +94,8 @@ export default function MapPage() {
               { val: '30d', label: 'Avg. Claim Turnaround', blue: false },
               { val: '$0', label: 'Upfront Cost — Ever', blue: false },
             ].map((s, i) => (
-              <div key={i} style={{ padding: '20px 24px', borderRight: i < 3 ? '1px solid rgba(74,95,212,0.12)' : 'none', textAlign: 'center' }}>
-                <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '28px', color: s.blue ? 'var(--rcg2)' : 'var(--text)', letterSpacing: '-1px', lineHeight: 1 }}>
+              <div key={i} style={{ padding: '22px 28px', borderRight: i < 3 ? '1px solid rgba(74,95,212,0.12)' : 'none', textAlign: 'center' }}>
+                <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '30px', color: s.blue ? '#4a7fd4' : '#c8d8f0', letterSpacing: '-1.5px', lineHeight: 1 }}>
                   {s.val}
                 </div>
                 <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#ffffff', marginTop: '4px', opacity: 0.7 }}>
