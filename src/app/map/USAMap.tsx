@@ -101,7 +101,7 @@ export default function USAMap() {
           )}
 
           {/* State name */}
-          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '15px', color: '#fff', marginBottom: '10px', letterSpacing: '-0.3px' }}>
+          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '15px', color: '#e0e8f8', marginBottom: '10px', letterSpacing: '-0.3px' }}>
             {hInfo.name}
           </div>
 
@@ -122,7 +122,7 @@ export default function USAMap() {
             </div>
           )}
 
-          <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: hInfo.active ? '#1E287F' : '#1a2540', letterSpacing: '0.5px', marginTop: '8px', paddingTop: '8px', borderTop: `1px solid ${hInfo.active ? 'rgba(30,40,127,0.3)' : 'rgba(255,255,255,0.04)'}` }}>
+          <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: hInfo.active ? '#4a6fd4' : '#4a5880', letterSpacing: '0.5px', marginTop: '8px', paddingTop: '8px', borderTop: `1px solid ${hInfo.active ? 'rgba(30,40,127,0.3)' : 'rgba(255,255,255,0.04)'}` }}>
             {hInfo.active ? 'Click to view state guide →' : 'Coming soon — we can still help →'}
           </div>
         </div>

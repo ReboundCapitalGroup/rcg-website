@@ -71,10 +71,10 @@ export default function Home() {
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
-          <p style={{ fontSize:'15px', color:'#a8bedd', lineHeight:1.9, maxWidth:'600px', margin:'0 auto 40px', fontWeight:400, textAlign:'center' }}>
+          <p style={{ fontSize:'15px', color:'#a8bedd', lineHeight:1.9, maxWidth:'600px', margin:'0 auto 28px', fontWeight:400, textAlign:'center' }}>
             Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds.<br />
             If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong><br />
-            We recover it across FL, AZ, CO, OH and MI. Zero upfront cost. Ever.
+            We recover it across FL, AZ, CO, OH, MI and expanding. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong>
           </p>
 
           {/* CTAs */}
