@@ -50,13 +50,13 @@ export default function MapPage() {
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '20px' }}>
               <div style={{ width: '30px', height: '1px', background: 'rgba(74,95,212,0.4)' }} />
-              <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '3px', textTransform: 'uppercase', color: '#4a5f94' }}>
+              <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '3px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.5 }}>
                 Unclaimed Property Intelligence
               </span>
               <div style={{ width: '30px', height: '1px', background: 'rgba(74,95,212,0.4)' }} />
             </div>
 
-            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(32px,5vw,58px)', color: '#1E287F', letterSpacing: '-2px', lineHeight: 1, marginBottom: '20px' }}>
+            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(32px,5vw,58px)', color: '#1E287F', letterSpacing: '-2px', lineHeight: 1, marginBottom: '20px', textShadow: '0 0 40px rgba(30,40,127,0.8), -1px -1px 0 rgba(255,255,255,0.15), 1px -1px 0 rgba(255,255,255,0.15), -1px 1px 0 rgba(255,255,255,0.15), 1px 1px 0 rgba(255,255,255,0.15)' }}>
               Your Money Is Out There.
             </h1>
 
@@ -98,7 +98,7 @@ export default function MapPage() {
                 <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '28px', color: s.blue ? 'var(--rcg2)' : 'var(--text)', letterSpacing: '-1px', lineHeight: 1 }}>
                   {s.val}
                 </div>
-                <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a5f94', marginTop: '4px' }}>
+                <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#ffffff', marginTop: '4px', opacity: 0.7 }}>
                   {s.label}
                 </div>
               </div>
@@ -139,8 +139,8 @@ export default function MapPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '6px', marginBottom: '48px' }}>
             {allStateFunds.map((s, i) => (
               <div key={i} style={{ background: 'rgba(30,40,127,0.06)', border: '1px solid rgba(74,95,212,0.1)', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: 'var(--mid)', fontWeight: 600 }}>{s.name}</span>
-                <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: 'var(--text)', fontWeight: 700 }}>{s.funds}</span>
+                <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: '#ffffff', fontWeight: 600, opacity: 0.8 }}>{s.name}</span>
+                <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: '#ffffff', fontWeight: 700 }}>{s.funds}</span>
               </div>
             ))}
           </div>
@@ -152,7 +152,7 @@ export default function MapPage() {
           </div>
 
           <div style={{ marginTop: '48px', paddingTop: '24px', borderTop: '1px solid rgba(74,95,212,0.1)', textAlign: 'center' }}>
-            <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1px', textTransform: 'uppercase', color: '#2a3a60', lineHeight: 2 }}>
+            <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.3, lineHeight: 2 }}>
               All recovery services conducted in partnership with licensed attorneys and licensed private investigators. RCG does not practice law.
             </p>
           </div>

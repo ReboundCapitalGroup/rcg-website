@@ -166,7 +166,7 @@ export default function USAMap() {
                     fontFamily: "'Space Mono', monospace",
                     fontSize: ['TX','CA','MT','AK'].includes(code) ? '9px' : '7px',
                     fontWeight: 700,
-                    fill: stateInfo[code]?.active ? '#8ab0f0' : '#4a6090',
+                    fill: stateInfo[code]?.active ? '#ffffff' : '#6a80a8',
                     pointerEvents: 'none',
                     userSelect: 'none',
                     letterSpacing: '0.5px',
@@ -191,7 +191,7 @@ export default function USAMap() {
             <g key={code}>
               <line x1={c[0]} y1={c[1]} x2={(ox as number) - 16} y2={oy as number} stroke="#2a3d60" strokeWidth={0.5} />
               <text x={ox as number} y={(oy as number) + 3} textAnchor="start"
-                style={{ fontFamily: "'Space Mono',monospace", fontSize: '7px', fontWeight: 700, fill: stateInfo[code as string]?.active ? '#8ab0f0' : '#4a6090', pointerEvents: 'none', userSelect: 'none' }}>
+                style={{ fontFamily: "'Space Mono',monospace", fontSize: '7px', fontWeight: 700, fill: stateInfo[code as string]?.active ? '#ffffff' : '#6a80a8', pointerEvents: 'none', userSelect: 'none' }}>
                 {code}
               </text>
             </g>
@@ -201,11 +201,11 @@ export default function USAMap() {
 
       {/* Legend */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px', marginTop: '16px', flexWrap: 'wrap' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#4a6090' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.6 }}>
           <div style={{ width: '18px', height: '12px', background: '#1E287F', border: '1px solid #3a5fd4' }} />
           Active — Live Monitoring
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#4a6090' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.6 }}>
           <div style={{ width: '18px', height: '12px', background: '#1e2d4a', border: '1px solid #131d35' }} />
           Coming Soon — We Can Still Help
         </div>
