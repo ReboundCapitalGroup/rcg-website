@@ -74,7 +74,7 @@ export default function Home() {
           <p style={{ fontSize:'15px', color:'#a8bedd', lineHeight:1.9, maxWidth:'600px', margin:'0 auto 40px', fontWeight:400, textAlign:'center' }}>
             Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds.<br />
             If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong><br />
-            We recover it across FL, AZ, CO, OH and MI — expanding nationwide. Zero upfront cost. Ever.
+            We recover it across FL, AZ, CO, OH and MI. Zero upfront cost. Ever.
           </p>
 
           {/* CTAs */}

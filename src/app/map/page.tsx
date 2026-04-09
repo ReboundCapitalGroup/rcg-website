@@ -63,7 +63,7 @@ export default function MapPage() {
             <p style={{ fontSize: '15px', color: '#a0b8d8', lineHeight: 1.85, maxWidth: '540px', margin: '0 auto 14px' }}>
               Banks, insurers, courts, and employers report billions in unclaimed funds to state governments every year. Most people never know it exists.
             </p>
-            <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: '#3a4f72', marginBottom: '36px', letterSpacing: '2px', textTransform: 'uppercase' }}>
+            <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: '#ffffff', opacity: 0.5, marginBottom: '36px', letterSpacing: '2px', textTransform: 'uppercase' }}>
               Hover any state to see what's held  ·  Click to start a recovery
             </p>
 
