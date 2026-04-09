@@ -22,7 +22,7 @@ const firmStats = [
   { val:'$0', desc:'Upfront cost to any client — ever. Pure contingency model.' },
   { val:'81+', desc:'County court systems actively monitored and scraped daily.' },
   { val:'5 → 50', desc:'Active states now. FL, AZ, CO, OH, MI live today.', small: true },
-  { val:'FL·AZ·CO·OH', desc:'Active states with live court monitoring. Expanding nationwide.', small: true },
+  { val:'FL·AZ·CO·OH·MI', desc:'Active states with live court monitoring. Expanding nationwide.', small: true },
   { val:'A+', desc:'BBB Accredited — Miami Beach, FL. Licensed & compliant.', blue: true },
 ]
 
@@ -74,7 +74,7 @@ export default function Home() {
           <p style={{ fontSize:'15px', color:'#a0aece', lineHeight:2, maxWidth:'680px', margin:'0 auto 32px', fontWeight:400, textAlign:'center' }}>
             Foreclosure surplus. Tax deed overages. Unclaimed property. State-held funds.<br />
             If money was left behind, <strong style={{ color:'#e8edf8', fontWeight:600 }}>it legally belongs to you.</strong><br />
-            We recover it across FL, AZ, CO, OH &amp; MI — expanding to all 50 states. Zero upfront cost. Ever.
+            We recover it across FL, AZ, CO, OH and MI. Expanding to all 50 states. Zero upfront cost. Ever.
           </p>
 
           {/* CTAs */}
