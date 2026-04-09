@@ -63,8 +63,8 @@ export default function MapPage() {
             <p style={{ fontSize: '15px', color: '#a0b8d8', lineHeight: 1.85, maxWidth: '540px', margin: '0 auto 14px' }}>
               Banks, insurers, courts, and employers report billions in unclaimed funds to state governments every year. Most people never know it exists.
             </p>
-            <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', color: '#3a4f72', marginBottom: '36px', letterSpacing: '1px' }}>
-              Hover any state to see what's being held. Click to start a recovery.
+            <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: '#3a4f72', marginBottom: '36px', letterSpacing: '2px', textTransform: 'uppercase' }}>
+              Hover any state to see what's held  ·  Click to start a recovery
             </p>
 
             {/* COUNTER */}
@@ -139,7 +139,7 @@ export default function MapPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '6px', marginBottom: '48px' }}>
             {allStateFunds.map((s, i) => (
               <div key={i} style={{ background: 'rgba(30,40,127,0.06)', border: '1px solid rgba(74,95,212,0.1)', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: '#1E287F', fontWeight: 700 }}>{s.name}</span>
+                <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: '#6a8fc0', fontWeight: 600 }}>{s.name}</span>
                 <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: '#ffffff', fontWeight: 700 }}>{s.funds}</span>
               </div>
             ))}

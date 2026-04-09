@@ -27,7 +27,7 @@ export default function Nav() {
       <nav style={{ height: '80px', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 40px' }}>
 
         {/* LOGO */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0, paddingLeft: '24px' }}>
           <Image src="/rcg-logo.png" alt="Rebound Capital Group" width={150} height={90} style={{ height: '62px', width: 'auto', objectFit: 'contain' }} priority />
         </Link>
 
