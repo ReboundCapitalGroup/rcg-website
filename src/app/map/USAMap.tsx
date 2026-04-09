@@ -66,12 +66,12 @@ export default function USAMap() {
     const info = stateInfo[code]
     if (!info) return '#1e2438'
     if (isHovered) return info.active ? '#2a40c0' : '#2e3a5a'
-    return info.active ? '#1E287F' : '#1e2d4a'
+    return info.active ? '#1E287F' : '#243358'
   }
 
   const getStroke = (code: string, isHovered: boolean) => {
     if (isHovered) return '#8fa3f0'
-    return stateInfo[code]?.active ? '#3a5fd4' : '#131d35'
+    return stateInfo[code]?.active ? '#3a5fd4' : '#1e2d50'
   }
 
   const hInfo = hovered ? stateInfo[hovered] : null
@@ -140,7 +140,7 @@ export default function USAMap() {
         }}
         onMouseLeave={() => setHovered(null)}
       >
-        <rect width="960" height="600" fill="#0d1220" />
+        <rect width="960" height="600" fill="#141c2e" opacity="0" />
 
         {Object.entries(statePaths).map(([code, path]) => {
           const isHovered = hovered === code
@@ -166,7 +166,7 @@ export default function USAMap() {
                     fontFamily: "'Space Mono', monospace",
                     fontSize: ['TX','CA','MT','AK'].includes(code) ? '9px' : '7px',
                     fontWeight: 700,
-                    fill: stateInfo[code]?.active ? '#8ab0f0' : '#2a3d6a',
+                    fill: stateInfo[code]?.active ? '#8ab0f0' : '#4a6090',
                     pointerEvents: 'none',
                     userSelect: 'none',
                     letterSpacing: '0.5px',
@@ -189,9 +189,9 @@ export default function USAMap() {
           if (!c) return null
           return (
             <g key={code}>
-              <line x1={c[0]} y1={c[1]} x2={(ox as number) - 16} y2={oy as number} stroke="#1a2540" strokeWidth={0.5} />
+              <line x1={c[0]} y1={c[1]} x2={(ox as number) - 16} y2={oy as number} stroke="#2a3d60" strokeWidth={0.5} />
               <text x={ox as number} y={(oy as number) + 3} textAnchor="start"
-                style={{ fontFamily: "'Space Mono',monospace", fontSize: '7px', fontWeight: 700, fill: stateInfo[code as string]?.active ? '#8ab0f0' : '#2a3d6a', pointerEvents: 'none', userSelect: 'none' }}>
+                style={{ fontFamily: "'Space Mono',monospace", fontSize: '7px', fontWeight: 700, fill: stateInfo[code as string]?.active ? '#8ab0f0' : '#4a6090', pointerEvents: 'none', userSelect: 'none' }}>
                 {code}
               </text>
             </g>
