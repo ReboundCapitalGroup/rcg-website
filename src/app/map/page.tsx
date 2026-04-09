@@ -56,7 +56,7 @@ export default function MapPage() {
               <div style={{ width: '30px', height: '1px', background: 'rgba(74,95,212,0.4)' }} />
             </div>
 
-            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(32px,5vw,58px)', color: '#fff', letterSpacing: '-2px', lineHeight: 1, marginBottom: '20px' }}>
+            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(32px,5vw,58px)', color: '#1E287F', letterSpacing: '-2px', lineHeight: 1, marginBottom: '20px' }}>
               Your Money Is Out There.
             </h1>
 
