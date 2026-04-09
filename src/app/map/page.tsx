@@ -139,7 +139,7 @@ export default function MapPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '6px', marginBottom: '48px' }}>
             {allStateFunds.map((s, i) => (
               <div key={i} style={{ background: 'rgba(30,40,127,0.06)', border: '1px solid rgba(74,95,212,0.1)', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: '#ffffff', fontWeight: 600, opacity: 0.8 }}>{s.name}</span>
+                <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: '#1E287F', fontWeight: 700 }}>{s.name}</span>
                 <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: '#ffffff', fontWeight: 700 }}>{s.funds}</span>
               </div>
             ))}
