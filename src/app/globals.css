@@ -112,9 +112,9 @@ nav {
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 7px 14px;
-  background: linear-gradient(180deg,#4a5060 0%,#2a2e38 50%,#1a1d24 100%);
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 2px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+  background: linear-gradient(180deg,#141a28 0%,#080c18 100%);
+  border: 1px solid rgba(74,127,212,0.2);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.5);
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
@@ -128,8 +128,8 @@ nav {
 }
 
 .nav-cta {
-  background: linear-gradient(180deg, #4a5060 0%, #2a2e38 50%, #1a1d24 100%);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: linear-gradient(180deg, #1c2b62 0%, #0f1a40 100%);
+  border: 1px solid rgba(74,127,212,0.35);
   color: #e8edf8 !important;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 11px;
@@ -239,53 +239,54 @@ nav {
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(180deg, #4a5060 0%, #2a2e38 50%, #1a1d24 100%);
-  color: #e8edf8;
+  background: linear-gradient(180deg, #1c2b62 0%, #111c45 50%, #0c1530 100%);
+  color: #d8e4ff;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 16px 34px;
-  border: 1px solid rgba(255,255,255,0.15);
+  padding: 16px 40px;
+  border: 1px solid rgba(74,127,212,0.4);
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
   transition: all 0.15s;
   position: relative;
   top: 0;
 }
 .btn-primary:hover {
-  background: linear-gradient(180deg, #5a6070 0%, #3a3e48 50%, #2a2d36 100%);
+  background: linear-gradient(180deg, #223270 0%, #152255 50%, #0f1a3e 100%);
+  border-color: rgba(74,127,212,0.6);
   top: 2px;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.7);
   color: #fff;
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(180deg, #3a4050 0%, #20242e 50%, #141820 100%);
-  color: #c8d8ff;
+  background: linear-gradient(180deg, #141a28 0%, #0d1020 50%, #080c18 100%);
+  color: #6888b8;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 16px 30px;
-  border: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 32px;
+  border: 1px solid rgba(74,127,212,0.18);
   cursor: pointer;
   text-decoration: none;
   transition: all 0.15s;
-  box-shadow: 0 4px 0 rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.03);
   position: relative;
   top: 0;
 }
 .btn-secondary:hover {
-  background: linear-gradient(180deg, #4a5060 0%, #2a2e38 50%, #1a1d24 100%);
-  color: #fff;
+  border-color: rgba(74,127,212,0.35);
+  color: #a0b8e0;
   top: 2px;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.5);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.6);
 }
 
 /* SECTION TAG */
