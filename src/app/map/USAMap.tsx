@@ -26,7 +26,7 @@ const stateInfo: Record<string, { name: string; slug: string; deadline: string; 
   ME: { name: 'Maine', slug: 'maine', deadline: '6 years', active: false, attorney: false },
   MD: { name: 'Maryland', slug: 'maryland', deadline: '3 years', active: false, attorney: false },
   MA: { name: 'Massachusetts', slug: 'massachusetts', deadline: '3 years', active: false, attorney: true },
-  MI: { name: 'Michigan', slug: 'michigan', deadline: '1 year', active: false, attorney: false },
+  MI: { name: 'Michigan', slug: 'michigan', deadline: '1 year', active: true, attorney: false },
   MN: { name: 'Minnesota', slug: 'minnesota', deadline: '5 years', active: false, attorney: false },
   MS: { name: 'Mississippi', slug: 'mississippi', deadline: '3 years', active: false, attorney: false },
   MO: { name: 'Missouri', slug: 'missouri', deadline: '10 years', active: false, attorney: false },
@@ -39,7 +39,7 @@ const stateInfo: Record<string, { name: string; slug: string; deadline: string; 
   NY: { name: 'New York', slug: 'new-york', deadline: '3 years', active: false, attorney: true },
   NC: { name: 'North Carolina', slug: 'north-carolina', deadline: '3 years', active: false, attorney: false },
   ND: { name: 'North Dakota', slug: 'north-dakota', deadline: '10 years', active: false, attorney: false },
-  OH: { name: 'Ohio', slug: 'ohio', deadline: '5 years', active: false, attorney: false },
+  OH: { name: 'Ohio', slug: 'ohio', deadline: '5 years', active: true, attorney: false },
   OK: { name: 'Oklahoma', slug: 'oklahoma', deadline: '5 years', active: false, attorney: false },
   OR: { name: 'Oregon', slug: 'oregon', deadline: '5 years', active: false, attorney: false },
   PA: { name: 'Pennsylvania', slug: 'pennsylvania', deadline: '2 years', active: false, attorney: true },
@@ -109,7 +109,7 @@ export default function USAMap() {
             </div>
           )}
           <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', marginTop: '6px', color: hInfo.active ? '#4a6fd4' : '#4a5890' }}>
-            {hInfo.active ? '● Active — Live Monitoring' : '○ Available — We Recover'}
+            {hInfo.active ? '● Active — Live Court Monitoring' : '○ Coming Soon — Expanding Nationwide'}
           </div>
           <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: '#1E287F', marginTop: '6px', letterSpacing: '0.5px' }}>
             Click to view state guide →
@@ -205,7 +205,7 @@ export default function USAMap() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px', marginTop: '16px', flexWrap: 'wrap' }}>
         {[
           { color: '#1E287F', border: '#3a5fd4', label: 'Active — Live Monitoring' },
-          { color: '#243055', border: '#1a2540', label: 'Available — We Recover' },
+          { color: '#243055', border: '#1a2540', label: 'Coming Soon' },
         ].map((item, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '1px', textTransform: 'uppercase', color: '#5a6890' }}>
             <div style={{ width: '18px', height: '12px', background: item.color, border: `1px solid ${item.border}`, flexShrink: 0 }} />

@@ -21,13 +21,13 @@ const whyUs = [
 const firmStats = [
   { val:'$0', desc:'Upfront cost to any client — ever. Pure contingency model.' },
   { val:'81+', desc:'County court systems actively monitored and scraped daily.' },
-  { val:'4 → 50', desc:'Active states now. Expanding to all 50 — FL, AZ, CO, OH live today.', small: true },
+  { val:'5 → 50', desc:'Active states now. FL, AZ, CO, OH, MI live today.', small: true },
   { val:'FL·AZ·CO·OH', desc:'Active states with live court monitoring. Expanding nationwide.', small: true },
   { val:'A+', desc:'BBB Accredited — Miami Beach, FL. Licensed & compliant.', blue: true },
 ]
 
 const allStates = ['Florida','Arizona','Colorado','Georgia','Ohio','New Jersey','Texas','California','New York','Illinois','Pennsylvania','Michigan','N. Carolina','Virginia','Washington','Nevada','Tennessee','Indiana','Missouri','Maryland','Wisconsin','Minnesota','S. Carolina','Alabama']
-const activeStates = ['Florida','Arizona','Colorado','Ohio']
+const activeStates = ['Florida','Arizona','Colorado','Ohio','Michigan']
 
 const heroStyle: React.CSSProperties = {
   background: 'var(--bg)',
@@ -60,7 +60,7 @@ export default function Home() {
           {/* Badge */}
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'10px', marginBottom:'24px', flexWrap:'wrap' }}>
             <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#1E287F', display:'inline-block', flexShrink:0 }} />
-            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'2px', textTransform:'uppercase', color:'#5a6890' }}>FL · AZ · CO · OH · Expanding Nationwide · BBB A+</span>
+            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'2px', textTransform:'uppercase', color:'#5a6890' }}>FL · AZ · CO · OH · MI · Expanding Nationwide · BBB A+</span>
           </div>
 
           {/* Headline — two clean lines */}
@@ -74,7 +74,7 @@ export default function Home() {
           <p style={{ fontSize:'15px', color:'#a0aece', lineHeight:2, maxWidth:'680px', margin:'0 auto 32px', fontWeight:400, textAlign:'center' }}>
             Foreclosure surplus. Tax deed overages. Unclaimed property. State-held funds.<br />
             If money was left behind, <strong style={{ color:'#e8edf8', fontWeight:600 }}>it legally belongs to you.</strong><br />
-            We recover it across FL, AZ, CO &amp; OH — expanding to all 50 states. Zero upfront cost. Ever.
+            We recover it across FL, AZ, CO, OH &amp; MI — expanding to all 50 states. Zero upfront cost. Ever.
           </p>
 
           {/* CTAs */}
@@ -156,7 +156,7 @@ export default function Home() {
         <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(30px,4vw,50px)', color:'#fff', letterSpacing:'-1.5px', lineHeight:0.95 }}>
           Coming to All 50 States.<br /><span style={{ color:'var(--dim)' }}>Active Now: FL · AZ · CO · OH</span>
         </h2>
-        <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, marginTop:'12px', maxWidth:'480px' }}>Currently active in Florida, Arizona, Colorado, and Ohio with live court monitoring. Expanding to all 50 states.</p>
+        <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, marginTop:'12px', maxWidth:'480px' }}>Currently active in Florida, Arizona, Colorado, Ohio, and Michigan with live court monitoring. Expanding to all 50 states.</p>
         <div className="states-grid">
           {allStates.map(s => (
             <Link key={s} href={`/states/${s.toLowerCase().replace(/\s+/g,'-').replace('.','-')}`} className={`state-pill${activeStates.includes(s) ? ' active' : ''}`}>{s}</Link>

@@ -12,7 +12,8 @@ const states = [
   { code:'AZ', name:'Arizona', slug:'arizona', deadline:'3 years', active:true },
   { code:'CO', name:'Colorado', slug:'colorado', deadline:'2.5 years', active:true },
   { code:'GA', name:'Georgia', slug:'georgia', deadline:'5 years', active:false },
-  { code:'OH', name:'Ohio', slug:'ohio', deadline:'5 years', active:false },
+  { code:'OH', name:'Ohio', slug:'ohio', deadline:'5 years', active:true },
+  { code:'MI', name:'Michigan', slug:'michigan', deadline:'1 year', active:true },
   { code:'NJ', name:'New Jersey', slug:'new-jersey', deadline:'3 years', active:false },
   { code:'TX', name:'Texas', slug:'texas', deadline:'2 years', active:false },
   { code:'NY', name:'New York', slug:'new-york', deadline:'3 years', active:false },
@@ -39,10 +40,10 @@ export default function MapPage() {
           // interactive unclaimed funds map
         </span>
         <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,3.5vw,48px)', color: '#fff', letterSpacing: '-1.5px', lineHeight: 0.95, marginBottom: '14px' }}>
-          Surplus Fund Laws.<br /><span style={{ color: '#5a6890' }}>All 50 States.</span>
+          Surplus Fund Laws.<br /><span style={{ color: '#5a6890' }}>Coming to All 50 States.</span>
         </h1>
         <p style={{ fontSize: '14px', color: '#5a6890', maxWidth: '520px', margin: '0 auto', lineHeight: 1.6 }}>
-          Hover any state to see the claim deadline. Click to view local laws, filing process, and county guides. Active states have live case monitoring.
+          Currently active in Florida, Arizona, Colorado, Ohio, and Michigan — with live case monitoring and daily court scraping. Expanding nationwide. Hover any state to see claim deadlines.
         </p>
       </div>
 
@@ -56,7 +57,7 @@ export default function MapPage() {
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1px', background: 'rgba(30,40,127,0.2)' }}>
           {[
             { val: '50', label: 'States Covered' },
-            { val: '3', label: 'Active Live States', blue: true },
+            { val: '5', label: 'Active Live States', blue: true },
             { val: '60d', label: 'Shortest Deadline (FL)', urgent: true },
             { val: '$0', label: 'Upfront Cost — Ever' },
           ].map((s, i) => (
