@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+'use client'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 const USAMap = dynamic(() => import('./USAMap'), { ssr: false, loading: () => (
@@ -7,10 +7,7 @@ const USAMap = dynamic(() => import('./USAMap'), { ssr: false, loading: () => (
   </div>
 ) })
 
-export const metadata: Metadata = {
-  title: 'Unclaimed Property by State | Rebound Capital Group',
-  description: 'Over $70 billion in unclaimed property is held by U.S. states. Search your state and find out what may be owed to you.',
-}
+
 
 const activeStates = [
   { code: 'FL', name: 'Florida', slug: 'florida', funds: '$2.4B', counties: 67 },
