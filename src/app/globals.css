@@ -503,7 +503,7 @@ nav {
   right: 0;
   width: min(360px, 92vw);
   height: 100vh;
-  background: #0a0f1a;
+  background: #000000;
   border-left: 1px solid rgba(74,127,212,0.2);
   z-index: 201;
   transform: translateX(100%);
@@ -511,6 +511,8 @@ nav {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overflow-x: hidden;
+  writing-mode: horizontal-tb;
 }
 .mobile-drawer.open { transform: translateX(0); }
 
@@ -521,6 +523,7 @@ nav {
   padding: 20px 24px;
   border-bottom: 1px solid rgba(74,127,212,0.12);
   flex-shrink: 0;
+  background: #000000;
 }
 
 .drawer-close {
@@ -585,6 +588,7 @@ nav {
   flex: 1;
   padding: 8px 0;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .mobile-nav-section {
@@ -603,6 +607,9 @@ nav {
   letter-spacing: 0.5px;
   color: #c8d8ff;
   text-align: left;
+  white-space: nowrap;
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
 }
 .mobile-nav-section:hover { background: rgba(30,40,127,0.08); }
 
@@ -618,6 +625,9 @@ nav {
   letter-spacing: 0.5px;
   color: #c8d8ff;
   text-decoration: none;
+  white-space: nowrap;
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
 }
 .mobile-nav-section-link:hover { background: rgba(30,40,127,0.08); }
 
@@ -951,5 +961,113 @@ nav {
   .map-counter-number {
     font-size: clamp(28px, 8vw, 52px) !important;
     letter-spacing: -2px !important;
+  }
+  /* Map page sections - centered + padded on mobile */
+  .map-page-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+  }
+  /* Stats bar cells stack 2x2 */
+  .map-stats-bar-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    overflow: hidden !important;
+  }
+  /* Active states cards 2-col */
+  .map-active-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Top states 2-col */
+  .map-top-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Counter card centered */
+  .map-counter-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0 16px !important;
+  }
+}
+
+/* HERO BADGE - force single line on mobile */
+@media (max-width: 768px) {
+  .hero-badge-text {
+    font-size: 7px !important;
+    letter-spacing: 1px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* HERO CTA - single line on mobile */
+@media (max-width: 480px) {
+  .hero-cta-main {
+    font-size: 10px !important;
+    letter-spacing: 0.8px !important;
+    padding: 14px 20px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* FOOTER MOBILE CENTERING */
+@media (max-width: 768px) {
+  .footer-cols-row {
+    text-align: center !important;
+  }
+  .footer-cols-row a {
+    text-align: center !important;
+  }
+  .footer-bottom-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
+/* MAP PAGE - prevent all overflow */
+@media (max-width: 768px) {
+  .map-counter-card {
+    width: calc(100vw - 48px) !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .map-stats-bar-grid {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  .map-active-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 100% !important;
+  }
+  .map-top-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    width: 100% !important;
+  }
+  .map-page-inner {
+    overflow: hidden !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ABOUT PAGE MOBILE */
+@media (max-width: 768px) {
+  .about-stats-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .about-stats-bar > div:nth-child(2) { border-right: none !important; }
+  .about-stats-bar > div:nth-child(3) { border-top: 1px solid rgba(74,95,212,0.12); }
+  .about-stats-bar > div:nth-child(4) { border-top: 1px solid rgba(74,95,212,0.12); border-right: none !important; }
+  .about-story-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about-story-grid > div:first-child {
+    position: static !important;
+  }
+  .about-values-grid {
+    grid-template-columns: 1fr !important;
   }
 }

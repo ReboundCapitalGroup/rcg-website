@@ -1,6 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import USAMap from './USAMap'
+import dynamic from 'next/dynamic'
+const USAMap = dynamic(() => import('./USAMap'), { ssr: false, loading: () => (
+  <div style={{ height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: '#3a4f7a' }}>Loading map...</span>
+  </div>
+) })
 
 export const metadata: Metadata = {
   title: 'Unclaimed Property by State | Rebound Capital Group',
@@ -30,7 +35,7 @@ const allStateFunds = [
 
 export default function MapPage() {
   return (
-    <div style={{ background: 'var(--bg)', minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
+    <div style={{ background: 'var(--bg)', minHeight: '100vh', position: 'relative', overflow: 'hidden', maxWidth: '100vw' }}>
 
       {/* Grid overlay — same as homepage */}
       <div style={{ position: 'fixed', inset: 0, backgroundImage: 'linear-gradient(rgba(74,95,212,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.04) 1px,transparent 1px)', backgroundSize: '52px 52px', pointerEvents: 'none', zIndex: 0 }} />
@@ -68,9 +73,9 @@ export default function MapPage() {
             </p>
 
             {/* COUNTER */}
-            <div style={{ display: 'inline-block', background: 'linear-gradient(180deg,rgba(18,28,70,0.3) 0%,rgba(8,12,28,0.5) 100%)', border: '1px solid rgba(74,127,212,0.25)', borderTop: '2px solid rgba(74,127,212,0.5)', padding: 'clamp(20px,4vw,32px) clamp(24px,6vw,64px)', boxShadow: '0 0 80px rgba(15,25,80,0.25), 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)', minWidth: '440px' }}>
+            <div className="map-counter-card" style={{ display: 'inline-block', background: 'linear-gradient(180deg,rgba(18,28,70,0.3) 0%,rgba(8,12,28,0.5) 100%)', border: '1px solid rgba(74,127,212,0.25)', borderTop: '2px solid rgba(74,127,212,0.5)', padding: 'clamp(20px,4vw,32px) clamp(24px,6vw,64px)', boxShadow: '0 0 80px rgba(15,25,80,0.25), 0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)', width: 'min(440px, 90vw)', maxWidth: '100%', boxSizing: 'border-box' as const }}>
               <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '3px', textTransform: 'uppercase', color: '#3a4f7a', marginBottom: '12px' }}>
-                Estimated Unclaimed Property — U.S. States
+                Estimated Unclaimed Property — U.S.
               </div>
               <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,5vw,52px)', color: '#dce8ff', letterSpacing: '-3px', lineHeight: 1, marginBottom: '12px', textShadow: '0 2px 20px rgba(74,127,212,0.2)' }}>
                 $70,847,000,000+
@@ -78,7 +83,7 @@ export default function MapPage() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
                 <span className="pulse-animate" style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4a5fcd', display: 'inline-block', flexShrink: 0 }} />
                 <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a5f94' }}>
-                  Updated weekly via state treasury reports
+                  Updated weekly via treasury reports
                 </span>
               </div>
             </div>
@@ -87,7 +92,7 @@ export default function MapPage() {
 
         {/* STATS BAR */}
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <div style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}>
+          <div className="map-stats-bar-grid" style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', overflow: 'hidden' }}>
             {[
               { val: '50', label: 'Expanding to All 50 States', blue: false },
               { val: '5', label: 'Active Live States', blue: true },
@@ -112,7 +117,7 @@ export default function MapPage() {
         </div>
 
         {/* ACTIVE STATES */}
-        <div style={{ maxWidth: '960px', margin: '0 auto', padding: '16px 24px 40px' }}>
+        <div className="map-page-inner" style={{ maxWidth: '960px', margin: '0 auto', padding: '16px 24px 40px' }}>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
             <span className="pulse-animate" style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--rcg2)', display: 'inline-block', flexShrink: 0 }} />
@@ -121,7 +126,7 @@ export default function MapPage() {
             </span>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '8px', marginBottom: '40px' }}>
+          <div className="map-active-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '8px', marginBottom: '40px' }}>
             {activeStates.map(s => (
               <Link key={s.code} href={`/states/${s.slug}`} style={{ textDecoration: 'none', background: 'rgba(30,40,127,0.1)', border: '1px solid rgba(74,95,212,0.25)', padding: '16px', display: 'block' }}>
                 <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', fontWeight: 700, color: 'var(--rcg2)', letterSpacing: '1px', marginBottom: '4px' }}>{s.code}</div>
@@ -136,7 +141,7 @@ export default function MapPage() {
           <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a5f94', marginBottom: '14px' }}>
             // Top States by Unclaimed Funds Held
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '6px', marginBottom: '48px' }}>
+          <div className="map-top-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '6px', marginBottom: '48px' }}>
             {allStateFunds.map((s, i) => (
               <div key={i} style={{ background: 'rgba(30,40,127,0.06)', border: '1px solid rgba(74,95,212,0.1)', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', color: '#6a8fc0', fontWeight: 600 }}>{s.name}</span>
@@ -162,4 +167,3 @@ export default function MapPage() {
     </div>
   )
 }
- 

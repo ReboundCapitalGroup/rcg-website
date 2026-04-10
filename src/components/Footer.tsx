@@ -33,7 +33,7 @@ export default function Footer() {
           ))}
           </div>
         </div>
-        <div style={{ display:'flex', justifyContent:'space-between', flexWrap:'wrap', gap:'10px', paddingTop:'20px', borderTop:'1px solid rgba(74,95,212,0.3)' }}>
+        <div className="footer-bottom-row" style={{ display:'flex', justifyContent:'space-between', flexWrap:'wrap', gap:'10px', paddingTop:'20px', borderTop:'1px solid rgba(74,95,212,0.3)' }}>
           <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>© 2025 Rebound Capital Group LLC. All Rights Reserved.</p>
           <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>
             <Link href="/privacy" style={{ color:'var(--dim)', textDecoration:'none' }}>Privacy</Link> · <Link href="/terms" style={{ color:'var(--dim)', textDecoration:'none' }}>Terms</Link>
