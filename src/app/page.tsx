@@ -20,7 +20,7 @@ const whyUs = [
 
 const firmStats = [
   { val:'$0', desc:'Upfront cost to any client — ever. Pure contingency model.' },
-  { val:'81+', desc:'County court systems actively monitored and scraped daily.' },
+  { val:'1,000+', desc:'County court systems actively monitored and scraped daily.' },
   { val:'5 → 50', desc:'Active states now. FL, AZ, CO, OH, MI live today.', small: true },
   { val:'5 States', desc:'FL · AZ · CO · OH · MI — live court monitoring. Expanding nationwide.', small: true },
   { val:'A+', desc:'BBB Accredited — Miami Beach, FL. Licensed & compliant.', blue: true },
