@@ -22,7 +22,7 @@ const firmStats = [
   { val:'$0', desc:'Upfront cost to any client — ever. Pure contingency model.' },
   { val:'81+', desc:'County court systems actively monitored and scraped daily.' },
   { val:'5 → 50', desc:'Active states now. FL, AZ, CO, OH, MI live today.', small: true },
-  { val:'FL·AZ·CO·OH·MI', desc:'Active states with live court monitoring. Expanding nationwide.', small: true },
+  { val:'5 States', desc:'FL · AZ · CO · OH · MI — live court monitoring. Expanding nationwide.', small: true },
   { val:'A+', desc:'BBB Accredited — Miami Beach, FL. Licensed & compliant.', blue: true },
 ]
 
@@ -60,14 +60,14 @@ export default function Home() {
           {/* Badge */}
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'10px', marginBottom:'24px', flexWrap:'wrap' }}>
             <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#1E287F', display:'inline-block', flexShrink:0 }} />
-            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'2px', textTransform:'uppercase', color:'#5a6890' }}>FL · AZ · CO · OH · MI · Expanding Nationwide · BBB A+</span>
+            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#5a6890', whiteSpace:'nowrap' as const }}>FL · AZ · CO · OH · MI · Expanding Nationwide · BBB A+</span>
           </div>
 
           {/* Headline — two clean lines */}
           <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(28px,5vw,60px)', lineHeight:1.08, color:'#fff', letterSpacing:'clamp(-1px,-0.15em,-2px)', margin:'0 0 20px', textAlign:'center' }}>
             Turning <span style={{ color:'#ffffff' }}>Forgotten Funds</span>
             <br />
-            Into<span className="mobile-break"> </span><span style={{ color:'#344f8a', letterSpacing:'-0.5px', fontWeight:600, whiteSpace:'nowrap' as const }}>Future Opportunities.</span>
+            <span style={{ whiteSpace:'nowrap' as const }}>Into <span style={{ color:'#344f8a', letterSpacing:'-0.5px', fontWeight:600 }}>Future Opportunities.</span></span>
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
@@ -77,7 +77,7 @@ export default function Home() {
 
           {/* CTAs */}
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'14px', flexWrap:'wrap' }}>
-            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#1a2860 0%,#0f1a40 100%)', border:'1px solid rgba(74,127,212,0.35)', boxShadow:'0 0 24px rgba(20,35,100,0.5), 0 4px 0 rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.07)', letterSpacing:'1.2px', padding:'16px 40px' }}>Check If You&apos;re Owed Money — Free</Link>
+            <Link href="/contact" className="btn-primary hero-cta-main" style={{ background:'linear-gradient(180deg,#1a2860 0%,#0f1a40 100%)', border:'1px solid rgba(74,127,212,0.35)', boxShadow:'0 0 24px rgba(20,35,100,0.5), 0 4px 0 rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.07)', letterSpacing:'1px', padding:'16px 32px', whiteSpace:'nowrap' as const }}>Check If You&apos;re Owed Money — Free</Link>
             <Link href="/resources/how-it-works" className="btn-secondary" style={{ background:'linear-gradient(180deg,#1a1f2e 0%,#0f1218 100%)', border:'1px solid rgba(74,127,212,0.2)', color:'#7090c0', boxShadow:'0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)', letterSpacing:'1px', padding:'16px 32px' }}>See How It Works</Link>
             <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'#5a6890' }}>// No fees until we recover</span>
           </div>
@@ -159,7 +159,7 @@ export default function Home() {
       <div style={{ padding:'80px 40px', maxWidth:'1200px', margin:'0 auto' }}>
         <span className="section-tag">// coverage</span>
         <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,4vw,50px)', color:'#fff', letterSpacing:'-1px', lineHeight:1.0 }}>
-          Coming to All 50 States.<br /><span style={{ color:'var(--dim)' }}>FL · AZ · CO · OH · MI Active Now</span>
+          Coming to All 50 States.<br /><span style={{ color:'var(--dim)', whiteSpace:'nowrap' as const }}>FL · AZ · CO · OH · MI Active Now</span>
         </h2>
         <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, marginTop:'12px', maxWidth:'480px' }}>Currently active in Florida, Arizona, Colorado, Ohio, and Michigan with live court monitoring. Expanding to all 50 states.</p>
         <div className="states-grid">
