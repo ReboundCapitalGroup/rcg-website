@@ -1,46 +1,39 @@
 import Link from 'next/link'
 
-const categories = [
+const fundTypes = [
   {
-    label: 'Insurance',
-    code: 'IN',
-    items: ['Individual Policy Benefits', 'Group Policy Benefits', 'Death Benefits', 'Matured Annuities', 'Insurance Premium Refunds', 'Other Amounts Due Under Policy'],
+    title: 'Foreclosure Surplus Funds',
+    desc: 'When a foreclosed property sells at auction for more than what was owed, the excess is deposited with the county clerk. It belongs to the former owner and must be claimed before the statutory deadline.',
+    link: '/services/foreclosure-surplus',
+    linkLabel: 'Learn about foreclosure surplus',
   },
   {
-    label: 'Banking',
-    code: 'AC',
-    items: ['Checking Accounts', 'Savings Accounts', 'Matured CDs', 'Cashiers Checks', 'Vendor Checks'],
+    title: 'Tax Deed Overages',
+    desc: 'When a county sells a property at a tax deed auction for more than the taxes owed, the overage is held by the county clerk. Former owners are entitled to this amount by law.',
+    link: '/services/tax-deed-surplus',
+    linkLabel: 'Learn about tax deed overages',
   },
   {
-    label: 'Securities',
-    code: 'SC',
-    items: ['Unclaimed Dividends', 'Equity Payments', 'Shares of Stock', 'Demutualization Cash'],
+    title: 'Excess Proceeds from Judicial Sales',
+    desc: 'Court-ordered sales of property — including partition sales, probate sales, and judgment-related sales — often generate excess proceeds that are held by the court until claimed.',
+    link: '/contact',
+    linkLabel: 'Contact us about excess proceeds',
   },
   {
-    label: 'Retirement',
-    code: 'IR',
-    items: ['Traditional IRA', 'Roth IRA', 'Pension and Profit Sharing'],
+    title: 'Unclaimed Court Deposits',
+    desc: 'Funds deposited with courts during litigation, settlement, or judgment proceedings that go uncollected are held indefinitely until the rightful owner files a claim.',
+    link: '/contact',
+    linkLabel: 'Start a free search',
   },
   {
-    label: 'Miscellaneous',
-    code: 'MS',
-    items: ['Credit Balances', 'Refunds', 'Miscellaneous Checks', 'Escheated Funds'],
-  },
-  {
-    label: 'Court and Tax',
-    code: 'CT',
-    items: ['Surplus from Foreclosure', 'Tax Certificates and Tax Deeds'],
+    title: 'State Treasury Unclaimed Property',
+    desc: 'Bank accounts, insurance proceeds, dividends, retirement funds, and other dormant assets turned over to state treasury agencies are held until claimed by the rightful owner or heir.',
+    link: '/services/unclaimed-property',
+    linkLabel: 'See all unclaimed property types',
   },
 ]
 
-const steps = [
-  { n: '01', title: 'We Search State Records', desc: 'We search unclaimed property databases across all 50 states using your name, prior addresses, and any connected entities. Florida alone holds over $2 billion in unclaimed funds across every category above.' },
-  { n: '02', title: 'We Confirm the Claim', desc: 'When we identify funds connected to your name, we verify the match, confirm the amount, and identify which state agency is holding the funds before reaching out to you.' },
-  { n: '03', title: 'We File on Your Behalf', desc: 'Our team prepares and submits the claim through the appropriate state process, coordinating any required documentation, identity verification, and supporting paperwork.' },
-  { n: '04', title: 'State Releases the Funds', desc: 'Once the state approves the claim, funds are released and disbursed directly to you. Most claims resolve within 60 to 120 days depending on the state and claim type.' },
-]
-
-export default function UnclaimedPropertyPage() {
+export default function StateHeldFundsPage() {
   return (
     <main>
 
@@ -52,64 +45,47 @@ export default function UnclaimedPropertyPage() {
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '720px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '32px', padding: '7px 18px', border: '1px solid rgba(74,95,212,0.2)', background: 'rgba(30,40,127,0.1)' }}>
             <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4a7fd4', display: 'inline-block', flexShrink: 0 }} />
-            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>All 50 States · No Upfront Cost</span>
+            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>Court and State Recovery · No Upfront Cost</span>
           </div>
           <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,72px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
-            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Unclaimed </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Property</span>
+            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>State-Held </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Funds</span>
           </h1>
           <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '520px', margin: '0 auto', fontWeight: 400 }}>
-            State agencies are holding billions in unclaimed funds across dozens of property types. Bank accounts, insurance proceeds, dividends, retirement funds, and more. Your name may already be in the system.
+            Courts, counties, and state agencies hold billions in funds belonging to private individuals. Foreclosure surplus, tax deed overages, court deposits, and unclaimed property — all recoverable with the right process.
           </p>
         </div>
       </section>
 
-      {/* STAT BAR */}
-      <div style={{ background: '#080d1a', borderBottom: '1px solid rgba(30,40,127,0.12)' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)' }} className="about-stats-bar">
-          {[
-            { val: '$70B+', label: 'Held by US states' },
-            { val: '1 in 10', label: 'Americans have unclaimed funds' },
-            { val: 'All 50', label: 'States searchable' },
-          ].map((s, i) => (
-            <div key={i} style={{ padding: '32px 24px', borderRight: i < 2 ? '1px solid rgba(74,95,212,0.1)' : 'none', textAlign: 'center' }}>
-              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(22px,2.5vw,32px)', color: '#4a7fd4', letterSpacing: '-1px', lineHeight: 1, marginBottom: '8px' }}>{s.val}</div>
-              <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#3a4f7a' }}>{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* PROPERTY TYPES */}
+      {/* WHAT IS STATE HELD */}
       <section style={{ background: 'var(--bg)', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)' }}>
-        <div style={{ maxWidth: '1060px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '56px' }}>
-            <span className="section-tag">// Florida Unclaimed Property Types</span>
-            <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,3.5vw,42px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.1, margin: '14px 0 12px' }}>
-              Every Type of Fund We Recover.
+        <div style={{ maxWidth: '1060px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 'clamp(48px,6vw,88px)', alignItems: 'start' }} className="about-story-grid">
+          <div style={{ position: 'sticky', top: '108px' }}>
+            <span className="section-tag">// What Are State-Held Funds</span>
+            <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,3.5vw,42px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.1, margin: '14px 0 20px' }}>
+              Money in Government<br /><span style={{ color: 'var(--dim)' }}>Waiting to Be Claimed.</span>
             </h2>
-            <p style={{ fontSize: '15px', color: '#506080', lineHeight: 1.8, maxWidth: '560px' }}>
-              Florida and all other states hold unclaimed funds across a wide range of categories. Below is the full list of property types we search and recover.
-            </p>
+            <div style={{ width: '32px', height: '2px', background: '#1E287F', marginBottom: '28px' }} />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {['Court-Held Surplus', 'County Clerk Deposits', 'State Treasury Property', 'Deadline-Driven Recovery'].map((item, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div style={{ width: '4px', height: '4px', background: '#1E287F', flexShrink: 0 }} />
+                  <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#3a4f7a' }}>{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '2px' }} className="about-values-grid">
-            {categories.map((cat, i) => (
-              <div key={i} style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.08)', padding: 'clamp(22px,2.5vw,32px)', position: 'relative' }}>
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,rgba(30,40,127,0.6),transparent)' }} />
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-                  <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', color: '#4a6fd4', border: '1px solid rgba(74,95,212,0.2)', padding: '3px 8px', textTransform: 'uppercase' }}>{cat.code}</span>
-                  <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '14px', color: '#c8d8ff', letterSpacing: '-0.2px' }}>{cat.label}</span>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {cat.items.map((item, j) => (
-                    <div key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                      <div style={{ width: '3px', height: '3px', background: '#1E287F', flexShrink: 0, marginTop: '6px' }} />
-                      <span style={{ fontSize: '13px', color: '#506080', lineHeight: 1.6 }}>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, fontWeight: 400, margin: 0 }}>
+              State-held funds is a broad category that covers any money held by a government entity on behalf of a private individual. This includes funds held by county clerks of court following a foreclosure or tax deed sale, funds deposited with courts during litigation, and dormant assets turned over to state treasury agencies under unclaimed property laws.
+            </p>
+            <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, fontWeight: 400, margin: 0 }}>
+              What all of these have in common is that the funds belong to a private individual by law, the government entity is simply holding them, and there is a deadline by which the claim must be filed or the funds are permanently absorbed.
+            </p>
+            <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>
+                RCG identifies and recovers all categories of state-held funds through licensed attorneys at no upfront cost. If money is owed to you by a court, county, or state agency, we will find it and file for it.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -117,24 +93,20 @@ export default function UnclaimedPropertyPage() {
       {/* DIVIDER */}
       <div style={{ maxWidth: '960px', margin: '0 auto', height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.18),transparent)' }} />
 
-      {/* PROCESS */}
+      {/* FUND TYPES */}
       <section style={{ background: 'var(--bg)', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '56px' }}>
-            <span className="section-tag" style={{ margin: 0 }}>// The Recovery Process</span>
+            <span className="section-tag" style={{ margin: 0 }}>// Types We Recover</span>
             <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg,rgba(74,95,212,0.2),transparent)' }} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-            {steps.map((s, i) => (
-              <div key={s.n} style={{ display: 'grid', gridTemplateColumns: '72px 1fr', background: i % 2 === 0 ? 'rgba(18,28,72,0.4)' : '#0a0f1a', border: `1px solid ${i % 2 === 0 ? 'rgba(74,95,212,0.2)' : 'rgba(74,95,212,0.07)'}`, position: 'relative' }}>
+            {fundTypes.map((f, i) => (
+              <div key={i} style={{ background: i % 2 === 0 ? 'rgba(18,28,72,0.4)' : '#0a0f1a', border: `1px solid ${i % 2 === 0 ? 'rgba(74,95,212,0.2)' : 'rgba(74,95,212,0.07)'}`, padding: 'clamp(24px,3vw,36px)', position: 'relative' }}>
                 {i % 2 === 0 && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,#1E287F,transparent)' }} />}
-                <div style={{ padding: 'clamp(20px,2.5vw,32px)', borderRight: `1px solid ${i % 2 === 0 ? 'rgba(74,95,212,0.15)' : 'rgba(74,95,212,0.06)'}`, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: 'clamp(24px,3vw,36px)' }}>
-                  <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '11px', fontWeight: 700, color: i % 2 === 0 ? '#4a7fd4' : '#2a3a60', letterSpacing: '1px' }}>{s.n}</span>
-                </div>
-                <div style={{ padding: 'clamp(20px,2.5vw,32px)' }}>
-                  <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(16px,2vw,20px)', color: '#fff', letterSpacing: '-0.5px', margin: '0 0 10px' }}>{s.title}</h3>
-                  <p style={{ fontSize: '14px', color: i % 2 === 0 ? '#8090b8' : '#506080', lineHeight: 1.9, margin: 0 }}>{s.desc}</p>
-                </div>
+                <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(16px,2vw,20px)', color: '#fff', letterSpacing: '-0.5px', margin: '0 0 10px' }}>{f.title}</h3>
+                <p style={{ fontSize: '14px', color: i % 2 === 0 ? '#8090b8' : '#506080', lineHeight: 1.9, margin: '0 0 16px' }}>{f.desc}</p>
+                <Link href={f.link} style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a6fd4', textDecoration: 'none' }}>{f.linkLabel} →</Link>
               </div>
             ))}
           </div>
@@ -147,12 +119,12 @@ export default function UnclaimedPropertyPage() {
       {/* CTA */}
       <section style={{ background: '#000', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)', textAlign: 'center' }}>
         <div style={{ maxWidth: '560px', margin: '0 auto' }}>
-          <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// Free search · all 50 states</span>
+          <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// No cost to start</span>
           <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,4vw,48px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '16px 0 16px' }}>
-            Your Name May Already Be in the System.
+            Funds May Be Waiting in Your Name.
           </h2>
           <p style={{ fontSize: '15px', color: '#506080', lineHeight: 1.85, marginBottom: '36px' }}>
-            We search state databases across all 50 states at no cost. If funds exist in your name across any of these categories, we file the claim and recover them on a pure contingency basis.
+            We search court records, county systems, and state databases at no cost. If money is owed to you by any government entity, we find it, file for it, and recover it.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-primary">Free Claim Review</Link>
