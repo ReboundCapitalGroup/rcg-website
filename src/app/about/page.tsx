@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
+
 
 const stats = [
   { val: '$0', label: 'Upfront Cost — Ever' },
