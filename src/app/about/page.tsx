@@ -31,7 +31,7 @@ export default function AboutPage() {
             <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Rebound Capital </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Group</span>
           </h1>
           <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '460px', margin: '0 auto', fontWeight: 400 }}>
-            We find surplus funds courts and state agencies are holding in your name. We recover them on a pure contingency basis. Over $2 million returned to clients since 2023.
+            We recover funds left behind in court and state systems and return them to the people they belong to. Since 2023, over $2 million has been recovered for clients on a pure contingency basis.
           </p>
         </div>
       </section>
