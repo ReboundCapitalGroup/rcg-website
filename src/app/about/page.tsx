@@ -1,6 +1,5 @@
 import Link from 'next/link'
 
-
 const stats = [
   { val: '$0', label: 'Upfront Cost — Ever' },
   { val: '1,000+', label: 'County Systems Monitored' },
@@ -21,8 +20,7 @@ const team = [
 
 export default function AboutPage() {
   return (
-    <>
-      <Nav />
+    <main>
       <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.2)', padding: 'clamp(60px,8vw,100px) clamp(20px,5vw,60px) clamp(48px,6vw,80px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '40%', left: '50%', transform: 'translate(-50%,-50%)', width: '600px', height: '400px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.18) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '780px', margin: '0 auto' }}>
@@ -123,8 +121,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </>
+    </main>
   )
 }
