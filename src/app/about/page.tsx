@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const stats = [
-  { val: '$0', label: 'Upfront Cost — Ever' },
+  { val: '$0', label: 'Upfront Cost Ever' },
   { val: '1,000+', label: 'County Systems Monitored' },
   { val: 'A+', label: 'BBB Accredited Rating' },
   { val: '5→50', label: 'States Active & Expanding' },
@@ -10,7 +10,7 @@ const stats = [
 const values = [
   { n: '01', title: 'No Recovery, No Fee', desc: 'Pure contingency. We absorb every cost, handle all filings, and coordinate licensed attorneys on your behalf. You pay nothing unless we put money in your hands.', highlight: true },
   { n: '02', title: 'We Find You First', desc: 'Most clients had no idea money existed until we called. Our system monitors over 1,000 county court systems daily and identifies surplus before deadlines close.', highlight: false },
-  { n: '03', title: 'Licensed at Every Step', desc: 'Every claim runs through licensed Florida attorneys and licensed private investigators. RCG coordinates the process — we do not practice law, and we never cut corners.', highlight: false },
+  { n: '03', title: 'Licensed at Every Step', desc: 'Every claim runs through licensed Florida attorneys and licensed private investigators. RCG coordinates the process we do not practice law, and we never cut corners.', highlight: false },
   { n: '04', title: 'Deadline-Driven Execution', desc: 'Some claim windows close in 60 days. We track every deadline across every active county and have never missed a filing date on a signed case.', highlight: true },
 ]
 
@@ -19,18 +19,19 @@ export default function AboutPage() {
     <main>
 
       {/* HERO */}
-      <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.15)', padding: 'clamp(72px,9vw,120px) clamp(20px,5vw,60px) clamp(56px,7vw,88px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '800px', height: '600px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.18) 0%, transparent 68%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '720px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '32px', padding: '7px 18px', border: '1px solid rgba(74,95,212,0.2)', background: 'rgba(30,40,127,0.08)' }}>
+      <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.15)', padding: 'clamp(80px,10vw,130px) clamp(20px,5vw,60px) clamp(64px,8vw,96px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '900px', height: '600px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.22) 0%, transparent 65%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'linear-gradient(rgba(74,95,212,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.03) 1px,transparent 1px)', backgroundSize: '52px 52px', pointerEvents: 'none' }} />
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '36px', padding: '7px 18px', border: '1px solid rgba(74,95,212,0.2)', background: 'rgba(30,40,127,0.1)' }}>
             <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4a7fd4', display: 'inline-block', flexShrink: 0 }} />
             <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>Miami Beach, FL · Est. 2023 · BBB A+ Rated</span>
           </div>
-          <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(36px,5.5vw,68px)', color: '#fff', letterSpacing: '-2px', lineHeight: 1.02, margin: '0 0 24px' }}>
-            Rebound Capital Group
+          <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,76px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
+            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Rebound Capital </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Group</span>
           </h1>
-          <p style={{ fontSize: 'clamp(15px,1.8vw,18px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '520px', margin: '0 auto', fontWeight: 400 }}>
-            We find surplus funds that courts and state agencies are holding in your name — and we recover them on a pure contingency basis. Over $2 million returned to clients since 2023.
+          <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '460px', margin: '0 auto', fontWeight: 400 }}>
+            We find surplus funds courts and state agencies are holding in your name. We recover them on a pure contingency basis. Over $2 million returned to clients since 2023.
           </p>
         </div>
       </section>
@@ -57,7 +58,7 @@ export default function AboutPage() {
             </h2>
             <div style={{ width: '32px', height: '2px', background: '#1E287F', marginBottom: '28px' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {['Contingency Only — Always', 'Licensed Attorneys on Every Claim', 'Active in FL · AZ · CO · OH · MI'].map((item, i) => (
+              {['Contingency Only Always', 'Licensed Attorneys on Every Claim', 'Active in FL · AZ · CO · OH · MI'].map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <div style={{ width: '4px', height: '4px', background: '#1E287F', flexShrink: 0 }} />
                   <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#3a4f7a' }}>{item}</span>
@@ -68,10 +69,10 @@ export default function AboutPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, fontWeight: 400, margin: 0 }}>
-              Rebound Capital Group was founded by professionals with a deep background in real estate who spent years watching what happened to people after foreclosure and tax sales. The money was often still there — sitting in courthouses, in state treasury accounts, legally owed to the former owner. Most people never knew it existed.
+              Rebound Capital Group was founded by professionals with a deep background in real estate who spent years watching what happened to people after foreclosure and tax sales. The money was often still there sitting in courthouses, in state treasury accounts, legally owed to the former owner. Most people never knew it existed.
             </p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, fontWeight: 400, margin: 0 }}>
-              We saw the gap clearly. Homeowners walking away from funds they were entitled to — not because they gave up, but because nobody told them the money was there. Third parties were exploiting that confusion. We built RCG to close the gap and put the money back where it belongs.
+              We saw the gap clearly. Homeowners walking away from funds they were entitled to not because they gave up, but because nobody told them the money was there. Third parties were exploiting that confusion. We built RCG to close the gap and put the money back where it belongs.
             </p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px', paddingTop: '4px', paddingBottom: '4px' }}>
               <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>
@@ -93,7 +94,7 @@ export default function AboutPage() {
               <span className="section-tag">// How We Operate</span>
               <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,3.5vw,46px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '14px 0 0' }}>What Sets Us Apart.</h2>
             </div>
-            <p style={{ fontSize: '13px', color: '#4a5f80', lineHeight: 1.7, maxWidth: '260px', fontFamily: "'Space Mono',monospace", letterSpacing: '0.5px' }}>Four commitments we make to every client — and have never broken.</p>
+            <p style={{ fontSize: '13px', color: '#4a5f80', lineHeight: 1.7, maxWidth: '260px', fontFamily: "'Space Mono',monospace", letterSpacing: '0.5px' }}>Four commitments we make to every client and have never broken.</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '2px' }} className="about-values-grid">
             {values.map((v) => (
@@ -139,7 +140,7 @@ export default function AboutPage() {
                 Over the years, he built hands-on experience across real estate transactions, recovery matters, and claim-related work, collaborating directly with respected attorneys and private investigators on cases ranging from local disputes to more complex national and international matters.
               </p>
               <p style={{ fontSize: '14px', color: '#6a80b0', lineHeight: 1.95, margin: '0 0 24px' }}>
-                That background gave him a practical understanding of how different forms of unclaimed funds are identified, pursued, and recovered — from foreclosure surplus and tax deed overages to state-held property, estate claims, and other asset recovery matters.
+                That background gave him a practical understanding of how different forms of unclaimed funds are identified, pursued, and recovered from foreclosure surplus and tax deed overages to state-held property, estate claims, and other asset recovery matters.
               </p>
 
               <div style={{ borderLeft: '2px solid rgba(74,95,212,0.3)', paddingLeft: '18px', marginBottom: '28px' }}>
@@ -177,7 +178,7 @@ export default function AboutPage() {
                 {[
                   { val: '$2M+', label: 'Recovered for clients' },
                   { val: '1,000+', label: 'County systems monitored' },
-                  { val: '5 States', label: 'Active — expanding to 50' },
+                  { val: '5 States', label: 'Active expanding to 50' },
                   { val: '30d', label: 'Avg. claim turnaround' },
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '11px 0', borderBottom: i < 3 ? '1px solid rgba(74,95,212,0.07)' : 'none' }}>
@@ -212,7 +213,7 @@ export default function AboutPage() {
             You Do Not Need to Figure This Out Alone.
           </h2>
           <p style={{ fontSize: '15px', color: '#506080', lineHeight: 1.85, marginBottom: '40px' }}>
-            We have done this hundreds of times. If there are funds owed to you — from a foreclosure, a tax sale, or a state treasury — we will find them, file for them, and recover them. You pay nothing unless we succeed.
+            We have done this hundreds of times. If there are funds owed to you from a foreclosure, a tax sale, or a state treasury we will find them, file for them, and recover them. You pay nothing unless we succeed.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-primary">Start a Free Claim Review</Link>
