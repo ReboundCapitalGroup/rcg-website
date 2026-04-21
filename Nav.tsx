@@ -22,9 +22,26 @@ function DDLabel({ children, mt }: { children: React.ReactNode; mt?: boolean }) 
 }
 
 export default function Nav() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
-  const [statesOpen, setStatesOpen] = useState(false)
+ const [mobileOpen, setMobileOpen] = useState(false)
+const [servicesOpen, setServicesOpen] = useState(false)
+const [statesOpen, setStatesOpen] = useState(false)
+
+const toggleServices = () => {
+  setServicesOpen((prev) => {
+    const next = !prev
+    if (next) setStatesOpen(false)
+    return next
+  })
+}
+
+const toggleStates = () => {
+  setStatesOpen((prev) => {
+    const next = !prev
+    if (next) setServicesOpen(false)
+    return next
+  })
+}
+
 
   return (
     <>
@@ -132,7 +149,7 @@ export default function Nav() {
         <nav className="mobile-nav-links">
 
           {/* Services accordion */}
-          <button className="mobile-nav-section" onClick={() => setServicesOpen(!servicesOpen)}>
+          <button className="mobile-nav-section" onClick={toggleServices}>
             <span>Services</span>
             <span className={`mobile-chevron ${servicesOpen ? 'open' : ''}`}>▾</span>
           </button>
@@ -157,7 +174,7 @@ export default function Nav() {
           )}
 
           {/* States accordion */}
-          <button className="mobile-nav-section" onClick={() => setStatesOpen(!statesOpen)}>
+          <button className="mobile-nav-section" onClick={toggleStates}>
             <span>States</span>
             <span className={`mobile-chevron ${statesOpen ? 'open' : ''}`}>▾</span>
           </button>
@@ -176,10 +193,11 @@ export default function Nav() {
           )}
 
           <Link href="/map" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Unclaimed Property Map</Link>
-          <Link href="/resources/how-it-works" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>How It Works</Link>
-          <Link href="/resources/faqs" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>FAQs</Link>
-          <Link href="/about" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>About</Link>
-          <Link href="/contact" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Contact</Link>
+          <Link href="/map" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Unclaimed Property Map</Link>
+<Link href="/resources/how-it-works" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>How It Works</Link>
+<Link href="/about" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>About</Link>
+<Link href="/contact" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Contact</Link>
+
         </nav>
 
         {/* Drawer footer */}
