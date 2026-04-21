@@ -65,14 +65,14 @@ export default function Home() {
 
           {/* Headline — two clean lines */}
           <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(28px,5vw,60px)', lineHeight:1.08, color:'#fff', letterSpacing:'clamp(-1px,-0.15em,-2px)', margin:'0 0 20px', textAlign:'center' }}>
-            Turning <span style={{ color:'#ffffff' }}>Forgotten Funds</span>
+            Turning <span style={{ backgroundImage:'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent' }}>Forgotten Funds</span>
             <br />
-            <span style={{ whiteSpace:'nowrap' as const }}>Into <span style={{ color:'#344f8a', letterSpacing:'-0.5px', fontWeight:600 }}>Future Opportunities.</span></span>
+            <span style={{ whiteSpace:'nowrap' as const }}>Into <span style={{ backgroundImage:'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', letterSpacing:'-0.5px', fontWeight:700 }}>Future Opportunities.</span></span>
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
           <p style={{ fontSize:'clamp(14px,3.5vw,15px)', color:'#a8bedd', lineHeight:1.85, maxWidth:'600px', width:'100%', margin:'0 auto 28px', fontWeight:400, textAlign:'center', padding:'0 4px' }}>
-            Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds. If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong> We recover it across FL, AZ, CO, OH, MI and expanding. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong>
+            Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds. If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong> We recover it across FL, AZ, CO, OH, MI and expanding. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong>
           </p>
 
           {/* CTAs */}
@@ -101,21 +101,29 @@ export default function Home() {
             </p>
           </div>
           <div className="service-grid">
-            {services.map(s => (
-              <Link key={s.id} href={s.href} className="service-card">
-                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'20px' }}>
-                  <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'2px', textTransform:'uppercase', color:'var(--dim)' }}>{s.id}</span>
-                  <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'7px', letterSpacing:'1.5px', textTransform:'uppercase', color:'rgba(74,127,212,0.5)', border:'1px solid rgba(74,127,212,0.2)', padding:'2px 7px' }}>{(s as any).tag}</span>
-                </div>
-                <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'2px', textTransform:'uppercase', color:'var(--rcg2)', marginBottom:'10px', opacity:0.7 }}>{s.cat}</div>
-                <div style={{ fontFamily:"'Space Grotesk',sans-serif", fontSize:'16px', fontWeight:700, letterSpacing:'-0.3px', color:'#fff', marginBottom:'12px', lineHeight:1.2 }}>{s.title}</div>
-                <div style={{ fontSize:'13px', color:'var(--mid)', lineHeight:1.7, flexGrow:1 }}>{s.desc}</div>
-                <div style={{ marginTop:'20px', display:'flex', alignItems:'center', gap:'8px' }}>
-                  <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'var(--rcg2)' }}>Explore</span>
-                  <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)' }}>→</span>
-                </div>
-              </Link>
-            ))}
+            {services.map((s, i) => {
+              const isHighlighted = i % 2 === 0
+              return (
+                <Link
+                  key={s.id}
+                  href={s.href}
+                  className="service-card"
+                  style={isHighlighted ? { background:'rgba(30,40,127,0.12)', borderColor:'rgba(74,95,212,0.28)' } : undefined}
+                >
+                  <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'20px' }}>
+                    <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'2px', textTransform:'uppercase', color: isHighlighted ? 'rgba(74,127,212,0.9)' : 'var(--dim)' }}>{s.id}</span>
+                    <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'7px', letterSpacing:'1.5px', textTransform:'uppercase', color:'rgba(74,127,212,0.5)', border:'1px solid rgba(74,127,212,0.2)', padding:'2px 7px' }}>{(s as any).tag}</span>
+                  </div>
+                  <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'2px', textTransform:'uppercase', color:'var(--rcg2)', marginBottom:'10px', opacity:0.7 }}>{s.cat}</div>
+                  <div style={{ fontFamily:"'Space Grotesk',sans-serif", fontSize:'16px', fontWeight:700, letterSpacing:'-0.3px', color:'#fff', marginBottom:'12px', lineHeight:1.2 }}>{s.title}</div>
+                  <div style={{ fontSize:'13px', color:'var(--mid)', lineHeight:1.7, flexGrow:1 }}>{s.desc}</div>
+                  <div style={{ marginTop:'20px', display:'flex', alignItems:'center', gap:'8px' }}>
+                    <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'var(--rcg2)' }}>Explore</span>
+                    <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)' }}>→</span>
+                  </div>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>
