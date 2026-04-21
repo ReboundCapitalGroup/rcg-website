@@ -1,43 +1,88 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'New Jersey Surplus Recovery | Rebound Capital Group',
-  description: 'Coming soon to New Jersey.',
-}
+const counties = ['Atlantic', 'Bergen', 'Burlington', 'Camden', 'Cape May', 'Cumberland', 'Essex', 'Gloucester', 'Hudson', 'Hunterdon', 'Mercer', 'Middlesex', 'Monmouth', 'Morris', 'Ocean', 'Passaic', 'Salem', 'Somerset', 'Sussex', 'Union', 'Warren']
 
-export default function Page() {
+export default function NewJerseyPage() {
   return (
-    <div style={{ background: 'var(--bg)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '80px 24px' }}>
-      <div style={{ maxWidth: '560px', textAlign: 'center' }}>
-        <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: '#1E287F', marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-          <div style={{ width: '20px', height: '1px', background: '#1E287F' }} />
-          Coming Soon
-          <div style={{ width: '20px', height: '1px', background: '#1E287F' }} />
+    <main>
+      <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.15)', padding: 'clamp(80px,10vw,130px) clamp(20px,5vw,60px) clamp(64px,8vw,96px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '900px', height: '600px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.2) 0%, transparent 65%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(74,95,212,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.06) 1px,transparent 1px)', backgroundSize: '52px 52px', pointerEvents: 'none' }} />
+        <div className="scan-animate" style={{ position: 'absolute', left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.5),transparent)', pointerEvents: 'none', zIndex: 1 }} />
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: '720px', margin: '0 auto' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '32px', padding: '7px 18px', border: '1px solid rgba(74,95,212,0.2)', background: 'rgba(30,40,127,0.1)' }}>
+            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4a7fd4', display: 'inline-block', flexShrink: 0 }} />
+            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>New Jersey · All 21 Counties · No Upfront Cost</span>
+          </div>
+          <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,72px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
+            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Surplus Fund Recovery </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>in New Jersey</span>
+          </h1>
+          <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '540px', margin: '0 auto', fontWeight: 400 }}>Courts, county sheriffs, and state agencies in New Jersey are holding funds belonging to former property owners and residents. RCG monitors all 21 New Jersey counties and recovers these funds at no upfront cost.</p>
         </div>
-        <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(24px,4vw,42px)', color: '#fff', letterSpacing: '-1px', marginBottom: '16px', lineHeight: 1.1 }}>
-          New Jersey — Coming Soon
-        </h1>
-        <p style={{ fontSize: '15px', color: '#7a90c0', lineHeight: 1.75, marginBottom: '8px' }}>
-          We are expanding operations into New Jersey. If you believe you are owed surplus funds from a foreclosure or tax deed sale, contact us now — we can still help.
-        </p>
-        <p style={{ fontSize: '13px', color: '#4a5890', lineHeight: 1.6, marginBottom: '36px', fontFamily: "'Space Mono',monospace" }}>
-          Call us directly for immediate assistance. Every case is handled personally.
-        </p>
-        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="tel:+13055634920" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'linear-gradient(180deg,#4a5060 0%,#2a2e38 50%,#1a1d24 100%)', color: '#fff', fontFamily: "'Arial Black',Arial,sans-serif", fontSize: '12px', fontWeight: 900, letterSpacing: '1px', padding: '14px 24px', border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 3px 0 rgba(0,0,0,0.5)', textDecoration: 'none' }}>
-            305-563-4920
-          </a>
-          <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', background: 'linear-gradient(180deg,#3a4050 0%,#20242e 50%,#141820 100%)', color: '#c8d8ff', fontFamily: "'Space Grotesk',sans-serif", fontSize: '12px', fontWeight: 700, letterSpacing: '0.8px', textTransform: 'uppercase', padding: '14px 24px', border: '1px solid rgba(255,255,255,0.08)', textDecoration: 'none' }}>
-            Free Claim Review
-          </Link>
-        </div>
-        <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid rgba(30,40,127,0.2)' }}>
-          <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1px', textTransform: 'uppercase', color: '#2a3560', lineHeight: 1.8 }}>
-            All recovery services conducted in partnership with licensed attorneys and licensed private investigators. RCG does not practice law.
-          </p>
+      </section>
+      <div style={{ background: '#080d1a', borderBottom: '1px solid rgba(30,40,127,0.12)' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }} className="about-stats-bar">
+          {[{ val: '21', label: 'Counties Monitored' },{ val: 'Expanding', label: 'RCG Status' },{ val: '$0', label: 'Upfront Cost' },{ val: '60-90d', label: 'Avg. Claim Timeline' }].map((s, i) => (
+            <div key={i} style={{ padding: '32px 24px', borderRight: i < 3 ? '1px solid rgba(74,95,212,0.1)' : 'none', textAlign: 'center' }}>
+              <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,30px)', color: '#4a7fd4', letterSpacing: '-1px', lineHeight: 1, marginBottom: '8px' }}>{s.val}</div>
+              <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#3a4f7a' }}>{s.label}</div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+      <section style={{ background: 'var(--bg)', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)' }}>
+        <div style={{ maxWidth: '1060px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 'clamp(48px,6vw,88px)', alignItems: 'start' }} className="about-story-grid">
+          <div style={{ position: 'sticky', top: '108px' }}>
+            <span className="section-tag">// New Jersey Recovery</span>
+            <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,3.5vw,42px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.1, margin: '14px 0 20px' }}>Recovery in New Jersey.<br /><span style={{ color: 'var(--dim)' }}>All 21 Counties.</span></h2>
+            <div style={{ width: '32px', height: '2px', background: '#1E287F', marginBottom: '28px' }} />
+            {['Foreclosure Surplus Funds','Sheriff Sale Overages','Tax Sale Certificate Recovery','New Jersey Unclaimed Property','Estate and Heir Recovery'].map((item, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                <div style={{ width: '4px', height: '4px', background: '#1E287F', flexShrink: 0 }} />
+                <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#3a4f7a' }}>{item}</span>
+              </div>
+            ))}
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>New Jersey has one of the highest foreclosure volumes in the country, with Essex, Hudson, Bergen, Middlesex, and Ocean counties leading in surplus funds cases. New Jersey uses a judicial foreclosure process and sheriff sales are conducted by each county. Surplus funds from sheriff sales are deposited with the Superior Court of New Jersey Trust Fund Unit until claimed by the former owner.</p>
+            <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>New Jersey tax sale certificates can also produce surplus funds when properties are foreclosed and resold. The New Jersey Unclaimed Property Administration, administered by the state Department of the Treasury, holds hundreds of millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to New Jersey residents. RCG searches New Jersey Superior Court records, county sheriff sale records, and state unclaimed property databases for every New Jersey client.</p>
+            <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed New Jersey attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div style={{ maxWidth: '960px', margin: '0 auto', height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.18),transparent)' }} />
+      <section style={{ background: 'var(--bg)', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)' }}>
+        <div style={{ maxWidth: '1060px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '48px' }}>
+            <span className="section-tag">// County Coverage</span>
+            <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,3.5vw,42px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.1, margin: '14px 0 12px' }}>All 21 New Jersey Counties.</h2>
+            <p style={{ fontSize: '15px', color: '#506080', lineHeight: 1.8, maxWidth: '600px' }}>RCG monitors foreclosure surplus funds, sheriff sale overages, and unclaimed property across every county in New Jersey. If funds exist in your name in any New Jersey county, we will find them and recover them.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '2px' }}>
+            {counties.map((county, i) => (
+              <div key={i} style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.07)', padding: '14px 18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ width: '3px', height: '3px', background: '#1E287F', flexShrink: 0 }} />
+                <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '13px', color: '#6a80b0' }}>{county} County</span>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1px', textTransform: 'uppercase', color: '#2a3a60', marginTop: '24px', lineHeight: 2 }}>Foreclosure surplus funds · Sheriff sale overages · Tax sale certificate recovery · New Jersey unclaimed property · Estate and heir recovery — available across all 21 New Jersey counties.</p>
+        </div>
+      </section>
+      <div style={{ maxWidth: '960px', margin: '0 auto', height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.18),transparent)' }} />
+      <section style={{ background: '#000', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)', textAlign: 'center' }}>
+        <div style={{ maxWidth: '560px', margin: '0 auto' }}>
+          <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// New Jersey · Free search</span>
+          <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,4vw,48px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '16px 0 16px' }}>Find Out What New Jersey Is Holding in Your Name.</h2>
+          <p style={{ fontSize: '15px', color: '#506080', lineHeight: 1.85, marginBottom: '36px' }}>We search New Jersey court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis.</p>
+          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/contact" className="btn-primary">Free Claim Review</Link>
+            <a href="tel:+13055634920" className="btn-secondary">305-563-4920</a>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
