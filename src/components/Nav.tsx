@@ -156,7 +156,7 @@ export default function Nav() {
             </div>
           )}
 
-          {/* States accordion */}
+          {/* States accordion - now matches desktop nav exactly */}
           <button className="mobile-nav-section" onClick={() => setStatesOpen(!statesOpen)}>
             <span>States</span>
             <span className={`mobile-chevron ${statesOpen ? 'open' : ''}`}>▾</span>
@@ -170,8 +170,12 @@ export default function Nav() {
               <Link href="/states/ohio" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Ohio — 88 Counties</Link>
               <Link href="/states/michigan" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Michigan — 83 Counties</Link>
               <div className="mobile-nav-group-label">Expanding Soon</div>
-              <Link href="/states/georgia" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Georgia</Link>
-              <Link href="/states/new-jersey" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>New Jersey</Link>
+              <Link href="/states/georgia" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Georgia — 159 Counties</Link>
+              <Link href="/states/new-jersey" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>New Jersey — 21 Counties</Link>
+              <Link href="/states/texas" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Texas — 254 Counties</Link>
+              <Link href="/states/north-carolina" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>North Carolina — 100 Counties</Link>
+              <Link href="/states/virginia" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Virginia — 95 Counties</Link>
+              <Link href="/states" className="mobile-nav-item" onClick={() => setMobileOpen(false)} style={{ color: '#4a7fd4', fontWeight: 600 }}>All 50 States →</Link>
             </div>
           )}
 
