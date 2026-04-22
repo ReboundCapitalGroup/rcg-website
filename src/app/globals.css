@@ -589,6 +589,7 @@ nav {
   padding: 8px 0;
   overflow-y: auto;
   overflow-x: hidden;
+  display: block;
 }
 
 .mobile-nav-section {
@@ -643,6 +644,7 @@ nav {
   background: rgba(0,0,0,0.2);
   border-bottom: 1px solid rgba(74,127,212,0.08);
   padding: 8px 0;
+  display: block;
 }
 
 .mobile-nav-group-label {
@@ -652,6 +654,7 @@ nav {
   text-transform: uppercase;
   color: #2a4070;
   padding: 10px 24px 4px 32px;
+  display: block;
 }
 
 .mobile-nav-item {
@@ -663,6 +666,7 @@ nav {
   text-decoration: none;
   border-bottom: 1px solid rgba(74,127,212,0.04);
   transition: color 0.15s;
+  width: 100%;
 }
 .mobile-nav-item:hover { color: #c8d8ff; }
 
@@ -673,9 +677,46 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .desktop-nav { display: none; }
-  .mobile-nav-controls { display: flex; }
-  nav { padding: 0 20px !important; }
+  .desktop-nav,
+  .nav-links { 
+    display: none !important; 
+  }
+  .mobile-nav-controls { 
+    display: flex !important; 
+  }
+  nav { 
+    padding: 0 20px !important; 
+  }
+  
+  /* CTA Band mobile fix — was margin: 0 40px with horizontal flex, overflowing viewport */
+  .cta-band {
+    margin: 0 16px 40px !important;
+  }
+  .cta-band > div {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 32px 24px !important;
+    gap: 24px !important;
+  }
+  .cta-band .btn-primary,
+  .cta-band .btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 14px 20px !important;
+    font-size: 11px !important;
+  }
+  .cta-band h2 {
+    font-size: 24px !important;
+    line-height: 1.15 !important;
+  }
+  .cta-band p {
+    max-width: 100% !important;
+  }
+  .cta-band > div > div:last-child {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
 }
 /* ===================== END MOBILE NAV ===================== */
 
