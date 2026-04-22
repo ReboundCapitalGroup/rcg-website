@@ -58,9 +58,9 @@ export default function Home() {
 
         <div style={{ position:'relative', zIndex:2, width:'100%', maxWidth:'780px' }}>
           {/* Badge */}
-          <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'10px', marginBottom:'24px', flexWrap:'wrap' }}>
+          <div className="hero-badge-container" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'10px', marginBottom:'24px', flexWrap:'nowrap' }}>
             <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#1E287F', display:'inline-block', flexShrink:0 }} />
-            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#5a6890', whiteSpace:'nowrap' as const }}>FL · AZ · CO · OH · MI · Expanding Nationwide · BBB A+</span>
+            <span className="hero-badge-text" style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#5a6890', whiteSpace:'nowrap' as const }}>FL · AZ · CO · OH · MI · Expanding Nationwide · BBB A+</span>
           </div>
 
           {/* Headline — two clean lines */}
