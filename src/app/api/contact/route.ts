@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 // Rate limiting: simple in-memory store (resets on deployment)
-// For production scale, consider Upstash Redis
 const submissionTracker = new Map<string, number[]>()
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000 // 1 hour
 const RATE_LIMIT_MAX = 3 // max 3 submissions per IP per hour
@@ -50,8 +49,7 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json()
 
-    // Honeypot: if the hidden field is filled, it's a bot.
-    // Return success to not tip off the bot, but don't process.
+    // Honeypot: if the hidden field is filled, it's a bot
     if (body.website_url && body.website_url.length > 0) {
       return NextResponse.json({ success: true }, { status: 200 })
     }
@@ -123,11 +121,14 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Send email notification via Resend (optional — silently skips if not configured)
-    const resendKey = process.env.RESEND_API_KEY
+    // ========================================
+    // EMAIL VIA POSTMARK
+    // ========================================
+    const postmarkToken = process.env.POSTMARK_SERVER_TOKEN
+    const fromEmail = process.env.FROM_EMAIL || 'contact@reboundcapitalgroup.com'
     const notifyEmail = process.env.NOTIFY_EMAIL || 'contact@reboundcapitalgroup.com'
 
-    if (resendKey) {
+    if (postmarkToken) {
       try {
         const emailBody = `
 New contact form submission received on reboundcapitalgroup.com
@@ -151,24 +152,33 @@ Review and promote this lead in the CRM:
 https://crm.reboundcapitalgroup.com/website-inbox
         `.trim()
 
-        await fetch('https://api.resend.com/emails', {
+        const postmarkRes = await fetch('https://api.postmarkapp.com/email', {
           method: 'POST',
           headers: {
-            Authorization: `Bearer ${resendKey}`,
+            Accept: 'application/json',
             'Content-Type': 'application/json',
+            'X-Postmark-Server-Token': postmarkToken,
           },
           body: JSON.stringify({
-            from: 'RCG Website <noreply@send.reboundcapitalgroup.com>',
-            to: [notifyEmail],
-            reply_to: email,
-            subject: `New Inquiry from ${fullName} (${state || 'Unknown'})`,
-            text: emailBody,
+            From: `RCG Website <${fromEmail}>`,
+            To: notifyEmail,
+            ReplyTo: email,
+            Subject: `New Inquiry from ${fullName} (${state || 'Unknown'})`,
+            TextBody: emailBody,
+            MessageStream: 'outbound',
           }),
         })
+
+        if (!postmarkRes.ok) {
+          const errorText = await postmarkRes.text()
+          console.error('Postmark send failed:', errorText)
+        }
       } catch (emailErr) {
         // Log but don't fail the submission if email fails
         console.error('Email notification failed:', emailErr)
       }
+    } else {
+      console.error('Postmark token not configured')
     }
 
     return NextResponse.json({ success: true }, { status: 200 })
