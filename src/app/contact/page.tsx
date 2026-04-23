@@ -14,6 +14,19 @@ const US_STATES = [
   'Wisconsin', 'Wyoming'
 ]
 
+const inputStyle = {
+  background: '#0a0f1a',
+  border: '1px solid rgba(74,95,212,0.15)',
+  padding: '14px 16px',
+  color: '#c8d8ff',
+  fontSize: '15px',
+  fontFamily: "'Space Grotesk',sans-serif",
+  outline: 'none',
+  width: '100%',
+  minWidth: 0,
+  boxSizing: 'border-box' as const,
+}
+
 export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -83,6 +96,19 @@ export default function ContactPage() {
 
   return (
     <main>
+      <style>{`
+        .contact-form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+        @media (max-width: 600px) {
+          .contact-form-row {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
+
       <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.15)', padding: 'clamp(80px,10vw,130px) clamp(20px,5vw,60px) clamp(48px,6vw,72px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '900px', height: '600px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.2) 0%, transparent 65%)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(74,95,212,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.06) 1px,transparent 1px)', backgroundSize: '52px 52px', pointerEvents: 'none' }} />
@@ -125,12 +151,12 @@ export default function ContactPage() {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 disabled={submitting}
-                style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.15)', padding: '14px 16px', color: '#c8d8ff', fontSize: '15px', fontFamily: "'Space Grotesk',sans-serif", outline: 'none' }}
+                style={inputStyle}
               />
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="contact-form-row">
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div className="contact-form-row">
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
                 <label style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a6090' }}>Email *</label>
                 <input
                   type="email"
@@ -138,11 +164,11 @@ export default function ContactPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={submitting}
-                  style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.15)', padding: '14px 16px', color: '#c8d8ff', fontSize: '15px', fontFamily: "'Space Grotesk',sans-serif", outline: 'none' }}
+                  style={inputStyle}
                 />
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
                 <label style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a6090' }}>Phone *</label>
                 <input
                   type="tel"
@@ -151,7 +177,7 @@ export default function ContactPage() {
                   onChange={(e) => setPhone(e.target.value)}
                   disabled={submitting}
                   placeholder="(305) 555-1234"
-                  style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.15)', padding: '14px 16px', color: '#c8d8ff', fontSize: '15px', fontFamily: "'Space Grotesk',sans-serif", outline: 'none' }}
+                  style={inputStyle}
                 />
               </div>
             </div>
@@ -162,7 +188,7 @@ export default function ContactPage() {
                 value={state}
                 onChange={(e) => setState(e.target.value)}
                 disabled={submitting}
-                style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.15)', padding: '14px 16px', color: state ? '#c8d8ff' : '#506080', fontSize: '15px', fontFamily: "'Space Grotesk',sans-serif", outline: 'none', appearance: 'none', cursor: 'pointer' }}
+                style={{ ...inputStyle, color: state ? '#c8d8ff' : '#506080', appearance: 'none', cursor: 'pointer' }}
               >
                 <option value="">Select state</option>
                 {US_STATES.map((s) => (
@@ -179,7 +205,7 @@ export default function ContactPage() {
                 onChange={(e) => setPropertyAddress(e.target.value)}
                 disabled={submitting}
                 placeholder="Optional — if you have a specific property in mind"
-                style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.15)', padding: '14px 16px', color: '#c8d8ff', fontSize: '15px', fontFamily: "'Space Grotesk',sans-serif", outline: 'none' }}
+                style={inputStyle}
               />
             </div>
 
@@ -191,7 +217,7 @@ export default function ContactPage() {
                 disabled={submitting}
                 rows={5}
                 placeholder="Brief description of your situation (foreclosure, tax sale, unclaimed property, estate, etc.)"
-                style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.15)', padding: '14px 16px', color: '#c8d8ff', fontSize: '15px', fontFamily: "'Space Grotesk',sans-serif", outline: 'none', resize: 'vertical', minHeight: '120px' }}
+                style={{ ...inputStyle, resize: 'vertical', minHeight: '120px' }}
               />
             </div>
 
