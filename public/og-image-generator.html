@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1.0">
+<title>RCG OG Image</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: #1a1a1a;
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .controls button {
+    padding: 10px 18px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #0a0e1a;
+    background: #7fd99f;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .controls button:hover { background: #95e3b3; }
+
+  .og-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* OG Image is exactly 1200x630 */
+  .og {
+    width: 1200px;
+    height: 630px;
+    background: #0a0e1a;
+    position: relative;
+    overflow: hidden;
+    padding: 70px 80px;
+    flex-shrink: 0;
+    transform-origin: top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Grid background */
+  .og::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(26,36,70,0.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,36,70,0.35) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  /* Radial glow accent */
+  .og::after {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(74,95,212,0.18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .top-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .brand-badge {
+    width: 64px;
+    height: 64px;
+    border: 2px solid rgba(74,95,212,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10,14,26,0.7);
+  }
+
+  .brand-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1.5px;
+  }
+
+  .brand-name {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .brand-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .brand-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #8fa3f0;
+    text-transform: uppercase;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 1px solid rgba(74,95,212,0.3);
+    background: rgba(30,40,127,0.15);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #7fd99f;
+    box-shadow: 0 0 10px rgba(127,217,159,0.7);
+  }
+
+  .status-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #7fd99f;
+    text-transform: uppercase;
+  }
+
+  /* Middle - Main headline */
+  .main {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 0;
+  }
+
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    color: #4a5fd4;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 86px;
+    font-weight: 700;
+    letter-spacing: -3.5px;
+    line-height: 0.95;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+
+  .headline .accent {
+    color: #5479d6;
+  }
+
+  .sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    color: #8fa3c0;
+    line-height: 1.5;
+    max-width: 800px;
+  }
+
+  /* Bottom - States + CTA */
+  .bottom-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .states {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .states-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #4a5fd4;
+    text-transform: uppercase;
+  }
+
+  .states-list {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .state-abbr {
+    font-family: 'Space Mono', monospace;
+    font-size: 24px;
+    font-weight: 700;
+    color: #c8d8ff;
+    letter-spacing: 1px;
+  }
+
+  .states-plus {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    color: #7fd99f;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .url {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-align: right;
+    padding: 14px 22px;
+    background: rgba(30,40,127,0.25);
+    border: 1px solid rgba(74,95,212,0.4);
+  }
+
+  /* Save button */
+  .save-btn {
+    margin-top: 12px;
+    padding: 14px 28px;
+    background: #7fd99f;
+    color: #0a0e1a;
+    border: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .save-btn:hover { background: #95e3b3; }
+
+  .note {
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid #2a48a0;
+    color: #c8d8ff;
+    font-size: 11px;
+    line-height: 1.5;
+    font-family: 'Space Mono', monospace;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="og-wrapper" id="ogWrapper">
+  <div class="og" id="og">
+
+    <div class="top-row">
+      <div class="brand">
+        <div class="brand-badge">
+          <span class="brand-logo">RCG</span>
+        </div>
+        <div class="brand-name">
+          <span class="brand-title">Rebound Capital Group</span>
+          <span class="brand-subtitle">LLC · MIAMI BEACH, FL</span>
+        </div>
+      </div>
+
+      <div class="status-badge">
+        <span class="dot"></span>
+        <span class="status-text">Active Nationwide</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="tag">// Asset Recovery · Est. 2023</div>
+      <h1 class="headline">
+        Nationwide<br>
+        <span class="accent">Surplus Funds Recovery</span>
+      </h1>
+      <p class="sub">Foreclosure surplus · Tax deed overages · Unclaimed property · Estate recovery. No upfront fees. 100% contingency.</p>
+    </div>
+
+    <div class="bottom-row">
+      <div class="states">
+        <div class="states-label">// Active Recovery Markets</div>
+        <div class="states-list">
+          <span class="state-abbr">FL</span>
+          <span class="state-abbr">AZ</span>
+          <span class="state-abbr">CO</span>
+          <span class="state-abbr">OH</span>
+          <span class="state-abbr">MI</span>
+          <span class="states-plus">+ 45 MORE</span>
+        </div>
+      </div>
+
+      <div class="url">reboundcapitalgroup.com</div>
+    </div>
+
+  </div>
+</div>
+
+<button class="save-btn" onclick="downloadImage()">⬇ Download as PNG (1200×630)</button>
+
+<div class="note">
+  <strong>»</strong> Download this PNG and save to <strong>/public/og-image.png</strong> in your GitHub repo
+</div>
+
+<script>
+  function scaleOg() {
+    const og = document.getElementById('og');
+    const wrapper = document.getElementById('ogWrapper');
+    const fw = 1200;
+    const fh = 630;
+    const sw = window.innerWidth - 40;
+    const sh = window.innerHeight - 200;
+    const scale = Math.min(sw / fw, sh / fh, 1);
+    og.style.transform = `scale(${scale})`;
+    wrapper.style.height = `${fh * scale + 20}px`;
+  }
+
+  function downloadImage() {
+    const og = document.getElementById('og');
+    const originalTransform = og.style.transform;
+    og.style.transform = 'scale(1)';
+
+    if (typeof html2canvas === 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      script.onload = () => captureNow(og, originalTransform);
+      document.head.appendChild(script);
+    } else {
+      captureNow(og, originalTransform);
+    }
+  }
+
+  function captureNow(og, originalTransform) {
+    html2canvas(og, {
+      width: 1200,
+      height: 630,
+      scale: 2, // 2x for retina sharpness
+      useCORS: true,
+      backgroundColor: '#0a0e1a',
+      logging: false
+    }).then(canvas => {
+      og.style.transform = originalTransform;
+      scaleOg();
+      const link = document.createElement('a');
+      link.download = 'og-image.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }).catch(err => {
+      og.style.transform = originalTransform;
+      scaleOg();
+      alert('Download failed. Try again or screenshot manually.');
+    });
+  }
+
+  window.addEventListener('load', scaleOg);
+  window.addEventListener('resize', scaleOg);
+</script>
+
+</body>
+</html>
