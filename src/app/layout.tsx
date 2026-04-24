@@ -14,13 +14,21 @@ export const metadata: Metadata = {
   publisher: 'Rebound Capital Group LLC',
 
   openGraph: {
-    title: 'Rebound Capital Group | Nationwide Surplus Funds Recovery',
-    description: 'We recover foreclosure surplus, tax deed overages, and unclaimed property in all 50 states. Zero upfront fees.',
-    url: 'https://reboundcapitalgroup.com',
-    siteName: 'Rebound Capital Group',
-    type: 'website',
-    locale: 'en_US',
-  },
+  title: 'Rebound Capital Group | Nationwide Surplus Funds Recovery',
+  description: 'We recover foreclosure surplus, tax deed overages, and unclaimed property in all 50 states. Zero upfront fees.',
+  url: 'https://reboundcapitalgroup.com',
+  siteName: 'Rebound Capital Group',
+  type: 'website',
+  locale: 'en_US',
+  images: [
+    {
+      url: '/og-image.png',
+      width: 1200,
+      height: 630,
+      alt: 'Rebound Capital Group - Nationwide Surplus Funds Recovery',
+    },
+  ],
+},
 
   twitter: {
     card: 'summary_large_image',
