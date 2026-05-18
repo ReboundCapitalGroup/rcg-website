@@ -1,4 +1,10 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Hawaii Surplus Funds Recovery | All Counties | RCG',
+}
+
 
 const counties = ['Hawaii', 'Honolulu', 'Kalawao', 'Kauai', 'Maui']
 

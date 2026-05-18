@@ -1,4 +1,10 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Ohio Foreclosure Surplus Recovery | ORC 2329.44 | RCG',
+}
+
 
 const counties = [
   'Adams','Allen','Ashland','Ashtabula','Athens','Auglaize','Belmont','Brown','Butler','Carroll',
