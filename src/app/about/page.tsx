@@ -3,7 +3,7 @@ import Link from 'next/link'
 const stats = [
   { val: '$0', label: 'Upfront Cost Ever' },
   { val: '1,000+', label: 'County Systems Monitored' },
-  { val: 'A+', label: 'BBB Accredited Rating' },
+  { val: 'A+', label: 'BBB Rating' },
   { val: '5→50', label: 'States Active & Expanding' },
 ]
 
@@ -161,11 +161,11 @@ export default function AboutPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.15)', padding: '32px', position: 'relative' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,#1E287F,transparent)' }} />
-                <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#3a4f7a', marginBottom: '16px' }}>// BBB Accreditation</div>
+                <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#3a4f7a', marginBottom: '16px' }}>// BBB A+ Rating</div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '14px' }}>
                   <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '56px', color: '#4a7fd4', letterSpacing: '-2px', lineHeight: 1 }}>A+</div>
                   <div>
-                    <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 600, fontSize: '14px', color: '#c8d8ff' }}>BBB Accredited</div>
+                    <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 600, fontSize: '14px', color: '#c8d8ff' }}>BBB Rating</div>
                     <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: '#4a5f94', letterSpacing: '1px', textTransform: 'uppercase' }}>Since 2023</div>
                   </div>
                 </div>

@@ -23,7 +23,7 @@ const firmStats = [
   { val:'1,000+', desc:'County court systems actively monitored and scraped daily.' },
   { val:'5 → 50', desc:'Active states now. FL, AZ, CO, OH, MI live today.', small: true },
   { val:'5 States', desc:'FL · AZ · CO · OH · MI — live court monitoring. Expanding nationwide.', small: true },
-  { val:'A+', desc:'BBB Accredited — Miami Beach, FL. Licensed & compliant.', blue: true },
+  { val:'A+', desc:'BBB A+ Rated — Miami Beach, FL. Licensed & compliant.', blue: true },
 ]
 
 const allStates = ['Florida','Arizona','Colorado','Georgia','Ohio','New Jersey','Texas','California','New York','Illinois','Pennsylvania','Michigan','N. Carolina','Virginia','Washington','Nevada','Tennessee','Indiana','Missouri','Maryland','Wisconsin','Minnesota','S. Carolina','Alabama']
