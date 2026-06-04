@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Pre-Sale Foreclosure Solutions | RCG',
+  description: 'Pre-sale foreclosure solutions to preserve equity before the auction — cash offers, mortgage assumptions, and buyer connections from Rebound Capital Group.',
 }
 export default function Page() {
   return (

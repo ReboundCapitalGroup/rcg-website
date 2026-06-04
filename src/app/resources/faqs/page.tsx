@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Surplus Funds Recovery FAQs | Rebound Capital Group',
+  description: 'Answers to common questions about surplus funds recovery — deadlines, eligibility, fees, and the claim process. Rebound Capital Group works on pure contingency.',
 }
 
 const categories = [

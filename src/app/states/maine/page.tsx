@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Maine Surplus Funds Recovery | All Counties | RCG',
+  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property in Maine. Rebound Capital Group files through licensed attorneys at no upfront cost — you pay nothing until we recover.',
 }
 
 

@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Foreclosure, Surplus & Unclaimed Property Recovery | RCG',
+  description: 'Full-service recovery of foreclosure surplus, tax deed overages, unclaimed property, and estate assets. Rebound Capital Group files through licensed attorneys at no upfront cost.',
 }
 export default function Page() {
   return (

@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Foreclosure Surplus Funds Recovery | No Upfront Fee | RCG',
+  description: 'Recover foreclosure surplus funds held by the court after your property sold at auction for more than you owed. Rebound Capital Group files at no upfront cost.',
 }
 
 const steps = [

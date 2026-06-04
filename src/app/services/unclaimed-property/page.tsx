@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Unclaimed Property Recovery | All 50 States | RCG',
+  description: 'Recover unclaimed property across all 50 states — dormant accounts, uncashed checks, insurance proceeds, and more. Rebound Capital Group files at no upfront cost.',
 }
 
 const categories = [

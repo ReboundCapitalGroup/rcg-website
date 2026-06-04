@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'How Surplus Funds Recovery Works | RCG',
+  description: 'How surplus funds recovery works: we find money owed to you, file through licensed attorneys, and you get paid. No upfront cost — we only get paid when you do.',
 }
 
 const steps = [

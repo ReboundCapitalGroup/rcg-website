@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Surplus Funds Recovery | Rebound Capital Group',
+  description: 'Recover surplus funds from foreclosure, tax deed, HOA, and court sales. Rebound Capital Group files through licensed attorneys at no upfront cost — you pay nothing until we recover.',
 }
 
 const types = [

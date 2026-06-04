@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Mortgage Assumption Solutions | RCG',
+  description: 'Explore mortgage assumption options to transfer your loan and avoid foreclosure. Rebound Capital Group connects you with qualified buyers and coordinates approval.',
 }
 
 export default function MortgageAssumptionsPage() {

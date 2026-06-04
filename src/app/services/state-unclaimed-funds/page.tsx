@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'State-Held Unclaimed Funds Recovery | RCG',
+  description: 'Recover state-held unclaimed funds — insurance, banking, securities, and retirement assets turned over to state agencies. Rebound Capital Group files at no upfront cost.',
 }
 
 const fundTypes = [

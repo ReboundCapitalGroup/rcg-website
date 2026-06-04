@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Estate & Heir Surplus Fund Recovery | RCG',
+  description: 'Recover surplus funds owed to a deceased owner\'s estate or heirs. Rebound Capital Group coordinates probate and files through licensed attorneys at no upfront cost.',
 }
 
 const scenarios = [

@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Surplus Recovery Results & Case Wins | RCG',
+  description: 'Real surplus funds recovery results and case wins from Rebound Capital Group. See how we have recovered foreclosure surplus and excess proceeds for former owners.',
 }
 
 const results = [

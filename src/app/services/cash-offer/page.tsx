@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Pre-Foreclosure Cash Offer | Rebound Capital Group',
+  description: 'Get a pre-foreclosure cash offer on your property before the auction. Rebound Capital Group connects you with buyers to preserve your equity and stop foreclosure.',
 }
 
 export default function CashOfferPage() {

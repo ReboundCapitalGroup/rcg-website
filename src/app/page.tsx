@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Surplus Funds Recovery Nationwide | No Upfront Fee | RCG',
+  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property nationwide. Rebound Capital Group files through licensed attorneys at no upfront cost.',
 }
 const services = [
   { id:'01', cat:'Foreclosure Recovery', title:'Foreclosure Surplus & Overages', desc:'When a property sells for more than the debt owed, the overage belongs to the former owner by law. We file and recover courthouse-held surplus funds across all active states.', href:'/services/foreclosure-surplus', tag: 'Core Service' },

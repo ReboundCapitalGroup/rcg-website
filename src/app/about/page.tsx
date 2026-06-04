@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About Rebound Capital Group | Surplus Recovery Firm',
+  description: 'Rebound Capital Group is a surplus funds recovery firm helping former owners reclaim foreclosure surplus, tax deed overages, and unclaimed property. No upfront cost.',
 }
 
 const stats = [

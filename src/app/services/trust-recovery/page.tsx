@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Trust Account Asset Recovery | RCG',
+  description: 'Recover surplus funds and unclaimed assets held in a trust name. Rebound Capital Group helps trustees file through licensed attorneys at no upfront cost.',
 }
 
 export default function TrustRecoveryPage() {

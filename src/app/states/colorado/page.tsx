@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Colorado Surplus Funds Recovery | Rebound Capital Group',
+  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property in Colorado. Rebound Capital Group files through licensed attorneys at no upfront cost.',
 }
 
 

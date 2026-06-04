@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Probate Time Extension Filings | RCG',
+  description: 'File probate time extensions to preserve a surplus funds claim before the deadline passes. Rebound Capital Group files through licensed attorneys at no upfront cost.',
 }
 
 export default function ProbateTimeExtensionsPage() {

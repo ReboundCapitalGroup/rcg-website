@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Arizona Surplus Funds & Excess Proceeds Recovery | RCG',
+  description: 'Recover foreclosure surplus funds and tax deed excess proceeds in Arizona. Rebound Capital Group files through licensed attorneys at no upfront cost to you.',
 }
 
 

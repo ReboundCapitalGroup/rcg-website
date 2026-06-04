@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Business & Trust Asset Recovery | RCG',
+  description: 'Recover unclaimed assets held under business names, dissolved LLCs, and trusts. Rebound Capital Group files through licensed attorneys at no upfront cost.',
 }
 
 const scenarios = [

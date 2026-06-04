@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Florida Surplus Funds Recovery | All 67 Counties | RCG',
+  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property in Florida. Rebound Capital Group monitors all 67 counties and files through licensed attorneys at no upfront cost.',
 }
 
 

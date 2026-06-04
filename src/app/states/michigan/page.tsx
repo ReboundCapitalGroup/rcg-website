@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Michigan Foreclosure Surplus Recovery | RCG',
+  description: 'Recover foreclosure surplus funds and excess proceeds in Michigan. Rebound Capital Group files through licensed attorneys at no upfront cost to you.',
 }
 
 

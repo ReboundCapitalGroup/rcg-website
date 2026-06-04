@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Excess Proceeds Recovery From Court Sales | RCG',
+  description: 'Recover excess proceeds from foreclosure, tax deed, and court-ordered sales. Rebound Capital Group files through licensed attorneys at no upfront cost to you.',
 }
 
 export default function ExcessProceedsPage() {

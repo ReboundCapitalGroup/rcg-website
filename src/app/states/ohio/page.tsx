@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Ohio Foreclosure Surplus Recovery | ORC 2329.44 | RCG',
+  description: 'Recover foreclosure surplus and excess proceeds in Ohio under ORC 2329.44. Rebound Capital Group files Demand for Excess Proceeds through licensed attorneys at no upfront cost.',
 }
 
 

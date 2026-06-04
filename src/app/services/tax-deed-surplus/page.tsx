@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Tax Deed Overage & Excess Proceeds Recovery | RCG',
+  description: 'Recover tax deed overages and excess proceeds when a property sells at tax auction for more than the taxes owed. Rebound Capital Group files at no upfront cost.',
 }
 
 const steps = [
