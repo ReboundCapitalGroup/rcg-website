@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import USAMap from './USAMap.tsx'
 export const metadata: Metadata = {
-  title: 'Unclaimed Property by State | Rebound Capital Group',
+  title: 'Unclaimed Property Map | All 50 States | RCG',
   description: 'Over $70 billion in unclaimed property is held by U.S. states. Search your state and find...',
 }
 
