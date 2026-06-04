@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Foreclosure, Surplus & Unclaimed Property Recovery | RCG',
+}
 export default function Page() {
   return (
     <div style={{ background:'var(--bg)', minHeight:'100vh', padding:'80px 40px' }}>

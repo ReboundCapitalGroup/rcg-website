@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Tax Deed Overage & Excess Proceeds Recovery | RCG',
+}
 
 const steps = [
   { n: '01', title: 'Property Sold at Tax Sale', desc: 'When a property owner fails to pay property taxes, the county places the property for sale at a tax deed auction. The winning bidder pays off the delinquent taxes and takes title to the property.' },

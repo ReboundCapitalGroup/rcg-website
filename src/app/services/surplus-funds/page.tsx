@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Surplus Funds Recovery | Rebound Capital Group',
+}
 
 const types = [
   { title: 'Foreclosure Surplus Funds', desc: 'When a lender-initiated foreclosure sale generates more than the mortgage balance and any liens, the excess belongs to the former homeowner by law.', link: '/services/foreclosure-surplus' },

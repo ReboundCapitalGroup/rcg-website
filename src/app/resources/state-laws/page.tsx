@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'State Laws & Claim Deadlines | Rebound Capital Group',
+  title: 'Surplus Funds Laws by State | RCG',
   description: 'Surplus funds claim deadlines for all 50 states. Time limits to claim foreclosure surplus, tax deed overages, and unclaimed property by state.',
 }
 

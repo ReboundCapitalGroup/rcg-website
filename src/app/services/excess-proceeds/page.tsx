@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Excess Proceeds Recovery From Court Sales | RCG',
+}
 
 export default function ExcessProceedsPage() {
   return (

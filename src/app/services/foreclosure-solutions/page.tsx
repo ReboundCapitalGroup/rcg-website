@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Pre-Sale Foreclosure Solutions | RCG',
+}
 export default function Page() {
   return (
     <div style={{ background:'var(--bg)', minHeight:'100vh', padding:'80px 40px' }}>

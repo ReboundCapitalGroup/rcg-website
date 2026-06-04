@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Foreclosure Surplus Funds Recovery | No Upfront Fee | RCG',
+}
 
 const steps = [
   { n: '01', title: 'Property Sells at Foreclosure', desc: 'When a lender forecloses on a property and sells it at auction, the sale price often exceeds the amount owed on the mortgage and any other liens.' },

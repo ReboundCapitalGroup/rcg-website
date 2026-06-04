@@ -1,5 +1,11 @@
 import Link from 'next/link'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Rebound Capital Group | Surplus Recovery Firm',
+}
+
 const stats = [
   { val: '$0', label: 'Upfront Cost Ever' },
   { val: '1,000+', label: 'County Systems Monitored' },

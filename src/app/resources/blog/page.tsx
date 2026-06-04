@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Blog & County Guides | Coming Soon | Rebound Capital Group',
+  title: 'Surplus Funds Recovery Blog | Rebound Capital Group',
   description: 'Surplus recovery insights, case studies, and county-level guides. Launching soon from Rebound Capital Group.',
 }
 

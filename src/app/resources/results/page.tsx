@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Surplus Recovery Results & Case Wins | RCG',
+}
 
 const results = [
   { amount: '$48,200', type: 'Foreclosure Surplus', state: 'FL', county: 'Miami-Dade County', detail: 'Former homeowner contacted after property sold at foreclosure. Surplus identified, claim filed, funds recovered within 44 days.' },

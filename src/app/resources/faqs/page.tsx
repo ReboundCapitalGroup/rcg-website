@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Surplus Funds Recovery FAQs | Rebound Capital Group',
+}
 
 const categories = [
   {

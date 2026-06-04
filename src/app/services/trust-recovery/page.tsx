@@ -1,4 +1,9 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Trust Account Asset Recovery | RCG',
+}
 
 export default function TrustRecoveryPage() {
   return (

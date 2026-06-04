@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'All 50 States | Surplus Recovery Coverage | Rebound Capital Group',
+  title: 'Surplus Funds Recovery by State | Rebound Capital Group',
   description: 'Surplus fund recovery across all 50 states. Select your state for local surplus fund laws, filing process, and county-level guides.',
 }
 

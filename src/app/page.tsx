@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import Ticker from '@/components/Ticker'
 import CounterBar from '@/components/CounterBar'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Surplus Funds Recovery Nationwide | No Upfront Fee | RCG',
+}
 const services = [
   { id:'01', cat:'Foreclosure Recovery', title:'Foreclosure Surplus & Overages', desc:'When a property sells for more than the debt owed, the overage belongs to the former owner by law. We file and recover courthouse-held surplus funds across all active states.', href:'/services/foreclosure-surplus', tag: 'Core Service' },
   { id:'02', cat:'Tax Deed Recovery', title:'Tax Deed & Excess Proceeds', desc:'Tax sales generate excess proceeds daily. Most former owners never know the money exists. We locate it, file before deadlines, and pull every dollar before it escheats to the state.', href:'/services/tax-deed-surplus', tag: 'Core Service' },
