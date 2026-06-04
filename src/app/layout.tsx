@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: 'https://reboundcapitalgroup.com',
+    canonical: './',
   },
 
   category: 'Finance',
