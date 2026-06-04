@@ -31,7 +31,7 @@ const firmStats = [
   { val:'A+', desc:'BBB A+ Rated — Miami Beach, FL. Licensed & compliant.', blue: true },
 ]
 
-const allStates = ['Florida','Arizona','Colorado','Georgia','Ohio','New Jersey','Texas','California','New York','Illinois','Pennsylvania','Michigan','N. Carolina','Virginia','Washington','Nevada','Tennessee','Indiana','Missouri','Maryland','Wisconsin','Minnesota','S. Carolina','Alabama']
+const allStates = ['Florida','Arizona','Colorado','Georgia','Ohio','New Jersey','Texas','California','New York','Illinois','Pennsylvania','Michigan','North Carolina','Virginia','Washington','Nevada','Tennessee','Indiana','Missouri','Maryland','Wisconsin','Minnesota','South Carolina','Alabama']
 const activeStates = ['Florida','Arizona','Colorado','Ohio','Michigan']
 
 const heroStyle: React.CSSProperties = {
