@@ -56,8 +56,8 @@ export default function Nav() {
               <DDItem href="/services/tax-deed-surplus">Tax Deed Overages</DDItem>
               <DDItem href="/services/excess-proceeds">Excess Proceeds / Overages</DDItem>
               <DDLabel mt>Unclaimed Property</DDLabel>
-              <DDItem href="/services/unclaimed-property">State-Held Funds</DDItem>
-              <DDItem href="/services/state-unclaimed-funds">Unclaimed Assets</DDItem>
+              <DDItem href="/services/unclaimed-property">Unclaimed Assets</DDItem>
+              <DDItem href="/services/state-unclaimed-funds">State-Held Funds</DDItem>
               <DDLabel mt>Estate, Trust &amp; Business Recovery</DDLabel>
               <DDItem href="/services/estate-recovery">Estate &amp; Heir Recovery</DDItem>
               <DDItem href="/services/trust-recovery">Trust Asset Recovery</DDItem>
@@ -147,8 +147,8 @@ export default function Nav() {
               <Link href="/services/tax-deed-surplus" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Tax Deed Overages</Link>
               <Link href="/services/excess-proceeds" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Excess Proceeds / Overages</Link>
               <div className="mobile-nav-group-label">Unclaimed Property</div>
-              <Link href="/services/unclaimed-property" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>State-Held Funds</Link>
-              <Link href="/services/state-unclaimed-funds" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Unclaimed Assets</Link>
+              <Link href="/services/unclaimed-property" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Unclaimed Assets</Link>
+              <Link href="/services/state-unclaimed-funds" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>State-Held Funds</Link>
               <div className="mobile-nav-group-label">Estate, Trust &amp; Business</div>
               <Link href="/services/estate-recovery" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Estate &amp; Heir Recovery</Link>
               <Link href="/services/trust-recovery" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Trust Asset Recovery</Link>
