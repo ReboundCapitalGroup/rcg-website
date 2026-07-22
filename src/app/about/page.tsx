@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import type { Metadata } from 'next'
 
@@ -131,9 +132,9 @@ export default function AboutPage() {
             {/* Founder card */}
             <div style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.18)', padding: '40px', position: 'relative' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,#1E287F,rgba(74,95,212,0.15))' }} />
-              <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginBottom: '28px' }}>
-                <div style={{ width: '56px', height: '56px', background: 'linear-gradient(135deg,#1a2860,#0f1a40)', border: '1px solid rgba(74,127,212,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '20px', color: '#4a7fd4' }}>RI</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '22px', marginBottom: '28px' }}>
+                <div style={{ width: '110px', height: '110px', border: '1px solid rgba(74,127,212,0.25)', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
+                  <Image src="/raul-headshot.webp" alt="Raul Ibanez, Founder and President of Rebound Capital Group" width={220} height={220} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} priority />
                 </div>
                 <div>
                   <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '20px', color: '#fff', marginBottom: '5px' }}>Raul Ibanez</div>
