@@ -75,10 +75,10 @@ export default function Home() {
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
-          <p style={{ fontSize:'clamp(14px,3.5vw,15px)', color:'#a8bedd', lineHeight:2, maxWidth:'860px', width:'100%', margin:'0 auto 32px', fontWeight:400, textAlign:'center', padding:'0 4px' }}>
-            <span style={{ display:'block' }}>Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds.</span>
-            <span style={{ display:'block' }}>If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong></span>
-            <span style={{ display:'block' }}>We recover it across FL, AZ, CO, OH, MI and expanding. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong></span>
+          <p style={{ fontSize:'clamp(13px,3.2vw,15px)', color:'#a8bedd', lineHeight:1.75, maxWidth:'860px', width:'100%', margin:'0 auto 32px', fontWeight:400, textAlign:'center', padding:'0 4px' }}>
+            <span style={{ display:'block', textWrap:'balance' }}>Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds.</span>
+            <span style={{ display:'block', textWrap:'balance' }}>If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong></span>
+            <span style={{ display:'block', textWrap:'balance' }}>We recover it across FL, AZ, CO, OH, MI and expanding. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong></span>
           </p>
 
           {/* CTAs */}
