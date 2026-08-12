@@ -5,19 +5,19 @@
 @tailwind utilities;
 
 :root {
-  --bg: #141c2e;
-  --bg2: #192030;
-  --bg3: #232b44;
+  --bg:    #0d1322;
+  --bg2:   #111829;
+  --bg3:   #18203a;
   --rcg: #1E287F;
-  --rcg2: #1E287F;
+  --rcg2:  #5b8ae6;
   --rcg3: #16205e;
-  --rcglt: #4a6fd4;
+  --rcglt: #93b8ff;
   --rcgfade: rgba(30,40,127,0.2);
   --rcgline: rgba(74,95,212,0.3);
   --rcgglow: rgba(30,40,127,0.12);
   --bright: #ffffff;
-  --mid: #a0aece;
-  --dim: #5a6890;
+  --mid:   #9db0d2;
+  --dim:   #66759b;
 }
 
 * { box-sizing: border-box; }
