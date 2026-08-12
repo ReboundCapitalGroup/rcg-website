@@ -61,7 +61,7 @@ export default function Home() {
         {/* Scan line */}
         <div className="scan-animate" style={{ position:'absolute', left:0, right:0, height:'1px', background:'linear-gradient(90deg,transparent,rgba(74,95,212,0.6),transparent)', pointerEvents:'none' }} />
 
-        <div style={{ position:'relative', zIndex:2, width:'100%', maxWidth:'780px' }}>
+        <div style={{ position:'relative', zIndex:2, width:'100%', maxWidth:'920px' }}>
           {/* Badge */}
           <div className="hero-badge-container" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'10px', marginBottom:'24px', flexWrap:'nowrap' }}>
             <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'#1E287F', display:'inline-block', flexShrink:0 }} />
@@ -76,8 +76,10 @@ export default function Home() {
           </h1>
 
           {/* Subtext — 3 clean lines matching notepad layout */}
-          <p style={{ fontSize:'clamp(14px,3.5vw,15px)', color:'#a8bedd', lineHeight:1.85, maxWidth:'600px', width:'100%', margin:'0 auto 28px', fontWeight:400, textAlign:'center', padding:'0 4px' }}>
-            Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds. If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong> We recover it across FL, AZ, CO, OH, MI and expanding. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong>
+          <p style={{ fontSize:'clamp(14px,3.5vw,15px)', color:'#a8bedd', lineHeight:2, maxWidth:'860px', width:'100%', margin:'0 auto 32px', fontWeight:400, textAlign:'center', padding:'0 4px' }}>
+            <span style={{ display:'block' }}>Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds.</span>
+            <span style={{ display:'block' }}>If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong></span>
+            <span style={{ display:'block' }}>We recover it across FL, AZ, CO, OH, MI and expanding. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong></span>
           </p>
 
           {/* CTAs */}
@@ -198,7 +200,7 @@ export default function Home() {
           </div>
           <div style={{ display:'flex', gap:'12px', flexShrink:0 }}>
             <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#1a2860 0%,#0f1a40 100%)', border:'1px solid rgba(74,127,212,0.35)', boxShadow:'0 0 24px rgba(20,35,100,0.5), 0 4px 0 rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.07)', letterSpacing:'1.2px', padding:'16px 40px' }}>Free Claim Review</Link>
-            <Link href="tel:+13055634920" className="btn-secondary" style={{ background:'linear-gradient(180deg,#1a1f2e 0%,#0f1218 100%)', border:'1px solid rgba(74,127,212,0.2)', color:'#7090c0', boxShadow:'0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)', letterSpacing:'1px', padding:'16px 32px' }}>Call Us Now</Link>
+            <Link href="tel:+13055634920" className="btn-secondary" style={{ background:'linear-gradient(180deg,#1a1f2e 0%,#0f1218 100%)', border:'1px solid rgba(74,127,212,0.2)', color:'#7090c0', boxShadow:'0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)', letterSpacing:'1px', padding:'16px 32px' }}>Call 305-563-4920</Link>
           </div>
         </div>
       </div>
