@@ -1,20 +1,54 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function Counter({ target }: { target: number }) {
-  const [val, setVal] = useState(0)
+  // Seeded with the real value so the server renders the real number.
+  // Client hydrates to the same value, so there's no mismatch.
+  const [val, setVal] = useState(target)
+  const ref = useRef<HTMLSpanElement>(null)
+  const played = useRef(false)
+
   useEffect(() => {
-    const dur = 1200
-    const step = target / (dur / 16)
-    let v = 0
-    const t = setInterval(() => {
-      v = Math.min(v + step, target)
-      setVal(Math.round(v))
-      if (v >= target) clearInterval(t)
-    }, 16)
-    return () => clearInterval(t)
+    const el = ref.current
+    if (!el) return
+
+    // Respect reduced-motion — leave the number as-is.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let timer: ReturnType<typeof setInterval> | undefined
+
+    const run = () => {
+      if (played.current) return
+      played.current = true
+      const dur = 1200
+      const step = target / (dur / 16)
+      let v = 0
+      setVal(0)
+      timer = setInterval(() => {
+        v = Math.min(v + step, target)
+        setVal(Math.round(v))
+        if (v >= target && timer) clearInterval(timer)
+      }, 16)
+    }
+
+    const io = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting) {
+          run()
+          io.disconnect()
+        }
+      },
+      { threshold: 0.4 }
+    )
+    io.observe(el)
+
+    return () => {
+      io.disconnect()
+      if (timer) clearInterval(timer)
+    }
   }, [target])
-  return <>{val.toLocaleString()}</>
+
+  return <span ref={ref}>{val.toLocaleString()}</span>
 }
 
 const stats = [
