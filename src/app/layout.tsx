@@ -62,6 +62,8 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
   },
 
+  manifest: '/site.webmanifest',
+
   category: 'Finance',
 
   formatDetection: {
@@ -141,7 +143,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#0a0e1a" />
+        <meta name="theme-color" content="#0d1322" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
