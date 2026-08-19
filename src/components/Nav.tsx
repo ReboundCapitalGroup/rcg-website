@@ -39,7 +39,7 @@ export default function Nav() {
           {/* DESKTOP NAV */}
           <div className="nav-links desktop-nav">
             <a href="tel:+13055634920" style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', color: '#5878a8', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 20px', marginRight: '8px', background: 'transparent', border: '1px solid rgba(74,127,212,0.22)', textTransform: 'uppercase' as const, transition: 'all 0.2s', position: 'relative' as const }}>
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
               305-563-4920
@@ -96,12 +96,20 @@ export default function Nav() {
 
           {/* MOBILE CONTROLS */}
           <div className="mobile-nav-controls">
-            <a href="tel:+13055634920" className="mobile-phone-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            {/* aria-label is required here: this link contains only an icon, so
+                screen readers and AI agents had nothing to announce. It was the
+                sole failure in both the Lighthouse accessibility and agentic
+                browsing audits. */}
+            <a
+              href="tel:+13055634920"
+              className="mobile-phone-btn"
+              aria-label="Call Rebound Capital Group at 305-563-4920"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
             </a>
-            <button className="hamburger-btn" onClick={() => setMobileOpen(true)} aria-label="Open menu">
+            <button className="hamburger-btn" onClick={() => setMobileOpen(true)} aria-label="Open menu" aria-expanded={mobileOpen}>
               <span /><span /><span />
             </button>
           </div>
@@ -132,9 +140,9 @@ export default function Nav() {
         <nav className="mobile-nav-links">
 
           {/* Services accordion */}
-          <button className="mobile-nav-section" onClick={() => setServicesOpen(!servicesOpen)}>
+          <button className="mobile-nav-section" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen}>
             <span>Services</span>
-            <span className={`mobile-chevron ${servicesOpen ? 'open' : ''}`}>▾</span>
+            <span className={`mobile-chevron ${servicesOpen ? 'open' : ''}`} aria-hidden="true">▾</span>
           </button>
           {servicesOpen && (
             <div className="mobile-nav-sub">
@@ -157,9 +165,9 @@ export default function Nav() {
           )}
 
           {/* States accordion - now matches desktop nav exactly */}
-          <button className="mobile-nav-section" onClick={() => setStatesOpen(!statesOpen)}>
+          <button className="mobile-nav-section" onClick={() => setStatesOpen(!statesOpen)} aria-expanded={statesOpen}>
             <span>States</span>
-            <span className={`mobile-chevron ${statesOpen ? 'open' : ''}`}>▾</span>
+            <span className={`mobile-chevron ${statesOpen ? 'open' : ''}`} aria-hidden="true">▾</span>
           </button>
           {statesOpen && (
             <div className="mobile-nav-sub">
