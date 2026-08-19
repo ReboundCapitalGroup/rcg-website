@@ -16,44 +16,17 @@ const US_STATES = [
 ]
 
 const CLAIM_TYPES = [
-  { value: 'foreclosure',        label: 'Foreclosure surplus',        hint: 'A property of mine was sold at a foreclosure auction' },
-  { value: 'tax_deed',           label: 'Tax deed / excess proceeds', hint: 'A property was sold for unpaid taxes' },
-  { value: 'unclaimed_property', label: 'Unclaimed property',         hint: 'Old accounts, checks, deposits, or funds held by the state' },
-  { value: 'estate',             label: 'Estate recovery',            hint: 'Funds owed to a relative who has passed away' },
-  { value: 'unsure',             label: "I'm not sure",               hint: 'Tell us what happened and we will figure it out' },
+  { value: 'foreclosure',        label: 'Foreclosure surplus',  hint: 'My property sold at a foreclosure auction' },
+  { value: 'tax_deed',           label: 'Tax deed overage',     hint: 'A property sold for unpaid taxes' },
+  { value: 'unclaimed_property', label: 'Unclaimed property',   hint: 'Old accounts, checks, or state-held funds' },
+  { value: 'estate',             label: 'Estate recovery',      hint: 'Funds owed to a relative who passed away' },
+  { value: 'unsure',             label: "I'm not sure",         hint: 'Describe it and we will figure it out' },
 ]
 
 const isPropertyClaim = (t: string) => t === 'foreclosure' || t === 'tax_deed'
 
-const inputStyle = {
-  background: '#0a0f1a',
-  border: '1px solid rgba(74,95,212,0.15)',
-  padding: '14px 16px',
-  color: '#c8d8ff',
-  fontSize: '15px',
-  fontFamily: "'Space Grotesk',sans-serif",
-  outline: 'none',
-  width: '100%',
-  minWidth: 0,
-  boxSizing: 'border-box' as const,
-}
-
-const labelStyle = {
-  fontFamily: "'Space Mono',monospace",
-  fontSize: '9px',
-  letterSpacing: '1.5px',
-  textTransform: 'uppercase' as const,
-  color: '#4a6090',
-}
-
-const hintStyle = {
-  fontSize: '12px',
-  color: '#506080',
-  lineHeight: 1.6,
-  marginTop: '-2px',
-}
-
 export default function ContactPage() {
+  const [step, setStep] = useState(1)
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -71,22 +44,22 @@ export default function ContactPage() {
   const [message, setMessage] = useState('')
   const [websiteUrl, setWebsiteUrl] = useState('') // honeypot
 
-  // Timing check: how long between the form appearing and the submit click.
-  // A human filling this out takes 15s+. A script takes under 1s.
   const formLoadedAt = useRef<number>(Date.now())
+  const detailsRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     formLoadedAt.current = Date.now()
   }, [])
 
+  const chooseType = (value: string) => {
+    setClaimType(value)
+    setStep(2)
+    setTimeout(() => detailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60)
+  }
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setError(null)
-
-    if (!claimType) {
-      setError('Please select what kind of claim this is.')
-      return
-    }
-
     setSubmitting(true)
 
     try {
@@ -94,20 +67,11 @@ export default function ContactPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          claimType,
-          fullName,
-          email,
-          phone,
-          state,
-          county,
-          saleDateApprox,
-          propertyAddress,
-          assetDesc,
-          priorAddress,
-          message,
-          website_url: websiteUrl,                        // honeypot
-          fillTimeMs: Date.now() - formLoadedAt.current,  // timing signal
-          attribution: getAttribution(),                  // first-touch source
+          claimType, fullName, email, phone, state, county, saleDateApprox,
+          propertyAddress, assetDesc, priorAddress, message,
+          website_url: websiteUrl,
+          fillTimeMs: Date.now() - formLoadedAt.current,
+          attribution: getAttribution(),
         }),
       })
 
@@ -120,7 +84,7 @@ export default function ContactPage() {
       }
 
       setSubmitted(true)
-    } catch (err) {
+    } catch {
       setError('Network error. Please check your connection and try again.')
       setSubmitting(false)
     }
@@ -131,18 +95,18 @@ export default function ContactPage() {
       <main>
         <section style={{ background: '#000', padding: 'clamp(80px,10vw,140px) clamp(20px,5vw,60px)', textAlign: 'center', minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div style={{ maxWidth: '560px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '64px', height: '64px', border: '1px solid rgba(74,95,212,0.3)', background: 'rgba(30,40,127,0.15)', marginBottom: '32px' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a7fd4" strokeWidth="2">
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '64px', height: '64px', border: '1px solid rgba(91,138,230,0.45)', background: 'rgba(30,40,127,0.2)', marginBottom: '32px' }}>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7fa6ea" strokeWidth="2">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
             <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// Submission received</span>
-            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,4vw,48px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '16px 0 20px' }}>Thank You.</h1>
-            <p style={{ fontSize: '16px', color: '#8090b8', lineHeight: 1.85, marginBottom: '32px' }}>We have received your inquiry and our team will review it within 24 hours. If qualified, one of our agents will contact you to discuss next steps.</p>
-            <p style={{ fontSize: '14px', color: '#506080', lineHeight: 1.8, marginBottom: '36px' }}>For urgent matters, call us directly.</p>
+            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,4vw,48px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '16px 0 20px' }}>Thank you.</h1>
+            <p style={{ fontSize: '16px', color: '#9db0d2', lineHeight: 1.8, marginBottom: '28px' }}>We have your inquiry and will review it within 24 hours. If there are funds to recover, someone from our team will call you to walk through the next steps.</p>
+            <p style={{ fontSize: '14px', color: '#7d92c4', lineHeight: 1.8, marginBottom: '32px' }}>Need to reach us sooner?</p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="tel:+13055634920" className="btn-primary">305-563-4920</a>
-              <Link href="/" className="btn-secondary">Back to Home</Link>
+              <a href="tel:+13055634920" className="btn-primary">Call 305-563-4920</a>
+              <Link href="/" className="btn-secondary">Back to home</Link>
             </div>
           </div>
         </section>
@@ -155,222 +119,282 @@ export default function ContactPage() {
   return (
     <main>
       <style>{`
-        .contact-form-row {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
+        .rcg-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        @media (max-width: 620px) { .rcg-field-row { grid-template-columns: 1fr; } }
+
+        .rcg-label {
+          font-family: 'Space Mono', monospace;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 1.6px;
+          text-transform: uppercase;
+          color: #8fa3d8;
+          display: block;
+          margin-bottom: 7px;
         }
-        @media (max-width: 600px) {
-          .contact-form-row {
-            grid-template-columns: 1fr;
-          }
-        }
-        .claim-type-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 8px;
-        }
-        .claim-type-btn {
-          background: #0a0f1a;
-          border: 1px solid rgba(74,95,212,0.15);
-          padding: 14px 16px;
-          text-align: left;
-          cursor: pointer;
-          transition: all 0.15s;
+        .rcg-input {
+          background: #070b14;
+          border: 1px solid rgba(91,138,230,0.28);
+          padding: 15px 16px;
+          color: #e4ecff;
+          font-size: 16px;               /* 16px stops iOS zooming on focus */
           font-family: 'Space Grotesk', sans-serif;
-          color: #8090b8;
-          font-size: 15px;
+          outline: none;
           width: 100%;
+          min-width: 0;
+          box-sizing: border-box;
+          transition: border-color 0.15s, background 0.15s;
         }
-        .claim-type-btn:hover {
-          border-color: rgba(74,95,212,0.4);
-          color: #c8d8ff;
+        .rcg-input::placeholder { color: #5c6f96; }
+        .rcg-input:hover { border-color: rgba(91,138,230,0.45); }
+        .rcg-input:focus {
+          border-color: #5b8ae6;
+          background: #0a1120;
+          box-shadow: inset 0 0 0 1px rgba(91,138,230,0.35);
         }
-        .claim-type-btn.selected {
-          border-color: #4a7fd4;
-          background: rgba(30,40,127,0.2);
-          color: #fff;
+        .rcg-help { font-size: 13px; color: #7d92c4; line-height: 1.6; margin-top: 7px; }
+
+        /* Step 1 tiles */
+        .rcg-tile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        @media (max-width: 720px) { .rcg-tile-grid { grid-template-columns: 1fr; } }
+        .rcg-tile {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 14px;
+          width: 100%;
+          text-align: left;
+          background: #070b14;
+          border: 1px solid rgba(91,138,230,0.22);
+          padding: 18px 18px;
+          cursor: pointer;
+          font-family: 'Space Grotesk', sans-serif;
+          transition: border-color 0.15s, background 0.15s, transform 0.12s;
+        }
+        .rcg-tile:hover, .rcg-tile:focus-visible {
+          border-color: #5b8ae6;
+          background: rgba(30,40,127,0.22);
+          transform: translateY(-1px);
+          outline: none;
+        }
+        .rcg-tile-label { color: #e4ecff; font-size: 16px; font-weight: 600; line-height: 1.3; }
+        .rcg-tile-hint  { color: #7d92c4; font-size: 13px; line-height: 1.5; margin-top: 4px; }
+        .rcg-tile-arrow { color: #5b8ae6; flex-shrink: 0; }
+        .rcg-tile:last-child { grid-column: 1 / -1; }
+        @media (max-width: 720px) { .rcg-tile:last-child { grid-column: auto; } }
+
+        /* Selected-type chip on step 2 */
+        .rcg-chip {
+          display: flex; align-items: center; justify-content: space-between; gap: 12px;
+          border: 1px solid rgba(91,138,230,0.3);
+          background: rgba(30,40,127,0.18);
+          padding: 13px 16px;
+        }
+        .rcg-chip-change {
+          font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.4px;
+          text-transform: uppercase; color: #8fa3d8; background: none; border: none;
+          cursor: pointer; padding: 4px 2px; text-decoration: underline;
+        }
+        .rcg-chip-change:hover { color: #fff; }
+
+        .rcg-steps {
+          font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px;
+          text-transform: uppercase; color: #5b8ae6;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .rcg-tile { transition: none; }
+          .rcg-tile:hover { transform: none; }
         }
       `}</style>
 
-      <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.15)', padding: 'clamp(80px,10vw,130px) clamp(20px,5vw,60px) clamp(48px,6vw,72px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '900px', height: '600px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.2) 0%, transparent 65%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(74,95,212,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.06) 1px,transparent 1px)', backgroundSize: '52px 52px', pointerEvents: 'none' }} />
-        <div className="scan-animate" style={{ position: 'absolute', left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.5),transparent)', pointerEvents: 'none', zIndex: 1 }} />
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '720px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '32px', padding: '7px 18px', border: '1px solid rgba(74,95,212,0.2)', background: 'rgba(30,40,127,0.1)' }}>
-            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4a7fd4', display: 'inline-block', flexShrink: 0 }} />
-            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>Free Claim Review · No Upfront Cost</span>
-          </div>
-          <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(36px,5vw,64px)', letterSpacing: '-2px', lineHeight: 1.0, margin: '0 0 24px', color: '#fff' }}>
-            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Start Your </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Claim Review</span>
+      {/* HERO — trimmed so the form is reachable without a long scroll */}
+      <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.2)', padding: 'clamp(48px,7vw,84px) clamp(20px,5vw,60px) clamp(32px,4vw,48px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '900px', height: '500px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.22) 0%, transparent 65%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: '660px', margin: '0 auto' }}>
+          <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// Free claim review · No upfront cost</span>
+          <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(30px,4.6vw,52px)', letterSpacing: '-1.5px', lineHeight: 1.05, margin: '14px 0 18px', color: '#fff' }}>
+            Find out what you&apos;re owed.
           </h1>
-          <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '540px', margin: '0 auto' }}>Tell us about your situation. We will search court records and state unclaimed property databases at no cost, and contact you within 24 hours if funds are recoverable.</p>
+          <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#9db0d2', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto' }}>
+            Two quick steps. We search court records and state databases at no cost, and call you within 24 hours if there are funds to recover.
+          </p>
         </div>
       </section>
 
-      <section style={{ background: 'var(--bg)', padding: 'clamp(64px,7vw,96px) clamp(20px,5vw,60px)' }}>
-        <div style={{ maxWidth: '640px', margin: '0 auto' }}>
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Honeypot - hidden from users, bots fill it */}
-            <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="true">
-              <label>
-                Website (leave blank)
-                <input
-                  type="text"
-                  name="website_url"
-                  value={websiteUrl}
-                  onChange={(e) => setWebsiteUrl(e.target.value)}
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-              </label>
-            </div>
+      <section style={{ background: 'var(--bg)', padding: 'clamp(40px,5vw,64px) clamp(20px,5vw,60px) clamp(56px,6vw,88px)' }}>
+        <div ref={detailsRef} style={{ maxWidth: '620px', margin: '0 auto' }}>
 
-            {/* CLAIM TYPE — drives which fields appear below */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <label style={labelStyle}>What are you inquiring about? *</label>
-              <div className="claim-type-grid">
+          {/* Progress */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '22px' }}>
+            <span className="rcg-steps">Step {step} of 2</span>
+            <div style={{ flex: 1, height: '2px', background: 'rgba(91,138,230,0.18)' }}>
+              <div style={{ width: step === 1 ? '50%' : '100%', height: '100%', background: '#5b8ae6', transition: 'width 0.3s ease' }} />
+            </div>
+          </div>
+
+          {/* ---------- STEP 1 ---------- */}
+          {step === 1 && (
+            <div>
+              <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.6vw,26px)', color: '#fff', letterSpacing: '-0.5px', margin: '0 0 6px' }}>
+                What are you inquiring about?
+              </h2>
+              <p style={{ fontSize: '14px', color: '#7d92c4', lineHeight: 1.6, margin: '0 0 20px' }}>
+                Pick the closest match. If none of them fit, choose the last one.
+              </p>
+
+              <div className="rcg-tile-grid">
                 {CLAIM_TYPES.map((c) => (
-                  <button
-                    key={c.value}
-                    type="button"
-                    onClick={() => setClaimType(c.value)}
-                    disabled={submitting}
-                    className={`claim-type-btn${claimType === c.value ? ' selected' : ''}`}
-                  >
-                    <div style={{ fontWeight: 600 }}>{c.label}</div>
-                    <div style={{ fontSize: '12px', color: '#506080', marginTop: '3px' }}>{c.hint}</div>
+                  <button key={c.value} type="button" className="rcg-tile" onClick={() => chooseType(c.value)}>
+                    <span>
+                      <span className="rcg-tile-label">{c.label}</span>
+                      <span className="rcg-tile-hint" style={{ display: 'block' }}>{c.hint}</span>
+                    </span>
+                    <svg className="rcg-tile-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
                   </button>
                 ))}
               </div>
-            </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={labelStyle}>Full Name *</label>
-              <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)} disabled={submitting} style={inputStyle} />
+              <p style={{ fontSize: '13px', color: '#5c6f96', textAlign: 'center', marginTop: '26px', lineHeight: 1.7 }}>
+                Prefer to talk it through? <a href="tel:+13055634920" style={{ color: '#8fa3d8' }}>Call 305-563-4920</a>
+              </p>
             </div>
+          )}
 
-            <div className="contact-form-row">
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
-                <label style={labelStyle}>Email *</label>
-                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} disabled={submitting} style={inputStyle} />
+          {/* ---------- STEP 2 ---------- */}
+          {step === 2 && (
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+              {/* Honeypot */}
+              <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="true">
+                <label>
+                  Website (leave blank)
+                  <input type="text" name="website_url" value={websiteUrl} onChange={(e) => setWebsiteUrl(e.target.value)} tabIndex={-1} autoComplete="off" />
+                </label>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
-                <label style={labelStyle}>Phone *</label>
-                <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value)} disabled={submitting} placeholder="(305) 555-1234" style={inputStyle} />
+
+              <div className="rcg-chip">
+                <span>
+                  <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.8px', textTransform: 'uppercase', color: '#5b8ae6', display: 'block', marginBottom: '3px' }}>Inquiry type</span>
+                  <span style={{ color: '#e4ecff', fontSize: '15px', fontWeight: 600 }}>{selected?.label}</span>
+                </span>
+                <button type="button" className="rcg-chip-change" onClick={() => setStep(1)}>Change</button>
               </div>
-            </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={labelStyle}>State *</label>
-              <select
-                required
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-                disabled={submitting}
-                style={{ ...inputStyle, color: state ? '#c8d8ff' : '#506080', appearance: 'none', cursor: 'pointer' }}
-              >
-                <option value="">Select state</option>
-                {US_STATES.map((s) => (
-                  <option key={s} value={s} style={{ background: '#0a0f1a', color: '#c8d8ff' }}>{s}</option>
-                ))}
-              </select>
-            </div>
+              <div>
+                <label className="rcg-label" htmlFor="f-name">Full name</label>
+                <input id="f-name" className="rcg-input" type="text" required autoComplete="name" value={fullName} onChange={(e) => setFullName(e.target.value)} disabled={submitting} />
+              </div>
 
-            {/* ---- PROPERTY CLAIMS: foreclosure / tax deed ---- */}
-            {isPropertyClaim(claimType) && (
-              <>
-                <div className="contact-form-row">
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
-                    <label style={labelStyle}>County *</label>
-                    <input type="text" required value={county} onChange={(e) => setCounty(e.target.value)} disabled={submitting} placeholder="e.g. Miami-Dade" style={inputStyle} />
+              <div className="rcg-field-row">
+                <div>
+                  <label className="rcg-label" htmlFor="f-email">Email</label>
+                  <input id="f-email" className="rcg-input" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={submitting} />
+                </div>
+                <div>
+                  <label className="rcg-label" htmlFor="f-phone">Phone</label>
+                  <input id="f-phone" className="rcg-input" type="tel" required autoComplete="tel" placeholder="(305) 555-1234" value={phone} onChange={(e) => setPhone(e.target.value)} disabled={submitting} />
+                </div>
+              </div>
+
+              <div>
+                <label className="rcg-label" htmlFor="f-state">State</label>
+                <select id="f-state" className="rcg-input" required value={state} onChange={(e) => setState(e.target.value)} disabled={submitting} style={{ color: state ? '#e4ecff' : '#5c6f96', cursor: 'pointer' }}>
+                  <option value="">Select state</option>
+                  {US_STATES.map((s) => (
+                    <option key={s} value={s} style={{ background: '#070b14', color: '#e4ecff' }}>{s}</option>
+                  ))}
+                </select>
+              </div>
+
+              {isPropertyClaim(claimType) && (
+                <>
+                  <div className="rcg-field-row">
+                    <div>
+                      <label className="rcg-label" htmlFor="f-county">County</label>
+                      <input id="f-county" className="rcg-input" type="text" required placeholder="e.g. Miami-Dade" value={county} onChange={(e) => setCounty(e.target.value)} disabled={submitting} />
+                    </div>
+                    <div>
+                      <label className="rcg-label" htmlFor="f-sale">Roughly when it sold</label>
+                      <input id="f-sale" className="rcg-input" type="month" value={saleDateApprox} onChange={(e) => setSaleDateApprox(e.target.value)} disabled={submitting} style={{ color: saleDateApprox ? '#e4ecff' : '#5c6f96' }} />
+                    </div>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
-                    <label style={labelStyle}>Approx. Sale Date</label>
-                    <input type="month" value={saleDateApprox} onChange={(e) => setSaleDateApprox(e.target.value)} disabled={submitting} style={{ ...inputStyle, color: saleDateApprox ? '#c8d8ff' : '#506080' }} />
+                  <div>
+                    <label className="rcg-label" htmlFor="f-addr">Property address</label>
+                    <input id="f-addr" className="rcg-input" type="text" placeholder="Optional" value={propertyAddress} onChange={(e) => setPropertyAddress(e.target.value)} disabled={submitting} />
                   </div>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <label style={labelStyle}>Property Address</label>
-                  <input type="text" value={propertyAddress} onChange={(e) => setPropertyAddress(e.target.value)} disabled={submitting} placeholder="Address of the property that was sold" style={inputStyle} />
-                </div>
-              </>
-            )}
+                </>
+              )}
 
-            {/* ---- UNCLAIMED PROPERTY ---- */}
-            {claimType === 'unclaimed_property' && (
-              <>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <label style={labelStyle}>What kind of funds? *</label>
-                  <input type="text" required value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} placeholder="e.g. old bank account, uncashed check, utility deposit, insurance payout" style={inputStyle} />
-                  <p style={hintStyle}>A rough description is fine. You do not need account numbers.</p>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <label style={labelStyle}>Address at the Time</label>
-                  <input type="text" value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} placeholder="Where you lived when the account was opened, if you recall" style={inputStyle} />
-                </div>
-              </>
-            )}
+              {claimType === 'unclaimed_property' && (
+                <>
+                  <div>
+                    <label className="rcg-label" htmlFor="f-asset">What kind of funds</label>
+                    <input id="f-asset" className="rcg-input" type="text" required placeholder="e.g. old bank account, uncashed check, deposit" value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} />
+                    <p className="rcg-help">A rough description is enough. You don&apos;t need account numbers.</p>
+                  </div>
+                  <div>
+                    <label className="rcg-label" htmlFor="f-prior">Address at the time</label>
+                    <input id="f-prior" className="rcg-input" type="text" placeholder="Optional" value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} />
+                  </div>
+                </>
+              )}
 
-            {/* ---- ESTATE RECOVERY ---- */}
-            {claimType === 'estate' && (
-              <>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <label style={labelStyle}>Your Relationship & What Is Owed *</label>
-                  <input type="text" required value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} placeholder="e.g. daughter of the deceased, foreclosure surplus from her home" style={inputStyle} />
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <label style={labelStyle}>Their Last Known Address</label>
-                  <input type="text" value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} style={inputStyle} />
-                </div>
-              </>
-            )}
+              {claimType === 'estate' && (
+                <>
+                  <div>
+                    <label className="rcg-label" htmlFor="f-rel">Your relationship and what is owed</label>
+                    <input id="f-rel" className="rcg-input" type="text" required placeholder="e.g. daughter of the deceased, surplus from her home" value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} />
+                  </div>
+                  <div>
+                    <label className="rcg-label" htmlFor="f-last">Their last known address</label>
+                    <input id="f-last" className="rcg-input" type="text" placeholder="Optional" value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} />
+                  </div>
+                </>
+              )}
 
-            {/* ---- MESSAGE ---- */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={labelStyle}>
-                {claimType === 'unsure' ? 'Tell Us What Happened *' : 'Anything Else We Should Know?'}
-              </label>
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                disabled={submitting}
-                required={claimType === 'unsure'}
-                rows={5}
-                placeholder={
-                  claimType === 'unsure'
-                    ? 'Describe your situation in your own words. Even partial details help.'
-                    : 'Optional'
-                }
-                style={{ ...inputStyle, resize: 'vertical', minHeight: '120px' }}
-              />
-            </div>
-
-            {error && (
-              <div style={{ background: 'rgba(200,60,60,0.08)', border: '1px solid rgba(200,60,60,0.3)', padding: '14px 16px', color: '#e08080', fontSize: '14px', fontFamily: "'Space Grotesk',sans-serif" }}>
-                {error}
+              <div>
+                <label className="rcg-label" htmlFor="f-msg">
+                  {claimType === 'unsure' ? 'Tell us what happened' : 'Anything else we should know'}
+                </label>
+                <textarea
+                  id="f-msg"
+                  className="rcg-input"
+                  rows={4}
+                  required={claimType === 'unsure'}
+                  placeholder={claimType === 'unsure' ? 'In your own words. Even partial details help.' : 'Optional'}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  disabled={submitting}
+                  style={{ resize: 'vertical', minHeight: '104px' }}
+                />
               </div>
-            )}
 
-            <div style={{ marginTop: '8px' }}>
-              <button type="submit" disabled={submitting} className="btn-primary" style={{ width: '100%', opacity: submitting ? 0.6 : 1, cursor: submitting ? 'wait' : 'pointer' }}>
-                {submitting ? 'Submitting...' : 'Submit Claim Review'}
+              {error && (
+                <div style={{ background: 'rgba(200,60,60,0.1)', border: '1px solid rgba(220,90,90,0.45)', padding: '13px 15px', color: '#f0a0a0', fontSize: '14px' }}>
+                  {error}
+                </div>
+              )}
+
+              <button type="submit" disabled={submitting} className="btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: '4px', opacity: submitting ? 0.6 : 1, cursor: submitting ? 'wait' : 'pointer' }}>
+                {submitting ? 'Sending…' : 'Send my claim review'}
               </button>
-            </div>
 
-            <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1px', textTransform: 'uppercase', color: '#2a3a60', textAlign: 'center', lineHeight: 2, marginTop: '12px' }}>By submitting, you agree to be contacted by RCG about your inquiry · No obligation · Free review</p>
-          </form>
+              <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#4a5c85', textAlign: 'center', lineHeight: 2 }}>
+                No obligation · No fees until we recover
+              </p>
+            </form>
+          )}
         </div>
       </section>
 
-      <div style={{ maxWidth: '960px', margin: '0 auto', height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.18),transparent)' }} />
+      <div style={{ maxWidth: '960px', margin: '0 auto', height: '1px', background: 'linear-gradient(90deg,transparent,rgba(91,138,230,0.2),transparent)' }} />
 
-      <section style={{ background: '#000', padding: 'clamp(56px,6vw,80px) clamp(20px,5vw,60px)', textAlign: 'center' }}>
+      <section style={{ background: '#000', padding: 'clamp(48px,5vw,72px) clamp(20px,5vw,60px)', textAlign: 'center' }}>
         <div style={{ maxWidth: '520px', margin: '0 auto' }}>
           <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// Prefer to call?</span>
-          <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(22px,3vw,32px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.15, margin: '14px 0 16px' }}>Speak to Our Team Directly.</h2>
-          <p style={{ fontSize: '14px', color: '#506080', lineHeight: 1.85, marginBottom: '28px' }}>Our licensed team is available Monday through Friday, 9 AM to 6 PM Eastern.</p>
+          <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(21px,3vw,30px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.15, margin: '14px 0 14px' }}>Talk to our team directly.</h2>
+          <p style={{ fontSize: '14px', color: '#7d92c4', lineHeight: 1.8, marginBottom: '26px' }}>Monday through Friday, 9 AM to 6 PM Eastern. Hablamos español.</p>
           <a href="tel:+13055634920" className="btn-primary" style={{ display: 'inline-block' }}>Call 305-563-4920</a>
         </div>
       </section>
