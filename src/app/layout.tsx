@@ -145,6 +145,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="theme-color" content="#0d1322" />
+
+        {/* Fonts loaded here rather than via @import in globals.css.
+            The @import forced the browser to parse our CSS before it could
+            even discover the font request. Loading here lets it start
+            immediately, in parallel. Preconnect warms the TLS handshake
+            to the font host before the request goes out. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
