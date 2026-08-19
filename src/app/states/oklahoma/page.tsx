@@ -2,8 +2,14 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Oklahoma Surplus Funds Recovery | All Counties | RCG',
-  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property in Oklahoma. Rebound Capital Group files through licensed attorneys at no upfront cost — you pay nothing until we recover.',
+  title: "Oklahoma Surplus Funds: Are You Owed Money? | Free Search",
+  description: 'Oklahoma district courts and county treasurer resales leave surplus funds unclaimed, along with mineral royalties held by the state. We search all 77 counties at no cost.',
+  openGraph: {
+    title: 'Oklahoma Surplus Funds Recovery | Rebound Capital Group',
+    description: 'Unclaimed foreclosure surplus, resale tax deed excess, and state-held funds across all 77 Oklahoma counties. Free search, no upfront cost.',
+    url: 'https://reboundcapitalgroup.com/states/oklahoma',
+    type: 'website',
+  },
 }
 
 
