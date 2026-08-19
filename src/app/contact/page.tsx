@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, useRef, useEffect, FormEvent } from 'react'
 import Link from 'next/link'
+import { getAttribution } from '@/lib/attribution'
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -13,6 +14,16 @@ const US_STATES = [
   'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia',
   'Wisconsin', 'Wyoming'
 ]
+
+const CLAIM_TYPES = [
+  { value: 'foreclosure',        label: 'Foreclosure surplus',        hint: 'A property of mine was sold at a foreclosure auction' },
+  { value: 'tax_deed',           label: 'Tax deed / excess proceeds', hint: 'A property was sold for unpaid taxes' },
+  { value: 'unclaimed_property', label: 'Unclaimed property',         hint: 'Old accounts, checks, deposits, or funds held by the state' },
+  { value: 'estate',             label: 'Estate recovery',            hint: 'Funds owed to a relative who has passed away' },
+  { value: 'unsure',             label: "I'm not sure",               hint: 'Tell us what happened and we will figure it out' },
+]
+
+const isPropertyClaim = (t: string) => t === 'foreclosure' || t === 'tax_deed'
 
 const inputStyle = {
   background: '#0a0f1a',
@@ -27,22 +38,55 @@ const inputStyle = {
   boxSizing: 'border-box' as const,
 }
 
+const labelStyle = {
+  fontFamily: "'Space Mono',monospace",
+  fontSize: '9px',
+  letterSpacing: '1.5px',
+  textTransform: 'uppercase' as const,
+  color: '#4a6090',
+}
+
+const hintStyle = {
+  fontSize: '12px',
+  color: '#506080',
+  lineHeight: 1.6,
+  marginTop: '-2px',
+}
+
 export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
+  const [claimType, setClaimType] = useState('')
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [state, setState] = useState('')
+  const [county, setCounty] = useState('')
+  const [saleDateApprox, setSaleDateApprox] = useState('')
   const [propertyAddress, setPropertyAddress] = useState('')
+  const [assetDesc, setAssetDesc] = useState('')
+  const [priorAddress, setPriorAddress] = useState('')
   const [message, setMessage] = useState('')
   const [websiteUrl, setWebsiteUrl] = useState('') // honeypot
+
+  // Timing check: how long between the form appearing and the submit click.
+  // A human filling this out takes 15s+. A script takes under 1s.
+  const formLoadedAt = useRef<number>(Date.now())
+  useEffect(() => {
+    formLoadedAt.current = Date.now()
+  }, [])
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setError(null)
+
+    if (!claimType) {
+      setError('Please select what kind of claim this is.')
+      return
+    }
+
     setSubmitting(true)
 
     try {
@@ -50,8 +94,20 @@ export default function ContactPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          fullName, email, phone, state, propertyAddress, message,
-          website_url: websiteUrl, // honeypot
+          claimType,
+          fullName,
+          email,
+          phone,
+          state,
+          county,
+          saleDateApprox,
+          propertyAddress,
+          assetDesc,
+          priorAddress,
+          message,
+          website_url: websiteUrl,                        // honeypot
+          fillTimeMs: Date.now() - formLoadedAt.current,  // timing signal
+          attribution: getAttribution(),                  // first-touch source
         }),
       })
 
@@ -94,6 +150,8 @@ export default function ContactPage() {
     )
   }
 
+  const selected = CLAIM_TYPES.find((c) => c.value === claimType)
+
   return (
     <main>
       <style>{`
@@ -106,6 +164,32 @@ export default function ContactPage() {
           .contact-form-row {
             grid-template-columns: 1fr;
           }
+        }
+        .claim-type-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+        .claim-type-btn {
+          background: #0a0f1a;
+          border: 1px solid rgba(74,95,212,0.15);
+          padding: 14px 16px;
+          text-align: left;
+          cursor: pointer;
+          transition: all 0.15s;
+          font-family: 'Space Grotesk', sans-serif;
+          color: #8090b8;
+          font-size: 15px;
+          width: 100%;
+        }
+        .claim-type-btn:hover {
+          border-color: rgba(74,95,212,0.4);
+          color: #c8d8ff;
+        }
+        .claim-type-btn.selected {
+          border-color: #4a7fd4;
+          background: rgba(30,40,127,0.2);
+          color: #fff;
         }
       `}</style>
 
@@ -128,7 +212,7 @@ export default function ContactPage() {
       <section style={{ background: 'var(--bg)', padding: 'clamp(64px,7vw,96px) clamp(20px,5vw,60px)' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Honeypot field - hidden from users, bots will fill it */}
+            {/* Honeypot - hidden from users, bots fill it */}
             <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="true">
               <label>
                 Website (leave blank)
@@ -143,48 +227,45 @@ export default function ContactPage() {
               </label>
             </div>
 
+            {/* CLAIM TYPE — drives which fields appear below */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <label style={labelStyle}>What are you inquiring about? *</label>
+              <div className="claim-type-grid">
+                {CLAIM_TYPES.map((c) => (
+                  <button
+                    key={c.value}
+                    type="button"
+                    onClick={() => setClaimType(c.value)}
+                    disabled={submitting}
+                    className={`claim-type-btn${claimType === c.value ? ' selected' : ''}`}
+                  >
+                    <div style={{ fontWeight: 600 }}>{c.label}</div>
+                    <div style={{ fontSize: '12px', color: '#506080', marginTop: '3px' }}>{c.hint}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a6090' }}>Full Name *</label>
-              <input
-                type="text"
-                required
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                disabled={submitting}
-                style={inputStyle}
-              />
+              <label style={labelStyle}>Full Name *</label>
+              <input type="text" required value={fullName} onChange={(e) => setFullName(e.target.value)} disabled={submitting} style={inputStyle} />
             </div>
 
             <div className="contact-form-row">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
-                <label style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a6090' }}>Email *</label>
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={submitting}
-                  style={inputStyle}
-                />
+                <label style={labelStyle}>Email *</label>
+                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} disabled={submitting} style={inputStyle} />
               </div>
-
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
-                <label style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a6090' }}>Phone *</label>
-                <input
-                  type="tel"
-                  required
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  disabled={submitting}
-                  placeholder="(305) 555-1234"
-                  style={inputStyle}
-                />
+                <label style={labelStyle}>Phone *</label>
+                <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value)} disabled={submitting} placeholder="(305) 555-1234" style={inputStyle} />
               </div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a6090' }}>State</label>
+              <label style={labelStyle}>State *</label>
               <select
+                required
                 value={state}
                 onChange={(e) => setState(e.target.value)}
                 disabled={submitting}
@@ -197,26 +278,71 @@ export default function ContactPage() {
               </select>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a6090' }}>Property Address</label>
-              <input
-                type="text"
-                value={propertyAddress}
-                onChange={(e) => setPropertyAddress(e.target.value)}
-                disabled={submitting}
-                placeholder="Optional — if you have a specific property in mind"
-                style={inputStyle}
-              />
-            </div>
+            {/* ---- PROPERTY CLAIMS: foreclosure / tax deed ---- */}
+            {isPropertyClaim(claimType) && (
+              <>
+                <div className="contact-form-row">
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
+                    <label style={labelStyle}>County *</label>
+                    <input type="text" required value={county} onChange={(e) => setCounty(e.target.value)} disabled={submitting} placeholder="e.g. Miami-Dade" style={inputStyle} />
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: 0 }}>
+                    <label style={labelStyle}>Approx. Sale Date</label>
+                    <input type="month" value={saleDateApprox} onChange={(e) => setSaleDateApprox(e.target.value)} disabled={submitting} style={{ ...inputStyle, color: saleDateApprox ? '#c8d8ff' : '#506080' }} />
+                  </div>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label style={labelStyle}>Property Address</label>
+                  <input type="text" value={propertyAddress} onChange={(e) => setPropertyAddress(e.target.value)} disabled={submitting} placeholder="Address of the property that was sold" style={inputStyle} />
+                </div>
+              </>
+            )}
 
+            {/* ---- UNCLAIMED PROPERTY ---- */}
+            {claimType === 'unclaimed_property' && (
+              <>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label style={labelStyle}>What kind of funds? *</label>
+                  <input type="text" required value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} placeholder="e.g. old bank account, uncashed check, utility deposit, insurance payout" style={inputStyle} />
+                  <p style={hintStyle}>A rough description is fine. You do not need account numbers.</p>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label style={labelStyle}>Address at the Time</label>
+                  <input type="text" value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} placeholder="Where you lived when the account was opened, if you recall" style={inputStyle} />
+                </div>
+              </>
+            )}
+
+            {/* ---- ESTATE RECOVERY ---- */}
+            {claimType === 'estate' && (
+              <>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label style={labelStyle}>Your Relationship & What Is Owed *</label>
+                  <input type="text" required value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} placeholder="e.g. daughter of the deceased, foreclosure surplus from her home" style={inputStyle} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <label style={labelStyle}>Their Last Known Address</label>
+                  <input type="text" value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} style={inputStyle} />
+                </div>
+              </>
+            )}
+
+            {/* ---- MESSAGE ---- */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a6090' }}>How Can We Help?</label>
+              <label style={labelStyle}>
+                {claimType === 'unsure' ? 'Tell Us What Happened *' : 'Anything Else We Should Know?'}
+              </label>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 disabled={submitting}
+                required={claimType === 'unsure'}
                 rows={5}
-                placeholder="Brief description of your situation (foreclosure, tax sale, unclaimed property, estate, etc.)"
+                placeholder={
+                  claimType === 'unsure'
+                    ? 'Describe your situation in your own words. Even partial details help.'
+                    : 'Optional'
+                }
                 style={{ ...inputStyle, resize: 'vertical', minHeight: '120px' }}
               />
             </div>
@@ -228,12 +354,7 @@ export default function ContactPage() {
             )}
 
             <div style={{ marginTop: '8px' }}>
-              <button
-                type="submit"
-                disabled={submitting}
-                className="btn-primary"
-                style={{ width: '100%', opacity: submitting ? 0.6 : 1, cursor: submitting ? 'wait' : 'pointer' }}
-              >
+              <button type="submit" disabled={submitting} className="btn-primary" style={{ width: '100%', opacity: submitting ? 0.6 : 1, cursor: submitting ? 'wait' : 'pointer' }}>
                 {submitting ? 'Submitting...' : 'Submit Claim Review'}
               </button>
             </div>
