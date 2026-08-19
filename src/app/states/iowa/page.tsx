@@ -2,8 +2,14 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Iowa Surplus Funds Recovery | All Counties | RCG',
-  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property in Iowa. Rebound Capital Group files through licensed attorneys at no upfront cost — you pay nothing until we recover.',
+  title: "Iowa Surplus Funds: Are You Owed Money? | Free Search",
+  description: 'Iowa district courts and the Great Iowa Treasure Hunt hold unclaimed foreclosure surplus and sale overages. We search all 99 counties at no cost. No fee unless we recover.',
+  openGraph: {
+    title: 'Iowa Surplus Funds Recovery | Rebound Capital Group',
+    description: 'Unclaimed foreclosure surplus, sheriff sale overages, and state-held funds across all 99 Iowa counties. Free search, no upfront cost.',
+    url: 'https://reboundcapitalgroup.com/states/iowa',
+    type: 'website',
+  },
 }
 
 
