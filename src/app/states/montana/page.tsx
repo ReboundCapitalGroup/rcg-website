@@ -2,8 +2,14 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Montana Surplus Funds Recovery | All Counties | RCG',
-  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property in Montana. Rebound Capital Group files through licensed attorneys at no upfront cost — you pay nothing until we recover.',
+  title: "Montana Surplus Funds: Are You Owed Money? | Free Search",
+  description: 'Montana trustee sales and district courts leave foreclosure surplus unclaimed, plus dormant accounts held by the Department of Revenue. We search all 56 counties at no cost.',
+  openGraph: {
+    title: 'Montana Surplus Funds Recovery | Rebound Capital Group',
+    description: 'Unclaimed foreclosure surplus, trustee sale overages, and state-held funds across all 56 Montana counties. Free search, no upfront cost.',
+    url: 'https://reboundcapitalgroup.com/states/montana',
+    type: 'website',
+  },
 }
 
 
