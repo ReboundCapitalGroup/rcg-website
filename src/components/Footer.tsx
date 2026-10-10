@@ -38,6 +38,7 @@ export default function Footer() {
   return (
     <footer style={{ background:'#000000', borderTop:'1px solid rgba(74,95,212,0.2)', padding:'clamp(32px,5vw,52px) clamp(16px,4vw,40px) 28px' }}>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
         .footer-link:hover { color: #fff !important; }
         .footer-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; }
         .footer-cols-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -113,8 +114,13 @@ export default function Footer() {
           ))}
           </div>
         </div>
-        <div className="footer-bottom-row" style={{ display:'flex', justifyContent:'space-between', flexWrap:'wrap', gap:'10px', paddingTop:'20px', borderTop:'1px solid rgba(74,95,212,0.3)' }}>
+        <div className="footer-bottom-row" style={{ display:'flex', justifyContent:'space-between', flexWrap:'wrap', gap:'16px', paddingTop:'20px', borderTop:'1px solid rgba(74,95,212,0.3)' }}>
           <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>© 2026 Rebound Capital Group LLC. All Rights Reserved.</p>
+          <a href="https://www.kr8digital.com" target="_blank" rel="noopener"
+             className="footer-link"
+             style={{ fontFamily:'"Michroma","Eurostile","Arial Narrow",system-ui,sans-serif', fontSize:'13px', letterSpacing:'.34em', color:'var(--rcg2)', textDecoration:'none', textTransform:'uppercase' }}>
+            KR8
+          </a>
           <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>
             <Link href="/privacy" style={{ color:'var(--dim)', textDecoration:'none' }}>Privacy</Link> · <Link href="/terms" style={{ color:'var(--dim)', textDecoration:'none' }}>Terms</Link>
           </p>
@@ -123,13 +129,6 @@ export default function Footer() {
           Rebound Capital Group LLC is not a law firm and does not provide legal advice. Surplus fund recovery services are provided on a contingency fee basis. Results may vary.
         </p>
       </div>
-      <div style={{ textAlign: 'center', padding: '16px 0', marginTop: '24px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-  <a href="https://www.kr8digital.com" target="_blank" rel="noopener"
-     className="footer-link"
-     style={{ fontSize: '16px', fontWeight: 400, letterSpacing: '0.25em', color: 'var(--rcg2)', textDecoration: 'none', textTransform: 'uppercase' }}>
-    KR8
-  </a>
-</div>
     </footer>
   )
 }
