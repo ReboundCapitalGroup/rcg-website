@@ -43,6 +43,13 @@ export default function Footer() {
           Rebound Capital Group LLC is not a law firm and does not provide legal advice. Surplus fund recovery services are provided on a contingency fee basis. Results may vary.
         </p>
       </div>
+      <div style={{ textAlign: 'center', padding: '16px 0', marginTop: '24px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+  <a href="https://www.kr8digital.com" target="_blank" rel="noopener"
+     className="footer-link"
+     style={{ fontSize: '16px', fontWeight: 400, letterSpacing: '0.25em', color: 'var(--rcg2)', textDecoration: 'none', textTransform: 'uppercase' }}>
+    KR8
+  </a>
+</div>
     </footer>
   )
 }
