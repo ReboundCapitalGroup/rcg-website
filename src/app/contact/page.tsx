@@ -25,6 +25,11 @@ const CLAIM_TYPES = [
 
 const isPropertyClaim = (t: string) => t === 'foreclosure' || t === 'tax_deed'
 
+const SMS_CONSENT_LABEL = 'Text me updates about my claim'
+const SMS_CONSENT_LEGAL =
+  'I agree to receive calls and text messages from Rebound Capital Group LLC about my inquiry and claim at the number I provided, including messages sent with automated technology. Consent is not a condition of service. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out or HELP for help.'
+const SMS_CONSENT_TEXT = `${SMS_CONSENT_LABEL}. ${SMS_CONSENT_LEGAL}`
+
 export default function ContactPage() {
   const [step, setStep] = useState(1)
   const [submitting, setSubmitting] = useState(false)
@@ -43,6 +48,7 @@ export default function ContactPage() {
   const [priorAddress, setPriorAddress] = useState('')
   const [message, setMessage] = useState('')
   const [websiteUrl, setWebsiteUrl] = useState('') // honeypot
+  const [smsConsent, setSmsConsent] = useState(false)
 
   const formLoadedAt = useRef<number>(Date.now())
   const detailsRef = useRef<HTMLDivElement>(null)
@@ -69,6 +75,8 @@ export default function ContactPage() {
         body: JSON.stringify({
           claimType, fullName, email, phone, state, county, saleDateApprox,
           propertyAddress, assetDesc, priorAddress, message,
+          smsConsent,
+          smsConsentText: smsConsent ? SMS_CONSENT_TEXT : null,
           website_url: websiteUrl,
           fillTimeMs: Date.now() - formLoadedAt.current,
           attribution: getAttribution(),
@@ -370,6 +378,25 @@ export default function ContactPage() {
                 />
               </div>
 
+              <label htmlFor="f-sms" style={{ display: 'grid', gridTemplateColumns: '20px 1fr', gap: '10px', alignItems: 'start', cursor: 'pointer' }}>
+                <input
+                  id="f-sms"
+                  type="checkbox"
+                  checked={smsConsent}
+                  onChange={(e) => setSmsConsent(e.target.checked)}
+                  disabled={submitting}
+                  style={{ width: '18px', height: '18px', marginTop: '2px', accentColor: '#3a60b8', cursor: 'pointer' }}
+                />
+                <span style={{ display: 'block' }}>
+                  <span style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#fff', lineHeight: 1.4 }}>
+                    {SMS_CONSENT_LABEL} <span style={{ fontWeight: 400, color: '#9db0d2', fontSize: '13px' }}>(fastest way to reach me)</span>
+                  </span>
+                  <span style={{ display: 'block', fontSize: '11px', color: '#7d92c4', lineHeight: 1.6, marginTop: '6px' }}>
+                    {SMS_CONSENT_LEGAL} See our <Link href="/privacy#communications" style={{ color: '#7fa6ea' }}>Privacy Policy</Link> and <Link href="/terms" style={{ color: '#7fa6ea' }}>Terms</Link>. Optional.
+                  </span>
+                </span>
+              </label>
+
               {error && (
                 <div style={{ background: 'rgba(200,60,60,0.1)', border: '1px solid rgba(220,90,90,0.45)', padding: '13px 15px', color: '#f0a0a0', fontSize: '14px' }}>
                   {error}
@@ -382,6 +409,10 @@ export default function ContactPage() {
 
               <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#4a5c85', textAlign: 'center', lineHeight: 2 }}>
                 No obligation · No fees until we recover
+              </p>
+
+              <p style={{ fontSize: '11px', color: '#6f84b3', textAlign: 'center', lineHeight: 1.7, margin: 0 }}>
+                By submitting, you agree to our <Link href="/terms" style={{ color: '#7fa6ea' }}>Terms</Link> and <Link href="/privacy" style={{ color: '#7fa6ea' }}>Privacy Policy</Link>, and that Rebound Capital Group LLC may contact you by phone and email about your inquiry.
               </p>
             </form>
           )}

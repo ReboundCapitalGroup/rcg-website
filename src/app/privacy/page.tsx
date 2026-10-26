@@ -42,7 +42,7 @@ export default function PrivacyPage() {
             By using our website or services, you agree to the terms of this Privacy Policy.
           </p>
           <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginTop: '20px' }}>
-            Last Updated: April 22, 2026
+            Last Updated: October 25, 2026
           </p>
         </div>
 
@@ -178,10 +178,47 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        {/* Section 04: How We Protect Your Information */}
-        <section style={{ marginBottom: '56px', paddingBottom: '40px', borderBottom: '1px solid rgba(74,95,212,0.08)' }}>
+        {/* Section 04: Phone Calls, Text Messages, and Email */}
+        <section id="communications" style={{ marginBottom: '56px', paddingBottom: '40px', borderBottom: '1px solid rgba(74,95,212,0.08)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '16px', alignItems: 'baseline', marginBottom: '24px' }}>
             <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>04 /</div>
+            <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.25, margin: 0 }}>
+              Phone Calls, Text Messages, and Email
+            </h2>
+          </div>
+
+          <div style={{ paddingLeft: 'clamp(0px,4vw,72px)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.8, marginBottom: '16px' }}>
+              When you submit a form on our website, call or text us, sign an agreement with us, or otherwise give us your phone number or email address, you agree that Rebound Capital Group LLC and its team may contact you about your inquiry, your claim, and our services. This may include phone calls, text messages (SMS and MMS), voicemail, and email, sent manually or with automated technology, including prerecorded or artificial voice messages, at the number or address you provided. This consent continues until you tell us to stop.
+            </p>
+            <p style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.8, marginBottom: '16px' }}>
+              Agreeing to receive text messages is optional and is not a condition of using our services.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0 20px' }}>
+              {[
+                'Message frequency varies based on your inquiry or claim.',
+                'Message and data rates may apply.',
+                'To stop text messages, reply STOP at any time. Reply HELP for help, or call 305-563-4920.',
+                'To stop calls or emails, tell us on a call, reply to any email, or write to contact@reboundcapitalgroup.com. We will honor your request within the time required by law.',
+                'Calls may be recorded for quality, training, and record-keeping purposes.',
+                'Wireless carriers are not liable for delayed or undelivered messages.',
+              ].map((item, i) => (
+                <li key={i} style={{ display: 'grid', gridTemplateColumns: '20px 1fr', gap: '8px', padding: '6px 0', fontSize: '14px', color: 'var(--mid)', lineHeight: 1.7 }}>
+                  <span style={{ color: 'var(--rcg2)', fontFamily: "'Space Mono',monospace", fontSize: '11px' }}>→</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.8 }}>
+              No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging opt-in data and consent will not be shared with any third parties. We may share your number only with service providers that deliver our calls and messages for us, such as our telecommunications provider.
+            </p>
+          </div>
+        </section>
+
+        {/* Section 05: How We Protect Your Information */}
+        <section style={{ marginBottom: '56px', paddingBottom: '40px', borderBottom: '1px solid rgba(74,95,212,0.08)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '16px', alignItems: 'baseline', marginBottom: '24px' }}>
+            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>05 /</div>
             <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.25, margin: 0 }}>
               How We Protect Your Information
             </h2>
@@ -205,10 +242,10 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        {/* Section 05: Your Rights */}
+        {/* Section 06: Your Rights */}
         <section style={{ marginBottom: '56px', paddingBottom: '40px', borderBottom: '1px solid rgba(74,95,212,0.08)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '16px', alignItems: 'baseline', marginBottom: '24px' }}>
-            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>05 /</div>
+            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>06 /</div>
             <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.25, margin: 0 }}>
               Your Rights
             </h2>
@@ -240,10 +277,10 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        {/* Section 06: Data Retention */}
+        {/* Section 07: Data Retention */}
         <section style={{ marginBottom: '56px', paddingBottom: '40px', borderBottom: '1px solid rgba(74,95,212,0.08)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '16px', alignItems: 'baseline', marginBottom: '24px' }}>
-            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>06 /</div>
+            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>07 /</div>
             <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.25, margin: 0 }}>
               Data Retention
             </h2>
@@ -267,10 +304,10 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        {/* Section 07: Cookies and Tracking */}
+        {/* Section 08: Cookies and Tracking */}
         <section style={{ marginBottom: '56px', paddingBottom: '40px', borderBottom: '1px solid rgba(74,95,212,0.08)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '16px', alignItems: 'baseline', marginBottom: '24px' }}>
-            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>07 /</div>
+            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>08 /</div>
             <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.25, margin: 0 }}>
               Cookies and Tracking
             </h2>
@@ -294,10 +331,10 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        {/* Section 08: Children's Privacy */}
+        {/* Section 09: Children's Privacy */}
         <section style={{ marginBottom: '56px', paddingBottom: '40px', borderBottom: '1px solid rgba(74,95,212,0.08)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '16px', alignItems: 'baseline', marginBottom: '24px' }}>
-            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>08 /</div>
+            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>09 /</div>
             <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.25, margin: 0 }}>
               Children&apos;s Privacy
             </h2>
@@ -313,10 +350,10 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        {/* Section 09: Updates */}
+        {/* Section 10: Updates */}
         <section style={{ marginBottom: '56px', paddingBottom: '40px', borderBottom: '1px solid rgba(74,95,212,0.08)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '16px', alignItems: 'baseline', marginBottom: '24px' }}>
-            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>09 /</div>
+            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>10 /</div>
             <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.25, margin: 0 }}>
               Updates to This Policy
             </h2>

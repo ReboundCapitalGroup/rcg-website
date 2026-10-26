@@ -155,6 +155,15 @@ const sections = [
       'Claims related to the Service must be filed within one (1) year.',
     ],
   },
+  {
+    n: '13',
+    title: 'Consent to Calls, Text Messages, and Email',
+    body: [
+      'By submitting a form on our website, calling or texting us, signing an agreement with us, or otherwise providing your phone number or email address, you agree that Rebound Capital Group LLC and its team may contact you about your inquiry, your claim, and our services by phone call, text message (SMS and MMS), voicemail, and email, sent manually or with automated technology, including prerecorded or artificial voice messages. This consent continues until you tell us to stop.',
+      'Agreeing to receive text messages is optional and is not a condition of using our services. Message frequency varies. Message and data rates may apply. Reply STOP to stop text messages or HELP for help. To stop calls or emails, tell us on a call, reply to any email, or write to contact@reboundcapitalgroup.com.',
+      'Calls may be recorded for quality, training, and record-keeping purposes. Wireless carriers are not liable for delayed or undelivered messages. See our Privacy Policy for how we handle your phone number and messaging consent.',
+    ],
+  },
 ]
 
 export default function TermsPage() {
@@ -187,7 +196,7 @@ export default function TermsPage() {
             <span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Terms of Service.</span>
           </h1>
           <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginTop: '20px' }}>
-            Last Updated: April 22, 2026
+            Last Updated: October 25, 2026
           </p>
         </div>
 
