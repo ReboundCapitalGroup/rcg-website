@@ -205,7 +205,7 @@ export default function PrivacyPage() {
               ].map((item, i) => (
                 <li key={i} style={{ display: 'grid', gridTemplateColumns: '20px 1fr', gap: '8px', padding: '6px 0', fontSize: '14px', color: 'var(--mid)', lineHeight: 1.7 }}>
                   <span style={{ color: 'var(--rcg2)', fontFamily: "'Space Mono',monospace", fontSize: '11px' }}>→</span>
-                  <span>{item}</span>
+                  <span>{item.split(/\b(STOP|HELP)\b/).map((part, j) => (part === 'STOP' || part === 'HELP') ? <strong key={j} style={{ color: '#fff' }}>{part}</strong> : part)}</span>
                 </li>
               ))}
             </ul>
