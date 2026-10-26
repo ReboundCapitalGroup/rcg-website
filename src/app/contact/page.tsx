@@ -25,8 +25,10 @@ const CLAIM_TYPES = [
 
 const isPropertyClaim = (t: string) => t === 'foreclosure' || t === 'tax_deed'
 
-const SMS_CONSENT_TEXT =
-  'I agree to receive calls and text messages from Rebound Capital Group LLC about my inquiry and claim at the number I provided, including messages sent with automated technology. Consent is not a condition of service. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help.'
+const SMS_CONSENT_LABEL = 'Text me updates about my claim'
+const SMS_CONSENT_LEGAL =
+  'I agree to receive calls and text messages from Rebound Capital Group LLC about my inquiry and claim at the number I provided, including messages sent with automated technology. Consent is not a condition of service. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out or HELP for help.'
+const SMS_CONSENT_TEXT = `${SMS_CONSENT_LABEL}. ${SMS_CONSENT_LEGAL}`
 
 export default function ContactPage() {
   const [step, setStep] = useState(1)
@@ -385,8 +387,13 @@ export default function ContactPage() {
                   disabled={submitting}
                   style={{ width: '18px', height: '18px', marginTop: '2px', accentColor: '#3a60b8', cursor: 'pointer' }}
                 />
-                <span style={{ fontSize: '12px', color: '#9db0d2', lineHeight: 1.7 }}>
-                  {SMS_CONSENT_TEXT} See our <Link href="/privacy#communications" style={{ color: '#7fa6ea' }}>Privacy Policy</Link> and <Link href="/terms" style={{ color: '#7fa6ea' }}>Terms</Link>. (Optional)
+                <span style={{ display: 'block' }}>
+                  <span style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#fff', lineHeight: 1.4 }}>
+                    {SMS_CONSENT_LABEL} <span style={{ fontWeight: 400, color: '#9db0d2', fontSize: '13px' }}>(fastest way to reach me)</span>
+                  </span>
+                  <span style={{ display: 'block', fontSize: '11px', color: '#7d92c4', lineHeight: 1.6, marginTop: '6px' }}>
+                    {SMS_CONSENT_LEGAL} See our <Link href="/privacy#communications" style={{ color: '#7fa6ea' }}>Privacy Policy</Link> and <Link href="/terms" style={{ color: '#7fa6ea' }}>Terms</Link>. Optional.
+                  </span>
                 </span>
               </label>
 
