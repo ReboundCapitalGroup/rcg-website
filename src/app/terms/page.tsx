@@ -218,7 +218,7 @@ export default function TermsPage() {
             <div style={{ paddingLeft: 'clamp(0px,4vw,72px)' }}>
               {s.body.map((p, i) => (
                 <p key={i} style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.8, marginBottom: '14px' }}>
-                  {p}
+                  {p.split(/\b(STOP|HELP)\b/).map((part, j) => (part === 'STOP' || part === 'HELP') ? <strong key={j} style={{ color: '#fff' }}>{part}</strong> : part)}
                 </p>
               ))}
 
