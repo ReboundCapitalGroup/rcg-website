@@ -145,6 +145,8 @@ export async function POST(request: NextRequest) {
     const assetDesc = sanitize(body.assetDesc)
     const priorAddress = sanitize(body.priorAddress)
     const message = sanitize(body.message)
+    const smsConsent = body.smsConsent === true
+    const smsConsentText = smsConsent ? sanitize(body.smsConsentText) || null : null
 
     // Validate required fields
     if (!fullName || fullName.length < 2) {
@@ -247,6 +249,9 @@ export async function POST(request: NextRequest) {
       time_on_site_ms: timeOnSiteMs,
       spam_score: spamScore,
       spam_reasons: spamReasons.length ? spamReasons : null,
+      sms_consent: smsConsent,
+      sms_consent_text: smsConsentText,
+      sms_consent_at: smsConsent ? new Date().toISOString() : null,
     }
 
     const supabaseRes = await fetch(`${supabaseUrl}/rest/v1/website_submissions`, {
@@ -312,6 +317,7 @@ ${flagLine}
 NAME:       ${fullName}
 EMAIL:      ${email}
 PHONE:      ${phone}
+TEXT OK:    ${smsConsent ? 'YES (checked consent box)' : 'no'}
 STATE:      ${state}
 ${detailBlock}
 ─────────────────────────────────────
