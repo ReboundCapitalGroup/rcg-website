@@ -80,7 +80,7 @@ export default function Nav() {
               <DDItem href="/states">All States →</DDItem>
             </DDMenu>
 
-            <Link href="/map" className="nav-map-btn">Unclaimed Property Map</Link>
+            <Link href="/map" className="nav-map-btn">Unclaimed Funds Map</Link>
 
             <DDMenu label="Resources">
               <DDItem href="/resources/how-it-works">How It Works</DDItem>
@@ -188,7 +188,7 @@ export default function Nav() {
             </div>
           )}
 
-          <Link href="/map" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Unclaimed Property Map</Link>
+          <Link href="/map" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Unclaimed Funds Map</Link>
           <Link href="/resources/how-it-works" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>How It Works</Link>
           <Link href="/resources/faqs" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>FAQs</Link>
           <Link href="/about" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>About</Link>
