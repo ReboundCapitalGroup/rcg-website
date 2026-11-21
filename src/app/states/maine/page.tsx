@@ -54,7 +54,7 @@ export default function MainePage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Cumberland, York, and Penobscot counties generate the highest volume of Maine foreclosure surplus cases. Maine uses a judicial foreclosure process, and surplus funds from foreclosure sales are held by the Maine Superior Court until claimed by the former owner. Tax acquired property sales conducted by municipalities can also produce excess proceeds.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Maine Unclaimed Property Division, administered by the state Treasurer, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Maine residents. RCG searches Maine Superior Court records, municipal tax sale records, and state unclaimed property databases for every Maine client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Maine attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Maine. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

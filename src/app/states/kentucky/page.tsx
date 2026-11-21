@@ -84,7 +84,7 @@ export default function KentuckyPage() {
             <p style={bodyStyle}>If the sale brings in more than all of that, the difference is surplus, and it belongs to the former owner. Kentucky law addresses the disposition of surplus proceeds from judicial sales in KRS 426.500, and the Jefferson County Master Commissioner tells the public directly that original owners may file a claim for excess funds. What the law does not do is go find the owner. The lender is paid, the sale closes, and the excess can sit in a court account while the former owner, long since moved, has no idea it exists.</p>
             <p style={bodyStyle}>Funds that go unclaimed for long enough can be transferred to the Kentucky State Treasury Unclaimed Property Division, which holds them as custodian for the owner. RCG searches Kentucky circuit court records, Master Commissioner sale reports, and the Treasury database for every Kentucky client. Delinquent property tax enforcement follows its own track in Kentucky, and we review those files case by case.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Kentucky attorneys on every claim. All recoveries are handled on a contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Kentucky. All recoveries are handled on a contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

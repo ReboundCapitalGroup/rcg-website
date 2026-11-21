@@ -78,8 +78,8 @@ export default function Footer() {
                 <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'3px', color:'#8fa3f0' }}>Group LLC</div>
               </div>
             </Link>
-            <p style={{ fontSize:'12px', color:'var(--mid)', lineHeight:1.7, maxWidth:'240px' }}>Nationwide surplus funds, excess proceeds, and unclaimed property recovery. No upfront fees. Ever.</p>
-            <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)', marginTop:'10px' }}>Miami Beach, FL — Licensed · BBB A+ Rated</p>
+            <p style={{ fontSize:'12px', color:'var(--mid)', lineHeight:1.7, maxWidth:'240px' }}>Nationwide foreclosure help, surplus funds recovery, and unclaimed property recovery. No upfront fees. Ever.</p>
+            <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)', marginTop:'10px' }}>Miami Beach, FL · Est. 2023 · <a href="https://www.bbb.org/us/fl/miami-beach/profile/financial-consultants/rebound-capital-group-0633-92041559" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ color:'var(--rcg2)', textDecoration:'underline' }}>A+ rating with the BBB</a></p>
 
             {/* Social icons */}
             <div className="footer-social-row" style={{ display:'flex', gap:'8px', marginTop:'16px', flexWrap:'wrap' }}>
@@ -126,7 +126,7 @@ export default function Footer() {
           </p>
         </div>
         <p style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', color:'var(--dim)', opacity:0.55, lineHeight:1.6, marginTop:'12px' }}>
-          Rebound Capital Group LLC is not a law firm and does not provide legal advice. Surplus fund recovery services are provided on a contingency fee basis. Results may vary.
+          Rebound Capital Group LLC is not a law firm and does not provide legal advice. Claims are filed through our network of licensed attorneys in the state where the funds are held. Surplus fund recovery services are provided on a contingency fee basis. Results may vary.
         </p>
       </div>
     </footer>

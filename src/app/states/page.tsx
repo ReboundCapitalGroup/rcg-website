@@ -3,14 +3,13 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Surplus Funds Recovery by State | Rebound Capital Group',
-  description: 'Surplus fund recovery across all 50 states. Select your state for local surplus fund laws, filing process, and county-level guides.',
+  description: 'Foreclosure help and surplus fund recovery nationwide. Select your state for local surplus fund laws, filing process, and county-level guides.',
 }
 
 type State = { code: string; name: string; slug: string; active?: boolean }
 
 const ACTIVE_STATES: State[] = [
   { code: 'FL', name: 'Florida',  slug: 'florida',  active: true },
-  { code: 'AZ', name: 'Arizona',  slug: 'arizona',  active: true },
   { code: 'CO', name: 'Colorado', slug: 'colorado', active: true },
   { code: 'OH', name: 'Ohio',     slug: 'ohio',     active: true },
   { code: 'MI', name: 'Michigan', slug: 'michigan', active: true },
@@ -18,6 +17,7 @@ const ACTIVE_STATES: State[] = [
 
 const OTHER_STATES: State[] = [
   { code: 'AL', name: 'Alabama',        slug: 'alabama' },
+  { code: 'AZ', name: 'Arizona',        slug: 'arizona' },
   { code: 'AK', name: 'Alaska',         slug: 'alaska' },
   { code: 'AR', name: 'Arkansas',       slug: 'arkansas' },
   { code: 'CA', name: 'California',     slug: 'california' },
@@ -75,7 +75,7 @@ function StateCard({ state }: { state: State }) {
       {state.active && (
         <div className="state-card-badge">
           <span className="state-card-dot" />
-          Active Now
+          Live Monitoring
         </div>
       )}
       <div className="state-card-arrow">→</div>
@@ -486,7 +486,7 @@ export default function StatesPage() {
         <div className="states-header">
           <div className="states-tag">
             <div className="states-tag-line" />
-            <span className="states-tag-text">// All 50 States</span>
+            <span className="states-tag-text">// Serving Homeowners Nationwide</span>
           </div>
           <h1 className="states-title">
             Surplus Recovery
@@ -498,11 +498,11 @@ export default function StatesPage() {
           </p>
         </div>
 
-        {/* Active Now Section */}
+        {/* Live county monitoring section */}
         <section className="states-section">
           <div className="states-section-header">
             <span className="states-section-index">01 /</span>
-            <h2 className="states-section-title">Active Now</h2>
+            <h2 className="states-section-title">Live County Monitoring</h2>
             <span className="states-section-count">{ACTIVE_STATES.length} States</span>
           </div>
           <div className="states-grid">
@@ -516,7 +516,7 @@ export default function StatesPage() {
         <section className="states-section">
           <div className="states-section-header">
             <span className="states-section-index">02 /</span>
-            <h2 className="states-section-title">All Other States</h2>
+            <h2 className="states-section-title">Every Other State</h2>
             <span className="states-section-count">{OTHER_STATES.length} States</span>
           </div>
           <div className="states-grid">

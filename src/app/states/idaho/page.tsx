@@ -54,7 +54,7 @@ export default function IdahoPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Ada, Canyon, Kootenai, and Bonneville counties generate the highest volume of Idaho foreclosure surplus cases. Idaho is primarily a non-judicial foreclosure state using a deed of trust and trustee sale process. Trustee sale surplus funds are held by the trustee until claimed, while judicial foreclosures deposit surplus with the Idaho district court.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Idaho Unclaimed Property Division, administered by the state Treasurer through YourMoney.Idaho.gov, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Idaho residents. RCG searches Idaho district court records, county trustee sale records, and state unclaimed property databases for every Idaho client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Idaho attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Idaho. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

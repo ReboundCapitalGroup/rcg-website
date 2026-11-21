@@ -64,7 +64,7 @@ export default function OhioPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Ohio has a significant volume of foreclosure surplus cases, particularly in Cuyahoga, Franklin, Hamilton, Summit, and Montgomery counties where foreclosure activity has historically been high. When Ohio properties sell at sheriff sale for more than the mortgage balance and any liens, the surplus is deposited with the county clerk of courts and held until claimed by the former owner.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Ohio Department of Commerce Division of Unclaimed Funds holds millions in dormant bank accounts, uncashed checks, insurance proceeds, and other assets belonging to Ohio residents and former residents. RCG searches both court records and state unclaimed property databases for every Ohio client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG is actively operating in Ohio and has recovered funds for clients across multiple counties. We work exclusively with licensed Ohio attorneys on every claim.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG is actively operating in Ohio and has recovered funds for clients across multiple counties. Claims are filed through our network of licensed attorneys in Ohio.</p>
             </div>
           </div>
         </div>

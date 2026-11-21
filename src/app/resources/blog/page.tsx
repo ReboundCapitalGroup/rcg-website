@@ -78,7 +78,7 @@ export default function BlogCountyGuidesComingSoon() {
               State law is only half the picture. County courts and clerks each have their own rules, timelines, and filing procedures we document in detail.
             </p>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {['Florida &mdash; all 67 counties', 'Ohio &mdash; all 88 counties', 'Arizona, Colorado &amp; Michigan', 'Expanding monthly'].map((item) => (
+              {['Florida &mdash; all 67 counties', 'Ohio &mdash; all 88 counties', 'Colorado &amp; Michigan', 'Every state, nationwide'].map((item) => (
                 <li key={item} style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '8px', padding: '5px 0', fontSize: '13px', color: 'var(--mid)', lineHeight: 1.6 }}>
                   <span style={{ color: 'var(--rcg2)', fontFamily: "'Space Mono',monospace", fontSize: '10px' }}>→</span>
                   <span dangerouslySetInnerHTML={{ __html: item }} />

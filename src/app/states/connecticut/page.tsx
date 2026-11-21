@@ -54,7 +54,7 @@ export default function ConnecticutPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Fairfield, Hartford, and New Haven counties generate the highest volume of Connecticut foreclosure surplus cases. Connecticut uses a judicial foreclosure process that includes both foreclosure by sale, which can produce surplus funds, and strict foreclosure, in which title transfers directly to the lender. Foreclosure by sale surplus funds are held by the Connecticut Superior Court until claimed.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Connecticut Office of the Treasurer Unclaimed Property Division holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Connecticut residents. RCG searches Connecticut Superior Court records, municipal tax sale records, and state unclaimed property databases for every Connecticut client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Connecticut attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Connecticut. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

@@ -54,7 +54,7 @@ export default function KansasPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Johnson, Sedgwick, Shawnee, and Wyandotte counties generate the highest volume of Kansas foreclosure surplus cases. Kansas is a judicial foreclosure state, and sheriff sale surplus funds are deposited with the Kansas district court until claimed by the former owner. Kansas tax sales conducted by county treasurers can also produce excess proceeds recoverable by the former owner.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Kansas Unclaimed Property Division, administered by the State Treasurer through KansasCash.com, holds hundreds of millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Kansas residents. RCG searches Kansas district court records, county sheriff sale records, and state unclaimed property databases for every Kansas client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Kansas attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Kansas. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

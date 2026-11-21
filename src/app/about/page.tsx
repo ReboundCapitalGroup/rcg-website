@@ -12,13 +12,13 @@ const stats = [
   { val: '$0', label: 'Upfront Cost Ever' },
   { val: '1,000+', label: 'County Systems Monitored' },
   { val: 'A+', label: 'BBB Rating' },
-  { val: '5→50', label: 'States Active & Expanding' },
+  { val: '50', label: 'States Served Nationwide' },
 ]
 
 const values = [
   { n: '01', title: 'No Recovery, No Fee', desc: 'Pure contingency. We absorb every cost, handle all filings, and coordinate licensed attorneys on your behalf. You pay nothing unless we put money in your hands.', highlight: true },
   { n: '02', title: 'We Find You First', desc: 'Most clients had no idea money existed until we called. Our system monitors over 1,000 county court systems daily and identifies surplus before deadlines close.', highlight: false },
-  { n: '03', title: 'Licensed at Every Step', desc: 'Every claim runs through licensed Florida attorneys and licensed private investigators. RCG coordinates the process we do not practice law, and we never cut corners.', highlight: false },
+  { n: '03', title: 'Licensed Professionals at Every Step', desc: 'Claims are filed through our network of licensed attorneys in the state where the funds are held, with support from licensed private investigators. RCG coordinates the process. We do not practice law, and we never cut corners.', highlight: false },
   { n: '04', title: 'Deadline-Driven Execution', desc: 'Some claim windows close in 60 days. We track every deadline across every active county and have never missed a filing date on a signed case.', highlight: true },
 ]
 
@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '36px', padding: '7px 18px', border: '1px solid rgba(74,95,212,0.2)', background: 'rgba(30,40,127,0.1)' }}>
             <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4a7fd4', display: 'inline-block', flexShrink: 0 }} />
-            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>Miami Beach, FL · Est. 2023 · BBB A+ Rated</span>
+            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>Miami Beach, FL · Est. 2023 · A+ Rating with the BBB</span>
           </div>
           <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,76px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
             <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Rebound Capital </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Group</span>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </h2>
             <div style={{ width: '32px', height: '2px', background: '#1E287F', marginBottom: '28px' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {['Contingency Only Always', 'Licensed Attorneys on Every Claim', 'Active in FL · AZ · CO · OH · MI'].map((item, i) => (
+              {['Contingency Only Always', 'Licensed Attorneys on Every Claim', 'Serving Homeowners Nationwide'].map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <div style={{ width: '4px', height: '4px', background: '#1E287F', flexShrink: 0 }} />
                   <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#3a4f7a' }}>{item}</span>
@@ -169,7 +169,7 @@ export default function AboutPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.15)', padding: '32px', position: 'relative' }}>
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,#1E287F,transparent)' }} />
-                <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#3a4f7a', marginBottom: '16px' }}>// BBB A+ Rating</div>
+                <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#3a4f7a', marginBottom: '16px' }}>// A+ Rating with the BBB</div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '14px' }}>
                   <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '56px', color: '#4a7fd4', letterSpacing: '-2px', lineHeight: 1 }}>A+</div>
                   <div>
@@ -178,7 +178,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1px', color: '#3a4f6a', lineHeight: 2, textTransform: 'uppercase' }}>
-                  Miami Beach, FL<br />Licensed · Compliant · Verified
+                  Miami Beach, FL<br /><a href="https://www.bbb.org/us/fl/miami-beach/profile/financial-consultants/rebound-capital-group-0633-92041559" target="_blank" rel="noopener noreferrer" style={{ color: '#4a7fd4' }}>View our BBB profile</a>
                 </div>
               </div>
 
@@ -187,8 +187,8 @@ export default function AboutPage() {
                 {[
                   { val: '$2M+', label: 'Recovered for clients' },
                   { val: '1,000+', label: 'County systems monitored' },
-                  { val: '5 States', label: 'Active expanding to 50' },
-                  { val: '30d', label: 'Avg. claim turnaround' },
+                  { val: '50 States', label: 'Served nationwide' },
+                  { val: '30-90d', label: 'Typical claim turnaround' },
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '11px 0', borderBottom: i < 3 ? '1px solid rgba(74,95,212,0.07)' : 'none' }}>
                     <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1px', textTransform: 'uppercase', color: '#3a4f6a' }}>{item.label}</span>

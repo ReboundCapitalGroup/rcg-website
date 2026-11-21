@@ -54,7 +54,7 @@ export default function VermontPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Chittenden, Rutland, and Washington counties generate the highest volume of Vermont foreclosure surplus cases. Vermont uses a judicial foreclosure process, and surplus funds from foreclosure sales are held by the Vermont Superior Court until claimed by the former owner. Tax sales conducted by municipal collectors can also produce excess proceeds that must be claimed within specific statutory deadlines.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Vermont Unclaimed Property Division, administered by the state Treasurer, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Vermont residents. RCG searches Vermont Superior Court records, municipal tax sale records, and state unclaimed property databases for every Vermont client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Vermont attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Vermont. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

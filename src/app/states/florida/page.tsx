@@ -93,7 +93,7 @@ export default function FloridaPage() {
             </p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
               <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>
-                RCG is headquartered in Miami Beach and has been actively recovering funds for Florida clients since 2023. We monitor every county in the state and work exclusively with licensed Florida attorneys on every claim.
+                RCG is headquartered in Miami Beach and has been actively recovering funds for Florida clients since 2023. We monitor every county in the state and claims are filed through our network of licensed attorneys in Florida.
               </p>
             </div>
           </div>

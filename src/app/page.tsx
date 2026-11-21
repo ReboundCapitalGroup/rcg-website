@@ -5,10 +5,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Surplus Funds Recovery Nationwide | No Upfront Fee | RCG',
-  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property nationwide. Rebound Capital Group files through licensed attorneys at no upfront cost.',
+  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property nationwide. Claims are filed through our network of licensed attorneys, at no upfront cost.',
 }
 const services = [
-  { id:'01', cat:'Foreclosure Recovery', title:'Foreclosure Surplus & Overages', desc:'When a property sells for more than the debt owed, the overage belongs to the former owner by law. We file and recover courthouse-held surplus funds across all active states.', href:'/services/foreclosure-surplus', tag: 'Core Service' },
+  { id:'01', cat:'Foreclosure Recovery', title:'Foreclosure Surplus & Overages', desc:'When a property sells for more than the debt owed, the overage belongs to the former owner by law. We file and recover courthouse-held surplus funds nationwide.', href:'/services/foreclosure-surplus', tag: 'Core Service' },
   { id:'02', cat:'Tax Deed Recovery', title:'Tax Deed & Excess Proceeds', desc:'Tax sales generate excess proceeds daily. Most former owners never know the money exists. We locate it, file before deadlines, and pull every dollar before it escheats to the state.', href:'/services/tax-deed-surplus', tag: 'Core Service' },
   { id:'03', cat:'Unclaimed Property', title:'State-Held & Unclaimed Assets', desc:'Dormant bank accounts, uncashed checks, insurance payouts, utility deposits. Billions sit in state treasury divisions. We search, locate, and recover on your behalf — nationwide.', href:'/services/unclaimed-property', tag: 'Nationwide' },
   { id:'04', cat:'Estate & Heir Recovery', title:'Probate, Heirs & Estate Claims', desc:'Heirs and estates are often entitled to surplus funds they never knew existed. We coordinate probate documentation, identify rightful heirs, and manage the full claim process.', href:'/services/estate-recovery', tag: 'Specialized' },
@@ -20,18 +20,18 @@ const whyUs = [
   { n:'01', title:'Zero Upfront — Ever', desc:'100% contingency. We only get paid when you get paid. No retainers, no risk, no catch.' },
   { n:'02', title:'We Find You First', desc:'We identify surplus before it escheats to the state. Most clients never knew money existed until we called.' },
   { n:'03', title:'Deadline-Driven Execution', desc:'Claim windows can be as short as 60 days. We track every case clock and never miss a filing date.' },
-  { n:'04', title:'All 50 States. All Claim Types.', desc:'Foreclosure, tax deed, unclaimed property, estate. One firm. Nationwide. Total coverage.' },
+  { n:'04', title:'Nationwide. All Claim Types.', desc:'Foreclosure, tax deed, unclaimed property, estate. One firm, with claims filed through our network of licensed attorneys in the state where the funds are held.' },
 ]
 
 const firmStats = [
   { val:'$0', desc:'Upfront cost to any client — ever. Pure contingency model.' },
   { val:'1,000+', desc:'County court systems actively monitored and scraped daily.' },
-  { val:'5 → 50', desc:'FL · AZ · CO · OH · MI live today with court monitoring. Expanding nationwide.', small: true },
-  { val:'A+', desc:'BBB A+ Rated — Miami Beach, FL. Licensed & compliant.', blue: true },
+  { val:'24/7', desc:'Call or text anytime. Nationwide coverage through our network of licensed attorneys.', small: true },
+  { val:'A+', desc:'A+ rating with the BBB. Miami Beach, FL. Est. 2023.', blue: true },
 ]
 
-const allStates = ['Florida','Arizona','Colorado','Georgia','Ohio','New Jersey','Texas','California','New York','Illinois','Pennsylvania','Michigan','North Carolina','Virginia','Washington','Nevada','Tennessee','Indiana','Missouri','Maryland','Wisconsin','Minnesota','South Carolina','Alabama']
-const activeStates = ['Florida','Arizona','Colorado','Ohio','Michigan']
+const allStates = ['Florida','Colorado','Georgia','Ohio','New Jersey','Texas','California','New York','Illinois','Pennsylvania','Michigan','North Carolina','Virginia','Washington','Nevada','Tennessee','Indiana','Missouri','Maryland','Wisconsin','Minnesota','South Carolina','Alabama']
+const activeStates: string[] = []
 
 const heroStyle: React.CSSProperties = {
   background: 'var(--bg)',
@@ -64,7 +64,7 @@ export default function Home() {
           {/* Badge */}
           <div className="hero-badge-container" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'10px', marginBottom:'24px', flexWrap:'nowrap' }}>
             <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'var(--rcg2)', display:'inline-block', flexShrink:0 }} />
-            <span className="hero-badge-text" style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#5a6890', whiteSpace:'nowrap' as const }}>FL · AZ · CO · OH · MI · Expanding Nationwide · BBB A+</span>
+            <span className="hero-badge-text" style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#5a6890', whiteSpace:'nowrap' as const }}>Nationwide · $0 Upfront · A+ Rating with the BBB</span>
           </div>
 
           {/* Headline — two clean lines */}
@@ -78,7 +78,7 @@ export default function Home() {
           <p style={{ fontSize:'clamp(13px,3.2vw,15px)', color:'#a8bedd', lineHeight:1.75, maxWidth:'860px', width:'100%', margin:'0 auto 32px', fontWeight:400, textAlign:'center', padding:'0 4px' }}>
             <span style={{ display:'block', textWrap:'balance' }}>Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds.</span>
             <span style={{ display:'block', textWrap:'balance' }}>If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong></span>
-            <span style={{ display:'block', textWrap:'balance' }}>We recover it across FL, AZ, CO, OH, MI and expanding. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong></span>
+            <span style={{ display:'block', textWrap:'balance' }}>We recover it nationwide. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong></span>
           </p>
 
           {/* CTAs */}
@@ -173,16 +173,16 @@ export default function Home() {
       <div style={{ padding:'80px 40px', maxWidth:'1200px', margin:'0 auto' }}>
         <span className="section-tag">// coverage</span>
         <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,4vw,50px)', color:'#fff', letterSpacing:'-1px', lineHeight:1.0 }}>
-          Coming to All 50 States.<br /><span style={{ color:'var(--dim)', whiteSpace:'nowrap' as const }}>FL · AZ · CO · OH · MI Active Now</span>
+          Serving Homeowners Nationwide.<br /><span style={{ color:'var(--dim)' }}>Find Your State.</span>
         </h2>
-        <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, marginTop:'12px', maxWidth:'480px' }}>Currently active in Florida, Arizona, Colorado, Ohio, and Michigan with live court monitoring. Expanding to all 50 states.</p>
+        <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, marginTop:'12px', maxWidth:'480px' }}>Rebound Capital Group serves homeowners nationwide. Claims are filed through our network of licensed attorneys in the state where the funds are held.</p>
         <div className="states-grid">
           {allStates.map(s => (
             <Link key={s} href={`/states/${s.toLowerCase().replace(/\s+/g,'-').replace('.','-')}`} className={`state-pill${activeStates.includes(s) ? ' active' : ''}`}>{s}</Link>
           ))}
         </div>
         <div style={{ marginTop:'10px', textAlign:'right', fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>
-          + 26 more — <Link href="/map" style={{ color:'var(--rcg2)', textDecoration:'none' }}>View Full Interactive Unclaimed Funds Map →</Link>
+          <Link href="/states" style={{ color:'var(--rcg2)', textDecoration:'none' }}>See every state →</Link>
         </div>
       </div>
 

@@ -60,7 +60,7 @@ export default function MontanaPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Yellowstone, Gallatin, Missoula, and Flathead counties generate the highest volume of Montana foreclosure surplus cases. Montana allows both judicial and non-judicial foreclosure. Trustee sales under the Small Tract Financing Act can produce surplus funds held by the trustee, while judicial foreclosures deposit surplus with the Montana district court until claimed by the former owner.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Montana Unclaimed Property Program, administered by the state Department of Revenue, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Montana residents. RCG searches Montana district court records, county trustee sale records, and state unclaimed property databases for every Montana client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Montana attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Montana. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

@@ -53,7 +53,7 @@ function Counter({ target }: { target: number }) {
 
 const stats = [
   { label: 'Upfront Cost to You', prefix: '$', value: 0, suffix: '', sub: 'Zero exceptions. Always.', tag: 'CONTINGENCY' },
-  { label: 'States We Operate In', prefix: '', value: 5, suffix: ' active', sub: 'Expanding to all 50', tag: 'NATIONWIDE' },
+  { label: 'States Served', prefix: '', value: 50, suffix: '', sub: 'Nationwide attorney network', tag: 'NATIONWIDE' },
   { label: 'Counties Monitored', prefix: '', value: 1000, suffix: '+', sub: 'Daily court scrapes. Live data.', tag: 'LIVE' },
   { label: 'Min. Claim Window', prefix: '', value: 60, suffix: ' days', sub: 'Act fast — deadlines are real', tag: 'URGENT' },
 ]

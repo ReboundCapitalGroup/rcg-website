@@ -54,7 +54,7 @@ export default function WyomingPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Laramie, Natrona, and Campbell counties generate the highest volume of Wyoming foreclosure surplus cases. Wyoming primarily uses non-judicial foreclosure by advertisement and sale, with sheriff sale surplus funds held by the county sheriff or paid into the district court until claimed. Tax deed sales conducted by county treasurers can also produce excess proceeds.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Wyoming Unclaimed Property Division, administered by the state Treasurer, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, mineral royalty payments, and other assets belonging to Wyoming residents and former residents. RCG searches Wyoming district court records, county sheriff sale records, and state unclaimed property databases for every Wyoming client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Wyoming attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Wyoming. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

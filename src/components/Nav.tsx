@@ -46,12 +46,12 @@ export default function Nav() {
             </a>
 
             <DDMenu label="Services">
-              <DDLabel>Foreclosure Solutions</DDLabel>
-              <DDItem href="/services/foreclosure-surplus">Surplus Recovery</DDItem>
-              <DDItem href="/services/probate-time-extensions">Probate &amp; Time Extensions</DDItem>
-              <DDItem href="/services/mortgage-assumptions">Mortgage Assumptions</DDItem>
+              <DDLabel>Before the Auction</DDLabel>
+              <DDItem href="/services/foreclosure-solutions">Foreclosure Help &amp; Options</DDItem>
               <DDItem href="/services/cash-offer">Cash Offer on Property</DDItem>
-              <DDLabel mt>Surplus &amp; Overage Recovery</DDLabel>
+              <DDItem href="/services/mortgage-assumptions">Mortgage Assumptions</DDItem>
+              <DDItem href="/services/probate-time-extensions">Probate &amp; Time Extensions</DDItem>
+              <DDLabel mt>After the Auction</DDLabel>
               <DDItem href="/services/foreclosure-surplus">Foreclosure Surplus Funds</DDItem>
               <DDItem href="/services/tax-deed-surplus">Tax Deed Overages</DDItem>
               <DDItem href="/services/excess-proceeds">Excess Proceeds / Overages</DDItem>
@@ -65,22 +65,21 @@ export default function Nav() {
             </DDMenu>
 
             <DDMenu label="States">
-              <DDLabel>Active Now</DDLabel>
-              <DDItem href="/states/florida">Florida — 67 Counties</DDItem>
-              <DDItem href="/states/arizona">Arizona — 15 Counties</DDItem>
-              <DDItem href="/states/colorado">Colorado — 64 Counties</DDItem>
-              <DDItem href="/states/ohio">Ohio — 88 Counties</DDItem>
-              <DDItem href="/states/michigan">Michigan — 83 Counties</DDItem>
-              <DDLabel mt>Expanding Soon</DDLabel>
-              <DDItem href="/states/georgia">Georgia — 159 Counties</DDItem>
-              <DDItem href="/states/new-jersey">New Jersey — 21 Counties</DDItem>
-              <DDItem href="/states/texas">Texas — 254 Counties</DDItem>
-              <DDItem href="/states/north-carolina">North Carolina — 100 Counties</DDItem>
-              <DDItem href="/states/virginia">Virginia — 95 Counties</DDItem>
-              <DDItem href="/states">All 50 States →</DDItem>
+              <DDLabel>Popular States</DDLabel>
+              <DDItem href="/states/florida">Florida</DDItem>
+              <DDItem href="/states/ohio">Ohio</DDItem>
+              <DDItem href="/states/colorado">Colorado</DDItem>
+              <DDItem href="/states/michigan">Michigan</DDItem>
+              <DDItem href="/states/texas">Texas</DDItem>
+              <DDItem href="/states/california">California</DDItem>
+              <DDItem href="/states/georgia">Georgia</DDItem>
+              <DDItem href="/states/new-york">New York</DDItem>
+              <DDItem href="/states/pennsylvania">Pennsylvania</DDItem>
+              <DDItem href="/states/maryland">Maryland</DDItem>
+              <DDItem href="/states">All States →</DDItem>
             </DDMenu>
 
-            <Link href="/map" className="nav-map-btn">Unclaimed Property Map</Link>
+            <Link href="/services/foreclosure-solutions" className="nav-map-btn">Facing Foreclosure?</Link>
 
             <DDMenu label="Resources">
               <DDItem href="/resources/how-it-works">How It Works</DDItem>
@@ -88,6 +87,7 @@ export default function Nav() {
               <DDItem href="/resources/blog">Blog / County Guides</DDItem>
               <DDItem href="/resources/state-laws">State Laws &amp; Deadlines</DDItem>
               <DDItem href="/resources/results">Client Results</DDItem>
+              <DDItem href="/map">Unclaimed Property Map</DDItem>
             </DDMenu>
 
             <Link href="/about" className="nav-link-item">About</Link>
@@ -146,12 +146,13 @@ export default function Nav() {
           </button>
           {servicesOpen && (
             <div className="mobile-nav-sub">
-              <div className="mobile-nav-group-label">Foreclosure Solutions</div>
-              <Link href="/services/foreclosure-surplus" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Surplus Recovery</Link>
-              <Link href="/services/probate-time-extensions" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Probate &amp; Time Extensions</Link>
-              <Link href="/services/mortgage-assumptions" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Mortgage Assumptions</Link>
+              <div className="mobile-nav-group-label">Before the Auction</div>
+              <Link href="/services/foreclosure-solutions" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Foreclosure Help &amp; Options</Link>
               <Link href="/services/cash-offer" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Cash Offer on Property</Link>
-              <div className="mobile-nav-group-label">Surplus &amp; Overage Recovery</div>
+              <Link href="/services/mortgage-assumptions" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Mortgage Assumptions</Link>
+              <Link href="/services/probate-time-extensions" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Probate &amp; Time Extensions</Link>
+              <div className="mobile-nav-group-label">After the Auction</div>
+              <Link href="/services/foreclosure-surplus" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Foreclosure Surplus Funds</Link>
               <Link href="/services/tax-deed-surplus" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Tax Deed Overages</Link>
               <Link href="/services/excess-proceeds" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Excess Proceeds / Overages</Link>
               <div className="mobile-nav-group-label">Unclaimed Property</div>
@@ -171,25 +172,25 @@ export default function Nav() {
           </button>
           {statesOpen && (
             <div className="mobile-nav-sub">
-              <div className="mobile-nav-group-label">Active Now</div>
-              <Link href="/states/florida" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Florida — 67 Counties</Link>
-              <Link href="/states/arizona" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Arizona — 15 Counties</Link>
-              <Link href="/states/colorado" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Colorado — 64 Counties</Link>
-              <Link href="/states/ohio" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Ohio — 88 Counties</Link>
-              <Link href="/states/michigan" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Michigan — 83 Counties</Link>
-              <div className="mobile-nav-group-label">Expanding Soon</div>
-              <Link href="/states/georgia" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Georgia — 159 Counties</Link>
-              <Link href="/states/new-jersey" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>New Jersey — 21 Counties</Link>
-              <Link href="/states/texas" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Texas — 254 Counties</Link>
-              <Link href="/states/north-carolina" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>North Carolina — 100 Counties</Link>
-              <Link href="/states/virginia" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Virginia — 95 Counties</Link>
-              <Link href="/states" className="mobile-nav-item" onClick={() => setMobileOpen(false)} style={{ color: '#4a7fd4', fontWeight: 600 }}>All 50 States →</Link>
+              <div className="mobile-nav-group-label">Popular States</div>
+              <Link href="/states/florida" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Florida</Link>
+              <Link href="/states/ohio" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Ohio</Link>
+              <Link href="/states/colorado" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Colorado</Link>
+              <Link href="/states/michigan" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Michigan</Link>
+              <Link href="/states/texas" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Texas</Link>
+              <Link href="/states/california" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>California</Link>
+              <Link href="/states/georgia" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Georgia</Link>
+              <Link href="/states/new-york" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>New York</Link>
+              <Link href="/states/pennsylvania" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Pennsylvania</Link>
+              <Link href="/states/maryland" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Maryland</Link>
+              <Link href="/states" className="mobile-nav-item" onClick={() => setMobileOpen(false)} style={{ color: '#4a7fd4', fontWeight: 600 }}>All States →</Link>
             </div>
           )}
 
-          <Link href="/map" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Unclaimed Property Map</Link>
+          <Link href="/services/foreclosure-solutions" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Facing Foreclosure?</Link>
           <Link href="/resources/how-it-works" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>How It Works</Link>
           <Link href="/resources/faqs" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>FAQs</Link>
+          <Link href="/map" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Unclaimed Property Map</Link>
           <Link href="/about" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>About</Link>
           <Link href="/contact" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Contact</Link>
         </nav>
