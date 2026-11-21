@@ -16,7 +16,7 @@ const CLAIM_TYPE_LABELS: Record<string, string> = {
 }
 
 // States RCG actively operates in — used only to label the email, not to filter.
-const IN_FOOTPRINT = ['Florida', 'Ohio', 'Arizona', 'Colorado', 'Michigan']
+const IN_FOOTPRINT = ['Florida', 'Ohio', 'Colorado', 'Michigan']
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now()
@@ -134,7 +134,13 @@ export async function POST(request: NextRequest) {
     }
 
     // Sanitize all inputs
-    const claimType = VALID_CLAIM_TYPES.includes(body.claimType) ? body.claimType : 'unsure'
+    // "Facing foreclosure" (home not sold yet) is stored as claim_type
+    // 'foreclosure' so existing database rules and the CRM keep working; the
+    // message is tagged so it stands out, and the email is labeled urgent.
+    const isPreForeclosure = body.claimType === 'pre_foreclosure'
+    const claimType = isPreForeclosure
+      ? 'foreclosure'
+      : VALID_CLAIM_TYPES.includes(body.claimType) ? body.claimType : 'unsure'
     const fullName = sanitize(body.fullName)
     const email = sanitize(body.email).toLowerCase()
     const phone = sanitize(body.phone)
@@ -144,7 +150,11 @@ export async function POST(request: NextRequest) {
     const propertyAddress = sanitize(body.propertyAddress)
     const assetDesc = sanitize(body.assetDesc)
     const priorAddress = sanitize(body.priorAddress)
-    const message = sanitize(body.message)
+    const auctionDate = sanitize(body.auctionDate)
+    const rawMessage = sanitize(body.message)
+    const message = isPreForeclosure
+      ? `[FACING FORECLOSURE - HOME NOT SOLD YET] Auction date: ${auctionDate || 'not provided'}${rawMessage ? '\n' + rawMessage : ''}`
+      : rawMessage
     const smsConsent = body.smsConsent === true
     const smsConsentText = smsConsent ? sanitize(body.smsConsentText) || null : null
 
@@ -282,11 +292,19 @@ export async function POST(request: NextRequest) {
     if (postmarkToken) {
       try {
         const inFootprint = IN_FOOTPRINT.includes(state)
-        const claimLabel = CLAIM_TYPE_LABELS[claimType] || claimType
+        const claimLabel = isPreForeclosure
+          ? 'FACING FORECLOSURE (home not sold yet) - call ASAP'
+          : CLAIM_TYPE_LABELS[claimType] || claimType
 
         // Claim-type-specific detail block
         let detailBlock = ''
-        if (claimType === 'foreclosure' || claimType === 'tax_deed') {
+        if (isPreForeclosure) {
+          detailBlock = [
+            `COUNTY:     ${county || '(not provided)'}`,
+            `AUCTION:    ${auctionDate || '(not provided)'}`,
+            `ADDRESS:    ${propertyAddress || '(not provided)'}`,
+          ].join('\n')
+        } else if (claimType === 'foreclosure' || claimType === 'tax_deed') {
           detailBlock = [
             `COUNTY:     ${county || '(not provided)'}`,
             `SALE DATE:  ${saleDateApprox || '(not provided)'}`,

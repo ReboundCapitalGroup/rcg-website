@@ -137,7 +137,7 @@ export default function ForeclosureSolutionsPage() {
             The sooner we talk, the more options you have. Tell us where things stand and we will lay out every realistic path to protect your equity — at no upfront cost.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn-primary">Free Claim Review</Link>
+            <Link href="/contact?type=pre_foreclosure" className="btn-primary">Get My Options, Free</Link>
             <a href="tel:+13055634920" className="btn-secondary">305-563-4920</a>
           </div>
         </div>

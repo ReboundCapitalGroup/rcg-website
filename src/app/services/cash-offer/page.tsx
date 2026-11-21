@@ -90,7 +90,7 @@ export default function CashOfferPage() {
           <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,4vw,48px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '16px 0 16px' }}>Want to Sell Before the Auction?</h2>
           <p style={{ fontSize: '15px', color: '#506080', lineHeight: 1.85, marginBottom: '36px' }}>The sooner you reach out, the more options are available. Contact us with your property details and we will evaluate whether a pre-foreclosure sale is possible.</p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn-primary">Get a Cash Offer</Link>
+            <Link href="/contact?type=pre_foreclosure" className="btn-primary">Get a Cash Offer</Link>
             <a href="tel:+13055634920" className="btn-secondary">305-563-4920</a>
           </div>
         </div>

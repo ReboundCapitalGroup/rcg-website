@@ -90,7 +90,7 @@ export default function MortgageAssumptionsPage() {
           <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,4vw,48px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '16px 0 16px' }}>Facing Foreclosure?</h2>
           <p style={{ fontSize: '15px', color: '#506080', lineHeight: 1.85, marginBottom: '36px' }}>Contact us before the sale date. We will evaluate your loan type, explain your options, and connect you with the right resources — whether that is a mortgage assumption, a cash offer, or post-sale surplus recovery.</p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn-primary">Free Consultation</Link>
+            <Link href="/contact?type=pre_foreclosure" className="btn-primary">Free Consultation</Link>
             <a href="tel:+13055634920" className="btn-secondary">305-563-4920</a>
           </div>
         </div>
