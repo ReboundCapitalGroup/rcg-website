@@ -9,23 +9,22 @@ export const metadata: Metadata = {
 const categories = [
   {
     n: '01',
-    label: 'Foreclosure Solutions',
+    label: 'Before the Auction',
     blurb: 'Still in the foreclosure process? Pre-sale options to preserve your equity before the auction.',
     services: [
-      { title: 'Surplus Recovery', href: '/services/surplus-funds', desc: 'Recover the money left over when a forced sale brings in more than the debt owed. We identify court-held surplus and file before the deadline.' },
-      { title: 'Probate & Time Extensions', href: '/services/probate-time-extensions', desc: 'When an estate or probate matter threatens a claim deadline, we coordinate documentation and pursue extensions to protect your right to recover.' },
+      { title: 'Foreclosure Help & Options', href: '/services/foreclosure-solutions', desc: 'Every option before the auction in one place: more time, a cash offer, a mortgage assumption, or a plan that protects your equity.' },
+      { title: 'Time Extensions', href: '/services/time-extensions', desc: 'Before the sale, an attorney may be able to request a postponement. After the sale, you may still get more time before eviction.' },
       { title: 'Mortgage Assumptions', href: '/services/mortgage-assumptions', desc: 'In some cases a qualified buyer can assume your existing mortgage, preserving equity and stopping a forced sale at auction.' },
       { title: 'Cash Offer on Property', href: '/services/cash-offer', desc: 'Facing an auction date? We can structure a cash offer on your property before the sale, so you walk away with equity instead of a deficiency.' },
     ],
   },
   {
     n: '02',
-    label: 'Surplus & Overage Recovery',
+    label: 'After the Auction',
     blurb: 'When a property sells for more than is owed, the excess belongs to the former owner. We find it and file it.',
     services: [
       { title: 'Foreclosure Surplus Funds', href: '/services/foreclosure-surplus', desc: 'When a foreclosed property sells for more than the debt owed, the excess is legally yours. We file through licensed attorneys at no upfront cost.' },
       { title: 'Tax Deed Overages', href: '/services/tax-deed-surplus', desc: 'Tax deed and tax lien sales generate overages daily. We locate the excess tied to your former property and recover it before it escheats.' },
-      { title: 'Excess Proceeds / Overages', href: '/services/excess-proceeds', desc: 'Excess proceeds from a forced sale — mortgage, tax, or HOA — are recoverable by the former owner. We track, file, and pursue every dollar.' },
     ],
   },
   {
@@ -43,6 +42,7 @@ const categories = [
     blurb: 'Heirs, trusts, and business entities are often owed funds they never knew existed. We trace and recover them.',
     services: [
       { title: 'Estate & Heir Recovery', href: '/services/estate-recovery', desc: 'Heirs are often entitled to surplus and unclaimed funds they never knew existed. We identify rightful heirs, coordinate probate, and manage the full claim.' },
+      { title: 'Probate Help for Heirs', href: '/services/probate-assistance', desc: 'A relative passed before claiming funds? Heirs can usually still recover them. We coordinate probate and the claim through our network of licensed attorneys.' },
       { title: 'Trust Asset Recovery', href: '/services/trust-recovery', desc: 'Assets held under trust accounts are easily overlooked and left unclaimed. We trace and recover funds tied to active and dormant trusts.' },
       { title: 'LLC & Business Asset Recovery', href: '/services/business-asset-recovery', desc: 'Unclaimed property held under business names, dissolved entities, or closed corporations is recoverable. We recover assets for LLCs, corporations, and inactive trusts.' },
     ],

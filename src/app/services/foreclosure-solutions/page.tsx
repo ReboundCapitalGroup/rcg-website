@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const options = [
   { n: '01', title: 'Cash Offer on Property', href: '/services/cash-offer', desc: 'Facing an auction date? We can structure a cash offer on your property before the sale, helping you walk away with equity in hand instead of a deficiency on your record.' },
   { n: '02', title: 'Mortgage Assumption', href: '/services/mortgage-assumptions', desc: 'In some cases a qualified buyer can assume your existing mortgage. That preserves your equity, stops the foreclosure clock, and avoids a forced sale at auction.' },
-  { n: '03', title: 'Probate & Time Extensions', href: '/services/probate-time-extensions', desc: 'When an estate or probate matter threatens a deadline, we coordinate the documentation and pursue extensions so a claim or sale window is not lost to the calendar.' },
+  { n: '03', title: 'Time Extensions', href: '/services/time-extensions', desc: 'Need more time? An attorney from our network may be able to request a postponement of the sale while a modification, sale, or mortgage takeover is in progress.' },
   { n: '04', title: 'Already Sold? Recover the Surplus', href: '/services/foreclosure-surplus', desc: 'If the auction already happened and the property sold for more than you owed, the surplus is still legally yours. We identify and file to recover it at no upfront cost.' },
 ]
 

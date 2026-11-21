@@ -50,16 +50,17 @@ export default function Nav() {
               <DDItem href="/services/foreclosure-solutions">Foreclosure Help &amp; Options</DDItem>
               <DDItem href="/services/cash-offer">Cash Offer on Property</DDItem>
               <DDItem href="/services/mortgage-assumptions">Mortgage Assumptions</DDItem>
-              <DDItem href="/services/probate-time-extensions">Probate &amp; Time Extensions</DDItem>
+              <DDItem href="/services/time-extensions">Time Extensions</DDItem>
               <DDLabel mt>After the Auction</DDLabel>
               <DDItem href="/services/foreclosure-surplus">Foreclosure Surplus Funds</DDItem>
               <DDItem href="/services/tax-deed-surplus">Tax Deed Overages</DDItem>
-              <DDItem href="/services/excess-proceeds">Excess Proceeds / Overages</DDItem>
+              <DDItem href="/services/time-extensions#after-the-sale">Time Before Eviction</DDItem>
               <DDLabel mt>Unclaimed Property</DDLabel>
               <DDItem href="/services/unclaimed-property">Unclaimed Assets</DDItem>
               <DDItem href="/services/state-unclaimed-funds">State-Held Funds</DDItem>
               <DDLabel mt>Estate, Trust &amp; Business Recovery</DDLabel>
               <DDItem href="/services/estate-recovery">Estate &amp; Heir Recovery</DDItem>
+              <DDItem href="/services/probate-assistance">Probate Help for Heirs</DDItem>
               <DDItem href="/services/trust-recovery">Trust Asset Recovery</DDItem>
               <DDItem href="/services/business-asset-recovery">LLC &amp; Business Asset Recovery</DDItem>
             </DDMenu>
@@ -150,16 +151,17 @@ export default function Nav() {
               <Link href="/services/foreclosure-solutions" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Foreclosure Help &amp; Options</Link>
               <Link href="/services/cash-offer" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Cash Offer on Property</Link>
               <Link href="/services/mortgage-assumptions" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Mortgage Assumptions</Link>
-              <Link href="/services/probate-time-extensions" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Probate &amp; Time Extensions</Link>
+              <Link href="/services/time-extensions" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Time Extensions</Link>
               <div className="mobile-nav-group-label">After the Auction</div>
               <Link href="/services/foreclosure-surplus" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Foreclosure Surplus Funds</Link>
               <Link href="/services/tax-deed-surplus" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Tax Deed Overages</Link>
-              <Link href="/services/excess-proceeds" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Excess Proceeds / Overages</Link>
+              <Link href="/services/time-extensions#after-the-sale" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Time Before Eviction</Link>
               <div className="mobile-nav-group-label">Unclaimed Property</div>
               <Link href="/services/unclaimed-property" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Unclaimed Assets</Link>
               <Link href="/services/state-unclaimed-funds" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>State-Held Funds</Link>
               <div className="mobile-nav-group-label">Estate, Trust &amp; Business</div>
               <Link href="/services/estate-recovery" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Estate &amp; Heir Recovery</Link>
+              <Link href="/services/probate-assistance" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Probate Help for Heirs</Link>
               <Link href="/services/trust-recovery" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>Trust Asset Recovery</Link>
               <Link href="/services/business-asset-recovery" className="mobile-nav-item" onClick={() => setMobileOpen(false)}>LLC &amp; Business Asset Recovery</Link>
             </div>
