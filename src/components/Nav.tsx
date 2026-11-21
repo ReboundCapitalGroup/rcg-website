@@ -80,7 +80,7 @@ export default function Nav() {
               <DDItem href="/states">All States →</DDItem>
             </DDMenu>
 
-            <Link href="/services/foreclosure-solutions" className="nav-map-btn">Facing Foreclosure?</Link>
+            <Link href="/map" className="nav-map-btn">Unclaimed Property Map</Link>
 
             <DDMenu label="Resources">
               <DDItem href="/resources/how-it-works">How It Works</DDItem>
@@ -88,7 +88,6 @@ export default function Nav() {
               <DDItem href="/resources/blog">Blog / County Guides</DDItem>
               <DDItem href="/resources/state-laws">State Laws &amp; Deadlines</DDItem>
               <DDItem href="/resources/results">Client Results</DDItem>
-              <DDItem href="/map">Unclaimed Property Map</DDItem>
             </DDMenu>
 
             <Link href="/about" className="nav-link-item">About</Link>
@@ -189,10 +188,9 @@ export default function Nav() {
             </div>
           )}
 
-          <Link href="/services/foreclosure-solutions" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Facing Foreclosure?</Link>
+          <Link href="/map" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Unclaimed Property Map</Link>
           <Link href="/resources/how-it-works" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>How It Works</Link>
           <Link href="/resources/faqs" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>FAQs</Link>
-          <Link href="/map" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Unclaimed Property Map</Link>
           <Link href="/about" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>About</Link>
           <Link href="/contact" className="mobile-nav-section-link" onClick={() => setMobileOpen(false)}>Contact</Link>
         </nav>
