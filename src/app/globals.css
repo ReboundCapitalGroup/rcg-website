@@ -1116,3 +1116,28 @@ nav {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Mobile sticky call bar (phones only) */
+.mobile-call-bar { display: none; }
+@media (max-width: 768px) {
+  .mobile-call-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 90;
+    background: #000;
+    border-top: 1px solid rgba(74,95,212,0.35);
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+  .mobile-call-bar a {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 46px;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px;
+    letter-spacing: 1.2px; text-transform: uppercase; text-decoration: none;
+  }
+  .mobile-call-bar-call { color: #c8d8ff; border: 1px solid rgba(74,127,212,0.35); background: #0d1322; }
+  .mobile-call-bar-check { color: #fff; background: linear-gradient(180deg,#1a2860 0%,#0f1a40 100%); border: 1px solid rgba(74,127,212,0.45); }
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+}

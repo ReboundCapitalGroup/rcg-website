@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import AttributionTracker from '@/components/AttributionTracker'
 import Analytics from '@/components/Analytics'
+import MobileCallBar from '@/components/MobileCallBar'
 
 export const metadata: Metadata = {
   title: 'Rebound Capital Group | Surplus Funds & Unclaimed Property Recovery Nationwide',
@@ -178,6 +179,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main>{children}</main>
         <Footer />
+        <MobileCallBar />
       </body>
     </html>
   )

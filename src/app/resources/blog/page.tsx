@@ -4,6 +4,8 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Surplus Funds Recovery Blog | Rebound Capital Group',
   description: 'Surplus recovery insights, case studies, and county-level guides. Launching soon from Rebound Capital Group.',
+  // Hidden from Google until real posts exist (thin "coming soon" page).
+  robots: { index: false, follow: true },
 }
 
 export default function BlogCountyGuidesComingSoon() {

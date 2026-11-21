@@ -87,7 +87,7 @@ export default function ForeclosureSolutionsPage() {
             <span className="section-tag" style={{ margin: 0 }}>// Your Options</span>
             <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg,rgba(74,95,212,0.2),transparent)' }} />
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '2px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,440px),1fr))', gap: '2px' }}>
             {options.map((o, i) => (
               <Link key={o.n} href={o.href} style={{ textDecoration: 'none', display: 'block', background: i % 2 === 0 ? 'rgba(18,28,72,0.4)' : '#0a0f1a', border: `1px solid ${i % 2 === 0 ? 'rgba(74,95,212,0.2)' : 'rgba(74,95,212,0.07)'}`, padding: 'clamp(24px,3vw,34px)', position: 'relative' }}>
                 {i % 2 === 0 && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,#1E287F,transparent)' }} />}
@@ -137,7 +137,7 @@ export default function ForeclosureSolutionsPage() {
             The sooner we talk, the more options you have. Tell us where things stand and we will lay out every realistic path to protect your equity — at no upfront cost.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn-primary">Free Claim Review</Link>
+            <Link href="/contact?type=pre_foreclosure" className="btn-primary">Get My Options, Free</Link>
             <a href="tel:+13055634920" className="btn-secondary">305-563-4920</a>
           </div>
         </div>

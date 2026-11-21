@@ -4,16 +4,16 @@ import CounterBar from '@/components/CounterBar'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Surplus Funds Recovery Nationwide | No Upfront Fee | RCG',
-  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property nationwide. Claims are filed through our network of licensed attorneys, at no upfront cost.',
+  title: 'Foreclosure Help & Surplus Funds Recovery Nationwide | $0 Upfront | RCG',
+  description: 'Facing foreclosure or already lost your home at auction? Rebound Capital Group helps homeowners nationwide with options before the sale and surplus funds after it. $0 upfront. Call or text 24/7.',
 }
 const services = [
-  { id:'01', cat:'Foreclosure Recovery', title:'Foreclosure Surplus & Overages', desc:'When a property sells for more than the debt owed, the overage belongs to the former owner by law. We file and recover courthouse-held surplus funds nationwide.', href:'/services/foreclosure-surplus', tag: 'Core Service' },
-  { id:'02', cat:'Tax Deed Recovery', title:'Tax Deed & Excess Proceeds', desc:'Tax sales generate excess proceeds daily. Most former owners never know the money exists. We locate it, file before deadlines, and pull every dollar before it escheats to the state.', href:'/services/tax-deed-surplus', tag: 'Core Service' },
-  { id:'03', cat:'Unclaimed Property', title:'State-Held & Unclaimed Assets', desc:'Dormant bank accounts, uncashed checks, insurance payouts, utility deposits. Billions sit in state treasury divisions. We search, locate, and recover on your behalf — nationwide.', href:'/services/unclaimed-property', tag: 'Nationwide' },
-  { id:'04', cat:'Estate & Heir Recovery', title:'Probate, Heirs & Estate Claims', desc:'Heirs and estates are often entitled to surplus funds they never knew existed. We coordinate probate documentation, identify rightful heirs, and manage the full claim process.', href:'/services/estate-recovery', tag: 'Specialized' },
-  { id:'05', cat:'Business & Trust Recovery', title:'LLC, Trust & Business Assets', desc:'Unclaimed property held under business names, dissolved entities, or trust accounts. We recover assets from dormant LLCs, closed corporations, and inactive trusts.', href:'/services/business-asset-recovery', tag: 'Specialized' },
-  { id:'06', cat:'Foreclosure Solutions', title:'Pre-Sale & Property Options', desc:'Still in the foreclosure process? We may be able to preserve equity, explore mortgage assumptions, connect you with buyers, or structure a cash offer before the auction date.', href:'/services/cash-offer', tag: 'Pre-Foreclosure' },
+  { id:'01', cat:'Foreclosure Solutions', title:'Pre-Sale & Property Options', desc:'Still in the foreclosure process? We may be able to preserve equity, explore mortgage assumptions, connect you with buyers, or structure a cash offer before the auction date.', href:'/services/foreclosure-solutions', tag: 'Before the Auction' },
+  { id:'02', cat:'Foreclosure Recovery', title:'Foreclosure Surplus & Overages', desc:'When a property sells for more than the debt owed, the overage belongs to the former owner by law. We file and recover courthouse-held surplus funds nationwide.', href:'/services/foreclosure-surplus', tag: 'Core Service' },
+  { id:'03', cat:'Tax Deed Recovery', title:'Tax Deed & Excess Proceeds', desc:'Tax sales generate excess proceeds daily. Most former owners never know the money exists. We locate it, file before deadlines, and pull every dollar before it escheats to the state.', href:'/services/tax-deed-surplus', tag: 'Core Service' },
+  { id:'04', cat:'Unclaimed Property', title:'State-Held & Unclaimed Assets', desc:'Dormant bank accounts, uncashed checks, insurance payouts, utility deposits. Billions sit in state treasury divisions. We search, locate, and recover on your behalf — nationwide.', href:'/services/unclaimed-property', tag: 'Nationwide' },
+  { id:'05', cat:'Estate & Heir Recovery', title:'Probate, Heirs & Estate Claims', desc:'Heirs and estates are often entitled to surplus funds they never knew existed. We coordinate probate documentation, identify rightful heirs, and manage the full claim process.', href:'/services/estate-recovery', tag: 'Specialized' },
+  { id:'06', cat:'Business & Trust Recovery', title:'LLC, Trust & Business Assets', desc:'Unclaimed property held under business names, dissolved entities, or trust accounts. We recover assets from dormant LLCs, closed corporations, and inactive trusts.', href:'/services/business-asset-recovery', tag: 'Specialized' },
 ]
 
 const whyUs = [
@@ -76,15 +76,15 @@ export default function Home() {
 
           {/* Subtext — 3 clean lines matching notepad layout */}
           <p style={{ fontSize:'clamp(13px,3.2vw,15px)', color:'#a8bedd', lineHeight:1.75, maxWidth:'860px', width:'100%', margin:'0 auto 32px', fontWeight:400, textAlign:'center', padding:'0 4px' }}>
-            <span style={{ display:'block', textWrap:'balance' }}>Foreclosure surplus. Tax deed overages. Unclaimed property. State&#8209;held funds.</span>
+            <span style={{ display:'block', textWrap:'balance' }}>Facing foreclosure, or already lost your home at auction?</span>
             <span style={{ display:'block', textWrap:'balance' }}>If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong></span>
-            <span style={{ display:'block', textWrap:'balance' }}>We recover it nationwide. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong></span>
+            <span style={{ display:'block', textWrap:'balance' }}>We help homeowners nationwide, before and after the sale. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong></span>
           </p>
 
           {/* CTAs */}
           <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'14px', flexWrap:'wrap' }}>
             <Link href="/contact" className="btn-primary hero-cta-main" style={{ background:'linear-gradient(180deg,#1a2860 0%,#0f1a40 100%)', border:'1px solid rgba(74,127,212,0.35)', boxShadow:'0 0 24px rgba(20,35,100,0.5), 0 4px 0 rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.07)', letterSpacing:'1px', padding:'16px 32px', whiteSpace:'nowrap' as const }}>Check If You&apos;re Owed Money — Free</Link>
-            <Link href="/resources/how-it-works" className="btn-secondary" style={{ background:'linear-gradient(180deg,#1a1f2e 0%,#0f1218 100%)', border:'1px solid rgba(74,127,212,0.2)', color:'#7090c0', boxShadow:'0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)', letterSpacing:'1px', padding:'16px 32px' }}>See How It Works</Link>
+            <Link href="/services/foreclosure-solutions" className="btn-secondary" style={{ background:'linear-gradient(180deg,#1a1f2e 0%,#0f1218 100%)', border:'1px solid rgba(74,127,212,0.2)', color:'#7090c0', boxShadow:'0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)', letterSpacing:'1px', padding:'16px 32px' }}>Facing Foreclosure? See Options</Link>
             <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'#5a6890' }}>// No fees until we recover</span>
           </div>
         </div>

@@ -17,7 +17,8 @@ const US_STATES = [
 ]
 
 const CLAIM_TYPES = [
-  { value: 'foreclosure',        label: 'Foreclosure surplus',  hint: 'My property sold at a foreclosure auction' },
+  { value: 'pre_foreclosure',    label: 'Facing foreclosure',   hint: 'My home has not sold yet, or I have an auction date' },
+  { value: 'foreclosure',        label: 'Foreclosure surplus',  hint: 'My property already sold at a foreclosure auction' },
   { value: 'tax_deed',           label: 'Tax deed overage',     hint: 'A property sold for unpaid taxes' },
   { value: 'unclaimed_property', label: 'Unclaimed property',   hint: 'Old accounts, checks, or state-held funds' },
   { value: 'estate',             label: 'Estate recovery',      hint: 'Funds owed to a relative who passed away' },
@@ -44,6 +45,7 @@ export default function ContactPage() {
   const [state, setState] = useState('')
   const [county, setCounty] = useState('')
   const [saleDateApprox, setSaleDateApprox] = useState('')
+  const [auctionDate, setAuctionDate] = useState('')
   const [propertyAddress, setPropertyAddress] = useState('')
   const [assetDesc, setAssetDesc] = useState('')
   const [priorAddress, setPriorAddress] = useState('')
@@ -56,6 +58,12 @@ export default function ContactPage() {
 
   useEffect(() => {
     formLoadedAt.current = Date.now()
+    // Links like /contact?type=pre_foreclosure jump straight to step 2.
+    const preset = new URLSearchParams(window.location.search).get('type')
+    if (preset && CLAIM_TYPES.some((c) => c.value === preset)) {
+      setClaimType(preset)
+      setStep(2)
+    }
   }, [])
 
   const chooseType = (value: string) => {
@@ -74,7 +82,7 @@ export default function ContactPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          claimType, fullName, email, phone, state, county, saleDateApprox,
+          claimType, fullName, email, phone, state, county, saleDateApprox, auctionDate,
           propertyAddress, assetDesc, priorAddress, message,
           smsConsent,
           smsConsentText: smsConsent ? SMS_CONSENT_TEXT : null,
@@ -190,8 +198,6 @@ export default function ContactPage() {
         .rcg-tile-label { color: #e4ecff; font-size: 16px; font-weight: 600; line-height: 1.3; }
         .rcg-tile-hint  { color: #7d92c4; font-size: 13px; line-height: 1.5; margin-top: 4px; }
         .rcg-tile-arrow { color: #5b8ae6; flex-shrink: 0; }
-        .rcg-tile:last-child { grid-column: 1 / -1; }
-        @media (max-width: 720px) { .rcg-tile:last-child { grid-column: auto; } }
 
         /* Selected-type chip on step 2 */
         .rcg-chip {
@@ -336,6 +342,25 @@ export default function ContactPage() {
                 </>
               )}
 
+              {claimType === 'pre_foreclosure' && (
+                <>
+                  <div className="rcg-field-row">
+                    <div>
+                      <label className="rcg-label" htmlFor="f-county-pre">County</label>
+                      <input id="f-county-pre" className="rcg-input" type="text" placeholder="Optional" value={county} onChange={(e) => setCounty(e.target.value)} disabled={submitting} />
+                    </div>
+                    <div>
+                      <label className="rcg-label" htmlFor="f-auction">Auction date, if you have one</label>
+                      <input id="f-auction" className="rcg-input" type="date" value={auctionDate} onChange={(e) => setAuctionDate(e.target.value)} disabled={submitting} style={{ color: auctionDate ? '#e4ecff' : '#5c6f96' }} />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="rcg-label" htmlFor="f-addr-pre">Property address</label>
+                    <input id="f-addr-pre" className="rcg-input" type="text" placeholder="Optional" value={propertyAddress} onChange={(e) => setPropertyAddress(e.target.value)} disabled={submitting} />
+                  </div>
+                </>
+              )}
+
               {claimType === 'unclaimed_property' && (
                 <>
                   <div>
@@ -427,7 +452,7 @@ export default function ContactPage() {
         <div style={{ maxWidth: '520px', margin: '0 auto' }}>
           <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// Prefer to call?</span>
           <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(21px,3vw,30px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.15, margin: '14px 0 14px' }}>Talk to our team directly.</h2>
-          <p style={{ fontSize: '14px', color: '#7d92c4', lineHeight: 1.8, marginBottom: '26px' }}>Monday through Friday, 9 AM to 6 PM Eastern. Hablamos español.</p>
+          <p style={{ fontSize: '14px', color: '#7d92c4', lineHeight: 1.8, marginBottom: '26px' }}>Call or text anytime, 24/7. Hablamos español.</p>
           <a href="tel:+13055634920" className="btn-primary" style={{ display: 'inline-block' }}>Call 305-563-4920</a>
         </div>
       </section>
