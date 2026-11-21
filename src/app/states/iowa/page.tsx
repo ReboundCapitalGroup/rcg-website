@@ -2,8 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Iowa Surplus Funds: Are You Owed Money? | Free Search",
-  description: 'Iowa district courts and the Great Iowa Treasure Hunt hold unclaimed foreclosure surplus and sale overages. We search all 99 counties at no cost. No fee unless we recover.',
+  title: "Iowa Foreclosure Surplus: You May Be Owed Money | RCG",
+  description: "Did your Iowa home sell at foreclosure? You may be owed money from the sale. Free check, $0 upfront, call or text 24/7.",
   openGraph: {
     title: 'Iowa Surplus Funds Recovery | Rebound Capital Group',
     description: 'Unclaimed foreclosure surplus, sheriff sale overages, and state-held funds across all 99 Iowa counties. Free search, no upfront cost.',
@@ -28,7 +28,7 @@ export default function IowaPage() {
             <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>Iowa · All 99 Counties · No Upfront Cost</span>
           </div>
           <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,72px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
-            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Surplus Fund Recovery </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>in Iowa</span>
+            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Foreclosure Help &amp; Surplus Funds </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>in Iowa</span>
           </h1>
           <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '540px', margin: '0 auto', fontWeight: 400 }}>Courts, county treasurers, and state agencies in Iowa are holding funds belonging to former property owners and residents. RCG monitors all 99 Iowa counties and recovers these funds at no upfront cost.</p>
         </div>

@@ -2,8 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Ohio Foreclosure Surplus Recovery | ORC 2329.44 | RCG',
-  description: 'Recover foreclosure surplus and excess proceeds in Ohio under ORC 2329.44. Rebound Capital Group files Demand for Excess Proceeds through licensed attorneys at no upfront cost.',
+  title: "Ohio Foreclosure Help & Excess Proceeds | ORC 2329.44 | RCG",
+  description: "Did your Ohio home sell at a sheriff's sale? Excess proceeds may be owed to you under ORC 2329.44. Claims filed through our network of licensed Ohio attorneys. Free check, $0 upfront.",
 }
 
 
@@ -32,7 +32,7 @@ export default function OhioPage() {
             <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>Ohio · All 88 Counties · No Upfront Cost</span>
           </div>
           <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,72px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
-            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Surplus Fund Recovery </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>in Ohio</span>
+            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Foreclosure Help &amp; Surplus Funds </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>in Ohio</span>
           </h1>
           <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '540px', margin: '0 auto', fontWeight: 400 }}>Ohio courts and county clerks are holding millions in foreclosure surplus and unclaimed funds belonging to former property owners. RCG monitors all 88 Ohio counties and recovers these funds at no upfront cost.</p>
         </div>
