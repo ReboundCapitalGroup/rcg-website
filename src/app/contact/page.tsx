@@ -198,8 +198,6 @@ export default function ContactPage() {
         .rcg-tile-label { color: #e4ecff; font-size: 16px; font-weight: 600; line-height: 1.3; }
         .rcg-tile-hint  { color: #7d92c4; font-size: 13px; line-height: 1.5; margin-top: 4px; }
         .rcg-tile-arrow { color: #5b8ae6; flex-shrink: 0; }
-        .rcg-tile:last-child { grid-column: 1 / -1; }
-        @media (max-width: 720px) { .rcg-tile:last-child { grid-column: auto; } }
 
         /* Selected-type chip on step 2 */
         .rcg-chip {
