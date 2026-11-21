@@ -13,7 +13,7 @@ const categories = [
     blurb: 'Still in the foreclosure process? Pre-sale options to preserve your equity before the auction.',
     services: [
       { title: 'Foreclosure Help & Options', href: '/services/foreclosure-solutions', desc: 'Every option before the auction in one place: more time, a cash offer, a mortgage assumption, or a plan that protects your equity.' },
-      { title: 'Time Extensions', href: '/services/time-extensions', desc: 'Before the sale, an attorney may be able to request a postponement. After the sale, you may still get more time before eviction.' },
+      { title: 'Time Extensions', href: '/services/time-extensions', desc: 'Before the sale, an attorney may be able to postpone it. After the sale, you may still get more time before eviction.' },
       { title: 'Mortgage Assumptions', href: '/services/mortgage-assumptions', desc: 'In some cases a qualified buyer can assume your existing mortgage, preserving equity and stopping a forced sale at auction.' },
       { title: 'Cash Offer on Property', href: '/services/cash-offer', desc: 'Facing an auction date? We can structure a cash offer on your property before the sale, so you walk away with equity instead of a deficiency.' },
     ],

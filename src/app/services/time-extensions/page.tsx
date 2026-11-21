@@ -7,7 +7,7 @@ import ServicePage from '@/components/ServicePage'
 export const metadata: Metadata = {
   title: 'Foreclosure Time Extensions: Postpone a Sale or Get More Time Before Eviction | RCG',
   description:
-    'Need more time? Before a foreclosure sale, an attorney may be able to request a postponement. After the sale, you may still get more time before eviction. Free review, nationwide. Call or text 24/7.',
+    'Need more time? Before a foreclosure sale, an attorney may be able to postpone it. After the sale, you may still get more time before eviction. Free review, nationwide. Call or text 24/7.',
 }
 
 const p = { margin: 0 }
@@ -20,7 +20,7 @@ export default function TimeExtensionsPage() {
       badge="Before the sale · After the sale · Nationwide"
       h1Lead="More Time,"
       h1Accent="Before or After the Sale."
-      answer="If your home is headed to a foreclosure sale, an attorney may be able to ask the lender or the court to postpone it while a loan modification, bankruptcy, sale or mortgage takeover is in progress. If the sale already happened, you may still be able to get more time before you have to move out. The first review is free."
+      answer="If your home is headed to a foreclosure sale, an attorney may be able to postpone it while you work on a loan modification, a sale, a mortgage takeover and more. If the sale already happened, you may still be able to get more time before you have to move out. The first review is free."
       ctaHref="/contact?type=pre_foreclosure"
       ctaLabel="Get a Free Review"
       sections={[
@@ -34,10 +34,10 @@ export default function TimeExtensionsPage() {
                 A scheduled auction date is not always final. When there is a real reason to believe the home can be saved or sold for a better result, an attorney can ask the lender, the trustee or the court to move the sale date. Postponements are common, but they are never automatic, and the rules are different in every state.
               </p>
               <p style={p}>
-                Situations where a postponement is often requested include a loan modification or repayment plan that is still being reviewed, a bankruptcy filing (which generally pauses a sale while the case is open), a buyer or cash offer that needs time to close, or a qualified buyer who is taking over the existing mortgage.
+                Sales are often postponed while a loan modification or repayment plan is being reviewed, while a buyer or cash offer needs time to close, while a qualified buyer takes over the existing mortgage, and more. A bankruptcy filing also generally pauses a sale while the case is open.
               </p>
               <p style={p}>
-                Rebound Capital Group reviews your situation and connects you with our network of licensed attorneys in your state, who decide whether a postponement request makes sense and file it. The earlier you reach out before the sale date, the more options are usually available.
+                Rebound Capital Group reviews your situation and connects you with our network of licensed attorneys in your state, who decide whether to postpone the sale and handle it. The earlier you reach out before the sale date, the more options are usually available.
               </p>
             </>
           ),
@@ -83,12 +83,12 @@ export default function TimeExtensionsPage() {
         { title: 'Plan the next step', desc: 'Use the extra time to modify, sell, assume, or move on your terms, and claim any surplus.' },
       ]}
       faqs={[
-        { q: 'Can a foreclosure sale be postponed?', a: 'Often, yes, but it is never guaranteed. Lenders, trustees and courts can move a sale date when there is a good reason, such as a loan modification under review, a pending sale, or a bankruptcy filing. The rules depend on your state and on how far along the case is.' },
-        { q: 'How close to the sale date can I still ask for more time?', a: 'Sooner is always better. Some postponement requests can be made days before a sale, but many options close as the date gets near. If you have a sale date, call or text us right away, 24/7.' },
+        { q: 'Can a foreclosure sale be postponed?', a: 'Often, yes, but it is never guaranteed. Lenders, trustees and courts can move a sale date when there is a good reason, such as a loan modification under review, a pending sale, and more. The rules depend on your state and on how far along the case is.' },
+        { q: 'How close to the sale date can I still ask for more time?', a: 'Sooner is always better. Some sales can be postponed days before the auction, but many options close as the date gets near. If you have a sale date, call or text us right away, 24/7.' },
         { q: 'Does filing bankruptcy stop a foreclosure sale?', a: 'A bankruptcy filing generally pauses a foreclosure sale while the case is open, but it has serious long-term effects and is not right for everyone. Talk to a licensed bankruptcy attorney before filing.' },
         { q: 'The sale already happened. Can I still get more time to move?', a: 'In many cases, yes. An attorney can respond to the eviction process and negotiate a move-out date with the new owner. The sooner you act after receiving a notice, the more room there is to negotiate.' },
         { q: 'What does this cost?', a: 'The first review is free and there is no obligation. If an attorney from our network takes on your matter, they will explain any fees before any work begins.' },
-        { q: 'Is Rebound Capital Group a law firm?', a: 'No. Rebound Capital Group is not a law firm and does not give legal advice. Legal work, including postponement requests and eviction responses, is handled by our network of licensed attorneys in your state.' },
+        { q: 'Is Rebound Capital Group a law firm?', a: 'No. Rebound Capital Group is not a law firm and does not give legal advice. Legal work, including postponing a sale and responding to an eviction, is handled by our network of licensed attorneys in your state.' },
       ]}
       related={[
         { href: '/services/foreclosure-solutions', label: 'Foreclosure Help & Options', desc: 'Every option before the auction, in one place.' },
