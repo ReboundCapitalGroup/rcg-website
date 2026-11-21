@@ -47,7 +47,7 @@ const categories = [
       { q: 'Is there a deadline to claim my funds?', a: 'Yes, in many cases. Deadlines vary by state and claim type, and some are measured in months while others run for years. Some states hold unclaimed property indefinitely, while court-held surplus can be moved or lost to the owner if nobody claims it. If you have been notified of surplus funds or think you may have a claim, contact us as soon as possible.' },
       { q: 'What if the original property owner has passed away?', a: 'Heirs and estate representatives are often entitled to surplus funds. We work with estate attorneys and help identify and coordinate the documentation needed to recover on behalf of an estate, which commonly includes a death certificate, proof of relationship, and probate paperwork.' },
       { q: 'Can I claim funds from a property I no longer own?', a: 'Yes. Surplus funds from a foreclosure or tax sale belong to the former owner at the time of the sale, regardless of what happened to the property afterward.' },
-      { q: 'What states do you operate in?', a: 'We are currently most active in Florida, Arizona, Colorado, Ohio, and Michigan. We are expanding and can assist with certain claim types in other states. Contact us to discuss your specific situation.' },
+      { q: 'What states do you operate in?', a: 'Rebound Capital Group serves homeowners nationwide. Claims are filed through our network of licensed attorneys in the state where the funds are held. Contact us anytime, 24/7, to discuss your situation.' },
     ],
   },
   {

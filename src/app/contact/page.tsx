@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, FormEvent } from 'react'
 import Link from 'next/link'
 import { getAttribution } from '@/lib/attribution'
+import { trackLead } from '@/components/Analytics'
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -91,6 +92,7 @@ export default function ContactPage() {
         return
       }
 
+      trackLead({ form: 'contact', claim_type: claimType, state })
       setSubmitted(true)
     } catch {
       setError('Network error. Please check your connection and try again.')

@@ -52,8 +52,8 @@ export default function ClientResultsPage() {
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)' }} className="about-stats-bar">
           {[
             { val: '$2M+', label: 'Total Recovered for Clients' },
-            { val: '100%', label: 'Contingency — No Upfront Cost' },
-            { val: 'FL · AZ · CO · OH · MI', label: 'Active Recovery States' },
+            { val: '100%', label: 'Contingency, No Upfront Cost' },
+            { val: 'Nationwide', label: 'Recovery Coverage' },
           ].map((s, i) => (
             <div key={i} style={{ padding: '32px 24px', borderRight: i < 2 ? '1px solid rgba(74,95,212,0.1)' : 'none', textAlign: 'center' }}>
               <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,30px)', color: '#4a7fd4', letterSpacing: '-1px', lineHeight: 1, marginBottom: '8px' }}>{s.val}</div>

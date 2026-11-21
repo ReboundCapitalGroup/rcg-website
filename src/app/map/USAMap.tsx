@@ -6,7 +6,7 @@ import { statePaths, stateCentroids } from './stateData'
 const stateInfo: Record<string, { name: string; slug: string; funds: string; active: boolean; counties: number }> = {
   AL: { name: 'Alabama', slug: 'alabama', funds: '$892M', active: false, counties: 67 },
   AK: { name: 'Alaska', slug: 'alaska', funds: '$210M', active: false, counties: 30 },
-  AZ: { name: 'Arizona', slug: 'arizona', funds: '$1.8B', active: true, counties: 15 },
+  AZ: { name: 'Arizona', slug: 'arizona', funds: '$1.8B', active: false, counties: 15 },
   AR: { name: 'Arkansas', slug: 'arkansas', funds: '$421M', active: false, counties: 75 },
   CA: { name: 'California', slug: 'california', funds: '$15B', active: false, counties: 58 },
   CO: { name: 'Colorado', slug: 'colorado', funds: '$980M', active: true, counties: 64 },
@@ -96,7 +96,7 @@ export default function USAMap() {
           {hInfo.active && (
             <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a7fd4', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4a7fd4', boxShadow: '0 0 6px #4a7fd4' }} />
-              Active — Live Monitoring
+              Live County Monitoring
             </div>
           )}
 
@@ -123,7 +123,7 @@ export default function USAMap() {
           )}
 
           <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: hInfo.active ? '#4a6fd4' : '#4a5880', letterSpacing: '0.5px', marginTop: '8px', paddingTop: '8px', borderTop: `1px solid ${hInfo.active ? 'rgba(30,40,127,0.3)' : 'rgba(255,255,255,0.04)'}` }}>
-            {hInfo.active ? 'Click to view state guide →' : 'Coming soon — we can still help →'}
+            Click to view state guide →
           </div>
         </div>
       )}
@@ -203,11 +203,11 @@ export default function USAMap() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px', marginTop: '16px', flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.6 }}>
           <div style={{ width: '18px', height: '12px', background: '#1E287F', border: '1px solid #3a5fd4' }} />
-          Active — Live Monitoring
+          Live County Monitoring
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.6 }}>
           <div style={{ width: '18px', height: '12px', background: '#1e2d4a', border: '1px solid #131d35' }} />
-          Coming Soon — We Can Still Help
+          Served Nationwide
         </div>
       </div>
     </div>

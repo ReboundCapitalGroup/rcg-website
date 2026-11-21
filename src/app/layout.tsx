@@ -3,6 +3,7 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import AttributionTracker from '@/components/AttributionTracker'
+import Analytics from '@/components/Analytics'
 
 export const metadata: Metadata = {
   title: 'Rebound Capital Group | Surplus Funds & Unclaimed Property Recovery Nationwide',
@@ -173,6 +174,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <AttributionTracker />
+        <Analytics />
         <Nav />
         <main>{children}</main>
         <Footer />
