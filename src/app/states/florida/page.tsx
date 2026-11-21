@@ -2,8 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Florida Surplus Funds Recovery | All 67 Counties | RCG',
-  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property in Florida. Rebound Capital Group monitors all 67 counties and files through licensed attorneys at no upfront cost.',
+  title: "Florida Foreclosure & Tax Deed Surplus Claims | RCG",
+  description: "Did your Florida home sell at a foreclosure or tax deed sale? The surplus may be yours. Miami-Dade, Broward, Palm Beach and all 67 counties. Free check, call or text 24/7.",
 }
 
 
@@ -48,7 +48,7 @@ export default function FloridaPage() {
             <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>Florida · All 67 Counties · No Upfront Cost</span>
           </div>
           <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,72px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
-            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Surplus Fund Recovery </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>in Florida</span>
+            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Foreclosure Help &amp; Surplus Funds </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>in Florida</span>
           </h1>
           <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '540px', margin: '0 auto', fontWeight: 400 }}>
             Florida courts, county clerks, and the state treasury are holding billions in funds belonging to former property owners and residents. RCG monitors all 67 Florida counties and recovers these funds on a pure contingency basis.

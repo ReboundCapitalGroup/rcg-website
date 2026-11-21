@@ -2,8 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Idaho Surplus Funds Recovery | All Counties | RCG',
-  description: 'Recover foreclosure surplus, tax deed overages, and unclaimed property in Idaho. Rebound Capital Group files through licensed attorneys at no upfront cost — you pay nothing until we recover.',
+  title: "Idaho Foreclosure Surplus: You May Be Owed Money | RCG",
+  description: "Did your Idaho home sell at a trustee sale? You may be owed money from the sale. Free check, $0 upfront, call or text 24/7.",
 }
 
 
@@ -22,7 +22,7 @@ export default function IdahoPage() {
             <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>Idaho · All 44 Counties · No Upfront Cost</span>
           </div>
           <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,72px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
-            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Surplus Fund Recovery </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>in Idaho</span>
+            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Foreclosure Help &amp; Surplus Funds </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>in Idaho</span>
           </h1>
           <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '540px', margin: '0 auto', fontWeight: 400 }}>Courts, county treasurers, and state agencies in Idaho are holding funds belonging to former property owners and residents. RCG monitors all 44 Idaho counties and recovers these funds at no upfront cost.</p>
         </div>
