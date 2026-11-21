@@ -6,7 +6,7 @@ import AttributionTracker from '@/components/AttributionTracker'
 
 export const metadata: Metadata = {
   title: 'Rebound Capital Group | Surplus Funds & Unclaimed Property Recovery Nationwide',
-  description: 'Rebound Capital Group recovers foreclosure surplus funds, tax deed overages, excess proceeds, and unclaimed property in all 50 states. No upfront fees. 100% contingency.',
+  description: 'Rebound Capital Group recovers foreclosure surplus funds, tax deed overages, excess proceeds, and unclaimed property nationwide. No upfront fees. 100% contingency.',
   keywords: 'surplus funds recovery, foreclosure surplus, tax deed overages, excess proceeds, unclaimed property, asset recovery',
   metadataBase: new URL('https://reboundcapitalgroup.com'),
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: 'Rebound Capital Group | Nationwide Surplus Funds Recovery',
-    description: 'We recover foreclosure surplus, tax deed overages, and unclaimed property in all 50 states. Zero upfront fees.',
+    description: 'We recover foreclosure surplus, tax deed overages, and unclaimed property nationwide. Zero upfront fees.',
     url: 'https://reboundcapitalgroup.com',
     siteName: 'Rebound Capital Group',
     type: 'website',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     site: '@reboundcapitalg',
     creator: '@reboundcapitalg',
     title: 'Rebound Capital Group | Nationwide Surplus Funds Recovery',
-    description: 'We recover foreclosure surplus, tax deed overages, and unclaimed property in all 50 states. Zero upfront fees.',
+    description: 'We recover foreclosure surplus, tax deed overages, and unclaimed property nationwide. Zero upfront fees.',
   },
 
   robots: {
@@ -82,15 +82,13 @@ const organizationSchema = {
   legalName: 'Rebound Capital Group LLC',
   url: 'https://reboundcapitalgroup.com',
   logo: 'https://reboundcapitalgroup.com/rcg-logo.png',
-  description: 'Nationwide surplus funds and unclaimed property recovery firm serving all 50 states.',
+  description: 'Rebound Capital Group serves homeowners nationwide. Claims are filed through our network of licensed attorneys in the state where the funds are held.',
   telephone: '+1-305-563-4920',
   email: 'contact@reboundcapitalgroup.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '407 Lincoln Road Suite 6H',
     addressLocality: 'Miami Beach',
     addressRegion: 'FL',
-    postalCode: '33139',
     addressCountry: 'US',
   },
   contactPoint: {
@@ -100,6 +98,18 @@ const organizationSchema = {
     email: 'contact@reboundcapitalgroup.com',
     availableLanguage: ['English', 'Spanish'],
     areaServed: 'US',
+    hoursAvailable: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59',
+    },
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
   },
   sameAs: [
     'https://www.instagram.com/Reboundcapitalgroup/',
@@ -108,15 +118,9 @@ const organizationSchema = {
     'https://x.com/reboundcapitalg',
     'https://www.tiktok.com/@reboundcapitalgroup',
     'https://www.reddit.com/user/ReboundCapitalGroup/',
+    'https://www.bbb.org/us/fl/miami-beach/profile/financial-consultants/rebound-capital-group-0633-92041559',
   ],
-  areaServed: [
-    { '@type': 'State', name: 'Florida' },
-    { '@type': 'State', name: 'Arizona' },
-    { '@type': 'State', name: 'Colorado' },
-    { '@type': 'State', name: 'Ohio' },
-    { '@type': 'State', name: 'Michigan' },
-    { '@type': 'Country', name: 'United States' },
-  ],
+  areaServed: { '@type': 'Country', name: 'United States' },
   serviceType: [
     'Surplus Funds Recovery',
     'Foreclosure Surplus Recovery',
@@ -133,7 +137,7 @@ const websiteSchema = {
   '@id': 'https://reboundcapitalgroup.com/#website',
   url: 'https://reboundcapitalgroup.com',
   name: 'Rebound Capital Group',
-  description: 'Surplus funds recovery across all 50 states',
+  description: 'Foreclosure help and surplus funds recovery nationwide',
   publisher: {
     '@id': 'https://reboundcapitalgroup.com/#organization',
   },

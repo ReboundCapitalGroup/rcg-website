@@ -54,7 +54,7 @@ export default function NewHampshirePage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Hillsborough, Rockingham, and Merrimack counties generate the highest volume of New Hampshire foreclosure surplus cases. New Hampshire is a non-judicial foreclosure state, and surplus funds from foreclosure auctions are typically held by the foreclosing trustee or attorney until claimed by the former owner. Tax deed sales conducted by municipalities can also produce excess proceeds.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The New Hampshire Abandoned Property Division, administered by the state Treasury, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to New Hampshire residents. RCG searches New Hampshire Superior Court records, municipal tax sale records, and state unclaimed property databases for every New Hampshire client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed New Hampshire attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in New Hampshire. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

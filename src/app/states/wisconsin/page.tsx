@@ -54,7 +54,7 @@ export default function WisconsinPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Milwaukee, Dane, Waukesha, and Brown counties generate the highest volume of Wisconsin foreclosure surplus cases. Wisconsin is a judicial foreclosure state, and sheriff sale surplus funds are deposited with the Wisconsin circuit court until claimed by the former owner. Wisconsin tax deed sales conducted by county treasurers can produce excess proceeds following the 2023 Tyler v. Hennepin Supreme Court ruling.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Wisconsin Unclaimed Property Program, administered by the state Department of Revenue, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Wisconsin residents. RCG searches Wisconsin circuit court records, county sheriff sale records, and state unclaimed property databases for every Wisconsin client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Wisconsin attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Wisconsin. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

@@ -54,7 +54,7 @@ export default function OregonPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Multnomah, Washington, Clackamas, and Lane counties generate the highest volume of Oregon foreclosure surplus cases. Oregon allows both judicial and non-judicial foreclosure. Non-judicial trustee sale surplus funds are held by the trustee until claimed by the former owner, while judicial foreclosure surplus is deposited with the Oregon Circuit Court.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Oregon Unclaimed Property Program, administered by the Oregon State Treasury, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Oregon residents. RCG searches Oregon Circuit Court records, county trustee sale records, and state unclaimed property databases for every Oregon client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Oregon attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Oregon. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

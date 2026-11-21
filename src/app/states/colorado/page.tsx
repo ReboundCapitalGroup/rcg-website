@@ -29,7 +29,7 @@ export default function ColoradoPage() {
       </section>
       <div style={{ background: '#080d1a', borderBottom: '1px solid rgba(30,40,127,0.12)' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }} className="about-stats-bar">
-          {[{ val: '64', label: 'Counties Monitored' },{ val: 'Active', label: 'RCG Status' },{ val: '$0', label: 'Upfront Cost' },{ val: '60-90d', label: 'Avg. Claim Timeline' }].map((s, i) => (
+          {[{ val: '64', label: 'Counties Monitored' },{ val: 'Nationwide', label: 'RCG Coverage' },{ val: '$0', label: 'Upfront Cost' },{ val: '60-90d', label: 'Avg. Claim Timeline' }].map((s, i) => (
             <div key={i} style={{ padding: '32px 24px', borderRight: i < 3 ? '1px solid rgba(74,95,212,0.1)' : 'none', textAlign: 'center' }}>
               <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,30px)', color: '#4a7fd4', letterSpacing: '-1px', lineHeight: 1, marginBottom: '8px' }}>{s.val}</div>
               <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#3a4f7a' }}>{s.label}</div>
@@ -54,7 +54,7 @@ export default function ColoradoPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Colorado foreclosure surplus funds are held by the county public trustee after a trustee sale. El Paso, Arapahoe, Jefferson, Denver, and Weld counties generate the highest volume of surplus cases in the state.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Colorado Department of Treasury Unclaimed Property Division holds funds from dormant accounts, uncashed checks, life insurance proceeds, and other assets belonging to Colorado residents. RCG searches Colorado public trustee records and state unclaimed property databases for every Colorado client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Colorado attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Colorado. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

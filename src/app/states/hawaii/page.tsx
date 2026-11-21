@@ -54,7 +54,7 @@ export default function HawaiiPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Hawaii has 5 counties covering the main islands. Honolulu County, which includes the island of Oahu, generates the highest volume of foreclosure surplus cases. Hawaii foreclosures are primarily judicial and can produce surplus funds held by the circuit court until claimed by the former owner.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Hawaii Unclaimed Property Program, administered by the state Department of Budget and Finance, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Hawaii residents, former residents, and visitors. RCG searches Hawaii circuit court records and state unclaimed property databases for every Hawaii client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Hawaii attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Hawaii. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

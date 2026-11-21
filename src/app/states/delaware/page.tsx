@@ -54,7 +54,7 @@ export default function DelawarePage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Delaware has just three counties covering the entire state. New Castle County, which includes Wilmington, generates the highest volume of foreclosure surplus cases. Delaware sheriff sales are conducted monthly in each county and frequently produce surplus funds held by the Prothonotary office until claimed.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Delaware Office of Unclaimed Property holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and corporate distributions. As the state of incorporation for more than half of U.S. public companies, Delaware is a major holder of business-related unclaimed assets. RCG searches Delaware Superior Court records and state unclaimed property databases for every Delaware client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Delaware attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Delaware. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>

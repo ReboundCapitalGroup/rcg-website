@@ -60,7 +60,7 @@ export default function IowaPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>Polk, Linn, Scott, and Johnson counties generate the highest volume of Iowa foreclosure surplus cases. Iowa is a judicial foreclosure state with a mandatory redemption period, and sheriff sale surplus funds are deposited with the Iowa district court clerk until claimed by the former owner. Iowa tax sale certificates can produce excess proceeds when properties are taken to tax deed.</p>
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, margin: 0 }}>The Iowa Great Iowa Treasure Hunt Unclaimed Property Program, administered by the State Treasurer, holds hundreds of millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Iowa residents. RCG searches Iowa district court records, county tax sale records, and state unclaimed property databases for every Iowa client.</p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
-              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>RCG works exclusively with licensed Iowa attorneys on every claim. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
+              <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>Claims are filed through our network of licensed attorneys in Iowa. All recoveries are handled on a pure contingency basis with no upfront cost to the client.</p>
             </div>
           </div>
         </div>
