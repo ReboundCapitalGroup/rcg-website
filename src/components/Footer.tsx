@@ -101,7 +101,7 @@ export default function Footer() {
           </div>
           <div className="footer-cols-row">
           {[
-            { title:'Services', links:[['Surplus Funds','/services/surplus-funds'],['Tax Deed Overages','/services/tax-deed-surplus'],['Excess Proceeds','/services/excess-proceeds'],['Unclaimed Property','/services/unclaimed-property'],['Estate Recovery','/services/estate-recovery']] },
+            { title:'Services', links:[['Foreclosure Help','/services/foreclosure-solutions'],['Surplus Funds','/services/foreclosure-surplus'],['Tax Deed Overages','/services/tax-deed-surplus'],['Unclaimed Property','/services/unclaimed-property'],['Estate Recovery','/services/estate-recovery']] },
             { title:'Resources', links:[['How It Works','/resources/how-it-works'],['FAQs','/resources/faqs'],['State Laws Map','/resources/state-laws'],['County Guides','/resources/blog'],['Blog','/resources/blog']] },
             { title:'Company', links:[['About Us','/about'],['Client Results','/resources/results'],['Contact','/contact'],['Free Claim Check','/contact'],['All States','/states']] },
           ].map(col => (

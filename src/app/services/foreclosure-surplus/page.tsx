@@ -69,6 +69,9 @@ export default function ForeclosureSurplusPage() {
             <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, fontWeight: 400, margin: 0 }}>
               The problem is that most former owners never receive notice that surplus funds exist. The money sits with the clerk of court, often for years, before it is absorbed by the state through a process called escheatment. By then, the window to claim has closed.
             </p>
+            <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8090b8', lineHeight: 2, fontWeight: 400, margin: 0 }}>
+              Depending on the state and the type of sale, the same money may be called surplus funds, excess proceeds, overages, or overbid funds. Whatever the name, it is the amount left after the debt and costs are paid, and it is held by the court clerk, sheriff, trustee, or county until the rightful owner claims it. For homes sold for unpaid property taxes, see <Link href="/services/tax-deed-surplus" style={{ color: '#8fb0ff' }}>tax deed overages</Link>.
+            </p>
             <div style={{ borderLeft: '2px solid #1E287F', paddingLeft: '24px' }}>
               <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#c8d8ff', lineHeight: 1.9, fontWeight: 500, margin: 0 }}>
                 RCG monitors foreclosure filings daily across all active states. When surplus is identified with your name attached, we reach out, file through licensed attorneys, and recover your funds at no upfront cost.
