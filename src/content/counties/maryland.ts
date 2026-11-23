@@ -4,8 +4,7 @@ import type { Bi, County } from './types'
  * Maryland county guides (checked Nov 2026):
  * - Foreclosure is done through the circuit court even under a power of sale (Md. Rules 14-200 series). The sale is
  *   reported to the court, ratified, and referred to a court auditor, whose report sets the distribution and any surplus.
- * - Surplus is claimed by exception or motion in the circuit court case. Maryland also regulates "foreclosure surplus"
- *   acquisitions and assistance, so the page says RCG follows Maryland's rules.
+ * - Surplus is claimed by exception or motion in the circuit court case.
  */
 
 const NOV: Bi = { en: 'November 2026', es: 'noviembre de 2026' }
@@ -20,10 +19,6 @@ const md = {
   claim: {
     en: 'The former owner, heirs or junior lienholders claim the surplus in the same circuit court case, usually by filing a claim or exception before the auditor’s report is approved, or a motion for the surplus after. Once the court ratifies the audit, the trustee pays out according to it.',
     es: 'El antiguo dueño, los herederos o los acreedores posteriores reclaman el sobrante en el mismo caso del tribunal de circuito, por lo general presentando un reclamo o una objeción antes de que se apruebe el informe del auditor, o una moción para el sobrante después. Cuando el tribunal ratifica la auditoría, el fideicomisario paga según ella.',
-  } as Bi,
-  note: {
-    en: 'Maryland regulates businesses that help owners recover foreclosure surplus, and it limits what they can charge. Rebound Capital Group follows Maryland’s rules, and you can always claim the surplus yourself in the court case.',
-    es: 'Maryland regula a las empresas que ayudan a los dueños a recuperar sobrantes de ejecución y limita lo que pueden cobrar. Rebound Capital Group sigue las reglas de Maryland, y usted siempre puede reclamar el sobrante por su cuenta en el caso judicial.',
   } as Bi,
   src: [
     { label: 'Maryland Courts, foreclosure (Maryland Rules 14-200 series)', url: 'https://www.mdcourts.gov/legalhelp/foreclosure' },
@@ -80,7 +75,6 @@ export const MARYLAND: County[] = [
       { title: { en: 'Who holds the money in Prince George’s.', es: 'Quién guarda el dinero en Prince George’s.' }, body: [md.how, { en: 'Cases are heard in the Circuit Court for Prince George’s County in Upper Marlboro.', es: 'Los casos se ven en el Tribunal de Circuito del condado de Prince George’s, en Upper Marlboro.' }] },
       { title: { en: 'How to claim it.', es: 'Cómo reclamarlo.' }, body: [md.claim] },
     ],
-    note: md.note,
     faqs: faqs('Prince George’s', 'Prince George’s'),
     sources: [{ label: 'Circuit Court for Prince George’s County', url: 'https://www.princegeorgescourts.org/' }, ...md.src],
     meta: {
@@ -108,7 +102,6 @@ export const MARYLAND: County[] = [
       { title: { en: 'Who holds the money in Montgomery County.', es: 'Quién guarda el dinero en el condado de Montgomery.' }, body: [md.how, { en: 'Cases are heard in the Circuit Court for Montgomery County at 50 Maryland Avenue in Rockville.', es: 'Los casos se ven en el Tribunal de Circuito del condado de Montgomery, 50 Maryland Avenue, Rockville.' }] },
       { title: { en: 'How to claim it.', es: 'Cómo reclamarlo.' }, body: [md.claim] },
     ],
-    note: md.note,
     faqs: faqs('Montgomery County', 'el condado de Montgomery'),
     sources: [{ label: 'Circuit Court for Montgomery County', url: 'https://www.montgomerycountymd.gov/cct/' }, ...md.src],
     meta: {

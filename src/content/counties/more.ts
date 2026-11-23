@@ -130,10 +130,6 @@ export const CALIFORNIA: County[] = [
             en: 'Homes sold for unpaid property taxes are sold by the Los Angeles County Treasurer and Tax Collector, now at online auctions. After a tax sale, parties of interest receive notice and can file a claim for excess proceeds with the Treasurer and Tax Collector (Revenue and Taxation Code 4675). The office is in the Kenneth Hahn Hall of Administration, 500 W Temple Street.',
             es: 'Las casas vendidas por impuestos atrasados las vende el Tesorero y Recaudador de Impuestos del condado de Los Ángeles, ahora en subastas en línea. Después de una venta por impuestos, las partes interesadas reciben aviso y pueden presentar un reclamo de excedentes ante el Tesorero y Recaudador (Código de Ingresos e Impuestos 4675). La oficina está en el Kenneth Hahn Hall of Administration, 500 W Temple Street.',
           },
-          {
-            en: 'California limits how someone can be paid for helping with a tax-sale excess claim, and requires a written assignment in a set form. We follow those rules.',
-            es: 'California limita cómo se le puede pagar a alguien por ayudar con un reclamo de excedentes de una venta por impuestos, y exige una cesión por escrito en un formato establecido. Seguimos esas reglas.',
-          },
         ],
       },
     ],
@@ -199,8 +195,8 @@ export const TEXAS: County[] = [
         title: { en: 'Who holds the money.', es: 'Quién guarda el dinero.' },
         body: [
           {
-            en: 'After a tax sale, the excess is paid into the registry of the court and held by the Harris County District Clerk. The former owner or a lienholder files a petition in the tax suit asking the court to release it (Texas Tax Code 34.04). Texas puts limits on assigning the right to these funds, which protects owners.',
-            es: 'Después de una venta por impuestos, el excedente se deposita en el registro del tribunal y lo guarda el Secretario de Distrito del condado de Harris. El antiguo dueño o un acreedor presenta una petición en el caso de impuestos pidiendo al tribunal que lo libere (Código Tributario de Texas 34.04). Texas limita la cesión del derecho a estos fondos, lo que protege a los dueños.',
+            en: 'After a tax sale, the excess is paid into the registry of the court and held by the Harris County District Clerk. The former owner or a lienholder files a petition in the tax suit asking the court to release it (Texas Tax Code 34.04).',
+            es: 'Después de una venta por impuestos, el excedente se deposita en el registro del tribunal y lo guarda el Secretario de Distrito del condado de Harris. El antiguo dueño o un acreedor presenta una petición en el caso de impuestos pidiendo al tribunal que lo libere (Código Tributario de Texas 34.04).',
           },
           {
             en: 'After a mortgage trustee’s sale, the trustee pays any surplus to junior lienholders and then the former owner. Texas homestead and HOA cases often leave surplus because the debt is small compared with the home’s value.',
@@ -270,8 +266,8 @@ export const NEVADA: County[] = [
         title: { en: 'Tax sales.', es: 'Ventas por impuestos.' },
         body: [
           {
-            en: 'When the Clark County Treasurer sells tax trust property, excess proceeds are held for the former owner. The claim is made in writing to the Treasurer within a limited period (NRS 361.610). Nevada caps what a recovery service can charge for these claims at 10%.',
-            es: 'Cuando el Tesorero del condado de Clark vende propiedad en fideicomiso fiscal, los excedentes se guardan para el antiguo dueño. El reclamo se hace por escrito al Tesorero dentro de un período limitado (NRS 361.610). Nevada pone un tope de 10% a lo que un servicio de recuperación puede cobrar por estos reclamos.',
+            en: 'When the Clark County Treasurer sells tax trust property, excess proceeds are held for the former owner. The claim is made in writing to the Treasurer within a limited period (NRS 361.610).',
+            es: 'Cuando el Tesorero del condado de Clark vende propiedad en fideicomiso fiscal, los excedentes se guardan para el antiguo dueño. El reclamo se hace por escrito al Tesorero dentro de un período limitado (NRS 361.610).',
           },
         ],
       },
@@ -298,8 +294,8 @@ export const NEVADA: County[] = [
     meta: {
       title: { en: 'Clark County (Las Vegas) Foreclosure & Tax Sale Excess Proceeds | RCG', es: 'Excedentes de ejecución y ventas por impuestos en Clark (Las Vegas) | RCG' },
       description: {
-        en: 'Las Vegas or Henderson home sold at an HOA, mortgage or tax sale? Learn who holds the surplus, how to claim it, Nevada’s 10% fee cap, and get free help.',
-        es: '¿Su casa en Las Vegas o Henderson se vendió en una venta de HOA, hipotecaria o por impuestos? Quién guarda el sobrante, cómo reclamarlo, el tope de 10% de Nevada y ayuda gratis.',
+        en: 'Las Vegas or Henderson home sold at an HOA, mortgage or tax sale? Learn who holds the surplus, how to claim it, and get free help.',
+        es: '¿Su casa en Las Vegas o Henderson se vendió en una venta de HOA, hipotecaria o por impuestos? Quién guarda el sobrante, cómo reclamarlo y ayuda gratis.',
       },
     },
   },

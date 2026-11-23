@@ -4,8 +4,6 @@ import type { Bi, County } from './types'
  * Colorado county guides. Statewide rules (checked Nov 2026):
  * - Most foreclosures are run by the county Public Trustee (C.R.S. 38-38). The Public Trustee holds any overbid.
  * - Unclaimed overbid moves to the State Treasurer (Great Colorado Payback) after a holding period.
- * - Paid agreements to recover overbid are void while the Public Trustee holds it and for a period after it moves to the
- *   State Treasurer, and fees are capped after that. Owners can claim directly for free. The page says this plainly.
  */
 
 const NOV: Bi = { en: 'November 2026', es: 'noviembre de 2026' }
@@ -20,10 +18,6 @@ const co = {
     en: 'Overbid that is not claimed is sent to the Colorado State Treasurer after a holding period, where it is listed with the Great Colorado Payback unclaimed property program. It can still be claimed there.',
     es: 'El overbid que nadie reclama se envía al Tesorero del Estado de Colorado después de un período, donde aparece en el programa de propiedad no reclamada Great Colorado Payback. Todavía se puede reclamar allí.',
   } as Bi,
-  note: {
-    en: 'Colorado protects homeowners here. You can claim overbid from the Public Trustee or the State Treasurer yourself, for free. State law also limits paid recovery agreements for overbid money for a set period, and caps fees after that. If your case falls in that window, we will tell you so and point you to the free direct claim.',
-    es: 'Colorado protege a los dueños en esto. Usted puede reclamar el overbid al Public Trustee o al Tesorero del Estado por su cuenta, gratis. La ley estatal también limita los acuerdos pagados para recuperar overbid durante un período, y pone un tope a los honorarios después. Si su caso está en ese período, se lo decimos y le indicamos cómo hacer el reclamo directo y gratuito.',
-  } as Bi,
   src: [
     { label: 'Colorado State Treasurer, Great Colorado Payback (unclaimed property)', url: 'https://colorado.findyourunclaimedproperty.com/' },
     { label: 'Colorado Public Trustees’ Association', url: 'https://www.cpta.org/' },
@@ -31,10 +25,10 @@ const co = {
 }
 
 const faqFree = {
-  q: { en: 'Do I have to pay someone to get my overbid?', es: '¿Tengo que pagarle a alguien para recibir mi overbid?' },
+  q: { en: 'Can I claim the overbid myself?', es: '¿Puedo reclamar el overbid yo mismo?' },
   a: {
-    en: 'No. In Colorado you can contact the Public Trustee or the State Treasurer and claim it yourself for free. Help can make sense when there are liens, heirs or an estate involved, and Colorado limits when and how much anyone can charge.',
-    es: 'No. En Colorado puede comunicarse con el Public Trustee o el Tesorero del Estado y reclamarlo usted mismo gratis. La ayuda puede tener sentido cuando hay gravámenes, herederos o una herencia, y Colorado limita cuándo y cuánto se puede cobrar.',
+    en: 'Yes. Owners can claim directly with the Public Trustee or the State Treasurer. Many people get help when there are liens, heirs or an estate involved. If you work with us, the claim is filed through our network of licensed attorneys and you pay nothing unless money is recovered.',
+    es: 'Sí. Los dueños pueden reclamar directamente al Public Trustee o al Tesorero del Estado. Muchas personas buscan ayuda cuando hay gravámenes, herederos o una herencia. Si trabaja con nosotros, el reclamo se presenta a través de nuestra red de abogados con licencia y no paga nada a menos que se recupere dinero.',
   },
 }
 
@@ -85,7 +79,6 @@ export const COLORADO: County[] = [
       },
       { title: { en: 'If the money was not claimed.', es: 'Si el dinero no se reclamó.' }, body: [co.state] },
     ],
-    note: co.note,
     faqs: [faqFree, faqHeirs, faqOther],
     sources: [
       { label: 'Denver Public Trustee', url: 'https://www.denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Public-Trustee' },
@@ -95,8 +88,8 @@ export const COLORADO: County[] = [
     meta: {
       title: { en: 'Denver Foreclosure Overbid (Surplus Funds): How to Claim | RCG', es: 'Overbid (fondos excedentes) de ejecución en Denver: cómo reclamarlos | RCG' },
       description: {
-        en: 'Denver home sold at a Public Trustee foreclosure sale? The overbid is held by the Public Trustee, then the State Treasurer. How to claim it, free options, and heirs.',
-        es: '¿Su casa en Denver se vendió en una venta del Public Trustee? El overbid lo guarda el Public Trustee y luego el Tesorero del Estado. Cómo reclamarlo, opciones gratis y herederos.',
+        en: 'Denver home sold at a Public Trustee foreclosure sale? The overbid is held by the Public Trustee, then the State Treasurer. How to claim it, heirs, and free help.',
+        es: '¿Su casa en Denver se vendió en una venta del Public Trustee? El overbid lo guarda el Public Trustee y luego el Tesorero del Estado. Cómo reclamarlo, herederos y ayuda gratis.',
       },
     },
   },
@@ -130,7 +123,6 @@ export const COLORADO: County[] = [
       },
       { title: { en: 'If the money was not claimed.', es: 'Si el dinero no se reclamó.' }, body: [co.state] },
     ],
-    note: co.note,
     faqs: [
       {
         q: { en: 'I live in Aurora. Is my case in Arapahoe County?', es: 'Vivo en Aurora. ¿Mi caso es del condado de Arapahoe?' },
@@ -149,8 +141,8 @@ export const COLORADO: County[] = [
     meta: {
       title: { en: 'Arapahoe County Foreclosure Overbid (Surplus Funds) | RCG', es: 'Overbid (fondos excedentes) de ejecución en Arapahoe | RCG' },
       description: {
-        en: 'Aurora, Centennial or Littleton home sold at a Public Trustee sale? The overbid is held by the Arapahoe County Public Trustee. How to claim, free options, heirs.',
-        es: '¿Su casa en Aurora, Centennial o Littleton se vendió en una venta del Public Trustee? El overbid lo guarda el Public Trustee de Arapahoe. Cómo reclamar, opciones gratis y herederos.',
+        en: 'Aurora, Centennial or Littleton home sold at a Public Trustee sale? The overbid is held by the Arapahoe County Public Trustee. How to claim, heirs, and free help.',
+        es: '¿Su casa en Aurora, Centennial o Littleton se vendió en una venta del Public Trustee? El overbid lo guarda el Public Trustee de Arapahoe. Cómo reclamar, herederos y ayuda gratis.',
       },
     },
   },
@@ -188,7 +180,6 @@ export const COLORADO: County[] = [
       },
       { title: { en: 'If the money was not claimed.', es: 'Si el dinero no se reclamó.' }, body: [co.state] },
     ],
-    note: co.note,
     faqs: [
       {
         q: { en: 'We moved out of state. Can we still claim?', es: 'Nos mudamos a otro estado. ¿Todavía podemos reclamar?' },
@@ -207,8 +198,8 @@ export const COLORADO: County[] = [
     meta: {
       title: { en: 'El Paso County (Colorado Springs) Foreclosure Overbid | RCG', es: 'Overbid de ejecución en El Paso (Colorado Springs) | RCG' },
       description: {
-        en: 'Colorado Springs home sold at a Public Trustee sale? The overbid is held by the El Paso County Public Trustee. How to claim, free options, military families, heirs.',
-        es: '¿Su casa en Colorado Springs se vendió en una venta del Public Trustee? El overbid lo guarda el Public Trustee de El Paso. Cómo reclamar, opciones gratis, familias militares y herederos.',
+        en: 'Colorado Springs home sold at a Public Trustee sale? The overbid is held by the El Paso County Public Trustee. How to claim, military families, heirs, and free help.',
+        es: '¿Su casa en Colorado Springs se vendió en una venta del Public Trustee? El overbid lo guarda el Public Trustee de El Paso. Cómo reclamar, familias militares, herederos y ayuda gratis.',
       },
     },
   },
