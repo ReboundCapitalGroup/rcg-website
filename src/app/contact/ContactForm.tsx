@@ -5,6 +5,10 @@ import Link from 'next/link'
 import { getAttribution } from '@/lib/attribution'
 import h from '@/components/home/home.module.css'
 import c from './contact.module.css'
+import { SMS_CONSENT_LEGAL } from '@/lib/smsConsent'
+
+const SMS_LABEL = 'Text me a reply'
+const SMS_TEXT = `${SMS_LABEL}. ${SMS_CONSENT_LEGAL}`
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -32,6 +36,7 @@ export default function ContactForm() {
   const [state, setState] = useState('')
   const [message, setMessage] = useState('')
   const [websiteUrl, setWebsiteUrl] = useState('') // honeypot
+  const [smsConsent, setSmsConsent] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -54,6 +59,8 @@ export default function ContactForm() {
           topic,
           claimType: 'unsure',
           fullName, email, phone, state, message,
+          smsConsent,
+          smsConsentText: smsConsent ? SMS_TEXT : null,
           website_url: websiteUrl,
           fillTimeMs: Date.now() - loadedAt.current,
           attribution: getAttribution(),
@@ -135,6 +142,14 @@ export default function ContactForm() {
         <label className={c.lab} htmlFor="c-msg">Your message</label>
         <textarea id="c-msg" className={c.input} rows={5} required minLength={10} maxLength={2000} value={message} onChange={(e) => setMessage(e.target.value)} disabled={submitting} style={{ resize: 'vertical', minHeight: 120 }} />
       </div>
+
+      <label htmlFor="c-sms" className={`${c.sms} ${smsConsent ? c.smsOn : ''}`}>
+        <input id="c-sms" type="checkbox" className={c.smsBox} checked={smsConsent} onChange={(e) => setSmsConsent(e.target.checked)} disabled={submitting} />
+        <span>
+          <span className={c.smsTitle}>{SMS_LABEL} <span className={c.smsOpt}>Optional · fastest way to reach you</span></span>
+          <span className={c.smsLegal}>{SMS_CONSENT_LEGAL} See our <Link href="/privacy#communications">Privacy Policy</Link> and <Link href="/terms">Terms</Link>.</span>
+        </span>
+      </label>
 
       {error && <div className={c.err}>{error}</div>}
 

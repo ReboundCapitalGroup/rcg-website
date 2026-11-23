@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { getAttribution } from '@/lib/attribution'
 import { trackLead } from '@/components/Analytics'
 import h from '@/components/home/home.module.css'
+import { SMS_CONSENT_LABEL, SMS_CONSENT_LEGAL, SMS_CONSENT_TEXT } from '@/lib/smsConsent'
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -27,11 +28,6 @@ const CLAIM_TYPES = [
 ]
 
 const isPropertyClaim = (t: string) => t === 'foreclosure' || t === 'tax_deed'
-
-const SMS_CONSENT_LABEL = 'Text me updates about my claim'
-const SMS_CONSENT_LEGAL =
-  'I agree to receive calls and text messages from Rebound Capital Group LLC about my inquiry and claim at the number I provided, including messages sent with automated technology. Consent is not a condition of service. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out or HELP for help.'
-const SMS_CONSENT_TEXT = `${SMS_CONSENT_LABEL}. ${SMS_CONSENT_LEGAL}`
 
 export default function FreeReviewPage() {
   const [step, setStep] = useState(1)
