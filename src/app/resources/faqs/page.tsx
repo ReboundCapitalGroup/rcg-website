@@ -92,8 +92,10 @@ export default function FAQsPage() {
         <div role="navigation" aria-label="Breadcrumb" className={sv.crumbs}>
           <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>FAQs</span>
         </div>
-        <div className={h.eyebrow} style={{ marginBottom: 12 }}>Questions and answers</div>
-        <h1 className={sv.h1} style={{ fontSize: 'clamp(40px, 5vw, 56px)', maxWidth: 820 }}>Straight answers, <em className={h.gradText}>no fine print.</em></h1>
+        <div className={`${sv.heroText} ${sv.heroCenter}`}>
+          <div className={h.eyebrow} style={{ marginBottom: 12 }}>Questions and answers</div>
+          <h1 className={sv.h1} style={{ fontSize: 'clamp(40px, 5vw, 56px)' }}>Straight answers, <em className={h.gradText}>no fine print.</em></h1>
+        </div>
       </div>
       <div className={h.wrap} style={{ paddingBottom: 40 }}>
         <FaqBrowser categories={categories} />
