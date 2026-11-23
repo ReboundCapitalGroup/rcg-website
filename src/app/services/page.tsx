@@ -57,7 +57,7 @@ export default function ServicesPage() {
   return (
     <div className={h.page}>
       <div className={`${h.wrap} ${sv.hero}`}>
-        <div role="navigation" aria-label="Breadcrumb" className={`${sv.crumbs} ${sv.crumbsCenter}`}>
+        <div role="navigation" aria-label="Breadcrumb" className={sv.crumbs}>
           <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>Services</span>
         </div>
         <div className={`${sv.heroText} ${sv.heroCenter}`}>

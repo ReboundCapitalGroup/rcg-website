@@ -1,7 +1,6 @@
 /* Service page layout (redesign v4). Tokens come from home.module.css (.page). */
 
 .hero { padding-top: 28px; padding-bottom: 36px; }
-.crumbsCenter { text-align: center; }
 .crumbs { font-size: 13px; color: #6b7390; margin-bottom: 40px; }
 .crumbs a { color: #6b7390; }
 .crumbs a:hover { color: var(--primary); }
