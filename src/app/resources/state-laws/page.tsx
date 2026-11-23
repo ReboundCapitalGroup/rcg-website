@@ -26,7 +26,7 @@ const STATES: State[] = [
   { code: 'CO', name: 'Colorado',       slug: 'colorado',       deadline: '2.5 years', tier: 'medium' },
   { code: 'CT', name: 'Connecticut',    slug: 'connecticut',    deadline: '3 years',   tier: 'medium' },
   { code: 'DE', name: 'Delaware',       slug: 'delaware',       deadline: '5 years',   tier: 'long' },
-  { code: 'FL', name: 'Florida',        slug: 'florida',        deadline: '60 days',   tier: 'short' },
+  { code: 'FL', name: 'Florida',        slug: 'florida',        deadline: 'Varies, act fast', tier: 'short' },
   { code: 'GA', name: 'Georgia',        slug: 'georgia',        deadline: '5 years',   tier: 'long' },
   { code: 'HI', name: 'Hawaii',         slug: 'hawaii',         deadline: '10 years',  tier: 'long' },
   { code: 'ID', name: 'Idaho',          slug: 'idaho',          deadline: '3 years',   tier: 'medium' },
@@ -183,9 +183,9 @@ export default function StateLawsPage() {
 
         <div className="laws-stats">
           <div className="laws-stat">
-            <div className="laws-stat-label">Shortest Deadline</div>
-            <div className="laws-stat-value">60 Days</div>
-            <div className="laws-stat-hint">Florida , shortest in the nation</div>
+            <div className="laws-stat-label">Deadlines</div>
+            <div className="laws-stat-value">Act fast</div>
+            <div className="laws-stat-hint">Some windows are very short</div>
           </div>
           <div className="laws-stat">
             <div className="laws-stat-label">Urgent States</div>
@@ -213,7 +213,7 @@ export default function StateLawsPage() {
 
         <div className="laws-legend">
           <div className="laws-legend-item">
-            <span className="laws-legend-sample laws-tier-short">60d - 1yr</span>
+            <span className="laws-legend-sample laws-tier-short">Under 1 yr</span>
             <span>Urgent</span>
           </div>
           <div className="laws-legend-item">

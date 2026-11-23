@@ -27,8 +27,8 @@ const data = {
       "label": "Upfront Cost"
     },
     {
-      "val": "1 Year",
-      "label": "Typical FL Surplus Claim Window"
+      "val": "Act fast",
+      "label": "Claim windows vary by case"
     }
   ],
   "body": {
