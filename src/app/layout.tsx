@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
 import AttributionTracker from '@/components/AttributionTracker'
 import Analytics from '@/components/Analytics'
 import MobileCallBar from '@/components/MobileCallBar'
-import ChromeSwitch from '@/components/ChromeSwitch'
 import HomeHeader from '@/components/home/HomeHeader'
 import HomeFooter from '@/components/home/HomeFooter'
 
@@ -179,9 +176,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <AttributionTracker />
         <Analytics />
-        <ChromeSwitch legacy={<Nav />} redesigned={<HomeHeader />} />
+        <HomeHeader />
         <main>{children}</main>
-        <ChromeSwitch legacy={<Footer />} redesigned={<HomeFooter />} />
+        <HomeFooter />
         <MobileCallBar />
       </body>
     </html>

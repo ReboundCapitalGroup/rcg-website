@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import h from '@/components/home/home.module.css'
+import sv from '@/components/service.module.css'
 
 export const metadata: Metadata = {
   title: 'Surplus Funds Recovery FAQs | Rebound Capital Group',
@@ -26,9 +28,9 @@ const categories = [
     label: 'The Recovery Process',
     items: [
       { q: 'How long does the process take?', a: 'It varies widely by court, agency, and state. A straightforward, uncontested claim can move in a matter of weeks to a few months. Cases involving probate, competing liens, dissolved entities, or deceased claimants take longer, and some courts simply move slowly.' },
-      { q: 'Do I need to hire my own attorney?', a: 'No. Licensed attorneys are part of our process on every claim. You do not need to retain separate counsel or appear in court.' },
+      { q: 'Do I need to hire my own attorney?', a: 'No. Attorneys in our network are part of the process on every claim. You do not need to retain separate counsel or appear in court.' },
       { q: 'What happens after I sign the agreement?', a: 'We take it from there. Our team files the claim, manages correspondence with the court or agency, responds to any objections, and tracks every deadline. We keep you updated at each major stage.' },
-      { q: 'What if there are other parties claiming the same funds?', a: 'Competing claims are common in foreclosure and estate matters. Our attorneys handle objections and disputes as part of the recovery process, and we tell you early if a claim looks contested.' },
+      { q: 'What if there are other parties claiming the same funds?', a: 'Competing claims are common in foreclosure and estate matters. Attorneys in our network handle objections and disputes as part of the recovery process, and we tell you early if a claim looks contested.' },
       { q: 'What if I already tried to claim my funds and was unsuccessful?', a: 'A prior failed attempt does not disqualify a claim in most cases. Contact us anyway. We may be able to identify what went wrong and pursue recovery through the correct process.' },
     ],
   },
@@ -83,88 +85,67 @@ const faqJsonLd = {
   ),
 }
 
-const linkStyle = { fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase' as const, color: '#7d92c4', textDecoration: 'underline' }
+const related: [string, string][] = [
+  ['Foreclosure Surplus Funds', '/services/foreclosure-surplus'], ['Florida', '/states/florida'], ['Ohio', '/states/ohio'],
+  ['Arizona', '/states/arizona'], ['Colorado', '/states/colorado'], ['Michigan', '/states/michigan'], ['Kentucky', '/states/kentucky'], ['All States', '/states'],
+]
 
 export default function FAQsPage() {
   return (
-    <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }}
-      />
-
-      {/* HERO */}
-      <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.15)', padding: 'clamp(80px,10vw,130px) clamp(20px,5vw,60px) clamp(64px,8vw,96px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '900px', height: '600px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.2) 0%, transparent 65%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(74,95,212,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.06) 1px,transparent 1px)', backgroundSize: '52px 52px', pointerEvents: 'none' }} />
-        <div className="scan-animate" style={{ position: 'absolute', left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.5),transparent)', pointerEvents: 'none', zIndex: 1 }} />
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '680px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '32px', padding: '7px 18px', border: '1px solid rgba(74,95,212,0.2)', background: 'rgba(30,40,127,0.1)' }}>
-            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4a7fd4', display: 'inline-block', flexShrink: 0 }} />
-            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#7d92c4' }}>Questions and Answers</span>
-          </div>
-          <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,72px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
-            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Frequently Asked </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Questions</span>
-          </h1>
-          <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#8ca0cc', lineHeight: 1.8, maxWidth: '500px', margin: '0 auto', fontWeight: 400 }}>
-            Straight answers about how surplus funds recovery works, what it costs, and what to expect.
-          </p>
+    <div className={h.page}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }} />
+      <div className={`${h.wrap} ${sv.hero}`}>
+        <div role="navigation" aria-label="Breadcrumb" className={sv.crumbs}>
+          <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>FAQs</span>
         </div>
-      </section>
+        <div className={sv.heroText}>
+          <div className={h.eyebrow}>Questions and answers</div>
+          <h1 className={sv.h1}>Frequently asked <em className={h.gradText}>questions.</em></h1>
+          <p className={sv.answer}>Straight answers about foreclosure help and surplus funds recovery: how it works, what it costs, and what to expect.</p>
+          <div className={sv.points} style={{ marginTop: 4 }}>
+            {categories.map((c) => <a key={c.label} href={`#${slugify(c.label)}`} style={{ fontSize: 13, fontWeight: 700, color: '#1E287F', background: '#e9eefb', border: '1px solid rgba(30,40,127,0.18)', borderRadius: 999, padding: '7px 12px' }}>{c.label}</a>)}
+          </div>
+        </div>
+      </div>
 
-      {/* FAQ CATEGORIES */}
-      <section style={{ background: 'var(--bg)', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)' }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '64px' }}>
-          {categories.map((cat) => (
-            <div key={cat.label} id={slugify(cat.label)}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                <h2 style={{ fontFamily: "'Space Mono',monospace", fontWeight: 400, fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: '#5b8ae6', flexShrink: 0, margin: 0 }}>{cat.label}</h2>
-                <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg,rgba(74,95,212,0.2),transparent)' }} />
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                {cat.items.map((f, i) => (
-                  <div key={i} style={{ background: '#0a0f1a', border: '1px solid rgba(74,95,212,0.08)', padding: '24px 28px', position: 'relative' }}>
-                    <div style={{ position: 'absolute', top: 0, left: 0, width: '2px', height: '100%', background: 'rgba(30,40,127,0.4)' }} />
-                    <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 600, fontSize: '16px', color: '#c8d8ff', lineHeight: 1.4, margin: '0 0 10px', paddingLeft: '4px' }}>{f.q}</h3>
-                    <p style={{ fontSize: '14px', color: '#8090b8', lineHeight: 1.9, margin: 0, paddingLeft: '4px' }}>{f.a}</p>
-                  </div>
-                ))}
-              </div>
+      {categories.map((cat) => (
+        <div key={cat.label} id={slugify(cat.label)} className={`${h.wrap} ${sv.block}`} style={{ scrollMarginTop: 100 }}>
+          <div className={sv.faqGrid}>
+            <div>
+              <div className={sv.tag}>FAQs</div>
+              <h2 className={sv.h2}>{cat.label}</h2>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* DIVIDER */}
-      <div style={{ maxWidth: '960px', margin: '0 auto', height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.18),transparent)' }} />
-
-      {/* CTA */}
-      <section style={{ background: '#000', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)', textAlign: 'center' }}>
-        <div style={{ maxWidth: '560px', margin: '0 auto' }}>
-          <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// Still have questions</span>
-          <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,4vw,48px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '16px 0 16px' }}>
-            Talk to Us Directly.
-          </h2>
-          <p style={{ fontSize: '15px', color: '#8090b8', lineHeight: 1.85, marginBottom: '36px' }}>
-            If your question is not answered here, reach out. We are happy to explain the process, check for a claim, or simply answer what you need to know.
-          </p>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn-primary">Free Claim Review</Link>
-            <a href="tel:+13055634920" className="btn-secondary">305-563-4920</a>
+            <div className={sv.faqs}>
+              {cat.items.map((f) => (
+                <details key={f.q} className={sv.faq}>
+                  <summary>{f.q}<span aria-hidden="true" className={sv.faqSign} /></summary>
+                  <p>{f.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
-          <div style={{ marginTop: '44px', display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
-            <Link href="/services/foreclosure-surplus" style={linkStyle}>Foreclosure Surplus Service</Link>
-            <Link href="/states/florida" style={linkStyle}>Florida</Link>
-            <Link href="/states/ohio" style={linkStyle}>Ohio</Link>
-            <Link href="/states/arizona" style={linkStyle}>Arizona</Link>
-            <Link href="/states/colorado" style={linkStyle}>Colorado</Link>
-            <Link href="/states/michigan" style={linkStyle}>Michigan</Link>
-            <Link href="/states/kentucky" style={linkStyle}>Kentucky</Link>
-            <Link href="/states" style={linkStyle}>All States</Link>
+        </div>
+      ))}
+
+      <div className={`${h.wrap} ${sv.block}`}>
+        <div className={sv.tag}>Related</div>
+        <div className={sv.points}>
+          {related.map(([l, href]) => <Link key={href} href={href} style={{ fontSize: 13, fontWeight: 700, color: '#1E287F', background: '#fff', border: '1px solid rgba(30,40,127,0.18)', borderRadius: 999, padding: '7px 12px' }}>{l}</Link>)}
+        </div>
+      </div>
+
+      <div style={{ height: 72 }} />
+      <section className={h.closing}>
+        <div className={h.closingFade} aria-hidden="true" />
+        <div className={`${h.wrap} ${h.closingInner}`}>
+          <h2 className={h.closingH}>Still have questions?</h2>
+          <p>If your question is not answered here, reach out. We are happy to explain the process, check for a claim, or simply answer what you need to know.</p>
+          <div className={h.btnRow}>
+            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
+            <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

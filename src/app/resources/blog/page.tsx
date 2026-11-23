@@ -10,10 +10,7 @@ export const metadata: Metadata = {
 
 export default function BlogCountyGuidesComingSoon() {
   return (
-    <div style={{ background: 'var(--bg)', minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
-
-      {/* Grid overlay */}
-      <div style={{ position: 'fixed', inset: 0, backgroundImage: 'linear-gradient(rgba(74,95,212,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.04) 1px,transparent 1px)', backgroundSize: '52px 52px', pointerEvents: 'none', zIndex: 0 }} />
+    <div style={{ ['--bg' as string]: '#F9F8F6', ['--bg2' as string]: '#ffffff', ['--mid' as string]: '#3a4360', ['--dim' as string]: '#6b7390', ['--rcg2' as string]: '#1E287F', background: 'var(--bg)', color: '#121829', fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
 
       <div style={{ position: 'relative', zIndex: 2, maxWidth: '960px', margin: '0 auto', padding: 'clamp(40px,6vw,80px) clamp(20px,4vw,40px)' }}>
 
@@ -34,7 +31,7 @@ export default function BlogCountyGuidesComingSoon() {
         </div>
 
         {/* Title */}
-        <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(36px,6vw,72px)', color: '#fff', letterSpacing: '-2.5px', lineHeight: 1.02, margin: '0 0 24px' }}>
+        <h1 style={{ fontFamily: "'Instrument Serif',Georgia,serif", fontWeight: 400, fontSize: 'clamp(36px,6vw,72px)', color: '#0d1322', letterSpacing: '0', lineHeight: 1.02, margin: '0 0 24px' }}>
           Blog &amp; County Guides
           <br />
           <span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Coming Soon.</span>
@@ -52,7 +49,7 @@ export default function BlogCountyGuidesComingSoon() {
             <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--rcg2)', marginBottom: '12px', fontWeight: 700 }}>
               01 / Blog
             </div>
-            <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(18px,2.2vw,22px)', color: '#fff', letterSpacing: '-0.5px', margin: '0 0 14px' }}>
+            <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(18px,2.2vw,22px)', color: '#0d1322', letterSpacing: '-0.5px', margin: '0 0 14px' }}>
               Insights &amp; Case Studies
             </h3>
             <p style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.7, marginBottom: '18px' }}>
@@ -73,7 +70,7 @@ export default function BlogCountyGuidesComingSoon() {
             <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--rcg2)', marginBottom: '12px', fontWeight: 700 }}>
               02 / County Guides
             </div>
-            <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(18px,2.2vw,22px)', color: '#fff', letterSpacing: '-0.5px', margin: '0 0 14px' }}>
+            <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(18px,2.2vw,22px)', color: '#0d1322', letterSpacing: '-0.5px', margin: '0 0 14px' }}>
               Filing &amp; Court Procedures
             </h3>
             <p style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.7, marginBottom: '18px' }}>
@@ -96,17 +93,17 @@ export default function BlogCountyGuidesComingSoon() {
           <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--rcg2)', marginBottom: '12px' }}>
             // In the meantime
           </div>
-          <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.8vw,28px)', color: '#fff', letterSpacing: '-0.5px', margin: '0 0 12px' }}>
+          <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.8vw,28px)', color: '#0d1322', letterSpacing: '-0.5px', margin: '0 0 12px' }}>
             Don&apos;t wait for the content.
           </h3>
           <p style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.7, maxWidth: '540px', margin: '0 auto 22px' }}>
             If you think you&apos;re owed surplus funds, reach out directly. We&apos;ll tell you within 24 hours &mdash; free and with no obligation.
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href="/contact" style={{ padding: '13px 24px', fontFamily: "'Space Mono',monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none', background: 'linear-gradient(180deg, #2a48a0, #1E287F)', color: '#fff', border: '1px solid rgba(74,95,212,0.5)' }}>
+            <Link href="/contact" style={{ padding: '13px 24px', fontFamily: "'Space Mono',monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none', background: 'linear-gradient(180deg, #2a48a0, #1E287F)', color: '#ffffff', border: '1px solid rgba(74,95,212,0.5)' }}>
               Free Claim Review
             </Link>
-            <Link href="/states" style={{ padding: '13px 24px', fontFamily: "'Space Mono',monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none', background: 'transparent', color: '#c8d8ff', border: '1px solid rgba(74,95,212,0.35)' }}>
+            <Link href="/states" style={{ padding: '13px 24px', fontFamily: "'Space Mono',monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none', background: 'transparent', color: '#2f3856', border: '1px solid rgba(74,95,212,0.35)' }}>
               Browse States
             </Link>
           </div>

@@ -39,7 +39,7 @@ const STATES: State[] = [
   { code: 'ME', name: 'Maine',          slug: 'maine',          deadline: '6 years',   tier: 'long' },
   { code: 'MD', name: 'Maryland',       slug: 'maryland',       deadline: '3 years',   tier: 'medium' },
   { code: 'MA', name: 'Massachusetts',  slug: 'massachusetts',  deadline: '3 years',   tier: 'medium' },
-  { code: 'MI', name: 'Michigan',       slug: 'michigan',       deadline: '1 year',    tier: 'medium', active: true },
+  { code: 'MI', name: 'Michigan',       slug: 'michigan',       deadline: '1 year',    tier: 'medium' },
   { code: 'MN', name: 'Minnesota',      slug: 'minnesota',      deadline: '5 years',   tier: 'long' },
   { code: 'MS', name: 'Mississippi',    slug: 'mississippi',    deadline: '3 years',   tier: 'medium' },
   { code: 'MO', name: 'Missouri',       slug: 'missouri',       deadline: '10 years',  tier: 'long' },
@@ -79,79 +79,80 @@ export default function StateLawsPage() {
   return (
     <div className="laws-page">
       <style>{`
-        .laws-page { background: var(--bg); min-height: 100vh; position: relative; overflow: hidden; }
-        .laws-grid-overlay { position: fixed; inset: 0; background-image: linear-gradient(rgba(74,95,212,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(74,95,212,0.04) 1px, transparent 1px); background-size: 52px 52px; pointer-events: none; z-index: 0; }
-        .laws-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: clamp(40px,6vw,80px) clamp(20px,4vw,40px); }
-
-        .laws-breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); }
-        .laws-breadcrumb a { color: var(--rcg2); text-decoration: none; }
-
-        .laws-header { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(74,95,212,0.2); }
-        .laws-tag { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-        .laws-tag-line { width: 30px; height: 1px; background: rgba(74,95,212,0.4); }
-        .laws-tag-text { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--rcg2); }
-        .laws-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(32px,5vw,56px); color: #fff; letter-spacing: -2px; line-height: 1.05; margin: 0 0 20px; }
-        .laws-title-accent { background-image: linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        .laws-subtitle { font-size: 15px; color: var(--mid); line-height: 1.75; max-width: 680px; margin: 0; }
-
-        .laws-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 48px; }
-        .laws-stat { padding: 20px 22px; background: var(--bg2); border: 1px solid rgba(74,95,212,0.2); border-left: 2px solid var(--rcg2); }
-        .laws-stat-label { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); margin-bottom: 8px; }
-        .laws-stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -0.5px; line-height: 1.2; }
-        .laws-stat-hint { font-size: 12px; color: var(--mid); margin-top: 6px; line-height: 1.4; }
-
-        .laws-alert { padding: 18px 22px; background: rgba(80,30,30,0.15); border: 1px solid rgba(220,100,100,0.3); border-left: 2px solid #e07878; margin-bottom: 48px; }
-        .laws-alert-tag { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #e07878; font-weight: 700; margin-bottom: 6px; }
-        .laws-alert-text { font-size: 14px; color: var(--mid); line-height: 1.7; margin: 0; }
-        .laws-alert-text strong { color: #fff; }
-
-        .laws-section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid rgba(74,95,212,0.1); }
-        .laws-section-index { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: var(--rcg2); }
-        .laws-section-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(18px,2.2vw,24px); color: #fff; letter-spacing: -0.5px; margin: 0; }
-        .laws-section-count { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim); margin-left: auto; }
-
-        .laws-table { display: flex; flex-direction: column; gap: 1px; background: rgba(74,95,212,0.08); border: 1px solid rgba(74,95,212,0.15); }
-        .laws-table-head { display: grid; grid-template-columns: 60px 1fr 200px 40px; gap: 14px; padding: 14px 20px; background: var(--bg2); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); font-weight: 700; }
-        .laws-row { display: grid; grid-template-columns: 60px 1fr 200px 40px; gap: 14px; align-items: center; padding: 14px 20px; background: var(--bg); text-decoration: none; transition: all 0.15s ease; }
-        .laws-row:hover { background: var(--bg2); }
-        .laws-row-code { font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; color: var(--rcg2); letter-spacing: 1px; }
-        .laws-row-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 500; color: #c8d8ff; display: flex; align-items: center; gap: 10px; }
-        .laws-row-active-dot { width: 6px; height: 6px; border-radius: 50%; background: #7fd99f; box-shadow: 0 0 6px rgba(127,217,159,0.6); }
-        .laws-row-deadline { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding: 5px 10px; border-radius: 2px; text-align: center; width: fit-content; }
-        .laws-tier-short { background: rgba(100,40,40,0.25); color: #e8a5a5; border: 1px solid rgba(200,80,80,0.4); }
-        .laws-tier-medium { background: rgba(100,80,30,0.2); color: #e0c88a; border: 1px solid rgba(180,140,60,0.3); }
-        .laws-tier-long { background: rgba(30,60,90,0.3); color: #8eb8e0; border: 1px solid rgba(74,95,212,0.3); }
-        .laws-row-arrow { font-family: 'Space Mono', monospace; font-size: 14px; color: var(--dim); text-align: right; transition: all 0.15s ease; }
-        .laws-row:hover .laws-row-arrow { color: var(--rcg2); transform: translateX(3px); }
-
-        .laws-legend { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0 32px; padding: 14px 20px; background: var(--bg2); border: 1px solid rgba(74,95,212,0.15); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
-        .laws-legend-item { display: flex; align-items: center; gap: 8px; color: var(--mid); }
-        .laws-legend-sample { padding: 3px 8px; border-radius: 2px; font-weight: 700; font-size: 9px; }
-
-        .laws-notes { margin-top: 48px; padding: clamp(24px,4vw,36px); background: var(--bg2); border: 1px solid rgba(74,95,212,0.2); border-left: 2px solid var(--rcg2); }
-        .laws-notes-tag { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--rcg2); margin-bottom: 14px; }
-        .laws-notes-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(18px,2.2vw,22px); color: #fff; letter-spacing: -0.5px; margin: 0 0 14px; }
-        .laws-notes-body { font-size: 14px; color: var(--mid); line-height: 1.8; margin: 0 0 10px; }
-
-        .laws-cta { margin-top: 48px; padding: clamp(28px,4vw,40px); background: linear-gradient(135deg, var(--bg2), rgba(30,40,127,0.2)); border: 1px solid rgba(74,95,212,0.3); border-top: 2px solid var(--rcg2); text-align: center; }
-        .laws-cta-tag { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--rcg2); margin-bottom: 12px; }
-        .laws-cta-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(22px,3vw,32px); color: #fff; letter-spacing: -0.5px; margin: 0 0 12px; }
-        .laws-cta-text { font-size: 14px; color: var(--mid); line-height: 1.7; max-width: 540px; margin: 0 auto 22px; }
+        .laws-page { background: #F9F8F6; color: #121829; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; min-height: 100vh; }
+        .laws-grid-overlay { display: none; }
+        .laws-container { max-width: 1320px; margin: 0 auto; padding: 28px 40px 96px; }
+        .laws-breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 40px; font-size: 13px; color: #6b7390; }
+        .laws-breadcrumb a { color: #6b7390; text-decoration: none; }
+        .laws-breadcrumb span:last-child { color: #0d1322 !important; font-weight: 700; }
+        .laws-header { margin-bottom: 40px; }
+        .laws-tag { margin-bottom: 18px; }
+        .laws-tag-line { display: none; }
+        .laws-tag-text { font-size: 12px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: #1E287F; }
+        .laws-title { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(40px,5.5vw,64px); color: #0d1322; line-height: 1.02; margin: 0 0 20px; }
+        .laws-title-accent { background-image: linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic; padding-right: 6px; }
+        .laws-subtitle { font-size: 18px; color: #2f3856; line-height: 1.65; max-width: 680px; margin: 0; }
+        .laws-stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0; margin-bottom: 28px; background: radial-gradient(ellipse at 90% 0%, #1f2d6b 0%, #0d1322 62%); border-radius: 16px; overflow: hidden; }
+        .laws-stat { padding: 26px 26px; border-left: 1px solid rgba(147,184,255,0.15); }
+        .laws-stat:first-child { border-left: 0; }
+        .laws-stat-label { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #93b8ff; margin-bottom: 8px; }
+        .laws-stat-value { font-family: 'Instrument Serif', Georgia, serif; font-size: 40px; color: #fff; line-height: 1.05; }
+        .laws-stat-hint { font-size: 13px; color: #c3cfee; margin-top: 6px; line-height: 1.4; }
+        .laws-alert { padding: 18px 22px; background: #fff4ec; border: 1px solid rgba(214,120,60,0.35); border-left: 4px solid #d6783c; border-radius: 10px; margin-bottom: 28px; }
+        .laws-alert-tag { font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b4561c; margin-bottom: 6px; }
+        .laws-alert-text { font-size: 15px; color: #3a4360; line-height: 1.7; margin: 0; }
+        .laws-alert-text strong { color: #0d1322; }
+        .laws-section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 18px; }
+        .laws-section-index { font-size: 12px; font-weight: 700; color: #1E287F; }
+        .laws-section-title { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 42px; color: #0d1322; margin: 0; }
+        .laws-section-count { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7390; margin-left: auto; }
+        .laws-table { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(13,19,34,0.08); border-radius: 14px; overflow: hidden; }
+        .laws-table-head { display: grid; grid-template-columns: 60px 1fr 200px 40px; gap: 14px; padding: 14px 22px; background: #0d1322; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #93b8ff; }
+        .laws-row { display: grid; grid-template-columns: 60px 1fr 200px 40px; gap: 14px; align-items: center; padding: 13px 22px; text-decoration: none; border-top: 1px solid rgba(13,19,34,0.06); transition: background 0.15s ease; }
+        .laws-row:hover { background: #f1f4fc; }
+        .laws-row-code { font-size: 13px; font-weight: 800; color: #1E287F; letter-spacing: 0.08em; }
+        .laws-row-name { font-size: 15px; font-weight: 700; color: #0d1322; display: flex; align-items: center; gap: 10px; }
+        .laws-row-active-dot { width: 8px; height: 8px; border-radius: 50%; background: #2fa865; box-shadow: 0 0 0 3px rgba(47,168,101,0.18); }
+        .laws-row-deadline { font-size: 13px; font-weight: 800; padding: 5px 12px; border-radius: 999px; text-align: center; width: fit-content; }
+        .laws-tier-short { background: #fdecec; color: #a12828; border: 1px solid rgba(200,60,60,0.3); }
+        .laws-tier-medium { background: #fff5e0; color: #8a5a00; border: 1px solid rgba(200,150,40,0.35); }
+        .laws-tier-long { background: #e9eefb; color: #1E287F; border: 1px solid rgba(30,40,127,0.2); }
+        .laws-row-arrow { font-size: 16px; color: #1E287F; text-align: right; transition: transform 0.15s ease; }
+        .laws-row:hover .laws-row-arrow { transform: translateX(3px); }
+        .laws-legend { display: flex; gap: 22px; flex-wrap: wrap; margin: 0 0 40px; font-size: 13px; font-weight: 600; }
+        .laws-legend-item { display: flex; align-items: center; gap: 8px; color: #3a4360; }
+        .laws-legend-sample { padding: 3px 10px; border-radius: 999px; font-weight: 800; font-size: 12px; }
+        .laws-notes { margin-top: 40px; padding: clamp(24px,4vw,40px); background: #fff; border: 1px solid rgba(13,19,34,0.08); border-radius: 14px; }
+        .laws-notes-tag { font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #1E287F; margin-bottom: 12px; }
+        .laws-notes-title { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 36px; color: #0d1322; margin: 0 0 14px; }
+        .laws-notes-body { font-size: 16px; color: #3a4360; line-height: 1.75; margin: 0 0 12px; }
+        .laws-notes-body strong { color: #0d1322 !important; }
+        .laws-cta { margin-top: 40px; padding: clamp(28px,4vw,48px); background: radial-gradient(ellipse at 90% 0%, #1f2d6b 0%, #0d1322 62%); border-radius: 16px; text-align: center; color: #fff; }
+        .laws-cta-tag { font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #93b8ff; margin-bottom: 12px; }
+        .laws-cta-title { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px,4vw,48px); color: #fff; margin: 0 0 12px; }
+        .laws-cta-text { font-size: 16px; color: #c3cfee; line-height: 1.7; max-width: 560px; margin: 0 auto 24px; }
         .laws-cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-        .laws-cta-btn { padding: 13px 24px; font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.2s ease; }
-        .laws-cta-btn-primary { background: linear-gradient(180deg, #2a48a0, #1E287F); color: #fff; border: 1px solid rgba(74,95,212,0.5); }
-        .laws-cta-btn-primary:hover { background: linear-gradient(180deg, #3a58b0, #2E388F); }
-        .laws-cta-btn-secondary { background: transparent; color: #c8d8ff; border: 1px solid rgba(74,95,212,0.35); }
-        .laws-cta-btn-secondary:hover { border-color: var(--rcg2); color: #fff; }
-
-        @media (max-width: 768px) {
+        .laws-cta-btn { padding: 18px 28px; border-radius: 6px; font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
+        .laws-cta-btn-primary { background: #fff; color: #0d1322; }
+        .laws-cta-btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); }
+        .laws-cta-btn-secondary:hover { border-color: #fff; }
+        @media (max-width: 900px) {
+          .laws-container { padding: 18px 16px 64px; }
+          .laws-breadcrumb { margin-bottom: 24px; font-size: 12px; }
+          .laws-subtitle { font-size: 16px; }
+          .laws-stats { grid-template-columns: 1fr 1fr; }
+          .laws-stat { padding: 18px; border-left: 0; border-top: 1px solid rgba(147,184,255,0.15); }
+          .laws-stat:nth-child(even) { border-left: 1px solid rgba(147,184,255,0.15); }
+          .laws-stat:nth-child(-n+2) { border-top: 0; }
+          .laws-stat-value { font-size: 30px; }
           .laws-table-head { display: none; }
-          .laws-row { grid-template-columns: 42px 1fr auto; gap: 10px; padding: 14px 14px; }
+          .laws-row { grid-template-columns: 38px 1fr auto; gap: 10px; padding: 13px 14px; }
           .laws-row-arrow { display: none; }
-          .laws-row-name { font-size: 13px; flex-direction: column; align-items: flex-start; gap: 4px; }
-          .laws-row-deadline { font-size: 11px; padding: 4px 8px; }
-          .laws-legend { font-size: 9px; gap: 10px; padding: 12px 14px; }
+          .laws-row-name { font-size: 14px; }
+          .laws-row-deadline { font-size: 12px; padding: 4px 10px; }
+          .laws-section-title { font-size: 32px; }
           .laws-section-count { display: none; }
+          .laws-legend { gap: 12px; font-size: 12px; }
         }
       `}</style>
 
@@ -162,13 +163,13 @@ export default function StateLawsPage() {
         <div className="laws-breadcrumb">
           <Link href="/">Home</Link>
           <span style={{ opacity: 0.5 }}>/</span>
-          <span style={{ color: 'var(--mid)' }}>State Laws &amp; Deadlines</span>
+          <span>State Laws &amp; Deadlines</span>
         </div>
 
         <div className="laws-header">
           <div className="laws-tag">
             <div className="laws-tag-line" />
-            <span className="laws-tag-text">// Reference</span>
+            <span className="laws-tag-text">Reference</span>
           </div>
           <h1 className="laws-title">
             State Laws
@@ -184,7 +185,7 @@ export default function StateLawsPage() {
           <div className="laws-stat">
             <div className="laws-stat-label">Shortest Deadline</div>
             <div className="laws-stat-value">60 Days</div>
-            <div className="laws-stat-hint">Florida &mdash; shortest in the nation</div>
+            <div className="laws-stat-hint">Florida , shortest in the nation</div>
           </div>
           <div className="laws-stat">
             <div className="laws-stat-label">Urgent States</div>
@@ -204,7 +205,7 @@ export default function StateLawsPage() {
         </div>
 
         <div className="laws-alert">
-          <div className="laws-alert-tag">// Important</div>
+          <div className="laws-alert-tag">Important</div>
           <p className="laws-alert-text">
             Deadlines shown are general maximums. Actual windows may be shorter based on county procedures, sale type, or when formal notice was given. <strong>Don&apos;t wait.</strong> If a sale happened in your name, contact us today to verify your remaining window.
           </p>
@@ -225,7 +226,7 @@ export default function StateLawsPage() {
           </div>
           <div className="laws-legend-item">
             <span className="laws-row-active-dot" style={{ display: 'inline-block' }}></span>
-            <span>Active Recovery State</span>
+            <span>Auctions checked nightly</span>
           </div>
         </div>
 
@@ -248,7 +249,7 @@ export default function StateLawsPage() {
               <div className="laws-row-code">{s.code}</div>
               <div className="laws-row-name">
                 {s.name}
-                {s.active && <span className="laws-row-active-dot" title="Active recovery state" />}
+                {s.active && <span className="laws-row-active-dot" title="Auctions checked nightly" />}
               </div>
               <div>
                 <span className={`laws-row-deadline laws-tier-${s.tier}`}>
@@ -261,7 +262,7 @@ export default function StateLawsPage() {
         </div>
 
         <div className="laws-notes">
-          <div className="laws-notes-tag">// Important Notes</div>
+          <div className="laws-notes-tag">Important notes</div>
           <h3 className="laws-notes-title">A Few Things to Know</h3>
           <p className="laws-notes-body">
             <strong style={{ color: '#fff' }}>Deadlines are not uniform within a state.</strong> County-level procedures, sale types (foreclosure vs tax deed), and formal notice requirements can shorten the window. Always verify your specific situation before assuming time remains.
@@ -275,10 +276,10 @@ export default function StateLawsPage() {
         </div>
 
         <div className="laws-cta">
-          <div className="laws-cta-tag">// Verify Your Window</div>
+          <div className="laws-cta-tag">Verify your window</div>
           <h3 className="laws-cta-title">Don&apos;t guess. Let us check.</h3>
           <p className="laws-cta-text">
-            Every case is different. We&apos;ll review your specific situation, confirm your remaining window, and let you know if money is owed to you &mdash; all free, no obligation.
+            Every case is different. We&apos;ll review your specific situation, confirm your remaining window, and let you know if money is owed to you , all free, no obligation.
           </p>
           <div className="laws-cta-buttons">
             <Link href="/contact" className="laws-cta-btn laws-cta-btn-primary">

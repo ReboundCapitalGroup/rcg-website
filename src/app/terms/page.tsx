@@ -168,15 +168,12 @@ const sections = [
 
 export default function TermsPage() {
   return (
-    <div style={{ background: 'var(--bg)', minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
-
-      {/* Grid overlay */}
-      <div style={{ position: 'fixed', inset: 0, backgroundImage: 'linear-gradient(rgba(74,95,212,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.04) 1px,transparent 1px)', backgroundSize: '52px 52px', pointerEvents: 'none', zIndex: 0 }} />
+    <div style={{ ['--bg' as string]: '#F9F8F6', ['--bg2' as string]: '#ffffff', ['--mid' as string]: '#3a4360', ['--dim' as string]: '#6b7390', ['--rcg2' as string]: '#1E287F', background: 'var(--bg)', color: '#121829', fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif", minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
 
       <div style={{ position: 'relative', zIndex: 2, maxWidth: '880px', margin: '0 auto', padding: 'clamp(40px,6vw,80px) clamp(20px,4vw,40px)' }}>
 
         {/* Breadcrumb */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)' }}>
           <Link href="/" style={{ color: 'var(--rcg2)', textDecoration: 'none' }}>Home</Link>
           <span style={{ opacity: 0.5 }}>/</span>
           <span style={{ color: 'var(--mid)' }}>Terms of Service</span>
@@ -186,16 +183,16 @@ export default function TermsPage() {
         <div style={{ marginBottom: '48px', paddingBottom: '32px', borderBottom: '1px solid rgba(74,95,212,0.2)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px' }}>
             <div style={{ width: '30px', height: '1px', background: 'rgba(74,95,212,0.4)' }} />
-            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--rcg2)' }}>
+            <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--rcg2)' }}>
               // Legal
             </span>
           </div>
-          <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(32px,5vw,56px)', color: '#fff', letterSpacing: '-2px', lineHeight: 1.05, margin: '0 0 16px' }}>
+          <h1 style={{ fontFamily: "'Instrument Serif',Georgia,serif", fontWeight: 400, fontSize: 'clamp(32px,5vw,56px)', color: '#0d1322', letterSpacing: '0', lineHeight: 1.05, margin: '0 0 16px' }}>
             User Agreement <span style={{ color: 'var(--dim)' }}>&amp;</span>
             <br />
             <span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Terms of Service.</span>
           </h1>
-          <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginTop: '20px' }}>
+          <p style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginTop: '20px' }}>
             Last Updated: October 25, 2026
           </p>
         </div>
@@ -206,10 +203,10 @@ export default function TermsPage() {
 
             {/* Section header */}
             <div style={{ display: 'grid', gridTemplateColumns: '56px 1fr', gap: '16px', alignItems: 'baseline', marginBottom: '24px' }}>
-              <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: '12px', fontWeight: 700, letterSpacing: '1px', color: 'var(--rcg2)' }}>
                 {s.n} /
               </div>
-              <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.25, margin: 0 }}>
+              <h2 style={{ fontFamily: "'Instrument Serif',Georgia,serif", fontWeight: 400, fontSize: 'clamp(20px,2.5vw,28px)', color: '#0d1322', letterSpacing: '-0.5px', lineHeight: 1.25, margin: 0 }}>
                 {s.title}
               </h2>
             </div>
@@ -218,14 +215,14 @@ export default function TermsPage() {
             <div style={{ paddingLeft: 'clamp(0px,4vw,72px)' }}>
               {s.body.map((p, i) => (
                 <p key={i} style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.8, marginBottom: '14px' }}>
-                  {p.split(/\b(STOP|HELP)\b/).map((part, j) => (part === 'STOP' || part === 'HELP') ? <strong key={j} style={{ color: '#fff' }}>{part}</strong> : part)}
+                  {p.split(/\b(STOP|HELP)\b/).map((part, j) => (part === 'STOP' || part === 'HELP') ? <strong key={j} style={{ color: '#0d1322' }}>{part}</strong> : part)}
                 </p>
               ))}
 
               {/* Subsections */}
               {s.subsections && s.subsections.map((sub, i) => (
                 <div key={i} style={{ marginTop: '20px', padding: '18px 22px', background: 'rgba(30,40,127,0.08)', borderLeft: '2px solid var(--rcg2)' }}>
-                  <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--rcg2)', marginBottom: '8px', fontWeight: 700 }}>
+                  <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: '10px', letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--rcg2)', marginBottom: '8px', fontWeight: 700 }}>
                     {sub.heading}
                   </div>
                   <p style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.7, margin: 0 }}>
@@ -239,7 +236,7 @@ export default function TermsPage() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0' }}>
                   {s.list.map((item, i) => (
                     <li key={i} style={{ display: 'grid', gridTemplateColumns: '20px 1fr', gap: '8px', alignItems: 'baseline', padding: '6px 0', fontSize: '14px', color: 'var(--mid)', lineHeight: 1.7 }}>
-                      <span style={{ color: 'var(--rcg2)', fontFamily: "'Space Mono',monospace", fontSize: '11px' }}>→</span>
+                      <span style={{ color: 'var(--rcg2)', fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '11px' }}>→</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -258,36 +255,36 @@ export default function TermsPage() {
 
         {/* Contact block */}
         <div style={{ marginTop: '40px', padding: 'clamp(28px,4vw,40px)', background: 'var(--bg2)', border: '1px solid rgba(74,95,212,0.25)', borderTop: '2px solid var(--rcg2)' }}>
-          <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--rcg2)', marginBottom: '10px' }}>
+          <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '10px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--rcg2)', marginBottom: '10px' }}>
             // Contact
           </div>
-          <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#fff', letterSpacing: '-0.5px', margin: '0 0 18px' }}>
+          <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.5vw,28px)', color: '#0d1322', letterSpacing: '-0.5px', margin: '0 0 18px' }}>
             Questions about this Agreement?
           </h3>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginTop: '24px' }}>
             <div>
-              <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Entity</div>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Entity</div>
               <div style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.6 }}>
                 Rebound Capital Group LLC
               </div>
             </div>
             <div>
-              <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Address</div>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Address</div>
               <div style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.6 }}>
                 407 Lincoln Road Suite 6H<br />
                 Miami Beach, FL 33139
               </div>
             </div>
             <div>
-              <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Phone</div>
-              <a href="tel:+13055634920" style={{ fontSize: '13px', color: '#c8d8ff', textDecoration: 'none', lineHeight: 1.6 }}>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Phone</div>
+              <a href="tel:+13055634920" style={{ fontSize: '13px', color: '#2f3856', textDecoration: 'none', lineHeight: 1.6 }}>
                 (305) 563-4920
               </a>
             </div>
             <div>
-              <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Email</div>
-              <a href="mailto:contact@reboundcapitalgroup.com" style={{ fontSize: '13px', color: '#c8d8ff', textDecoration: 'none', lineHeight: 1.6, wordBreak: 'break-all' }}>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Email</div>
+              <a href="mailto:contact@reboundcapitalgroup.com" style={{ fontSize: '13px', color: '#2f3856', textDecoration: 'none', lineHeight: 1.6, wordBreak: 'break-all' }}>
                 contact@reboundcapitalgroup.com
               </a>
             </div>
@@ -295,7 +292,7 @@ export default function TermsPage() {
         </div>
 
         {/* Related links */}
-        <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid rgba(74,95,212,0.1)', display: 'flex', gap: '24px', flexWrap: 'wrap', fontFamily: "'Space Mono',monospace", fontSize: '10px', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+        <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid rgba(74,95,212,0.1)', display: 'flex', gap: '24px', flexWrap: 'wrap', fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '10px', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
           <Link href="/privacy" style={{ color: 'var(--rcg2)', textDecoration: 'none' }}>→ Privacy Policy</Link>
           <Link href="/contact" style={{ color: 'var(--rcg2)', textDecoration: 'none' }}>→ Contact Us</Link>
           <Link href="/" style={{ color: 'var(--rcg2)', textDecoration: 'none' }}>→ Back to Home</Link>
