@@ -73,7 +73,11 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .headerPhone { padding: 13px 20px; font-size: 14px; letter-spacing: 0.06em; box-shadow: 0 10px 22px rgba(30,40,127,0.28); white-space: nowrap; }
 .menuBtn { display: none; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1.5px solid rgba(13,19,34,0.18); border-radius: 6px; background: transparent; cursor: pointer; }
 .menuBtn span { width: 18px; height: 2px; background: var(--navy); }
-.mobileMenu { border-top: 1px solid rgba(13,19,34,0.08); padding: 8px 20px 24px; display: grid; gap: 18px; max-height: calc(100vh - 70px); overflow-y: auto; }
+.mobileMenu { position: fixed; left: 0; right: 0; top: var(--menu-top, 69px); bottom: 0; z-index: 1001; background: var(--paper); border-top: 1px solid rgba(13,19,34,0.08); padding: 8px 20px calc(40px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 18px; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.menuBtnOpen span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menuBtnOpen span:nth-child(2) { opacity: 0; }
+.menuBtnOpen span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menuBtn span { transition: transform .2s, opacity .2s; }
 .mobileMenuGroup { display: flex; flex-direction: column; }
 .mobileMenuGroup a { color: var(--navy); font-weight: 700; font-size: 17px; padding: 10px 0; border-bottom: 1px solid rgba(13,19,34,0.06); }
 .eyebrowSm { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--primary); margin: 10px 0 4px; }

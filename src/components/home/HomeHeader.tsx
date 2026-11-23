@@ -1,5 +1,6 @@
 'use client'
-import { useState, type ReactNode } from 'react'
+import { useState, useEffect, useRef, type ReactNode } from 'react'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import s from './home.module.css'
@@ -71,8 +72,27 @@ const menu: { label: string; items: [string, string][] }[] = [
 
 export default function HomeHeader() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const headerRef = useRef<HTMLElement>(null)
+
+  // Close the phone menu whenever the page changes.
+  useEffect(() => { setOpen(false) }, [pathname])
+
+  // While the menu is open: pin it under the header as a full-screen panel
+  // that scrolls on its own (the page behind stays put), and let Escape close it.
+  useEffect(() => {
+    if (!open) return
+    const h = headerRef.current?.getBoundingClientRect().bottom ?? 69
+    document.documentElement.style.setProperty('--menu-top', `${Math.round(h)}px`)
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
   return (
-    <header className={s.header}>
+    <header ref={headerRef} className={s.header}>
       <div className={s.headerInner}>
         <Link href="/" aria-label="Rebound Capital Group home" className={s.logoLink}>
           <Image src="/rcg-logo.png" alt="Rebound Capital Group" width={150} height={90} className={s.logo} priority />
@@ -88,7 +108,7 @@ export default function HomeHeader() {
           <a href="tel:+13055634920" className={`${s.btnPrimary} ${s.headerPhone}`} aria-label="Call or text 24/7: 305-563-4920">
             <PhoneIcon /> <span className={s.headerPhoneText}>305-563-4920</span>
           </a>
-          <button type="button" className={s.menuBtn} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="home-menu" onClick={() => setOpen(!open)}>
+          <button type="button" className={`${s.menuBtn} ${open ? s.menuBtnOpen : ''}`} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="home-menu" onClick={() => setOpen(!open)}>
             <span /><span /><span />
           </button>
         </div>
