@@ -1,0 +1,91 @@
+{
+ "slug": "new-mexico",
+ "name": "Nuevo México",
+ "badge": "Nuevo México · Los 33 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Nuevo México.",
+ "intro": "Los tribunales, condados y agencias del estado de Nuevo México guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 33 condados de Nuevo México y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "33",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$340M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Nuevo México",
+  "title": "Recuperación en Nuevo México. Los 33 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas judiciales",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Nuevo México",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Bernalillo, Doña Ana, Santa Fe y Sandoval tienen el mayor volumen de casos de fondos excedentes en Nuevo México. Nuevo México es un estado de ejecución judicial, y los sobrantes de las ventas del sheriff se depositan con el secretario del tribunal de distrito hasta que el antiguo dueño los reclama. Las ventas por impuestos que hacen los tesoreros de los condados y la División de Impuestos sobre la Propiedad pueden dejar excedentes.",
+   "El Programa de Propiedad No Reclamada de Nuevo México, administrado por el Departamento de Impuestos e Ingresos del estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar, regalías de minerales y otros bienes de residentes de Nuevo México. RCG busca en los registros de los tribunales de distrito, los registros de ventas por impuestos de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Nuevo México."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Nuevo México. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 33 condados de Nuevo México.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en todos los condados de Nuevo México. Si hay fondos a su nombre en cualquier condado de Nuevo México, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Bernalillo",
+    "Catron",
+    "Chaves",
+    "Cibola",
+    "Colfax",
+    "Curry",
+    "De Baca",
+    "Doña Ana",
+    "Eddy",
+    "Grant",
+    "Guadalupe",
+    "Harding",
+    "Hidalgo",
+    "Lea",
+    "Lincoln",
+    "Los Alamos",
+    "Luna",
+    "McKinley",
+    "Mora",
+    "Otero",
+    "Quay",
+    "Rio Arriba",
+    "Roosevelt",
+    "Sandoval",
+    "San Juan",
+    "San Miguel",
+    "Santa Fe",
+    "Sierra",
+    "Socorro",
+    "Taos",
+    "Torrance",
+    "Union",
+    "Valencia"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas judiciales · Sobrantes de ventas por impuestos · Propiedad no reclamada de Nuevo México · Recuperación para herederos, en los 33 condados de Nuevo México.",
+ "ctaTitle": "Descubra lo que Nuevo México guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Nuevo México y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Nuevo México | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Nuevo México. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

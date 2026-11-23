@@ -1,0 +1,72 @@
+{
+ "slug": "massachusetts",
+ "name": "Massachusetts",
+ "badge": "Massachusetts · Los 14 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Massachusetts.",
+ "intro": "Los tribunales, condados y agencias del estado de Massachusetts guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 14 condados de Massachusetts y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "14",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$2.4B",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Massachusetts",
+  "title": "Recuperación en Massachusetts. Los 14 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Excedentes de embargos fiscales (tax taking)",
+   "Propiedad no reclamada de Massachusetts",
+   "Recuperación para herederos",
+   "Excedentes del Land Court"
+  ],
+  "paragraphs": [
+   "Los condados de Middlesex, Worcester, Essex y Suffolk tienen el mayor volumen de casos de fondos excedentes en Massachusetts. Massachusetts es un estado de ejecución extrajudicial que usa el poder de venta, y los sobrantes de las subastas por ejecución los guarda el acreedor que ejecutó o se depositan en el Tribunal Superior de Massachusetts hasta que el antiguo dueño los reclama. Después del fallo de la Corte Suprema de 2023 en Tyler v. Hennepin County, los excedentes de embargos fiscales (tax taking) en Massachusetts le pertenecen al antiguo dueño y se pueden recuperar con el trámite correcto.",
+   "La División de Propiedad No Reclamada de Massachusetts, administrada por el Tesorero del estado, guarda cientos de millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar, acciones y otros bienes de residentes de Massachusetts. RCG busca en los registros del Tribunal Superior, del Land Court, los registros municipales de embargos fiscales y las bases de datos estatales de propiedad no reclamada para cada cliente de Massachusetts."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Massachusetts. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 14 condados de Massachusetts.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, excedentes de embargos fiscales y propiedad no reclamada en todos los condados de Massachusetts. Si hay fondos a su nombre en cualquier condado de Massachusetts, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Barnstable",
+    "Berkshire",
+    "Bristol",
+    "Dukes",
+    "Essex",
+    "Franklin",
+    "Hampden",
+    "Hampshire",
+    "Middlesex",
+    "Nantucket",
+    "Norfolk",
+    "Plymouth",
+    "Suffolk",
+    "Worcester"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Excedentes de embargos fiscales · Propiedad no reclamada de Massachusetts · Recuperación para herederos · Excedentes del Land Court, en los 14 condados de Massachusetts.",
+ "ctaTitle": "Descubra lo que Massachusetts guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Massachusetts y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Massachusetts | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Massachusetts. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

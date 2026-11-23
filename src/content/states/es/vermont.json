@@ -1,0 +1,72 @@
+{
+ "slug": "vermont",
+ "name": "Vermont",
+ "badge": "Vermont · Los 14 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Vermont.",
+ "intro": "Los tribunales, condados y agencias del estado de Vermont guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 14 condados de Vermont y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "14",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$150M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Vermont",
+  "title": "Recuperación en Vermont. Los 14 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Vermont",
+   "Recuperación para herederos",
+   "Excedentes retenidos por tribunales"
+  ],
+  "paragraphs": [
+   "Los condados de Chittenden, Rutland y Washington tienen el mayor volumen de casos de fondos excedentes en Vermont. Vermont usa un proceso de ejecución judicial, y los sobrantes de las ventas por ejecución los guarda el Tribunal Superior de Vermont hasta que el antiguo dueño los reclama. Las ventas por impuestos que hacen los recaudadores municipales también pueden dejar excedentes que deben reclamarse dentro de plazos legales específicos.",
+   "La División de Propiedad No Reclamada de Vermont, administrada por el Tesorero del estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Vermont. RCG busca en los registros del Tribunal Superior, los registros municipales de ventas por impuestos y las bases de datos estatales de propiedad no reclamada para cada cliente de Vermont."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Vermont. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 14 condados de Vermont.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en todos los condados de Vermont. Si hay fondos a su nombre en cualquier condado de Vermont, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Addison",
+    "Bennington",
+    "Caledonia",
+    "Chittenden",
+    "Essex",
+    "Franklin",
+    "Grand Isle",
+    "Lamoille",
+    "Orange",
+    "Orleans",
+    "Rutland",
+    "Washington",
+    "Windham",
+    "Windsor"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por impuestos · Propiedad no reclamada de Vermont · Recuperación para herederos · Excedentes de ventas judiciales, en los 14 condados de Vermont.",
+ "ctaTitle": "Descubra lo que Vermont guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Vermont y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Vermont | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Vermont. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

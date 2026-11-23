@@ -1,0 +1,68 @@
+{
+ "slug": "new-hampshire",
+ "name": "Nuevo Hampshire",
+ "badge": "Nuevo Hampshire · Los 10 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Nuevo Hampshire.",
+ "intro": "Los tribunales, condados y agencias del estado de Nuevo Hampshire guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 10 condados de Nuevo Hampshire y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "10",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$320M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Nuevo Hampshire",
+  "title": "Recuperación en Nuevo Hampshire. Los 10 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Nuevo Hampshire",
+   "Recuperación para herederos",
+   "Excedentes retenidos por tribunales"
+  ],
+  "paragraphs": [
+   "Los condados de Hillsborough, Rockingham y Merrimack tienen el mayor volumen de casos de fondos excedentes en Nuevo Hampshire. Nuevo Hampshire es un estado de ejecución extrajudicial, y los sobrantes de las subastas por ejecución por lo general los guarda el fideicomisario o el abogado que ejecutó hasta que el antiguo dueño los reclama. Las ventas por impuestos que hacen los municipios también pueden dejar excedentes.",
+   "La División de Propiedad Abandonada de Nuevo Hampshire, administrada por el Tesoro del estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Nuevo Hampshire. RCG busca en los registros del Tribunal Superior, los registros municipales de ventas por impuestos y las bases de datos estatales de propiedad no reclamada para cada cliente de Nuevo Hampshire."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Nuevo Hampshire. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 10 condados de Nuevo Hampshire.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en todos los condados de Nuevo Hampshire. Si hay fondos a su nombre en cualquier condado de Nuevo Hampshire, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Belknap",
+    "Carroll",
+    "Cheshire",
+    "Coos",
+    "Grafton",
+    "Hillsborough",
+    "Merrimack",
+    "Rockingham",
+    "Strafford",
+    "Sullivan"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por impuestos · Propiedad no reclamada de Nuevo Hampshire · Recuperación para herederos · Excedentes de ventas judiciales, en los 10 condados de Nuevo Hampshire.",
+ "ctaTitle": "Descubra lo que Nuevo Hampshire guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Nuevo Hampshire y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Nuevo Hampshire | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Nuevo Hampshire. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

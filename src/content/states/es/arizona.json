@@ -1,0 +1,73 @@
+{
+ "slug": "arizona",
+ "name": "Arizona",
+ "badge": "Arizona · Los 15 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Arizona.",
+ "intro": "Los tribunales, condados y agencias del estado de Arizona guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 15 condados de Arizona y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "15",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "Todo el país",
+   "label": "Cobertura de RCG"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Arizona",
+  "title": "Recuperación en Arizona. Los 15 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Arizona",
+   "Recuperación para herederos",
+   "Excedentes retenidos por tribunales"
+  ],
+  "paragraphs": [
+   "Los condados de Maricopa, Pima y Pinal concentran la mayoría de los casos de fondos excedentes de ejecuciones en Arizona. Las ventas por fideicomisario y las subastas de certificados de gravamen fiscal en Arizona muchas veces generan sobrantes que guarda el tesorero del condado o el tribunal superior.",
+   "La División de Propiedad No Reclamada del Departamento de Ingresos de Arizona guarda millones en cuentas inactivas, pagos de seguros y otros bienes de residentes de Arizona. RCG busca en todos los registros de los tribunales superiores de Arizona y en las bases de datos estatales de propiedad no reclamada para cada cliente de Arizona."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Arizona. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 15 condados de Arizona.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en todos los condados de Arizona. Si hay fondos a su nombre en cualquier condado de Arizona, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Apache",
+    "Cochise",
+    "Coconino",
+    "Gila",
+    "Graham",
+    "Greenlee",
+    "La Paz",
+    "Maricopa",
+    "Mohave",
+    "Navajo",
+    "Pima",
+    "Pinal",
+    "Santa Cruz",
+    "Yavapai",
+    "Yuma"
+   ]
+  }
+ ],
+ "footerLine": "Sobrantes de ventas por fideicomisario · Sobrantes de certificados de gravamen fiscal · Propiedad no reclamada de Arizona · Recuperación para herederos · Excedentes de ventas judiciales, en los 15 condados de Arizona.",
+ "ctaTitle": "Descubra lo que Arizona guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Arizona y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Arizona | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones y sobrantes de ventas por impuestos en Arizona. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado para usted."
+ }
+}

@@ -1,0 +1,21 @@
+.live { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.liveCard { display: flex; flex-direction: column; gap: 4px; background: var(--glow); color: #fff !important; border-radius: 14px; padding: 22px 24px; transition: transform .3s, box-shadow .3s; }
+.liveCard:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(13,19,34,0.2); }
+.liveCard .code { color: var(--light); }
+.code { font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: var(--primary); }
+.name { font-family: var(--serif); font-size: 34px; line-height: 1.05; }
+.meta { font-size: 13px; color: #c3cfee; }
+.grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.card { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid rgba(13,19,34,0.08); border-radius: 10px; padding: 14px 16px; color: var(--navy) !important; transition: border-color .2s, box-shadow .2s; }
+.card:hover { border-color: rgba(30,40,127,0.4); box-shadow: 0 10px 24px rgba(13,19,34,0.07); }
+.cardName { font-weight: 700; font-size: 15px; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.arrow { color: var(--primary); }
+
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .live { grid-template-columns: 1fr 1fr; }
+  .name { font-size: 28px; }
+  .grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .card { padding: 13px 12px; gap: 8px; }
+  .cardName { font-size: 14px; white-space: normal; line-height: 1.25; }
+}

@@ -1,0 +1,102 @@
+{
+ "slug": "idaho",
+ "name": "Idaho",
+ "badge": "Idaho · Los 44 condados · Sin costo por adelantado",
+ "h1Lead": "Ayuda con ejecuciones y fondos excedentes",
+ "h1Accent": "en Idaho.",
+ "intro": "Los tribunales, condados y agencias del estado de Idaho guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 44 condados de Idaho y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "44",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$218M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Idaho",
+  "title": "Recuperación en Idaho. Los 44 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por fideicomisario",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Idaho",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Ada, Canyon, Kootenai y Bonneville tienen el mayor volumen de casos de fondos excedentes en Idaho. Idaho usa principalmente la ejecución extrajudicial mediante escritura de fideicomiso y venta por fideicomisario. Los sobrantes de la venta por fideicomisario los guarda el fideicomisario hasta que se reclaman, mientras que en las ejecuciones judiciales el sobrante se deposita en el tribunal de distrito de Idaho.",
+   "La División de Propiedad No Reclamada de Idaho, administrada por el Tesorero del estado a través de YourMoney.Idaho.gov, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Idaho. RCG busca en los registros de los tribunales de distrito, los registros de ventas por fideicomisario de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Idaho."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Idaho. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 44 condados de Idaho.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por fideicomisario y propiedad no reclamada en todos los condados de Idaho. Si hay fondos a su nombre en cualquier condado de Idaho, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Ada",
+    "Adams",
+    "Bannock",
+    "Bear Lake",
+    "Benewah",
+    "Bingham",
+    "Blaine",
+    "Boise",
+    "Bonner",
+    "Bonneville",
+    "Boundary",
+    "Butte",
+    "Camas",
+    "Canyon",
+    "Caribou",
+    "Cassia",
+    "Clark",
+    "Clearwater",
+    "Custer",
+    "Elmore",
+    "Franklin",
+    "Fremont",
+    "Gem",
+    "Gooding",
+    "Idaho",
+    "Jefferson",
+    "Jerome",
+    "Kootenai",
+    "Latah",
+    "Lemhi",
+    "Lewis",
+    "Lincoln",
+    "Madison",
+    "Minidoka",
+    "Nez Perce",
+    "Oneida",
+    "Owyhee",
+    "Payette",
+    "Power",
+    "Shoshone",
+    "Teton",
+    "Twin Falls",
+    "Valley",
+    "Washington"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por fideicomisario · Sobrantes de ventas por impuestos · Propiedad no reclamada de Idaho · Recuperación para herederos, en los 44 condados de Idaho.",
+ "ctaTitle": "Descubra lo que Idaho guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Idaho y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Fondos excedentes de ejecución en Idaho: puede que le deban dinero | RCG",
+  "description": "¿Su casa en Idaho se vendió en una venta por fideicomisario? Puede que le deban dinero de la venta. Revisión gratis, $0 por adelantado, llame o escriba 24/7."
+ }
+}

@@ -1,0 +1,54 @@
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 80px; align-items: center; }
+.portrait { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.photoWrap { border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px rgba(13,19,34,0.22); }
+.photo { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+.portrait figcaption { display: flex; flex-direction: column; gap: 2px; padding-left: 4px; }
+.photoName { font-family: var(--serif); font-size: 30px; line-height: 1.05; color: var(--navy); }
+.linkedin { display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; margin-top: 10px; background: #0a66c2; color: #fff !important; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 700; transition: transform .2s; }
+.linkedin:hover { transform: translateY(-2px); }
+.photoRole { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--primary); }
+
+.story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; align-items: center; }
+.lead { margin: 16px 0 0; font-size: 18px; line-height: 1.7; color: var(--ink); }
+
+.mission { background: var(--glow); color: #fff; padding: 80px 0; margin-top: 24px; scroll-margin-top: 90px; }
+.missionInner { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 64px; align-items: center; }
+.missionEyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light); margin-bottom: 14px; }
+.missionTitle { margin: 0 0 18px; font-family: var(--serif); font-weight: 400; font-size: 56px; line-height: 1.02; }
+.missionTitle em { color: var(--light); }
+.missionText { margin: 0; font-size: 18px; line-height: 1.7; color: #dce4fb; max-width: 620px; }
+.missionStats { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(147,184,255,0.2); border-radius: 14px; overflow: hidden; }
+.missionStats div { display: flex; flex-direction: column; gap: 4px; padding: 24px; border-top: 1px solid rgba(147,184,255,0.2); }
+.missionStats div:nth-child(-n+2) { border-top: 0; }
+.missionStats div:nth-child(even) { border-left: 1px solid rgba(147,184,255,0.2); }
+.missionStats b { font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1; background-image: linear-gradient(180deg, #fff 0%, #93b8ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.missionStats span { font-size: 13px; color: #c3cfee; }
+.founder { padding-top: 88px; display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 72px; align-items: center; }
+.founderText { display: flex; flex-direction: column; gap: 16px; }
+.founderText h2 { margin: 0; }
+
+.block { padding-top: 72px; }
+.values { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid rgba(13,19,34,0.12); }
+.value { display: flex; flex-direction: column; gap: 8px; padding: 28px 32px 28px 0; border-bottom: 1px solid rgba(13,19,34,0.12); }
+.value:nth-child(even) { padding: 28px 0 28px 32px; border-left: 1px solid rgba(13,19,34,0.12); }
+.valueN { font-family: var(--serif); font-size: 36px; line-height: 1; color: var(--accent); }
+.valueTitle { font-size: 20px; font-weight: 800; color: var(--navy); }
+.valueDesc { font-size: 15px; line-height: 1.65; color: var(--body); }
+
+@media (max-width: 900px) {
+  .heroGrid { grid-template-columns: 1fr; gap: 32px; }
+  .portrait { max-width: 260px; }
+  .photoName { font-size: 26px; }
+  .story { grid-template-columns: 1fr; gap: 36px; }
+  .mission { padding: 52px 0; }
+  .missionInner { grid-template-columns: 1fr; gap: 28px; }
+  .missionTitle { font-size: 38px; }
+  .missionText { font-size: 16px; }
+  .missionStats b { font-size: 34px; }
+  .missionStats div { padding: 18px; }
+  .founder { grid-template-columns: 1fr; gap: 24px; padding-top: 56px; }
+  .lead { font-size: 16px; }
+  .block { padding-top: 48px; }
+  .values { grid-template-columns: 1fr; }
+  .value, .value:nth-child(even) { padding: 22px 0; border-left: 0; }
+}

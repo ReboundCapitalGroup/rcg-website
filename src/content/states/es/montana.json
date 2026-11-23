@@ -1,0 +1,114 @@
+{
+ "slug": "montana",
+ "name": "Montana",
+ "badge": "Montana · Los 56 condados · Sin costo por adelantado",
+ "h1Lead": "Ayuda con ejecuciones y fondos excedentes",
+ "h1Accent": "en Montana.",
+ "intro": "Los tribunales, condados y agencias del estado de Montana guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 56 condados de Montana y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "56",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$148M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Montana",
+  "title": "Recuperación en Montana. Los 56 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por fideicomisario",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Montana",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Yellowstone, Gallatin, Missoula y Flathead tienen el mayor volumen de casos de fondos excedentes en Montana. Montana permite la ejecución judicial y la extrajudicial. Las ventas por fideicomisario bajo la Small Tract Financing Act pueden dejar sobrantes que guarda el fideicomisario, mientras que en las ejecuciones judiciales el sobrante se deposita en el tribunal de distrito de Montana hasta que el antiguo dueño lo reclama.",
+   "El Programa de Propiedad No Reclamada de Montana, administrado por el Departamento de Ingresos del estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Montana. RCG busca en los registros de los tribunales de distrito, los registros de ventas por fideicomisario de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Montana."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Montana. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 56 condados de Montana.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por fideicomisario y propiedad no reclamada en todos los condados de Montana. Si hay fondos a su nombre en cualquier condado de Montana, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Beaverhead",
+    "Big Horn",
+    "Blaine",
+    "Broadwater",
+    "Carbon",
+    "Carter",
+    "Cascade",
+    "Chouteau",
+    "Custer",
+    "Daniels",
+    "Dawson",
+    "Deer Lodge",
+    "Fallon",
+    "Fergus",
+    "Flathead",
+    "Gallatin",
+    "Garfield",
+    "Glacier",
+    "Golden Valley",
+    "Granite",
+    "Hill",
+    "Jefferson",
+    "Judith Basin",
+    "Lake",
+    "Lewis and Clark",
+    "Liberty",
+    "Lincoln",
+    "Madison",
+    "McCone",
+    "Meagher",
+    "Mineral",
+    "Missoula",
+    "Musselshell",
+    "Park",
+    "Petroleum",
+    "Phillips",
+    "Pondera",
+    "Powder River",
+    "Powell",
+    "Prairie",
+    "Ravalli",
+    "Richland",
+    "Roosevelt",
+    "Rosebud",
+    "Sanders",
+    "Sheridan",
+    "Silver Bow",
+    "Stillwater",
+    "Sweet Grass",
+    "Teton",
+    "Toole",
+    "Treasure",
+    "Valley",
+    "Wheatland",
+    "Wibaux",
+    "Yellowstone"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por fideicomisario · Sobrantes de ventas por impuestos · Propiedad no reclamada de Montana · Recuperación para herederos, en los 56 condados de Montana.",
+ "ctaTitle": "Descubra lo que Montana guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Montana y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Fondos excedentes de ejecución en Montana: puede que le deban dinero | RCG",
+  "description": "¿Su casa en Montana se vendió en una venta por fideicomisario o del sheriff? Puede que le deban dinero de la venta. Revisión gratis, $0 por adelantado, llame o escriba 24/7."
+ }
+}

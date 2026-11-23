@@ -1,0 +1,21 @@
+.strip { background: var(--glow); color: #fff; padding: 72px 0 64px; margin-top: 72px; }
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 32px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; }
+.title { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 48px; line-height: 1; }
+.score { display: flex; align-items: center; gap: 12px; color: #fff !important; font-size: 14px; }
+.score b { font-family: var(--serif); font-weight: 400; font-size: 52px; line-height: 1; }
+.score span:last-child { color: #c3cfee; }
+.stars, .cardStars { color: #f5b301; letter-spacing: 2px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.card { margin: 0; display: flex; flex-direction: column; gap: 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(147,184,255,0.18); border-radius: 14px; padding: 26px 26px 22px; }
+.card blockquote { margin: 0; font-size: 15px; line-height: 1.65; color: #e7ecfb; flex: 1; }
+.card figcaption { font-size: 14px; font-weight: 800; display: flex; flex-direction: column; gap: 2px; }
+.card figcaption span { font-size: 12px; font-weight: 500; color: #9fb0d8; }
+.more { display: inline-block; margin-top: 22px; font-size: 14px; font-weight: 800; color: var(--light) !important; }
+@media (max-width: 900px) {
+  .strip { padding: 52px 0 48px; margin-top: 48px; }
+  .title { font-size: 36px; }
+  .score b { font-size: 40px; }
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 22px 20px; }
+}

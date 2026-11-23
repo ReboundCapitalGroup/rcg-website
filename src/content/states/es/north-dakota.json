@@ -1,0 +1,111 @@
+{
+ "slug": "north-dakota",
+ "name": "Dakota del Norte",
+ "badge": "Dakota del Norte · Los 53 condados · Sin costo por adelantado",
+ "h1Lead": "Ayuda con ejecuciones y fondos excedentes",
+ "h1Accent": "en Dakota del Norte.",
+ "intro": "Los tribunales, condados y agencias del estado de Dakota del Norte guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 53 condados de Dakota del Norte y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "53",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$118M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Dakota del Norte",
+  "title": "Recuperación en Dakota del Norte. Los 53 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas del sheriff",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Dakota del Norte",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Cass, Burleigh, Grand Forks y Ward tienen el mayor volumen de casos de fondos excedentes en Dakota del Norte. Dakota del Norte es un estado de ejecución judicial, y los sobrantes de las ventas del sheriff se depositan en el tribunal de distrito hasta que el antiguo dueño los reclama. Las ventas por impuestos que hacen los tesoreros de los condados también pueden dejar excedentes.",
+   "La División de Propiedad No Reclamada de Dakota del Norte, administrada por el Departamento de Tierras en Fideicomiso del estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar, regalías de minerales y otros bienes de residentes de Dakota del Norte y dueños de derechos minerales. RCG busca en los registros de los tribunales de distrito, los registros de ventas del sheriff de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Dakota del Norte."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Dakota del Norte. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 53 condados de Dakota del Norte.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas del sheriff y propiedad no reclamada en todos los condados de Dakota del Norte. Si hay fondos a su nombre en cualquier condado de Dakota del Norte, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Adams",
+    "Barnes",
+    "Benson",
+    "Billings",
+    "Bottineau",
+    "Bowman",
+    "Burke",
+    "Burleigh",
+    "Cass",
+    "Cavalier",
+    "Dickey",
+    "Divide",
+    "Dunn",
+    "Eddy",
+    "Emmons",
+    "Foster",
+    "Golden Valley",
+    "Grand Forks",
+    "Grant",
+    "Griggs",
+    "Hettinger",
+    "Kidder",
+    "LaMoure",
+    "Logan",
+    "McHenry",
+    "McIntosh",
+    "McKenzie",
+    "McLean",
+    "Mercer",
+    "Morton",
+    "Mountrail",
+    "Nelson",
+    "Oliver",
+    "Pembina",
+    "Pierce",
+    "Ramsey",
+    "Ransom",
+    "Renville",
+    "Richland",
+    "Rolette",
+    "Sargent",
+    "Sheridan",
+    "Sioux",
+    "Slope",
+    "Stark",
+    "Steele",
+    "Stutsman",
+    "Towner",
+    "Traill",
+    "Walsh",
+    "Ward",
+    "Wells",
+    "Williams"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas del sheriff · Sobrantes de ventas por impuestos · Propiedad no reclamada de Dakota del Norte · Recuperación para herederos, en los 53 condados de Dakota del Norte.",
+ "ctaTitle": "Descubra lo que Dakota del Norte guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Dakota del Norte y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Fondos excedentes de ejecución en Dakota del Norte: puede que le deban dinero | RCG",
+  "description": "¿Su casa en Dakota del Norte se vendió en una ejecución? Puede que le deban dinero de la venta. Revisión gratis, $0 por adelantado, llame o escriba 24/7."
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "slug": "new-york",
+ "name": "Nueva York",
+ "badge": "Nueva York · Los 62 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Nueva York.",
+ "intro": "Nueva York guarda más de $13 mil millones en propiedad no reclamada, la segunda cifra más alta del país. RCG vigila los 62 condados de Nueva York, incluidos los distritos de NYC, y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "62",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$13B",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Nueva York",
+  "title": "Recuperación en Nueva York. Los 62 condados y los distritos de NYC.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por referee",
+   "Excedentes de ejecuciones fiscales",
+   "Propiedad no reclamada de Nueva York",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los 62 condados de Nueva York incluyen los cinco distritos de NYC: Bronx, Kings (Brooklyn), New York (Manhattan), Queens y Richmond (Staten Island). Los condados de Suffolk, Nassau, Westchester, Queens y Kings tienen el mayor volumen de casos de fondos excedentes en Nueva York. Nueva York es un estado de ejecución judicial, y por lo general las ventas las hace un referee nombrado por el tribunal. Los sobrantes de la venta por referee se depositan en la Corte Suprema de Nueva York hasta que el antiguo dueño los reclama.",
+   "La ciudad de Nueva York y los condados de Nassau y Suffolk tienen programas de ejecución fiscal in rem especialmente activos, que pueden dejar excedentes que el antiguo dueño puede recuperar. La Oficina de Fondos No Reclamados de Nueva York, administrada por la Oficina del Contralor del Estado, guarda más de $13 mil millones, solo por detrás de California, en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Nueva York. RCG busca en los registros de la Corte Suprema, los registros de ventas por referee de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Nueva York."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Nueva York. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 62 condados de Nueva York.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por referee y propiedad no reclamada en todos los condados de Nueva York, incluidos los cinco distritos de NYC. Si hay fondos a su nombre en cualquier condado de Nueva York, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Albany",
+    "Allegany",
+    "Bronx",
+    "Broome",
+    "Cattaraugus",
+    "Cayuga",
+    "Chautauqua",
+    "Chemung",
+    "Chenango",
+    "Clinton",
+    "Columbia",
+    "Cortland",
+    "Delaware",
+    "Dutchess",
+    "Erie",
+    "Essex",
+    "Franklin",
+    "Fulton",
+    "Genesee",
+    "Greene",
+    "Hamilton",
+    "Herkimer",
+    "Jefferson",
+    "Kings",
+    "Lewis",
+    "Livingston",
+    "Madison",
+    "Monroe",
+    "Montgomery",
+    "Nassau",
+    "New York",
+    "Niagara",
+    "Oneida",
+    "Onondaga",
+    "Ontario",
+    "Orange",
+    "Orleans",
+    "Oswego",
+    "Otsego",
+    "Putnam",
+    "Queens",
+    "Rensselaer",
+    "Richmond",
+    "Rockland",
+    "Saratoga",
+    "Schenectady",
+    "Schoharie",
+    "Schuyler",
+    "Seneca",
+    "St. Lawrence",
+    "Steuben",
+    "Suffolk",
+    "Sullivan",
+    "Tioga",
+    "Tompkins",
+    "Ulster",
+    "Warren",
+    "Washington",
+    "Wayne",
+    "Westchester",
+    "Wyoming",
+    "Yates"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por referee · Excedentes de ejecuciones fiscales · Propiedad no reclamada de Nueva York · Recuperación para herederos, en los 62 condados de Nueva York, incluidos el Bronx, Brooklyn, Manhattan, Queens y Staten Island.",
+ "ctaTitle": "Descubra lo que Nueva York guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Nueva York, los registros de ventas por referee de los condados y las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Nueva York | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Nueva York. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

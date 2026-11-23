@@ -1,0 +1,48 @@
+.hero { padding-top: 44px; padding-bottom: 36px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.h1 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 68px; line-height: 1; color: var(--navy); }
+.sub { margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink); max-width: 560px; }
+.counter { margin-top: 10px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.counterLabel { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--primary); }
+.counterNum { font-family: var(--serif); font-size: 64px; line-height: 1; color: var(--navy); font-variant-numeric: tabular-nums; }
+.counterSrc { font-size: 12px; color: #6b7390; }
+
+.mapCard { padding: 8px 0 0; }
+.mapHint { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); margin-bottom: 18px; }
+
+.hintPhone { display: none; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.stat { background: #fff; border: 1px solid rgba(13,19,34,0.08); border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: var(--body); }
+.statVal { font-family: var(--serif); font-size: 40px; line-height: 1; color: var(--navy); }
+
+.lists { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; padding-top: 72px; }
+.activeIntro { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--body); }
+.active { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+.activeCard { cursor: default; display: flex; flex-direction: column; gap: 4px; background: var(--glow); color: #fff !important; border-radius: 14px; padding: 22px 24px; transition: transform .3s, box-shadow .3s; }
+.activeCode { font-size: 12px; font-weight: 800; letter-spacing: 0.18em; color: var(--light); }
+.activeName { font-size: 20px; font-weight: 800; }
+.activeFunds { font-family: var(--serif); font-size: 40px; line-height: 1.05; }
+.activeMeta { font-size: 13px; color: #c3cfee; }
+.top { list-style: none; margin: 24px 0 0; padding: 0; columns: 2; column-gap: 24px; }
+.top li { break-inside: avoid; }
+.top a { display: flex; align-items: center; gap: 10px; padding: 11px 0; border-bottom: 1px solid rgba(13,19,34,0.08); color: var(--navy); font-weight: 700; font-size: 15px; }
+.top a:hover { color: var(--primary); }
+.top b { margin-left: auto; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
+.rank { font-size: 12px; color: #8a93ad; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 900px) {
+  .hero { padding-top: 28px; gap: 12px; }
+  .h1 { font-size: 42px; }
+  .sub { font-size: 15px; }
+  .counterNum { font-size: 36px; }
+  .counterLabel { font-size: 11px; }
+  .mapCard { padding: 0; }
+  .hintDesk { display: none; }
+  .hintPhone { display: inline; }
+  .mapHint { font-size: 11px; margin-bottom: 8px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .statVal { font-size: 32px; }
+  .lists { grid-template-columns: 1fr; gap: 40px; padding-top: 48px; }
+  .active { grid-template-columns: 1fr 1fr; }
+  .activeFunds { font-size: 32px; }
+  .top { columns: 1; }
+}

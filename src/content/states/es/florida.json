@@ -1,0 +1,157 @@
+{
+ "slug": "florida",
+ "name": "Florida",
+ "badge": "Florida · Los 67 condados · Sin costo por adelantado",
+ "h1Lead": "Ayuda con ejecuciones y fondos excedentes",
+ "h1Accent": "en Florida.",
+ "intro": "Los tribunales, secretarios de condado y el tesoro del estado de Florida guardan miles de millones en fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 67 condados de Florida y recupera estos fondos por contingencia.",
+ "stats": [
+  {
+   "val": "67",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$2B+",
+   "label": "Fondos no reclamados en el tesoro de FL"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "Actúe pronto",
+   "label": "Los plazos varían según el caso"
+  }
+ ],
+ "body": {
+  "tag": "Por qué Florida",
+  "title": "Uno de los estados con más sobrantes del país.",
+  "points": [
+   "Los 67 condados vigilados a diario",
+   "Sobrantes de ejecuciones y ventas por impuestos",
+   "Propiedad no reclamada del Tesoro del Estado",
+   "Sobrantes de ventas de HOA y judiciales",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Florida tiene uno de los mayores volúmenes de casos de fondos excedentes de ejecuciones y sobrantes de ventas por impuestos en Estados Unidos. Su mercado inmobiliario activo, su gran población de jubilados y residentes de temporada, y la historia de impagos hipotecarios después de cada ciclo del mercado han acumulado una gran cantidad de fondos no reclamados en las oficinas de los secretarios de los 67 condados.",
+   "A nivel estatal, la División de Propiedad No Reclamada de Florida guarda más de $2 mil millones en cuentas bancarias inactivas, pagos de seguros de vida, cheques sin cobrar, dividendos de acciones, distribuciones de IRA y decenas de otros tipos de bienes, todos de residentes y antiguos residentes de Florida y sus herederos."
+  ],
+  "callout": "RCG tiene su sede en Miami Beach y recupera fondos para clientes de Florida desde 2023. Vigilamos todos los condados del estado y los reclamos se presentan a través de nuestra red de abogados con licencia en Florida."
+ },
+ "lists": [
+  {
+   "title": "Los 67 condados de Florida.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en todos los condados de Florida. Si hay fondos a su nombre en cualquiera de los condados de abajo, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Alachua",
+    "Baker",
+    "Bay",
+    "Bradford",
+    "Brevard",
+    "Broward",
+    "Calhoun",
+    "Charlotte",
+    "Citrus",
+    "Clay",
+    "Collier",
+    "Columbia",
+    "DeSoto",
+    "Dixie",
+    "Duval",
+    "Escambia",
+    "Flagler",
+    "Franklin",
+    "Gadsden",
+    "Gilchrist",
+    "Glades",
+    "Gulf",
+    "Hamilton",
+    "Hardee",
+    "Hendry",
+    "Hernando",
+    "Highlands",
+    "Hillsborough",
+    "Holmes",
+    "Indian River",
+    "Jackson",
+    "Jefferson",
+    "Lafayette",
+    "Lake",
+    "Lee",
+    "Leon",
+    "Levy",
+    "Liberty",
+    "Madison",
+    "Manatee",
+    "Marion",
+    "Martin",
+    "Miami-Dade",
+    "Monroe",
+    "Nassau",
+    "Okaloosa",
+    "Okeechobee",
+    "Orange",
+    "Osceola",
+    "Palm Beach",
+    "Pasco",
+    "Pinellas",
+    "Polk",
+    "Putnam",
+    "Santa Rosa",
+    "Sarasota",
+    "Seminole",
+    "St. Johns",
+    "St. Lucie",
+    "Sumter",
+    "Suwannee",
+    "Taylor",
+    "Union",
+    "Volusia",
+    "Wakulla",
+    "Walton",
+    "Washington"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por impuestos · Sobrantes de ejecuciones de HOA · Excedentes · Propiedad no reclamada · Recuperación para herederos, en los 67 condados de Florida.",
+ "ctaTitle": "Descubra lo que Florida guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales y en la División de Propiedad No Reclamada de Florida. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "claimTypes": [
+  {
+   "title": "Fondos excedentes de ejecución",
+   "desc": "Las subastas por ejecución en Florida muchas veces dejan un sobrante por encima del saldo de la hipoteca. El secretario del tribunal guarda esos fondos hasta que el antiguo dueño los reclama. RCG vigila los 67 condados de Florida en busca de fondos excedentes.",
+   "href": "/services/foreclosure-surplus"
+  },
+  {
+   "title": "Sobrantes de ventas por impuestos",
+   "desc": "Cuando los condados de Florida venden propiedades con impuestos atrasados en subastas por impuestos (tax deed), lo que se obtiene por encima de los impuestos que se debían le pertenece al antiguo dueño y lo guarda el secretario del condado.",
+   "href": "/services/tax-deed-surplus"
+  },
+  {
+   "title": "Propiedad no reclamada de Florida",
+   "desc": "La División de Propiedad No Reclamada de Florida guarda más de $2 mil millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar, dividendos y otros bienes. Los residentes de Florida están entre los que más probabilidades tienen de tener fondos en el sistema.",
+   "href": "/services/unclaimed-property"
+  },
+  {
+   "title": "Recuperación para herederos",
+   "desc": "Cuando el dueño de una propiedad en Florida fallece antes de reclamar fondos que se le debían, los herederos y representantes de la herencia todavía pueden recuperarlos mediante la sucesión y el reclamo correctos.",
+   "href": "/services/estate-recovery"
+  },
+  {
+   "title": "Sobrantes de ejecuciones de HOA",
+   "desc": "Las ventas por ejecución de las asociaciones de propietarios (HOA) en Florida pueden dejar fondos excedentes que se le deben al antiguo dueño. Estos casos son comunes en las comunidades del sur de Florida y hay que actuar pronto, antes de que venza el plazo.",
+   "href": "/free-review"
+  },
+  {
+   "title": "Excedentes de ventas judiciales",
+   "desc": "Las ventas por partición, las ventas en sucesiones y las ventas por gravámenes de sentencia ordenadas por los tribunales de Florida pueden dejar excedentes que el secretario guarda hasta que los reclama el antiguo dueño o sus herederos.",
+   "href": "/free-review"
+  }
+ ],
+ "meta": {
+  "title": "Reclamos de fondos excedentes de ejecuciones y ventas por impuestos en Florida | RCG",
+  "description": "¿Su casa en Florida se vendió en una venta por ejecución o por impuestos? El sobrante puede ser suyo. Miami-Dade, Broward, Palm Beach y los 67 condados. Revisión gratis, llame o escriba 24/7."
+ }
+}

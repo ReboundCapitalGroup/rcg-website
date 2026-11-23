@@ -1,0 +1,135 @@
+{
+ "slug": "oklahoma",
+ "name": "Oklahoma",
+ "badge": "Oklahoma · Los 77 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Oklahoma.",
+ "intro": "Los tribunales, condados y agencias del estado de Oklahoma guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 77 condados de Oklahoma y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "77",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$520M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Oklahoma",
+  "title": "Recuperación en Oklahoma. Los 77 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas del sheriff",
+   "Excedentes de reventa por impuestos",
+   "Propiedad no reclamada de Oklahoma",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Oklahoma, Tulsa, Cleveland y Canadian tienen el mayor volumen de casos de fondos excedentes en Oklahoma. Oklahoma es principalmente un estado de ejecución judicial, y los sobrantes de las ventas del sheriff se depositan con el secretario del tribunal de distrito hasta que el antiguo dueño los reclama. Los tesoreros de los condados de Oklahoma hacen ventas anuales de reventa por impuestos que pueden dejar excedentes que se le deben al antiguo dueño.",
+   "La División de Propiedad No Reclamada de Oklahoma, administrada por el Tesorero del Estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar, regalías de minerales y otros bienes de residentes de Oklahoma y dueños de derechos minerales. RCG busca en los registros de los tribunales de distrito, los registros de reventa de los tesoreros de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Oklahoma."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Oklahoma. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 77 condados de Oklahoma.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas del sheriff y propiedad no reclamada en todos los condados de Oklahoma. Si hay fondos a su nombre en cualquier condado de Oklahoma, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Adair",
+    "Alfalfa",
+    "Atoka",
+    "Beaver",
+    "Beckham",
+    "Blaine",
+    "Bryan",
+    "Caddo",
+    "Canadian",
+    "Carter",
+    "Cherokee",
+    "Choctaw",
+    "Cimarron",
+    "Cleveland",
+    "Coal",
+    "Comanche",
+    "Cotton",
+    "Craig",
+    "Creek",
+    "Custer",
+    "Delaware",
+    "Dewey",
+    "Ellis",
+    "Garfield",
+    "Garvin",
+    "Grady",
+    "Grant",
+    "Greer",
+    "Harmon",
+    "Harper",
+    "Haskell",
+    "Hughes",
+    "Jackson",
+    "Jefferson",
+    "Johnston",
+    "Kay",
+    "Kingfisher",
+    "Kiowa",
+    "Latimer",
+    "Le Flore",
+    "Lincoln",
+    "Logan",
+    "Love",
+    "Major",
+    "Marshall",
+    "Mayes",
+    "McClain",
+    "McCurtain",
+    "McIntosh",
+    "Murray",
+    "Muskogee",
+    "Noble",
+    "Nowata",
+    "Okfuskee",
+    "Oklahoma",
+    "Okmulgee",
+    "Osage",
+    "Ottawa",
+    "Pawnee",
+    "Payne",
+    "Pittsburg",
+    "Pontotoc",
+    "Pottawatomie",
+    "Pushmataha",
+    "Roger Mills",
+    "Rogers",
+    "Seminole",
+    "Sequoyah",
+    "Stephens",
+    "Texas",
+    "Tillman",
+    "Tulsa",
+    "Wagoner",
+    "Washington",
+    "Washita",
+    "Woods",
+    "Woodward"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas del sheriff · Excedentes de reventa por impuestos · Propiedad no reclamada de Oklahoma · Recuperación para herederos, en los 77 condados de Oklahoma.",
+ "ctaTitle": "Descubra lo que Oklahoma guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Oklahoma y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Fondos excedentes en Oklahoma: ¿le deben dinero? | Búsqueda gratis",
+  "description": "En Oklahoma, los tribunales de distrito y las reventas de los tesoreros de los condados dejan fondos excedentes sin reclamar, además de regalías de minerales que guarda el estado. Buscamos en los 77 condados sin costo."
+ }
+}

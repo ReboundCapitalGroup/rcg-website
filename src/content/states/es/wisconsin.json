@@ -1,0 +1,130 @@
+{
+ "slug": "wisconsin",
+ "name": "Wisconsin",
+ "badge": "Wisconsin · Los 72 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Wisconsin.",
+ "intro": "Los tribunales, condados y agencias del estado de Wisconsin guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 72 condados de Wisconsin y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "72",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$890M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Wisconsin",
+  "title": "Recuperación en Wisconsin. Los 72 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas del sheriff",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Wisconsin",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Milwaukee, Dane, Waukesha y Brown tienen el mayor volumen de casos de fondos excedentes en Wisconsin. Wisconsin es un estado de ejecución judicial, y los sobrantes de las ventas del sheriff se depositan en el tribunal de circuito de Wisconsin hasta que el antiguo dueño los reclama. Las ventas por impuestos que hacen los tesoreros de los condados pueden dejar excedentes después del fallo de la Corte Suprema de 2023 en Tyler v. Hennepin.",
+   "El Programa de Propiedad No Reclamada de Wisconsin, administrado por el Departamento de Ingresos del estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Wisconsin. RCG busca en los registros de los tribunales de circuito, los registros de ventas del sheriff de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Wisconsin."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Wisconsin. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 72 condados de Wisconsin.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas del sheriff y propiedad no reclamada en todos los condados de Wisconsin. Si hay fondos a su nombre en cualquier condado de Wisconsin, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Adams",
+    "Ashland",
+    "Barron",
+    "Bayfield",
+    "Brown",
+    "Buffalo",
+    "Burnett",
+    "Calumet",
+    "Chippewa",
+    "Clark",
+    "Columbia",
+    "Crawford",
+    "Dane",
+    "Dodge",
+    "Door",
+    "Douglas",
+    "Dunn",
+    "Eau Claire",
+    "Florence",
+    "Fond du Lac",
+    "Forest",
+    "Grant",
+    "Green",
+    "Green Lake",
+    "Iowa",
+    "Iron",
+    "Jackson",
+    "Jefferson",
+    "Juneau",
+    "Kenosha",
+    "Kewaunee",
+    "La Crosse",
+    "Lafayette",
+    "Langlade",
+    "Lincoln",
+    "Manitowoc",
+    "Marathon",
+    "Marinette",
+    "Marquette",
+    "Menominee",
+    "Milwaukee",
+    "Monroe",
+    "Oconto",
+    "Oneida",
+    "Outagamie",
+    "Ozaukee",
+    "Pepin",
+    "Pierce",
+    "Polk",
+    "Portage",
+    "Price",
+    "Racine",
+    "Richland",
+    "Rock",
+    "Rusk",
+    "Sauk",
+    "Sawyer",
+    "Shawano",
+    "Sheboygan",
+    "St. Croix",
+    "Taylor",
+    "Trempealeau",
+    "Vernon",
+    "Vilas",
+    "Walworth",
+    "Washburn",
+    "Washington",
+    "Waukesha",
+    "Waupaca",
+    "Waushara",
+    "Winnebago",
+    "Wood"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas del sheriff · Sobrantes de ventas por impuestos · Propiedad no reclamada de Wisconsin · Recuperación para herederos, en los 72 condados de Wisconsin.",
+ "ctaTitle": "Descubra lo que Wisconsin guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Wisconsin y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Wisconsin | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Wisconsin. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

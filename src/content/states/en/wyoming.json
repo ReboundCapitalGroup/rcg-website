@@ -1,0 +1,77 @@
+{
+ "slug": "wyoming",
+ "name": "Wyoming",
+ "badge": "Wyoming · All 23 Counties · No Upfront Cost",
+ "h1Lead": "Surplus Fund Recovery",
+ "h1Accent": "in Wyoming.",
+ "intro": "Courts, county treasurers, and state agencies in Wyoming are holding funds belonging to former property owners and residents. RCG monitors all 23 Wyoming counties and recovers these funds at no upfront cost.",
+ "stats": [
+  {
+   "val": "23",
+   "label": "Counties Monitored"
+  },
+  {
+   "val": "$98M",
+   "label": "Unclaimed Funds Held"
+  },
+  {
+   "val": "$0",
+   "label": "Upfront Cost"
+  },
+  {
+   "val": "60-90d",
+   "label": "Avg. Claim Timeline"
+  }
+ ],
+ "body": {
+  "tag": "Wyoming Recovery",
+  "title": "Recovery in Wyoming. All 23 Counties.",
+  "points": [
+   "Foreclosure Surplus Funds",
+   "Sheriff Sale Overages",
+   "Tax Deed Excess Proceeds",
+   "Wyoming Unclaimed Property",
+   "Estate and Heir Recovery"
+  ],
+  "paragraphs": [
+   "Laramie, Natrona, and Campbell counties generate the highest volume of Wyoming foreclosure surplus cases. Wyoming primarily uses non-judicial foreclosure by advertisement and sale, with sheriff sale surplus funds held by the county sheriff or paid into the district court until claimed. Tax deed sales conducted by county treasurers can also produce excess proceeds.",
+   "The Wyoming Unclaimed Property Division, administered by the state Treasurer, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, mineral royalty payments, and other assets belonging to Wyoming residents and former residents. RCG searches Wyoming district court records, county sheriff sale records, and state unclaimed property databases for every Wyoming client."
+  ],
+  "callout": "Claims are filed through our network of licensed attorneys in Wyoming. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
+ },
+ "lists": [
+  {
+   "title": "All 23 Wyoming Counties.",
+   "intro": "RCG monitors foreclosure surplus funds, sheriff sale overages, and unclaimed property across every county in Wyoming. If funds exist in your name in any Wyoming county, we will find them and recover them.",
+   "unit": "County",
+   "items": [
+    "Albany",
+    "Big Horn",
+    "Campbell",
+    "Carbon",
+    "Converse",
+    "Crook",
+    "Fremont",
+    "Goshen",
+    "Hot Springs",
+    "Johnson",
+    "Laramie",
+    "Lincoln",
+    "Natrona",
+    "Niobrara",
+    "Park",
+    "Platte",
+    "Sheridan",
+    "Sublette",
+    "Sweetwater",
+    "Teton",
+    "Uinta",
+    "Washakie",
+    "Weston"
+   ]
+  }
+ ],
+ "footerLine": "Foreclosure surplus funds · Sheriff sale overages · Tax deed excess proceeds · Wyoming unclaimed property · Estate and heir recovery, available across all 23 Wyoming counties.",
+ "ctaTitle": "Find Out What Wyoming Is Holding in Your Name.",
+ "ctaText": "We search Wyoming court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
+}

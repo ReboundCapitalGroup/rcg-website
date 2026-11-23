@@ -1,0 +1,125 @@
+{
+ "slug": "pennsylvania",
+ "name": "Pensilvania",
+ "badge": "Pensilvania · Los 67 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Pensilvania.",
+ "intro": "Los tribunales, sheriffs y agencias del estado de Pensilvania guardan miles de millones en fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 67 condados de Pensilvania y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "67",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$4.5B",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Pensilvania",
+  "title": "Recuperación en Pensilvania. Los 67 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas del sheriff",
+   "Excedentes de ventas Upset por impuestos",
+   "Propiedad no reclamada de Pensilvania",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Philadelphia, Allegheny (Pittsburgh), Montgomery y Bucks tienen el mayor volumen de casos de fondos excedentes en Pensilvania. Pensilvania es un estado de ejecución judicial, y los sobrantes de las ventas del sheriff se depositan en el Court of Common Pleas hasta que el antiguo dueño los reclama. Pensilvania también hace ventas por impuestos Upset y Judicial a través de las oficinas de reclamos fiscales de los condados, y ambas pueden dejar excedentes que el antiguo dueño puede recuperar.",
+   "El Programa de Propiedad No Reclamada del Tesoro de Pensilvania, administrado por el Tesorero del Estado, guarda más de $4.5 mil millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Pensilvania, uno de los mayores fondos de propiedad no reclamada del país. RCG busca en los registros del Court of Common Pleas, los registros de ventas del sheriff de los condados, los registros de las oficinas de reclamos fiscales y las bases de datos estatales de propiedad no reclamada para cada cliente de Pensilvania."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Pensilvania. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 67 condados de Pensilvania.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas del sheriff y propiedad no reclamada en todos los condados de Pensilvania. Si hay fondos a su nombre en cualquier condado de Pensilvania, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Adams",
+    "Allegheny",
+    "Armstrong",
+    "Beaver",
+    "Bedford",
+    "Berks",
+    "Blair",
+    "Bradford",
+    "Bucks",
+    "Butler",
+    "Cambria",
+    "Cameron",
+    "Carbon",
+    "Centre",
+    "Chester",
+    "Clarion",
+    "Clearfield",
+    "Clinton",
+    "Columbia",
+    "Crawford",
+    "Cumberland",
+    "Dauphin",
+    "Delaware",
+    "Elk",
+    "Erie",
+    "Fayette",
+    "Forest",
+    "Franklin",
+    "Fulton",
+    "Greene",
+    "Huntingdon",
+    "Indiana",
+    "Jefferson",
+    "Juniata",
+    "Lackawanna",
+    "Lancaster",
+    "Lawrence",
+    "Lebanon",
+    "Lehigh",
+    "Luzerne",
+    "Lycoming",
+    "McKean",
+    "Mercer",
+    "Mifflin",
+    "Monroe",
+    "Montgomery",
+    "Montour",
+    "Northampton",
+    "Northumberland",
+    "Perry",
+    "Philadelphia",
+    "Pike",
+    "Potter",
+    "Schuylkill",
+    "Snyder",
+    "Somerset",
+    "Sullivan",
+    "Susquehanna",
+    "Tioga",
+    "Union",
+    "Venango",
+    "Warren",
+    "Washington",
+    "Wayne",
+    "Westmoreland",
+    "Wyoming",
+    "York"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas del sheriff · Excedentes de ventas Upset por impuestos · Propiedad no reclamada de Pensilvania · Recuperación para herederos, en los 67 condados de Pensilvania.",
+ "ctaTitle": "Descubra lo que Pensilvania guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Pensilvania y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Pensilvania | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Pensilvania. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

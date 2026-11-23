@@ -1,0 +1,69 @@
+{
+ "slug": "arizona",
+ "name": "Arizona",
+ "badge": "Arizona · All 15 Counties · No Upfront Cost",
+ "h1Lead": "Surplus Fund Recovery",
+ "h1Accent": "in Arizona.",
+ "intro": "Courts, county clerks, and state agencies in Arizona are holding funds belonging to former property owners and residents. RCG monitors all 15 Arizona counties and recovers these funds at no upfront cost.",
+ "stats": [
+  {
+   "val": "15",
+   "label": "Counties Monitored"
+  },
+  {
+   "val": "Nationwide",
+   "label": "RCG Coverage"
+  },
+  {
+   "val": "$0",
+   "label": "Upfront Cost"
+  },
+  {
+   "val": "60-90d",
+   "label": "Avg. Claim Timeline"
+  }
+ ],
+ "body": {
+  "tag": "Arizona Recovery",
+  "title": "Recovery in Arizona. All 15 Counties.",
+  "points": [
+   "Foreclosure Surplus Funds",
+   "Tax Sale Overages",
+   "Arizona Unclaimed Property",
+   "Estate and Heir Recovery",
+   "Court-Held Excess Proceeds"
+  ],
+  "paragraphs": [
+   "Maricopa, Pima, and Pinal counties account for the majority of Arizona foreclosure surplus cases. Arizona trustee sales and tax lien certificate auctions frequently generate overages held by the county treasurer or superior court.",
+   "The Arizona Department of Revenue Unclaimed Property Division holds millions in dormant accounts, insurance proceeds, and other assets belonging to Arizona residents. RCG searches all Arizona superior court records and state unclaimed property databases for every Arizona client."
+  ],
+  "callout": "Claims are filed through our network of licensed attorneys in Arizona. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
+ },
+ "lists": [
+  {
+   "title": "All 15 Arizona Counties.",
+   "intro": "RCG monitors foreclosure surplus funds, tax sale overages, and unclaimed property across every county in Arizona. If funds exist in your name in any Arizona county, we will find them and recover them.",
+   "unit": "County",
+   "items": [
+    "Apache",
+    "Cochise",
+    "Coconino",
+    "Gila",
+    "Graham",
+    "Greenlee",
+    "La Paz",
+    "Maricopa",
+    "Mohave",
+    "Navajo",
+    "Pima",
+    "Pinal",
+    "Santa Cruz",
+    "Yavapai",
+    "Yuma"
+   ]
+  }
+ ],
+ "footerLine": "Trustee sale surplus · Tax lien certificate overages · Arizona unclaimed property · Estate and heir recovery · Excess proceeds from court sales, available across all 15 Arizona counties.",
+ "ctaTitle": "Find Out What Arizona Is Holding in Your Name.",
+ "ctaText": "We search Arizona court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
+}
