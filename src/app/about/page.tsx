@@ -11,12 +11,6 @@ export const metadata: Metadata = {
   description: 'Rebound Capital Group helps homeowners facing foreclosure and recovers foreclosure surplus, tax deed overages and unclaimed property for former owners and heirs. Miami Beach, FL. No upfront cost.',
 }
 
-const values = [
-  { title: 'No recovery, no fee', desc: 'Pure contingency. We absorb every cost, handle all filings, and coordinate with attorneys in our network on your behalf. You pay nothing unless we put money in your hands.' },
-  { title: 'We find you first', desc: 'Most clients had no idea money existed until we called. Our system monitors over 1,000 county court systems and identifies surplus before deadlines close.' },
-  { title: 'The right professionals at every step', desc: 'Claims are filed through our network of licensed attorneys in the state where the funds are held, with support from licensed private investigators. RCG coordinates the process. We do not practice law.' },
-  { title: 'Deadline-driven', desc: 'Some claim windows are short. We track every deadline and have never missed a filing date on a signed case.' },
-]
 
 const story = [
   { tag: 'The problem', title: 'Money left behind, owners never told', text: 'Years in real estate showed the same pattern: after a foreclosure or tax sale, money was often still sitting in a courthouse or state account, legally owed to the former owner. Most never heard about it.' },
@@ -68,6 +62,10 @@ export default function AboutPage() {
           <figcaption>
             <span className={s.photoName}>Raul Ibañez</span>
             <span className={s.photoRole}>Founder &amp; President</span>
+            <a href="https://www.linkedin.com/in/raulibanez305" target="_blank" rel="noopener noreferrer" className={s.linkedin} aria-label="Raul Ibañez on LinkedIn">
+              <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3zM5.3 7.4a2.1 2.1 0 110-4.1 2.1 2.1 0 010 4.1zM7.1 20.5H3.6V9h3.5v11.5z" /></svg>
+              Connect on LinkedIn
+            </a>
           </figcaption>
         </figure>
         <div className={s.founderText}>
@@ -78,21 +76,6 @@ export default function AboutPage() {
             <p>Over the years he built hands-on experience across real estate transactions, recovery matters and claim-related work, on cases ranging from local disputes to complex national matters. That experience shapes how RCG works: grounded, informed, and built to recover what rightfully belongs to the client.</p>
           </div>
           <TrustRow />
-        </div>
-      </div>
-
-      {/* VALUES */}
-      <div className={`${h.wrap} ${s.block}`}>
-        <div className={sv.tag}>How we operate</div>
-        <h2 className={`${sv.h2} ${sv.mb}`}>What sets us apart.</h2>
-        <div className={s.values}>
-          {values.map((v, i) => (
-            <div key={v.title} className={s.value}>
-              <span className={s.valueN}>{String(i + 1).padStart(2, '0')}</span>
-              <span className={s.valueTitle}>{v.title}</span>
-              <span className={s.valueDesc}>{v.desc}</span>
-            </div>
-          ))}
         </div>
       </div>
 
