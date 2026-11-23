@@ -1,0 +1,116 @@
+{
+ "slug": "california",
+ "name": "California",
+ "badge": "California · Los 58 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en California.",
+ "intro": "California guarda más propiedad no reclamada que cualquier otro estado del país, más de $15 mil millones. RCG vigila los 58 condados de California y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "58",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$15B",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en California",
+  "title": "Recuperación en California. El estado con más sobrantes.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Excedentes de ventas por fideicomisario",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de California",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Los Ángeles, Orange, San Diego, Riverside y San Bernardino tienen el mayor volumen de casos de fondos excedentes en California. California usa principalmente la ejecución extrajudicial mediante escritura de fideicomiso y venta por fideicomisario. Los excedentes de la venta por fideicomisario se rigen por la Sección 2924j del Código Civil de California, que exige al fideicomisario depositar el sobrante con el secretario del condado después de pagar a los acreedores con gravámenes posteriores. Los antiguos dueños tienen el derecho legal de reclamar los excedentes que queden.",
+   "Las ventas por impuestos que realizan los recaudadores de impuestos de los condados de California también dejan excedentes, regidos por la Sección 4675 del Código de Ingresos e Impuestos. El Programa de Propiedad No Reclamada de California, administrado por el Contralor del Estado a través de ClaimIt.ca.gov, guarda más de $15 mil millones, más que cualquier otro estado, en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de California. RCG busca en los registros de los tribunales superiores, los registros de ventas por fideicomisario y por impuestos de los condados, y las bases de datos estatales de propiedad no reclamada para cada cliente de California."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en California. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 58 condados de California.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, excedentes de ventas por fideicomisario y propiedad no reclamada en todos los condados de California. Si hay fondos a su nombre en cualquier condado de California, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Alameda",
+    "Alpine",
+    "Amador",
+    "Butte",
+    "Calaveras",
+    "Colusa",
+    "Contra Costa",
+    "Del Norte",
+    "El Dorado",
+    "Fresno",
+    "Glenn",
+    "Humboldt",
+    "Imperial",
+    "Inyo",
+    "Kern",
+    "Kings",
+    "Lake",
+    "Lassen",
+    "Los Angeles",
+    "Madera",
+    "Marin",
+    "Mariposa",
+    "Mendocino",
+    "Merced",
+    "Modoc",
+    "Mono",
+    "Monterey",
+    "Napa",
+    "Nevada",
+    "Orange",
+    "Placer",
+    "Plumas",
+    "Riverside",
+    "Sacramento",
+    "San Benito",
+    "San Bernardino",
+    "San Diego",
+    "San Francisco",
+    "San Joaquin",
+    "San Luis Obispo",
+    "San Mateo",
+    "Santa Barbara",
+    "Santa Clara",
+    "Santa Cruz",
+    "Shasta",
+    "Sierra",
+    "Siskiyou",
+    "Solano",
+    "Sonoma",
+    "Stanislaus",
+    "Sutter",
+    "Tehama",
+    "Trinity",
+    "Tulare",
+    "Tuolumne",
+    "Ventura",
+    "Yolo",
+    "Yuba"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Excedentes de ventas por fideicomisario · Sobrantes de ventas por impuestos · Propiedad no reclamada de California · Recuperación para herederos, en los 58 condados de California.",
+ "ctaTitle": "Descubra lo que California guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de California, los registros de ventas por fideicomisario de los condados y las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en California | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en California. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

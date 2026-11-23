@@ -1,0 +1,66 @@
+{
+ "slug": "connecticut",
+ "name": "Connecticut",
+ "badge": "Connecticut · Los 8 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Connecticut.",
+ "intro": "Los tribunales, condados y agencias del estado de Connecticut guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 8 condados de Connecticut y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "8",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$940M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Connecticut",
+  "title": "Recuperación en Connecticut. Los 8 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Recuperación tras ejecución estricta",
+   "Propiedad no reclamada de Connecticut",
+   "Recuperación para herederos",
+   "Excedentes retenidos por tribunales"
+  ],
+  "paragraphs": [
+   "Los condados de Fairfield, Hartford y New Haven tienen el mayor volumen de casos de fondos excedentes en Connecticut. Connecticut usa un proceso de ejecución judicial que incluye la ejecución con venta, que puede dejar fondos excedentes, y la ejecución estricta, en la que el título pasa directamente al prestamista. Los sobrantes de la ejecución con venta los guarda el Tribunal Superior de Connecticut hasta que se reclaman.",
+   "La División de Propiedad No Reclamada de la Oficina del Tesorero de Connecticut guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Connecticut. RCG busca en los registros del Tribunal Superior de Connecticut, los registros municipales de ventas por impuestos y las bases de datos estatales de propiedad no reclamada para cada cliente de Connecticut."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Connecticut. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 8 condados de Connecticut.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en todos los condados de Connecticut. Si hay fondos a su nombre en cualquier condado de Connecticut, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Fairfield",
+    "Hartford",
+    "Litchfield",
+    "Middlesex",
+    "New Haven",
+    "New London",
+    "Tolland",
+    "Windham"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ejecuciones con venta · Propiedad no reclamada de Connecticut · Recuperación para herederos · Excedentes de ventas judiciales, en los 8 condados de Connecticut.",
+ "ctaTitle": "Descubra lo que Connecticut guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Connecticut y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Connecticut | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Connecticut. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

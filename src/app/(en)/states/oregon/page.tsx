@@ -1,101 +1,12 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/oregon.json'
 
 export const metadata: Metadata = {
   title: "Oregon Surplus Funds Recovery | All Counties | RCG",
   description: "Recover foreclosure surplus, tax deed overages, and unclaimed property in Oregon. Rebound Capital Group files through our network of licensed attorneys at no upfront cost, you pay nothing until we recover.",
 }
 
-const data = {
-  "slug": "oregon",
-  "name": "Oregon",
-  "badge": "Oregon · All 36 Counties · No Upfront Cost",
-  "h1Lead": "Surplus Fund Recovery",
-  "h1Accent": "in Oregon.",
-  "intro": "Courts, county sheriffs, and state agencies in Oregon are holding funds belonging to former property owners and residents. RCG monitors all 36 Oregon counties and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "36",
-      "label": "Counties Monitored"
-    },
-    {
-      "val": "$780M",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "Oregon Recovery",
-    "title": "Recovery in Oregon. All 36 Counties.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Trustee Sale Overages",
-      "Tax Foreclosure Excess",
-      "Oregon Unclaimed Property",
-      "Estate and Heir Recovery"
-    ],
-    "paragraphs": [
-      "Multnomah, Washington, Clackamas, and Lane counties generate the highest volume of Oregon foreclosure surplus cases. Oregon allows both judicial and non-judicial foreclosure. Non-judicial trustee sale surplus funds are held by the trustee until claimed by the former owner, while judicial foreclosure surplus is deposited with the Oregon Circuit Court.",
-      "The Oregon Unclaimed Property Program, administered by the Oregon State Treasury, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Oregon residents. RCG searches Oregon Circuit Court records, county trustee sale records, and state unclaimed property databases for every Oregon client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in Oregon. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All 36 Oregon Counties.",
-      "intro": "RCG monitors foreclosure surplus funds, trustee sale overages, and unclaimed property across every county in Oregon. If funds exist in your name in any Oregon county, we will find them and recover them.",
-      "unit": "County",
-      "items": [
-        "Baker",
-        "Benton",
-        "Clackamas",
-        "Clatsop",
-        "Columbia",
-        "Coos",
-        "Crook",
-        "Curry",
-        "Deschutes",
-        "Douglas",
-        "Gilliam",
-        "Grant",
-        "Harney",
-        "Hood River",
-        "Jackson",
-        "Jefferson",
-        "Josephine",
-        "Klamath",
-        "Lake",
-        "Lane",
-        "Lincoln",
-        "Linn",
-        "Malheur",
-        "Marion",
-        "Morrow",
-        "Multnomah",
-        "Polk",
-        "Sherman",
-        "Tillamook",
-        "Umatilla",
-        "Union",
-        "Wallowa",
-        "Wasco",
-        "Washington",
-        "Wheeler",
-        "Yamhill"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Trustee sale overages · Tax foreclosure excess proceeds · Oregon unclaimed property · Estate and heir recovery, available across all 36 Oregon counties.",
-  "ctaTitle": "Find Out What Oregon Is Holding in Your Name.",
-  "ctaText": "We search Oregon court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function OregonPage() {
   return <StatePage {...data} />

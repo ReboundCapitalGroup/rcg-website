@@ -1,0 +1,79 @@
+{
+ "slug": "new-jersey",
+ "name": "Nueva Jersey",
+ "badge": "Nueva Jersey · Los 21 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Nueva Jersey.",
+ "intro": "Los tribunales, condados y agencias del estado de Nueva Jersey guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 21 condados de Nueva Jersey y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "21",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$2.8B",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Nueva Jersey",
+  "title": "Recuperación en Nueva Jersey. Los 21 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas del sheriff",
+   "Recuperación de certificados de venta por impuestos",
+   "Propiedad no reclamada de Nueva Jersey",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Nueva Jersey tiene uno de los mayores volúmenes de ejecuciones del país, y los condados de Essex, Hudson, Bergen, Middlesex y Ocean encabezan los casos de fondos excedentes. Nueva Jersey usa un proceso de ejecución judicial y cada condado hace sus ventas del sheriff. Los sobrantes de las ventas del sheriff se depositan en la Unidad de Fondos en Fideicomiso del Tribunal Superior de Nueva Jersey hasta que el antiguo dueño los reclama.",
+   "Los certificados de venta por impuestos en Nueva Jersey también pueden dejar fondos excedentes cuando las propiedades se ejecutan y se revenden. La Administración de Propiedad No Reclamada de Nueva Jersey, del Departamento del Tesoro del estado, guarda cientos de millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Nueva Jersey. RCG busca en los registros del Tribunal Superior, los registros de ventas del sheriff de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Nueva Jersey."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Nueva Jersey. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 21 condados de Nueva Jersey.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas del sheriff y propiedad no reclamada en todos los condados de Nueva Jersey. Si hay fondos a su nombre en cualquier condado de Nueva Jersey, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Atlantic",
+    "Bergen",
+    "Burlington",
+    "Camden",
+    "Cape May",
+    "Cumberland",
+    "Essex",
+    "Gloucester",
+    "Hudson",
+    "Hunterdon",
+    "Mercer",
+    "Middlesex",
+    "Monmouth",
+    "Morris",
+    "Ocean",
+    "Passaic",
+    "Salem",
+    "Somerset",
+    "Sussex",
+    "Union",
+    "Warren"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas del sheriff · Recuperación de certificados de venta por impuestos · Propiedad no reclamada de Nueva Jersey · Recuperación para herederos, en los 21 condados de Nueva Jersey.",
+ "ctaTitle": "Descubra lo que Nueva Jersey guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Nueva Jersey y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Nueva Jersey | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Nueva Jersey. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

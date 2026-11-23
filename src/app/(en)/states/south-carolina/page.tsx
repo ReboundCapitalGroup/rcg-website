@@ -1,111 +1,12 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/south-carolina.json'
 
 export const metadata: Metadata = {
   title: "South Carolina Surplus Funds Recovery | All Counties | RCG",
   description: "Recover foreclosure surplus, tax deed overages, and unclaimed property in South Carolina. Rebound Capital Group files through our network of licensed attorneys at no upfront cost, you pay nothing until we recover.",
 }
 
-const data = {
-  "slug": "south-carolina",
-  "name": "South Carolina",
-  "badge": "South Carolina · All 46 Counties · No Upfront Cost",
-  "h1Lead": "Surplus Fund Recovery",
-  "h1Accent": "in South Carolina.",
-  "intro": "Courts, county treasurers, and state agencies in South Carolina are holding funds belonging to former property owners and residents. RCG monitors all 46 South Carolina counties and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "46",
-      "label": "Counties Monitored"
-    },
-    {
-      "val": "$620M",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "South Carolina Recovery",
-    "title": "Recovery in South Carolina. All 46 Counties.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Tax Sale Overages",
-      "Master-in-Equity Sale Surplus",
-      "South Carolina Unclaimed Property",
-      "Estate and Heir Recovery"
-    ],
-    "paragraphs": [
-      "Greenville, Richland, Charleston, Horry, and Spartanburg counties generate the highest volume of South Carolina foreclosure surplus cases. South Carolina is a judicial foreclosure state, and foreclosure sales are typically conducted by the Master-in-Equity or Clerk of Court. Surplus funds from these sales are held by the court until claimed by the former owner. South Carolina tax sale overages are held by county treasurers and are one of the most valuable surplus categories in the state.",
-      "The South Carolina Unclaimed Property Program, administered by the State Treasurer, holds hundreds of millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to South Carolina residents. RCG searches South Carolina court records, county tax sale records, and state unclaimed property databases for every South Carolina client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in South Carolina. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All 46 South Carolina Counties.",
-      "intro": "RCG monitors foreclosure surplus funds, tax sale overages, and unclaimed property across every county in South Carolina. If funds exist in your name in any South Carolina county, we will find them and recover them.",
-      "unit": "County",
-      "items": [
-        "Abbeville",
-        "Aiken",
-        "Allendale",
-        "Anderson",
-        "Bamberg",
-        "Barnwell",
-        "Beaufort",
-        "Berkeley",
-        "Calhoun",
-        "Charleston",
-        "Cherokee",
-        "Chester",
-        "Chesterfield",
-        "Clarendon",
-        "Colleton",
-        "Darlington",
-        "Dillon",
-        "Dorchester",
-        "Edgefield",
-        "Fairfield",
-        "Florence",
-        "Georgetown",
-        "Greenville",
-        "Greenwood",
-        "Hampton",
-        "Horry",
-        "Jasper",
-        "Kershaw",
-        "Lancaster",
-        "Laurens",
-        "Lee",
-        "Lexington",
-        "Marion",
-        "Marlboro",
-        "McCormick",
-        "Newberry",
-        "Oconee",
-        "Orangeburg",
-        "Pickens",
-        "Richland",
-        "Saluda",
-        "Spartanburg",
-        "Sumter",
-        "Union",
-        "Williamsburg",
-        "York"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Tax sale overages · Master-in-Equity sale surplus · South Carolina unclaimed property · Estate and heir recovery, available across all 46 South Carolina counties.",
-  "ctaTitle": "Find Out What South Carolina Is Holding in Your Name.",
-  "ctaText": "We search South Carolina court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function SouthCarolinaPage() {
   return <StatePage {...data} />

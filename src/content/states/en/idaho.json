@@ -1,0 +1,98 @@
+{
+ "slug": "idaho",
+ "name": "Idaho",
+ "badge": "Idaho · All 44 Counties · No Upfront Cost",
+ "h1Lead": "Foreclosure Help & Surplus Funds",
+ "h1Accent": "in Idaho.",
+ "intro": "Courts, county treasurers, and state agencies in Idaho are holding funds belonging to former property owners and residents. RCG monitors all 44 Idaho counties and recovers these funds at no upfront cost.",
+ "stats": [
+  {
+   "val": "44",
+   "label": "Counties Monitored"
+  },
+  {
+   "val": "$218M",
+   "label": "Unclaimed Funds Held"
+  },
+  {
+   "val": "$0",
+   "label": "Upfront Cost"
+  },
+  {
+   "val": "60-90d",
+   "label": "Avg. Claim Timeline"
+  }
+ ],
+ "body": {
+  "tag": "Idaho Recovery",
+  "title": "Recovery in Idaho. All 44 Counties.",
+  "points": [
+   "Foreclosure Surplus Funds",
+   "Trustee Sale Overages",
+   "Tax Deed Excess Proceeds",
+   "Idaho Unclaimed Property",
+   "Estate and Heir Recovery"
+  ],
+  "paragraphs": [
+   "Ada, Canyon, Kootenai, and Bonneville counties generate the highest volume of Idaho foreclosure surplus cases. Idaho is primarily a non-judicial foreclosure state using a deed of trust and trustee sale process. Trustee sale surplus funds are held by the trustee until claimed, while judicial foreclosures deposit surplus with the Idaho district court.",
+   "The Idaho Unclaimed Property Division, administered by the state Treasurer through YourMoney.Idaho.gov, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Idaho residents. RCG searches Idaho district court records, county trustee sale records, and state unclaimed property databases for every Idaho client."
+  ],
+  "callout": "Claims are filed through our network of licensed attorneys in Idaho. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
+ },
+ "lists": [
+  {
+   "title": "All 44 Idaho Counties.",
+   "intro": "RCG monitors foreclosure surplus funds, trustee sale overages, and unclaimed property across every county in Idaho. If funds exist in your name in any Idaho county, we will find them and recover them.",
+   "unit": "County",
+   "items": [
+    "Ada",
+    "Adams",
+    "Bannock",
+    "Bear Lake",
+    "Benewah",
+    "Bingham",
+    "Blaine",
+    "Boise",
+    "Bonner",
+    "Bonneville",
+    "Boundary",
+    "Butte",
+    "Camas",
+    "Canyon",
+    "Caribou",
+    "Cassia",
+    "Clark",
+    "Clearwater",
+    "Custer",
+    "Elmore",
+    "Franklin",
+    "Fremont",
+    "Gem",
+    "Gooding",
+    "Idaho",
+    "Jefferson",
+    "Jerome",
+    "Kootenai",
+    "Latah",
+    "Lemhi",
+    "Lewis",
+    "Lincoln",
+    "Madison",
+    "Minidoka",
+    "Nez Perce",
+    "Oneida",
+    "Owyhee",
+    "Payette",
+    "Power",
+    "Shoshone",
+    "Teton",
+    "Twin Falls",
+    "Valley",
+    "Washington"
+   ]
+  }
+ ],
+ "footerLine": "Foreclosure surplus funds · Trustee sale overages · Tax deed excess proceeds · Idaho unclaimed property · Estate and heir recovery, available across all 44 Idaho counties.",
+ "ctaTitle": "Find Out What Idaho Is Holding in Your Name.",
+ "ctaText": "We search Idaho court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
+}

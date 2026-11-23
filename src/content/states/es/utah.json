@@ -1,0 +1,87 @@
+{
+ "slug": "utah",
+ "name": "Utah",
+ "badge": "Utah · Los 29 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Utah.",
+ "intro": "Los tribunales, condados y agencias del estado de Utah guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 29 condados de Utah y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "29",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$490M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Utah",
+  "title": "Recuperación en Utah. Los 29 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por fideicomisario",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Utah",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Salt Lake, Utah, Davis y Weber tienen el mayor volumen de casos de fondos excedentes en Utah. Utah usa principalmente la ejecución extrajudicial mediante escritura de fideicomiso y venta por fideicomisario. Los sobrantes de la venta los guarda el fideicomisario o se depositan en el tribunal de distrito de Utah hasta que el antiguo dueño los reclama. Las ventas por impuestos que hacen los tesoreros de los condados también pueden dejar excedentes.",
+   "La División de Propiedad No Reclamada de Utah, administrada por el Tesorero del estado a través de MyCash.Utah.gov, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Utah. RCG busca en los registros de los tribunales de distrito, los registros de ventas por fideicomisario de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Utah."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Utah. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 29 condados de Utah.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por fideicomisario y propiedad no reclamada en todos los condados de Utah. Si hay fondos a su nombre en cualquier condado de Utah, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Beaver",
+    "Box Elder",
+    "Cache",
+    "Carbon",
+    "Daggett",
+    "Davis",
+    "Duchesne",
+    "Emery",
+    "Garfield",
+    "Grand",
+    "Iron",
+    "Juab",
+    "Kane",
+    "Millard",
+    "Morgan",
+    "Piute",
+    "Rich",
+    "Salt Lake",
+    "San Juan",
+    "Sanpete",
+    "Sevier",
+    "Summit",
+    "Tooele",
+    "Uintah",
+    "Utah",
+    "Wasatch",
+    "Washington",
+    "Wayne",
+    "Weber"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por fideicomisario · Sobrantes de ventas por impuestos · Propiedad no reclamada de Utah · Recuperación para herederos, en los 29 condados de Utah.",
+ "ctaTitle": "Descubra lo que Utah guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Utah y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Utah | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Utah. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

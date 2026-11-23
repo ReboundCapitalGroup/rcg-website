@@ -1,0 +1,75 @@
+{
+ "slug": "nevada",
+ "name": "Nevada",
+ "badge": "Nevada · Los 17 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Nevada.",
+ "intro": "Los tribunales, condados y agencias del estado de Nevada guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 17 condados de Nevada y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "17",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$840M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Nevada",
+  "title": "Recuperación en Nevada. Los 17 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por fideicomisario",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Nevada",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "El condado de Clark, que incluye Las Vegas y Henderson, tiene por mucho el mayor volumen de casos de fondos excedentes en Nevada. El condado de Washoe, que incluye Reno, es el segundo mercado más grande. Nevada usa principalmente la ejecución extrajudicial, y los sobrantes de la venta por fideicomisario los guarda el fideicomisario o se depositan con el tesorero del condado hasta que el antiguo dueño los reclama.",
+   "Los tesoreros de los condados de Nevada también guardan excedentes de ventas por impuestos. La División de Propiedad No Reclamada de Nevada, administrada por el Tesorero del estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, fichas de casino, cheques sin cobrar y otros bienes de residentes y visitantes de Nevada. RCG busca en los registros de los tribunales de distrito, los registros de ventas por fideicomisario de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Nevada."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Nevada. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 17 condados de Nevada.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por fideicomisario y propiedad no reclamada en todos los condados de Nevada. Si hay fondos a su nombre en cualquier condado de Nevada, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Carson City",
+    "Churchill",
+    "Clark",
+    "Douglas",
+    "Elko",
+    "Esmeralda",
+    "Eureka",
+    "Humboldt",
+    "Lander",
+    "Lincoln",
+    "Lyon",
+    "Mineral",
+    "Nye",
+    "Pershing",
+    "Storey",
+    "Washoe",
+    "White Pine"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por fideicomisario · Sobrantes de ventas por impuestos · Propiedad no reclamada de Nevada · Recuperación para herederos, en los 17 condados de Nevada y Carson City.",
+ "ctaTitle": "Descubra lo que Nevada guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Nevada, los registros de ventas por fideicomisario y las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Nevada | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Nevada. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

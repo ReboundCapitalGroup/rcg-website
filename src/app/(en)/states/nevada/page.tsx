@@ -1,82 +1,12 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/nevada.json'
 
 export const metadata: Metadata = {
   title: "Nevada Surplus Funds Recovery | All Counties | RCG",
   description: "Recover foreclosure surplus, tax deed overages, and unclaimed property in Nevada. Rebound Capital Group files through our network of licensed attorneys at no upfront cost, you pay nothing until we recover.",
 }
 
-const data = {
-  "slug": "nevada",
-  "name": "Nevada",
-  "badge": "Nevada · All 17 Counties · No Upfront Cost",
-  "h1Lead": "Surplus Fund Recovery",
-  "h1Accent": "in Nevada.",
-  "intro": "Courts, county treasurers, and state agencies in Nevada are holding funds belonging to former property owners and residents. RCG monitors all 17 Nevada counties and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "17",
-      "label": "Counties Monitored"
-    },
-    {
-      "val": "$840M",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "Nevada Recovery",
-    "title": "Recovery in Nevada. All 17 Counties.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Trustee Sale Overages",
-      "Tax Deed Excess Proceeds",
-      "Nevada Unclaimed Property",
-      "Estate and Heir Recovery"
-    ],
-    "paragraphs": [
-      "Clark County, which includes Las Vegas and Henderson, generates by far the highest volume of Nevada foreclosure surplus cases. Washoe County, which includes Reno, is the second largest market. Nevada is primarily a non-judicial foreclosure state, and trustee sale surplus funds are held by the trustee or deposited with the county treasurer until claimed by the former owner.",
-      "Nevada county treasurers also hold excess proceeds from tax deed sales. The Nevada Unclaimed Property Division, administered by the state Treasurer, holds millions in dormant bank accounts, insurance proceeds, gaming chips, uncashed checks, and other assets belonging to Nevada residents and visitors. RCG searches Nevada district court records, county trustee sale records, and state unclaimed property databases for every Nevada client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in Nevada. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All 17 Nevada Counties.",
-      "intro": "RCG monitors foreclosure surplus funds, trustee sale overages, and unclaimed property across every county in Nevada. If funds exist in your name in any Nevada county, we will find them and recover them.",
-      "unit": "County",
-      "items": [
-        "Carson City",
-        "Churchill",
-        "Clark",
-        "Douglas",
-        "Elko",
-        "Esmeralda",
-        "Eureka",
-        "Humboldt",
-        "Lander",
-        "Lincoln",
-        "Lyon",
-        "Mineral",
-        "Nye",
-        "Pershing",
-        "Storey",
-        "Washoe",
-        "White Pine"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Trustee sale overages · Tax deed excess proceeds · Nevada unclaimed property · Estate and heir recovery, available across all 17 Nevada counties and Carson City.",
-  "ctaTitle": "Find Out What Nevada Is Holding in Your Name.",
-  "ctaText": "We search Nevada court records, trustee sale records, and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function NevadaPage() {
   return <StatePage {...data} />

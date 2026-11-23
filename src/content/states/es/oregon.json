@@ -1,0 +1,94 @@
+{
+ "slug": "oregon",
+ "name": "Oregón",
+ "badge": "Oregón · Los 36 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Oregón.",
+ "intro": "Los tribunales, condados y agencias del estado de Oregón guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 36 condados de Oregón y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "36",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$780M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Oregón",
+  "title": "Recuperación en Oregón. Los 36 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por fideicomisario",
+   "Excedentes de ejecuciones fiscales",
+   "Propiedad no reclamada de Oregón",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Multnomah, Washington, Clackamas y Lane tienen el mayor volumen de casos de fondos excedentes en Oregón. Oregón permite la ejecución judicial y la extrajudicial. Los sobrantes de la venta extrajudicial por fideicomisario los guarda el fideicomisario hasta que el antiguo dueño los reclama, mientras que el sobrante de la ejecución judicial se deposita en el Tribunal de Circuito de Oregón.",
+   "El Programa de Propiedad No Reclamada de Oregón, administrado por el Tesoro del Estado de Oregón, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Oregón. RCG busca en los registros del Tribunal de Circuito, los registros de ventas por fideicomisario de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Oregón."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Oregón. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 36 condados de Oregón.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por fideicomisario y propiedad no reclamada en todos los condados de Oregón. Si hay fondos a su nombre en cualquier condado de Oregón, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Baker",
+    "Benton",
+    "Clackamas",
+    "Clatsop",
+    "Columbia",
+    "Coos",
+    "Crook",
+    "Curry",
+    "Deschutes",
+    "Douglas",
+    "Gilliam",
+    "Grant",
+    "Harney",
+    "Hood River",
+    "Jackson",
+    "Jefferson",
+    "Josephine",
+    "Klamath",
+    "Lake",
+    "Lane",
+    "Lincoln",
+    "Linn",
+    "Malheur",
+    "Marion",
+    "Morrow",
+    "Multnomah",
+    "Polk",
+    "Sherman",
+    "Tillamook",
+    "Umatilla",
+    "Union",
+    "Wallowa",
+    "Wasco",
+    "Washington",
+    "Wheeler",
+    "Yamhill"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por fideicomisario · Excedentes de ejecuciones fiscales · Propiedad no reclamada de Oregón · Recuperación para herederos, en los 36 condados de Oregón.",
+ "ctaTitle": "Descubra lo que Oregón guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Oregón y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Oregón | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Oregón. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

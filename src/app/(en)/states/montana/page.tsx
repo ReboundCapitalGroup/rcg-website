@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/montana.json'
 
 export const metadata: Metadata = {
   title: "Montana Foreclosure Surplus: You May Be Owed Money | RCG",
@@ -12,116 +13,6 @@ export const metadata: Metadata = {
   },
 }
 
-const data = {
-  "slug": "montana",
-  "name": "Montana",
-  "badge": "Montana · All 56 Counties · No Upfront Cost",
-  "h1Lead": "Foreclosure Help & Surplus Funds",
-  "h1Accent": "in Montana.",
-  "intro": "Courts, county treasurers, and state agencies in Montana are holding funds belonging to former property owners and residents. RCG monitors all 56 Montana counties and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "56",
-      "label": "Counties Monitored"
-    },
-    {
-      "val": "$148M",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "Montana Recovery",
-    "title": "Recovery in Montana. All 56 Counties.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Trustee Sale Overages",
-      "Tax Deed Excess Proceeds",
-      "Montana Unclaimed Property",
-      "Estate and Heir Recovery"
-    ],
-    "paragraphs": [
-      "Yellowstone, Gallatin, Missoula, and Flathead counties generate the highest volume of Montana foreclosure surplus cases. Montana allows both judicial and non-judicial foreclosure. Trustee sales under the Small Tract Financing Act can produce surplus funds held by the trustee, while judicial foreclosures deposit surplus with the Montana district court until claimed by the former owner.",
-      "The Montana Unclaimed Property Program, administered by the state Department of Revenue, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Montana residents. RCG searches Montana district court records, county trustee sale records, and state unclaimed property databases for every Montana client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in Montana. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All 56 Montana Counties.",
-      "intro": "RCG monitors foreclosure surplus funds, trustee sale overages, and unclaimed property across every county in Montana. If funds exist in your name in any Montana county, we will find them and recover them.",
-      "unit": "County",
-      "items": [
-        "Beaverhead",
-        "Big Horn",
-        "Blaine",
-        "Broadwater",
-        "Carbon",
-        "Carter",
-        "Cascade",
-        "Chouteau",
-        "Custer",
-        "Daniels",
-        "Dawson",
-        "Deer Lodge",
-        "Fallon",
-        "Fergus",
-        "Flathead",
-        "Gallatin",
-        "Garfield",
-        "Glacier",
-        "Golden Valley",
-        "Granite",
-        "Hill",
-        "Jefferson",
-        "Judith Basin",
-        "Lake",
-        "Lewis and Clark",
-        "Liberty",
-        "Lincoln",
-        "Madison",
-        "McCone",
-        "Meagher",
-        "Mineral",
-        "Missoula",
-        "Musselshell",
-        "Park",
-        "Petroleum",
-        "Phillips",
-        "Pondera",
-        "Powder River",
-        "Powell",
-        "Prairie",
-        "Ravalli",
-        "Richland",
-        "Roosevelt",
-        "Rosebud",
-        "Sanders",
-        "Sheridan",
-        "Silver Bow",
-        "Stillwater",
-        "Sweet Grass",
-        "Teton",
-        "Toole",
-        "Treasure",
-        "Valley",
-        "Wheatland",
-        "Wibaux",
-        "Yellowstone"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Trustee sale overages · Tax deed excess proceeds · Montana unclaimed property · Estate and heir recovery, available across all 56 Montana counties.",
-  "ctaTitle": "Find Out What Montana Is Holding in Your Name.",
-  "ctaText": "We search Montana court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function MontanaPage() {
   return <StatePage {...data} />

@@ -1,0 +1,122 @@
+{
+ "slug": "louisiana",
+ "name": "Luisiana",
+ "badge": "Luisiana · Las 64 parroquias · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Luisiana.",
+ "intro": "Los tribunales, condados y agencias del estado de Luisiana guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila las 64 parroquias de Luisiana y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "64",
+   "label": "Parroquias vigiladas"
+  },
+  {
+   "val": "$720M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Luisiana",
+  "title": "Recuperación en Luisiana. Las 64 parroquias.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas del sheriff",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Luisiana",
+   "Recuperación de sucesiones y herederos"
+  ],
+  "paragraphs": [
+   "Luisiana usa parroquias (parishes) en vez de condados. Las parroquias de East Baton Rouge, Jefferson, Orleans y Caddo tienen el mayor volumen de casos de fondos excedentes en Luisiana. Luisiana es un estado de ejecución judicial que usa el proceso ejecutivo o el proceso ordinario, y los sobrantes de las ventas del sheriff se depositan en el tribunal civil de distrito de la parroquia hasta que el antiguo dueño los reclama.",
+   "Las ventas por impuestos en Luisiana pueden dejar excedentes que guardan los recaudadores de impuestos de las parroquias. El sistema de derecho civil de Luisiana también usa sucesiones (successions) en vez de probate, y la recuperación de propiedades de herederos muchas veces implica trámites de sucesión de varias generaciones. El Programa de Propiedad No Reclamada de Luisiana, administrado por el Tesorero del Estado, guarda cientos de millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes. RCG busca en los registros de los tribunales civiles de distrito, los registros de ventas del sheriff de las parroquias y las bases de datos estatales de propiedad no reclamada para cada cliente de Luisiana."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Luisiana. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Las 64 parroquias de Luisiana.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas del sheriff y propiedad no reclamada en todas las parroquias de Luisiana. Si hay fondos a su nombre en cualquier parroquia de Luisiana, los encontramos y los recuperamos.",
+   "unit": "Parish",
+   "items": [
+    "Acadia",
+    "Allen",
+    "Ascension",
+    "Assumption",
+    "Avoyelles",
+    "Beauregard",
+    "Bienville",
+    "Bossier",
+    "Caddo",
+    "Calcasieu",
+    "Caldwell",
+    "Cameron",
+    "Catahoula",
+    "Claiborne",
+    "Concordia",
+    "De Soto",
+    "East Baton Rouge",
+    "East Carroll",
+    "East Feliciana",
+    "Evangeline",
+    "Franklin",
+    "Grant",
+    "Iberia",
+    "Iberville",
+    "Jackson",
+    "Jefferson",
+    "Jefferson Davis",
+    "Lafayette",
+    "Lafourche",
+    "LaSalle",
+    "Lincoln",
+    "Livingston",
+    "Madison",
+    "Morehouse",
+    "Natchitoches",
+    "Orleans",
+    "Ouachita",
+    "Plaquemines",
+    "Pointe Coupee",
+    "Rapides",
+    "Red River",
+    "Richland",
+    "Sabine",
+    "St. Bernard",
+    "St. Charles",
+    "St. Helena",
+    "St. James",
+    "St. John the Baptist",
+    "St. Landry",
+    "St. Martin",
+    "St. Mary",
+    "St. Tammany",
+    "Tangipahoa",
+    "Tensas",
+    "Terrebonne",
+    "Union",
+    "Vermilion",
+    "Vernon",
+    "Washington",
+    "Webster",
+    "West Baton Rouge",
+    "West Carroll",
+    "West Feliciana",
+    "Winn"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas del sheriff · Sobrantes de ventas por impuestos · Propiedad no reclamada de Luisiana · Recuperación de sucesiones y herederos, en las 64 parroquias de Luisiana.",
+ "ctaTitle": "Descubra lo que Luisiana guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Luisiana y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Luisiana | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Luisiana. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

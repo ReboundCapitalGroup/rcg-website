@@ -1,75 +1,12 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/new-hampshire.json'
 
 export const metadata: Metadata = {
   title: "New Hampshire Surplus Funds Recovery | All Counties | RCG",
   description: "Recover foreclosure surplus, tax deed overages, and unclaimed property in New Hampshire. Rebound Capital Group files through our network of licensed attorneys at no upfront cost, you pay nothing until we recover.",
 }
 
-const data = {
-  "slug": "new-hampshire",
-  "name": "New Hampshire",
-  "badge": "New Hampshire · All 10 Counties · No Upfront Cost",
-  "h1Lead": "Surplus Fund Recovery",
-  "h1Accent": "in New Hampshire.",
-  "intro": "Courts, town offices, and state agencies in New Hampshire are holding funds belonging to former property owners and residents. RCG monitors all 10 New Hampshire counties and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "10",
-      "label": "Counties Monitored"
-    },
-    {
-      "val": "$320M",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "New Hampshire Recovery",
-    "title": "Recovery in New Hampshire. All 10 Counties.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Tax Deed Overages",
-      "New Hampshire Unclaimed Property",
-      "Estate and Heir Recovery",
-      "Court-Held Excess Proceeds"
-    ],
-    "paragraphs": [
-      "Hillsborough, Rockingham, and Merrimack counties generate the highest volume of New Hampshire foreclosure surplus cases. New Hampshire is a non-judicial foreclosure state, and surplus funds from foreclosure auctions are typically held by the foreclosing trustee or attorney until claimed by the former owner. Tax deed sales conducted by municipalities can also produce excess proceeds.",
-      "The New Hampshire Abandoned Property Division, administered by the state Treasury, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to New Hampshire residents. RCG searches New Hampshire Superior Court records, municipal tax sale records, and state unclaimed property databases for every New Hampshire client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in New Hampshire. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All 10 New Hampshire Counties.",
-      "intro": "RCG monitors foreclosure surplus funds, tax deed overages, and unclaimed property across every county in New Hampshire. If funds exist in your name in any New Hampshire county, we will find them and recover them.",
-      "unit": "County",
-      "items": [
-        "Belknap",
-        "Carroll",
-        "Cheshire",
-        "Coos",
-        "Grafton",
-        "Hillsborough",
-        "Merrimack",
-        "Rockingham",
-        "Strafford",
-        "Sullivan"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Tax deed overages · New Hampshire unclaimed property · Estate and heir recovery · Excess proceeds from court sales, available across all 10 New Hampshire counties.",
-  "ctaTitle": "Find Out What New Hampshire Is Holding in Your Name.",
-  "ctaText": "We search New Hampshire court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function NewHampshirePage() {
   return <StatePage {...data} />

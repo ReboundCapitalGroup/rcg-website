@@ -1,0 +1,97 @@
+{
+ "slug": "washington",
+ "name": "Washington",
+ "badge": "Washington · Los 39 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Washington.",
+ "intro": "Los tribunales, condados y agencias del estado de Washington guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 39 condados de Washington y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "39",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$1.4B",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Washington",
+  "title": "Recuperación en Washington. Los 39 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por fideicomisario",
+   "Excedentes de ejecuciones fiscales",
+   "Propiedad no reclamada de Washington",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de King, Pierce, Snohomish y Spokane tienen el mayor volumen de casos de fondos excedentes en Washington. Washington usa principalmente la ejecución extrajudicial mediante escritura de fideicomiso y venta por fideicomisario. Los sobrantes de la venta los guarda el fideicomisario o se depositan en el Tribunal Superior de Washington hasta que el antiguo dueño los reclama. Las ventas por ejecución fiscal que hacen los tesoreros de los condados también dejan excedentes que el antiguo dueño puede recuperar.",
+   "La División de Propiedad No Reclamada de Washington, administrada por el Departamento de Ingresos del estado, guarda más de $1 mil millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Washington. RCG busca en los registros del Tribunal Superior, los registros de ventas por fideicomisario de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Washington."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Washington. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 39 condados de Washington.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por fideicomisario y propiedad no reclamada en todos los condados de Washington. Si hay fondos a su nombre en cualquier condado de Washington, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Adams",
+    "Asotin",
+    "Benton",
+    "Chelan",
+    "Clallam",
+    "Clark",
+    "Columbia",
+    "Cowlitz",
+    "Douglas",
+    "Ferry",
+    "Franklin",
+    "Garfield",
+    "Grant",
+    "Grays Harbor",
+    "Island",
+    "Jefferson",
+    "King",
+    "Kitsap",
+    "Kittitas",
+    "Klickitat",
+    "Lewis",
+    "Lincoln",
+    "Mason",
+    "Okanogan",
+    "Pacific",
+    "Pend Oreille",
+    "Pierce",
+    "San Juan",
+    "Skagit",
+    "Skamania",
+    "Snohomish",
+    "Spokane",
+    "Stevens",
+    "Thurston",
+    "Wahkiakum",
+    "Walla Walla",
+    "Whatcom",
+    "Whitman",
+    "Yakima"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por fideicomisario · Excedentes de ejecuciones fiscales · Propiedad no reclamada de Washington · Recuperación para herederos, en los 39 condados de Washington.",
+ "ctaTitle": "Descubra lo que Washington guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Washington y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Washington | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Washington. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

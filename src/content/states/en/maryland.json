@@ -1,0 +1,78 @@
+{
+ "slug": "maryland",
+ "name": "Maryland",
+ "badge": "Maryland · All 24 Jurisdictions · No Upfront Cost",
+ "h1Lead": "Foreclosure Help & Surplus Funds",
+ "h1Accent": "in Maryland.",
+ "intro": "Courts, county clerks, and state agencies in Maryland are holding funds belonging to former property owners and residents. RCG monitors all 23 Maryland counties plus the independent City of Baltimore and recovers these funds at no upfront cost.",
+ "stats": [
+  {
+   "val": "24",
+   "label": "Jurisdictions Monitored"
+  },
+  {
+   "val": "$1.1B",
+   "label": "Unclaimed Funds Held"
+  },
+  {
+   "val": "$0",
+   "label": "Upfront Cost"
+  },
+  {
+   "val": "60-90d",
+   "label": "Avg. Claim Timeline"
+  }
+ ],
+ "body": {
+  "tag": "Maryland Recovery",
+  "title": "Recovery in Maryland. All 24 Jurisdictions.",
+  "points": [
+   "Foreclosure Surplus Funds",
+   "Substitute Trustee Sale Overages",
+   "Tax Sale Excess Proceeds",
+   "Maryland Unclaimed Property",
+   "Estate and Heir Recovery"
+  ],
+  "paragraphs": [
+   "Montgomery, Prince George's, Baltimore County, and Anne Arundel generate the highest volume of Maryland foreclosure surplus cases. Maryland is a non-judicial foreclosure state using substitute trustee sales, with surplus funds deposited with the Maryland circuit court until claimed by the former owner. Maryland tax sales are particularly significant, with Baltimore City and Prince George's County tax sale excess proceeds among the most valuable recoveries in the state.",
+   "The Maryland Unclaimed Property Division, administered by the state Comptroller, holds over $1 billion in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Maryland residents. RCG searches Maryland circuit court records, county and city tax sale records, and state unclaimed property databases for every Maryland client."
+  ],
+  "callout": "Claims are filed through our network of licensed attorneys in Maryland. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
+ },
+ "lists": [
+  {
+   "title": "All 24 Maryland Jurisdictions.",
+   "intro": "RCG monitors foreclosure surplus funds, tax sale overages, and unclaimed property across every county in Maryland plus the independent City of Baltimore. If funds exist in your name anywhere in Maryland, we will find them and recover them.",
+   "unit": "County",
+   "items": [
+    "Allegany",
+    "Anne Arundel",
+    "Baltimore County",
+    "Calvert",
+    "Caroline",
+    "Carroll",
+    "Cecil",
+    "Charles",
+    "Dorchester",
+    "Frederick",
+    "Garrett",
+    "Harford",
+    "Howard",
+    "Kent",
+    "Montgomery",
+    "Prince George's",
+    "Queen Anne's",
+    "Somerset",
+    "St. Mary's",
+    "Talbot",
+    "Washington",
+    "Wicomico",
+    "Worcester",
+    "City of Baltimore"
+   ]
+  }
+ ],
+ "footerLine": "Foreclosure surplus funds · Substitute trustee sale overages · Tax sale excess proceeds · Maryland unclaimed property · Estate and heir recovery, available across all 23 Maryland counties and the City of Baltimore.",
+ "ctaTitle": "Find Out What Maryland Is Holding in Your Name.",
+ "ctaText": "We search Maryland court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
+}

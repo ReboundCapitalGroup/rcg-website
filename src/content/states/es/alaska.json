@@ -1,0 +1,89 @@
+{
+ "slug": "alaska",
+ "name": "Alaska",
+ "badge": "Alaska · Todos los distritos y áreas censales · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Alaska.",
+ "intro": "Los tribunales, distritos y agencias del estado de Alaska guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila cada distrito y área censal de Alaska y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "Todo el estado",
+   "label": "Cobertura"
+  },
+  {
+   "val": "$210M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Alaska",
+  "title": "Recuperación en Alaska. Todos los distritos y áreas censales.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por fideicomisario",
+   "Propiedad no reclamada de Alaska",
+   "Recuperación para herederos",
+   "Excedentes retenidos por tribunales"
+  ],
+  "paragraphs": [
+   "Alaska se divide en distritos (boroughs) y áreas censales en vez de condados. Anchorage, Matanuska-Susitna y Fairbanks North Star tienen el mayor volumen de casos de fondos excedentes en Alaska. Alaska usa principalmente la ejecución extrajudicial mediante escritura de fideicomiso, y los sobrantes de la venta por fideicomisario los guarda el fideicomisario o se depositan en el Tribunal Superior hasta que el antiguo dueño los reclama.",
+   "El Programa de Propiedad No Reclamada de Alaska, administrado por el Departamento de Ingresos del estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, dividendos del Permanent Fund sin cobrar y otros bienes de residentes y antiguos residentes de Alaska. RCG busca en los registros del Tribunal Superior, los registros de ventas por fideicomisario y las bases de datos estatales de propiedad no reclamada para cada cliente de Alaska."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Alaska. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Todos los distritos y áreas censales de Alaska.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por fideicomisario y propiedad no reclamada en cada distrito y área censal de Alaska. Si hay fondos a su nombre en cualquier parte de Alaska, los encontramos y los recuperamos.",
+   "unit": "Borough",
+   "items": [
+    "Aleutians East",
+    "Aleutians West",
+    "Anchorage",
+    "Bethel",
+    "Bristol Bay",
+    "Chugach",
+    "Copper River",
+    "Denali",
+    "Dillingham",
+    "Fairbanks North Star",
+    "Haines",
+    "Hoonah-Angoon",
+    "Juneau",
+    "Kenai Peninsula",
+    "Ketchikan Gateway",
+    "Kodiak Island",
+    "Kusilvak",
+    "Lake and Peninsula",
+    "Matanuska-Susitna",
+    "Nome",
+    "North Slope",
+    "Northwest Arctic",
+    "Petersburg",
+    "Prince of Wales-Hyder",
+    "Sitka",
+    "Skagway",
+    "Southeast Fairbanks",
+    "Valdez-Cordova",
+    "Wrangell",
+    "Yakutat",
+    "Yukon-Koyukuk"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por fideicomisario · Propiedad no reclamada de Alaska · Recuperación del Permanent Fund · Recuperación para herederos, en todos los distritos y áreas censales de Alaska.",
+ "ctaTitle": "Descubra lo que Alaska guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Alaska y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Alaska | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Alaska. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

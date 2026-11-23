@@ -1,94 +1,12 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/utah.json'
 
 export const metadata: Metadata = {
   title: "Utah Surplus Funds Recovery | All Counties | RCG",
   description: "Recover foreclosure surplus, tax deed overages, and unclaimed property in Utah. Rebound Capital Group files through our network of licensed attorneys at no upfront cost, you pay nothing until we recover.",
 }
 
-const data = {
-  "slug": "utah",
-  "name": "Utah",
-  "badge": "Utah · All 29 Counties · No Upfront Cost",
-  "h1Lead": "Surplus Fund Recovery",
-  "h1Accent": "in Utah.",
-  "intro": "Courts, county treasurers, and state agencies in Utah are holding funds belonging to former property owners and residents. RCG monitors all 29 Utah counties and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "29",
-      "label": "Counties Monitored"
-    },
-    {
-      "val": "$490M",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "Utah Recovery",
-    "title": "Recovery in Utah. All 29 Counties.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Trustee Sale Overages",
-      "Tax Sale Excess Proceeds",
-      "Utah Unclaimed Property",
-      "Estate and Heir Recovery"
-    ],
-    "paragraphs": [
-      "Salt Lake, Utah, Davis, and Weber counties generate the highest volume of Utah foreclosure surplus cases. Utah is primarily a non-judicial foreclosure state using a trust deed and trustee sale process. Trustee sale surplus funds are held by the trustee or interpleaded into the Utah district court until claimed by the former owner. Tax sales conducted by county treasurers can also produce excess proceeds.",
-      "The Utah Unclaimed Property Division, administered by the state Treasurer through MyCash.Utah.gov, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Utah residents. RCG searches Utah district court records, county trustee sale records, and state unclaimed property databases for every Utah client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in Utah. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All 29 Utah Counties.",
-      "intro": "RCG monitors foreclosure surplus funds, trustee sale overages, and unclaimed property across every county in Utah. If funds exist in your name in any Utah county, we will find them and recover them.",
-      "unit": "County",
-      "items": [
-        "Beaver",
-        "Box Elder",
-        "Cache",
-        "Carbon",
-        "Daggett",
-        "Davis",
-        "Duchesne",
-        "Emery",
-        "Garfield",
-        "Grand",
-        "Iron",
-        "Juab",
-        "Kane",
-        "Millard",
-        "Morgan",
-        "Piute",
-        "Rich",
-        "Salt Lake",
-        "San Juan",
-        "Sanpete",
-        "Sevier",
-        "Summit",
-        "Tooele",
-        "Uintah",
-        "Utah",
-        "Wasatch",
-        "Washington",
-        "Wayne",
-        "Weber"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Trustee sale overages · Tax sale excess proceeds · Utah unclaimed property · Estate and heir recovery, available across all 29 Utah counties.",
-  "ctaTitle": "Find Out What Utah Is Holding in Your Name.",
-  "ctaText": "We search Utah court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function UtahPage() {
   return <StatePage {...data} />

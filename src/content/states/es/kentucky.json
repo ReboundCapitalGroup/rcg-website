@@ -1,0 +1,231 @@
+{
+ "slug": "kentucky",
+ "name": "Kentucky",
+ "badge": "Kentucky · Los 120 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Kentucky.",
+ "intro": "Cuando una casa en Kentucky se vende en una venta del Master Commissioner por más de la deuda, el sobrante le pertenece al antiguo dueño. La mayoría de los dueños nunca se entera. RCG encuentra estos fondos y presenta el reclamo a través de abogados con licencia en Kentucky.",
+ "stats": [
+  {
+   "val": "120",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "Abogados",
+   "label": "Con licencia en Kentucky"
+  },
+  {
+   "val": "Gratis",
+   "label": "Revisión del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Kentucky",
+  "title": "Cómo funcionan los sobrantes en Kentucky.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Excedentes de ventas del Master Commissioner",
+   "Revisión de ventas por impuestos atrasados",
+   "Propiedad no reclamada de Kentucky",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Kentucky tiene 120 condados, el tercer número más alto después de Texas y Georgia. Es un estado de ejecución judicial, así que el prestamista tiene que llevar el caso al tribunal de circuito, y la propiedad la vende un Master Commissioner nombrado por ese tribunal, no un fideicomisario. El comprador paga el precio a través del comisionado, y luego el tribunal lo aplica a la sentencia, los intereses, los costos y los gravámenes válidos.",
+   "Si la venta deja más que todo eso, la diferencia es un sobrante, y le pertenece al antiguo dueño. La ley de Kentucky regula el destino de los sobrantes de las ventas judiciales en la KRS 426.500, y el Master Commissioner del condado de Jefferson informa al público directamente que los dueños originales pueden presentar un reclamo por fondos excedentes. Lo que la ley no hace es buscar al dueño. Al prestamista se le paga, la venta se cierra, y el sobrante puede quedarse en una cuenta del tribunal mientras el antiguo dueño, que ya se mudó hace tiempo, no sabe que existe.",
+   "Los fondos que no se reclaman por suficiente tiempo pueden trasladarse a la División de Propiedad No Reclamada del Tesoro del Estado de Kentucky, que los guarda como custodio para el dueño. RCG busca en los registros de los tribunales de circuito de Kentucky, los informes de venta del Master Commissioner y la base de datos del Tesoro para cada cliente de Kentucky. El cobro de impuestos atrasados sobre la propiedad sigue su propio camino en Kentucky, y revisamos esos expedientes caso por caso."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Kentucky. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "steps": {
+  "title": "Cómo funciona un reclamo en Kentucky.",
+  "intro": "Cada caso es distinto, pero un reclamo de fondos excedentes en Kentucky por lo general sigue estos cinco pasos.",
+  "items": [
+   {
+    "title": "Encontrar la venta",
+    "body": "Kentucky es un estado de ejecución judicial. Un Master Commissioner nombrado por el tribunal de circuito hace la venta y presenta un Informe de Venta en el caso. Obtenemos ese informe, el monto de la sentencia y el precio final de venta."
+   },
+   {
+    "title": "Confirmar que hay un sobrante",
+    "body": "El sobrante es lo que queda después de pagar la sentencia, los intereses, los costos judiciales, los impuestos y cualquier gravamen válido. Primero revisamos los números para que nadie pierda tiempo en un reclamo que no existe."
+   },
+   {
+    "title": "Confirmar quién tiene derecho",
+    "body": "El punto de partida es el antiguo dueño. Si el dueño falleció, los herederos o la herencia pueden tener derecho, y los registros de sucesión y los documentos de identidad deciden quién puede pedirle el dinero al tribunal."
+   },
+   {
+    "title": "Presentar la moción",
+    "body": "Por lo general, los fondos en manos del tribunal se liberan por orden judicial. Un abogado con licencia en Kentucky presenta una moción en el caso original de ejecución pidiéndole al tribunal que entregue el sobrante a quien tiene derecho."
+   },
+   {
+    "title": "Si el dinero se trasladó",
+    "body": "Los fondos no reclamados pueden trasladarse de la cuenta del comisionado a la División de Propiedad No Reclamada del Tesoro del Estado de Kentucky, que los guarda como custodio para el dueño. Entonces el reclamo se hace ante el Tesoro con prueba de propiedad."
+   }
+  ]
+ },
+ "faqs": [
+  {
+   "q": "¿Quién guarda el dinero sobrante después de una venta por ejecución en Kentucky?",
+   "a": "El dinero de la venta se paga a través del Master Commissioner en el caso judicial. Después de cubrir la sentencia, los intereses, los costos y los gravámenes válidos, lo que sobra le pertenece al antiguo dueño. El Master Commissioner del condado de Jefferson indica en sus propias preguntas frecuentes que los dueños originales pueden presentar un reclamo por fondos excedentes."
+  },
+  {
+   "q": "¿El sobrante se le envía automáticamente al antiguo dueño?",
+   "a": "En la mayoría de los casos, no. Los dueños que perdieron una casa por ejecución por lo general ya se mudaron, y los avisos llegan a una dirección vieja. Normalmente se necesita una moción pidiéndole al tribunal que libere los fondos, y por eso muchos dueños nunca cobran."
+  },
+  {
+   "q": "¿Y si el dinero ya no está con el comisionado?",
+   "a": "Los fondos no reclamados pueden terminar en la División de Propiedad No Reclamada del Tesoro del Estado de Kentucky, que guarda los bienes como custodio para el dueño. Esos reclamos se hacen ante el Tesoro con documentos que prueben la propiedad, y vale la pena buscar aunque el expediente judicial no muestre nada."
+  },
+  {
+   "q": "¿Y si el antiguo dueño falleció?",
+   "a": "Los herederos o la herencia podrían reclamar. Prepárese para presentar un acta de defunción, prueba de parentesco y, en muchos casos, documentos de sucesión. Cada familia es distinta, así que revisamos su situación antes de presentar cualquier cosa."
+  },
+  {
+   "q": "¿Pago algo por adelantado?",
+   "a": "No. La búsqueda es gratis, y RCG trabaja por contingencia a través de abogados con licencia en Kentucky. Si no se recupera nada, no debe nada por adelantado ni paga nada de su bolsillo por la búsqueda."
+  },
+  {
+   "q": "¿Qué condados de Kentucky cubren?",
+   "a": "Los 120. Los condados más grandes como Jefferson (Louisville), Fayette (Lexington), Kenton y Boone suelen tener más ventas, pero puede haber un sobrante en cualquier condado con una venta por ejecución, así que no limitamos la búsqueda por tamaño."
+  }
+ ],
+ "faqTitle": "Lo que preguntan los dueños en Kentucky.",
+ "lists": [
+  {
+   "title": "Los 120 condados de Kentucky.",
+   "intro": "RCG vigila las ventas por ejecución y la propiedad no reclamada en todos los condados de Kentucky. Si hay fondos a su nombre en cualquier condado de Kentucky, los buscamos.",
+   "unit": "County",
+   "items": [
+    "Adair",
+    "Allen",
+    "Anderson",
+    "Ballard",
+    "Barren",
+    "Bath",
+    "Bell",
+    "Boone",
+    "Bourbon",
+    "Boyd",
+    "Boyle",
+    "Bracken",
+    "Breathitt",
+    "Breckinridge",
+    "Bullitt",
+    "Butler",
+    "Caldwell",
+    "Calloway",
+    "Campbell",
+    "Carlisle",
+    "Carroll",
+    "Carter",
+    "Casey",
+    "Christian",
+    "Clark",
+    "Clay",
+    "Clinton",
+    "Crittenden",
+    "Cumberland",
+    "Daviess",
+    "Edmonson",
+    "Elliott",
+    "Estill",
+    "Fayette",
+    "Fleming",
+    "Floyd",
+    "Franklin",
+    "Fulton",
+    "Gallatin",
+    "Garrard",
+    "Grant",
+    "Graves",
+    "Grayson",
+    "Green",
+    "Greenup",
+    "Hancock",
+    "Hardin",
+    "Harlan",
+    "Harrison",
+    "Hart",
+    "Henderson",
+    "Henry",
+    "Hickman",
+    "Hopkins",
+    "Jackson",
+    "Jefferson",
+    "Jessamine",
+    "Johnson",
+    "Kenton",
+    "Knott",
+    "Knox",
+    "LaRue",
+    "Laurel",
+    "Lawrence",
+    "Lee",
+    "Leslie",
+    "Letcher",
+    "Lewis",
+    "Lincoln",
+    "Livingston",
+    "Logan",
+    "Lyon",
+    "Madison",
+    "Magoffin",
+    "Marion",
+    "Marshall",
+    "Martin",
+    "Mason",
+    "McCracken",
+    "McCreary",
+    "McLean",
+    "Meade",
+    "Menifee",
+    "Mercer",
+    "Metcalfe",
+    "Monroe",
+    "Montgomery",
+    "Morgan",
+    "Muhlenberg",
+    "Nelson",
+    "Nicholas",
+    "Ohio",
+    "Oldham",
+    "Owen",
+    "Owsley",
+    "Pendleton",
+    "Perry",
+    "Pike",
+    "Powell",
+    "Pulaski",
+    "Robertson",
+    "Rockcastle",
+    "Rowan",
+    "Russell",
+    "Scott",
+    "Shelby",
+    "Simpson",
+    "Spencer",
+    "Taylor",
+    "Todd",
+    "Trigg",
+    "Trimble",
+    "Union",
+    "Warren",
+    "Washington",
+    "Wayne",
+    "Webster",
+    "Whitley",
+    "Wolfe",
+    "Woodford"
+   ]
+  }
+ ],
+ "ctaTitle": "Descubra lo que Kentucky guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Kentucky y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, un abogado con licencia en Kentucky presenta el reclamo, y usted no paga nada por adelantado.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Kentucky | Todos los condados | RCG",
+  "description": "En Kentucky, los fondos excedentes de ejecuciones están con los Master Commissioners o el Tesoro del Estado. RCG presenta los reclamos a través de abogados con licencia en Kentucky, sin costo por adelantado."
+ }
+}

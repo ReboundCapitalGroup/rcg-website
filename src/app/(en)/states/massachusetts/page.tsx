@@ -1,79 +1,12 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/massachusetts.json'
 
 export const metadata: Metadata = {
   title: "Massachusetts Surplus Funds Recovery | All Counties | RCG",
   description: "Recover foreclosure surplus, tax deed overages, and unclaimed property in Massachusetts. Rebound Capital Group files through our network of licensed attorneys at no upfront cost, you pay nothing until we recover.",
 }
 
-const data = {
-  "slug": "massachusetts",
-  "name": "Massachusetts",
-  "badge": "Massachusetts · All 14 Counties · No Upfront Cost",
-  "h1Lead": "Surplus Fund Recovery",
-  "h1Accent": "in Massachusetts.",
-  "intro": "Courts, city and town offices, and state agencies in Massachusetts are holding funds belonging to former property owners and residents. RCG monitors all 14 Massachusetts counties and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "14",
-      "label": "Counties Monitored"
-    },
-    {
-      "val": "$2.4B",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "Massachusetts Recovery",
-    "title": "Recovery in Massachusetts. All 14 Counties.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Tax Taking Excess Proceeds",
-      "Massachusetts Unclaimed Property",
-      "Estate and Heir Recovery",
-      "Land Court Excess Proceeds"
-    ],
-    "paragraphs": [
-      "Middlesex, Worcester, Essex, and Suffolk counties generate the highest volume of Massachusetts foreclosure surplus cases. Massachusetts is a non-judicial foreclosure state using the power of sale, and surplus funds from foreclosure auctions are held by the foreclosing mortgagee or interpleaded with the Massachusetts Superior Court until claimed by the former owner. Following the 2023 Supreme Court ruling in Tyler v. Hennepin County, Massachusetts tax taking excess proceeds belong to the former owner and can be recovered through proper filing.",
-      "The Massachusetts Unclaimed Property Division, administered by the state Treasurer, holds hundreds of millions in dormant bank accounts, insurance proceeds, uncashed checks, stock, and other assets belonging to Massachusetts residents. RCG searches Massachusetts Superior Court records, Land Court records, municipal tax taking records, and state unclaimed property databases for every Massachusetts client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in Massachusetts. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All 14 Massachusetts Counties.",
-      "intro": "RCG monitors foreclosure surplus funds, tax taking excess proceeds, and unclaimed property across every county in Massachusetts. If funds exist in your name in any Massachusetts county, we will find them and recover them.",
-      "unit": "County",
-      "items": [
-        "Barnstable",
-        "Berkshire",
-        "Bristol",
-        "Dukes",
-        "Essex",
-        "Franklin",
-        "Hampden",
-        "Hampshire",
-        "Middlesex",
-        "Nantucket",
-        "Norfolk",
-        "Plymouth",
-        "Suffolk",
-        "Worcester"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Tax taking excess proceeds · Massachusetts unclaimed property · Estate and heir recovery · Land Court excess proceeds, available across all 14 Massachusetts counties.",
-  "ctaTitle": "Find Out What Massachusetts Is Holding in Your Name.",
-  "ctaText": "We search Massachusetts court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function MassachusettsPage() {
   return <StatePage {...data} />

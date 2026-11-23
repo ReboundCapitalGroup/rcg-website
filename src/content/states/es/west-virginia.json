@@ -1,0 +1,113 @@
+{
+ "slug": "west-virginia",
+ "name": "Virginia Occidental",
+ "badge": "Virginia Occidental · Los 55 condados · Sin costo por adelantado",
+ "h1Lead": "Ayuda con ejecuciones y fondos excedentes",
+ "h1Accent": "en Virginia Occidental.",
+ "intro": "Los tribunales, condados y agencias del estado de Virginia Occidental guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 55 condados de Virginia Occidental y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "55",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$280M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Virginia Occidental",
+  "title": "Recuperación en Virginia Occidental. Los 55 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por fideicomisario",
+   "Excedentes de ventas de gravámenes fiscales",
+   "Propiedad no reclamada de Virginia Occidental",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Kanawha, Berkeley, Monongalia y Cabell tienen el mayor volumen de casos de fondos excedentes en Virginia Occidental. Virginia Occidental usa principalmente la ejecución extrajudicial mediante escritura de fideicomiso y venta por fideicomisario. Los sobrantes de la venta los guarda el fideicomisario o se depositan con el secretario del tribunal de circuito hasta que el antiguo dueño los reclama. Las ventas de gravámenes fiscales que hacen el Auditor del Estado y los sheriffs de los condados también pueden dejar excedentes.",
+   "La División de Propiedad No Reclamada de Virginia Occidental, administrada por el Tesorero del Estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar, regalías de minerales y otros bienes de residentes de Virginia Occidental y dueños de derechos minerales. RCG busca en los registros de los tribunales de circuito, los registros de ventas por fideicomisario de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Virginia Occidental."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Virginia Occidental. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 55 condados de Virginia Occidental.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por fideicomisario y propiedad no reclamada en todos los condados de Virginia Occidental. Si hay fondos a su nombre en cualquier condado de Virginia Occidental, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Barbour",
+    "Berkeley",
+    "Boone",
+    "Braxton",
+    "Brooke",
+    "Cabell",
+    "Calhoun",
+    "Clay",
+    "Doddridge",
+    "Fayette",
+    "Gilmer",
+    "Grant",
+    "Greenbrier",
+    "Hampshire",
+    "Hancock",
+    "Hardy",
+    "Harrison",
+    "Jackson",
+    "Jefferson",
+    "Kanawha",
+    "Lewis",
+    "Lincoln",
+    "Logan",
+    "Marion",
+    "Marshall",
+    "Mason",
+    "McDowell",
+    "Mercer",
+    "Mineral",
+    "Mingo",
+    "Monongalia",
+    "Monroe",
+    "Morgan",
+    "Nicholas",
+    "Ohio",
+    "Pendleton",
+    "Pleasants",
+    "Pocahontas",
+    "Preston",
+    "Putnam",
+    "Raleigh",
+    "Randolph",
+    "Ritchie",
+    "Roane",
+    "Summers",
+    "Taylor",
+    "Tucker",
+    "Tyler",
+    "Upshur",
+    "Wayne",
+    "Webster",
+    "Wetzel",
+    "Wirt",
+    "Wood",
+    "Wyoming"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por fideicomisario · Excedentes de ventas de gravámenes fiscales · Propiedad no reclamada de Virginia Occidental · Recuperación para herederos, en los 55 condados de Virginia Occidental.",
+ "ctaTitle": "Descubra lo que Virginia Occidental guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Virginia Occidental y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Fondos excedentes de ejecución en Virginia Occidental: puede que le deban dinero | RCG",
+  "description": "¿Su casa en Virginia Occidental se vendió en una venta por fideicomisario? Puede que le deban dinero de la venta. Revisión gratis, $0 por adelantado, llame o escriba 24/7."
+ }
+}

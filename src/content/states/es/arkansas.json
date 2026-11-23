@@ -1,0 +1,133 @@
+{
+ "slug": "arkansas",
+ "name": "Arkansas",
+ "badge": "Arkansas · Los 75 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Arkansas.",
+ "intro": "Los tribunales, condados y agencias del estado de Arkansas guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 75 condados de Arkansas y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "75",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$421M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Arkansas",
+  "title": "Recuperación en Arkansas. Los 75 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas del comisionado",
+   "Sobrantes de tierras con impuestos atrasados",
+   "Propiedad no reclamada de Arkansas",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Pulaski, Benton, Washington y Sebastian tienen el mayor volumen de casos de fondos excedentes en Arkansas. Arkansas permite la ejecución judicial y la extrajudicial. Los sobrantes de las ventas judiciales por comisionado se depositan en el tribunal de circuito de Arkansas, mientras que los sobrantes de la ejecución extrajudicial los guarda el fideicomisario. Las ventas de tierras con impuestos atrasados las realiza el Comisionado de Tierras del Estado y pueden dejar excedentes que se le deben al antiguo dueño.",
+   "La División de Propiedad No Reclamada de Arkansas, administrada por el Auditor del Estado a través de ClaimItAR.com, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Arkansas. RCG busca en los registros de los tribunales de circuito, del Comisionado de Tierras del Estado y en las bases de datos estatales de propiedad no reclamada para cada cliente de Arkansas."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Arkansas. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 75 condados de Arkansas.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas del comisionado y propiedad no reclamada en todos los condados de Arkansas. Si hay fondos a su nombre en cualquier condado de Arkansas, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Arkansas",
+    "Ashley",
+    "Baxter",
+    "Benton",
+    "Boone",
+    "Bradley",
+    "Calhoun",
+    "Carroll",
+    "Chicot",
+    "Clark",
+    "Clay",
+    "Cleburne",
+    "Cleveland",
+    "Columbia",
+    "Conway",
+    "Craighead",
+    "Crawford",
+    "Crittenden",
+    "Cross",
+    "Dallas",
+    "Desha",
+    "Drew",
+    "Faulkner",
+    "Franklin",
+    "Fulton",
+    "Garland",
+    "Grant",
+    "Greene",
+    "Hempstead",
+    "Hot Spring",
+    "Howard",
+    "Independence",
+    "Izard",
+    "Jackson",
+    "Jefferson",
+    "Johnson",
+    "Lafayette",
+    "Lawrence",
+    "Lee",
+    "Lincoln",
+    "Little River",
+    "Logan",
+    "Lonoke",
+    "Madison",
+    "Marion",
+    "Miller",
+    "Mississippi",
+    "Monroe",
+    "Montgomery",
+    "Nevada",
+    "Newton",
+    "Ouachita",
+    "Perry",
+    "Phillips",
+    "Pike",
+    "Poinsett",
+    "Polk",
+    "Pope",
+    "Prairie",
+    "Pulaski",
+    "Randolph",
+    "Saline",
+    "Scott",
+    "Searcy",
+    "Sebastian",
+    "Sevier",
+    "Sharp",
+    "St. Francis",
+    "Stone",
+    "Union",
+    "Van Buren",
+    "Washington",
+    "White",
+    "Woodruff",
+    "Yell"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas del comisionado · Sobrantes de tierras con impuestos atrasados · Propiedad no reclamada de Arkansas · Recuperación para herederos, en los 75 condados de Arkansas.",
+ "ctaTitle": "Descubra lo que Arkansas guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Arkansas y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Arkansas | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Arkansas. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

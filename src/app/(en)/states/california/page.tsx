@@ -1,123 +1,12 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/california.json'
 
 export const metadata: Metadata = {
   title: "California Surplus Funds Recovery | All Counties | RCG",
   description: "Recover foreclosure surplus, tax deed overages, and unclaimed property in California. Rebound Capital Group files through our network of licensed attorneys at no upfront cost, you pay nothing until we recover.",
 }
 
-const data = {
-  "slug": "california",
-  "name": "California",
-  "badge": "California · All 58 Counties · No Upfront Cost",
-  "h1Lead": "Surplus Fund Recovery",
-  "h1Accent": "in California.",
-  "intro": "California holds more unclaimed property than any other state in the country, over $15 billion. RCG monitors all 58 California counties and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "58",
-      "label": "Counties Monitored"
-    },
-    {
-      "val": "$15B",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "California Recovery",
-    "title": "Recovery in California. The Largest Surplus State.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Trustee Sale Excess Proceeds",
-      "Tax Sale Excess Proceeds",
-      "California Unclaimed Property",
-      "Estate and Heir Recovery"
-    ],
-    "paragraphs": [
-      "Los Angeles, Orange, San Diego, Riverside, and San Bernardino counties generate the highest volume of California foreclosure surplus cases. California is primarily a non-judicial foreclosure state using a deed of trust and trustee sale process. Trustee sale excess proceeds are governed by California Civil Code Section 2924j, which requires the trustee to deposit surplus with the county clerk after paying off junior lienholders. Former owners have a statutory right to claim remaining excess proceeds.",
-      "California tax sales conducted by county tax collectors also produce excess proceeds governed by Revenue and Taxation Code Section 4675. The California Unclaimed Property Program, administered by the State Controller through ClaimIt.ca.gov, holds over $15 billion, more than any other state, in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to California residents. RCG searches California Superior Court records, county trustee and tax sale records, and state unclaimed property databases for every California client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in California. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All 58 California Counties.",
-      "intro": "RCG monitors foreclosure surplus funds, trustee sale excess proceeds, and unclaimed property across every county in California. If funds exist in your name in any California county, we will find them and recover them.",
-      "unit": "County",
-      "items": [
-        "Alameda",
-        "Alpine",
-        "Amador",
-        "Butte",
-        "Calaveras",
-        "Colusa",
-        "Contra Costa",
-        "Del Norte",
-        "El Dorado",
-        "Fresno",
-        "Glenn",
-        "Humboldt",
-        "Imperial",
-        "Inyo",
-        "Kern",
-        "Kings",
-        "Lake",
-        "Lassen",
-        "Los Angeles",
-        "Madera",
-        "Marin",
-        "Mariposa",
-        "Mendocino",
-        "Merced",
-        "Modoc",
-        "Mono",
-        "Monterey",
-        "Napa",
-        "Nevada",
-        "Orange",
-        "Placer",
-        "Plumas",
-        "Riverside",
-        "Sacramento",
-        "San Benito",
-        "San Bernardino",
-        "San Diego",
-        "San Francisco",
-        "San Joaquin",
-        "San Luis Obispo",
-        "San Mateo",
-        "Santa Barbara",
-        "Santa Clara",
-        "Santa Cruz",
-        "Shasta",
-        "Sierra",
-        "Siskiyou",
-        "Solano",
-        "Sonoma",
-        "Stanislaus",
-        "Sutter",
-        "Tehama",
-        "Trinity",
-        "Tulare",
-        "Tuolumne",
-        "Ventura",
-        "Yolo",
-        "Yuba"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Trustee sale excess proceeds · Tax sale excess proceeds · California unclaimed property · Estate and heir recovery, available across all 58 California counties.",
-  "ctaTitle": "Find Out What California Is Holding in Your Name.",
-  "ctaText": "We search California court records, county trustee sale records, and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function CaliforniaPage() {
   return <StatePage {...data} />

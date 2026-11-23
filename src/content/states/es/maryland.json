@@ -1,0 +1,82 @@
+{
+ "slug": "maryland",
+ "name": "Maryland",
+ "badge": "Maryland · Las 24 jurisdicciones · Sin costo por adelantado",
+ "h1Lead": "Ayuda con ejecuciones y fondos excedentes",
+ "h1Accent": "en Maryland.",
+ "intro": "Los tribunales, secretarios de condado y agencias del estado de Maryland guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 23 condados de Maryland más la ciudad independiente de Baltimore y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "24",
+   "label": "Jurisdicciones vigiladas"
+  },
+  {
+   "val": "$1.1B",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Maryland",
+  "title": "Recuperación en Maryland. Las 24 jurisdicciones.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por fideicomisario sustituto",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Maryland",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Montgomery, Prince George's, el condado de Baltimore y Anne Arundel tienen el mayor volumen de casos de fondos excedentes en Maryland. Maryland es un estado de ejecución extrajudicial que usa ventas por fideicomisario sustituto, y los sobrantes se depositan en el tribunal de circuito de Maryland hasta que el antiguo dueño los reclama. Las ventas por impuestos son especialmente importantes en Maryland, y los excedentes de las ventas por impuestos de la ciudad de Baltimore y del condado de Prince George's están entre las recuperaciones más valiosas del estado.",
+   "La División de Propiedad No Reclamada de Maryland, administrada por el Contralor del estado, guarda más de $1 mil millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Maryland. RCG busca en los registros de los tribunales de circuito, los registros de ventas por impuestos de condados y de la ciudad, y las bases de datos estatales de propiedad no reclamada para cada cliente de Maryland."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Maryland. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Las 24 jurisdicciones de Maryland.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en todos los condados de Maryland más la ciudad independiente de Baltimore. Si hay fondos a su nombre en cualquier parte de Maryland, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Allegany",
+    "Anne Arundel",
+    "Baltimore County",
+    "Calvert",
+    "Caroline",
+    "Carroll",
+    "Cecil",
+    "Charles",
+    "Dorchester",
+    "Frederick",
+    "Garrett",
+    "Harford",
+    "Howard",
+    "Kent",
+    "Montgomery",
+    "Prince George's",
+    "Queen Anne's",
+    "Somerset",
+    "St. Mary's",
+    "Talbot",
+    "Washington",
+    "Wicomico",
+    "Worcester",
+    "City of Baltimore"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por fideicomisario sustituto · Sobrantes de ventas por impuestos · Propiedad no reclamada de Maryland · Recuperación para herederos, en los 23 condados de Maryland y la ciudad de Baltimore.",
+ "ctaTitle": "Descubra lo que Maryland guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Maryland y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Ayuda con ejecuciones y fondos excedentes en Maryland | $0 por adelantado | RCG",
+  "description": "¿Su casa en Maryland se vendió en una ejecución, o se acerca una venta? Puede que tenga opciones, o que le deban el sobrante. Prince George's, Montgomery y todos los condados. Revisión gratis, llame o escriba 24/7."
+ }
+}

@@ -1,70 +1,12 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/hawaii.json'
 
 export const metadata: Metadata = {
   title: "Hawaii Surplus Funds Recovery | All Counties | RCG",
   description: "Recover foreclosure surplus, tax deed overages, and unclaimed property in Hawaii. Rebound Capital Group files through our network of licensed attorneys at no upfront cost, you pay nothing until we recover.",
 }
 
-const data = {
-  "slug": "hawaii",
-  "name": "Hawaii",
-  "badge": "Hawaii · All 5 Counties · No Upfront Cost",
-  "h1Lead": "Surplus Fund Recovery",
-  "h1Accent": "in Hawaii.",
-  "intro": "Courts, county agencies, and state offices in Hawaii are holding funds belonging to former property owners and residents. RCG monitors all 5 Hawaii counties and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "5",
-      "label": "Counties Monitored"
-    },
-    {
-      "val": "$290M",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "Hawaii Recovery",
-    "title": "Recovery in Hawaii. All 5 Counties.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Judicial Sale Overages",
-      "Hawaii Unclaimed Property",
-      "Estate and Heir Recovery",
-      "Court-Held Excess Proceeds"
-    ],
-    "paragraphs": [
-      "Hawaii has 5 counties covering the main islands. Honolulu County, which includes the island of Oahu, generates the highest volume of foreclosure surplus cases. Hawaii foreclosures are primarily judicial and can produce surplus funds held by the circuit court until claimed by the former owner.",
-      "The Hawaii Unclaimed Property Program, administered by the state Department of Budget and Finance, holds millions in dormant bank accounts, insurance proceeds, uncashed checks, and other assets belonging to Hawaii residents, former residents, and visitors. RCG searches Hawaii circuit court records and state unclaimed property databases for every Hawaii client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in Hawaii. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All 5 Hawaii Counties.",
-      "intro": "RCG monitors foreclosure surplus funds, judicial sale overages, and unclaimed property across every county in Hawaii. If funds exist in your name in any Hawaii county, we will find them and recover them.",
-      "unit": "County",
-      "items": [
-        "Hawaii",
-        "Honolulu",
-        "Kalawao",
-        "Kauai",
-        "Maui"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Judicial sale overages · Hawaii unclaimed property · Estate and heir recovery · Excess proceeds from court sales, available across all 5 Hawaii counties.",
-  "ctaTitle": "Find Out What Hawaii Is Holding in Your Name.",
-  "ctaText": "We search Hawaii court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function HawaiiPage() {
   return <StatePage {...data} />

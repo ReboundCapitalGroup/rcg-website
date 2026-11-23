@@ -1,0 +1,125 @@
+{
+ "slug": "alabama",
+ "name": "Alabama",
+ "badge": "Alabama · Los 67 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Alabama.",
+ "intro": "Los tribunales, condados y agencias del estado de Alabama guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 67 condados de Alabama y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "67",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$892M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Alabama",
+  "title": "Recuperación en Alabama. Los 67 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas hipotecarias",
+   "Sobrantes de ventas por impuestos",
+   "Propiedad no reclamada de Alabama",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Jefferson, Mobile, Madison y Montgomery tienen el mayor volumen de casos de fondos excedentes de ejecuciones en Alabama. Alabama usa principalmente la ejecución extrajudicial mediante poder de venta. Los fondos excedentes de una venta por ejecución hipotecaria los guarda el acreedor que ejecutó o se depositan en el tribunal de circuito de Alabama hasta que el antiguo dueño los reclama. Los sobrantes de ventas por impuestos en Alabama los guardan el Departamento de Ingresos del estado y los jueces de sucesiones del condado.",
+   "La División de Propiedad No Reclamada de Alabama, administrada por el Tesorero del Estado, guarda cientos de millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Alabama. RCG busca en los registros de los tribunales de circuito, los tribunales de sucesiones y las bases de datos estatales de propiedad no reclamada para cada cliente de Alabama."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Alabama. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 67 condados de Alabama.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en todos los condados de Alabama. Si hay fondos a su nombre en cualquier condado de Alabama, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Autauga",
+    "Baldwin",
+    "Barbour",
+    "Bibb",
+    "Blount",
+    "Bullock",
+    "Butler",
+    "Calhoun",
+    "Chambers",
+    "Cherokee",
+    "Chilton",
+    "Choctaw",
+    "Clarke",
+    "Clay",
+    "Cleburne",
+    "Coffee",
+    "Colbert",
+    "Conecuh",
+    "Coosa",
+    "Covington",
+    "Crenshaw",
+    "Cullman",
+    "Dale",
+    "Dallas",
+    "DeKalb",
+    "Elmore",
+    "Escambia",
+    "Etowah",
+    "Fayette",
+    "Franklin",
+    "Geneva",
+    "Greene",
+    "Hale",
+    "Henry",
+    "Houston",
+    "Jackson",
+    "Jefferson",
+    "Lamar",
+    "Lauderdale",
+    "Lawrence",
+    "Lee",
+    "Limestone",
+    "Lowndes",
+    "Macon",
+    "Madison",
+    "Marengo",
+    "Marion",
+    "Marshall",
+    "Mobile",
+    "Monroe",
+    "Montgomery",
+    "Morgan",
+    "Perry",
+    "Pickens",
+    "Pike",
+    "Randolph",
+    "Russell",
+    "St. Clair",
+    "Shelby",
+    "Sumter",
+    "Talladega",
+    "Tallapoosa",
+    "Tuscaloosa",
+    "Walker",
+    "Washington",
+    "Wilcox",
+    "Winston"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas hipotecarias · Sobrantes de ventas por impuestos · Propiedad no reclamada de Alabama · Recuperación para herederos, en los 67 condados de Alabama.",
+ "ctaTitle": "Descubra lo que Alabama guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Alabama y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Alabama | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Alabama. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

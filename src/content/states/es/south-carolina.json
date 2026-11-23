@@ -1,0 +1,104 @@
+{
+ "slug": "south-carolina",
+ "name": "Carolina del Sur",
+ "badge": "Carolina del Sur · Los 46 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Carolina del Sur.",
+ "intro": "Los tribunales, condados y agencias del estado de Carolina del Sur guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 46 condados de Carolina del Sur y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "46",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$620M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Carolina del Sur",
+  "title": "Recuperación en Carolina del Sur. Los 46 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas por impuestos",
+   "Sobrantes de ventas del Master-in-Equity",
+   "Propiedad no reclamada de Carolina del Sur",
+   "Recuperación para herederos"
+  ],
+  "paragraphs": [
+   "Los condados de Greenville, Richland, Charleston, Horry y Spartanburg tienen el mayor volumen de casos de fondos excedentes en Carolina del Sur. Carolina del Sur es un estado de ejecución judicial, y por lo general las ventas las hace el Master-in-Equity o el Secretario del Tribunal. Los sobrantes de estas ventas los guarda el tribunal hasta que el antiguo dueño los reclama. Los sobrantes de ventas por impuestos en Carolina del Sur los guardan los tesoreros de los condados y son una de las categorías más valiosas del estado.",
+   "El Programa de Propiedad No Reclamada de Carolina del Sur, administrado por el Tesorero del Estado, guarda cientos de millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes de Carolina del Sur. RCG busca en los registros judiciales, los registros de ventas por impuestos de los condados y las bases de datos estatales de propiedad no reclamada para cada cliente de Carolina del Sur."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Carolina del Sur. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 46 condados de Carolina del Sur.",
+   "intro": "RCG vigila fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en todos los condados de Carolina del Sur. Si hay fondos a su nombre en cualquier condado de Carolina del Sur, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Abbeville",
+    "Aiken",
+    "Allendale",
+    "Anderson",
+    "Bamberg",
+    "Barnwell",
+    "Beaufort",
+    "Berkeley",
+    "Calhoun",
+    "Charleston",
+    "Cherokee",
+    "Chester",
+    "Chesterfield",
+    "Clarendon",
+    "Colleton",
+    "Darlington",
+    "Dillon",
+    "Dorchester",
+    "Edgefield",
+    "Fairfield",
+    "Florence",
+    "Georgetown",
+    "Greenville",
+    "Greenwood",
+    "Hampton",
+    "Horry",
+    "Jasper",
+    "Kershaw",
+    "Lancaster",
+    "Laurens",
+    "Lee",
+    "Lexington",
+    "Marion",
+    "Marlboro",
+    "McCormick",
+    "Newberry",
+    "Oconee",
+    "Orangeburg",
+    "Pickens",
+    "Richland",
+    "Saluda",
+    "Spartanburg",
+    "Sumter",
+    "Union",
+    "Williamsburg",
+    "York"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas por impuestos · Sobrantes de ventas del Master-in-Equity · Propiedad no reclamada de Carolina del Sur · Recuperación para herederos, en los 46 condados de Carolina del Sur.",
+ "ctaTitle": "Descubra lo que Carolina del Sur guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Carolina del Sur y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Carolina del Sur | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Carolina del Sur. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

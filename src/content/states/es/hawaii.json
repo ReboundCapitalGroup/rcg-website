@@ -1,0 +1,63 @@
+{
+ "slug": "hawaii",
+ "name": "Hawái",
+ "badge": "Hawái · Los 5 condados · Sin costo por adelantado",
+ "h1Lead": "Recuperación de fondos excedentes",
+ "h1Accent": "en Hawái.",
+ "intro": "Los tribunales, condados y agencias del estado de Hawái guardan fondos que les pertenecen a antiguos dueños de propiedades y residentes. RCG vigila los 5 condados de Hawái y recupera estos fondos sin costo por adelantado.",
+ "stats": [
+  {
+   "val": "5",
+   "label": "Condados vigilados"
+  },
+  {
+   "val": "$290M",
+   "label": "Fondos no reclamados retenidos"
+  },
+  {
+   "val": "$0",
+   "label": "Costo por adelantado"
+  },
+  {
+   "val": "60-90d",
+   "label": "Tiempo promedio del reclamo"
+  }
+ ],
+ "body": {
+  "tag": "Recuperación en Hawái",
+  "title": "Recuperación en Hawái. Los 5 condados.",
+  "points": [
+   "Fondos excedentes de ejecución",
+   "Sobrantes de ventas judiciales",
+   "Propiedad no reclamada de Hawái",
+   "Recuperación para herederos",
+   "Excedentes retenidos por tribunales"
+  ],
+  "paragraphs": [
+   "Hawái tiene 5 condados que cubren las islas principales. El condado de Honolulu, que incluye la isla de Oahu, tiene el mayor volumen de casos de fondos excedentes. Las ejecuciones en Hawái son principalmente judiciales y pueden dejar fondos excedentes que guarda el tribunal de circuito hasta que el antiguo dueño los reclama.",
+   "El Programa de Propiedad No Reclamada de Hawái, administrado por el Departamento de Presupuesto y Finanzas del estado, guarda millones en cuentas bancarias inactivas, pagos de seguros, cheques sin cobrar y otros bienes de residentes, antiguos residentes y visitantes de Hawái. RCG busca en los registros de los tribunales de circuito de Hawái y en las bases de datos estatales de propiedad no reclamada para cada cliente de Hawái."
+  ],
+  "callout": "Los reclamos se presentan a través de nuestra red de abogados con licencia en Hawái. Todas las recuperaciones son por contingencia, sin costo por adelantado para el cliente."
+ },
+ "lists": [
+  {
+   "title": "Los 5 condados de Hawái.",
+   "intro": "RCG vigila null en todos los condados de Hawái. Si hay fondos a su nombre en cualquier condado de Hawái, los encontramos y los recuperamos.",
+   "unit": "County",
+   "items": [
+    "Hawaii",
+    "Honolulu",
+    "Kalawao",
+    "Kauai",
+    "Maui"
+   ]
+  }
+ ],
+ "footerLine": "Fondos excedentes de ejecución · Sobrantes de ventas judiciales · Propiedad no reclamada de Hawái · Recuperación para herederos · Excedentes de ventas judiciales, en los 5 condados de Hawái.",
+ "ctaTitle": "Descubra lo que Hawái guarda a su nombre.",
+ "ctaText": "Buscamos sin costo en los registros judiciales de Hawái y en las bases de datos estatales de propiedad no reclamada. Si hay fondos, presentamos el reclamo y los recuperamos por contingencia.",
+ "meta": {
+  "title": "Recuperación de fondos excedentes en Hawái | Todos los condados | RCG",
+  "description": "Recupere fondos excedentes de ejecuciones, sobrantes de ventas por impuestos y propiedad no reclamada en Hawái. Rebound Capital Group presenta el reclamo a través de nuestra red de abogados con licencia, sin costo por adelantado: no paga nada hasta que recuperemos."
+ }
+}

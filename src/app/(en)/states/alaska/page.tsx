@@ -1,96 +1,12 @@
 import type { Metadata } from 'next'
 import StatePage from '@/components/state/StatePage'
+import data from '@/content/states/en/alaska.json'
 
 export const metadata: Metadata = {
   title: "Alaska Surplus Funds Recovery | All Counties | RCG",
   description: "Recover foreclosure surplus, tax deed overages, and unclaimed property in Alaska. Rebound Capital Group files through our network of licensed attorneys at no upfront cost, you pay nothing until we recover.",
 }
 
-const data = {
-  "slug": "alaska",
-  "name": "Alaska",
-  "badge": "Alaska · All Boroughs & Census Areas · No Upfront Cost",
-  "h1Lead": "Surplus Fund Recovery",
-  "h1Accent": "in Alaska.",
-  "intro": "Courts, boroughs, and state agencies in Alaska are holding funds belonging to former property owners and residents. RCG monitors every Alaska borough and census area and recovers these funds at no upfront cost.",
-  "stats": [
-    {
-      "val": "Statewide",
-      "label": "Coverage"
-    },
-    {
-      "val": "$210M",
-      "label": "Unclaimed Funds Held"
-    },
-    {
-      "val": "$0",
-      "label": "Upfront Cost"
-    },
-    {
-      "val": "60-90d",
-      "label": "Avg. Claim Timeline"
-    }
-  ],
-  "body": {
-    "tag": "Alaska Recovery",
-    "title": "Recovery in Alaska. All Boroughs & Census Areas.",
-    "points": [
-      "Foreclosure Surplus Funds",
-      "Trustee Sale Overages",
-      "Alaska Unclaimed Property",
-      "Estate and Heir Recovery",
-      "Court-Held Excess Proceeds"
-    ],
-    "paragraphs": [
-      "Alaska is divided into boroughs and census areas rather than counties. Anchorage, Matanuska-Susitna, and Fairbanks North Star generate the highest volume of Alaska foreclosure surplus cases. Alaska primarily uses non-judicial foreclosure through a deed of trust, and trustee sale surplus funds are held by the trustee or paid into the Superior Court until claimed by the former owner.",
-      "The Alaska Unclaimed Property Program, administered by the state Department of Revenue, holds millions in dormant bank accounts, insurance proceeds, uncashed Permanent Fund dividends, and other assets belonging to Alaska residents and former residents. RCG searches Alaska Superior Court records, trustee sale records, and state unclaimed property databases for every Alaska client."
-    ],
-    "callout": "Claims are filed through our network of licensed attorneys in Alaska. All recoveries are handled on a pure contingency basis with no upfront cost to the client."
-  },
-  "lists": [
-    {
-      "title": "All Alaska Boroughs & Census Areas.",
-      "intro": "RCG monitors foreclosure surplus funds, trustee sale overages, and unclaimed property across every borough and census area in Alaska. If funds exist in your name anywhere in Alaska, we will find them and recover them.",
-      "unit": "Borough",
-      "items": [
-        "Aleutians East",
-        "Aleutians West",
-        "Anchorage",
-        "Bethel",
-        "Bristol Bay",
-        "Chugach",
-        "Copper River",
-        "Denali",
-        "Dillingham",
-        "Fairbanks North Star",
-        "Haines",
-        "Hoonah-Angoon",
-        "Juneau",
-        "Kenai Peninsula",
-        "Ketchikan Gateway",
-        "Kodiak Island",
-        "Kusilvak",
-        "Lake and Peninsula",
-        "Matanuska-Susitna",
-        "Nome",
-        "North Slope",
-        "Northwest Arctic",
-        "Petersburg",
-        "Prince of Wales-Hyder",
-        "Sitka",
-        "Skagway",
-        "Southeast Fairbanks",
-        "Valdez-Cordova",
-        "Wrangell",
-        "Yakutat",
-        "Yukon-Koyukuk"
-      ]
-    }
-  ],
-  "footerLine": "Foreclosure surplus funds · Trustee sale overages · Alaska unclaimed property · Permanent Fund recovery · Estate and heir recovery, available across every Alaska borough and census area.",
-  "ctaTitle": "Find Out What Alaska Is Holding in Your Name.",
-  "ctaText": "We search Alaska court records and state unclaimed property databases at no cost. If funds exist, we file the claim and recover them on a pure contingency basis."
-}
 
 export default function AlaskaPage() {
   return <StatePage {...data} />
