@@ -43,7 +43,7 @@ export default function MapPage() {
       {/* MAP */}
       <div className={h.wrap}>
         <div className={s.mapCard}>
-          <div className={s.mapHint}>All 50 states · Hover a state to see what it holds · Tap to open its page</div>
+          <div className={s.mapHint}><span className={s.hintDesk}>All 50 states · Hover a state to see what it holds · Click to open its page</span><span className={s.hintPhone}>Tap a state to open its page</span></div>
           <USAMap />
         </div>
         <div className={s.stats}>

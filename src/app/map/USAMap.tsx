@@ -57,136 +57,110 @@ const stateInfo: Record<string, { name: string; slug: string; funds: string; act
   WY: { name: 'Wyoming', slug: 'wyoming', funds: '$98M', active: true, counties: 23 },
 }
 
+// Small Northeast states get their label outside the map, in a tidy column
+// on the right, with a thin line back to the state.
+const CALLOUTS: [string, number][] = [
+  ['VT', 118], ['NH', 134], ['MA', 166], ['RI', 182], ['CT', 198],
+  ['NJ', 222], ['DE', 242], ['MD', 258], ['DC', 274],
+]
+const CALLOUT_X = 938
+
+// Better label spots where the computed center lands on a border or in the sea.
+const LABEL_POS: Record<string, [number, number]> = { FL: [790, 532], LA: [553, 462], HI: [262, 548] }
+const LABEL_OUTSIDE = ['HI']
+
+const FILL = '#1E287F'
+const FILL_HOVER = '#5b8ae6'
+
 export default function USAMap() {
   const [hovered, setHovered] = useState<string | null>(null)
-  const [mouse, setMouse] = useState({ x: 0, y: 0 })
+  const [mouse, setMouse] = useState({ x: 0, y: 0, w: 0 })
   const router = useRouter()
 
-  const getStateFill = (code: string, isHovered: boolean) => {
-    const info = stateInfo[code]
-    if (!info) return '#1e2438'
-    if (isHovered) return info.active ? '#2a40c0' : '#2e3a5a'
-    return info.active ? '#1E287F' : '#243358'
-  }
-
-  const getStroke = (code: string, isHovered: boolean) => {
-    if (isHovered) return '#8fa3f0'
-    return stateInfo[code]?.active ? '#3a5fd4' : '#1e2d50'
-  }
-
   const hInfo = hovered ? stateInfo[hovered] : null
+  const go = (code: string) => stateInfo[code] && router.push(`/states/${stateInfo[code].slug}`)
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
-      {/* Tooltip */}
       {hovered && hInfo && (
         <div style={{
           position: 'absolute',
-          left: Math.min(mouse.x + 14, 760),
-          top: Math.max(mouse.y - 100, 4),
-          background: 'linear-gradient(135deg, #0d1220 0%, #111828 100%)',
-          border: `1px solid ${hInfo.active ? 'rgba(30,40,127,0.8)' : 'rgba(255,255,255,0.06)'}`,
+          left: Math.min(mouse.x + 16, Math.max(mouse.w - 230, 0)),
+          top: Math.max(mouse.y - 110, 0),
+          background: '#fff',
+          border: '1px solid rgba(13,19,34,0.08)',
+          borderRadius: 12,
           padding: '14px 18px',
           pointerEvents: 'none',
           zIndex: 20,
-          minWidth: '200px',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.8)',
+          minWidth: 210,
+          boxShadow: '0 18px 40px rgba(13,19,34,0.16)',
+          color: '#0d1322',
         }}>
-          {/* Active badge */}
-          {hInfo.active && (
-            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a7fd4', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4a7fd4', boxShadow: '0 0 6px #4a7fd4' }} />
-              Covered statewide
-            </div>
-          )}
-
-          {/* State name */}
-          <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '15px', color: '#e0e8f8', marginBottom: '10px', letterSpacing: '-0.3px' }}>
-            {hInfo.name}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1E287F', marginBottom: 6 }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#5b8ae6' }} />
+            Covered statewide
           </div>
-
-          {/* Funds */}
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '6px' }}>
-            <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: '22px', color: hInfo.active ? '#6a90f0' : '#4a6090', letterSpacing: '-1px' }}>
-              {hInfo.funds}
-            </span>
-            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '1px', textTransform: 'uppercase', color: '#3a5080' }}>
-              unclaimed
-            </span>
+          <div style={{ fontSize: 17, fontWeight: 800, marginBottom: 4 }}>{hInfo.name}</div>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+            <span style={{ fontFamily: 'var(--serif)', fontSize: 30, lineHeight: 1.1, color: '#1E287F' }}>{hInfo.funds}</span>
+            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6b7390' }}>unclaimed</span>
           </div>
-
-          {/* Counties */}
-
-          <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: hInfo.active ? '#4a6fd4' : '#4a5880', letterSpacing: '0.5px', marginTop: '8px', paddingTop: '8px', borderTop: `1px solid ${hInfo.active ? 'rgba(30,40,127,0.3)' : 'rgba(255,255,255,0.04)'}` }}>
+          <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid rgba(13,19,34,0.08)', fontSize: 12, fontWeight: 700, color: '#1E287F' }}>
             Click to view state guide →
           </div>
         </div>
       )}
 
       <svg
-        viewBox="0 0 960 600"
-        style={{ width: '100%', height: 'auto', display: 'block', cursor: 'pointer' }}
+        viewBox="0 0 980 600"
+        role="img"
+        aria-label="Map of the United States. All 50 states are covered."
+        style={{ width: '100%', height: 'auto', display: 'block', cursor: 'pointer', filter: 'drop-shadow(0 18px 30px rgba(13,19,34,0.14))', overflow: 'visible' }}
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect()
-          setMouse({
-            x: (e.clientX - rect.left) * (960 / rect.width),
-            y: (e.clientY - rect.top) * (600 / rect.height),
-          })
+          setMouse({ x: e.clientX - rect.left, y: e.clientY - rect.top, w: rect.width })
         }}
         onMouseLeave={() => setHovered(null)}
       >
-        <rect width="960" height="600" fill="#141c2e" opacity="0" />
+        {Object.entries(statePaths).map(([code, path]) => (
+          <path
+            key={code}
+            d={path}
+            fill={hovered === code ? FILL_HOVER : FILL}
+            stroke="#F9F8F6"
+            strokeWidth={hovered === code ? 1.6 : 0.9}
+            strokeLinejoin="round"
+            style={{ transition: 'fill 0.15s ease', cursor: 'pointer' }}
+            onMouseEnter={() => setHovered(code)}
+            onClick={() => go(code)}
+          />
+        ))}
 
-        {Object.entries(statePaths).map(([code, path]) => {
-          const isHovered = hovered === code
-          const centroid = stateCentroids[code]
-          const skipLabel = ['DC', 'RI', 'DE', 'CT', 'NJ', 'MD', 'MA', 'VT', 'NH']
-
+        {/* Labels inside the bigger states */}
+        {Object.keys(statePaths).map((code) => {
+          const c = LABEL_POS[code] || stateCentroids[code]
+          if (!c || CALLOUTS.some(([k]) => k === code)) return null
+          const outside = LABEL_OUTSIDE.includes(code)
           return (
-            <g key={code}>
-              <path
-                d={path}
-                fill={getStateFill(code, isHovered)}
-                stroke={getStroke(code, isHovered)}
-                strokeWidth={isHovered ? 1.5 : 0.5}
-                style={{ transition: 'fill 0.1s ease', cursor: 'pointer' }}
-                onMouseEnter={() => setHovered(code)}
-                onClick={() => stateInfo[code] && router.push(`/states/${stateInfo[code].slug}`)}
-              />
-              {centroid && !skipLabel.includes(code) && (
-                <text
-                  x={centroid[0]} y={centroid[1] + 3}
-                  textAnchor="middle"
-                  style={{
-                    fontFamily: "'Space Mono', monospace",
-                    fontSize: ['TX','CA','MT','AK'].includes(code) ? '9px' : '7px',
-                    fontWeight: 700,
-                    fill: stateInfo[code]?.active ? '#ffffff' : '#6a80a8',
-                    pointerEvents: 'none',
-                    userSelect: 'none',
-                    letterSpacing: '0.5px',
-                  }}
-                >
-                  {code}
-                </text>
-              )}
-            </g>
+            <text key={code} x={c[0]} y={c[1] + 3} textAnchor="middle"
+              style={{ fontFamily: 'inherit', fontSize: ['TX', 'CA', 'MT', 'AK'].includes(code) ? 11 : outside ? 10 : 9, fontWeight: 800, letterSpacing: '0.06em', fill: outside ? (hovered === code ? FILL_HOVER : FILL) : '#fff', pointerEvents: 'none', userSelect: 'none' }}>
+              {code}
+            </text>
           )
         })}
 
-        {/* NE state callout lines */}
-        {[
-          ['DC', 820, 325], ['RI', 870, 278], ['DE', 855, 303],
-          ['CT', 855, 258], ['NJ', 868, 328], ['MD', 855, 343],
-          ['MA', 868, 233], ['VT', 870, 208], ['NH', 870, 223],
-        ].map(([code, ox, oy]) => {
-          const c = stateCentroids[code as string]
+        {/* Small Northeast states: labels in a column to the right */}
+        {CALLOUTS.map(([code, y]) => {
+          const c = stateCentroids[code]
           if (!c) return null
+          const on = hovered === code
           return (
-            <g key={code}>
-              <line x1={c[0]} y1={c[1]} x2={(ox as number) - 16} y2={oy as number} stroke="#2a3d60" strokeWidth={0.5} />
-              <text x={ox as number} y={(oy as number) + 3} textAnchor="start"
-                style={{ fontFamily: "'Space Mono',monospace", fontSize: '7px', fontWeight: 700, fill: stateInfo[code as string]?.active ? '#ffffff' : '#6a80a8', pointerEvents: 'none', userSelect: 'none' }}>
+            <g key={code} style={{ cursor: 'pointer' }} onMouseEnter={() => setHovered(code)} onClick={() => go(code)}>
+              <line x1={c[0]} y1={c[1]} x2={CALLOUT_X - 6} y2={y} stroke={on ? FILL_HOVER : 'rgba(30,40,127,0.35)'} strokeWidth={0.8} />
+              <circle cx={c[0]} cy={c[1]} r={1.6} fill={on ? FILL_HOVER : '#fff'} />
+              <text x={CALLOUT_X} y={y + 3.5} textAnchor="start"
+                style={{ fontFamily: 'inherit', fontSize: 10, fontWeight: 800, letterSpacing: '0.06em', fill: on ? FILL_HOVER : FILL, userSelect: 'none' }}>
                 {code}
               </text>
             </g>
@@ -194,9 +168,8 @@ export default function USAMap() {
         })}
       </svg>
 
-      {/* Legend */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '16px', fontSize: '12px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#c3cfee' }}>
-        <div style={{ width: '18px', height: '12px', background: '#1E287F', border: '1px solid #3a5fd4' }} />
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 18, fontSize: 12, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1E287F', textAlign: 'center' }}>
+        <span style={{ width: 18, height: 12, borderRadius: 3, background: FILL, flexShrink: 0 }} />
         All 50 states covered · 1,000+ county systems monitored
       </div>
     </div>
