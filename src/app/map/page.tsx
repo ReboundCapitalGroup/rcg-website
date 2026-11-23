@@ -10,13 +10,6 @@ export const metadata: Metadata = {
   description: 'About $70 billion in unclaimed property is held by U.S. states. See what your state holds and get a free claim check from Rebound Capital Group. $0 upfront.',
 }
 
-const activeStates = [
-  { code: 'FL', name: 'Florida', slug: 'florida', funds: '$2.4B', counties: 67 },
-  { code: 'CO', name: 'Colorado', slug: 'colorado', funds: '$980M', counties: 64 },
-  { code: 'OH', name: 'Ohio', slug: 'ohio', funds: '$4.8B', counties: 88 },
-  { code: 'AZ', name: 'Arizona', slug: 'arizona', funds: '$1.8B', counties: 15 },
-]
-
 const allStateFunds = [
   { name: 'California', funds: '$15B' }, { name: 'New York', funds: '$13B' },
   { name: 'Texas', funds: '$10.5B' }, { name: 'Ohio', funds: '$4.8B' },
@@ -50,33 +43,23 @@ export default function MapPage() {
       {/* MAP */}
       <div className={h.wrap}>
         <div className={s.mapCard}>
-          <div className={s.mapHint}>Hover a state to see what it holds · Tap to open its page</div>
+          <div className={s.mapHint}>All 50 states · Hover a state to see what it holds · Tap to open its page</div>
           <USAMap />
         </div>
         <div className={s.stats}>
-          {[['50', 'States served nationwide'], ['24/7', 'Call or text any time'], ['30-90d', 'Typical claim turnaround'], ['$0', 'Upfront cost, ever']].map(([v, l]) => (
+          {[['1,000+', 'County systems monitored'], ['All 50', 'States covered'], ['24/7', 'Call or text any time'], ['30-90d', 'Typical claim turnaround']].map(([v, l]) => (
             <div key={l} className={s.stat}><span className={s.statVal}>{v}</span><span>{l}</span></div>
           ))}
         </div>
       </div>
 
-      {/* ACTIVE + TOP STATES */}
+      {/* EVERY STATE + TOP STATES */}
       <div className={`${h.wrap} ${s.lists}`}>
         <div>
-          <div className={sv.tag}>Live county monitoring</div>
-          <h2 className={sv.h2}>Where we watch every auction.</h2>
-          <p className={s.activeIntro}>In these states our system checks county foreclosure and tax sale auctions every night, so we can reach former owners before deadlines close. We help in every other state too.</p>
-          <div className={s.active}>
-            {activeStates.map((x) => (
-              <Link key={x.code} href={`/states/${x.slug}`} className={s.activeCard}>
-                <span className={s.activeCode}>{x.code}</span>
-                <span className={s.activeName}>{x.name}</span>
-                <span className={s.activeMeta}>County auctions checked nightly</span>
-                <span className={s.activeFunds}>{x.funds}</span>
-                <span className={s.activeMeta}>unclaimed funds held by the state</span>
-              </Link>
-            ))}
-          </div>
+          <div className={sv.tag}>Nationwide coverage</div>
+          <h2 className={sv.h2}>Every state. Every county.</h2>
+          <p className={s.activeIntro}>Every state holds unclaimed money, and every county can have surplus from a foreclosure or tax sale. Our system monitors over 1,000 county court and auction systems, and we search state unclaimed property records nationwide.</p>
+          <Link href="/states" className={sv.more}>Find your state →</Link>
         </div>
         <div>
           <div className={sv.tag}>Top states</div>

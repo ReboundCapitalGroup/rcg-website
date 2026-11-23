@@ -20,8 +20,6 @@ const STATES: [string, string][] = [
   ['TX', 'Texas'], ['UT', 'Utah'], ['VT', 'Vermont'], ['VA', 'Virginia'], ['WA', 'Washington'], ['WV', 'West Virginia'],
   ['WI', 'Wisconsin'], ['WY', 'Wyoming'],
 ]
-// States where county auctions are checked nightly
-const LIVE = new Set(['FL', 'CO', 'AZ', 'OH'])
 const slug = (n: string) => n.toLowerCase().replace(/ /g, '-')
 
 export default function StatesPage() {
@@ -39,14 +37,12 @@ export default function StatesPage() {
       </div>
 
       <div className={h.wrap}>
-        <div className={sv.tag}>Auctions checked nightly</div>
         <div className={s.live}>
-          {STATES.filter(([c]) => LIVE.has(c)).map(([c, n]) => (
-            <Link key={c} href={`/states/${slug(n)}`} className={s.liveCard}>
-              <span className={s.code}>{c}</span>
-              <span className={s.name}>{n}</span>
-              <span className={s.meta}>County auctions checked nightly →</span>
-            </Link>
+          {[['1,000+', 'County systems monitored'], ['All 50', 'States covered'], ['24/7', 'Call or text any time'], ['$0', 'Upfront cost, ever']].map(([v, l]) => (
+            <div key={l} className={s.liveCard}>
+              <span className={s.name}>{v}</span>
+              <span className={s.meta}>{l}</span>
+            </div>
           ))}
         </div>
 

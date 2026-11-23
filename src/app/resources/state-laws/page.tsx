@@ -20,13 +20,13 @@ type State = {
 const STATES: State[] = [
   { code: 'AL', name: 'Alabama',        slug: 'alabama',        deadline: '3 years',   tier: 'medium' },
   { code: 'AK', name: 'Alaska',         slug: 'alaska',         deadline: '10 years',  tier: 'long' },
-  { code: 'AZ', name: 'Arizona',        slug: 'arizona',        deadline: '3 years',   tier: 'medium', active: true },
+  { code: 'AZ', name: 'Arizona',        slug: 'arizona',        deadline: '3 years',   tier: 'medium' },
   { code: 'AR', name: 'Arkansas',       slug: 'arkansas',       deadline: '5 years',   tier: 'long' },
   { code: 'CA', name: 'California',     slug: 'california',     deadline: '1 year',    tier: 'medium' },
-  { code: 'CO', name: 'Colorado',       slug: 'colorado',       deadline: '2.5 years', tier: 'medium', active: true },
+  { code: 'CO', name: 'Colorado',       slug: 'colorado',       deadline: '2.5 years', tier: 'medium' },
   { code: 'CT', name: 'Connecticut',    slug: 'connecticut',    deadline: '3 years',   tier: 'medium' },
   { code: 'DE', name: 'Delaware',       slug: 'delaware',       deadline: '5 years',   tier: 'long' },
-  { code: 'FL', name: 'Florida',        slug: 'florida',        deadline: '60 days',   tier: 'short', active: true },
+  { code: 'FL', name: 'Florida',        slug: 'florida',        deadline: '60 days',   tier: 'short' },
   { code: 'GA', name: 'Georgia',        slug: 'georgia',        deadline: '5 years',   tier: 'long' },
   { code: 'HI', name: 'Hawaii',         slug: 'hawaii',         deadline: '10 years',  tier: 'long' },
   { code: 'ID', name: 'Idaho',          slug: 'idaho',          deadline: '3 years',   tier: 'medium' },
@@ -52,7 +52,7 @@ const STATES: State[] = [
   { code: 'NY', name: 'New York',       slug: 'new-york',       deadline: '3 years',   tier: 'medium' },
   { code: 'NC', name: 'North Carolina', slug: 'north-carolina', deadline: '3 years',   tier: 'medium' },
   { code: 'ND', name: 'North Dakota',   slug: 'north-dakota',   deadline: '10 years',  tier: 'long' },
-  { code: 'OH', name: 'Ohio',           slug: 'ohio',           deadline: '5 years',   tier: 'long', active: true },
+  { code: 'OH', name: 'Ohio',           slug: 'ohio',           deadline: '5 years',   tier: 'long' },
   { code: 'OK', name: 'Oklahoma',       slug: 'oklahoma',       deadline: '5 years',   tier: 'long' },
   { code: 'OR', name: 'Oregon',         slug: 'oregon',         deadline: '5 years',   tier: 'long' },
   { code: 'PA', name: 'Pennsylvania',   slug: 'pennsylvania',   deadline: '2 years',   tier: 'medium' },
@@ -224,10 +224,6 @@ export default function StateLawsPage() {
             <span className="laws-legend-sample laws-tier-long">4yr+</span>
             <span>Extended</span>
           </div>
-          <div className="laws-legend-item">
-            <span className="laws-row-active-dot" style={{ display: 'inline-block' }}></span>
-            <span>Auctions checked nightly</span>
-          </div>
         </div>
 
         <div className="laws-section-header">
@@ -249,7 +245,6 @@ export default function StateLawsPage() {
               <div className="laws-row-code">{s.code}</div>
               <div className="laws-row-name">
                 {s.name}
-                {s.active && <span className="laws-row-active-dot" title="Auctions checked nightly" />}
               </div>
               <div>
                 <span className={`laws-row-deadline laws-tier-${s.tier}`}>

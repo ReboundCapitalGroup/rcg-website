@@ -4,57 +4,57 @@ import { useRouter } from 'next/navigation'
 import { statePaths, stateCentroids } from './stateData'
 
 const stateInfo: Record<string, { name: string; slug: string; funds: string; active: boolean; counties: number }> = {
-  AL: { name: 'Alabama', slug: 'alabama', funds: '$892M', active: false, counties: 67 },
-  AK: { name: 'Alaska', slug: 'alaska', funds: '$210M', active: false, counties: 30 },
+  AL: { name: 'Alabama', slug: 'alabama', funds: '$892M', active: true, counties: 67 },
+  AK: { name: 'Alaska', slug: 'alaska', funds: '$210M', active: true, counties: 30 },
   AZ: { name: 'Arizona', slug: 'arizona', funds: '$1.8B', active: true, counties: 15 },
-  AR: { name: 'Arkansas', slug: 'arkansas', funds: '$421M', active: false, counties: 75 },
-  CA: { name: 'California', slug: 'california', funds: '$15B', active: false, counties: 58 },
+  AR: { name: 'Arkansas', slug: 'arkansas', funds: '$421M', active: true, counties: 75 },
+  CA: { name: 'California', slug: 'california', funds: '$15B', active: true, counties: 58 },
   CO: { name: 'Colorado', slug: 'colorado', funds: '$980M', active: true, counties: 64 },
-  CT: { name: 'Connecticut', slug: 'connecticut', funds: '$940M', active: false, counties: 8 },
-  DC: { name: 'Washington D.C.', slug: 'washington-dc', funds: '$180M', active: false, counties: 1 },
-  DE: { name: 'Delaware', slug: 'delaware', funds: '$310M', active: false, counties: 3 },
+  CT: { name: 'Connecticut', slug: 'connecticut', funds: '$940M', active: true, counties: 8 },
+  DC: { name: 'Washington D.C.', slug: 'washington-dc', funds: '$180M', active: true, counties: 1 },
+  DE: { name: 'Delaware', slug: 'delaware', funds: '$310M', active: true, counties: 3 },
   FL: { name: 'Florida', slug: 'florida', funds: '$2.4B', active: true, counties: 67 },
-  GA: { name: 'Georgia', slug: 'georgia', funds: '$1.6B', active: false, counties: 159 },
-  HI: { name: 'Hawaii', slug: 'hawaii', funds: '$290M', active: false, counties: 5 },
-  ID: { name: 'Idaho', slug: 'idaho', funds: '$218M', active: false, counties: 44 },
-  IL: { name: 'Illinois', slug: 'illinois', funds: '$3.2B', active: false, counties: 102 },
-  IN: { name: 'Indiana', slug: 'indiana', funds: '$892M', active: false, counties: 92 },
-  IA: { name: 'Iowa', slug: 'iowa', funds: '$412M', active: false, counties: 99 },
-  KS: { name: 'Kansas', slug: 'kansas', funds: '$390M', active: false, counties: 105 },
-  KY: { name: 'Kentucky', slug: 'kentucky', funds: '$580M', active: false, counties: 120 },
-  LA: { name: 'Louisiana', slug: 'louisiana', funds: '$720M', active: false, counties: 64 },
-  ME: { name: 'Maine', slug: 'maine', funds: '$310M', active: false, counties: 16 },
-  MD: { name: 'Maryland', slug: 'maryland', funds: '$1.1B', active: false, counties: 24 },
-  MA: { name: 'Massachusetts', slug: 'massachusetts', funds: '$2.4B', active: false, counties: 14 },
-  MI: { name: 'Michigan', slug: 'michigan', funds: '$1.2B', active: false, counties: 83 },
-  MN: { name: 'Minnesota', slug: 'minnesota', funds: '$1.0B', active: false, counties: 87 },
-  MS: { name: 'Mississippi', slug: 'mississippi', funds: '$280M', active: false, counties: 82 },
-  MO: { name: 'Missouri', slug: 'missouri', funds: '$890M', active: false, counties: 115 },
-  MT: { name: 'Montana', slug: 'montana', funds: '$148M', active: false, counties: 56 },
-  NE: { name: 'Nebraska', slug: 'nebraska', funds: '$310M', active: false, counties: 93 },
-  NV: { name: 'Nevada', slug: 'nevada', funds: '$840M', active: false, counties: 17 },
-  NH: { name: 'New Hampshire', slug: 'new-hampshire', funds: '$320M', active: false, counties: 10 },
-  NJ: { name: 'New Jersey', slug: 'new-jersey', funds: '$2.8B', active: false, counties: 21 },
-  NM: { name: 'New Mexico', slug: 'new-mexico', funds: '$340M', active: false, counties: 33 },
-  NY: { name: 'New York', slug: 'new-york', funds: '$13B', active: false, counties: 62 },
-  NC: { name: 'North Carolina', slug: 'north-carolina', funds: '$1.3B', active: false, counties: 100 },
-  ND: { name: 'North Dakota', slug: 'north-dakota', funds: '$118M', active: false, counties: 53 },
+  GA: { name: 'Georgia', slug: 'georgia', funds: '$1.6B', active: true, counties: 159 },
+  HI: { name: 'Hawaii', slug: 'hawaii', funds: '$290M', active: true, counties: 5 },
+  ID: { name: 'Idaho', slug: 'idaho', funds: '$218M', active: true, counties: 44 },
+  IL: { name: 'Illinois', slug: 'illinois', funds: '$3.2B', active: true, counties: 102 },
+  IN: { name: 'Indiana', slug: 'indiana', funds: '$892M', active: true, counties: 92 },
+  IA: { name: 'Iowa', slug: 'iowa', funds: '$412M', active: true, counties: 99 },
+  KS: { name: 'Kansas', slug: 'kansas', funds: '$390M', active: true, counties: 105 },
+  KY: { name: 'Kentucky', slug: 'kentucky', funds: '$580M', active: true, counties: 120 },
+  LA: { name: 'Louisiana', slug: 'louisiana', funds: '$720M', active: true, counties: 64 },
+  ME: { name: 'Maine', slug: 'maine', funds: '$310M', active: true, counties: 16 },
+  MD: { name: 'Maryland', slug: 'maryland', funds: '$1.1B', active: true, counties: 24 },
+  MA: { name: 'Massachusetts', slug: 'massachusetts', funds: '$2.4B', active: true, counties: 14 },
+  MI: { name: 'Michigan', slug: 'michigan', funds: '$1.2B', active: true, counties: 83 },
+  MN: { name: 'Minnesota', slug: 'minnesota', funds: '$1.0B', active: true, counties: 87 },
+  MS: { name: 'Mississippi', slug: 'mississippi', funds: '$280M', active: true, counties: 82 },
+  MO: { name: 'Missouri', slug: 'missouri', funds: '$890M', active: true, counties: 115 },
+  MT: { name: 'Montana', slug: 'montana', funds: '$148M', active: true, counties: 56 },
+  NE: { name: 'Nebraska', slug: 'nebraska', funds: '$310M', active: true, counties: 93 },
+  NV: { name: 'Nevada', slug: 'nevada', funds: '$840M', active: true, counties: 17 },
+  NH: { name: 'New Hampshire', slug: 'new-hampshire', funds: '$320M', active: true, counties: 10 },
+  NJ: { name: 'New Jersey', slug: 'new-jersey', funds: '$2.8B', active: true, counties: 21 },
+  NM: { name: 'New Mexico', slug: 'new-mexico', funds: '$340M', active: true, counties: 33 },
+  NY: { name: 'New York', slug: 'new-york', funds: '$13B', active: true, counties: 62 },
+  NC: { name: 'North Carolina', slug: 'north-carolina', funds: '$1.3B', active: true, counties: 100 },
+  ND: { name: 'North Dakota', slug: 'north-dakota', funds: '$118M', active: true, counties: 53 },
   OH: { name: 'Ohio', slug: 'ohio', funds: '$4.8B', active: true, counties: 88 },
-  OK: { name: 'Oklahoma', slug: 'oklahoma', funds: '$520M', active: false, counties: 77 },
-  OR: { name: 'Oregon', slug: 'oregon', funds: '$780M', active: false, counties: 36 },
-  PA: { name: 'Pennsylvania', slug: 'pennsylvania', funds: '$4.5B', active: false, counties: 67 },
-  RI: { name: 'Rhode Island', slug: 'rhode-island', funds: '$290M', active: false, counties: 5 },
-  SC: { name: 'South Carolina', slug: 'south-carolina', funds: '$620M', active: false, counties: 46 },
-  SD: { name: 'South Dakota', slug: 'south-dakota', funds: '$112M', active: false, counties: 66 },
-  TN: { name: 'Tennessee', slug: 'tennessee', funds: '$980M', active: false, counties: 95 },
-  TX: { name: 'Texas', slug: 'texas', funds: '$10.5B', active: false, counties: 254 },
-  UT: { name: 'Utah', slug: 'utah', funds: '$490M', active: false, counties: 29 },
-  VT: { name: 'Vermont', slug: 'vermont', funds: '$150M', active: false, counties: 14 },
-  VA: { name: 'Virginia', slug: 'virginia', funds: '$1.5B', active: false, counties: 95 },
-  WA: { name: 'Washington', slug: 'washington', funds: '$1.4B', active: false, counties: 39 },
-  WV: { name: 'West Virginia', slug: 'west-virginia', funds: '$280M', active: false, counties: 55 },
-  WI: { name: 'Wisconsin', slug: 'wisconsin', funds: '$890M', active: false, counties: 72 },
-  WY: { name: 'Wyoming', slug: 'wyoming', funds: '$98M', active: false, counties: 23 },
+  OK: { name: 'Oklahoma', slug: 'oklahoma', funds: '$520M', active: true, counties: 77 },
+  OR: { name: 'Oregon', slug: 'oregon', funds: '$780M', active: true, counties: 36 },
+  PA: { name: 'Pennsylvania', slug: 'pennsylvania', funds: '$4.5B', active: true, counties: 67 },
+  RI: { name: 'Rhode Island', slug: 'rhode-island', funds: '$290M', active: true, counties: 5 },
+  SC: { name: 'South Carolina', slug: 'south-carolina', funds: '$620M', active: true, counties: 46 },
+  SD: { name: 'South Dakota', slug: 'south-dakota', funds: '$112M', active: true, counties: 66 },
+  TN: { name: 'Tennessee', slug: 'tennessee', funds: '$980M', active: true, counties: 95 },
+  TX: { name: 'Texas', slug: 'texas', funds: '$10.5B', active: true, counties: 254 },
+  UT: { name: 'Utah', slug: 'utah', funds: '$490M', active: true, counties: 29 },
+  VT: { name: 'Vermont', slug: 'vermont', funds: '$150M', active: true, counties: 14 },
+  VA: { name: 'Virginia', slug: 'virginia', funds: '$1.5B', active: true, counties: 95 },
+  WA: { name: 'Washington', slug: 'washington', funds: '$1.4B', active: true, counties: 39 },
+  WV: { name: 'West Virginia', slug: 'west-virginia', funds: '$280M', active: true, counties: 55 },
+  WI: { name: 'Wisconsin', slug: 'wisconsin', funds: '$890M', active: true, counties: 72 },
+  WY: { name: 'Wyoming', slug: 'wyoming', funds: '$98M', active: true, counties: 23 },
 }
 
 export default function USAMap() {
@@ -96,7 +96,7 @@ export default function USAMap() {
           {hInfo.active && (
             <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a7fd4', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4a7fd4', boxShadow: '0 0 6px #4a7fd4' }} />
-              Auctions checked nightly
+              Covered statewide
             </div>
           )}
 
@@ -116,11 +116,6 @@ export default function USAMap() {
           </div>
 
           {/* Counties */}
-          {hInfo.active && (
-            <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', color: '#3a5070', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>
-              Auctions checked nightly
-            </div>
-          )}
 
           <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', color: hInfo.active ? '#4a6fd4' : '#4a5880', letterSpacing: '0.5px', marginTop: '8px', paddingTop: '8px', borderTop: `1px solid ${hInfo.active ? 'rgba(30,40,127,0.3)' : 'rgba(255,255,255,0.04)'}` }}>
             Click to view state guide →
@@ -200,15 +195,9 @@ export default function USAMap() {
       </svg>
 
       {/* Legend */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px', marginTop: '16px', flexWrap: 'wrap' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.6 }}>
-          <div style={{ width: '18px', height: '12px', background: '#1E287F', border: '1px solid #3a5fd4' }} />
-          Auctions checked nightly
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.6 }}>
-          <div style={{ width: '18px', height: '12px', background: '#1e2d4a', border: '1px solid #131d35' }} />
-          Served Nationwide
-        </div>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '16px', fontSize: '12px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#c3cfee' }}>
+        <div style={{ width: '18px', height: '12px', background: '#1E287F', border: '1px solid #3a5fd4' }} />
+        All 50 states covered · 1,000+ county systems monitored
       </div>
     </div>
   )

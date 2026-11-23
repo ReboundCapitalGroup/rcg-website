@@ -16,8 +16,7 @@
 .lists { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; padding-top: 72px; }
 .activeIntro { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--body); }
 .active { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
-.activeCard { display: flex; flex-direction: column; gap: 4px; background: var(--glow); color: #fff !important; border-radius: 14px; padding: 22px 24px; transition: transform .3s, box-shadow .3s; }
-.activeCard:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(13,19,34,0.2); }
+.activeCard { cursor: default; display: flex; flex-direction: column; gap: 4px; background: var(--glow); color: #fff !important; border-radius: 14px; padding: 22px 24px; transition: transform .3s, box-shadow .3s; }
 .activeCode { font-size: 12px; font-weight: 800; letter-spacing: 0.18em; color: var(--light); }
 .activeName { font-size: 20px; font-weight: 800; }
 .activeFunds { font-family: var(--serif); font-size: 40px; line-height: 1.05; }
