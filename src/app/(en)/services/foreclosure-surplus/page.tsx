@@ -31,7 +31,7 @@ export default function ForeclosureSurplusPage() {
               <p>When a lender forecloses and the property sells at auction, the sale price often exceeds the total owed on the mortgage and any other liens. That excess is called foreclosure surplus. Under the laws of most states, that money belongs to the former property owner.</p>
               <p>Most former owners never receive clear notice that surplus funds exist. The money can sit with the clerk of court for a long time, and if it goes unclaimed it can be turned over to the state. By then the claim is harder, and sometimes the window has closed.</p>
               <p>Depending on the state and the type of sale, the same money may be called surplus funds, excess proceeds, overages, or overbid funds. Whatever the name, it is the amount left after the debt and costs are paid. For homes sold for unpaid property taxes, see <Link href="/services/tax-deed-surplus">tax deed overages</Link>.</p>
-              <p>RCG monitors foreclosure filings across active states. When surplus is tied to your name, we reach out, file through our network of licensed attorneys, and recover your funds at no upfront cost.</p>
+              <p>RCG monitors foreclosure filings across the country. When surplus is tied to your name, we reach out, file through our network of licensed attorneys, and recover your funds at no upfront cost.</p>
             </>
           ),
         },

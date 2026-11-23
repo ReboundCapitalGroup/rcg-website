@@ -29,7 +29,7 @@ export default function TaxDeedSurplusPage() {
             <>
               <p>When a county sells a property at a tax deed auction to recover unpaid property taxes, the bidding often goes well past what is owed. The back taxes, penalties and fees are paid first. Whatever remains is the overage, and by law it belongs to the former owner.</p>
               <p>These funds are held by the county and most former owners never get clear notice that money is waiting. If a claim is not filed in time, the funds can be absorbed by the county or the state.</p>
-              <p>RCG monitors tax deed sale records across active counties. When we find an overage tied to your name, we handle the whole claim through our network of licensed attorneys. For homes lost to a lender, see <Link href="/services/foreclosure-surplus">foreclosure surplus funds</Link>.</p>
+              <p>RCG monitors tax deed sale records across the country. When we find an overage tied to your name, we handle the whole claim through our network of licensed attorneys. For homes lost to a lender, see <Link href="/services/foreclosure-surplus">foreclosure surplus funds</Link>.</p>
             </>
           ),
         },

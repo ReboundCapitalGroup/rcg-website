@@ -102,7 +102,7 @@ const sections = [
       'crear obras derivadas,',
       'ni usar nuestros materiales con fines comerciales',
     ],
-    footer: 'without our written permission.',
+    footer: 'sin nuestro permiso por escrito.',
   },
   {
     n: '09',
@@ -131,7 +131,7 @@ const sections = [
       'demoras o fallas en el procesamiento,',
       'ni ningún daño relacionado con el uso o la imposibilidad de usar el Servicio.',
     ],
-    footer: 'This limitation applies even if we have been advised of possible damages.',
+    footer: 'Esta limitación aplica aun si se nos advirtió sobre posibles daños.',
   },
   {
     n: '11',
