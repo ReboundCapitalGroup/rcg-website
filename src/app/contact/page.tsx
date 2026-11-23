@@ -8,7 +8,7 @@ import ContactForm from './ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Rebound Capital Group',
-  description: 'Contact Rebound Capital Group. Call or text 24/7 at 305-563-4920, or email our team. Based in Miami Beach, FL, helping homeowners and heirs in all 50 states.',
+  description: 'Contact Rebound Capital Group. Call or text 24/7 at 305-563-4920, or send our team a message. Based in Miami Beach, FL, helping homeowners and heirs in all 50 states.',
   alternates: { canonical: '/contact' },
 }
 
@@ -28,7 +28,7 @@ export default function ContactPage() {
         <div className={`${sv.heroText} ${sv.heroCenter}`}>
           <div className={h.eyebrow}>Contact · Miami Beach, FL · 24/7</div>
           <h1 className={sv.h1}>Talk to a <em className={h.gradText}>real person.</em></h1>
-          <p className={sv.answer}>Questions about a case, a letter you received, or working with us? Call, text or email. A member of our team answers every message.</p>
+          <p className={sv.answer}>Questions about a case, a letter you received, or working with us? Call, text or send a message. A member of our team answers every message.</p>
         </div>
       </div>
 
@@ -42,10 +42,10 @@ export default function ContactPage() {
             <span className={c.value}>305-563-4920</span>
             <span className={c.meta}>Any time, 24/7</span>
           </a>
-          <a href="mailto:contact@reboundcapitalgroup.com" className={c.card}>
+          <a href="#message" className={c.card}>
             <Icon d={<><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></>} />
-            <span className={c.label}>Email</span>
-            <span className={`${c.value} ${c.valueSm}`}>contact@reboundcapitalgroup.com</span>
+            <span className={c.label}>Message</span>
+            <span className={c.value}>Send us a note</span>
             <span className={c.meta}>We reply within one business day</span>
           </a>
           <div className={c.card}>
@@ -67,7 +67,7 @@ export default function ContactPage() {
 
         <div className={c.trust}><TrustRow /></div>
         </div>
-        <div className={c.formCard}><ContactForm /></div>
+        <div id="message" className={c.formCard} style={{ scrollMarginTop: 110 }}><ContactForm /></div>
         </div>
       </div>
 

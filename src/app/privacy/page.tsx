@@ -196,7 +196,7 @@ export default function PrivacyPage() {
                 'Message frequency varies based on your inquiry or claim.',
                 'Message and data rates may apply.',
                 'To stop text messages, reply STOP at any time. Reply HELP for help, or call 305-563-4920.',
-                'To stop calls or emails, tell us on a call, reply to any email, or write to contact@reboundcapitalgroup.com. We will honor your request within the time required by law.',
+                'To stop calls or emails, tell us on a call, reply to any email, or send us a message at reboundcapitalgroup.com/contact. We will honor your request within the time required by law.',
                 'Calls may be recorded for quality, training, and record-keeping purposes.',
                 'Wireless carriers are not liable for delayed or undelivered messages.',
               ].map((item, i) => (
@@ -261,10 +261,10 @@ export default function PrivacyPage() {
               ))}
             </ul>
             <p style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.8 }}>
-              You can contact us anytime at{' '}
-              <a href="mailto:contact@reboundcapitalgroup.com" style={{ color: '#2f3856', textDecoration: 'none', borderBottom: '1px solid rgba(74,95,212,0.4)' }}>
-                contact@reboundcapitalgroup.com
-              </a>
+              You can contact us anytime through our{' '}
+              <Link href="/contact" style={{ color: '#2f3856', textDecoration: 'none', borderBottom: '1px solid rgba(74,95,212,0.4)' }}>
+                contact form
+              </Link>
               {' '}or{' '}
               <a href="tel:+13055634920" style={{ color: '#2f3856', textDecoration: 'none', borderBottom: '1px solid rgba(74,95,212,0.4)' }}>
                 (305) 563-4920
@@ -399,10 +399,10 @@ export default function PrivacyPage() {
               </a>
             </div>
             <div>
-              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Email</div>
-              <a href="mailto:contact@reboundcapitalgroup.com" style={{ fontSize: '13px', color: '#2f3856', textDecoration: 'none', lineHeight: 1.6, wordBreak: 'break-all' }}>
-                contact@reboundcapitalgroup.com
-              </a>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Message</div>
+              <Link href="/contact" style={{ fontSize: '13px', color: '#2f3856', textDecoration: 'none', lineHeight: 1.6 }}>
+                Send us a message
+              </Link>
             </div>
           </div>
         </div>

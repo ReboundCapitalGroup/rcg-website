@@ -86,7 +86,6 @@ const organizationSchema = {
   logo: 'https://reboundcapitalgroup.com/rcg-logo.png',
   description: 'Rebound Capital Group serves homeowners nationwide. Claims are filed through our network of licensed attorneys in the state where the funds are held.',
   telephone: '+1-305-563-4920',
-  email: 'contact@reboundcapitalgroup.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Miami Beach',
@@ -97,7 +96,7 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     telephone: '+1-305-563-4920',
     contactType: 'customer service',
-    email: 'contact@reboundcapitalgroup.com',
+    url: 'https://reboundcapitalgroup.com/contact',
     availableLanguage: ['English', 'Spanish'],
     areaServed: 'US',
     hoursAvailable: {

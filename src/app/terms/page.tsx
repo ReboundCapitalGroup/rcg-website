@@ -160,7 +160,7 @@ const sections = [
     title: 'Consent to Calls, Text Messages, and Email',
     body: [
       'By submitting a form on our website, calling or texting us, signing an agreement with us, or otherwise providing your phone number or email address, you agree that Rebound Capital Group LLC and its team may contact you about your inquiry, your claim, and our services by phone call, text message (SMS and MMS), voicemail, and email, sent manually or with automated technology, including prerecorded or artificial voice messages. This consent continues until you tell us to stop.',
-      'Agreeing to receive text messages is optional and is not a condition of using our services. Message frequency varies. Message and data rates may apply. Reply STOP to stop text messages or HELP for help. To stop calls or emails, tell us on a call, reply to any email, or write to contact@reboundcapitalgroup.com.',
+      'Agreeing to receive text messages is optional and is not a condition of using our services. Message frequency varies. Message and data rates may apply. Reply STOP to stop text messages or HELP for help. To stop calls or emails, tell us on a call, reply to any email, or send us a message at reboundcapitalgroup.com/contact.',
       'Calls may be recorded for quality, training, and record-keeping purposes. Wireless carriers are not liable for delayed or undelivered messages. See our Privacy Policy for how we handle your phone number and messaging consent.',
     ],
   },
@@ -283,10 +283,10 @@ export default function TermsPage() {
               </a>
             </div>
             <div>
-              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Email</div>
-              <a href="mailto:contact@reboundcapitalgroup.com" style={{ fontSize: '13px', color: '#2f3856', textDecoration: 'none', lineHeight: 1.6, wordBreak: 'break-all' }}>
-                contact@reboundcapitalgroup.com
-              </a>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Message</div>
+              <Link href="/contact" style={{ fontSize: '13px', color: '#2f3856', textDecoration: 'none', lineHeight: 1.6 }}>
+                Send us a message
+              </Link>
             </div>
           </div>
         </div>
