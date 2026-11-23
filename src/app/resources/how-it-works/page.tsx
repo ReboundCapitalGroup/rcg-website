@@ -52,9 +52,10 @@ export default function HowItWorksPage() {
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call or text 24/7</a>
           </div>
           <TrustRow />
-          <ScrollCue to="more" />
         </div>
       </div>
+
+      <ScrollCue to="more" />
 
       <div id="more" className={h.wrap} style={{ scrollMarginTop: 100 }}>
         <div className={sv.faqGrid} style={{ alignItems: 'start' }}>

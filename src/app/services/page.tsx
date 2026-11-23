@@ -65,33 +65,36 @@ export default function ServicesPage() {
           <h1 className={sv.h1}>Help before the auction. <em className={h.gradText}>Recovery after it.</em></h1>
           <p className={sv.answer}>Pick where you are in the process. Every service is free to start, and on recoveries you pay nothing unless we get you paid.</p>
           <TrustRow />
-          <ScrollCue to="more" />
         </div>
       </div>
 
+      <ScrollCue to="more" />
+
       <div id="more" className={h.wrap} style={{ scrollMarginTop: 100 }}>
-        {groups.map((g, i) => (
-          <section key={g.tag} className={`${s.group} ${i % 2 ? s.rev : ''}`}>
-            <div className={s.media}>
-              <Image src={g.img} alt="" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'cover', objectPosition: g.pos }} />
-              <span className={s.mediaTag}>{g.tag}</span>
-            </div>
-            <div className={s.body}>
-              <h2 className={s.title}>{g.title}</h2>
-              <p className={s.blurb}>{g.blurb}</p>
-              <ul className={s.list}>
-                {g.services.map(([t, href, d]) => (
-                  <li key={href}>
-                    <Link href={href} className={s.link}>
-                      <span><b>{t}</b><span>{d}</span></span>
-                      <span aria-hidden="true" className={s.arrow}>→</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        ))}
+        <div className={s.grid}>
+          {groups.map((g) => (
+            <section key={g.tag} className={s.card}>
+              <div className={s.media}>
+                <Image src={g.img} alt="" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'cover', objectPosition: g.pos }} />
+                <span className={s.mediaTag}>{g.tag}</span>
+              </div>
+              <div className={s.body}>
+                <h2 className={s.title}>{g.title}</h2>
+                <p className={s.blurb}>{g.blurb}</p>
+                <ul className={s.list}>
+                  {g.services.map(([t, href, d]) => (
+                    <li key={href}>
+                      <Link href={href} className={s.link}>
+                        <span><b>{t}</b><span>{d}</span></span>
+                        <span aria-hidden="true" className={s.arrow}>→</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          ))}
+        </div>
       </div>
 
       <ReviewsStrip />

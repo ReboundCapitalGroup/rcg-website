@@ -106,7 +106,6 @@ export default function ServicePage(p: ServicePageProps) {
               <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call or text 24/7</a>
             </div>
             <TrustRow />
-            <ScrollCue to="more" />
           </div>
           <div className={s.heroMedia}>
             <Image src={p.image || '/img/home-miami-beach.webp'} alt="" fill priority sizes="(max-width: 900px) 100vw, 40vw" style={{ objectFit: 'cover', objectPosition: p.imagePos || '50% 50%' }} />
@@ -114,6 +113,8 @@ export default function ServicePage(p: ServicePageProps) {
           </div>
         </div>
       </div>
+
+      <ScrollCue to="more" />
 
       <div id="more" style={{ scrollMarginTop: 100 }} />
       {/* STATS */}

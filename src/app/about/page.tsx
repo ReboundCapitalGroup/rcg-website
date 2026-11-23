@@ -37,13 +37,13 @@ export default function AboutPage() {
             <div className={h.eyebrow}>Our story · Miami Beach, FL · Est. 2023</div>
             <h1 className={sv.h1}>Why we <em className={h.gradText}>started.</em></h1>
             <p className={sv.answer}>We saw homeowners walk away from money they were owed, not because they gave up, but because nobody told them it was there. Third parties were exploiting that confusion. We built Rebound Capital Group to put the money back where it belongs.</p>
-            <ScrollCue to="mission" />
           </div>
           <Timeline items={story} />
         </div>
       </div>
 
       {/* MISSION */}
+      <ScrollCue to="mission" />
       <section id="mission" className={s.mission}>
         <div className={`${h.wrap} ${s.missionInner}`}>
           <div>

@@ -43,7 +43,8 @@
 .trustItem span { color: var(--body); }
 
 /* Scroll cue */
-.cue { align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(30,40,127,0.35); color: var(--primary) !important; margin-top: 8px; transition: background .2s, color .2s; }
+.cueRow { display: flex; justify-content: center; padding: 8px 0 16px; }
+.cue { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(30,40,127,0.35); color: var(--primary) !important; transition: background .2s, color .2s; }
 .cue:hover { background: var(--primary); color: #fff !important; }
 .cue svg { animation: cueBob 2.4s ease-in-out infinite; }
 @keyframes cueBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }

@@ -25,7 +25,6 @@ export default function ClientResultsPage() {
             <div className={h.eyebrow}>Google reviews · $2M+ recovered</div>
             <h1 className={sv.h1}>What clients <em className={h.gradText}>say.</em></h1>
             <p className={sv.answer}>Real reviews from the homeowners and families we have worked with, straight from Google. Since 2023, over $2 million has been recovered for clients on a pure contingency basis.</p>
-            <ScrollCue to="more" />
           </div>
           <div className={sv.glance}>
             <div className={sv.glanceLabel}>By the numbers</div>
@@ -35,6 +34,8 @@ export default function ClientResultsPage() {
           </div>
         </div>
       </div>
+
+      <ScrollCue to="more" />
 
       <div id="more" className={h.wrap} style={{ scrollMarginTop: 100 }}>
         <GoogleReviews />

@@ -34,9 +34,10 @@ export default function StatesPage() {
           <div className={h.eyebrow}>Nationwide · All 50 states · $0 upfront</div>
           <h1 className={sv.h1}>Help in <em className={h.gradText}>every state.</em></h1>
           <p className={sv.answer}>Pick your state for local surplus fund rules, how claims work there, and the counties we cover. Foreclosure help, surplus funds, tax deed overages and unclaimed property, nationwide.</p>
-          <ScrollCue to="more" />
         </div>
       </div>
+
+      <ScrollCue to="more" />
 
       <div id="more" className={h.wrap} style={{ scrollMarginTop: 100 }}>
         <div className={s.live}>

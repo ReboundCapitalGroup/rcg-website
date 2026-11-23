@@ -97,7 +97,6 @@ export default function StatePage(p: StatePageProps) {
               <Link href="/services/foreclosure-solutions" className={`${h.btnOutline} ${h.btnLg}`}>Facing foreclosure?</Link>
             </div>
             <TrustRow />
-            <ScrollCue to="more" />
           </div>
           <div className={sv.glance}>
             <div className={sv.glanceLabel}>{p.name} at a glance</div>
@@ -108,6 +107,8 @@ export default function StatePage(p: StatePageProps) {
           </div>
         </div>
       </div>
+
+      <ScrollCue to="more" />
 
       <div id="more" style={{ scrollMarginTop: 100 }} />
       {/* WHERE ARE YOU */}
