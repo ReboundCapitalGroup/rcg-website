@@ -5,7 +5,9 @@ import Link from 'next/link'
 import { getAttribution } from '@/lib/attribution'
 import { trackLead } from '@/components/Analytics'
 import h from '@/components/home/home.module.css'
-import { SMS_CONSENT_LABEL, SMS_CONSENT_LEGAL, SMS_CONSENT_TEXT } from '@/lib/smsConsent'
+import { SMS_CONSENT_LABEL, SMS_CONSENT_LEGAL, SMS_CONSENT_TEXT, SMS_CONSENT_LABEL_ES, SMS_CONSENT_LEGAL_ES, SMS_CONSENT_TEXT_ES } from '@/lib/smsConsent'
+import { L } from '@/lib/i18n'
+import { useLang } from '@/lib/useLang'
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -18,18 +20,73 @@ const US_STATES = [
   'Wisconsin', 'Wyoming'
 ]
 
-const CLAIM_TYPES = [
-  { value: 'pre_foreclosure',    label: 'Facing foreclosure',   hint: 'My home has not sold yet, or I have an auction date' },
-  { value: 'foreclosure',        label: 'Foreclosure surplus',  hint: 'My property already sold at a foreclosure auction' },
-  { value: 'tax_deed',           label: 'Tax deed overage',     hint: 'A property sold for unpaid taxes' },
-  { value: 'unclaimed_property', label: 'Unclaimed property',   hint: 'Old accounts, checks, or state-held funds' },
-  { value: 'estate',             label: 'Estate recovery',      hint: 'Funds owed to a relative who passed away' },
-  { value: 'unsure',             label: "I'm not sure",         hint: 'Describe it and we will figure it out' },
-]
+const CLAIM_TYPES_BY_LANG = {
+  en: [
+    { value: 'pre_foreclosure',    label: 'Facing foreclosure',   hint: 'My home has not sold yet, or I have an auction date' },
+    { value: 'foreclosure',        label: 'Foreclosure surplus',  hint: 'My property already sold at a foreclosure auction' },
+    { value: 'tax_deed',           label: 'Tax deed overage',     hint: 'A property sold for unpaid taxes' },
+    { value: 'unclaimed_property', label: 'Unclaimed property',   hint: 'Old accounts, checks, or state-held funds' },
+    { value: 'estate',             label: 'Estate recovery',      hint: 'Funds owed to a relative who passed away' },
+    { value: 'unsure',             label: "I'm not sure",         hint: 'Describe it and we will figure it out' },
+  ],
+  es: [
+    { value: 'pre_foreclosure',    label: 'Enfrento una ejecución', hint: 'Mi casa todavía no se ha vendido, o tengo fecha de subasta' },
+    { value: 'foreclosure',        label: 'Fondos excedentes',      hint: 'Mi propiedad ya se vendió en una subasta por ejecución' },
+    { value: 'tax_deed',           label: 'Sobrante por impuestos', hint: 'Una propiedad se vendió por impuestos atrasados' },
+    { value: 'unclaimed_property', label: 'Propiedad no reclamada', hint: 'Cuentas viejas, cheques o fondos que guarda el estado' },
+    { value: 'estate',             label: 'Herencia',               hint: 'Dinero que se le debía a un familiar que falleció' },
+    { value: 'unsure',             label: 'No estoy seguro',        hint: 'Cuéntenos y nosotros lo averiguamos' },
+  ],
+}
+const CLAIM_TYPES = CLAIM_TYPES_BY_LANG.en
+
+const TXT = {
+  en: {
+    smsLabel: SMS_CONSENT_LABEL, smsLegal: SMS_CONSENT_LEGAL, smsText: SMS_CONSENT_TEXT,
+    err: 'Something went wrong. Please try again.', net: 'Network error. Please check your connection and try again.',
+    received: 'Submission received', thanks: 'Thank you.', doneText: 'We have your inquiry and will review it within 24 hours. If there are funds to recover, someone from our team will call you to walk through the next steps.',
+    sooner: 'Need to reach us sooner?', call: 'Call 305-563-4920', back: 'Back to home',
+    eyebrow: 'Free claim review · $0 upfront', h1a: 'Find out what', h1b: "you're owed.",
+    intro: 'Two quick steps. We search court records and state databases at no cost, and call you within 24 hours if there are funds to recover.',
+    step: (n: number) => `Step ${n} of 2`, q: 'What are you inquiring about?', pick: 'Pick the closest match. If none of them fit, choose the last one.',
+    talk: 'Prefer to talk it through?', hp: 'Website (leave blank)', type: 'Inquiry type', change: 'Change',
+    name: 'Full name', email: 'Email', phone: 'Phone', state: 'State', select: 'Select state', county: 'County', countyPh: 'e.g. Miami-Dade',
+    sold: 'Roughly when it sold', addr: 'Property address', optional: 'Optional', auction: 'Auction date, if you have one',
+    funds: 'What kind of funds', fundsPh: 'e.g. old bank account, uncashed check, deposit', fundsHelp: "A rough description is enough. You don't need account numbers.",
+    prior: 'Address at the time', rel: 'Your relationship and what is owed', relPh: 'e.g. daughter of the deceased, surplus from her home', last: 'Their last known address',
+    whatHappened: 'Tell us what happened', anything: 'Anything else we should know', ownWords: 'In your own words. Even partial details help.',
+    fastest: '(fastest way to reach me)', see: 'See our', privacy: 'Privacy Policy', and: 'and', terms: 'Terms', opt: 'Optional.',
+    sending: 'Sending…', send: 'Send my claim review', noOb: 'No obligation · No fees until we recover',
+    agree1: 'By submitting, you agree to our ', agree2: ', and that Rebound Capital Group LLC may contact you by phone and email about your inquiry.',
+    prefer: 'Prefer to call?', person: 'Talk to a person, any time.', espanol: 'Call or text 24/7. Hablamos español.',
+  },
+  es: {
+    smsLabel: SMS_CONSENT_LABEL_ES, smsLegal: SMS_CONSENT_LEGAL_ES, smsText: SMS_CONSENT_TEXT_ES,
+    err: 'Algo salió mal. Intente de nuevo o llámenos al 305-563-4920.', net: 'Error de conexión. Revise su conexión e intente de nuevo.',
+    received: 'Solicitud recibida', thanks: 'Gracias.', doneText: 'Recibimos su consulta y la revisaremos en un plazo de 24 horas. Si hay fondos por recuperar, alguien de nuestro equipo le llamará para explicarle los próximos pasos.',
+    sooner: '¿Necesita hablar con nosotros antes?', call: 'Llame al 305-563-4920', back: 'Volver al inicio',
+    eyebrow: 'Revisión gratis · $0 por adelantado', h1a: 'Descubra cuánto', h1b: 'le deben.',
+    intro: 'Dos pasos rápidos. Buscamos en registros judiciales y bases de datos del estado sin costo, y le llamamos en 24 horas si hay fondos por recuperar.',
+    step: (n: number) => `Paso ${n} de 2`, q: '¿Sobre qué es su consulta?', pick: 'Elija la opción más cercana. Si ninguna aplica, elija la última.',
+    talk: '¿Prefiere hablarlo?', hp: 'Sitio web (dejar en blanco)', type: 'Tipo de consulta', change: 'Cambiar',
+    name: 'Nombre completo', email: 'Correo electrónico', phone: 'Teléfono', state: 'Estado', select: 'Elija su estado', county: 'Condado', countyPh: 'p. ej. Miami-Dade',
+    sold: 'Más o menos cuándo se vendió', addr: 'Dirección de la propiedad', optional: 'Opcional', auction: 'Fecha de subasta, si la tiene',
+    funds: 'Qué tipo de fondos', fundsPh: 'p. ej. cuenta de banco vieja, cheque sin cobrar, depósito', fundsHelp: 'Basta con una descripción general. No necesita números de cuenta.',
+    prior: 'Dirección en ese momento', rel: 'Su parentesco y lo que se debe', relPh: 'p. ej. hija de la fallecida, sobrante de su casa', last: 'Su última dirección conocida',
+    whatHappened: 'Cuéntenos qué pasó', anything: '¿Algo más que debamos saber?', ownWords: 'Con sus propias palabras. Cualquier detalle ayuda.',
+    fastest: '(la forma más rápida de contactarme)', see: 'Vea nuestra', privacy: 'Política de privacidad', and: 'y', terms: 'Términos', opt: 'Opcional.',
+    sending: 'Enviando…', send: 'Enviar mi revisión', noOb: 'Sin compromiso · Sin honorarios hasta que recuperemos',
+    agree1: 'Al enviar, usted acepta nuestros ', agree2: ', y que Rebound Capital Group LLC le contacte por teléfono y correo electrónico sobre su consulta.',
+    prefer: '¿Prefiere llamar?', person: 'Hable con una persona, a cualquier hora.', espanol: 'Llame o escriba 24/7. Hablamos español.',
+  },
+}
 
 const isPropertyClaim = (t: string) => t === 'foreclosure' || t === 'tax_deed'
 
-export default function FreeReviewPage() {
+export default function FreeReview() {
+  const lang = useLang()
+  const T = TXT[lang]
+  const TYPES = CLAIM_TYPES_BY_LANG[lang]
   const [step, setStep] = useState(1)
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -82,7 +139,8 @@ export default function FreeReviewPage() {
           claimType, fullName, email, phone, state, county, saleDateApprox, auctionDate,
           propertyAddress, assetDesc, priorAddress, message,
           smsConsent,
-          smsConsentText: smsConsent ? SMS_CONSENT_TEXT : null,
+          smsConsentText: smsConsent ? T.smsText : null,
+          lang,
           website_url: websiteUrl,
           fillTimeMs: Date.now() - formLoadedAt.current,
           attribution: getAttribution(),
@@ -92,7 +150,7 @@ export default function FreeReviewPage() {
       const data = await res.json()
 
       if (!res.ok) {
-        setError(data.error || 'Something went wrong. Please try again.')
+        setError(lang === 'es' ? T.err : data.error || T.err)
         setSubmitting(false)
         return
       }
@@ -100,7 +158,7 @@ export default function FreeReviewPage() {
       trackLead({ form: 'contact', claim_type: claimType, state })
       setSubmitted(true)
     } catch {
-      setError('Network error. Please check your connection and try again.')
+      setError(T.net)
       setSubmitting(false)
     }
   }
@@ -115,13 +173,13 @@ export default function FreeReviewPage() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <div className={h.eyebrow}>Submission received</div>
-            <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontWeight: 400, fontSize: 'clamp(40px,5vw,60px)', color: '#0d1322', lineHeight: 1.05, margin: '16px 0 20px' }}>Thank you.</h1>
-            <p style={{ fontSize: '17px', color: '#2f3856', lineHeight: 1.7, marginBottom: '28px' }}>We have your inquiry and will review it within 24 hours. If there are funds to recover, someone from our team will call you to walk through the next steps.</p>
-            <p style={{ fontSize: '15px', color: '#3a4360', lineHeight: 1.8, marginBottom: '24px' }}>Need to reach us sooner?</p>
+            <div className={h.eyebrow}>{T.received}</div>
+            <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontWeight: 400, fontSize: 'clamp(40px,5vw,60px)', color: '#0d1322', lineHeight: 1.05, margin: '16px 0 20px' }}>{T.thanks}</h1>
+            <p style={{ fontSize: '17px', color: '#2f3856', lineHeight: 1.7, marginBottom: '28px' }}>{T.doneText}</p>
+            <p style={{ fontSize: '15px', color: '#3a4360', lineHeight: 1.8, marginBottom: '24px' }}>{T.sooner}</p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="tel:+13055634920" className={h.btnPrimary} style={{ padding: '18px 26px', fontSize: '14px' }}>Call 305-563-4920</a>
-              <Link href="/" className={h.btnOutline} style={{ padding: '16px 24px', fontSize: '14px' }}>Back to home</Link>
+              <a href="tel:+13055634920" className={h.btnPrimary} style={{ padding: '18px 26px', fontSize: '14px' }}>{T.call}</a>
+              <Link href={L(lang, '/')} className={h.btnOutline} style={{ padding: '16px 24px', fontSize: '14px' }}>{T.back}</Link>
             </div>
           </div>
         </section>
@@ -129,7 +187,7 @@ export default function FreeReviewPage() {
     )
   }
 
-  const selected = CLAIM_TYPES.find((c) => c.value === claimType)
+  const selected = TYPES.find((c) => c.value === claimType)
 
   return (
     <main className={h.page}>
@@ -157,12 +215,12 @@ export default function FreeReviewPage() {
 
       {/* HERO: short so the form is reachable without a long scroll */}
       <div className={h.wrap} style={{ padding: '44px 16px 8px', textAlign: 'center', maxWidth: '720px' }}>
-        <div className={h.eyebrow}>Free claim review · $0 upfront</div>
+        <div className={h.eyebrow}>{T.eyebrow}</div>
         <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontWeight: 400, fontSize: 'clamp(40px,5.4vw,64px)', lineHeight: 1.02, margin: '14px 0 16px', color: '#0d1322' }}>
-          Find out what <em className={h.gradText}>you&apos;re owed.</em>
+          {T.h1a} <em className={h.gradText}>{T.h1b}</em>
         </h1>
         <p style={{ fontSize: 'clamp(15px,1.6vw,18px)', color: '#2f3856', lineHeight: 1.6, maxWidth: '540px', margin: '0 auto' }}>
-          Two quick steps. We search court records and state databases at no cost, and call you within 24 hours if there are funds to recover.
+          {T.intro}
         </p>
       </div>
 
@@ -171,7 +229,7 @@ export default function FreeReviewPage() {
 
           {/* Progress */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '22px' }}>
-            <span className="rcg-steps">Step {step} of 2</span>
+            <span className="rcg-steps">{T.step(step)}</span>
             <div style={{ flex: 1, height: '2px', background: 'rgba(30,40,127,0.12)' }}>
               <div style={{ width: step === 1 ? '50%' : '100%', height: '100%', background: '#1E287F', transition: 'width 0.3s ease' }} />
             </div>
@@ -181,14 +239,14 @@ export default function FreeReviewPage() {
           {step === 1 && (
             <div>
               <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontWeight: 400, fontSize: 'clamp(28px,3.2vw,36px)', color: '#0d1322', margin: '0 0 6px' }}>
-                What are you inquiring about?
+                {T.q}
               </h2>
               <p style={{ fontSize: '15px', color: '#3a4360', lineHeight: 1.6, margin: '0 0 22px' }}>
-                Pick the closest match. If none of them fit, choose the last one.
+                {T.pick}
               </p>
 
               <div className="rcg-tile-grid">
-                {CLAIM_TYPES.map((c) => (
+                {TYPES.map((c) => (
                   <button key={c.value} type="button" className="rcg-tile" onClick={() => chooseType(c.value)}>
                     <span>
                       <span className="rcg-tile-label">{c.label}</span>
@@ -202,7 +260,7 @@ export default function FreeReviewPage() {
               </div>
 
               <p style={{ fontSize: '14px', color: '#3a4360', textAlign: 'center', marginTop: '26px', lineHeight: 1.7 }}>
-                Prefer to talk it through? <a href="tel:+13055634920" style={{ color: '#1E287F', fontWeight: 700 }}>Call 305-563-4920</a>
+                {T.talk} <a href="tel:+13055634920" style={{ color: '#1E287F', fontWeight: 700 }}>{T.call}</a>
               </p>
             </div>
           )}
@@ -213,39 +271,39 @@ export default function FreeReviewPage() {
               {/* Honeypot */}
               <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="true">
                 <label>
-                  Website (leave blank)
+                  {T.hp}
                   <input type="text" name="website_url" value={websiteUrl} onChange={(e) => setWebsiteUrl(e.target.value)} tabIndex={-1} autoComplete="off" />
                 </label>
               </div>
 
               <div className="rcg-chip">
                 <span>
-                  <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1E287F', display: 'block', marginBottom: '3px' }}>Inquiry type</span>
+                  <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1E287F', display: 'block', marginBottom: '3px' }}>{T.type}</span>
                   <span style={{ color: '#0d1322', fontSize: '16px', fontWeight: 800 }}>{selected?.label}</span>
                 </span>
-                <button type="button" className="rcg-chip-change" onClick={() => setStep(1)}>Change</button>
+                <button type="button" className="rcg-chip-change" onClick={() => setStep(1)}>{T.change}</button>
               </div>
 
               <div>
-                <label className="rcg-label" htmlFor="f-name">Full name</label>
+                <label className="rcg-label" htmlFor="f-name">{T.name}</label>
                 <input id="f-name" className="rcg-input" type="text" required autoComplete="name" value={fullName} onChange={(e) => setFullName(e.target.value)} disabled={submitting} />
               </div>
 
               <div className="rcg-field-row">
                 <div>
-                  <label className="rcg-label" htmlFor="f-email">Email</label>
+                  <label className="rcg-label" htmlFor="f-email">{T.email}</label>
                   <input id="f-email" className="rcg-input" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={submitting} />
                 </div>
                 <div>
-                  <label className="rcg-label" htmlFor="f-phone">Phone</label>
+                  <label className="rcg-label" htmlFor="f-phone">{T.phone}</label>
                   <input id="f-phone" className="rcg-input" type="tel" required autoComplete="tel" placeholder="(305) 555-1234" value={phone} onChange={(e) => setPhone(e.target.value)} disabled={submitting} />
                 </div>
               </div>
 
               <div>
-                <label className="rcg-label" htmlFor="f-state">State</label>
+                <label className="rcg-label" htmlFor="f-state">{T.state}</label>
                 <select id="f-state" className="rcg-input" required value={state} onChange={(e) => setState(e.target.value)} disabled={submitting} style={{ color: state ? '#0d1322' : '#8a93ad', cursor: 'pointer' }}>
-                  <option value="">Select state</option>
+                  <option value="">{T.select}</option>
                   {US_STATES.map((s) => (
                     <option key={s} value={s} style={{ background: '#fff', color: '#0d1322' }}>{s}</option>
                   ))}
@@ -256,17 +314,17 @@ export default function FreeReviewPage() {
                 <>
                   <div className="rcg-field-row">
                     <div>
-                      <label className="rcg-label" htmlFor="f-county">County</label>
-                      <input id="f-county" className="rcg-input" type="text" required placeholder="e.g. Miami-Dade" value={county} onChange={(e) => setCounty(e.target.value)} disabled={submitting} />
+                      <label className="rcg-label" htmlFor="f-county">{T.county}</label>
+                      <input id="f-county" className="rcg-input" type="text" required placeholder={T.countyPh} value={county} onChange={(e) => setCounty(e.target.value)} disabled={submitting} />
                     </div>
                     <div>
-                      <label className="rcg-label" htmlFor="f-sale">Roughly when it sold</label>
+                      <label className="rcg-label" htmlFor="f-sale">{T.sold}</label>
                       <input id="f-sale" className="rcg-input" type="month" value={saleDateApprox} onChange={(e) => setSaleDateApprox(e.target.value)} disabled={submitting} style={{ color: saleDateApprox ? '#0d1322' : '#8a93ad' }} />
                     </div>
                   </div>
                   <div>
-                    <label className="rcg-label" htmlFor="f-addr">Property address</label>
-                    <input id="f-addr" className="rcg-input" type="text" placeholder="Optional" value={propertyAddress} onChange={(e) => setPropertyAddress(e.target.value)} disabled={submitting} />
+                    <label className="rcg-label" htmlFor="f-addr">{T.addr}</label>
+                    <input id="f-addr" className="rcg-input" type="text" placeholder={T.optional} value={propertyAddress} onChange={(e) => setPropertyAddress(e.target.value)} disabled={submitting} />
                   </div>
                 </>
               )}
@@ -275,17 +333,17 @@ export default function FreeReviewPage() {
                 <>
                   <div className="rcg-field-row">
                     <div>
-                      <label className="rcg-label" htmlFor="f-county-pre">County</label>
-                      <input id="f-county-pre" className="rcg-input" type="text" placeholder="Optional" value={county} onChange={(e) => setCounty(e.target.value)} disabled={submitting} />
+                      <label className="rcg-label" htmlFor="f-county-pre">{T.county}</label>
+                      <input id="f-county-pre" className="rcg-input" type="text" placeholder={T.optional} value={county} onChange={(e) => setCounty(e.target.value)} disabled={submitting} />
                     </div>
                     <div>
-                      <label className="rcg-label" htmlFor="f-auction">Auction date, if you have one</label>
+                      <label className="rcg-label" htmlFor="f-auction">{T.auction}</label>
                       <input id="f-auction" className="rcg-input" type="date" value={auctionDate} onChange={(e) => setAuctionDate(e.target.value)} disabled={submitting} style={{ color: auctionDate ? '#0d1322' : '#8a93ad' }} />
                     </div>
                   </div>
                   <div>
-                    <label className="rcg-label" htmlFor="f-addr-pre">Property address</label>
-                    <input id="f-addr-pre" className="rcg-input" type="text" placeholder="Optional" value={propertyAddress} onChange={(e) => setPropertyAddress(e.target.value)} disabled={submitting} />
+                    <label className="rcg-label" htmlFor="f-addr-pre">{T.addr}</label>
+                    <input id="f-addr-pre" className="rcg-input" type="text" placeholder={T.optional} value={propertyAddress} onChange={(e) => setPropertyAddress(e.target.value)} disabled={submitting} />
                   </div>
                 </>
               )}
@@ -293,13 +351,13 @@ export default function FreeReviewPage() {
               {claimType === 'unclaimed_property' && (
                 <>
                   <div>
-                    <label className="rcg-label" htmlFor="f-asset">What kind of funds</label>
-                    <input id="f-asset" className="rcg-input" type="text" required placeholder="e.g. old bank account, uncashed check, deposit" value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} />
-                    <p className="rcg-help">A rough description is enough. You don&apos;t need account numbers.</p>
+                    <label className="rcg-label" htmlFor="f-asset">{T.funds}</label>
+                    <input id="f-asset" className="rcg-input" type="text" required placeholder={T.fundsPh} value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} />
+                    <p className="rcg-help">{T.fundsHelp}</p>
                   </div>
                   <div>
-                    <label className="rcg-label" htmlFor="f-prior">Address at the time</label>
-                    <input id="f-prior" className="rcg-input" type="text" placeholder="Optional" value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} />
+                    <label className="rcg-label" htmlFor="f-prior">{T.prior}</label>
+                    <input id="f-prior" className="rcg-input" type="text" placeholder={T.optional} value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} />
                   </div>
                 </>
               )}
@@ -307,26 +365,26 @@ export default function FreeReviewPage() {
               {claimType === 'estate' && (
                 <>
                   <div>
-                    <label className="rcg-label" htmlFor="f-rel">Your relationship and what is owed</label>
-                    <input id="f-rel" className="rcg-input" type="text" required placeholder="e.g. daughter of the deceased, surplus from her home" value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} />
+                    <label className="rcg-label" htmlFor="f-rel">{T.rel}</label>
+                    <input id="f-rel" className="rcg-input" type="text" required placeholder={T.relPh} value={assetDesc} onChange={(e) => setAssetDesc(e.target.value)} disabled={submitting} />
                   </div>
                   <div>
-                    <label className="rcg-label" htmlFor="f-last">Their last known address</label>
-                    <input id="f-last" className="rcg-input" type="text" placeholder="Optional" value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} />
+                    <label className="rcg-label" htmlFor="f-last">{T.last}</label>
+                    <input id="f-last" className="rcg-input" type="text" placeholder={T.optional} value={priorAddress} onChange={(e) => setPriorAddress(e.target.value)} disabled={submitting} />
                   </div>
                 </>
               )}
 
               <div>
                 <label className="rcg-label" htmlFor="f-msg">
-                  {claimType === 'unsure' ? 'Tell us what happened' : 'Anything else we should know'}
+                  {claimType === 'unsure' ? T.whatHappened : T.anything}
                 </label>
                 <textarea
                   id="f-msg"
                   className="rcg-input"
                   rows={4}
                   required={claimType === 'unsure'}
-                  placeholder={claimType === 'unsure' ? 'In your own words. Even partial details help.' : 'Optional'}
+                  placeholder={claimType === 'unsure' ? T.ownWords : T.optional}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   disabled={submitting}
@@ -345,10 +403,10 @@ export default function FreeReviewPage() {
                 />
                 <span style={{ display: 'block' }}>
                   <span style={{ display: 'block', fontSize: '15px', fontWeight: 700, color: '#0d1322', lineHeight: 1.4 }}>
-                    {SMS_CONSENT_LABEL} <span style={{ fontWeight: 400, color: '#3a4360', fontSize: '13px' }}>(fastest way to reach me)</span>
+                    {T.smsLabel} <span style={{ fontWeight: 400, color: '#3a4360', fontSize: '13px' }}>{T.fastest}</span>
                   </span>
                   <span style={{ display: 'block', fontSize: '12px', color: '#3a4360', lineHeight: 1.6, marginTop: '6px' }}>
-                    {SMS_CONSENT_LEGAL} See our <Link href="/privacy#communications" style={{ color: '#1E287F' }}>Privacy Policy</Link> and <Link href="/terms" style={{ color: '#1E287F' }}>Terms</Link>. Optional.
+                    {T.smsLegal} {T.see} <Link href={L(lang, '/privacy#communications')} style={{ color: '#1E287F' }}>{T.privacy}</Link> {T.and} <Link href={L(lang, '/terms')} style={{ color: '#1E287F' }}>{T.terms}</Link>. {T.opt}
                   </span>
                 </span>
               </label>
@@ -360,15 +418,15 @@ export default function FreeReviewPage() {
               )}
 
               <button type="submit" disabled={submitting} className={h.btnPrimary} style={{ width: '100%', border: 0, padding: '19px', fontSize: '15px', marginTop: '4px', opacity: submitting ? 0.6 : 1, cursor: submitting ? 'wait' : 'pointer' }}>
-                {submitting ? 'Sending…' : 'Send my claim review'}
+                {submitting ? T.sending : T.send}
               </button>
 
               <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1E287F', textAlign: 'center', lineHeight: 2, margin: 0 }}>
-                No obligation · No fees until we recover
+                {T.noOb}
               </p>
 
               <p style={{ fontSize: '12px', color: '#3a4360', textAlign: 'center', lineHeight: 1.7, margin: 0 }}>
-                By submitting, you agree to our <Link href="/terms" style={{ color: '#1E287F' }}>Terms</Link> and <Link href="/privacy" style={{ color: '#1E287F' }}>Privacy Policy</Link>, and that Rebound Capital Group LLC may contact you by phone and email about your inquiry.
+                {T.agree1}<Link href={L(lang, '/terms')} style={{ color: '#1E287F' }}>{T.terms}</Link> {T.and} <Link href={L(lang, '/privacy')} style={{ color: '#1E287F' }}>{T.privacy}</Link>{T.agree2}
               </p>
             </form>
           )}
@@ -378,11 +436,11 @@ export default function FreeReviewPage() {
       <div className={h.wrap} style={{ paddingBottom: '80px' }}>
         <div style={{ background: 'radial-gradient(ellipse at 90% 0%, #1f2d6b 0%, #0d1322 62%)', color: '#fff', borderRadius: '16px', padding: 'clamp(28px,4vw,44px)', display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'space-between', alignItems: 'center', maxWidth: '920px', margin: '0 auto' }}>
           <div>
-            <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#93b8ff', marginBottom: '8px' }}>Prefer to call?</div>
-            <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 'clamp(28px,3.4vw,40px)', lineHeight: 1.05 }}>Talk to a person, any time.</div>
-            <p style={{ margin: '8px 0 0', fontSize: '15px', color: '#c3cfee' }}>Call or text 24/7. Hablamos español.</p>
+            <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#93b8ff', marginBottom: '8px' }}>{T.prefer}</div>
+            <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 'clamp(28px,3.4vw,40px)', lineHeight: 1.05 }}>{T.person}</div>
+            <p style={{ margin: '8px 0 0', fontSize: '15px', color: '#c3cfee' }}>{T.espanol}</p>
           </div>
-          <a href="tel:+13055634920" className={h.btnWhite}>Call 305-563-4920</a>
+          <a href="tel:+13055634920" className={h.btnWhite}>{T.call}</a>
         </div>
       </div>
     </main>

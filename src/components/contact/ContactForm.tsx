@@ -5,10 +5,34 @@ import Link from 'next/link'
 import { getAttribution } from '@/lib/attribution'
 import h from '@/components/home/home.module.css'
 import c from './contact.module.css'
-import { SMS_CONSENT_LEGAL } from '@/lib/smsConsent'
+import { SMS_CONSENT_LEGAL, SMS_CONSENT_LEGAL_ES } from '@/lib/smsConsent'
+import { L } from '@/lib/i18n'
+import { useLang } from '@/lib/useLang'
 
-const SMS_LABEL = 'Text me a reply'
-const SMS_TEXT = `${SMS_LABEL}. ${SMS_CONSENT_LEGAL}`
+const T = {
+  en: {
+    smsLabel: 'Text me a reply', smsLegal: SMS_CONSENT_LEGAL, smsOpt: 'Optional · fastest way to reach you',
+    topics: ['My existing case', 'A letter or call from RCG', 'Referrals or partnerships', 'Something else'],
+    pickTopic: 'Please pick what your message is about.', moreDetail: 'Please add a little more detail to your message.',
+    genericErr: 'Something went wrong. Please try again.', netErr: 'Network error. Please check your connection and try again.',
+    doneTitle: 'Message received.', doneText: 'Thank you. A member of our team will get back to you within one business day. Need us sooner? Call or text 305-563-4920.',
+    title: 'Send us a message', sub1: 'For questions about money you may be owed, the ', sub2: 'free review', sub3: ' is faster.',
+    about: 'What is this about?', name: 'Full name', email: 'Email', phone: 'Phone', state: 'State', selectState: 'Select state', message: 'Your message',
+    sending: 'Sending…', send: 'Send message', see: 'See our', privacy: 'Privacy Policy', and: 'and', terms: 'Terms',
+    fine1: 'By submitting, you agree to our ', fine2: ', and that Rebound Capital Group LLC may contact you by phone and email about your message.', hp: 'Website (leave blank)',
+  },
+  es: {
+    smsLabel: 'Respóndanme por mensaje de texto', smsLegal: SMS_CONSENT_LEGAL_ES, smsOpt: 'Opcional · la forma más rápida',
+    topics: ['Mi caso actual', 'Una carta o llamada de RCG', 'Referidos o alianzas', 'Otro tema'],
+    pickTopic: 'Elija el tema de su mensaje.', moreDetail: 'Agregue un poco más de detalle a su mensaje.',
+    genericErr: 'Algo salió mal. Intente de nuevo o llámenos al 305-563-4920.', netErr: 'Error de conexión. Revise su conexión e intente de nuevo.',
+    doneTitle: 'Mensaje recibido.', doneText: 'Gracias. Un miembro de nuestro equipo le responderá en un día hábil. ¿Lo necesita antes? Llame o escriba al 305-563-4920.',
+    title: 'Envíenos un mensaje', sub1: 'Si su pregunta es sobre dinero que le podrían deber, la ', sub2: 'revisión gratis', sub3: ' es más rápida.',
+    about: '¿De qué se trata?', name: 'Nombre completo', email: 'Correo electrónico', phone: 'Teléfono', state: 'Estado', selectState: 'Elija su estado', message: 'Su mensaje',
+    sending: 'Enviando…', send: 'Enviar mensaje', see: 'Vea nuestra', privacy: 'Política de privacidad', and: 'y', terms: 'Términos',
+    fine1: 'Al enviar, usted acepta nuestros ', fine2: ', y que Rebound Capital Group LLC le contacte por teléfono y correo electrónico sobre su mensaje.', hp: 'Sitio web (dejar en blanco)',
+  },
+}
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -21,14 +45,11 @@ const US_STATES = [
   'Wisconsin', 'Wyoming',
 ]
 
-const TOPICS = [
-  'My existing case',
-  'A letter or call from RCG',
-  'Referrals or partnerships',
-  'Something else',
-]
 
 export default function ContactForm() {
+  const lang = useLang()
+  const t = T[lang]
+  const SMS_TEXT = `${t.smsLabel}. ${t.smsLegal}`
   const [topic, setTopic] = useState('')
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -47,8 +68,8 @@ export default function ContactForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setError(null)
-    if (!topic) { setError('Please pick what your message is about.'); return }
-    if (message.trim().length < 10) { setError('Please add a little more detail to your message.'); return }
+    if (!topic) { setError(t.pickTopic); return }
+    if (message.trim().length < 10) { setError(t.moreDetail); return }
     setSubmitting(true)
     try {
       const res = await fetch('/api/contact', {
@@ -56,6 +77,7 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           inquiry: 'general',
+          lang,
           topic,
           claimType: 'unsure',
           fullName, email, phone, state, message,
@@ -68,13 +90,13 @@ export default function ContactForm() {
       })
       const data = await res.json()
       if (!res.ok) {
-        setError(data.error || 'Something went wrong. Please try again.')
+        setError(lang === 'es' ? t.genericErr : data.error || t.genericErr)
         setSubmitting(false)
         return
       }
       setSubmitted(true)
     } catch {
-      setError('Network error. Please check your connection and try again.')
+      setError(t.netErr)
       setSubmitting(false)
     }
   }
@@ -85,8 +107,8 @@ export default function ContactForm() {
         <span className={c.doneIcon}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
         </span>
-        <h2 className={c.formTitle}>Message received.</h2>
-        <p className={c.formSub}>Thank you. A member of our team will get back to you within one business day. Need us sooner? Call or text 305-563-4920.</p>
+        <h2 className={c.formTitle}>{t.doneTitle}</h2>
+        <p className={c.formSub}>{t.doneText}</p>
       </div>
     )
   }
@@ -95,70 +117,70 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className={c.form} noValidate={false}>
       {/* Honeypot: hidden from people, bots fill it */}
       <div className={c.hp} aria-hidden="true">
-        <label>Website (leave blank)
+        <label>{t.hp}
           <input type="text" name="website_url" value={websiteUrl} onChange={(e) => setWebsiteUrl(e.target.value)} tabIndex={-1} autoComplete="off" />
         </label>
       </div>
 
       <div>
-        <h2 className={c.formTitle}>Send us a message</h2>
-        <p className={c.formSub}>For questions about money you may be owed, the <Link href="/free-review">free review</Link> is faster.</p>
+        <h2 className={c.formTitle}>{t.title}</h2>
+        <p className={c.formSub}>{t.sub1}<Link href={L(lang, '/free-review')}>{t.sub2}</Link>{t.sub3}</p>
       </div>
 
       <fieldset className={c.fieldset}>
-        <legend className={c.lab}>What is this about?</legend>
+        <legend className={c.lab}>{t.about}</legend>
         <div className={c.topics}>
-          {TOPICS.map((t) => (
-            <button key={t} type="button" aria-pressed={topic === t} className={`${c.topic} ${topic === t ? c.topicOn : ''}`} onClick={() => setTopic(t)} disabled={submitting}>{t}</button>
+          {t.topics.map((x) => (
+            <button key={x} type="button" aria-pressed={topic === x} className={`${c.topic} ${topic === x ? c.topicOn : ''}`} onClick={() => setTopic(x)} disabled={submitting}>{x}</button>
           ))}
         </div>
       </fieldset>
 
       <div>
-        <label className={c.lab} htmlFor="c-name">Full name</label>
+        <label className={c.lab} htmlFor="c-name">{t.name}</label>
         <input id="c-name" className={c.input} type="text" required minLength={2} autoComplete="name" value={fullName} onChange={(e) => setFullName(e.target.value)} disabled={submitting} />
       </div>
 
       <div className={c.row}>
         <div>
-          <label className={c.lab} htmlFor="c-email">Email</label>
+          <label className={c.lab} htmlFor="c-email">{t.email}</label>
           <input id="c-email" className={c.input} type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={submitting} />
         </div>
         <div>
-          <label className={c.lab} htmlFor="c-phone">Phone</label>
+          <label className={c.lab} htmlFor="c-phone">{t.phone}</label>
           <input id="c-phone" className={c.input} type="tel" required autoComplete="tel" placeholder="(305) 555-1234" value={phone} onChange={(e) => setPhone(e.target.value)} disabled={submitting} />
         </div>
       </div>
 
       <div>
-        <label className={c.lab} htmlFor="c-state">State</label>
+        <label className={c.lab} htmlFor="c-state">{t.state}</label>
         <select id="c-state" className={c.input} required value={state} onChange={(e) => setState(e.target.value)} disabled={submitting} style={{ color: state ? '#0d1322' : '#8a93ad' }}>
-          <option value="">Select state</option>
+          <option value="">{t.selectState}</option>
           {US_STATES.map((s) => <option key={s} value={s} style={{ color: '#0d1322' }}>{s}</option>)}
         </select>
       </div>
 
       <div>
-        <label className={c.lab} htmlFor="c-msg">Your message</label>
+        <label className={c.lab} htmlFor="c-msg">{t.message}</label>
         <textarea id="c-msg" className={c.input} rows={5} required minLength={10} maxLength={2000} value={message} onChange={(e) => setMessage(e.target.value)} disabled={submitting} style={{ resize: 'vertical', minHeight: 120 }} />
       </div>
 
       <label htmlFor="c-sms" className={`${c.sms} ${smsConsent ? c.smsOn : ''}`}>
         <input id="c-sms" type="checkbox" className={c.smsBox} checked={smsConsent} onChange={(e) => setSmsConsent(e.target.checked)} disabled={submitting} />
         <span>
-          <span className={c.smsTitle}>{SMS_LABEL} <span className={c.smsOpt}>Optional · fastest way to reach you</span></span>
-          <span className={c.smsLegal}>{SMS_CONSENT_LEGAL} See our <Link href="/privacy#communications">Privacy Policy</Link> and <Link href="/terms">Terms</Link>.</span>
+          <span className={c.smsTitle}>{t.smsLabel} <span className={c.smsOpt}>{t.smsOpt}</span></span>
+          <span className={c.smsLegal}>{t.smsLegal} {t.see} <Link href={L(lang, '/privacy#communications')}>{t.privacy}</Link> {t.and} <Link href={L(lang, '/terms')}>{t.terms}</Link>.</span>
         </span>
       </label>
 
       {error && <div className={c.err}>{error}</div>}
 
       <button type="submit" disabled={submitting} className={h.btnPrimary} style={{ width: '100%', border: 0, padding: 18, fontSize: 15, opacity: submitting ? 0.6 : 1, cursor: submitting ? 'wait' : 'pointer' }}>
-        {submitting ? 'Sending…' : 'Send message'}
+        {submitting ? t.sending : t.send}
       </button>
 
       <p className={c.fine}>
-        By submitting, you agree to our <Link href="/terms">Terms</Link> and <Link href="/privacy">Privacy Policy</Link>, and that Rebound Capital Group LLC may contact you by phone and email about your message.
+        {t.fine1}<Link href={L(lang, '/terms')}>{t.terms}</Link> {t.and} <Link href={L(lang, '/privacy')}>{t.privacy}</Link>{t.fine2}
       </p>
     </form>
   )

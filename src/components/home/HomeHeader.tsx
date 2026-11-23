@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import s from './home.module.css'
+import { L, toEn, toEs, type Lang } from '@/lib/i18n'
+import { useLang } from '@/lib/useLang'
 
 const PhoneIcon = ({ size = 13 }: { size?: number }) => (
   <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -11,10 +13,20 @@ const PhoneIcon = ({ size = 13 }: { size?: number }) => (
   </svg>
 )
 
-const links: [string, string][] = [
-  ['Services', '/services'],
-  ['States', '/states'],
-]
+const T = {
+  en: {
+    services: 'Services', states: 'States', map: 'Unclaimed Funds Map', resources: 'Resources', about: 'About', contact: 'Contact',
+    feature: ['Free, no obligation', "Find out what you're owed.", '5.0 ★ on Google · A+ BBB', 'Start free review →'],
+    home: 'Rebound Capital Group home', call: 'Call or text 24/7: 305-563-4920', open: 'Open menu', close: 'Close menu', main: 'Main',
+    switchLabel: 'Español', switchAria: 'Ver esta página en español',
+  },
+  es: {
+    services: 'Servicios', states: 'Estados', map: 'Mapa de fondos', resources: 'Recursos', about: 'Nosotros', contact: 'Contacto',
+    feature: ['Gratis, sin compromiso', 'Descubra cuánto le deben.', '5.0 ★ en Google · A+ BBB', 'Revisión gratis →'],
+    home: 'Inicio de Rebound Capital Group', call: 'Llame o escriba 24/7: 305-563-4920', open: 'Abrir menú', close: 'Cerrar menú', main: 'Principal',
+    switchLabel: 'English', switchAria: 'View this page in English',
+  },
+}
 
 const ICONS: Record<string, ReactNode> = {
   steps: <path d="M4 6h10M4 12h16M4 18h7" />,
@@ -23,39 +35,48 @@ const ICONS: Record<string, ReactNode> = {
   map: <><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z" /><path d="M9 4v14M15 6v14" /></>,
 }
 
-const resources: [string, string, string, string][] = [
-  ['How It Works', '/resources/how-it-works', 'Six steps, from free search to payout', 'steps'],
-  ['FAQs', '/resources/faqs', 'Straight answers, no fine print', 'faq'],
-  ['Client Reviews', '/resources/results', '5.0 on Google from real clients', 'star'],
-  ['Unclaimed Funds Map', '/map', 'What every state is holding', 'map'],
-]
+const RESOURCES: Record<Lang, [string, string, string, string][]> = {
+  en: [
+    ['How It Works', '/resources/how-it-works', 'Six steps, from free search to payout', 'steps'],
+    ['FAQs', '/resources/faqs', 'Straight answers, no fine print', 'faq'],
+    ['Client Reviews', '/resources/results', '5.0 on Google from real clients', 'star'],
+    ['Unclaimed Funds Map', '/map', 'What every state is holding', 'map'],
+  ],
+  es: [
+    ['Cómo funciona', '/resources/how-it-works', 'Seis pasos, de la búsqueda gratis al pago', 'steps'],
+    ['Preguntas frecuentes', '/resources/faqs', 'Respuestas claras, sin letra pequeña', 'faq'],
+    ['Reseñas de clientes', '/resources/results', '5.0 en Google de clientes reales', 'star'],
+    ['Mapa de fondos no reclamados', '/map', 'Lo que guarda cada estado', 'map'],
+  ],
+}
 
 const Chevron = () => (
   <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>
 )
 
-function ResourcesMenu() {
+function ResourcesMenu({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false)
+  const t = T[lang]
   return (
     <div className={s.dd} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <button type="button" className={s.ddBtn} aria-expanded={open} aria-haspopup="true" onClick={() => setOpen(!open)}>
-        Resources <span className={s.ddCaret}><Chevron /></span>
+        {t.resources} <span className={s.ddCaret}><Chevron /></span>
       </button>
       {open && (
         <div className={s.ddMenu} role="menu">
           <div className={s.ddList}>
-            {resources.map(([l, href, d, icon]) => (
-              <Link key={href} href={href} role="menuitem" className={s.ddItem} onClick={() => setOpen(false)}>
+            {RESOURCES[lang].map(([l, href, d, icon]) => (
+              <Link key={href} href={L(lang, href)} role="menuitem" className={s.ddItem} onClick={() => setOpen(false)}>
                 <span className={s.ddIcon}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{ICONS[icon]}</svg></span>
                 <span className={s.ddText}><b>{l}</b><span>{d}</span></span>
               </Link>
             ))}
           </div>
-          <Link href="/free-review" className={s.ddFeature} onClick={() => setOpen(false)}>
-            <span className={s.ddFeatureTag}>Free, no obligation</span>
-            <span className={s.ddFeatureTitle}>Find out what you&apos;re owed.</span>
-            <span className={s.ddFeatureMeta}>5.0 ★ on Google · A+ BBB</span>
-            <span className={s.ddFeatureCta}>Start free review →</span>
+          <Link href={L(lang, '/free-review')} className={s.ddFeature} onClick={() => setOpen(false)}>
+            <span className={s.ddFeatureTag}>{t.feature[0]}</span>
+            <span className={s.ddFeatureTitle}>{t.feature[1]}</span>
+            <span className={s.ddFeatureMeta}>{t.feature[2]}</span>
+            <span className={s.ddFeatureCta}>{t.feature[3]}</span>
           </Link>
         </div>
       )}
@@ -63,16 +84,31 @@ function ResourcesMenu() {
   )
 }
 
-const menu: { label: string; items: [string, string][] }[] = [
+const MENU: Record<Lang, { label: string; items: [string, string][] }[]> = {
+  es: [
+    { label: 'Antes de la subasta', items: [['Ayuda con ejecución hipotecaria', '/services/foreclosure-solutions'], ['Extensión de tiempo', '/services/time-extensions'], ['Asunción de hipoteca', '/services/mortgage-assumptions'], ['Oferta en efectivo', '/services/cash-offer']] },
+    { label: 'Después de la subasta', items: [['Fondos excedentes', '/services/foreclosure-surplus'], ['Excedentes por impuestos', '/services/tax-deed-surplus'], ['Recuperación para herederos', '/services/estate-recovery'], ['Ayuda con sucesiones', '/services/probate-assistance']] },
+    { label: 'Recursos', items: [['Cómo funciona', '/resources/how-it-works'], ['Preguntas frecuentes', '/resources/faqs'], ['Reseñas de clientes', '/resources/results'], ['Mapa de fondos no reclamados', '/map']] },
+    { label: 'Empresa', items: [['Todos los servicios', '/services'], ['Todos los estados', '/states'], ['Nosotros', '/about'], ['Contacto', '/contact'], ['Revisión gratis', '/free-review']] },
+  ],
+  en: [
   { label: 'Before the auction', items: [['Foreclosure Help', '/services/foreclosure-solutions'], ['Time Extensions', '/services/time-extensions'], ['Mortgage Assumptions', '/services/mortgage-assumptions'], ['Cash Offer', '/services/cash-offer']] },
   { label: 'After the auction', items: [['Surplus Funds', '/services/foreclosure-surplus'], ['Tax Deed Overages', '/services/tax-deed-surplus'], ['Estate & Heir Recovery', '/services/estate-recovery'], ['Probate Help for Heirs', '/services/probate-assistance']] },
   { label: 'Resources', items: [['How It Works', '/resources/how-it-works'], ['FAQs', '/resources/faqs'], ['Client Reviews', '/resources/results'], ['Unclaimed Funds Map', '/map']] },
   { label: 'Company', items: [['All Services', '/services'], ['All States', '/states'], ['About', '/about'], ['Contact', '/contact'], ['Free Review', '/free-review']] },
-]
+  ],
+}
+
+const Globe = () => (
+  <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg>
+)
 
 export default function HomeHeader() {
   const [open, setOpen] = useState(false)
-  const pathname = usePathname()
+  const pathname = usePathname() || '/'
+  const lang = useLang()
+  const t = T[lang]
+  const other = lang === 'es' ? toEn(pathname) : toEs(pathname)
   const headerRef = useRef<HTMLElement>(null)
 
   // Close the phone menu whenever the page changes.
@@ -94,31 +130,35 @@ export default function HomeHeader() {
   return (
     <header ref={headerRef} className={s.header}>
       <div className={s.headerInner}>
-        <Link href="/" aria-label="Rebound Capital Group home" className={s.logoLink}>
+        <Link href={L(lang, '/')} aria-label={t.home} className={s.logoLink}>
           <Image src="/rcg-logo.png" alt="Rebound Capital Group" width={150} height={90} className={s.logo} priority />
         </Link>
-        <div role="navigation" aria-label="Main" className={s.navLinks}>
-          {links.slice(0, 2).map(([l, h]) => <Link key={h} href={h}>{l}</Link>)}
-          <Link href="/map" className={s.navPill}>Unclaimed Funds Map</Link>
-          <ResourcesMenu />
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+        <div role="navigation" aria-label={t.main} className={s.navLinks}>
+          <Link href={L(lang, '/services')}>{t.services}</Link>
+          <Link href={L(lang, '/states')}>{t.states}</Link>
+          <Link href={L(lang, '/map')} className={s.navPill}>{t.map}</Link>
+          <ResourcesMenu lang={lang} />
+          <Link href={L(lang, '/about')}>{t.about}</Link>
+          <Link href={L(lang, '/contact')}>{t.contact}</Link>
         </div>
         <div className={s.headerRight}>
-          <a href="tel:+13055634920" className={`${s.btnPrimary} ${s.headerPhone}`} aria-label="Call or text 24/7: 305-563-4920">
+          <a href={other} hrefLang={lang === 'es' ? 'en' : 'es'} lang={lang === 'es' ? 'en' : 'es'} className={s.langSwitch} aria-label={t.switchAria}>
+            <Globe /> <span className={s.langFull}>{t.switchLabel}</span><span className={s.langShort}>{lang === 'es' ? 'EN' : 'ES'}</span>
+          </a>
+          <a href="tel:+13055634920" className={`${s.btnPrimary} ${s.headerPhone}`} aria-label={t.call}>
             <PhoneIcon /> <span className={s.headerPhoneText}>305-563-4920</span>
           </a>
-          <button type="button" className={`${s.menuBtn} ${open ? s.menuBtnOpen : ''}`} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="home-menu" onClick={() => setOpen(!open)}>
+          <button type="button" className={`${s.menuBtn} ${open ? s.menuBtnOpen : ''}`} aria-label={open ? t.close : t.open} aria-expanded={open} aria-controls="home-menu" onClick={() => setOpen(!open)}>
             <span /><span /><span />
           </button>
         </div>
       </div>
       {open && (
         <div id="home-menu" className={s.mobileMenu}>
-          {menu.map((g) => (
+          {MENU[lang].map((g) => (
             <div key={g.label} className={s.mobileMenuGroup}>
               <div className={s.eyebrowSm}>{g.label}</div>
-              {g.items.map(([l, h]) => <Link key={l} href={h} onClick={() => setOpen(false)}>{l}</Link>)}
+              {g.items.map(([l, h]) => <Link key={l} href={L(lang, h)} onClick={() => setOpen(false)}>{l}</Link>)}
             </div>
           ))}
         </div>

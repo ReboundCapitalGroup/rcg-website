@@ -1,10 +1,11 @@
 import { getGoogleReviews } from '@/lib/googleReviews'
 import s from './reviews.module.css'
+import type { Lang } from '@/lib/i18n'
 
 const FALLBACK_URL = 'https://www.google.com/search?q=Rebound+Capital+Group+reviews'
 
-const Stars = ({ n }: { n: number }) => (
-  <span className={s.stars} aria-label={`${n} out of 5 stars`}>
+const Stars = ({ n, es }: { n: number; es?: boolean }) => (
+  <span className={s.stars} aria-label={es ? `${n} de 5 estrellas` : `${n} out of 5 stars`}>
     {[1, 2, 3, 4, 5].map((i) => <span key={i} aria-hidden="true" className={i <= Math.round(n) ? s.on : s.off}>★</span>)}
   </span>
 )
@@ -14,13 +15,14 @@ const GoogleMark = () => (
 )
 
 /** Google rating and reviews, with the attribution Google requires. */
-export default async function GoogleReviews() {
-  const data = await getGoogleReviews()
+export default async function GoogleReviews({ lang = 'en' }: { lang?: Lang }) {
+  const es = lang === 'es'
+  const data = await getGoogleReviews(lang)
 
   if (!data) {
     return (
       <a href={FALLBACK_URL} target="_blank" rel="noopener noreferrer" className={s.badge}>
-        <GoogleMark /><span><b>Read our reviews on Google</b></span><span aria-hidden="true">→</span>
+        <GoogleMark /><span><b>{es ? 'Lea nuestras reseñas en Google' : 'Read our reviews on Google'}</b></span><span aria-hidden="true">→</span>
       </a>
     )
   }
@@ -30,14 +32,14 @@ export default async function GoogleReviews() {
       <a href={data.mapsUrl} target="_blank" rel="noopener noreferrer" className={s.summary}>
         <GoogleMark />
         <span className={s.score}>{data.rating.toFixed(1)}</span>
-        <Stars n={data.rating} />
-        <span className={s.count}>{data.count} Google reviews</span>
-        <span className={s.cta}>See all on Google →</span>
+        <Stars n={data.rating} es={es} />
+        <span className={s.count}>{es ? `${data.count} reseñas en Google` : `${data.count} Google reviews`}</span>
+        <span className={s.cta}>{es ? 'Ver todas en Google →' : 'See all on Google →'}</span>
       </a>
       <div className={s.grid}>
         {data.reviews.map((r, i) => (
           <figure key={r.author + i} className={i % 2 === 0 ? `${s.card} ${s.dark}` : s.card}>
-            <Stars n={r.rating} />
+            <Stars n={r.rating} es={es} />
             <blockquote className={s.text}>{r.text}</blockquote>
             <figcaption className={s.by}>
               {r.photo && <img src={r.photo} alt="" width={32} height={32} className={s.photo} referrerPolicy="no-referrer" />}
@@ -49,7 +51,7 @@ export default async function GoogleReviews() {
           </figure>
         ))}
       </div>
-      <p className={s.attr}>Reviews from Google. Shown as written by the reviewer.</p>
+      <p className={s.attr}>{es ? 'Reseñas de Google, traducidas automáticamente por Google.' : 'Reviews from Google. Shown as written by the reviewer.'}</p>
     </div>
   )
 }

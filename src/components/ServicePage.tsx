@@ -5,6 +5,7 @@ import { TrustRow, PhotoBand, ScrollCue } from '@/components/ui/blocks'
 import type { ReactNode } from 'react'
 import h from '@/components/home/home.module.css'
 import s from './service.module.css'
+import { L, type Lang } from '@/lib/i18n'
 
 /**
  * Shared layout for every service page (redesign v4).
@@ -50,12 +51,22 @@ export type ServicePageProps = {
   imagePos?: string
   /** Optional full-width photo band after the main section */
   band?: { src: string; title: string; text?: string; position?: string }
+  /** Page language. Links in the data are written as English paths and localized here. */
+  lang?: Lang
 }
 
 const SITE = 'https://reboundcapitalgroup.com'
 
+const UI = {
+  en: { home: 'Home', services: 'Services', cta: 'Get a Free Review', call24: 'Call or text 24/7', how: 'How it works', common: 'Common questions', ask: 'Questions people ask.', all: 'All FAQs →', related: 'Related help', call: 'Call 305-563-4920', crumbs: 'Breadcrumb' },
+  es: { home: 'Inicio', services: 'Servicios', cta: 'Revisión gratis', call24: 'Llame o escriba 24/7', how: 'Cómo funciona', common: 'Preguntas comunes', ask: 'Lo que la gente pregunta.', all: 'Todas las preguntas →', related: 'Ayuda relacionada', call: 'Llame al 305-563-4920', crumbs: 'Ruta de navegación' },
+}
+
 export default function ServicePage(p: ServicePageProps) {
-  const url = `${SITE}/services/${p.slug}`
+  const lang: Lang = p.lang || 'en'
+  const t = UI[lang]
+  const to = (href: string) => L(lang, href)
+  const url = `${SITE}${to(`/services/${p.slug}`)}`
   const faqs = p.faqs || []
   const schema: object[] = [
     {
@@ -67,13 +78,14 @@ export default function ServicePage(p: ServicePageProps) {
       description: p.answer,
       areaServed: { '@type': 'Country', name: 'United States' },
       provider: { '@id': `${SITE}/#organization` },
+      inLanguage: lang === 'es' ? 'es-US' : 'en-US',
     },
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/services` },
+        { '@type': 'ListItem', position: 1, name: t.home, item: `${SITE}${to('/')}` },
+        { '@type': 'ListItem', position: 2, name: t.services, item: `${SITE}${to('/services')}` },
         { '@type': 'ListItem', position: 3, name: p.serviceName, item: url },
       ],
     },
@@ -92,8 +104,8 @@ export default function ServicePage(p: ServicePageProps) {
 
       {/* HERO */}
       <div className={`${h.wrap} ${s.hero}`}>
-        <div role="navigation" aria-label="Breadcrumb" className={s.crumbs}>
-          <Link href="/">Home</Link> <span aria-hidden="true">/</span> <Link href="/services">Services</Link> <span aria-hidden="true">/</span> <span className={s.crumbNow}>{p.serviceName}</span>
+        <div role="navigation" aria-label={t.crumbs} className={s.crumbs}>
+          <Link href={to('/')}>{t.home}</Link> <span aria-hidden="true">/</span> <Link href={to('/services')}>{t.services}</Link> <span aria-hidden="true">/</span> <span className={s.crumbNow}>{p.serviceName}</span>
         </div>
         <div className={s.heroGrid}>
           <div className={s.heroText}>
@@ -102,19 +114,19 @@ export default function ServicePage(p: ServicePageProps) {
             {/* Answer block: the short summary search and AI engines quote */}
             <p className={s.answer}>{p.answer}</p>
             <div className={h.btnRow}>
-              <Link href={p.ctaHref || '/free-review'} className={`${h.btnPrimary} ${h.btnLg}`}>{p.ctaLabel || 'Get a Free Review'} <span aria-hidden="true">→</span></Link>
-              <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call or text 24/7</a>
+              <Link href={to(p.ctaHref || '/free-review')} className={`${h.btnPrimary} ${h.btnLg}`}>{p.ctaLabel || t.cta} <span aria-hidden="true">→</span></Link>
+              <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>{t.call24}</a>
             </div>
-            <TrustRow />
+            <TrustRow lang={lang} />
           </div>
           <div className={s.heroMedia}>
             <Image src={p.image || '/img/home-miami-beach.webp'} alt="" fill priority sizes="(max-width: 900px) 100vw, 40vw" style={{ objectFit: 'cover', objectPosition: p.imagePos || '50% 50%' }} />
-            <a href="tel:+13055634920" className={s.heroBadge}><span>Call or text 24/7</span><b>305-563-4920</b></a>
+            <a href="tel:+13055634920" className={s.heroBadge}><span>{t.call24}</span><b>305-563-4920</b></a>
           </div>
         </div>
       </div>
 
-      <ScrollCue to="more" />
+      <ScrollCue to="more" lang={lang} />
 
       <div id="more" style={{ scrollMarginTop: 100 }} />
       {/* STATS */}
@@ -165,7 +177,7 @@ export default function ServicePage(p: ServicePageProps) {
                 </>
               )
               return c.href
-                ? <Link key={c.title} href={c.href} className={cls}>{inner}</Link>
+                ? <Link key={c.title} href={to(c.href)} className={cls}>{inner}</Link>
                 : <div key={c.title} className={cls}>{inner}</div>
             })}
           </div>
@@ -175,7 +187,7 @@ export default function ServicePage(p: ServicePageProps) {
       {/* STEPS */}
       {p.steps && (
         <div className={`${h.wrap} ${s.block}`}>
-          <h2 className={`${s.h2} ${s.mb}`}>{p.stepsTitle || 'How it works'}</h2>
+          <h2 className={`${s.h2} ${s.mb}`}>{p.stepsTitle || t.how}</h2>
           <ol className={s.steps} style={{ ['--n' as string]: p.steps.length }}>
             {p.steps.map((st, i) => (
               <li key={st.title} className={s.step}>
@@ -193,9 +205,9 @@ export default function ServicePage(p: ServicePageProps) {
         <div className={`${h.wrap} ${s.block}`}>
           <div className={s.faqGrid}>
             <div>
-              <div className={s.tag}>Common questions</div>
-              <h2 className={s.h2}>Questions people ask.</h2>
-              <Link href="/resources/faqs" className={s.more}>All FAQs →</Link>
+              <div className={s.tag}>{t.common}</div>
+              <h2 className={s.h2}>{t.ask}</h2>
+              <Link href={to('/resources/faqs')} className={s.more}>{t.all}</Link>
             </div>
             <div className={s.faqs}>
               {faqs.map((f, i) => (
@@ -209,14 +221,14 @@ export default function ServicePage(p: ServicePageProps) {
         </div>
       )}
 
-      <ReviewsStrip />
+      <ReviewsStrip lang={lang} />
 
       {/* RELATED */}
       <div className={`${h.wrap} ${s.block}`}>
-        <div className={s.tag}>Related help</div>
+        <div className={s.tag}>{t.related}</div>
         <div className={s.related}>
           {p.related.map((r) => (
-            <Link key={r.href} href={r.href} className={s.relatedItem}>
+            <Link key={r.href} href={to(r.href)} className={s.relatedItem}>
               <span className={s.relatedTitle}>{r.label} <span aria-hidden="true">→</span></span>
               <span className={s.relatedDesc}>{r.desc}</span>
             </Link>
@@ -231,8 +243,8 @@ export default function ServicePage(p: ServicePageProps) {
           <h2 className={h.closingH}>{p.ctaTitle}</h2>
           <p>{p.ctaText}</p>
           <div className={h.btnRow}>
-            <Link href={p.ctaHref || '/free-review'} className={`${h.btnPrimary} ${h.btnLg}`}>{p.ctaLabel || 'Get a Free Review'} <span aria-hidden="true">→</span></Link>
-            <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
+            <Link href={to(p.ctaHref || '/free-review')} className={`${h.btnPrimary} ${h.btnLg}`}>{p.ctaLabel || t.cta} <span aria-hidden="true">→</span></Link>
+            <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>{t.call}</a>
           </div>
         </div>
       </section>

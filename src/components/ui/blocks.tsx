@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 import h from '@/components/home/home.module.css'
 import b from './blocks.module.css'
+import { L, type Lang } from '@/lib/i18n'
 
 /**
  * Shared section layouts for the redesign. Different shapes so pages
@@ -73,21 +74,22 @@ export function QuoteBand({ quote, by, href }: { quote: string; by: string; href
 }
 
 /** Small trust line: Google rating + BBB. */
-export function TrustRow() {
+export function TrustRow({ lang = 'en' }: { lang?: Lang }) {
+  const es = lang === 'es'
   return (
     <div className={b.trust}>
-      <Link href="/resources/results" className={b.trustItem}><b>5.0 ★★★★★</b><span>Google reviews</span></Link>
-      <a href="https://www.bbb.org/us/fl/miami-beach/profile/financial-consultants/rebound-capital-group-0633-92041559" target="_blank" rel="noopener noreferrer" className={b.trustItem}><b>A+</b><span>Rated by the BBB</span></a>
-      <span className={b.trustItem}><b>$0</b><span>Upfront, ever</span></span>
+      <Link href={L(lang, '/resources/results')} className={b.trustItem}><b>5.0 ★★★★★</b><span>{es ? 'Reseñas en Google' : 'Google reviews'}</span></Link>
+      <a href="https://www.bbb.org/us/fl/miami-beach/profile/financial-consultants/rebound-capital-group-0633-92041559" target="_blank" rel="noopener noreferrer" className={b.trustItem}><b>A+</b><span>{es ? 'Calificación del BBB' : 'Rated by the BBB'}</span></a>
+      <span className={b.trustItem}><b>$0</b><span>{es ? 'Por adelantado' : 'Upfront, ever'}</span></span>
     </div>
   )
 }
 
 /** Down arrow that jumps to the next section. */
-export function ScrollCue({ to }: { to: string }) {
+export function ScrollCue({ to, lang = 'en' }: { to: string; lang?: Lang }) {
   return (
     <div className={b.cueRow}>
-      <a href={`#${to}`} className={b.cue} aria-label="Scroll to next section">
+      <a href={`#${to}`} className={b.cue} aria-label={lang === 'es' ? 'Ir a la siguiente sección' : 'Scroll to next section'}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
       </a>
     </div>

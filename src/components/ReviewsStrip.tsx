@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { getGoogleReviews } from '@/lib/googleReviews'
 import h from '@/components/home/home.module.css'
 import s from './reviewsStrip.module.css'
+import { L, type Lang } from '@/lib/i18n'
 
 const cut = (t: string, n: number) => (t.length > n ? t.slice(0, t.lastIndexOf(' ', n)) + '…' : t)
 
@@ -9,8 +10,10 @@ const cut = (t: string, n: number) => (t.length > n ? t.slice(0, t.lastIndexOf('
  * Compact Google reviews band for any page: rating + 3 short quotes.
  * preferName puts reviews that mention the name first (used on About).
  */
-export default async function ReviewsStrip({ title = 'What clients say.', preferName }: { title?: string; preferName?: string }) {
-  const data = await getGoogleReviews()
+export default async function ReviewsStrip({ title, preferName, lang = 'en' }: { title?: string; preferName?: string; lang?: Lang }) {
+  const es = lang === 'es'
+  title = title ?? (es ? 'Lo que dicen nuestros clientes.' : 'What clients say.')
+  const data = await getGoogleReviews(lang)
   if (!data || data.reviews.length === 0) return null
   let reviews = [...data.reviews]
   if (preferName) {
@@ -23,13 +26,13 @@ export default async function ReviewsStrip({ title = 'What clients say.', prefer
       <div className={h.wrap}>
         <div className={s.head}>
           <div>
-            <div className={s.eyebrow}>Google reviews</div>
+            <div className={s.eyebrow}>{es ? 'Reseñas en Google' : 'Google reviews'}</div>
             <h2 className={s.title}>{title}</h2>
           </div>
           <a href={data.mapsUrl} target="_blank" rel="noopener noreferrer" className={s.score}>
             <b>{data.rating.toFixed(1)}</b>
-            <span className={s.stars} aria-label={`${data.rating} out of 5 stars`}>★★★★★</span>
-            <span>{data.count} reviews on Google</span>
+            <span className={s.stars} aria-label={es ? `${data.rating} de 5 estrellas` : `${data.rating} out of 5 stars`}>★★★★★</span>
+            <span>{es ? `${data.count} reseñas en Google` : `${data.count} reviews on Google`}</span>
           </a>
         </div>
         <div className={s.grid}>
@@ -41,7 +44,7 @@ export default async function ReviewsStrip({ title = 'What clients say.', prefer
             </figure>
           ))}
         </div>
-        <Link href="/resources/results" className={s.more}>Read all reviews →</Link>
+        <Link href={L(lang, '/resources/results')} className={s.more}>{es ? 'Ver todas las reseñas →' : 'Read all reviews →'}</Link>
       </div>
     </section>
   )

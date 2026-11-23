@@ -1,10 +1,12 @@
 'use client'
 import { useState } from 'react'
 import s from './state.module.css'
+import { useLang } from '@/lib/useLang'
 
 /** Searchable list of counties (or parishes, boroughs, cities). */
 export default function CountyList({ items, unit, placeholder }: { items: string[]; unit: string; placeholder: string }) {
   const [q, setQ] = useState('')
+  const es = useLang() === 'es'
   const needle = q.trim().toLowerCase()
   const shown = needle ? items.filter((c) => c.toLowerCase().includes(needle)) : items
   return (
@@ -14,9 +16,9 @@ export default function CountyList({ items, unit, placeholder }: { items: string
         <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={placeholder} aria-label={placeholder} />
       </label>
       <ul className={s.counties}>
-        {shown.map((c) => <li key={c}>{c}{unit && !c.includes('City') ? ` ${unit}` : ''}</li>)}
+        {shown.map((c) => <li key={c}>{c}{!es && unit && !c.includes('City') ? ` ${unit}` : ''}</li>)}
       </ul>
-      {shown.length === 0 && <p className={s.noMatch}>We cover every one. Call or text 24/7 and we will check yours.</p>}
+      {shown.length === 0 && <p className={s.noMatch}>{es ? 'Cubrimos todos. Llame o escriba 24/7 y revisamos el suyo.' : 'We cover every one. Call or text 24/7 and we will check yours.'}</p>}
     </div>
   )
 }

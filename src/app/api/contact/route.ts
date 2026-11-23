@@ -141,6 +141,8 @@ export async function POST(request: NextRequest) {
     // General questions from the /contact page (not a claim review). Stored as
     // 'unsure' so database rules and the CRM keep working, and tagged clearly.
     const isGeneral = body.inquiry === 'general'
+    // Submitted from the Spanish site: tag it so the team calls back in Spanish.
+    const isSpanish = body.lang === 'es'
     const topic = isGeneral ? sanitize(body.topic).slice(0, 60) : ''
     const claimType = isPreForeclosure
       ? 'foreclosure'
@@ -156,11 +158,12 @@ export async function POST(request: NextRequest) {
     const priorAddress = sanitize(body.priorAddress)
     const auctionDate = sanitize(body.auctionDate)
     const rawMessage = sanitize(body.message)
-    const message = isPreForeclosure
+    const baseMessage = isPreForeclosure
       ? `[FACING FORECLOSURE - HOME NOT SOLD YET] Auction date: ${auctionDate || 'not provided'}${rawMessage ? '\n' + rawMessage : ''}`
       : isGeneral
         ? `[GENERAL QUESTION - ${topic || 'no topic'}]\n${rawMessage}`
         : rawMessage
+    const message = isSpanish ? `[SPANISH - call back in Spanish]${baseMessage ? '\n' + baseMessage : ''}` : baseMessage
     const smsConsent = body.smsConsent === true
     const smsConsentText = smsConsent ? sanitize(body.smsConsentText) || null : null
 
@@ -380,7 +383,7 @@ https://crm.reboundcapitalgroup.com/website-inbox
             From: `RCG Website <${fromEmail}>`,
             To: notifyEmail,
             ReplyTo: email,
-            Subject: `${inFootprint ? '[IN FOOTPRINT] ' : ''}${claimLabel} — ${fullName} (${state})${spamScore >= 40 ? ' [FLAGGED]' : ''}`,
+            Subject: `${isSpanish ? '[ESPAÑOL] ' : ''}${inFootprint ? '[IN FOOTPRINT] ' : ''}${claimLabel} — ${fullName} (${state})${spamScore >= 40 ? ' [FLAGGED]' : ''}`,
             TextBody: emailBody,
             MessageStream: 'outbound',
           }),

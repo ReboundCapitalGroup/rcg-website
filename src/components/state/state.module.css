@@ -37,3 +37,10 @@
   .counties { grid-template-columns: repeat(2, minmax(0, 1fr)); max-height: 360px; }
   .counties li { font-size: 13px; padding: 11px 12px; }
 }
+
+.guides { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 24px; }
+.guide { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid rgba(13,19,34,0.08); border-radius: 14px; padding: 20px 22px; color: var(--navy) !important; box-shadow: 0 10px 28px rgba(13,19,34,0.05); transition: border-color .15s, box-shadow .15s, transform .15s; }
+.guide:hover { border-color: rgba(30,40,127,0.35); box-shadow: 0 14px 32px rgba(30,40,127,0.12); transform: translateY(-2px); }
+.guideName { font-size: 18px; font-weight: 800; }
+.guideBlurb { font-size: 14px; color: var(--body); line-height: 1.5; }
+.guideOpen { margin-top: auto; padding-top: 6px; font-size: 13px; font-weight: 800; color: var(--primary); }

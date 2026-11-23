@@ -60,13 +60,14 @@ async function findPlaceId(key: string): Promise<string | null> {
   return match?.id || null
 }
 
-export async function getGoogleReviews(): Promise<GoogleReviews | null> {
+/** lang 'es' asks Google for Spanish: review text comes back translated by Google. */
+export async function getGoogleReviews(lang: 'en' | 'es' = 'en'): Promise<GoogleReviews | null> {
   const key = process.env.GOOGLE_PLACES_API_KEY
   if (!key) return null
   try {
     const placeId = await findPlaceId(key)
     if (!placeId) return null
-    const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
+    const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}?languageCode=${lang}`, {
       headers: { 'X-Goog-Api-Key': key, 'X-Goog-FieldMask': 'id,rating,userRatingCount,googleMapsUri,reviews' },
       next: { revalidate: DAY },
     })

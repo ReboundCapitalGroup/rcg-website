@@ -22,8 +22,31 @@ function gitDate(file) {
 
 function pageFile(loc) {
   const p = loc === '/' ? '' : loc
-  const f = path.join('src', 'app', p, 'page.tsx')
-  return fs.existsSync(f) ? f : null
+  for (const group of ['(en)', '(es)', '']) {
+    const f = path.join('src', 'app', group, p, 'page.tsx')
+    if (fs.existsSync(f)) return f
+  }
+  return null
+}
+
+// English <-> Spanish pairs (same table the site uses), for hreflang tags.
+const ROUTES = require('./src/lib/routes.json')
+const isEs = (p) => p === '/es' || p.startsWith('/es/')
+function swap(p, from, to) {
+  const sorted = [...ROUTES].sort((a, b) => b[from].length - a[from].length)
+  for (const r of sorted) if (p === r[from] || p.startsWith(r[from] + '/')) return r[to] + p.slice(r[from].length)
+  return null
+}
+const toEs = (p) => (p === '/' ? '/es' : swap(p, 0, 1) || '/es' + p)
+const toEn = (p) => (p === '/es' ? '/' : swap(p, 1, 0) || p.replace(/^\/es/, ''))
+const SITE = 'https://reboundcapitalgroup.com'
+// Every page the build produced (static and generated), to pair only real pages.
+let BUILT = null
+const exists = (p) => {
+  if (!BUILT) {
+    try { BUILT = new Set(Object.keys(require('./.next/prerender-manifest.json').routes)) } catch { BUILT = new Set() }
+  }
+  return BUILT.has(p === '' ? '/' : p) || Boolean(pageFile(p))
 }
 
 module.exports = {
@@ -31,15 +54,26 @@ module.exports = {
   generateRobotsTxt: true,
   sitemapSize: 7000,
   // "Coming soon" page is noindex until real posts exist.
-  exclude: ['/resources/blog'],
+  exclude: ['/resources/blog', '/es/recursos/blog'],
   transform: async (config, loc) => {
     const file = pageFile(loc)
     const lastmod = (file && gitDate(file)) || new Date().toISOString()
+    const en = isEs(loc) ? toEn(loc) : loc
+    const es = isEs(loc) ? loc : toEs(loc)
+    // Only pair pages that exist in both languages.
+    const alternateRefs = exists(en) && exists(es)
+      ? [
+          { href: SITE + (en === '/' ? '' : en), hreflang: 'en', hrefIsAbsolute: true },
+          { href: SITE + es, hreflang: 'es', hrefIsAbsolute: true },
+          { href: SITE + (en === '/' ? '' : en), hreflang: 'x-default', hrefIsAbsolute: true },
+        ]
+      : []
     return {
       loc,
       changefreq: config.changefreq,
       priority: config.priority,
       lastmod,
+      alternateRefs,
     }
   },
 }
