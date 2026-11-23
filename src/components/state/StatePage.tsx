@@ -6,6 +6,7 @@ import CountyList from './CountyList'
 import ReviewsStrip from '@/components/ReviewsStrip'
 import { PhotoBand, TrustRow, ScrollCue } from '@/components/ui/blocks'
 import { L, type Lang } from '@/lib/i18n'
+import { countyCards } from '@/content/counties'
 
 const REGION: Record<string, string> = {
   gulf: 'florida louisiana mississippi alabama texas',
@@ -104,6 +105,7 @@ export default function StatePage(p: StatePageProps) {
   const es = lang === 'es'
   const t = UI[lang]
   const to = (href: string) => L(lang, href)
+  const guides = p.countyPages ?? countyCards(p.slug, lang)
   const url = `${SITE}${to(`/states/${p.slug}`)}`
   const faqs = p.faqs || (es ? genericFaqsEs(p.name) : genericFaqs(p.name))
   const main = p.lists[0]
@@ -181,13 +183,13 @@ export default function StatePage(p: StatePageProps) {
       <PhotoBand src={regionImage(p.slug).src} position={regionImage(p.slug).pos} eyebrow={t.bandEyebrow(p.name)} title={t.bandTitle(p.name)} text={t.bandText} />
 
       {/* COUNTY GUIDES */}
-      {p.countyPages && p.countyPages.length > 0 && (
+      {guides.length > 0 && (
         <div className={`${h.wrap} ${s.block}`}>
           <div className={sv.tag}>{t.guides}</div>
           <h2 className={sv.h2}>{t.guidesTitle(p.name)}</h2>
           <p className={s.listIntro}>{t.guidesText}</p>
           <div className={s.guides}>
-            {p.countyPages.map((c) => (
+            {guides.map((c) => (
               <Link key={c.slug} href={to(`/states/${p.slug}/${c.slug}`)} className={s.guide}>
                 <span className={s.guideName}>{c.name}</span>
                 {c.blurb && <span className={s.guideBlurb}>{c.blurb}</span>}
