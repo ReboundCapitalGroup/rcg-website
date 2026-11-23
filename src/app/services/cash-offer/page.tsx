@@ -18,7 +18,7 @@ export default function CashOfferPage() {
       h1Lead="Cash Offer"
       h1Accent="Before the Auction."
       answer="If you are behind on payments and want to sell before the foreclosure sale, a cash buyer from our network may be able to buy your home as-is. No repairs, no listing, no agent commissions. Selling first can stop the foreclosure and let you keep whatever equity is left."
-      ctaHref="/contact?type=pre_foreclosure"
+      ctaHref="/free-review?type=pre_foreclosure"
       ctaLabel="Get a cash offer"
       sections={[
         {

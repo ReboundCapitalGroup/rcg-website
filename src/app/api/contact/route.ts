@@ -138,6 +138,10 @@ export async function POST(request: NextRequest) {
     // 'foreclosure' so existing database rules and the CRM keep working; the
     // message is tagged so it stands out, and the email is labeled urgent.
     const isPreForeclosure = body.claimType === 'pre_foreclosure'
+    // General questions from the /contact page (not a claim review). Stored as
+    // 'unsure' so database rules and the CRM keep working, and tagged clearly.
+    const isGeneral = body.inquiry === 'general'
+    const topic = isGeneral ? sanitize(body.topic).slice(0, 60) : ''
     const claimType = isPreForeclosure
       ? 'foreclosure'
       : VALID_CLAIM_TYPES.includes(body.claimType) ? body.claimType : 'unsure'
@@ -154,7 +158,9 @@ export async function POST(request: NextRequest) {
     const rawMessage = sanitize(body.message)
     const message = isPreForeclosure
       ? `[FACING FORECLOSURE - HOME NOT SOLD YET] Auction date: ${auctionDate || 'not provided'}${rawMessage ? '\n' + rawMessage : ''}`
-      : rawMessage
+      : isGeneral
+        ? `[GENERAL QUESTION - ${topic || 'no topic'}]\n${rawMessage}`
+        : rawMessage
     const smsConsent = body.smsConsent === true
     const smsConsentText = smsConsent ? sanitize(body.smsConsentText) || null : null
 
@@ -170,6 +176,9 @@ export async function POST(request: NextRequest) {
     }
     if (!state) {
       return NextResponse.json({ error: 'Please select a state.' }, { status: 400 })
+    }
+    if (isGeneral && rawMessage.length < 10) {
+      return NextResponse.json({ error: 'Please add a little more detail to your message.' }, { status: 400 })
     }
 
     // --- ATTRIBUTION (first-touch, sent from the client) --------------------
@@ -294,7 +303,9 @@ export async function POST(request: NextRequest) {
         const inFootprint = IN_FOOTPRINT.includes(state)
         const claimLabel = isPreForeclosure
           ? 'FACING FORECLOSURE (home not sold yet) - call ASAP'
-          : CLAIM_TYPE_LABELS[claimType] || claimType
+          : isGeneral
+            ? `GENERAL QUESTION: ${topic || 'no topic'}`
+            : CLAIM_TYPE_LABELS[claimType] || claimType
 
         // Claim-type-specific detail block
         let detailBlock = ''

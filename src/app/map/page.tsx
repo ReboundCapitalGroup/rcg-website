@@ -81,7 +81,7 @@ export default function MapPage() {
           <h2 className={h.closingH}>See what your state is holding.</h2>
           <p>We search state records and court systems at no cost. If money is waiting in your name, we file the claim. Claims are filed through our network of licensed attorneys. RCG does not practice law.</p>
           <div className={h.btnRow}>
-            <Link href="/contact?type=unclaimed_property" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free check <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review?type=unclaimed_property" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free check <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

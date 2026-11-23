@@ -150,12 +150,12 @@ const data = {
     {
       "title": "HOA Foreclosure Surplus",
       "desc": "Florida HOA foreclosure sales can generate surplus funds owed to the former homeowner. These cases are common in South Florida communities and require prompt action before the deadline passes.",
-      "href": "/contact"
+      "href": "/free-review"
     },
     {
       "title": "Excess Proceeds from Court Sales",
       "desc": "Partition sales, probate sales, and judgment lien sales ordered by Florida courts can generate excess proceeds held by the clerk until claimed by the former owner or their heirs.",
-      "href": "/contact"
+      "href": "/free-review"
     }
   ]
 }

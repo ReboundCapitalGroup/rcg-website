@@ -104,7 +104,7 @@ export default function FAQsPage() {
           <h2 className={h.closingH}>Still have questions?</h2>
           <p>Call or text any time and a real person will answer, in English or Spanish. Checking for a claim is free.</p>
           <div className={h.btnRow}>
-            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

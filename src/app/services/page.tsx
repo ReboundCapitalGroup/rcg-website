@@ -105,7 +105,7 @@ export default function ServicesPage() {
           <h2 className={h.closingH}>Not sure which applies to you?</h2>
           <p>Tell us your situation and we will check every claim type connected to your name. You pay nothing unless we recover.</p>
           <div className={h.btnRow}>
-            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

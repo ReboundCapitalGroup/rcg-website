@@ -103,7 +103,7 @@ export default function Footer() {
           {[
             { title:'Services', links:[['Foreclosure Help','/services/foreclosure-solutions'],['Surplus Funds','/services/foreclosure-surplus'],['Tax Deed Overages','/services/tax-deed-surplus'],['Unclaimed Property','/services/unclaimed-property'],['Estate Recovery','/services/estate-recovery']] },
             { title:'Resources', links:[['How It Works','/resources/how-it-works'],['FAQs','/resources/faqs'],['State Laws Map','/resources/state-laws'],['County Guides','/resources/blog'],['Blog','/resources/blog']] },
-            { title:'Company', links:[['About Us','/about'],['Client Results','/resources/results'],['Contact','/contact'],['Free Claim Check','/contact'],['All States','/states']] },
+            { title:'Company', links:[['About Us','/about'],['Client Results','/resources/results'],['Contact','/contact'],['Free Claim Check','/free-review'],['All States','/states']] },
           ].map(col => (
             <div key={col.title}>
               <h5 style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', fontWeight:700, letterSpacing:'2px', textTransform:'uppercase', color:'var(--rcg2)', marginBottom:'14px' }}>{col.title}</h5>

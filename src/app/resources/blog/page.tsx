@@ -100,7 +100,7 @@ export default function BlogCountyGuidesComingSoon() {
             If you think you&apos;re owed surplus funds, reach out directly. We&apos;ll tell you within 24 hours &mdash; free and with no obligation.
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href="/contact" style={{ padding: '13px 24px', fontFamily: "'Space Mono',monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none', background: 'linear-gradient(180deg, #2a48a0, #1E287F)', color: '#ffffff', border: '1px solid rgba(74,95,212,0.5)' }}>
+            <Link href="/free-review" style={{ padding: '13px 24px', fontFamily: "'Space Mono',monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none', background: 'linear-gradient(180deg, #2a48a0, #1E287F)', color: '#ffffff', border: '1px solid rgba(74,95,212,0.5)' }}>
               Free Claim Review
             </Link>
             <Link href="/states" style={{ padding: '13px 24px', fontFamily: "'Space Mono',monospace", fontSize: '10px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', textDecoration: 'none', background: 'transparent', color: '#2f3856', border: '1px solid rgba(74,95,212,0.35)' }}>

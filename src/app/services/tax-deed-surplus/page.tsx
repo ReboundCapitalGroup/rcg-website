@@ -18,7 +18,7 @@ export default function TaxDeedSurplusPage() {
       h1Lead="Tax Deed"
       h1Accent="Overages."
       answer="When a property sells at a tax deed auction for more than the taxes, penalties and fees owed, the extra, called an overage or excess proceeds, belongs to the former owner. The county holds it until it is claimed, and there are deadlines. We find it and file the claim through our network of licensed attorneys. $0 upfront."
-      ctaHref="/contact?type=tax_deed"
+      ctaHref="/free-review?type=tax_deed"
       ctaLabel="Check my property, free"
       sections={[
         {

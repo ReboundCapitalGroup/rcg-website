@@ -19,7 +19,7 @@ export default function ForeclosureSurplusPage() {
       h1Lead="Foreclosure"
       h1Accent="Surplus Funds."
       answer="When a foreclosed home sells at auction for more than what was owed, the extra money, called surplus funds, belongs to the former owner. It is held by the court or county until someone claims it, and there are deadlines. We find it and file the claim through our network of licensed attorneys. $0 upfront."
-      ctaHref="/contact?type=foreclosure"
+      ctaHref="/free-review?type=foreclosure"
       ctaLabel="Check my property, free"
       sections={[
         {

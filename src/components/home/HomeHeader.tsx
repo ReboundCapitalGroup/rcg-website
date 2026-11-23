@@ -50,7 +50,7 @@ function ResourcesMenu() {
               </Link>
             ))}
           </div>
-          <Link href="/contact" className={s.ddFeature} onClick={() => setOpen(false)}>
+          <Link href="/free-review" className={s.ddFeature} onClick={() => setOpen(false)}>
             <span className={s.ddFeatureTag}>Free, no obligation</span>
             <span className={s.ddFeatureTitle}>Find out what you&apos;re owed.</span>
             <span className={s.ddFeatureMeta}>5.0 ★ on Google · A+ BBB</span>
@@ -61,6 +61,13 @@ function ResourcesMenu() {
     </div>
   )
 }
+
+const menu: { label: string; items: [string, string][] }[] = [
+  { label: 'Before the auction', items: [['Foreclosure Help', '/services/foreclosure-solutions'], ['Time Extensions', '/services/time-extensions'], ['Mortgage Assumptions', '/services/mortgage-assumptions'], ['Cash Offer', '/services/cash-offer']] },
+  { label: 'After the auction', items: [['Surplus Funds', '/services/foreclosure-surplus'], ['Tax Deed Overages', '/services/tax-deed-surplus'], ['Estate & Heir Recovery', '/services/estate-recovery'], ['Probate Help for Heirs', '/services/probate-assistance']] },
+  { label: 'Resources', items: [['How It Works', '/resources/how-it-works'], ['FAQs', '/resources/faqs'], ['Client Reviews', '/resources/results'], ['Unclaimed Funds Map', '/map']] },
+  { label: 'Company', items: [['All Services', '/services'], ['All States', '/states'], ['About', '/about'], ['Contact', '/contact'], ['Free Review', '/free-review']] },
+]
 
 export default function HomeHeader() {
   const [open, setOpen] = useState(false)
@@ -75,6 +82,7 @@ export default function HomeHeader() {
           <Link href="/map" className={s.navPill}>Unclaimed Funds Map</Link>
           <ResourcesMenu />
           <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
         </div>
         <div className={s.headerRight}>
           <a href="tel:+13055634920" className={`${s.btnPrimary} ${s.headerPhone}`} aria-label="Call or text 24/7: 305-563-4920">

@@ -18,7 +18,7 @@ export default function MortgageAssumptionsPage() {
       h1Lead="Mortgage"
       h1Accent="Assumptions."
       answer="A mortgage assumption lets a qualified buyer take over your existing home loan, with lender approval, so the home never goes to a foreclosure auction. Many FHA, VA and USDA loans can be assumed; most conventional loans cannot. We review your loan and connect you with buyers from our network."
-      ctaHref="/contact?type=pre_foreclosure"
+      ctaHref="/free-review?type=pre_foreclosure"
       ctaLabel="See if my loan qualifies"
       sections={[
         {

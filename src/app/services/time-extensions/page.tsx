@@ -23,7 +23,7 @@ export default function TimeExtensionsPage() {
       h1Lead="More Time,"
       h1Accent="Before or After the Sale."
       answer="If your home is headed to a foreclosure sale, an attorney may be able to postpone it while you work on a loan modification, a sale, a mortgage takeover and more. If the sale already happened, you may still be able to get more time before you have to move out. The first review is free."
-      ctaHref="/contact?type=pre_foreclosure"
+      ctaHref="/free-review?type=pre_foreclosure"
       ctaLabel="Get a Free Review"
       sections={[
         {

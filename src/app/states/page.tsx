@@ -68,7 +68,7 @@ export default function StatesPage() {
           <h2 className={h.closingH}>Not sure where to start?</h2>
           <p>Get a free, no-obligation review. We work in every state and can tell you within 24 hours if money is owed to you.</p>
           <div className={h.btnRow}>
-            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

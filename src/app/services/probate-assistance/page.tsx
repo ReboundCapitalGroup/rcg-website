@@ -23,7 +23,7 @@ export default function ProbateAssistancePage() {
       h1Lead="Probate Help"
       h1Accent="for Heirs."
       answer="When someone passes away before claiming surplus funds or unclaimed property, the money does not disappear. Their heirs can usually still recover it, but the court will often require probate first. We find the funds, identify the heirs, and coordinate probate and the claim through our network of licensed attorneys. The first review is free."
-      ctaHref="/contact?type=estate"
+      ctaHref="/free-review?type=estate"
       ctaLabel="Get a Free Review"
       sections={[
         {

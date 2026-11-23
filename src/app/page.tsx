@@ -61,7 +61,7 @@ export default function Home() {
             </h1>
             <p className={s.heroSub}>Facing foreclosure, or <span className={s.hideSm}>already </span>lost your home at auction? <span className={s.hideSm}>If money was left behind, it belongs to you.</span><span className={s.showSmInline}>Money left behind belongs to you.</span></p>
             <div className={s.btnRow}>
-              <Link href="/contact" className={`${s.btnPrimary} ${s.btnLg}`}>Check if you&apos;re owed money <span aria-hidden="true">→</span></Link>
+              <Link href="/free-review" className={`${s.btnPrimary} ${s.btnLg}`}>Check if you&apos;re owed money <span aria-hidden="true">→</span></Link>
               <Link href="/services/foreclosure-solutions" className={`${s.btnOutline} ${s.btnLg}`}>Facing foreclosure?</Link>
             </div>
             <div className={s.trust}>Free check · No obligation · <a href={BBB} target="_blank" rel="noopener noreferrer">A+ rating with the BBB</a></div>
@@ -163,7 +163,7 @@ export default function Home() {
           <h2 className={s.closingH}>Talk to a person, any time.</h2>
           <p>Call or text 24/7. A real person answers, in English or Spanish. The check is free and there&apos;s no obligation.</p>
           <div className={s.btnRow}>
-            <Link href="/contact" className={`${s.btnPrimary} ${s.btnLg}`}>Check if you&apos;re owed money <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review" className={`${s.btnPrimary} ${s.btnLg}`}>Check if you&apos;re owed money <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${s.btnOutline} ${s.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

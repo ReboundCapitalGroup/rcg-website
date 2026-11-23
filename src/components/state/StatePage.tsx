@@ -93,7 +93,7 @@ export default function StatePage(p: StatePageProps) {
             <h1 className={sv.h1}>{p.h1Lead} <em className={h.gradText}>{p.h1Accent}</em></h1>
             <p className={sv.answer}>{p.intro}</p>
             <div className={h.btnRow}>
-              <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Check my {p.name} property <span aria-hidden="true">→</span></Link>
+              <Link href="/free-review" className={`${h.btnPrimary} ${h.btnLg}`}>Check my {p.name} property <span aria-hidden="true">→</span></Link>
               <Link href="/services/foreclosure-solutions" className={`${h.btnOutline} ${h.btnLg}`}>Facing foreclosure?</Link>
             </div>
             <TrustRow />
@@ -227,7 +227,7 @@ export default function StatePage(p: StatePageProps) {
           <h2 className={h.closingH}>{p.ctaTitle}</h2>
           <p>{p.ctaText}</p>
           <div className={h.btnRow}>
-            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

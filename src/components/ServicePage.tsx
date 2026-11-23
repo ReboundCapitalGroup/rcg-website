@@ -102,7 +102,7 @@ export default function ServicePage(p: ServicePageProps) {
             {/* Answer block: the short summary search and AI engines quote */}
             <p className={s.answer}>{p.answer}</p>
             <div className={h.btnRow}>
-              <Link href={p.ctaHref || '/contact'} className={`${h.btnPrimary} ${h.btnLg}`}>{p.ctaLabel || 'Get a Free Review'} <span aria-hidden="true">→</span></Link>
+              <Link href={p.ctaHref || '/free-review'} className={`${h.btnPrimary} ${h.btnLg}`}>{p.ctaLabel || 'Get a Free Review'} <span aria-hidden="true">→</span></Link>
               <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call or text 24/7</a>
             </div>
             <TrustRow />
@@ -231,7 +231,7 @@ export default function ServicePage(p: ServicePageProps) {
           <h2 className={h.closingH}>{p.ctaTitle}</h2>
           <p>{p.ctaText}</p>
           <div className={h.btnRow}>
-            <Link href={p.ctaHref || '/contact'} className={`${h.btnPrimary} ${h.btnLg}`}>{p.ctaLabel || 'Get a Free Review'} <span aria-hidden="true">→</span></Link>
+            <Link href={p.ctaHref || '/free-review'} className={`${h.btnPrimary} ${h.btnLg}`}>{p.ctaLabel || 'Get a Free Review'} <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

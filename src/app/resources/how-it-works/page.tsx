@@ -48,7 +48,7 @@ export default function HowItWorksPage() {
           <h1 className={sv.h1}>How it <em className={h.gradText}>works.</em></h1>
           <p className={sv.answer}>From the first search to the final payment, every step is handled by our team, at no cost to you until we recover.</p>
           <div className={h.btnRow}>
-            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Start a free review <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review" className={`${h.btnPrimary} ${h.btnLg}`}>Start a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call or text 24/7</a>
           </div>
           <TrustRow />
@@ -96,7 +96,7 @@ export default function HowItWorksPage() {
           <h2 className={h.closingH}>Ready to find out what you are owed?</h2>
           <p>Start with a free search. We confirm what exists, walk you through the process, and handle everything from there.</p>
           <div className={h.btnRow}>
-            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

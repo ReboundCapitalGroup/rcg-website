@@ -19,7 +19,7 @@ export default function ForeclosureSolutionsPage() {
       h1Lead="Foreclosure Help"
       h1Accent="Before the Auction."
       answer="If your home is in foreclosure but has not sold yet, you likely have more options than you think. Depending on your timeline, an attorney may be able to postpone the sale, a buyer may take over your mortgage, or you can sell first and keep your equity. The first review is free, and the sooner you reach out, the more options are open."
-      ctaHref="/contact?type=pre_foreclosure"
+      ctaHref="/free-review?type=pre_foreclosure"
       ctaLabel="Get my options, free"
       sections={[
         {

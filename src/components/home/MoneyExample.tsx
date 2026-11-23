@@ -47,7 +47,7 @@ export default function MoneyExample() {
         <p className={s.moneyLead}>The house sold. The debt was paid.<br className={s.brSm} /> This was left over:</p>
         <div className={s.moneyCounter} aria-live="polite">{shown}</div>
         <p className={s.moneyText}>That money belongs to the former owner. Most people never hear about it. We find it and file the claim.</p>
-        <Link href="/contact?type=foreclosure" className={`${s.btnWhite} ${s.hideSm}`}>Check my property, free <span aria-hidden="true">→</span></Link>
+        <Link href="/free-review?type=foreclosure" className={`${s.btnWhite} ${s.hideSm}`}>Check my property, free <span aria-hidden="true">→</span></Link>
       </div>
       <div className={s.exampleBox}>
         <div className={s.exampleLabel}>Try an example</div>
@@ -67,7 +67,7 @@ export default function MoneyExample() {
         </div>
         <div className={s.exampleNote}>Example figures, not a real case. Liens and costs can lower the amount.</div>
       </div>
-      <Link href="/contact?type=foreclosure" className={`${s.btnWhite} ${s.showSm}`}>Check my property, free <span aria-hidden="true">→</span></Link>
+      <Link href="/free-review?type=foreclosure" className={`${s.btnWhite} ${s.showSm}`}>Check my property, free <span aria-hidden="true">→</span></Link>
     </div>
   )
 }

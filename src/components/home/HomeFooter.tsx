@@ -8,7 +8,7 @@ const BBB = 'https://www.bbb.org/us/fl/miami-beach/profile/financial-consultants
 const cols: { label: string; links: [string, string][] }[] = [
   { label: 'Before the auction', links: [['Foreclosure Help', '/services/foreclosure-solutions'], ['Time Extensions', '/services/time-extensions'], ['Cash Offer', '/services/cash-offer']] },
   { label: 'After the auction', links: [['Surplus Funds', '/services/foreclosure-surplus'], ['Tax Deed Overages', '/services/tax-deed-surplus'], ['Probate Help for Heirs', '/services/probate-assistance']] },
-  { label: 'Company', links: [['About', '/about'], ['States', '/states'], ['Unclaimed Funds Map', '/map'], ['Contact', '/contact']] },
+  { label: 'Company', links: [['About', '/about'], ['States', '/states'], ['Unclaimed Funds Map', '/map'], ['Free Review', '/free-review'], ['Contact', '/contact']] },
 ]
 
 export default function HomeFooter() {

@@ -17,7 +17,7 @@ export default function StateHeldFundsPage() {
       h1Lead="State-Held"
       h1Accent="Funds."
       answer="Courts, counties and state agencies hold money that belongs to private people: surplus from foreclosure and tax sales, court deposits, and unclaimed property. The government is only holding it, and there is usually a deadline to claim it. We find it and file through our network of licensed attorneys. $0 upfront."
-      ctaHref="/contact?type=unclaimed_property"
+      ctaHref="/free-review?type=unclaimed_property"
       ctaLabel="Start a free search"
       sections={[
         {
@@ -39,8 +39,8 @@ export default function StateHeldFundsPage() {
         items: [
           { title: 'Foreclosure surplus funds', desc: 'Money left after a foreclosure sale, held by the county clerk until the former owner claims it.', href: '/services/foreclosure-surplus', linkLabel: 'Learn about foreclosure surplus' },
           { title: 'Tax deed overages', desc: 'Money left after a tax deed sale, held by the county. Former owners are entitled to it by law.', href: '/services/tax-deed-surplus', linkLabel: 'Learn about tax deed overages' },
-          { title: 'Excess proceeds from court sales', desc: 'Partition, probate and judgment sales can leave excess proceeds held by the court until claimed.', href: '/contact', linkLabel: 'Ask about excess proceeds' },
-          { title: 'Unclaimed court deposits', desc: 'Money deposited with a court during a case or settlement and never collected.', href: '/contact', linkLabel: 'Start a free search' },
+          { title: 'Excess proceeds from court sales', desc: 'Partition, probate and judgment sales can leave excess proceeds held by the court until claimed.', href: '/free-review', linkLabel: 'Ask about excess proceeds' },
+          { title: 'Unclaimed court deposits', desc: 'Money deposited with a court during a case or settlement and never collected.', href: '/free-review', linkLabel: 'Start a free search' },
           { title: 'State unclaimed property', desc: 'Bank accounts, insurance, dividends and refunds turned over to the state.', href: '/services/unclaimed-property', linkLabel: 'See unclaimed property types' },
         ],
       }}

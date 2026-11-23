@@ -86,7 +86,7 @@ export default function AboutPage() {
           <h2 className={h.closingH}>You do not need to figure this out alone.</h2>
           <p>If money is owed to you from a foreclosure, a tax sale or a state treasury, we will find it, file for it and recover it. You pay nothing unless we succeed.</p>
           <div className={h.btnRow}>
-            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Start a free review <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review" className={`${h.btnPrimary} ${h.btnLg}`}>Start a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

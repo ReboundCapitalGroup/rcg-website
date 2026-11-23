@@ -48,7 +48,7 @@ export default function ClientResultsPage() {
           <h2 className={h.closingH}>Find out what you are owed.</h2>
           <p>A free search takes minutes. If funds exist in your name, we find them and handle the full recovery at no cost to you.</p>
           <div className={h.btnRow}>
-            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
+            <Link href="/free-review" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>

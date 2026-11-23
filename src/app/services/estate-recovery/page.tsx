@@ -18,7 +18,7 @@ export default function EstateHeirRecoveryPage() {
       h1Lead="Estate & Heir"
       h1Accent="Recovery."
       answer="When a property owner passes away before claiming money they were owed, the money does not disappear. Heirs and the estate can usually still recover surplus funds, tax deed overages and unclaimed property. We find the funds, identify the heirs, and handle the claim through our network of licensed attorneys. $0 upfront."
-      ctaHref="/contact?type=estate"
+      ctaHref="/free-review?type=estate"
       ctaLabel="Check for an estate, free"
       sections={[
         {

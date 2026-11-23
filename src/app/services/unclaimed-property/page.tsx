@@ -18,7 +18,7 @@ export default function UnclaimedPropertyPage() {
       h1Lead="Unclaimed"
       h1Accent="Property."
       answer="When a bank, insurer or company cannot reach the owner of an account, check or deposit, the money is turned over to the state as unclaimed property. Every state holds it until the owner or heirs claim it. We search state records nationwide and handle the claim for you. $0 upfront."
-      ctaHref="/contact?type=unclaimed_property"
+      ctaHref="/free-review?type=unclaimed_property"
       ctaLabel="Check for unclaimed funds, free"
       stats={[
         { val: '$70B+', label: 'Held by US states' },
