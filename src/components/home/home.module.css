@@ -16,6 +16,9 @@
   font-family: var(--sans);
 }
 .page { background: var(--paper); color: #121829; }
+/* No lonely last words: balance headings, avoid one-word last lines in text */
+.page h1, .page h2, .page h3, .page blockquote { text-wrap: balance; }
+.page p, .page li, .page figcaption, .page summary { text-wrap: pretty; }
 .page a, .header a, .footer a { text-decoration: none; }
 .wrap { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
 .minW0 { min-width: 0; }
@@ -63,7 +66,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .ddFeatureTag { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--light); }
 .ddFeatureTitle { font-family: var(--serif); font-size: 26px; line-height: 1.05; }
 .ddFeatureMeta { font-size: 12px; color: #c3cfee; margin-top: auto; }
-.ddFeatureCta { display: flex; justify-content: center; margin-top: 6px; background: #fff; color: var(--navy); border-radius: 8px; padding: 11px 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; transition: transform .2s, box-shadow .2s; }
+.ddFeatureCta { display: flex; justify-content: center; margin-top: 6px; background: #fff; color: var(--navy); border-radius: 8px; padding: 10px 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; text-transform: uppercase; transition: transform .2s, box-shadow .2s; }
 .ddFeature:hover .ddFeatureCta { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.25); }
 .navPill { color: var(--primary) !important; border: 1px solid rgba(30,40,127,0.4); border-radius: 999px; padding: 8px 14px; font-weight: 600; }
 .headerRight { display: flex; justify-content: flex-end; align-items: center; gap: 8px; }

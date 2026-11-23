@@ -54,7 +54,7 @@ function ResourcesMenu() {
             <span className={s.ddFeatureTag}>Free, no obligation</span>
             <span className={s.ddFeatureTitle}>Find out what you&apos;re owed.</span>
             <span className={s.ddFeatureMeta}>5.0 ★ on Google · A+ BBB</span>
-            <span className={s.ddFeatureCta}>Start my free review →</span>
+            <span className={s.ddFeatureCta}>Start free review →</span>
           </Link>
         </div>
       )}
