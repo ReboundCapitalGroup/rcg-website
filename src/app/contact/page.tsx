@@ -26,7 +26,7 @@ export default function ContactPage() {
           <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>Contact</span>
         </div>
         <div className={`${sv.heroText} ${sv.heroCenter}`}>
-          <div className={h.eyebrow}>Contact · Miami Beach, FL · 24/7</div>
+          <div className={h.eyebrow}>Contact · 24/7</div>
           <h1 className={sv.h1}>Talk to a <em className={h.gradText}>real person.</em></h1>
           <p className={sv.answer}>Questions about a case, a letter you received, or working with us? Call, text or send a message. A member of our team answers every message.</p>
         </div>

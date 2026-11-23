@@ -18,6 +18,9 @@ a.card:hover { border-color: rgba(30,40,127,0.35); box-shadow: 0 14px 32px rgba(
 .reviewBtn { align-self: flex-start; background: #fff; color: var(--navy); font-weight: 800; font-size: 13px; padding: 11px 18px; border-radius: 999px; white-space: nowrap; }
 .review:hover .reviewBtn { background: #e9eefb; }
 .trust { margin-top: 4px; }
+.trust > div { flex-wrap: nowrap; gap: 8px; }
+.trust > div > * { padding: 8px 12px; font-size: 12px; gap: 6px; white-space: nowrap; }
+.trust > div > * b { font-size: 13px; }
 
 .formCard { background: #fff; border: 1px solid rgba(13,19,34,0.08); border-radius: 18px; padding: 32px; box-shadow: 0 18px 44px rgba(13,19,34,0.07); }
 .form { display: flex; flex-direction: column; gap: 18px; }
@@ -40,7 +43,7 @@ a.card:hover { border-color: rgba(30,40,127,0.35); box-shadow: 0 14px 32px rgba(
 .done { text-align: center; padding: 30px 6px; }
 .doneIcon { display: inline-grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: #e9eefb; color: var(--primary); margin-bottom: 18px; }
 
-@media (max-width: 900px) {
+@media (max-width: 1240px) {
   .layout { grid-template-columns: 1fr; }
   .side { position: static; }
 }
@@ -48,4 +51,5 @@ a.card:hover { border-color: rgba(30,40,127,0.35); box-shadow: 0 14px 32px rgba(
   .formCard { padding: 22px 18px; }
   .row, .topics { grid-template-columns: 1fr; }
   .valueSm { font-size: 14px; }
+  .trust > div { flex-wrap: wrap; }
 }
