@@ -18,6 +18,11 @@ export default function UnclaimedPropertyPage() {
       answer="When a bank, insurer or company cannot reach the owner of an account, check or deposit, the money is turned over to the state as unclaimed property. Every state holds it until the owner or heirs claim it. We search state records nationwide and handle the claim for you. $0 upfront."
       ctaHref="/contact?type=unclaimed_property"
       ctaLabel="Check for unclaimed funds, free"
+      stats={[
+        { val: '$70B+', label: 'Held by US states' },
+        { val: '1 in 10', label: 'Americans have unclaimed funds' },
+        { val: 'All 50', label: 'States searchable' },
+      ]}
       sections={[
         {
           tag: 'What it is',
@@ -45,15 +50,15 @@ export default function UnclaimedPropertyPage() {
         ],
       }}
       steps={[
-        { title: 'We search', desc: 'We search state unclaimed property records nationwide under your name and past addresses.' },
+        { title: 'We search', desc: 'We search state unclaimed property records nationwide under your name and past addresses. Florida alone holds over $2 billion in unclaimed funds.' },
         { title: 'We confirm', desc: 'We verify the match, the amount, and which state is holding the money.' },
         { title: 'We file', desc: 'We prepare and submit the claim with the documents the state requires.' },
-        { title: 'You get paid', desc: 'Once the state approves the claim, the money is released to you.' },
+        { title: 'You get paid', desc: 'Once the state approves the claim, the money is released to you. Most claims resolve within 60 to 120 days, depending on the state and claim type.' },
       ]}
       faqs={[
         { q: 'What is unclaimed property?', a: 'Money a business could not return to its owner, such as an old bank account, an uncashed check or a deposit. After a period of inactivity it is turned over to the state, which holds it until it is claimed.' },
         { q: 'Can heirs claim unclaimed property?', a: 'Yes. If the owner has passed away, heirs or the estate can usually claim it with the right documents.' },
-        { q: 'How long does a claim take?', a: 'It depends on the state and the type of claim. Simple claims move faster; claims for heirs or businesses take longer.' },
+        { q: 'How long does a claim take?', a: 'Most claims resolve within 60 to 120 days, depending on the state and the type of claim. Claims for heirs or businesses can take longer.' },
       ]}
       related={[
         { href: '/map', label: 'Unclaimed Funds Map', desc: 'See what each state holds and how claims work there.' },

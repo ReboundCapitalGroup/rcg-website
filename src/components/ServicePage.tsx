@@ -32,6 +32,7 @@ export type ServicePageProps = {
   h1Accent: string
   answer: string
   sections: Section[]
+  stats?: { val: string; label: string }[]
   cards?: { tag: string; title: string; items: Card[] }
   steps?: { title: string; desc: string }[]
   stepsTitle?: string
@@ -111,6 +112,17 @@ export default function ServicePage(p: ServicePageProps) {
           </div>
         </div>
       </div>
+
+      {/* STATS */}
+      {p.stats && (
+        <div className={`${h.wrap} ${s.statsWrap}`}>
+          <div className={s.stats}>
+            {p.stats.map((st) => (
+              <div key={st.label} className={s.stat}><span className={s.statVal}>{st.val}</span><span className={s.statLabel}>{st.label}</span></div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* SECTIONS */}
       <div className={`${h.wrap} ${s.sections}`}>
