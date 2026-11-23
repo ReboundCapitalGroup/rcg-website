@@ -6,6 +6,7 @@ import type { ReactNode } from 'react'
 import h from '@/components/home/home.module.css'
 import s from './service.module.css'
 import { L, type Lang } from '@/lib/i18n'
+import { ALL_COUNTIES } from '@/content/counties'
 
 /**
  * Shared layout for every service page (redesign v4).
@@ -56,6 +57,17 @@ export type ServicePageProps = {
 }
 
 const SITE = 'https://reboundcapitalgroup.com'
+
+/** Service pages that link down to the county guides. */
+const COUNTY_LINK_SERVICES = ['foreclosure-surplus', 'tax-deed-surplus', 'estate-recovery', 'probate-assistance']
+const ABBR: Record<string, string> = {
+  florida: 'FL', ohio: 'OH', colorado: 'CO', arizona: 'AZ', illinois: 'IL', maryland: 'MD',
+  pennsylvania: 'PA', tennessee: 'TN', california: 'CA', texas: 'TX', nevada: 'NV', michigan: 'MI',
+}
+const COUNTY_UI = {
+  en: { tag: 'County guides', h: 'How it works in your county.', p: 'Who holds the money, how sales work and how to claim, county by county.', all: 'All states →' },
+  es: { tag: 'Guías por condado', h: 'Cómo funciona en su condado.', p: 'Quién guarda el dinero, cómo son las ventas y cómo reclamar, condado por condado.', all: 'Todos los estados →' },
+}
 
 const UI = {
   en: { home: 'Home', services: 'Services', cta: 'Get a Free Review', call24: 'Call or text 24/7', how: 'How it works', common: 'Common questions', ask: 'Questions people ask.', all: 'All FAQs →', related: 'Related help', call: 'Call 305-563-4920', crumbs: 'Breadcrumb' },
@@ -217,6 +229,22 @@ export default function ServicePage(p: ServicePageProps) {
                 </details>
               ))}
             </div>
+          </div>
+        </div>
+      )}
+
+      {COUNTY_LINK_SERVICES.includes(p.slug) && (
+        <div className={`${h.wrap} ${s.block}`}>
+          <div className={s.tag}>{COUNTY_UI[lang].tag}</div>
+          <h2 className={s.h2}>{COUNTY_UI[lang].h}</h2>
+          <p className={s.countyIntro}>{COUNTY_UI[lang].p}</p>
+          <div className={s.countyLinks}>
+            {ALL_COUNTIES.map((c) => (
+              <Link key={`${c.state}-${c.slug}`} href={to(`/states/${c.state}/${c.slug}`)} className={s.countyLink}>
+                {c.short}, {ABBR[c.state]}
+              </Link>
+            ))}
+            <Link href={to('/states')} className={`${s.countyLink} ${s.countyAll}`}>{COUNTY_UI[lang].all}</Link>
           </div>
         </div>
       )}

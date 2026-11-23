@@ -122,3 +122,10 @@ a.card:hover { filter: brightness(1.1); }
   .faq p { font-size: 15px; }
   .related { margin-bottom: 48px; }
 }
+
+/* County guide links on surplus service pages */
+.countyIntro { margin: 8px 0 0; color: var(--body); font-size: 16px; line-height: 1.6; max-width: 640px; }
+.countyLinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.countyLink { display: inline-flex; align-items: center; padding: 9px 16px; border-radius: 999px; background: #fff; border: 1px solid rgba(13,19,34,0.1); font-size: 14px; font-weight: 700; color: var(--navy) !important; white-space: nowrap; transition: border-color .15s, box-shadow .15s; }
+.countyLink:hover { border-color: rgba(30,40,127,0.35); box-shadow: 0 8px 20px rgba(30,40,127,0.1); }
+.countyAll { background: var(--navy); color: #fff !important; border-color: var(--navy); }
