@@ -5,6 +5,9 @@ import Footer from '@/components/Footer'
 import AttributionTracker from '@/components/AttributionTracker'
 import Analytics from '@/components/Analytics'
 import MobileCallBar from '@/components/MobileCallBar'
+import ChromeSwitch from '@/components/ChromeSwitch'
+import HomeHeader from '@/components/home/HomeHeader'
+import HomeFooter from '@/components/home/HomeFooter'
 
 export const metadata: Metadata = {
   title: 'Rebound Capital Group | Surplus Funds & Unclaimed Property Recovery Nationwide',
@@ -161,7 +164,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Michroma&display=swap"
         />
 
         <script
@@ -176,9 +179,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <AttributionTracker />
         <Analytics />
-        <Nav />
+        <ChromeSwitch legacy={<Nav />} redesigned={<HomeHeader />} />
         <main>{children}</main>
-        <Footer />
+        <ChromeSwitch legacy={<Footer />} redesigned={<HomeFooter />} />
         <MobileCallBar />
       </body>
     </html>

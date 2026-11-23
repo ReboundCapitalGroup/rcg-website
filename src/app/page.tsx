@@ -1,208 +1,168 @@
 import Link from 'next/link'
-import Ticker from '@/components/Ticker'
-import CounterBar from '@/components/CounterBar'
 import type { Metadata } from 'next'
+import MoneyExample from '@/components/home/MoneyExample'
+import s from '@/components/home/home.module.css'
 
 export const metadata: Metadata = {
   title: 'Foreclosure Help & Surplus Funds Recovery Nationwide | $0 Upfront | RCG',
   description: 'Facing foreclosure or already lost your home at auction? Rebound Capital Group helps homeowners nationwide with options before the sale and surplus funds after it. $0 upfront. Call or text 24/7.',
 }
-const services = [
-  { id:'01', cat:'Foreclosure Solutions', title:'Pre-Sale & Property Options', desc:'Still in the foreclosure process? We may be able to preserve equity, explore mortgage assumptions, connect you with buyers, or structure a cash offer before the auction date.', href:'/services/foreclosure-solutions', tag: 'Before the Auction' },
-  { id:'02', cat:'Foreclosure Recovery', title:'Foreclosure Surplus & Overages', desc:'When a property sells for more than the debt owed, the overage belongs to the former owner by law. We file and recover courthouse-held surplus funds nationwide.', href:'/services/foreclosure-surplus', tag: 'Core Service' },
-  { id:'03', cat:'Tax Deed Recovery', title:'Tax Deed & Excess Proceeds', desc:'Tax sales generate excess proceeds daily. Most former owners never know the money exists. We locate it, file before deadlines, and pull every dollar before it escheats to the state.', href:'/services/tax-deed-surplus', tag: 'Core Service' },
-  { id:'04', cat:'Unclaimed Property', title:'State-Held & Unclaimed Assets', desc:'Dormant bank accounts, uncashed checks, insurance payouts, utility deposits. Billions sit in state treasury divisions. We search, locate, and recover on your behalf — nationwide.', href:'/services/unclaimed-property', tag: 'Nationwide' },
-  { id:'05', cat:'Estate & Heir Recovery', title:'Probate, Heirs & Estate Claims', desc:'Heirs and estates are often entitled to surplus funds they never knew existed. We coordinate probate documentation, identify rightful heirs, and manage the full claim process.', href:'/services/estate-recovery', tag: 'Specialized' },
-  { id:'06', cat:'Business & Trust Recovery', title:'LLC, Trust & Business Assets', desc:'Unclaimed property held under business names, dissolved entities, or trust accounts. We recover assets from dormant LLCs, closed corporations, and inactive trusts.', href:'/services/business-asset-recovery', tag: 'Specialized' },
+
+const BBB = 'https://www.bbb.org/us/fl/miami-beach/profile/financial-consultants/rebound-capital-group-0633-92041559'
+
+const steps = [
+  { title: 'Free check', desc: 'Tell us the property or the person. We search court and county records at no cost.' },
+  { title: 'We handle the claim', desc: 'Claims are filed through our network of licensed attorneys in the state where the funds are held.' },
+  { title: 'You get paid', desc: 'Funds are released to you. Our fee comes only from what we recover. $0 upfront, ever.' },
 ]
 
-const whyUs = [
-  { n:'01', title:'Zero Upfront — Ever', desc:'100% contingency. We only get paid when you get paid. No retainers, no risk, no catch.' },
-  { n:'02', title:'We Find You First', desc:'We identify surplus before it escheats to the state. Most clients never knew money existed until we called.' },
-  { n:'03', title:'Deadline-Driven Execution', desc:'Claim windows can be as short as 60 days. We track every case clock and never miss a filing date.' },
-  { n:'04', title:'Nationwide. All Claim Types.', desc:'Foreclosure, tax deed, unclaimed property, estate. One firm, with claims filed through our network of licensed attorneys in the state where the funds are held.' },
+const services: [string, string, string, string][] = [
+  ['Before the auction', 'Foreclosure Help & Options', 'Still in the process? Preserve equity, explore a mortgage assumption, or a cash offer before the sale.', '/services/foreclosure-solutions'],
+  ['After the auction', 'Foreclosure Surplus Funds', 'When a home sells for more than the debt, the extra belongs to the former owner. We find it and file.', '/services/foreclosure-surplus'],
+  ['Heirs & estates', 'Estate & Heir Recovery', 'Heirs are often owed money they never knew existed. We identify heirs and manage the claim.', '/services/estate-recovery'],
+  ['Before the auction', 'Time Extensions', 'More time before the sale, or before you have to move out.', '/services/time-extensions'],
+  ['After the auction', 'Tax Deed Overages', 'Tax sales leave excess proceeds most owners never hear about. We file before the deadline.', '/services/tax-deed-surplus'],
+  ['Heirs & estates', 'Probate Help for Heirs', 'When the court requires probate, we coordinate it with the claim.', '/services/probate-assistance'],
+  ['Before the auction', 'Cash Offer on Property', 'Sell before the auction and walk away with your equity.', '/services/cash-offer'],
+  ['Nationwide', 'Unclaimed Funds', 'Dormant accounts, uncashed checks and deposits held by the state. We search and recover nationwide.', '/services/unclaimed-property'],
+  ['Businesses & trusts', 'LLC, Trust & Business Assets', 'Funds held under dissolved companies, closed corporations and inactive trusts.', '/services/business-asset-recovery'],
 ]
 
-const firmStats = [
-  { val:'$0', desc:'Upfront cost to any client — ever. Pure contingency model.' },
-  { val:'1,000+', desc:'County court systems actively monitored and scraped daily.' },
-  { val:'24/7', desc:'Call or text anytime. Nationwide coverage through our network of licensed attorneys.', small: true },
-  { val:'A+', desc:'A+ rating with the BBB. Miami Beach, FL. Est. 2023.', blue: true },
+const why = [
+  { n: '01', title: 'Zero upfront. Ever.', desc: '100% contingency. We only get paid when you get paid. No retainers, no risk, no catch.' },
+  { n: '02', title: 'Deadline-driven', desc: 'Claim windows can be short. We track every case deadline from the first call to the payout.' },
+  { n: '03', title: 'Nationwide. Every claim type.', desc: 'Foreclosure, tax deed, unclaimed funds, estates. One firm, with claims filed through our network of licensed attorneys in the state where the funds are held.' },
 ]
 
-const allStates = ['Florida','Colorado','Georgia','Ohio','New Jersey','Texas','California','New York','Illinois','Pennsylvania','Michigan','North Carolina','Virginia','Washington','Nevada','Tennessee','Indiana','Missouri','Maryland','Wisconsin','Minnesota','South Carolina','Alabama']
-const activeStates: string[] = []
-
-const heroStyle: React.CSSProperties = {
-  background: 'var(--bg)',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  padding: '0 24px',
-  position: 'relative',
-  overflow: 'hidden',
-  textAlign: 'center',
-  minHeight: 'calc(100vh - 80px)',
-}
+const HouseIcon = () => (
+  <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18" /><path d="M5 21V10l7-5 7 5v11" /><path d="M9 21v-6h6v6" /></svg>
+)
 
 export default function Home() {
   return (
-    <>
-      <Ticker />
-
+    <div className={s.page}>
       {/* HERO */}
-      <section style={heroStyle}>
-        {/* Grid */}
-        <div style={{ position:'absolute', inset:0, backgroundImage:'linear-gradient(rgba(74,95,212,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.05) 1px,transparent 1px)', backgroundSize:'52px 52px', pointerEvents:'none' }} />
-        {/* Center glow */}
-        <div style={{ position:'absolute', top:'50%', left:'50%', transform:'translate(-50%,-50%)', width:'700px', height:'500px', background:'radial-gradient(ellipse at center, rgba(30,40,127,0.2) 0%, transparent 70%)', pointerEvents:'none' }} />
-        {/* Scan line */}
-        <div className="scan-animate" style={{ position:'absolute', left:0, right:0, height:'1px', background:'linear-gradient(90deg,transparent,rgba(74,95,212,0.6),transparent)', pointerEvents:'none' }} />
-
-        <div style={{ position:'relative', zIndex:2, width:'100%', maxWidth:'920px' }}>
-          {/* Badge */}
-          <div className="hero-badge-container" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'10px', marginBottom:'24px', flexWrap:'nowrap' }}>
-            <span className="pulse-animate" style={{ width:'6px', height:'6px', borderRadius:'50%', background:'var(--rcg2)', display:'inline-block', flexShrink:0 }} />
-            <span className="hero-badge-text" style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'1.5px', textTransform:'uppercase', color:'#5a6890', whiteSpace:'nowrap' as const }}>Nationwide · $0 Upfront · A+ Rating with the BBB</span>
-          </div>
-
-          {/* Headline — two clean lines */}
-          <h1 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(28px,5vw,60px)', lineHeight:1.08, color:'#fff', letterSpacing:'clamp(-1px,-0.15em,-2px)', margin:'0 0 20px', textAlign:'center' }}>
-            Turning <span style={{ backgroundImage:'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent' }}>Forgotten Funds</span>
-            <br />
-            <span style={{ whiteSpace:'nowrap' as const }}>Into <span style={{ backgroundImage:'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', letterSpacing:'-0.5px', fontWeight:700 }}>Future Opportunities.</span></span>
-          </h1>
-
-          {/* Subtext — 3 clean lines matching notepad layout */}
-          <p style={{ fontSize:'clamp(13px,3.2vw,15px)', color:'#a8bedd', lineHeight:1.75, maxWidth:'860px', width:'100%', margin:'0 auto 32px', fontWeight:400, textAlign:'center', padding:'0 4px' }}>
-            <span style={{ display:'block', textWrap:'balance' }}>Facing foreclosure, or already lost your home at auction?</span>
-            <span style={{ display:'block', textWrap:'balance' }}>If money was left behind, <strong style={{ color:'#ffffff', fontWeight:700 }}>it legally belongs to you.</strong></span>
-            <span style={{ display:'block', textWrap:'balance' }}>We help homeowners nationwide, before and after the sale. <strong style={{ color:'#ffffff', fontWeight:700 }}>Zero upfront cost. Ever.</strong></span>
-          </p>
-
-          {/* CTAs */}
-          <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'14px', flexWrap:'wrap' }}>
-            <Link href="/contact" className="btn-primary hero-cta-main" style={{ background:'linear-gradient(180deg,#1a2860 0%,#0f1a40 100%)', border:'1px solid rgba(74,127,212,0.35)', boxShadow:'0 0 24px rgba(20,35,100,0.5), 0 4px 0 rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.07)', letterSpacing:'1px', padding:'16px 32px', whiteSpace:'nowrap' as const }}>Check If You&apos;re Owed Money — Free</Link>
-            <Link href="/services/foreclosure-solutions" className="btn-secondary" style={{ background:'linear-gradient(180deg,#1a1f2e 0%,#0f1218 100%)', border:'1px solid rgba(74,127,212,0.2)', color:'#7090c0', boxShadow:'0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)', letterSpacing:'1px', padding:'16px 32px' }}>Facing Foreclosure? See Options</Link>
-            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1px', textTransform:'uppercase', color:'#5a6890' }}>// No fees until we recover</span>
+      <section className={s.hero}>
+        <video className={s.heroVideo} autoPlay muted loop playsInline preload="metadata" poster="/home/hero-poster.webp" aria-hidden="true">
+          <source src="/home/hero-720.mp4" type="video/mp4" media="(max-width: 900px)" />
+          <source src="/home/hero-1080.mp4" type="video/mp4" />
+        </video>
+        <div className={s.heroFade} aria-hidden="true" />
+        <div className={s.heroInner}>
+          <div className={s.heroContent}>
+            <div className={s.eyebrow}>Nationwide · $0 Upfront · <span className={s.hideSm}>Call or text </span>24/7</div>
+            <h1 className={s.h1}>
+              <span className={s.line}>Turning Forgotten<span className={s.hideSm}> Funds</span></span>
+              <span className={`${s.line} ${s.showSm}`}>Funds Into</span>
+              <span className={s.line}><span className={s.hideSm}>Into </span><em className={s.gradText}>Future Opportunities.</em></span>
+            </h1>
+            <p className={s.heroSub}>Facing foreclosure, or <span className={s.hideSm}>already </span>lost your home at auction? <span className={s.hideSm}>If money was left behind, it belongs to you.</span><span className={s.showSmInline}>Money left behind belongs to you.</span></p>
+            <div className={s.btnRow}>
+              <Link href="/contact" className={`${s.btnPrimary} ${s.btnLg}`}>Check if you&apos;re owed money <span aria-hidden="true">→</span></Link>
+              <Link href="/services/foreclosure-solutions" className={`${s.btnOutline} ${s.btnLg}`}>Facing foreclosure?</Link>
+            </div>
+            <div className={s.trust}>Free check · No obligation · <a href={BBB} target="_blank" rel="noopener noreferrer">A+ rating with the BBB</a></div>
           </div>
         </div>
       </section>
 
-      <CounterBar />
-
-      {/* SERVICES */}
-      <div style={{ background:'var(--bg)', padding:'clamp(40px,6vw,80px) clamp(16px,4vw,40px)' }}>
-        <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
-          <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:'40px', marginBottom:'48px', flexWrap:'wrap' }}>
-            <div>
-              <span className="section-tag">// what we recover</span>
-              <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,4vw,50px)', color:'#fff', letterSpacing:'-1px', lineHeight:1.0 }}>
-                Full Recovery.<br /><span style={{ color:'var(--dim)' }}>Every Claim Type.</span>
-              </h2>
-            </div>
-            <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, maxWidth:'480px', paddingTop:'8px' }}>
-              Foreclosure surplus. Tax deed overages. Unclaimed assets. Estate recovery. Business and trust claims. Every dollar we recover is on a pure contingency basis — nothing out of pocket, ever.
-            </p>
-          </div>
-          <div className="service-grid">
-            {services.map((s, i) => {
-              const isHighlighted = i % 2 === 0
-              return (
-                <Link
-                  key={s.id}
-                  href={s.href}
-                  className="service-card"
-                  style={isHighlighted ? { background:'rgba(30,40,127,0.12)', borderColor:'rgba(74,95,212,0.28)' } : undefined}
-                >
-                  <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'20px' }}>
-                    <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'2px', textTransform:'uppercase', color: isHighlighted ? 'rgba(74,127,212,0.9)' : 'var(--dim)' }}>{s.id}</span>
-                    <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'7px', letterSpacing:'1.5px', textTransform:'uppercase', color:'rgba(74,127,212,0.5)', border:'1px solid rgba(74,127,212,0.2)', padding:'2px 7px' }}>{(s as any).tag}</span>
-                  </div>
-                  <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', letterSpacing:'2px', textTransform:'uppercase', color:'var(--rcg2)', marginBottom:'10px', opacity:0.7 }}>{s.cat}</div>
-                  <div style={{ fontFamily:"'Space Grotesk',sans-serif", fontSize:'16px', fontWeight:700, letterSpacing:'-0.3px', color:'#fff', marginBottom:'12px', lineHeight:1.2 }}>{s.title}</div>
-                  <div style={{ fontSize:'13px', color:'var(--mid)', lineHeight:1.7, flexGrow:1 }}>{s.desc}</div>
-                  <div style={{ marginTop:'20px', display:'flex', alignItems:'center', gap:'8px' }}>
-                    <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', letterSpacing:'1.5px', textTransform:'uppercase', color:'var(--rcg2)' }}>Explore</span>
-                    <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--rcg2)' }}>→</span>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
+      {/* NOT ABOUT A HOME */}
+      <div className={s.unclaimedWrap}>
+        <Link href="/map" className={s.unclaimed}>
+          <span className={s.unclaimedIcon}><HouseIcon /></span>
+          <span className={s.unclaimedText}><b>Not about a home?</b> The state may be holding money in your name.</span>
+          <span className={s.unclaimedCta}><span className={s.hideSm}>Check now </span>→</span>
+        </Link>
       </div>
 
-      {/* WHY US */}
-      <div style={{ background:'var(--bg2)', borderTop:'1px solid rgba(74,95,212,0.3)', borderBottom:'1px solid rgba(74,95,212,0.3)', padding:'clamp(40px,6vw,80px) clamp(16px,4vw,40px)' }}>
-        <div className="why-grid">
-          <div>
-            <span className="section-tag">// why rebound capital group</span>
-            <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,4vw,50px)', color:'#fff', letterSpacing:'-1px', lineHeight:1.0 }}>
-              We Outwork<br />Every<br /><span style={{ color:'var(--dim)' }}>Competitor.</span>
-            </h2>
-            <div style={{ marginTop:'28px' }}>
-              {whyUs.map((w, i) => (
-                <div key={w.n} style={{ display:'grid', gridTemplateColumns:'36px 1fr', gap:'14px', padding:'18px 0', borderBottom:'1px solid rgba(74,95,212,0.3)', borderTop: i===0 ? '1px solid rgba(74,95,212,0.3)' : undefined }}>
-                  <div style={{ fontFamily:"'Space Mono',monospace", fontSize:'10px', color:'var(--rcg2)', paddingTop:'2px' }}>{w.n}</div>
-                  <div>
-                    <div style={{ fontSize:'12px', fontWeight:700, letterSpacing:'0.8px', textTransform:'uppercase', color:'#fff', marginBottom:'4px' }}>{w.title}</div>
-                    <div style={{ fontSize:'12px', color:'var(--mid)', lineHeight:1.5 }}>{w.desc}</div>
-                  </div>
+      {/* MONEY BAND */}
+      <section className={s.money}>
+        <div className={s.wrap}>
+          <MoneyExample />
+        </div>
+      </section>
+
+      {/* STEPS */}
+      <section className={s.block}>
+        <div className={s.wrap}>
+          <h2 className={`${s.h2} ${s.mb48}`}>Three steps.<br className={s.brSm} /> You never pay <span className={s.hideSm}>a dollar </span>upfront.</h2>
+          <ol className={s.steps}>
+            {steps.map((x) => (
+              <li key={x.title} className={s.step}>
+                <span className={s.stepDot} aria-hidden="true"><span /></span>
+                <div className={s.stepTitle}>{x.title}</div>
+                <div className={s.stepDesc}>{x.desc}</div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* $2M BAND */}
+      <section className={s.proof}>
+        <div className={`${s.wrap} ${s.proofGrid}`}>
+          <div className={s.proofLeft}>
+            <span className={s.proofBig}>$2M+</span>
+            <span className={s.proofSmall}>recovered for clients,<br className={s.hideSm} /> and counting.</span>
+          </div>
+          <div className={s.proofRight}>
+            <h2 className={s.proofH}>Money people didn&apos;t<br className={s.brSm} /> know they had.</h2>
+            <p>Foreclosure surplus, tax deed overages, estates and unclaimed funds.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className={s.block}>
+        <div className={s.wrap}>
+          <div className={s.blockHead}>
+            <h2 className={s.h2}>Full recovery.<br className={s.brSm} /> Every claim type.</h2>
+            <p>Every dollar we recover is on a pure contingency basis. Nothing out of pocket, ever.</p>
+          </div>
+          <div className={s.svcGrid}>
+            {services.map(([tag, title, desc, href], i) => (
+              <Link key={title} href={href} className={i % 2 === 0 ? `${s.svc} ${s.svcDark}` : s.svc}>
+                <span className={s.svcTag}>{tag}</span>
+                <span className={s.svcTitle}><span>{title}</span><span className={s.svcArrow} aria-hidden="true">→</span></span>
+                <span className={s.svcDesc}>{desc}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY */}
+      <section className={s.blockWhy}>
+        <div className={s.wrap}>
+          <div className={s.why}>
+            <div>
+              <div className={s.eyebrowLight}>Why Rebound Capital Group</div>
+              <h2 className={s.whyH}>We outwork<br />every competitor.</h2>
+            </div>
+            <div>
+              {why.map((y) => (
+                <div key={y.n} className={s.whyRow}>
+                  <span className={s.whyN}>{y.n}</span>
+                  <span className={s.whyBody}><span className={s.whyTitle}>{y.title}</span><span className={s.whyDesc}>{y.desc}</span></span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="stats-panel">
-            <div style={{ background:'var(--rcg3)', padding:'14px 20px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid rgba(74,95,212,0.3)' }}>
-              <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'9px', fontWeight:700, letterSpacing:'2px', textTransform:'uppercase', color:'var(--rcglt)' }}>FIRM STATISTICS</span>
-              <span style={{ fontFamily:"'Space Mono',monospace", fontSize:'8px', color:'var(--rcglt)', opacity:0.5 }}>LIVE DATA</span>
-            </div>
-            {firmStats.map((s, i) => (
-              <div key={i} className="stats-row">
-                <div style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize: s.small ? '15px' : '26px', minWidth:'80px', letterSpacing: s.small ? '0.5px' : '-1px', lineHeight:1, color: s.blue ? 'var(--rcg2)' : '#fff' }}>{s.val}</div>
-                <div style={{ fontSize:'11px', color:'var(--mid)', lineHeight:1.4 }}>{s.desc}</div>
-              </div>
-            ))}
-          </div>
         </div>
-      </div>
+      </section>
 
-      {/* STATES */}
-      <div style={{ padding:'80px 40px', maxWidth:'1200px', margin:'0 auto' }}>
-        <span className="section-tag">// coverage</span>
-        <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,4vw,50px)', color:'#fff', letterSpacing:'-1px', lineHeight:1.0 }}>
-          Serving Homeowners Nationwide.<br /><span style={{ color:'var(--dim)' }}>Find Your State.</span>
-        </h2>
-        <p style={{ fontSize:'14px', color:'var(--mid)', lineHeight:1.7, marginTop:'12px', maxWidth:'480px' }}>Rebound Capital Group serves homeowners nationwide. Claims are filed through our network of licensed attorneys in the state where the funds are held.</p>
-        <div className="states-grid">
-          {allStates.map(s => (
-            <Link key={s} href={`/states/${s.toLowerCase().replace(/\s+/g,'-').replace('.','-')}`} className={`state-pill${activeStates.includes(s) ? ' active' : ''}`}>{s}</Link>
-          ))}
-        </div>
-        <div style={{ marginTop:'10px', textAlign:'right', fontFamily:"'Space Mono',monospace", fontSize:'9px', color:'var(--dim)' }}>
-          <Link href="/states" style={{ color:'var(--rcg2)', textDecoration:'none' }}>See every state →</Link>
-        </div>
-      </div>
-
-      {/* CTA BAND */}
-      <div className="cta-band">
-        <div style={{ padding:'52px 56px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:'40px', flexWrap:'wrap' }}>
-          <div>
-            <h2 style={{ fontFamily:"'Space Grotesk',sans-serif", fontWeight:700, fontSize:'clamp(24px,3.5vw,44px)', letterSpacing:'-1.5px', color:'#fff', marginBottom:'10px' }}>
-              Money Was Left Behind<br />After Your <span style={{ backgroundImage:'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', letterSpacing:'-0.5px' }}>Foreclosure.</span>
-            </h2>
-            <p style={{ fontSize:'13px', color:'var(--mid)', maxWidth:'460px', lineHeight:1.6 }}>
-              Surplus funds have hard legal deadlines — in many states as short as 60 days. Don&apos;t lose what&apos;s already yours.
-            </p>
-          </div>
-          <div style={{ display:'flex', gap:'12px', flexShrink:0 }}>
-            <Link href="/contact" className="btn-primary" style={{ background:'linear-gradient(180deg,#1a2860 0%,#0f1a40 100%)', border:'1px solid rgba(74,127,212,0.35)', boxShadow:'0 0 24px rgba(20,35,100,0.5), 0 4px 0 rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.07)', letterSpacing:'1.2px', padding:'16px 40px' }}>Free Claim Review</Link>
-            <Link href="tel:+13055634920" className="btn-secondary" style={{ background:'linear-gradient(180deg,#1a1f2e 0%,#0f1218 100%)', border:'1px solid rgba(74,127,212,0.2)', color:'#7090c0', boxShadow:'0 4px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)', letterSpacing:'1px', padding:'16px 32px' }}>Call 305-563-4920</Link>
+      {/* CLOSING CTA */}
+      <section className={s.closing}>
+        <div className={s.closingFade} aria-hidden="true" />
+        <div className={`${s.wrap} ${s.closingInner}`}>
+          <h2 className={s.closingH}>Talk to a person, any time.</h2>
+          <p>Call or text 24/7. A real person answers, in English or Spanish. The check is free and there&apos;s no obligation.</p>
+          <div className={s.btnRow}>
+            <Link href="/contact" className={`${s.btnPrimary} ${s.btnLg}`}>Check if you&apos;re owed money <span aria-hidden="true">→</span></Link>
+            <a href="tel:+13055634920" className={`${s.btnOutline} ${s.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   )
 }

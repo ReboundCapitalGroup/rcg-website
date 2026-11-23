@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const socials = [
+export const socials = [
   {
     name: 'Instagram',
     url: 'https://www.instagram.com/Reboundcapitalgroup/',
