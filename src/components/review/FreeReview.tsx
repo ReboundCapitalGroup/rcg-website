@@ -90,6 +90,9 @@ export default function FreeReview() {
   const [step, setStep] = useState(1)
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  useEffect(() => {
+    if (submitted) window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior })
+  }, [submitted])
   const [error, setError] = useState<string | null>(null)
 
   const [claimType, setClaimType] = useState('')

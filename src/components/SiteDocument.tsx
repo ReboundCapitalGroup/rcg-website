@@ -6,6 +6,7 @@ import HomeHeader from '@/components/home/HomeHeader'
 import HomeFooter from '@/components/home/HomeFooter'
 import type { Lang } from '@/lib/i18n'
 import Hreflang from '@/components/Hreflang'
+import ScrollTop from '@/components/ScrollTop'
 
 const organizationSchema = (lang: Lang) => ({
   '@context': 'https://schema.org',
@@ -82,7 +83,7 @@ const websiteSchema = (lang: Lang) => ({
 /** The shared html/body for both language root layouts. */
 export default function SiteDocument({ lang, children }: { lang: Lang; children: ReactNode }) {
   return (
-    <html lang={lang}>
+    <html lang={lang} data-scroll-behavior="smooth">
       <head>
         <meta name="theme-color" content="#0d1322" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -96,6 +97,7 @@ export default function SiteDocument({ lang, children }: { lang: Lang; children:
       </head>
       <body>
         <Hreflang />
+        <ScrollTop />
         <AttributionTracker />
         <Analytics />
         <HomeHeader />

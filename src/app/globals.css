@@ -20,6 +20,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+/* Smooth only for in-page anchors; Next turns it off during page changes (data-scroll-behavior on <html>). */
 
 body {
   margin: 0;

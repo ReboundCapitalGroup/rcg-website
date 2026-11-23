@@ -60,6 +60,9 @@ export default function ContactForm() {
   const [smsConsent, setSmsConsent] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  useEffect(() => {
+    if (submitted) window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior })
+  }, [submitted])
   const [error, setError] = useState<string | null>(null)
   const loadedAt = useRef<number>(0)
 
