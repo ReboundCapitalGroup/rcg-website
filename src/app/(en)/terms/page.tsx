@@ -272,8 +272,8 @@ export default function TermsPage() {
             <div>
               <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: '9px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--dim)', marginBottom: '6px' }}>Address</div>
               <div style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.6 }}>
-                407 Lincoln Road Suite 6H<br />
-                Miami Beach, FL 33139
+                
+                Miami Beach, FL
               </div>
             </div>
             <div>

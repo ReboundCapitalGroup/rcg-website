@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { statePaths, stateCentroids } from './stateData'
+import { L } from '@/lib/i18n'
+import { useLang } from '@/lib/useLang'
+import { stateEs } from '@/lib/stateNames'
 
 const stateInfo: Record<string, { name: string; slug: string; funds: string; active: boolean; counties: number }> = {
   AL: { name: 'Alabama', slug: 'alabama', funds: '$892M', active: true, counties: 67 },
@@ -76,9 +79,11 @@ export default function USAMap() {
   const [hovered, setHovered] = useState<string | null>(null)
   const [mouse, setMouse] = useState({ x: 0, y: 0, w: 0 })
   const router = useRouter()
+  const lang = useLang()
+  const es = lang === 'es'
 
   const hInfo = hovered ? stateInfo[hovered] : null
-  const go = (code: string) => stateInfo[code] && router.push(`/states/${stateInfo[code].slug}`)
+  const go = (code: string) => stateInfo[code] && router.push(L(lang, `/states/${stateInfo[code].slug}`))
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
@@ -99,15 +104,15 @@ export default function USAMap() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1E287F', marginBottom: 6 }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#5b8ae6' }} />
-            Covered statewide
+            {es ? 'Cubierto en todo el estado' : 'Covered statewide'}
           </div>
-          <div style={{ fontSize: 17, fontWeight: 800, marginBottom: 4 }}>{hInfo.name}</div>
+          <div style={{ fontSize: 17, fontWeight: 800, marginBottom: 4 }}>{es ? stateEs(hInfo.name) : hInfo.name}</div>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
             <span style={{ fontFamily: 'var(--serif)', fontSize: 30, lineHeight: 1.1, color: '#1E287F' }}>{hInfo.funds}</span>
-            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6b7390' }}>unclaimed</span>
+            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6b7390' }}>{es ? 'no reclamado' : 'unclaimed'}</span>
           </div>
           <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid rgba(13,19,34,0.08)', fontSize: 12, fontWeight: 700, color: '#1E287F' }}>
-            Click to view state guide →
+            {es ? 'Haga clic para ver la guía del estado →' : 'Click to view state guide →'}
           </div>
         </div>
       )}
@@ -115,7 +120,7 @@ export default function USAMap() {
       <svg
         viewBox="0 0 980 600"
         role="img"
-        aria-label="Map of the United States. All 50 states are covered."
+        aria-label={es ? 'Mapa de Estados Unidos. Los 50 estados están cubiertos.' : 'Map of the United States. All 50 states are covered.'}
         style={{ width: '100%', height: 'auto', display: 'block', cursor: 'pointer', filter: 'drop-shadow(0 18px 30px rgba(13,19,34,0.14))', overflow: 'visible' }}
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect()
@@ -170,7 +175,7 @@ export default function USAMap() {
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 18, fontSize: 12, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1E287F', textAlign: 'center' }}>
         <span style={{ width: 18, height: 12, borderRadius: 3, background: FILL, flexShrink: 0 }} />
-        All 50 states covered · 1,000+ county systems monitored
+        {es ? 'Los 50 estados cubiertos · más de 1,000 sistemas de condados vigilados' : 'All 50 states covered · 1,000+ county systems monitored'}
       </div>
     </div>
   )
