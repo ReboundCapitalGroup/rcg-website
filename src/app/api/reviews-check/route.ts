@@ -16,7 +16,7 @@ export async function GET() {
   out.searchStatus = search.status
   out.searchError = sj?.error?.message
   out.searchResults = (sj?.places || []).map((p: { id: string; displayName?: { text?: string }; formattedAddress?: string }) => ({ id: p.id, name: p.displayName?.text, address: p.formattedAddress }))
-  const id = process.env.GOOGLE_PLACE_ID || sj?.places?.[0]?.id
+  const id = process.env.GOOGLE_PLACE_ID || 'ChIJkXm56JmzbEoRkl6P2VBXJZc'
   if (id) {
     const det = await fetch(`https://places.googleapis.com/v1/places/${id}`, {
       headers: { 'X-Goog-Api-Key': key, 'X-Goog-FieldMask': 'id,displayName,rating,userRatingCount' },

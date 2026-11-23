@@ -26,6 +26,9 @@ export type GoogleReviews = {
 }
 
 const QUERY = 'Rebound Capital Group, Miami Beach, FL'
+// Our Google Business Profile. Public, not a secret. Text search does not find
+// service-area businesses, so the ID is set here.
+const PLACE_ID = 'ChIJkXm56JmzbEoRkl6P2VBXJZc'
 const DAY = 60 * 60 * 24
 
 type PlaceResponse = {
@@ -44,6 +47,7 @@ type PlaceResponse = {
 
 async function findPlaceId(key: string): Promise<string | null> {
   if (process.env.GOOGLE_PLACE_ID) return process.env.GOOGLE_PLACE_ID
+  if (PLACE_ID) return PLACE_ID
   const res = await fetch('https://places.googleapis.com/v1/places:searchText', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'X-Goog-Api-Key': key, 'X-Goog-FieldMask': 'places.id,places.displayName' },
