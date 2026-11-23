@@ -13,14 +13,40 @@ const PhoneIcon = ({ size = 13 }: { size?: number }) => (
 const links: [string, string][] = [
   ['Services', '/services'],
   ['States', '/states'],
-  ['Resources', '/resources/how-it-works'],
-  ['About', '/about'],
 ]
+
+const resources: [string, string, string][] = [
+  ['How It Works', '/resources/how-it-works', 'The six steps, start to payout'],
+  ['FAQs', '/resources/faqs', 'Straight answers to common questions'],
+  ['State Laws & Deadlines', '/resources/state-laws', 'Claim windows in every state'],
+  ['Client Reviews', '/resources/results', 'What clients say on Google'],
+]
+
+function ResourcesMenu() {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className={s.dd} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <button type="button" className={s.ddBtn} aria-expanded={open} aria-haspopup="true" onClick={() => setOpen(!open)}>
+        Resources <span aria-hidden="true" className={s.ddCaret}>▾</span>
+      </button>
+      {open && (
+        <div className={s.ddMenu} role="menu">
+          {resources.map(([l, h, d]) => (
+            <Link key={h} href={h} role="menuitem" className={s.ddItem} onClick={() => setOpen(false)}>
+              <b>{l}</b><span>{d}</span>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 const menu: { label: string; items: [string, string][] }[] = [
   { label: 'Before the auction', items: [['Foreclosure Help', '/services/foreclosure-solutions'], ['Time Extensions', '/services/time-extensions'], ['Mortgage Assumptions', '/services/mortgage-assumptions'], ['Cash Offer', '/services/cash-offer']] },
   { label: 'After the auction', items: [['Surplus Funds', '/services/foreclosure-surplus'], ['Tax Deed Overages', '/services/tax-deed-surplus'], ['Estate & Heir Recovery', '/services/estate-recovery'], ['Probate Help for Heirs', '/services/probate-assistance']] },
-  { label: 'More', items: [['Unclaimed Funds Map', '/map'], ['All States', '/states'], ['How It Works', '/resources/how-it-works'], ['FAQs', '/resources/faqs'], ['About', '/about'], ['Contact', '/contact']] },
+  { label: 'Resources', items: [['How It Works', '/resources/how-it-works'], ['FAQs', '/resources/faqs'], ['State Laws & Deadlines', '/resources/state-laws'], ['Client Reviews', '/resources/results']] },
+  { label: 'More', items: [['Unclaimed Funds Map', '/map'], ['All States', '/states'], ['About', '/about'], ['Contact', '/contact']] },
 ]
 
 export default function HomeHeader() {
@@ -34,7 +60,8 @@ export default function HomeHeader() {
         <div role="navigation" aria-label="Main" className={s.navLinks}>
           {links.slice(0, 2).map(([l, h]) => <Link key={h} href={h}>{l}</Link>)}
           <Link href="/map" className={s.navPill}>Unclaimed Funds Map</Link>
-          {links.slice(2).map(([l, h]) => <Link key={h} href={h}>{l}</Link>)}
+          <ResourcesMenu />
+          <Link href="/about">About</Link>
         </div>
         <div className={s.headerRight}>
           <a href="tel:+13055634920" className={`${s.btnPrimary} ${s.headerPhone}`} aria-label="Call or text 24/7: 305-563-4920">
