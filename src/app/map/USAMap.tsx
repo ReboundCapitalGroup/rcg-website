@@ -6,7 +6,7 @@ import { statePaths, stateCentroids } from './stateData'
 const stateInfo: Record<string, { name: string; slug: string; funds: string; active: boolean; counties: number }> = {
   AL: { name: 'Alabama', slug: 'alabama', funds: '$892M', active: false, counties: 67 },
   AK: { name: 'Alaska', slug: 'alaska', funds: '$210M', active: false, counties: 30 },
-  AZ: { name: 'Arizona', slug: 'arizona', funds: '$1.8B', active: false, counties: 15 },
+  AZ: { name: 'Arizona', slug: 'arizona', funds: '$1.8B', active: true, counties: 15 },
   AR: { name: 'Arkansas', slug: 'arkansas', funds: '$421M', active: false, counties: 75 },
   CA: { name: 'California', slug: 'california', funds: '$15B', active: false, counties: 58 },
   CO: { name: 'Colorado', slug: 'colorado', funds: '$980M', active: true, counties: 64 },
@@ -26,7 +26,7 @@ const stateInfo: Record<string, { name: string; slug: string; funds: string; act
   ME: { name: 'Maine', slug: 'maine', funds: '$310M', active: false, counties: 16 },
   MD: { name: 'Maryland', slug: 'maryland', funds: '$1.1B', active: false, counties: 24 },
   MA: { name: 'Massachusetts', slug: 'massachusetts', funds: '$2.4B', active: false, counties: 14 },
-  MI: { name: 'Michigan', slug: 'michigan', funds: '$1.2B', active: true, counties: 83 },
+  MI: { name: 'Michigan', slug: 'michigan', funds: '$1.2B', active: false, counties: 83 },
   MN: { name: 'Minnesota', slug: 'minnesota', funds: '$1.0B', active: false, counties: 87 },
   MS: { name: 'Mississippi', slug: 'mississippi', funds: '$280M', active: false, counties: 82 },
   MO: { name: 'Missouri', slug: 'missouri', funds: '$890M', active: false, counties: 115 },
@@ -96,7 +96,7 @@ export default function USAMap() {
           {hInfo.active && (
             <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a7fd4', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#4a7fd4', boxShadow: '0 0 6px #4a7fd4' }} />
-              Live County Monitoring
+              Auctions checked nightly
             </div>
           )}
 
@@ -118,7 +118,7 @@ export default function USAMap() {
           {/* Counties */}
           {hInfo.active && (
             <div style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', color: '#3a5070', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>
-              {hInfo.counties} counties monitored
+              Auctions checked nightly
             </div>
           )}
 
@@ -203,7 +203,7 @@ export default function USAMap() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '28px', marginTop: '16px', flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.6 }}>
           <div style={{ width: '18px', height: '12px', background: '#1E287F', border: '1px solid #3a5fd4' }} />
-          Live County Monitoring
+          Auctions checked nightly
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#ffffff', opacity: 0.6 }}>
           <div style={{ width: '18px', height: '12px', background: '#1e2d4a', border: '1px solid #131d35' }} />

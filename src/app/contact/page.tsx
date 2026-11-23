@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, FormEvent } from 'react'
 import Link from 'next/link'
 import { getAttribution } from '@/lib/attribution'
 import { trackLead } from '@/components/Analytics'
+import h from '@/components/home/home.module.css'
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -110,21 +111,21 @@ export default function ContactPage() {
 
   if (submitted) {
     return (
-      <main>
-        <section style={{ background: '#000', padding: 'clamp(80px,10vw,140px) clamp(20px,5vw,60px)', textAlign: 'center', minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <main className={h.page}>
+        <section style={{ background: '#F9F8F6', padding: 'clamp(80px,10vw,140px) clamp(20px,5vw,60px)', textAlign: 'center', minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div style={{ maxWidth: '560px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '64px', height: '64px', border: '1px solid rgba(91,138,230,0.45)', background: 'rgba(30,40,127,0.2)', marginBottom: '32px' }}>
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7fa6ea" strokeWidth="2">
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '64px', height: '64px', border: '1px solid rgba(30,40,127,0.3)', background: '#e9eefb', borderRadius: '50%', marginBottom: '32px' }}>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1E287F" strokeWidth="2">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// Submission received</span>
-            <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(28px,4vw,48px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '16px 0 20px' }}>Thank you.</h1>
-            <p style={{ fontSize: '16px', color: '#9db0d2', lineHeight: 1.8, marginBottom: '28px' }}>We have your inquiry and will review it within 24 hours. If there are funds to recover, someone from our team will call you to walk through the next steps.</p>
-            <p style={{ fontSize: '14px', color: '#7d92c4', lineHeight: 1.8, marginBottom: '32px' }}>Need to reach us sooner?</p>
+            <div className={h.eyebrow}>Submission received</div>
+            <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontWeight: 400, fontSize: 'clamp(40px,5vw,60px)', color: '#0d1322', lineHeight: 1.05, margin: '16px 0 20px' }}>Thank you.</h1>
+            <p style={{ fontSize: '17px', color: '#2f3856', lineHeight: 1.7, marginBottom: '28px' }}>We have your inquiry and will review it within 24 hours. If there are funds to recover, someone from our team will call you to walk through the next steps.</p>
+            <p style={{ fontSize: '15px', color: '#3a4360', lineHeight: 1.8, marginBottom: '24px' }}>Need to reach us sooner?</p>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="tel:+13055634920" className="btn-primary">Call 305-563-4920</a>
-              <Link href="/" className="btn-secondary">Back to home</Link>
+              <a href="tel:+13055634920" className={h.btnPrimary} style={{ padding: '18px 26px', fontSize: '14px' }}>Call 305-563-4920</a>
+              <Link href="/" className={h.btnOutline} style={{ padding: '16px 24px', fontSize: '14px' }}>Back to home</Link>
             </div>
           </div>
         </section>
@@ -135,126 +136,58 @@ export default function ContactPage() {
   const selected = CLAIM_TYPES.find((c) => c.value === claimType)
 
   return (
-    <main>
+    <main className={h.page}>
       <style>{`
         .rcg-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         @media (max-width: 620px) { .rcg-field-row { grid-template-columns: 1fr; } }
-
-        .rcg-label {
-          font-family: 'Space Mono', monospace;
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 1.6px;
-          text-transform: uppercase;
-          color: #8fa3d8;
-          display: block;
-          margin-bottom: 7px;
-        }
-        .rcg-input {
-          background: #070b14;
-          border: 1px solid rgba(91,138,230,0.28);
-          padding: 15px 16px;
-          color: #e4ecff;
-          font-size: 16px;               /* 16px stops iOS zooming on focus */
-          font-family: 'Space Grotesk', sans-serif;
-          outline: none;
-          width: 100%;
-          min-width: 0;
-          box-sizing: border-box;
-          transition: border-color 0.15s, background 0.15s;
-        }
-        .rcg-input::placeholder { color: #5c6f96; }
-        .rcg-input:hover { border-color: rgba(91,138,230,0.45); }
-        .rcg-input:focus {
-          border-color: #5b8ae6;
-          background: #0a1120;
-          box-shadow: inset 0 0 0 1px rgba(91,138,230,0.35);
-        }
-        .rcg-help { font-size: 13px; color: #7d92c4; line-height: 1.6; margin-top: 7px; }
-
-        /* Step 1 tiles */
-        .rcg-tile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .rcg-label { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #1E287F; display: block; margin-bottom: 7px; }
+        .rcg-input { background: #fff; border: 1.5px solid rgba(13,19,34,0.15); border-radius: 8px; padding: 15px 16px; color: #0d1322; font-size: 16px; font-family: inherit; outline: none; width: 100%; min-width: 0; box-sizing: border-box; transition: border-color 0.15s, box-shadow 0.15s; }
+        .rcg-input::placeholder { color: #8a93ad; }
+        .rcg-input:hover { border-color: rgba(30,40,127,0.4); }
+        .rcg-input:focus { border-color: #1E287F; box-shadow: 0 0 0 3px rgba(91,138,230,0.25); }
+        .rcg-help { font-size: 13px; color: #3a4360; line-height: 1.6; margin-top: 7px; }
+        .rcg-tile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         @media (max-width: 720px) { .rcg-tile-grid { grid-template-columns: 1fr; } }
-        .rcg-tile {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 14px;
-          width: 100%;
-          text-align: left;
-          background: #070b14;
-          border: 1px solid rgba(91,138,230,0.22);
-          padding: 18px 18px;
-          cursor: pointer;
-          font-family: 'Space Grotesk', sans-serif;
-          transition: border-color 0.15s, background 0.15s, transform 0.12s;
-        }
-        .rcg-tile:hover, .rcg-tile:focus-visible {
-          border-color: #5b8ae6;
-          background: rgba(30,40,127,0.22);
-          transform: translateY(-1px);
-          outline: none;
-        }
-        .rcg-tile-label { color: #e4ecff; font-size: 16px; font-weight: 600; line-height: 1.3; }
-        .rcg-tile-hint  { color: #7d92c4; font-size: 13px; line-height: 1.5; margin-top: 4px; }
-        .rcg-tile-arrow { color: #5b8ae6; flex-shrink: 0; }
-
-        /* Selected-type chip on step 2 */
-        .rcg-chip {
-          display: flex; align-items: center; justify-content: space-between; gap: 12px;
-          border: 1px solid rgba(91,138,230,0.3);
-          background: rgba(30,40,127,0.18);
-          padding: 13px 16px;
-        }
-        .rcg-chip-change {
-          font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.4px;
-          text-transform: uppercase; color: #8fa3d8; background: none; border: none;
-          cursor: pointer; padding: 4px 2px; text-decoration: underline;
-        }
-        .rcg-chip-change:hover { color: #fff; }
-
-        .rcg-steps {
-          font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px;
-          text-transform: uppercase; color: #5b8ae6;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .rcg-tile { transition: none; }
-          .rcg-tile:hover { transform: none; }
-        }
+        .rcg-tile { display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; text-align: left; background: #fff; border: 1.5px solid rgba(13,19,34,0.1); border-radius: 12px; padding: 18px 20px; cursor: pointer; font-family: inherit; box-shadow: 0 8px 24px rgba(13,19,34,0.05); transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s; }
+        .rcg-tile:hover, .rcg-tile:focus-visible { border-color: #1E287F; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(30,40,127,0.14); outline: none; }
+        .rcg-tile-label { color: #0d1322; font-size: 17px; font-weight: 800; line-height: 1.3; }
+        .rcg-tile-hint { color: #3a4360; font-size: 14px; line-height: 1.5; margin-top: 4px; }
+        .rcg-tile-arrow { color: #1E287F; flex-shrink: 0; }
+        .rcg-chip { display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid rgba(30,40,127,0.2); background: #e9eefb; border-radius: 10px; padding: 13px 16px; }
+        .rcg-chip-change { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #1E287F; background: none; border: none; cursor: pointer; padding: 4px 2px; text-decoration: underline; }
+        .rcg-steps { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #1E287F; }
+        @media (prefers-reduced-motion: reduce) { .rcg-tile { transition: none; } .rcg-tile:hover { transform: none; } }
       `}</style>
 
-      {/* HERO — trimmed so the form is reachable without a long scroll */}
-      <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.2)', padding: 'clamp(48px,7vw,84px) clamp(20px,5vw,60px) clamp(32px,4vw,48px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '900px', height: '500px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.22) 0%, transparent 65%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '660px', margin: '0 auto' }}>
-          <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// Free claim review · No upfront cost</span>
-          <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(30px,4.6vw,52px)', letterSpacing: '-1.5px', lineHeight: 1.05, margin: '14px 0 18px', color: '#fff' }}>
-            Find out what you&apos;re owed.
-          </h1>
-          <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#9db0d2', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto' }}>
-            Two quick steps. We search court records and state databases at no cost, and call you within 24 hours if there are funds to recover.
-          </p>
-        </div>
-      </section>
+      {/* HERO: short so the form is reachable without a long scroll */}
+      <div className={h.wrap} style={{ padding: '44px 16px 8px', textAlign: 'center', maxWidth: '720px' }}>
+        <div className={h.eyebrow}>Free claim review · $0 upfront</div>
+        <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontWeight: 400, fontSize: 'clamp(40px,5.4vw,64px)', lineHeight: 1.02, margin: '14px 0 16px', color: '#0d1322' }}>
+          Find out what <em className={h.gradText}>you&apos;re owed.</em>
+        </h1>
+        <p style={{ fontSize: 'clamp(15px,1.6vw,18px)', color: '#2f3856', lineHeight: 1.6, maxWidth: '540px', margin: '0 auto' }}>
+          Two quick steps. We search court records and state databases at no cost, and call you within 24 hours if there are funds to recover.
+        </p>
+      </div>
 
-      <section style={{ background: 'var(--bg)', padding: 'clamp(40px,5vw,64px) clamp(20px,5vw,60px) clamp(56px,6vw,88px)' }}>
+      <div style={{ padding: 'clamp(32px,4vw,48px) 16px clamp(48px,6vw,72px)' }}>
         <div ref={detailsRef} style={{ maxWidth: '620px', margin: '0 auto' }}>
 
           {/* Progress */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '22px' }}>
             <span className="rcg-steps">Step {step} of 2</span>
-            <div style={{ flex: 1, height: '2px', background: 'rgba(91,138,230,0.18)' }}>
-              <div style={{ width: step === 1 ? '50%' : '100%', height: '100%', background: '#5b8ae6', transition: 'width 0.3s ease' }} />
+            <div style={{ flex: 1, height: '2px', background: 'rgba(30,40,127,0.12)' }}>
+              <div style={{ width: step === 1 ? '50%' : '100%', height: '100%', background: '#1E287F', transition: 'width 0.3s ease' }} />
             </div>
           </div>
 
           {/* ---------- STEP 1 ---------- */}
           {step === 1 && (
             <div>
-              <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(20px,2.6vw,26px)', color: '#fff', letterSpacing: '-0.5px', margin: '0 0 6px' }}>
+              <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontWeight: 400, fontSize: 'clamp(28px,3.2vw,36px)', color: '#0d1322', margin: '0 0 6px' }}>
                 What are you inquiring about?
               </h2>
-              <p style={{ fontSize: '14px', color: '#7d92c4', lineHeight: 1.6, margin: '0 0 20px' }}>
+              <p style={{ fontSize: '15px', color: '#3a4360', lineHeight: 1.6, margin: '0 0 22px' }}>
                 Pick the closest match. If none of them fit, choose the last one.
               </p>
 
@@ -272,8 +205,8 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <p style={{ fontSize: '13px', color: '#5c6f96', textAlign: 'center', marginTop: '26px', lineHeight: 1.7 }}>
-                Prefer to talk it through? <a href="tel:+13055634920" style={{ color: '#8fa3d8' }}>Call 305-563-4920</a>
+              <p style={{ fontSize: '14px', color: '#3a4360', textAlign: 'center', marginTop: '26px', lineHeight: 1.7 }}>
+                Prefer to talk it through? <a href="tel:+13055634920" style={{ color: '#1E287F', fontWeight: 700 }}>Call 305-563-4920</a>
               </p>
             </div>
           )}
@@ -291,8 +224,8 @@ export default function ContactPage() {
 
               <div className="rcg-chip">
                 <span>
-                  <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.8px', textTransform: 'uppercase', color: '#5b8ae6', display: 'block', marginBottom: '3px' }}>Inquiry type</span>
-                  <span style={{ color: '#e4ecff', fontSize: '15px', fontWeight: 600 }}>{selected?.label}</span>
+                  <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#1E287F', display: 'block', marginBottom: '3px' }}>Inquiry type</span>
+                  <span style={{ color: '#0d1322', fontSize: '16px', fontWeight: 800 }}>{selected?.label}</span>
                 </span>
                 <button type="button" className="rcg-chip-change" onClick={() => setStep(1)}>Change</button>
               </div>
@@ -315,10 +248,10 @@ export default function ContactPage() {
 
               <div>
                 <label className="rcg-label" htmlFor="f-state">State</label>
-                <select id="f-state" className="rcg-input" required value={state} onChange={(e) => setState(e.target.value)} disabled={submitting} style={{ color: state ? '#e4ecff' : '#5c6f96', cursor: 'pointer' }}>
+                <select id="f-state" className="rcg-input" required value={state} onChange={(e) => setState(e.target.value)} disabled={submitting} style={{ color: state ? '#0d1322' : '#8a93ad', cursor: 'pointer' }}>
                   <option value="">Select state</option>
                   {US_STATES.map((s) => (
-                    <option key={s} value={s} style={{ background: '#070b14', color: '#e4ecff' }}>{s}</option>
+                    <option key={s} value={s} style={{ background: '#fff', color: '#0d1322' }}>{s}</option>
                   ))}
                 </select>
               </div>
@@ -332,7 +265,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="rcg-label" htmlFor="f-sale">Roughly when it sold</label>
-                      <input id="f-sale" className="rcg-input" type="month" value={saleDateApprox} onChange={(e) => setSaleDateApprox(e.target.value)} disabled={submitting} style={{ color: saleDateApprox ? '#e4ecff' : '#5c6f96' }} />
+                      <input id="f-sale" className="rcg-input" type="month" value={saleDateApprox} onChange={(e) => setSaleDateApprox(e.target.value)} disabled={submitting} style={{ color: saleDateApprox ? '#0d1322' : '#8a93ad' }} />
                     </div>
                   </div>
                   <div>
@@ -351,7 +284,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="rcg-label" htmlFor="f-auction">Auction date, if you have one</label>
-                      <input id="f-auction" className="rcg-input" type="date" value={auctionDate} onChange={(e) => setAuctionDate(e.target.value)} disabled={submitting} style={{ color: auctionDate ? '#e4ecff' : '#5c6f96' }} />
+                      <input id="f-auction" className="rcg-input" type="date" value={auctionDate} onChange={(e) => setAuctionDate(e.target.value)} disabled={submitting} style={{ color: auctionDate ? '#0d1322' : '#8a93ad' }} />
                     </div>
                   </div>
                   <div>
@@ -412,50 +345,50 @@ export default function ContactPage() {
                   checked={smsConsent}
                   onChange={(e) => setSmsConsent(e.target.checked)}
                   disabled={submitting}
-                  style={{ width: '18px', height: '18px', marginTop: '2px', accentColor: '#3a60b8', cursor: 'pointer' }}
+                  style={{ width: '18px', height: '18px', marginTop: '2px', accentColor: '#1E287F', cursor: 'pointer' }}
                 />
                 <span style={{ display: 'block' }}>
-                  <span style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#fff', lineHeight: 1.4 }}>
-                    {SMS_CONSENT_LABEL} <span style={{ fontWeight: 400, color: '#9db0d2', fontSize: '13px' }}>(fastest way to reach me)</span>
+                  <span style={{ display: 'block', fontSize: '15px', fontWeight: 700, color: '#0d1322', lineHeight: 1.4 }}>
+                    {SMS_CONSENT_LABEL} <span style={{ fontWeight: 400, color: '#3a4360', fontSize: '13px' }}>(fastest way to reach me)</span>
                   </span>
-                  <span style={{ display: 'block', fontSize: '11px', color: '#7d92c4', lineHeight: 1.6, marginTop: '6px' }}>
-                    {SMS_CONSENT_LEGAL} See our <Link href="/privacy#communications" style={{ color: '#7fa6ea' }}>Privacy Policy</Link> and <Link href="/terms" style={{ color: '#7fa6ea' }}>Terms</Link>. Optional.
+                  <span style={{ display: 'block', fontSize: '12px', color: '#3a4360', lineHeight: 1.6, marginTop: '6px' }}>
+                    {SMS_CONSENT_LEGAL} See our <Link href="/privacy#communications" style={{ color: '#1E287F' }}>Privacy Policy</Link> and <Link href="/terms" style={{ color: '#1E287F' }}>Terms</Link>. Optional.
                   </span>
                 </span>
               </label>
 
               {error && (
-                <div style={{ background: 'rgba(200,60,60,0.1)', border: '1px solid rgba(220,90,90,0.45)', padding: '13px 15px', color: '#f0a0a0', fontSize: '14px' }}>
+                <div style={{ background: '#fdecec', border: '1px solid rgba(200,60,60,0.45)', borderRadius: '8px', padding: '13px 15px', color: '#a12828', fontSize: '14px' }}>
                   {error}
                 </div>
               )}
 
-              <button type="submit" disabled={submitting} className="btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: '4px', opacity: submitting ? 0.6 : 1, cursor: submitting ? 'wait' : 'pointer' }}>
+              <button type="submit" disabled={submitting} className={h.btnPrimary} style={{ width: '100%', border: 0, padding: '19px', fontSize: '15px', marginTop: '4px', opacity: submitting ? 0.6 : 1, cursor: submitting ? 'wait' : 'pointer' }}>
                 {submitting ? 'Sending…' : 'Send my claim review'}
               </button>
 
-              <p style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1px', textTransform: 'uppercase', color: '#4a5c85', textAlign: 'center', lineHeight: 2 }}>
+              <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1E287F', textAlign: 'center', lineHeight: 2, margin: 0 }}>
                 No obligation · No fees until we recover
               </p>
 
-              <p style={{ fontSize: '11px', color: '#6f84b3', textAlign: 'center', lineHeight: 1.7, margin: 0 }}>
-                By submitting, you agree to our <Link href="/terms" style={{ color: '#7fa6ea' }}>Terms</Link> and <Link href="/privacy" style={{ color: '#7fa6ea' }}>Privacy Policy</Link>, and that Rebound Capital Group LLC may contact you by phone and email about your inquiry.
+              <p style={{ fontSize: '12px', color: '#3a4360', textAlign: 'center', lineHeight: 1.7, margin: 0 }}>
+                By submitting, you agree to our <Link href="/terms" style={{ color: '#1E287F' }}>Terms</Link> and <Link href="/privacy" style={{ color: '#1E287F' }}>Privacy Policy</Link>, and that Rebound Capital Group LLC may contact you by phone and email about your inquiry.
               </p>
             </form>
           )}
         </div>
-      </section>
+      </div>
 
-      <div style={{ maxWidth: '960px', margin: '0 auto', height: '1px', background: 'linear-gradient(90deg,transparent,rgba(91,138,230,0.2),transparent)' }} />
-
-      <section style={{ background: '#000', padding: 'clamp(48px,5vw,72px) clamp(20px,5vw,60px)', textAlign: 'center' }}>
-        <div style={{ maxWidth: '520px', margin: '0 auto' }}>
-          <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// Prefer to call?</span>
-          <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(21px,3vw,30px)', color: '#fff', letterSpacing: '-0.5px', lineHeight: 1.15, margin: '14px 0 14px' }}>Talk to our team directly.</h2>
-          <p style={{ fontSize: '14px', color: '#7d92c4', lineHeight: 1.8, marginBottom: '26px' }}>Call or text anytime, 24/7. Hablamos español.</p>
-          <a href="tel:+13055634920" className="btn-primary" style={{ display: 'inline-block' }}>Call 305-563-4920</a>
+      <div className={h.wrap} style={{ paddingBottom: '80px' }}>
+        <div style={{ background: 'radial-gradient(ellipse at 90% 0%, #1f2d6b 0%, #0d1322 62%)', color: '#fff', borderRadius: '16px', padding: 'clamp(28px,4vw,44px)', display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'space-between', alignItems: 'center', maxWidth: '920px', margin: '0 auto' }}>
+          <div>
+            <div style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#93b8ff', marginBottom: '8px' }}>Prefer to call?</div>
+            <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 'clamp(28px,3.4vw,40px)', lineHeight: 1.05 }}>Talk to a person, any time.</div>
+            <p style={{ margin: '8px 0 0', fontSize: '15px', color: '#c3cfee' }}>Call or text 24/7. Hablamos español.</p>
+          </div>
+          <a href="tel:+13055634920" className={h.btnWhite}>Call 305-563-4920</a>
         </div>
-      </section>
+      </div>
     </main>
   )
 }
