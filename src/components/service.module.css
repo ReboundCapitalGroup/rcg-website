@@ -1,12 +1,17 @@
 /* Service page layout (redesign v4). Tokens come from home.module.css (.page). */
 
 .hero { padding-top: 28px; padding-bottom: 36px; }
+.crumbsCenter { text-align: center; }
 .crumbs { font-size: 13px; color: #6b7390; margin-bottom: 40px; }
 .crumbs a { color: #6b7390; }
 .crumbs a:hover { color: var(--primary); }
 .crumbNow { color: var(--navy); font-weight: 700; }
 .heroGrid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 64px; align-items: center; }
 .heroText { display: flex; flex-direction: column; gap: 22px; }
+/* Text-only heroes (no photo beside them) are centered */
+.heroCenter { align-items: center; text-align: center; max-width: 860px; margin: 0 auto; }
+.heroCenter > * { justify-content: center; }
+.heroCenter .answer { margin-left: auto; margin-right: auto; }
 .h1 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 1.02; color: var(--navy); text-wrap: balance; }
 .answer { margin: 0; font-size: 18px; line-height: 1.65; color: var(--ink); max-width: 640px; }
 

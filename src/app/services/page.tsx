@@ -57,10 +57,10 @@ export default function ServicesPage() {
   return (
     <div className={h.page}>
       <div className={`${h.wrap} ${sv.hero}`}>
-        <div role="navigation" aria-label="Breadcrumb" className={sv.crumbs}>
+        <div role="navigation" aria-label="Breadcrumb" className={`${sv.crumbs} ${sv.crumbsCenter}`}>
           <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>Services</span>
         </div>
-        <div className={sv.heroText} style={{ maxWidth: 820 }}>
+        <div className={`${sv.heroText} ${sv.heroCenter}`}>
           <div className={h.eyebrow}>Every claim type · One firm · $0 upfront</div>
           <h1 className={sv.h1}>Help before the auction. <em className={h.gradText}>Recovery after it.</em></h1>
           <p className={sv.answer}>Pick where you are in the process. Every service is free to start, and on recoveries you pay nothing unless we get you paid.</p>

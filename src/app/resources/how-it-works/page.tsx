@@ -40,10 +40,10 @@ export default function HowItWorksPage() {
     <div className={h.page}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div className={`${h.wrap} ${sv.hero}`}>
-        <div role="navigation" aria-label="Breadcrumb" className={sv.crumbs}>
+        <div role="navigation" aria-label="Breadcrumb" className={`${sv.crumbs} ${sv.crumbsCenter}`}>
           <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>How It Works</span>
         </div>
-        <div className={sv.heroText}>
+        <div className={`${sv.heroText} ${sv.heroCenter}`}>
           <div className={h.eyebrow}>Six steps · $0 upfront · One agreement</div>
           <h1 className={sv.h1}>How it <em className={h.gradText}>works.</em></h1>
           <p className={sv.answer}>From the first search to the final payment, every step is handled by our team, at no cost to you until we recover.</p>

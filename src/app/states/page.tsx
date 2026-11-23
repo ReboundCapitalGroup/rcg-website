@@ -27,10 +27,10 @@ export default function StatesPage() {
   return (
     <div className={h.page}>
       <div className={`${h.wrap} ${sv.hero}`}>
-        <div role="navigation" aria-label="Breadcrumb" className={sv.crumbs}>
+        <div role="navigation" aria-label="Breadcrumb" className={`${sv.crumbs} ${sv.crumbsCenter}`}>
           <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>States</span>
         </div>
-        <div className={sv.heroText}>
+        <div className={`${sv.heroText} ${sv.heroCenter}`}>
           <div className={h.eyebrow}>Nationwide · All 50 states · $0 upfront</div>
           <h1 className={sv.h1}>Help in <em className={h.gradText}>every state.</em></h1>
           <p className={sv.answer}>Pick your state for local surplus fund rules, how claims work there, and the counties we cover. Foreclosure help, surplus funds, tax deed overages and unclaimed property, nationwide.</p>
