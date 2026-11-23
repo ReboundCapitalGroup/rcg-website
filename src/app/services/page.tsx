@@ -1,121 +1,93 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import h from '@/components/home/home.module.css'
+import s from '@/components/service.module.css'
 
 export const metadata: Metadata = {
-  title: 'Foreclosure, Surplus & Unclaimed Property Recovery | RCG',
-  description: 'Full-service recovery of foreclosure surplus, tax deed overages, unclaimed property, and estate assets. Rebound Capital Group files through licensed attorneys at no upfront cost.',
+  title: 'Foreclosure Help, Surplus Funds & Unclaimed Property Services | RCG',
+  description: 'Foreclosure help before the auction, and recovery of surplus funds, tax deed overages, unclaimed property and estate assets after it. Claims are filed through our network of licensed attorneys. $0 upfront.',
 }
 
-const categories = [
+const categories: { label: string; blurb: string; services: [string, string, string][] }[] = [
   {
-    n: '01',
-    label: 'Before the Auction',
-    blurb: 'Still in the foreclosure process? Pre-sale options to preserve your equity before the auction.',
+    label: 'Before the auction',
+    blurb: 'Still in the foreclosure process? Options to keep the home or protect your equity before the sale.',
     services: [
-      { title: 'Foreclosure Help & Options', href: '/services/foreclosure-solutions', desc: 'Every option before the auction in one place: more time, a cash offer, a mortgage assumption, or a plan that protects your equity.' },
-      { title: 'Time Extensions', href: '/services/time-extensions', desc: 'Before the sale, an attorney may be able to postpone it. After the sale, you may still get more time before eviction.' },
-      { title: 'Mortgage Assumptions', href: '/services/mortgage-assumptions', desc: 'In some cases a qualified buyer can assume your existing mortgage, preserving equity and stopping a forced sale at auction.' },
-      { title: 'Cash Offer on Property', href: '/services/cash-offer', desc: 'Facing an auction date? We can structure a cash offer on your property before the sale, so you walk away with equity instead of a deficiency.' },
+      ['Foreclosure Help & Options', '/services/foreclosure-solutions', 'Every option before the auction in one place: more time, a cash offer, a mortgage assumption, or a plan that protects your equity.'],
+      ['Time Extensions', '/services/time-extensions', 'Before the sale, an attorney may be able to postpone it. After the sale, you may still get more time before eviction.'],
+      ['Mortgage Assumptions', '/services/mortgage-assumptions', 'In some cases a qualified buyer can take over your existing mortgage, so the home never goes to auction.'],
+      ['Cash Offer on Property', '/services/cash-offer', 'Sell as-is before the auction and walk away with your equity.'],
     ],
   },
   {
-    n: '02',
-    label: 'After the Auction',
-    blurb: 'When a property sells for more than is owed, the excess belongs to the former owner. We find it and file it.',
+    label: 'After the auction',
+    blurb: 'When a property sells for more than was owed, the extra belongs to the former owner. We find it and file the claim.',
     services: [
-      { title: 'Foreclosure Surplus Funds', href: '/services/foreclosure-surplus', desc: 'When a foreclosed property sells for more than the debt owed, the excess is legally yours. We file through licensed attorneys at no upfront cost.' },
-      { title: 'Tax Deed Overages', href: '/services/tax-deed-surplus', desc: 'Tax deed and tax lien sales generate overages daily. We locate the excess tied to your former property and recover it before it escheats.' },
+      ['Foreclosure Surplus Funds', '/services/foreclosure-surplus', 'Money left over after a foreclosure sale, held by the court until claimed.'],
+      ['Tax Deed Overages', '/services/tax-deed-surplus', 'Money left over after a tax deed sale, held by the county until claimed.'],
     ],
   },
   {
-    n: '03',
-    label: 'Unclaimed Property',
-    blurb: 'Billions sit dormant in bank accounts, deposits, and state treasuries. We search, locate, and recover what is yours.',
+    label: 'Unclaimed property',
+    blurb: 'Dormant accounts, uncashed checks and deposits held by the state. We search, locate and recover what is yours.',
     services: [
-      { title: 'Unclaimed Assets', href: '/services/unclaimed-property', desc: 'Dormant bank accounts, uncashed checks, insurance payouts, and utility deposits sit unclaimed in the billions. We search, locate, and recover.' },
-      { title: 'State-Held Funds', href: '/services/state-unclaimed-funds', desc: 'Once property goes unclaimed long enough it escheats to the state treasury. We navigate state databases and reclaim funds held in your name.' },
+      ['Unclaimed Property', '/services/unclaimed-property', 'Bank accounts, insurance, refunds and deposits turned over to the state.'],
+      ['State-Held Funds', '/services/state-unclaimed-funds', 'Money held by courts, counties and state agencies.'],
     ],
   },
   {
-    n: '04',
-    label: 'Estate, Trust & Business Recovery',
-    blurb: 'Heirs, trusts, and business entities are often owed funds they never knew existed. We trace and recover them.',
+    label: 'Estates, trusts & businesses',
+    blurb: 'Heirs, trusts and businesses are often owed money they never knew existed.',
     services: [
-      { title: 'Estate & Heir Recovery', href: '/services/estate-recovery', desc: 'Heirs are often entitled to surplus and unclaimed funds they never knew existed. We identify rightful heirs, coordinate probate, and manage the full claim.' },
-      { title: 'Probate Help for Heirs', href: '/services/probate-assistance', desc: 'A relative passed before claiming funds? Heirs can usually still recover them. We coordinate probate and the claim through our network of licensed attorneys.' },
-      { title: 'Trust Asset Recovery', href: '/services/trust-recovery', desc: 'Assets held under trust accounts are easily overlooked and left unclaimed. We trace and recover funds tied to active and dormant trusts.' },
-      { title: 'LLC & Business Asset Recovery', href: '/services/business-asset-recovery', desc: 'Unclaimed property held under business names, dissolved entities, or closed corporations is recoverable. We recover assets for LLCs, corporations, and inactive trusts.' },
+      ['Estate & Heir Recovery', '/services/estate-recovery', 'Heirs can usually still claim money owed to a family member who passed away.'],
+      ['Probate Help for Heirs', '/services/probate-assistance', 'When the court requires probate, we coordinate it with the claim.'],
+      ['Trust Asset Recovery', '/services/trust-recovery', 'Money held in a trust\'s name, recovered for the trustee and beneficiaries.'],
+      ['LLC & Business Asset Recovery', '/services/business-asset-recovery', 'Money held by dissolved companies and closed corporations.'],
     ],
   },
 ]
 
 export default function ServicesPage() {
   return (
-    <main>
+    <div className={h.page}>
+      <div className={`${h.wrap} ${s.hero}`}>
+        <div role="navigation" aria-label="Breadcrumb" className={s.crumbs}>
+          <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={s.crumbNow}>Services</span>
+        </div>
+        <div className={s.heroText}>
+          <div className={h.eyebrow}>Every claim type · One firm · $0 upfront</div>
+          <h1 className={s.h1}>Everything we <em className={h.gradText}>help with.</em></h1>
+          <p className={s.answer}>Foreclosure help before the auction, and recovery after it: surplus funds, tax deed overages, unclaimed property, and money owed to estates, trusts and businesses. If money was left behind, we find it and file the claim.</p>
+        </div>
+      </div>
 
-      {/* HERO */}
-      <section style={{ background: '#000', borderBottom: '1px solid rgba(30,40,127,0.15)', padding: 'clamp(80px,10vw,130px) clamp(20px,5vw,60px) clamp(64px,8vw,96px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '900px', height: '600px', background: 'radial-gradient(ellipse at center, rgba(30,40,127,0.2) 0%, transparent 65%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(74,95,212,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,95,212,0.06) 1px,transparent 1px)', backgroundSize: '52px 52px', pointerEvents: 'none' }} />
-        <div className="scan-animate" style={{ position: 'absolute', left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.5),transparent)', pointerEvents: 'none', zIndex: 1 }} />
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '760px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '32px', padding: '7px 18px', border: '1px solid rgba(74,95,212,0.2)', background: 'rgba(30,40,127,0.1)' }}>
-            <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#4a7fd4', display: 'inline-block', flexShrink: 0 }} />
-            <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '8px', letterSpacing: '2.5px', textTransform: 'uppercase', color: '#4a6090' }}>All Recovery Types · One Firm · No Upfront Cost</span>
+      {categories.map((cat) => (
+        <div key={cat.label} className={`${h.wrap} ${s.block}`}>
+          <div className={s.tag}>{cat.label}</div>
+          <p className={`${s.answer} ${s.mb}`}>{cat.blurb}</p>
+          <div className={s.cards}>
+            {cat.services.map(([title, href, desc], i) => (
+              <Link key={href} href={href} className={i % 2 === 0 ? `${s.card} ${s.cardDark}` : s.card}>
+                <span className={s.cardTitle}>{title}<span aria-hidden="true" className={s.cardArrow}>→</span></span>
+                <span className={s.cardDesc}>{desc}</span>
+              </Link>
+            ))}
           </div>
-          <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(38px,5.5vw,72px)', letterSpacing: '-2.5px', lineHeight: 1.0, margin: '0 0 32px', color: '#fff' }}>
-            <span style={{ backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #ffffff 55%, #a8b8d8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Everything We </span><span style={{ backgroundImage: 'linear-gradient(180deg, #3a60b8 0%, #2a48a0 55%, #1E287F 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Recover</span>
-          </h1>
-          <p style={{ fontSize: 'clamp(15px,1.6vw,17px)', color: '#6a80b0', lineHeight: 1.8, maxWidth: '540px', margin: '0 auto', fontWeight: 400 }}>
-            Foreclosure surplus, tax deed overages, unclaimed property, estate and business assets — every claim type, on pure contingency. If money was left behind, we find it and recover it.
-          </p>
         </div>
-      </section>
+      ))}
 
-      {/* CATEGORIES */}
-      <section style={{ background: 'var(--bg)', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)' }}>
-        <div style={{ maxWidth: '1060px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'clamp(56px,7vw,88px)' }}>
-          {categories.map((cat) => (
-            <div key={cat.n}>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', marginBottom: '8px' }}>
-                <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '11px', fontWeight: 700, color: '#4a7fd4', letterSpacing: '1px' }}>{cat.n}</span>
-                <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(22px,3vw,34px)', color: '#fff', letterSpacing: '-0.8px', margin: 0 }}>{cat.label}</h2>
-              </div>
-              <p style={{ fontSize: '14px', color: '#6a80b0', lineHeight: 1.8, margin: '0 0 24px', maxWidth: '620px', paddingLeft: '27px' }}>{cat.blurb}</p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(290px,1fr))', gap: '2px' }}>
-                {cat.services.map((s, i) => (
-                  <Link key={s.href} href={s.href} style={{ textDecoration: 'none', display: 'block', background: i % 2 === 0 ? 'rgba(18,28,72,0.4)' : '#0a0f1a', border: `1px solid ${i % 2 === 0 ? 'rgba(74,95,212,0.2)' : 'rgba(74,95,212,0.07)'}`, padding: 'clamp(22px,2.6vw,30px)', position: 'relative' }}>
-                    {i % 2 === 0 && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,#1E287F,transparent)' }} />}
-                    <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(16px,2vw,19px)', color: '#fff', letterSpacing: '-0.5px', margin: '0 0 10px' }}>{s.title}</h3>
-                    <p style={{ fontSize: '13.5px', color: i % 2 === 0 ? '#8090b8' : '#506080', lineHeight: 1.85, margin: '0 0 16px' }}>{s.desc}</p>
-                    <span style={{ fontFamily: "'Space Mono',monospace", fontSize: '9px', letterSpacing: '1.5px', textTransform: 'uppercase', color: '#4a7fd4' }}>Explore →</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* DIVIDER */}
-      <div style={{ maxWidth: '960px', margin: '0 auto', height: '1px', background: 'linear-gradient(90deg,transparent,rgba(74,95,212,0.18),transparent)' }} />
-
-      {/* CTA */}
-      <section style={{ background: '#000', padding: 'clamp(72px,8vw,112px) clamp(20px,5vw,60px)', textAlign: 'center' }}>
-        <div style={{ maxWidth: '560px', margin: '0 auto' }}>
-          <span className="section-tag" style={{ justifyContent: 'center', display: 'flex' }}>// No cost to start</span>
-          <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 700, fontSize: 'clamp(26px,4vw,48px)', color: '#fff', letterSpacing: '-1px', lineHeight: 1.08, margin: '16px 0 16px' }}>
-            Not Sure Which Applies to You?
-          </h2>
-          <p style={{ fontSize: '15px', color: '#506080', lineHeight: 1.85, marginBottom: '36px' }}>
-            Tell us your situation and we will identify every claim type connected to your name — foreclosure, tax deed, unclaimed, or estate. You pay nothing unless we recover.
-          </p>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn-primary">Free Claim Review</Link>
-            <a href="tel:+13055634920" className="btn-secondary">305-563-4920</a>
+      <div style={{ height: 72 }} />
+      <section className={h.closing}>
+        <div className={h.closingFade} aria-hidden="true" />
+        <div className={`${h.wrap} ${h.closingInner}`}>
+          <h2 className={h.closingH}>Not sure which applies to you?</h2>
+          <p>Tell us your situation and we will check every claim type connected to your name. You pay nothing unless we recover.</p>
+          <div className={h.btnRow}>
+            <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
+            <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
