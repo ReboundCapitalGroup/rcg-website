@@ -11,6 +11,8 @@ export default function TaxDeedSurplusPage() {
   return (
     <ServicePage
       slug="tax-deed-surplus"
+      image="/img/aerial-small-town.webp"
+      imagePos="50% 50%"
       serviceName="Tax Deed Overages"
       badge="After the auction · $0 upfront"
       h1Lead="Tax Deed"

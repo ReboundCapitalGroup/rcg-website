@@ -11,6 +11,8 @@ export default function TrustRecoveryPage() {
   return (
     <ServicePage
       slug="trust-recovery"
+      image="/img/home-miami-beach.webp"
+      imagePos="60% 60%"
       serviceName="Trust Asset Recovery"
       badge="Trusts & beneficiaries · $0 upfront"
       h1Lead="Trust Asset"

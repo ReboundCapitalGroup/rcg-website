@@ -16,6 +16,8 @@ export default function ProbateAssistancePage() {
   return (
     <ServicePage
       slug="probate-assistance"
+      image="/img/signing.webp"
+      imagePos="50% 70%"
       serviceName="Probate Help for Heirs"
       badge="Heirs · Estates · Nationwide"
       h1Lead="Probate Help"

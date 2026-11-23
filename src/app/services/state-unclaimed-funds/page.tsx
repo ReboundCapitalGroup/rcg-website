@@ -10,6 +10,8 @@ export default function StateHeldFundsPage() {
   return (
     <ServicePage
       slug="state-unclaimed-funds"
+      image="/img/aerial-miami.webp"
+      imagePos="50% 60%"
       serviceName="State-Held Funds"
       badge="Courts, counties & states · $0 upfront"
       h1Lead="State-Held"

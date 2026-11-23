@@ -10,6 +10,10 @@
 .h1 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 1.02; color: var(--navy); text-wrap: balance; }
 .answer { margin: 0; font-size: 18px; line-height: 1.65; color: var(--ink); max-width: 640px; }
 
+.heroMedia { position: relative; aspect-ratio: 4 / 5; max-height: 560px; width: 100%; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 70px rgba(13,19,34,0.22); }
+.heroBadge { position: absolute; left: 18px; right: 18px; bottom: 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; background: rgba(13,19,34,0.82); backdrop-filter: blur(6px); color: #fff !important; border-radius: 12px; padding: 14px 18px; font-size: 13px; }
+.heroBadge span { color: #c3cfee; }
+.heroBadge b { font-family: var(--serif); font-weight: 400; font-size: 26px; }
 .glance { background: var(--glow); color: #fff; border-radius: 16px; padding: 30px 30px 26px; box-shadow: 0 24px 60px rgba(13,19,34,0.2); }
 .glanceLabel { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; }
 .glanceRow { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid rgba(147,184,255,0.18); font-size: 14px; }
@@ -30,7 +34,8 @@
 
 .block { padding-top: 64px; padding-bottom: 24px; }
 
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); border: 1px solid rgba(13,19,34,0.1); }
+.cards { display: flex; flex-wrap: wrap; border: 1px solid rgba(13,19,34,0.1); border-radius: 14px; overflow: hidden; }
+.cards > * { flex: 1 1 340px; }
 .card { display: flex; flex-direction: column; gap: 8px; padding: 28px 30px; background: #fff; color: var(--navy); --tag: var(--primary); --desc: var(--body); transition: filter .3s; }
 .cardDark { background: var(--glow); color: #fff; --tag: var(--light); --desc: #c3cfee; }
 a.card:hover { filter: brightness(1.1); }
@@ -59,7 +64,7 @@ a.card:hover { filter: brightness(1.1); }
 .faq[open] .faqSign::after { transform: translate(-50%, -50%) rotate(0deg); }
 .faq p { margin: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--body); max-width: 720px; }
 
-.related { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 14px; margin-bottom: 72px; }
+.related { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 14px; margin-bottom: 72px; margin-top: 4px; }
 .relatedItem { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid rgba(13,19,34,0.08); border-radius: 12px; padding: 22px 24px; transition: box-shadow .3s, transform .3s; }
 .relatedItem:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(13,19,34,0.08); }
 .relatedTitle { font-size: 17px; font-weight: 800; color: var(--navy); }
@@ -86,6 +91,8 @@ a.card:hover { filter: brightness(1.1); }
   .h1 { font-size: 40px; line-height: 1.03; }
   .answer { font-size: 16px; line-height: 1.6; }
   .glance { padding: 22px 20px 20px; }
+  .heroMedia { aspect-ratio: 16 / 11; max-height: none; }
+  .heroBadge b { font-size: 22px; }
   .glancePhone { font-size: 30px; }
 
   .stats { grid-template-columns: 1fr; }

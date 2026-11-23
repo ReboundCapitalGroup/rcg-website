@@ -1,48 +1,54 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import h from '@/components/home/home.module.css'
-import s from '@/components/service.module.css'
+import sv from '@/components/service.module.css'
+import ReviewsStrip from '@/components/ReviewsStrip'
+import { TrustRow } from '@/components/ui/blocks'
+import s from './services.module.css'
+
+export const revalidate = 86400
 
 export const metadata: Metadata = {
   title: 'Foreclosure Help, Surplus Funds & Unclaimed Property Services | RCG',
   description: 'Foreclosure help before the auction, and recovery of surplus funds, tax deed overages, unclaimed property and estate assets after it. Claims are filed through our network of licensed attorneys. $0 upfront.',
 }
 
-const categories: { label: string; blurb: string; services: [string, string, string][] }[] = [
+const groups: { tag: string; title: string; blurb: string; img: string; pos: string; services: [string, string, string][] }[] = [
   {
-    label: 'Before the auction',
-    blurb: 'Still in the foreclosure process? Options to keep the home or protect your equity before the sale.',
+    tag: 'Before the auction', title: 'Still in the foreclosure process?', img: '/img/front-door.webp', pos: '50% 60%',
+    blurb: 'Options to keep the home or protect your equity before the sale. The sooner you reach out, the more paths are open.',
     services: [
-      ['Foreclosure Help & Options', '/services/foreclosure-solutions', 'Every option before the auction in one place: more time, a cash offer, a mortgage assumption, or a plan that protects your equity.'],
-      ['Time Extensions', '/services/time-extensions', 'Before the sale, an attorney may be able to postpone it. After the sale, you may still get more time before eviction.'],
-      ['Mortgage Assumptions', '/services/mortgage-assumptions', 'In some cases a qualified buyer can take over your existing mortgage, so the home never goes to auction.'],
-      ['Cash Offer on Property', '/services/cash-offer', 'Sell as-is before the auction and walk away with your equity.'],
+      ['Foreclosure Help & Options', '/services/foreclosure-solutions', 'Every option before the auction in one place.'],
+      ['Time Extensions', '/services/time-extensions', 'Postpone the sale, or get more time before eviction.'],
+      ['Mortgage Assumptions', '/services/mortgage-assumptions', 'A qualified buyer takes over your existing loan.'],
+      ['Cash Offer on Property', '/services/cash-offer', 'Sell as-is before the auction and keep your equity.'],
     ],
   },
   {
-    label: 'After the auction',
+    tag: 'After the auction', title: 'The home sold. Was money left over?', img: '/img/aerial-gulf-coast.webp', pos: '40% 60%',
     blurb: 'When a property sells for more than was owed, the extra belongs to the former owner. We find it and file the claim.',
     services: [
-      ['Foreclosure Surplus Funds', '/services/foreclosure-surplus', 'Money left over after a foreclosure sale, held by the court until claimed.'],
-      ['Tax Deed Overages', '/services/tax-deed-surplus', 'Money left over after a tax deed sale, held by the county until claimed.'],
+      ['Foreclosure Surplus Funds', '/services/foreclosure-surplus', 'Money left after a foreclosure sale, held by the court.'],
+      ['Tax Deed Overages', '/services/tax-deed-surplus', 'Money left after a tax deed sale, held by the county.'],
     ],
   },
   {
-    label: 'Unclaimed property',
-    blurb: 'Dormant accounts, uncashed checks and deposits held by the state. We search, locate and recover what is yours.',
+    tag: 'Estates, trusts & businesses', title: 'Money owed to someone who is gone.', img: '/img/desk-files.webp', pos: '50% 60%',
+    blurb: 'Heirs, trustees and former business owners are often owed money they never knew existed.',
     services: [
-      ['Unclaimed Property', '/services/unclaimed-property', 'Bank accounts, insurance, refunds and deposits turned over to the state.'],
+      ['Estate & Heir Recovery', '/services/estate-recovery', 'Claim money owed to a family member who passed.'],
+      ['Probate Help for Heirs', '/services/probate-assistance', 'When the court requires probate, we coordinate it.'],
+      ['Trust Asset Recovery', '/services/trust-recovery', 'Money held in a trust’s name, for the beneficiaries.'],
+      ['LLC & Business Assets', '/services/business-asset-recovery', 'Money held by dissolved companies.'],
+    ],
+  },
+  {
+    tag: 'Unclaimed property', title: 'Money the state is holding for you.', img: '/img/aerial-miami.webp', pos: '50% 60%',
+    blurb: 'Dormant accounts, uncashed checks and deposits turned over to the state. We search every state and file the claim.',
+    services: [
+      ['Unclaimed Property', '/services/unclaimed-property', 'Accounts, insurance, refunds and deposits.'],
       ['State-Held Funds', '/services/state-unclaimed-funds', 'Money held by courts, counties and state agencies.'],
-    ],
-  },
-  {
-    label: 'Estates, trusts & businesses',
-    blurb: 'Heirs, trusts and businesses are often owed money they never knew existed.',
-    services: [
-      ['Estate & Heir Recovery', '/services/estate-recovery', 'Heirs can usually still claim money owed to a family member who passed away.'],
-      ['Probate Help for Heirs', '/services/probate-assistance', 'When the court requires probate, we coordinate it with the claim.'],
-      ['Trust Asset Recovery', '/services/trust-recovery', 'Money held in a trust\'s name, recovered for the trustee and beneficiaries.'],
-      ['LLC & Business Asset Recovery', '/services/business-asset-recovery', 'Money held by dissolved companies and closed corporations.'],
     ],
   },
 ]
@@ -50,33 +56,45 @@ const categories: { label: string; blurb: string; services: [string, string, str
 export default function ServicesPage() {
   return (
     <div className={h.page}>
-      <div className={`${h.wrap} ${s.hero}`}>
-        <div role="navigation" aria-label="Breadcrumb" className={s.crumbs}>
-          <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={s.crumbNow}>Services</span>
+      <div className={`${h.wrap} ${sv.hero}`}>
+        <div role="navigation" aria-label="Breadcrumb" className={sv.crumbs}>
+          <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>Services</span>
         </div>
-        <div className={s.heroText}>
+        <div className={sv.heroText} style={{ maxWidth: 820 }}>
           <div className={h.eyebrow}>Every claim type · One firm · $0 upfront</div>
-          <h1 className={s.h1}>Everything we <em className={h.gradText}>help with.</em></h1>
-          <p className={s.answer}>Foreclosure help before the auction, and recovery after it: surplus funds, tax deed overages, unclaimed property, and money owed to estates, trusts and businesses. If money was left behind, we find it and file the claim.</p>
+          <h1 className={sv.h1}>Help before the auction. <em className={h.gradText}>Recovery after it.</em></h1>
+          <p className={sv.answer}>Pick where you are in the process. Every service is free to start, and on recoveries you pay nothing unless we get you paid.</p>
+          <TrustRow />
         </div>
       </div>
 
-      {categories.map((cat) => (
-        <div key={cat.label} className={`${h.wrap} ${s.block}`}>
-          <div className={s.tag}>{cat.label}</div>
-          <p className={`${s.answer} ${s.mb}`}>{cat.blurb}</p>
-          <div className={s.cards}>
-            {cat.services.map(([title, href, desc], i) => (
-              <Link key={href} href={href} className={i % 2 === 0 ? `${s.card} ${s.cardDark}` : s.card}>
-                <span className={s.cardTitle}>{title}<span aria-hidden="true" className={s.cardArrow}>→</span></span>
-                <span className={s.cardDesc}>{desc}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      ))}
+      <div className={h.wrap}>
+        {groups.map((g, i) => (
+          <section key={g.tag} className={`${s.group} ${i % 2 ? s.rev : ''}`}>
+            <div className={s.media}>
+              <Image src={g.img} alt="" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'cover', objectPosition: g.pos }} />
+              <span className={s.mediaTag}>{g.tag}</span>
+            </div>
+            <div className={s.body}>
+              <h2 className={s.title}>{g.title}</h2>
+              <p className={s.blurb}>{g.blurb}</p>
+              <ul className={s.list}>
+                {g.services.map(([t, href, d]) => (
+                  <li key={href}>
+                    <Link href={href} className={s.link}>
+                      <span><b>{t}</b><span>{d}</span></span>
+                      <span aria-hidden="true" className={s.arrow}>→</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ))}
+      </div>
 
-      <div style={{ height: 72 }} />
+      <ReviewsStrip />
+
       <section className={h.closing}>
         <div className={h.closingFade} aria-hidden="true" />
         <div className={`${h.wrap} ${h.closingInner}`}>

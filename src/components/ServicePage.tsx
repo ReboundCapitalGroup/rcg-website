@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import ReviewsStrip from '@/components/ReviewsStrip'
+import { TrustRow, PhotoBand } from '@/components/ui/blocks'
 import type { ReactNode } from 'react'
 import h from '@/components/home/home.module.css'
 import s from './service.module.css'
@@ -42,6 +45,11 @@ export type ServicePageProps = {
   ctaText: string
   ctaHref?: string
   ctaLabel?: string
+  /** Hero photo (in /public/img) */
+  image?: string
+  imagePos?: string
+  /** Optional full-width photo band after the main section */
+  band?: { src: string; title: string; text?: string; position?: string }
 }
 
 const SITE = 'https://reboundcapitalgroup.com'
@@ -97,18 +105,11 @@ export default function ServicePage(p: ServicePageProps) {
               <Link href={p.ctaHref || '/contact'} className={`${h.btnPrimary} ${h.btnLg}`}>{p.ctaLabel || 'Get a Free Review'} <span aria-hidden="true">→</span></Link>
               <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call or text 24/7</a>
             </div>
+            <TrustRow />
           </div>
-          <div className={s.glance}>
-            <div className={s.glanceLabel}>How we work</div>
-            {[
-              ['First review', 'Free, no obligation'],
-              ['Availability', 'Call or text 24/7'],
-              ['Coverage', 'Nationwide'],
-              ['Rating', 'A+ with the BBB'],
-            ].map(([k, v]) => (
-              <div key={k} className={s.glanceRow}><span>{k}</span><b>{v}</b></div>
-            ))}
-            <a href="tel:+13055634920" className={s.glancePhone}>305-563-4920</a>
+          <div className={s.heroMedia}>
+            <Image src={p.image || '/img/home-miami-beach.webp'} alt="" fill priority sizes="(max-width: 900px) 100vw, 40vw" style={{ objectFit: 'cover', objectPosition: p.imagePos || '50% 50%' }} />
+            <a href="tel:+13055634920" className={s.heroBadge}><span>Call or text 24/7</span><b>305-563-4920</b></a>
           </div>
         </div>
       </div>
@@ -141,6 +142,8 @@ export default function ServicePage(p: ServicePageProps) {
           </div>
         ))}
       </div>
+
+      {p.band && <PhotoBand src={p.band.src} title={p.band.title} text={p.band.text} position={p.band.position} />}
 
       {/* CARDS */}
       {p.cards && (
@@ -202,6 +205,8 @@ export default function ServicePage(p: ServicePageProps) {
           </div>
         </div>
       )}
+
+      <ReviewsStrip />
 
       {/* RELATED */}
       <div className={`${h.wrap} ${s.block}`}>

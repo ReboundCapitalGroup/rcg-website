@@ -11,6 +11,8 @@ export default function EstateHeirRecoveryPage() {
   return (
     <ServicePage
       slug="estate-recovery"
+      image="/img/desk-files.webp"
+      imagePos="50% 60%"
       serviceName="Estate & Heir Recovery"
       badge="Heirs & estates · $0 upfront"
       h1Lead="Estate & Heir"

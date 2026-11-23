@@ -11,6 +11,8 @@ export default function LLCBusinessRecoveryPage() {
   return (
     <ServicePage
       slug="business-asset-recovery"
+      image="/img/aerial-intersection.webp"
+      imagePos="50% 50%"
       serviceName="LLC & Business Asset Recovery"
       badge="Businesses & trusts · $0 upfront"
       h1Lead="LLC & Business"

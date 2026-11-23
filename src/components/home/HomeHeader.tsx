@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import s from './home.module.css'
@@ -15,39 +15,52 @@ const links: [string, string][] = [
   ['States', '/states'],
 ]
 
-const resources: [string, string, string][] = [
-  ['How It Works', '/resources/how-it-works', 'The six steps, start to payout'],
-  ['FAQs', '/resources/faqs', 'Straight answers to common questions'],
-  ['State Laws & Deadlines', '/resources/state-laws', 'Claim windows in every state'],
-  ['Client Reviews', '/resources/results', 'What clients say on Google'],
+const ICONS: Record<string, ReactNode> = {
+  steps: <path d="M4 6h10M4 12h16M4 18h7" />,
+  faq: <><circle cx="12" cy="12" r="9" /><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14" /><path d="M12 17.5h.01" /></>,
+  star: <path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" />,
+  map: <><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z" /><path d="M9 4v14M15 6v14" /></>,
+}
+
+const resources: [string, string, string, string][] = [
+  ['How It Works', '/resources/how-it-works', 'Six steps, from free search to payout', 'steps'],
+  ['FAQs', '/resources/faqs', 'Straight answers, no fine print', 'faq'],
+  ['Client Reviews', '/resources/results', '5.0 on Google from real clients', 'star'],
+  ['Unclaimed Funds Map', '/map', 'What every state is holding', 'map'],
 ]
+
+const Chevron = () => (
+  <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>
+)
 
 function ResourcesMenu() {
   const [open, setOpen] = useState(false)
   return (
     <div className={s.dd} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <button type="button" className={s.ddBtn} aria-expanded={open} aria-haspopup="true" onClick={() => setOpen(!open)}>
-        Resources <span aria-hidden="true" className={s.ddCaret}>▾</span>
+        Resources <span className={s.ddCaret}><Chevron /></span>
       </button>
       {open && (
         <div className={s.ddMenu} role="menu">
-          {resources.map(([l, h, d]) => (
-            <Link key={h} href={h} role="menuitem" className={s.ddItem} onClick={() => setOpen(false)}>
-              <b>{l}</b><span>{d}</span>
-            </Link>
-          ))}
+          <div className={s.ddList}>
+            {resources.map(([l, href, d, icon]) => (
+              <Link key={href} href={href} role="menuitem" className={s.ddItem} onClick={() => setOpen(false)}>
+                <span className={s.ddIcon}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">{ICONS[icon]}</svg></span>
+                <span className={s.ddText}><b>{l}</b><span>{d}</span></span>
+              </Link>
+            ))}
+          </div>
+          <Link href="/contact" className={s.ddFeature} onClick={() => setOpen(false)}>
+            <span className={s.ddFeatureTag}>Free, no obligation</span>
+            <span className={s.ddFeatureTitle}>Find out what you&apos;re owed.</span>
+            <span className={s.ddFeatureMeta}>5.0 ★ on Google · A+ BBB</span>
+            <span className={s.ddFeatureCta}>Start a free review →</span>
+          </Link>
         </div>
       )}
     </div>
   )
 }
-
-const menu: { label: string; items: [string, string][] }[] = [
-  { label: 'Before the auction', items: [['Foreclosure Help', '/services/foreclosure-solutions'], ['Time Extensions', '/services/time-extensions'], ['Mortgage Assumptions', '/services/mortgage-assumptions'], ['Cash Offer', '/services/cash-offer']] },
-  { label: 'After the auction', items: [['Surplus Funds', '/services/foreclosure-surplus'], ['Tax Deed Overages', '/services/tax-deed-surplus'], ['Estate & Heir Recovery', '/services/estate-recovery'], ['Probate Help for Heirs', '/services/probate-assistance']] },
-  { label: 'Resources', items: [['How It Works', '/resources/how-it-works'], ['FAQs', '/resources/faqs'], ['State Laws & Deadlines', '/resources/state-laws'], ['Client Reviews', '/resources/results']] },
-  { label: 'More', items: [['Unclaimed Funds Map', '/map'], ['All States', '/states'], ['About', '/about'], ['Contact', '/contact']] },
-]
 
 export default function HomeHeader() {
   const [open, setOpen] = useState(false)

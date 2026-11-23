@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import h from '@/components/home/home.module.css'
 import sv from '@/components/service.module.css'
+import FaqBrowser from '@/components/faq/FaqBrowser'
 
 export const metadata: Metadata = {
   title: 'Surplus Funds Recovery FAQs | Rebound Capital Group',
@@ -71,8 +72,6 @@ const categories = [
   },
 ]
 
-const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -85,61 +84,25 @@ const faqJsonLd = {
   ),
 }
 
-const related: [string, string][] = [
-  ['Foreclosure Surplus Funds', '/services/foreclosure-surplus'], ['Florida', '/states/florida'], ['Ohio', '/states/ohio'],
-  ['Arizona', '/states/arizona'], ['Colorado', '/states/colorado'], ['Michigan', '/states/michigan'], ['Kentucky', '/states/kentucky'], ['All States', '/states'],
-]
-
 export default function FAQsPage() {
   return (
     <div className={h.page}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }} />
-      <div className={`${h.wrap} ${sv.hero}`}>
+      <div className={h.wrap} style={{ paddingTop: 28, paddingBottom: 40 }}>
         <div role="navigation" aria-label="Breadcrumb" className={sv.crumbs}>
           <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>FAQs</span>
         </div>
-        <div className={sv.heroText}>
-          <div className={h.eyebrow}>Questions and answers</div>
-          <h1 className={sv.h1}>Frequently asked <em className={h.gradText}>questions.</em></h1>
-          <p className={sv.answer}>Straight answers about foreclosure help and surplus funds recovery: how it works, what it costs, and what to expect.</p>
-          <div className={sv.points} style={{ marginTop: 4 }}>
-            {categories.map((c) => <a key={c.label} href={`#${slugify(c.label)}`} style={{ fontSize: 13, fontWeight: 700, color: '#1E287F', background: '#e9eefb', border: '1px solid rgba(30,40,127,0.18)', borderRadius: 999, padding: '7px 12px' }}>{c.label}</a>)}
-          </div>
-        </div>
+        <div className={h.eyebrow} style={{ marginBottom: 12 }}>Questions and answers</div>
+        <h1 className={sv.h1} style={{ fontSize: 'clamp(40px, 5vw, 56px)', maxWidth: 820 }}>Straight answers, <em className={h.gradText}>no fine print.</em></h1>
       </div>
-
-      {categories.map((cat) => (
-        <div key={cat.label} id={slugify(cat.label)} className={`${h.wrap} ${sv.block}`} style={{ scrollMarginTop: 100 }}>
-          <div className={sv.faqGrid}>
-            <div>
-              <div className={sv.tag}>FAQs</div>
-              <h2 className={sv.h2}>{cat.label}</h2>
-            </div>
-            <div className={sv.faqs}>
-              {cat.items.map((f) => (
-                <details key={f.q} className={sv.faq}>
-                  <summary>{f.q}<span aria-hidden="true" className={sv.faqSign} /></summary>
-                  <p>{f.a}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </div>
-      ))}
-
-      <div className={`${h.wrap} ${sv.block}`}>
-        <div className={sv.tag}>Related</div>
-        <div className={sv.points}>
-          {related.map(([l, href]) => <Link key={href} href={href} style={{ fontSize: 13, fontWeight: 700, color: '#1E287F', background: '#fff', border: '1px solid rgba(30,40,127,0.18)', borderRadius: 999, padding: '7px 12px' }}>{l}</Link>)}
-        </div>
+      <div className={h.wrap} style={{ paddingBottom: 40 }}>
+        <FaqBrowser categories={categories} />
       </div>
-
-      <div style={{ height: 72 }} />
       <section className={h.closing}>
         <div className={h.closingFade} aria-hidden="true" />
         <div className={`${h.wrap} ${h.closingInner}`}>
           <h2 className={h.closingH}>Still have questions?</h2>
-          <p>If your question is not answered here, reach out. We are happy to explain the process, check for a claim, or simply answer what you need to know.</p>
+          <p>Call or text any time and a real person will answer, in English or Spanish. Checking for a claim is free.</p>
           <div className={h.btnRow}>
             <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Get a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call 305-563-4920</a>

@@ -16,6 +16,8 @@ export default function TimeExtensionsPage() {
   return (
     <ServicePage
       slug="time-extensions"
+      image="/img/street-miami.webp"
+      imagePos="30% 60%"
       serviceName="Foreclosure Time Extensions"
       badge="Before the sale · After the sale · Nationwide"
       h1Lead="More Time,"

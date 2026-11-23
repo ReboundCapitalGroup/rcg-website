@@ -11,6 +11,8 @@ export default function CashOfferPage() {
   return (
     <ServicePage
       slug="cash-offer"
+      image="/img/home-miami-beach.webp"
+      imagePos="40% 60%"
       serviceName="Cash Offer Before the Sale"
       badge="Before the auction · Sell as-is"
       h1Lead="Cash Offer"

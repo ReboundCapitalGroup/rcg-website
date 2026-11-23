@@ -3,6 +3,20 @@ import h from '@/components/home/home.module.css'
 import sv from '@/components/service.module.css'
 import s from './state.module.css'
 import CountyList from './CountyList'
+import ReviewsStrip from '@/components/ReviewsStrip'
+import { PhotoBand, TrustRow } from '@/components/ui/blocks'
+
+const REGION: Record<string, string> = {
+  gulf: 'florida louisiana mississippi alabama texas',
+  southeast: 'georgia south-carolina north-carolina tennessee virginia kentucky arkansas oklahoma hawaii',
+  west: 'arizona nevada utah new-mexico california colorado oregon washington idaho montana wyoming alaska',
+}
+const regionImage = (slug: string) => {
+  if (REGION.gulf.split(' ').includes(slug)) return { src: '/img/aerial-gulf-coast.webp', pos: '50% 55%' }
+  if (REGION.southeast.split(' ').includes(slug)) return { src: '/img/aerial-suburb-lakes.webp', pos: '50% 50%' }
+  if (REGION.west.split(' ').includes(slug)) return { src: '/img/aerial-intersection.webp', pos: '50% 40%' }
+  return { src: '/img/aerial-small-town.webp', pos: '50% 50%' }
+}
 
 /**
  * Shared layout for the 50 state pages (redesign v4).
@@ -82,7 +96,7 @@ export default function StatePage(p: StatePageProps) {
               <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Check my {p.name} property <span aria-hidden="true">→</span></Link>
               <Link href="/services/foreclosure-solutions" className={`${h.btnOutline} ${h.btnLg}`}>Facing foreclosure?</Link>
             </div>
-            <div className={h.trust}>Free check · No obligation · Call or text 24/7</div>
+            <TrustRow />
           </div>
           <div className={sv.glance}>
             <div className={sv.glanceLabel}>{p.name} at a glance</div>
@@ -116,6 +130,8 @@ export default function StatePage(p: StatePageProps) {
           </div>
         </div>
       </div>
+
+      <PhotoBand src={regionImage(p.slug).src} position={regionImage(p.slug).pos} eyebrow={`${p.name} · Every county`} title={`Homeowners in ${p.name} are owed money they never heard about.`} text="Surplus from foreclosure and tax sales sits with courts and counties until someone claims it. We find it and file the claim." />
 
       {/* BODY */}
       <div className={`${h.wrap} ${s.block}`}>
@@ -200,7 +216,8 @@ export default function StatePage(p: StatePageProps) {
         </div>
       </div>
 
-      <div style={{ height: 72 }} />
+      <ReviewsStrip />
+
       <section className={h.closing}>
         <div className={h.closingFade} aria-hidden="true" />
         <div className={`${h.wrap} ${h.closingInner}`}>

@@ -11,6 +11,8 @@ export default function MortgageAssumptionsPage() {
   return (
     <ServicePage
       slug="mortgage-assumptions"
+      image="/img/aerial-suburb-lakes.webp"
+      imagePos="45% 50%"
       serviceName="Mortgage Assumptions"
       badge="Before the auction · Buyer network"
       h1Lead="Mortgage"

@@ -1,33 +1,33 @@
-.heroGrid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 64px; align-items: center; }
-.statsCard { display: grid; grid-template-columns: 1fr 1fr; background: var(--glow); color: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 60px rgba(13,19,34,0.2); }
-.statItem { display: flex; flex-direction: column; gap: 6px; padding: 26px 24px; font-size: 13px; color: #c3cfee; border-top: 1px solid rgba(147,184,255,0.15); border-left: 1px solid rgba(147,184,255,0.15); }
-.statItem:nth-child(-n+2) { border-top: 0; }
-.statItem:nth-child(odd) { border-left: 0; }
-.statVal { font-family: var(--serif); font-size: 44px; line-height: 1; background-image: linear-gradient(180deg, #fff 0%, #93b8ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-
-.block { padding-top: 56px; }
-.cards2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.callout { border-left: 3px solid var(--primary); padding-left: 18px; color: var(--navy) !important; font-weight: 600; }
-
-.founder { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 64px; align-items: center; }
-.photoWrap { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 70px rgba(13,19,34,0.25); }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 80px; align-items: center; }
+.portrait { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.photoWrap { border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px rgba(13,19,34,0.22); }
 .photo { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
-.photoCaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 28px 24px; background: linear-gradient(180deg, rgba(13,19,34,0) 0%, rgba(13,19,34,0.85) 100%); display: flex; flex-direction: column; gap: 2px; color: #fff; }
-.photoName { font-family: var(--serif); font-size: 36px; line-height: 1.05; }
-.photoRole { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--light); }
-.founderText { display: flex; flex-direction: column; gap: 18px; }
-.founderText h2 { margin-bottom: 4px; }
-.quote { margin: 4px 0 0; font-family: var(--serif); font-size: 28px; line-height: 1.25; color: var(--primary); font-style: italic; }
-.bbb { display: inline-flex; align-self: flex-start; align-items: center; gap: 12px; background: #fff; border: 1px solid rgba(13,19,34,0.1); border-radius: 999px; padding: 8px 18px 8px 8px; color: var(--navy) !important; font-size: 14px; font-weight: 700; }
-.bbb b { width: 40px; height: 40px; border-radius: 50%; background: var(--grad); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.portrait figcaption { display: flex; flex-direction: column; gap: 2px; padding-left: 4px; }
+.photoName { font-family: var(--serif); font-size: 30px; line-height: 1.05; color: var(--navy); }
+.photoRole { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--primary); }
+
+.story { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; padding-top: 72px; scroll-margin-top: 100px; }
+.lead { margin: 16px 0 0; font-size: 18px; line-height: 1.7; color: var(--ink); }
+
+.founder { padding-top: 88px; }
+.founderGrid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; }
+
+.block { padding-top: 72px; }
+.values { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid rgba(13,19,34,0.12); }
+.value { display: flex; flex-direction: column; gap: 8px; padding: 28px 32px 28px 0; border-bottom: 1px solid rgba(13,19,34,0.12); }
+.value:nth-child(even) { padding: 28px 0 28px 32px; border-left: 1px solid rgba(13,19,34,0.12); }
+.valueN { font-family: var(--serif); font-size: 36px; line-height: 1; color: var(--accent); }
+.valueTitle { font-size: 20px; font-weight: 800; color: var(--navy); }
+.valueDesc { font-size: 15px; line-height: 1.65; color: var(--body); }
 
 @media (max-width: 900px) {
-  .heroGrid { grid-template-columns: 1fr; gap: 28px; }
-  .statVal { font-size: 36px; }
-  .statItem { padding: 20px 18px; }
-  .block { padding-top: 40px; }
-  .cards2 { grid-template-columns: 1fr; }
-  .founder { grid-template-columns: 1fr; gap: 28px; }
-  .photoName { font-size: 30px; }
-  .quote { font-size: 23px; }
+  .heroGrid { grid-template-columns: 1fr; gap: 32px; }
+  .portrait { max-width: 260px; }
+  .photoName { font-size: 26px; }
+  .story, .founderGrid { grid-template-columns: 1fr; gap: 28px; padding-top: 48px; }
+  .founder { padding-top: 56px; }
+  .lead { font-size: 16px; }
+  .block { padding-top: 48px; }
+  .values { grid-template-columns: 1fr; }
+  .value, .value:nth-child(even) { padding: 22px 0; border-left: 0; }
 }

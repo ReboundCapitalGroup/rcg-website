@@ -11,6 +11,9 @@ export default function ForeclosureSurplusPage() {
   return (
     <ServicePage
       slug="foreclosure-surplus"
+      image="/img/aerial-gulf-coast.webp"
+      imagePos="40% 60%"
+      band={{ src: "/img/aerial-suburb-lakes.webp", title: "Money left on the table, in every county.", text: "Foreclosure sales happen every week across the country. When a home sells for more than was owed, the extra is the owner\u2019s." }}
       serviceName="Foreclosure Surplus Funds"
       badge="After the auction · $0 upfront"
       h1Lead="Foreclosure"

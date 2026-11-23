@@ -11,6 +11,8 @@ export default function UnclaimedPropertyPage() {
   return (
     <ServicePage
       slug="unclaimed-property"
+      image="/img/sunset-waterway.webp"
+      imagePos="45% 50%"
       serviceName="Unclaimed Property"
       badge="All 50 states · $0 upfront"
       h1Lead="Unclaimed"

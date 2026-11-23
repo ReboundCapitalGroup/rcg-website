@@ -2,6 +2,11 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import h from '@/components/home/home.module.css'
 import sv from '@/components/service.module.css'
+import Image from 'next/image'
+import ReviewsStrip from '@/components/ReviewsStrip'
+import { Timeline, TrustRow, PhotoBand } from '@/components/ui/blocks'
+
+export const revalidate = 86400
 
 export const metadata: Metadata = {
   title: 'How Surplus Funds Recovery Works | RCG',
@@ -46,20 +51,22 @@ export default function HowItWorksPage() {
             <Link href="/contact" className={`${h.btnPrimary} ${h.btnLg}`}>Start a free review <span aria-hidden="true">→</span></Link>
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call or text 24/7</a>
           </div>
+          <TrustRow />
         </div>
       </div>
 
       <div className={h.wrap}>
-        <div className={sv.cards} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))' }}>
-          {steps.map((st, i) => (
-            <div key={st.title} className={i % 2 === 0 ? `${sv.card} ${sv.cardDark}` : sv.card}>
-              <span className={sv.cardTag}>Step {i + 1} · {st.sub}</span>
-              <span className={sv.cardTitle} style={{ fontSize: 22 }}>{st.title}</span>
-              <span className={sv.cardDesc} style={{ fontSize: 15 }}>{st.desc}</span>
+        <div className={sv.faqGrid} style={{ alignItems: 'start' }}>
+          <div style={{ position: 'sticky', top: 110 }}>
+            <div style={{ position: 'relative', aspectRatio: '4 / 5', borderRadius: 16, overflow: 'hidden', boxShadow: '0 30px 60px rgba(13,19,34,0.18)' }}>
+              <Image src="/img/signing.webp" alt="" fill sizes="(max-width: 900px) 100vw, 40vw" style={{ objectFit: 'cover', objectPosition: '50% 75%' }} />
             </div>
-          ))}
+          </div>
+          <Timeline items={steps.map((st) => ({ tag: st.sub, title: st.title, text: st.desc }))} />
         </div>
       </div>
+
+      <PhotoBand src="/img/desk-files.webp" position="50% 55%" title="You never touch the paperwork." text="Attorneys in our network handle filings, court correspondence and deadlines. You just answer a few questions." />
 
       <div className={`${h.wrap} ${sv.block}`}>
         <div className={sv.faqGrid}>
@@ -79,7 +86,8 @@ export default function HowItWorksPage() {
         </div>
       </div>
 
-      <div style={{ height: 72 }} />
+      <ReviewsStrip />
+
       <section className={h.closing}>
         <div className={h.closingFade} aria-hidden="true" />
         <div className={`${h.wrap} ${h.closingInner}`}>

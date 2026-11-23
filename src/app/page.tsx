@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import MoneyExample from '@/components/home/MoneyExample'
+import ReviewsStrip from '@/components/ReviewsStrip'
+
+export const revalidate = 86400
 import s from '@/components/home/home.module.css'
 
 export const metadata: Metadata = {
@@ -150,6 +153,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ReviewsStrip />
 
       {/* CLOSING CTA */}
       <section className={s.closing}>

@@ -11,6 +11,9 @@ export default function ForeclosureSolutionsPage() {
   return (
     <ServicePage
       slug="foreclosure-solutions"
+      image="/img/front-door.webp"
+      imagePos="50% 60%"
+      band={{ src: "/img/aerial-gulf-coast.webp", title: "Your equity is worth protecting.", text: "As long as the home has not sold at auction, there is usually still room to act." }}
       serviceName="Foreclosure Help & Options"
       badge="Before the auction · Protect your equity"
       h1Lead="Foreclosure Help"
