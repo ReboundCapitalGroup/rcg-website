@@ -14,7 +14,7 @@ export default function MobileCallBar() {
         </svg>
         Call 24/7
       </a>
-      <Link href="/free-review" className="mobile-call-bar-check">Free Check</Link>
+      <Link href="/free-review" className="mobile-call-bar-check">Free Review</Link>
     </div>
   )
 }
