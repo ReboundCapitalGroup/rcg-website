@@ -237,10 +237,10 @@ export const FLORIDA: County[] = [
     ],
     faqs: [
       {
-        q: { en: 'Someone offered to buy my right to the surplus. Should I sell it?', es: 'Alguien me ofreció comprar mi derecho al sobrante. ¿Debo venderlo?' },
+        q: { en: 'How much surplus could be left in Palm Beach?', es: '¿Cuánto sobrante podría quedar en Palm Beach?' },
         a: {
-          en: 'Be careful. Florida law puts limits on buying or assigning someone’s right to foreclosure surplus and requires specific disclosures. Ask how much they will pay you compared with the full amount in the registry, in writing, before signing anything.',
-          es: 'Tenga cuidado. La ley de Florida pone límites a la compra o cesión del derecho de una persona a los fondos excedentes de ejecución y exige divulgaciones específicas. Pregunte por escrito cuánto le pagarán comparado con el monto total en el registro antes de firmar cualquier cosa.',
+          en: 'It depends on the winning bid, the judgment and any other liens. With Palm Beach home values, it can be a large amount. We check the Clerk’s records and tell you the exact figure for free.',
+          es: 'Depende de la oferta ganadora, la sentencia y cualquier otro gravamen. Con los valores de vivienda de Palm Beach, puede ser una cantidad grande. Revisamos los registros del Secretario y le decimos la cifra exacta gratis.',
         },
       },
       faqSelf('Palm Beach County Clerk', 'Secretario del condado de Palm Beach'),
