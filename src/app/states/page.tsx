@@ -3,6 +3,7 @@ import Link from 'next/link'
 import h from '@/components/home/home.module.css'
 import sv from '@/components/service.module.css'
 import s from './states.module.css'
+import { ScrollCue } from '@/components/ui/blocks'
 
 export const metadata: Metadata = {
   title: 'Foreclosure Help & Surplus Funds by State | Rebound Capital Group',
@@ -33,10 +34,11 @@ export default function StatesPage() {
           <div className={h.eyebrow}>Nationwide · All 50 states · $0 upfront</div>
           <h1 className={sv.h1}>Help in <em className={h.gradText}>every state.</em></h1>
           <p className={sv.answer}>Pick your state for local surplus fund rules, how claims work there, and the counties we cover. Foreclosure help, surplus funds, tax deed overages and unclaimed property, nationwide.</p>
+          <ScrollCue to="more" />
         </div>
       </div>
 
-      <div className={h.wrap}>
+      <div id="more" className={h.wrap} style={{ scrollMarginTop: 100 }}>
         <div className={s.live}>
           {[['1,000+', 'County systems monitored'], ['All 50', 'States covered'], ['24/7', 'Call or text any time'], ['$0', 'Upfront cost, ever']].map(([v, l]) => (
             <div key={l} className={s.liveCard}>

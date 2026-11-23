@@ -4,7 +4,7 @@ import sv from '@/components/service.module.css'
 import s from './state.module.css'
 import CountyList from './CountyList'
 import ReviewsStrip from '@/components/ReviewsStrip'
-import { PhotoBand, TrustRow } from '@/components/ui/blocks'
+import { PhotoBand, TrustRow, ScrollCue } from '@/components/ui/blocks'
 
 const REGION: Record<string, string> = {
   gulf: 'florida louisiana mississippi alabama texas',
@@ -14,7 +14,7 @@ const REGION: Record<string, string> = {
 const regionImage = (slug: string) => {
   if (REGION.gulf.split(' ').includes(slug)) return { src: '/img/aerial-gulf-coast.webp', pos: '50% 55%' }
   if (REGION.southeast.split(' ').includes(slug)) return { src: '/img/aerial-suburb-lakes.webp', pos: '50% 50%' }
-  if (REGION.west.split(' ').includes(slug)) return { src: '/img/aerial-intersection.webp', pos: '50% 40%' }
+  if (REGION.west.split(' ').includes(slug)) return { src: '/img/aerial-suburb-lakes.webp', pos: '50% 35%' }
   return { src: '/img/aerial-small-town.webp', pos: '50% 50%' }
 }
 
@@ -97,6 +97,7 @@ export default function StatePage(p: StatePageProps) {
               <Link href="/services/foreclosure-solutions" className={`${h.btnOutline} ${h.btnLg}`}>Facing foreclosure?</Link>
             </div>
             <TrustRow />
+            <ScrollCue to="more" />
           </div>
           <div className={sv.glance}>
             <div className={sv.glanceLabel}>{p.name} at a glance</div>
@@ -108,6 +109,7 @@ export default function StatePage(p: StatePageProps) {
         </div>
       </div>
 
+      <div id="more" style={{ scrollMarginTop: 100 }} />
       {/* WHERE ARE YOU */}
       <div className={`${h.wrap} ${s.block}`}>
         <h2 className={`${sv.h2} ${sv.mb}`}>Where are you in the process?</h2>

@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import h from '@/components/home/home.module.css'
 import sv from '@/components/service.module.css'
 import ReviewsStrip from '@/components/ReviewsStrip'
-import { TrustRow } from '@/components/ui/blocks'
+import { TrustRow, ScrollCue } from '@/components/ui/blocks'
 import s from './services.module.css'
 
 export const revalidate = 86400
@@ -65,10 +65,11 @@ export default function ServicesPage() {
           <h1 className={sv.h1}>Help before the auction. <em className={h.gradText}>Recovery after it.</em></h1>
           <p className={sv.answer}>Pick where you are in the process. Every service is free to start, and on recoveries you pay nothing unless we get you paid.</p>
           <TrustRow />
+          <ScrollCue to="more" />
         </div>
       </div>
 
-      <div className={h.wrap}>
+      <div id="more" className={h.wrap} style={{ scrollMarginTop: 100 }}>
         {groups.map((g, i) => (
           <section key={g.tag} className={`${s.group} ${i % 2 ? s.rev : ''}`}>
             <div className={s.media}>

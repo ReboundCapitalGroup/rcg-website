@@ -3,11 +3,8 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import h from '@/components/home/home.module.css'
 import sv from '@/components/service.module.css'
-import ReviewsStrip from '@/components/ReviewsStrip'
-import { PhotoBand, Timeline, ScrollCue, TrustRow } from '@/components/ui/blocks'
+import { Timeline, ScrollCue, TrustRow } from '@/components/ui/blocks'
 import s from './about.module.css'
-
-export const revalidate = 86400
 
 export const metadata: Metadata = {
   title: 'About Rebound Capital Group | Foreclosure Help & Surplus Recovery',
@@ -30,54 +27,59 @@ const story = [
 export default function AboutPage() {
   return (
     <div className={h.page}>
-      {/* HERO */}
+      {/* HERO: our story */}
       <div className={`${h.wrap} ${sv.hero}`}>
         <div role="navigation" aria-label="Breadcrumb" className={sv.crumbs}>
           <Link href="/">Home</Link> <span aria-hidden="true">/</span> <span className={sv.crumbNow}>About</span>
         </div>
-        <div className={s.heroGrid}>
+        <div className={s.story}>
           <div className={sv.heroText}>
-            <div className={h.eyebrow}>Miami Beach, FL · Est. 2023</div>
-            <h1 className={sv.h1}>Built to return what <em className={h.gradText}>belongs to you.</em></h1>
-            <p className={sv.answer}>Rebound Capital Group helps homeowners facing foreclosure, and recovers money left behind in court and state systems for former owners and their families. Since 2023, over $2 million has been recovered for clients, on a pure contingency basis.</p>
-            <TrustRow />
-            <ScrollCue to="story" />
+            <div className={h.eyebrow}>Our story · Miami Beach, FL · Est. 2023</div>
+            <h1 className={sv.h1}>Why we <em className={h.gradText}>started.</em></h1>
+            <p className={sv.answer}>We saw homeowners walk away from money they were owed, not because they gave up, but because nobody told them it was there. Third parties were exploiting that confusion. We built Rebound Capital Group to put the money back where it belongs.</p>
+            <ScrollCue to="mission" />
           </div>
-          <figure className={s.portrait}>
-            <div className={s.photoWrap}>
-              <Image src="/raul-headshot.webp" alt="Raul Ibañez, Founder and President of Rebound Capital Group" width={640} height={640} className={s.photo} sizes="340px" priority />
-            </div>
-            <figcaption>
-              <span className={s.photoName}>Raul Ibañez</span>
-              <span className={s.photoRole}>Founder &amp; President</span>
-            </figcaption>
-          </figure>
+          <Timeline items={story} />
         </div>
       </div>
 
-      {/* STORY */}
-      <div id="story" className={`${h.wrap} ${s.story}`}>
-        <div>
-          <div className={sv.tag}>Our story</div>
-          <h2 className={sv.h2}>Why we started.</h2>
-          <p className={s.lead}>We saw homeowners walk away from money they were owed, not because they gave up, but because nobody told them it was there. Third parties were exploiting that confusion. We built RCG to put the money back where it belongs.</p>
+      {/* MISSION */}
+      <section id="mission" className={s.mission}>
+        <div className={`${h.wrap} ${s.missionInner}`}>
+          <div>
+            <div className={s.missionEyebrow}>What we do</div>
+            <h2 className={s.missionTitle}>Built to return what <em>belongs to you.</em></h2>
+            <p className={s.missionText}>Rebound Capital Group helps homeowners facing foreclosure, and recovers money left behind in court and state systems for former owners and their families. Since 2023, over $2 million has been recovered for clients, on a pure contingency basis.</p>
+          </div>
+          <div className={s.missionStats}>
+            {[['$2M+', 'Recovered for clients'], ['5.0', 'Google rating'], ['A+', 'BBB rating'], ['$0', 'Upfront, ever']].map(([v, l]) => (
+              <div key={l}><b>{v}</b><span>{l}</span></div>
+            ))}
+          </div>
         </div>
-        <Timeline items={story} />
-      </div>
+      </section>
 
       {/* FOUNDER */}
       <div className={`${h.wrap} ${s.founder}`}>
-        <div className={sv.tag}>Leadership</div>
-        <div className={s.founderGrid}>
+        <figure className={s.portrait}>
+          <div className={s.photoWrap}>
+            <Image src="/raul-headshot.webp" alt="Raul Ibañez, Founder and President of Rebound Capital Group" width={640} height={640} className={s.photo} sizes="340px" />
+          </div>
+          <figcaption>
+            <span className={s.photoName}>Raul Ibañez</span>
+            <span className={s.photoRole}>Founder &amp; President</span>
+          </figcaption>
+        </figure>
+        <div className={s.founderText}>
+          <div className={sv.tag}>Leadership</div>
           <h2 className={sv.h2}>Raul grew up around real estate in Miami.</h2>
           <div className={sv.prose}>
             <p>Born and raised in Miami, Raul learned early how property, ownership and financial claims intersect in the real world. Bilingual in English and Spanish, he works closely with clients, attorneys and investigators across the country.</p>
             <p>Over the years he built hands-on experience across real estate transactions, recovery matters and claim-related work, on cases ranging from local disputes to complex national matters. That experience shapes how RCG works: grounded, informed, and built to recover what rightfully belongs to the client.</p>
           </div>
+          <TrustRow />
         </div>
       </div>
-
-      <ReviewsStrip title="Clients on working with Raul." preferName="Raul" />
 
       {/* VALUES */}
       <div className={`${h.wrap} ${s.block}`}>
@@ -94,8 +96,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <PhotoBand src="/img/sunset-waterway.webp" position="50% 45%" eyebrow="Miami Beach, FL" title="Local roots. Nationwide reach." text="Headquartered in South Florida, working with homeowners and families in all 50 states." />
-
+      <div style={{ height: 80 }} />
       <section className={h.closing}>
         <div className={h.closingFade} aria-hidden="true" />
         <div className={`${h.wrap} ${h.closingInner}`}>

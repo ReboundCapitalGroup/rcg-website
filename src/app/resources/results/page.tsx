@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import h from '@/components/home/home.module.css'
 import sv from '@/components/service.module.css'
 import GoogleReviews from '@/components/GoogleReviews'
+import { ScrollCue } from '@/components/ui/blocks'
 
 export const revalidate = 86400
 
@@ -24,6 +25,7 @@ export default function ClientResultsPage() {
             <div className={h.eyebrow}>Google reviews · $2M+ recovered</div>
             <h1 className={sv.h1}>What clients <em className={h.gradText}>say.</em></h1>
             <p className={sv.answer}>Real reviews from the homeowners and families we have worked with, straight from Google. Since 2023, over $2 million has been recovered for clients on a pure contingency basis.</p>
+            <ScrollCue to="more" />
           </div>
           <div className={sv.glance}>
             <div className={sv.glanceLabel}>By the numbers</div>
@@ -34,7 +36,7 @@ export default function ClientResultsPage() {
         </div>
       </div>
 
-      <div className={h.wrap}>
+      <div id="more" className={h.wrap} style={{ scrollMarginTop: 100 }}>
         <GoogleReviews />
       </div>
 

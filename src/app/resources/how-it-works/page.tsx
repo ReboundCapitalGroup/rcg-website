@@ -4,7 +4,7 @@ import h from '@/components/home/home.module.css'
 import sv from '@/components/service.module.css'
 import Image from 'next/image'
 import ReviewsStrip from '@/components/ReviewsStrip'
-import { Timeline, TrustRow, PhotoBand } from '@/components/ui/blocks'
+import { Timeline, TrustRow, PhotoBand, ScrollCue } from '@/components/ui/blocks'
 
 export const revalidate = 86400
 
@@ -52,10 +52,11 @@ export default function HowItWorksPage() {
             <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call or text 24/7</a>
           </div>
           <TrustRow />
+          <ScrollCue to="more" />
         </div>
       </div>
 
-      <div className={h.wrap}>
+      <div id="more" className={h.wrap} style={{ scrollMarginTop: 100 }}>
         <div className={sv.faqGrid} style={{ alignItems: 'start' }}>
           <div style={{ position: 'sticky', top: 110 }}>
             <div style={{ position: 'relative', aspectRatio: '4 / 5', borderRadius: 16, overflow: 'hidden', boxShadow: '0 30px 60px rgba(13,19,34,0.18)' }}>
@@ -66,7 +67,7 @@ export default function HowItWorksPage() {
         </div>
       </div>
 
-      <PhotoBand src="/img/desk-files.webp" position="50% 55%" title="You never touch the paperwork." text="Attorneys in our network handle filings, court correspondence and deadlines. You just answer a few questions." />
+      <PhotoBand src="/img/home-miami-beach.webp" position="50% 70%" title="You never touch the paperwork." text="Attorneys in our network handle filings, court correspondence and deadlines. You just answer a few questions." />
 
       <div className={`${h.wrap} ${sv.block}`}>
         <div className={sv.faqGrid}>

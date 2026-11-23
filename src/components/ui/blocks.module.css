@@ -43,8 +43,11 @@
 .trustItem span { color: var(--body); }
 
 /* Scroll cue */
-.cue { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(30,40,127,0.35); color: var(--primary) !important; margin-top: 8px; transition: background .2s, color .2s; }
+.cue { align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(30,40,127,0.35); color: var(--primary) !important; margin-top: 8px; transition: background .2s, color .2s; }
 .cue:hover { background: var(--primary); color: #fff !important; }
+.cue svg { animation: cueBob 2.4s ease-in-out infinite; }
+@keyframes cueBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .cue svg { animation: none; } }
 
 @media (max-width: 900px) {
   .h2 { font-size: 34px; }

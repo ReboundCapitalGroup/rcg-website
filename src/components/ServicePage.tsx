@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import ReviewsStrip from '@/components/ReviewsStrip'
-import { TrustRow, PhotoBand } from '@/components/ui/blocks'
+import { TrustRow, PhotoBand, ScrollCue } from '@/components/ui/blocks'
 import type { ReactNode } from 'react'
 import h from '@/components/home/home.module.css'
 import s from './service.module.css'
@@ -106,6 +106,7 @@ export default function ServicePage(p: ServicePageProps) {
               <a href="tel:+13055634920" className={`${h.btnOutline} ${h.btnLg}`}>Call or text 24/7</a>
             </div>
             <TrustRow />
+            <ScrollCue to="more" />
           </div>
           <div className={s.heroMedia}>
             <Image src={p.image || '/img/home-miami-beach.webp'} alt="" fill priority sizes="(max-width: 900px) 100vw, 40vw" style={{ objectFit: 'cover', objectPosition: p.imagePos || '50% 50%' }} />
@@ -114,6 +115,7 @@ export default function ServicePage(p: ServicePageProps) {
         </div>
       </div>
 
+      <div id="more" style={{ scrollMarginTop: 100 }} />
       {/* STATS */}
       {p.stats && (
         <div className={`${h.wrap} ${s.statsWrap}`}>
