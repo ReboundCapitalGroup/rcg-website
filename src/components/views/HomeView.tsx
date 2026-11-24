@@ -40,9 +40,9 @@ const COPY = {
         <span className={s.line}><em className={s.gradText}>nuevas oportunidades.</em></span>
       </>
     ),
-    sub: <>¿Enfrenta una ejecución hipotecaria o <span className={s.hideSm}>ya </span>perdió su casa en una subasta? Si quedó dinero, le pertenece a usted.</>,
+    sub: <>¿Enfrenta una ejecución <span className={s.hideSm}>hipotecaria </span>o <span className={s.hideSm}>ya </span>perdió su casa en <span className={s.hideSm}>una </span>subasta? <span className={s.hideSm}>Si quedó dinero, le pertenece a usted.</span><span className={s.showSmInline}>El dinero sobrante es suyo.</span></>,
     cta: <>Vea si le deben dinero</>, facing: '¿Enfrenta una ejecución?',
-    trust: ['Revisión gratis · Sin compromiso · ', 'Calificación A+ en el BBB'],
+    trust: ['Revisión gratis · Sin compromiso · ', 'A+ en el BBB'],
     notHome: [<b key="b">¿No se trata de una casa?</b>, ' Puede que el estado guarde dinero a su nombre.'], checkNow: 'Revisar ',
     stepsH: <>Tres pasos.<br className={s.brSm} /> Nunca paga nada por adelantado.</>,
     proofSmall: <>recuperados para clientes,<br className={s.hideSm} /> y sumando.</>,
