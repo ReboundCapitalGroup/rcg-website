@@ -86,10 +86,9 @@ export default function SiteDocument({ lang, children }: { lang: Lang; children:
     <html lang={lang} data-scroll-behavior="smooth">
       <head>
         <meta name="theme-color" content="#0d1322" />
-        {/* Fonts are self-hosted (see app/fonts.css). Preload the ones the first screen needs. */}
+        {/* Fonts are self-hosted (see app/fonts.css). Preload only the headline font; the rest load right after from fonts.css. */}
         <link rel="preload" href="/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/instrument-serif-400-italic.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema(lang)) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema(lang)) }} />
       </head>
