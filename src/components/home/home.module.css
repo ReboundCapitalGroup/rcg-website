@@ -194,7 +194,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .socials a { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(147,184,255,0.25); border-radius: 50%; color: #c3cfee; }
 .socials a:hover { color: #fff; border-color: var(--light); }
 .footerCol { display: flex; flex-direction: column; gap: 7px; }
-.footerCol a { color: #c3cfee; }
+.footerCol a { color: #c3cfee; padding: 4px 0; margin: -4px 0; }
+@media (max-width: 900px) { .footerCol { gap: 9px; } }
 .footerCol a:hover { color: #fff; }
 .footerColLabel { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--light); margin-bottom: 4px; }
 .footerBottom { max-width: 1320px; margin: 0 auto; padding: 0 40px; }

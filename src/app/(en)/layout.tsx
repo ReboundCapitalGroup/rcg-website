@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import '../fonts.css'
 import '../globals.css'
 import SiteDocument from '@/components/SiteDocument'
 

@@ -144,7 +144,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
 
       {/* NOT ABOUT A HOME */}
       <div className={s.unclaimedWrap}>
-        <Link href={to('/map')} className={s.unclaimed}>
+        <Link href={to('/map')} prefetch={false} className={s.unclaimed}>
           <span className={s.unclaimedIcon}><HouseIcon /></span>
           <span className={s.unclaimedText}>{t.notHome}</span>
           <span className={s.unclaimedCta}><span className={s.hideSm}>{t.checkNow}</span>→</span>

@@ -136,7 +136,7 @@ export default function HomeHeader() {
         <div role="navigation" aria-label={t.main} className={s.navLinks}>
           <Link href={L(lang, '/services')}>{t.services}</Link>
           <Link href={L(lang, '/states')}>{t.states}</Link>
-          <Link href={L(lang, '/map')} className={s.navPill}>{t.map}</Link>
+          <Link href={L(lang, '/map')} prefetch={false} className={s.navPill}>{t.map}</Link>
           <ResourcesMenu lang={lang} />
           <Link href={L(lang, '/about')}>{t.about}</Link>
           <Link href={L(lang, '/contact')}>{t.contact}</Link>
