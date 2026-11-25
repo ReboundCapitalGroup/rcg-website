@@ -28,8 +28,8 @@ export default function HeroVideo({ className }: { className: string }) {
       const p = v.play()
       if (p) p.catch(() => {}) // blocked (e.g. Low Power Mode): the still image stays
     }
-    // Desktop starts as soon as the page has loaded; phones wait a moment so the slower connection finishes the page first.
-    const later = () => setTimeout(start, phone ? 1500 : 0)
+    // Starts as soon as the page has loaded, on phones and desktop.
+    const later = () => setTimeout(start, 0)
     if (document.readyState === 'complete') later()
     else window.addEventListener('load', later, { once: true })
     return () => { cancelled = true; window.removeEventListener('load', later) }
