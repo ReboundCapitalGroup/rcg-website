@@ -46,7 +46,7 @@ const RESOURCES: Record<Lang, [string, string, string, string][]> = {
     ['Cómo funciona', '/resources/how-it-works', 'Seis pasos, de la búsqueda gratis al pago', 'steps'],
     ['Preguntas frecuentes', '/resources/faqs', 'Respuestas claras, sin letra pequeña', 'faq'],
     ['Reseñas de clientes', '/resources/results', '5.0 en Google de clientes reales', 'star'],
-    ['Mapa de fondos no reclamados', '/map', 'Lo que guarda cada estado', 'map'],
+    ['Mapa de fondos', '/map', 'Lo que guarda cada estado', 'map'],
   ],
 }
 
@@ -84,19 +84,80 @@ function ResourcesMenu({ lang }: { lang: Lang }) {
   )
 }
 
-const MENU: Record<Lang, { label: string; items: [string, string][] }[]> = {
+type MenuItem = [label: string, href: string, desc: string, icon: IconName]
+const MENU: Record<Lang, { label: string; items: MenuItem[] }[]> = {
   es: [
-    { label: 'Antes de la subasta', items: [['Ayuda con ejecución hipotecaria', '/services/foreclosure-solutions'], ['Extensión de tiempo', '/services/time-extensions'], ['Asunción de hipoteca', '/services/mortgage-assumptions'], ['Oferta en efectivo', '/services/cash-offer']] },
-    { label: 'Después de la subasta', items: [['Fondos excedentes', '/services/foreclosure-surplus'], ['Excedentes por impuestos', '/services/tax-deed-surplus'], ['Recuperación para herederos', '/services/estate-recovery'], ['Ayuda con sucesiones', '/services/probate-assistance']] },
-    { label: 'Recursos', items: [['Cómo funciona', '/resources/how-it-works'], ['Preguntas frecuentes', '/resources/faqs'], ['Reseñas de clientes', '/resources/results'], ['Mapa de fondos no reclamados', '/map']] },
-    { label: 'Empresa', items: [['Todos los servicios', '/services'], ['Todos los estados', '/states'], ['Nosotros', '/about'], ['Contacto', '/contact'], ['Revisión gratis', '/free-review']] },
+    { label: 'Antes de la subasta', items: [
+      ['Ayuda con ejecución', '/services/foreclosure-solutions', 'Opciones antes de la venta', 'home'],
+      ['Extensión de tiempo', '/services/time-extensions', 'Más tiempo antes de la subasta', 'clock'],
+      ['Asunción de hipoteca', '/services/mortgage-assumptions', 'Un comprador asume el préstamo', 'lines'],
+      ['Oferta en efectivo', '/services/cash-offer', 'Venda y conserve su capital', 'cash']] },
+    { label: 'Después de la subasta', items: [
+      ['Fondos excedentes', '/services/foreclosure-surplus', 'Dinero que quedó tras una ejecución', 'dollar'],
+      ['Excedentes por impuestos', '/services/tax-deed-surplus', 'Dinero tras una venta por impuestos', 'doc'],
+      ['Recuperación para herederos', '/services/estate-recovery', 'Reclamos para familiares', 'people'],
+      ['Ayuda con sucesiones', '/services/probate-assistance', 'Cuando el tribunal abre la herencia', 'court']] },
+    { label: 'Recursos', items: [
+      ['Cómo funciona', '/resources/how-it-works', 'Tres pasos, $0 por adelantado', 'check'],
+      ['Preguntas frecuentes', '/resources/faqs', 'Respuestas a dudas comunes', 'help'],
+      ['Reseñas de clientes', '/resources/results', 'Lo que dicen nuestros clientes', 'star'],
+      ['Mapa de fondos', '/map', 'Lo que guarda cada estado', 'map']] },
+    { label: 'Empresa', items: [
+      ['Todos los servicios', '/services', 'Todo lo que hacemos', 'grid'],
+      ['Todos los estados', '/states', 'Guías de los 50 estados', 'pin'],
+      ['Nosotros', '/about', 'Quiénes somos', 'info'],
+      ['Contacto', '/contact', 'Escríbanos o llámenos 24/7', 'mail']] },
   ],
   en: [
-  { label: 'Before the auction', items: [['Foreclosure Help', '/services/foreclosure-solutions'], ['Time Extensions', '/services/time-extensions'], ['Mortgage Assumptions', '/services/mortgage-assumptions'], ['Cash Offer', '/services/cash-offer']] },
-  { label: 'After the auction', items: [['Surplus Funds', '/services/foreclosure-surplus'], ['Tax Deed Overages', '/services/tax-deed-surplus'], ['Estate & Heir Recovery', '/services/estate-recovery'], ['Probate Help for Heirs', '/services/probate-assistance']] },
-  { label: 'Resources', items: [['How It Works', '/resources/how-it-works'], ['FAQs', '/resources/faqs'], ['Client Reviews', '/resources/results'], ['Unclaimed Funds Map', '/map']] },
-  { label: 'Company', items: [['All Services', '/services'], ['All States', '/states'], ['About', '/about'], ['Contact', '/contact'], ['Free Review', '/free-review']] },
+    { label: 'Before the auction', items: [
+      ['Foreclosure Help', '/services/foreclosure-solutions', 'Options before the sale', 'home'],
+      ['Time Extensions', '/services/time-extensions', 'More time before the auction', 'clock'],
+      ['Mortgage Assumptions', '/services/mortgage-assumptions', 'A buyer takes over the loan', 'lines'],
+      ['Cash Offer', '/services/cash-offer', 'Sell and keep your equity', 'cash']] },
+    { label: 'After the auction', items: [
+      ['Surplus Funds', '/services/foreclosure-surplus', 'Money left after a foreclosure sale', 'dollar'],
+      ['Tax Deed Overages', '/services/tax-deed-surplus', 'Money left after a tax sale', 'doc'],
+      ['Estate & Heir Recovery', '/services/estate-recovery', 'Claims for family members', 'people'],
+      ['Probate Help for Heirs', '/services/probate-assistance', 'When a court must open the estate', 'court']] },
+    { label: 'Resources', items: [
+      ['How It Works', '/resources/how-it-works', 'Three steps, $0 upfront', 'check'],
+      ['FAQs', '/resources/faqs', 'Answers to common questions', 'help'],
+      ['Client Reviews', '/resources/results', 'What our clients say', 'star'],
+      ['Unclaimed Funds Map', '/map', 'What every state is holding', 'map']] },
+    { label: 'Company', items: [
+      ['All Services', '/services', 'Everything we do', 'grid'],
+      ['All States', '/states', 'Guides for all 50 states', 'pin'],
+      ['About', '/about', 'Who we are', 'info'],
+      ['Contact', '/contact', 'Send a note or call 24/7', 'mail']] },
   ],
+}
+
+const MM_ICONS = {
+  home: <><path d="M3 11l9-8 9 8v10H3z" /><path d="M9 21v-6h6v6" /></>,
+  clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
+  lines: <path d="M4 7h16M4 12h16M4 17h10" />,
+  cash: <><rect x="2" y="6" width="20" height="12" rx="2" /><circle cx="12" cy="12" r="2.5" /></>,
+  dollar: <path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />,
+  doc: <><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /></>,
+  people: <><circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 1.5-4 4-4" /></>,
+  court: <path d="M4 21h16M6 21V10M18 21V10M12 21V10M3 10l9-6 9 6" />,
+  check: <><circle cx="12" cy="12" r="9" /><path d="M9 12l2 2 4-4" /></>,
+  help: <><circle cx="12" cy="12" r="9" /><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 1-1 1.7M12 17h.01" /></>,
+  star: <path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" />,
+  map: <><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z" /><path d="M9 4v14M15 6v14" /></>,
+  grid: <><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></>,
+  pin: <><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></>,
+  info: <><circle cx="12" cy="12" r="9" /><path d="M12 11v6M12 7.5h.01" /></>,
+  mail: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></>,
+}
+type IconName = keyof typeof MM_ICONS
+const MenuIcon = ({ name }: { name: IconName }) => (
+  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{MM_ICONS[name]}</svg>
+)
+
+const MENU_UI = {
+  en: { more: 'More below', call: 'Call 24/7', review: 'Free Review' },
+  es: { more: 'Ver más', call: 'Llame 24/7', review: 'Revisión gratis' },
 }
 
 const Globe = () => (
@@ -110,6 +171,16 @@ export default function HomeHeader() {
   const t = T[lang]
   const other = lang === 'es' ? toEn(pathname) : toEs(pathname)
   const headerRef = useRef<HTMLElement>(null)
+  const menuScrollRef = useRef<HTMLDivElement>(null)
+  const [scrolled, setScrolled] = useState(false)
+  const [atEnd, setAtEnd] = useState(false)
+  const onMenuScroll = () => {
+    const el = menuScrollRef.current
+    if (!el) return
+    if (el.scrollTop > 10) setScrolled(true)
+    setAtEnd(el.scrollTop + el.clientHeight >= el.scrollHeight - 8)
+  }
+  useEffect(() => { if (open) { setScrolled(false); setAtEnd(false) } }, [open])
 
   // Close the phone menu whenever the page changes.
   useEffect(() => { setOpen(false) }, [pathname])
@@ -155,12 +226,33 @@ export default function HomeHeader() {
       </div>
       {open && (
         <div id="home-menu" className={s.mobileMenu}>
-          {MENU[lang].map((g) => (
-            <div key={g.label} className={s.mobileMenuGroup}>
-              <div className={s.eyebrowSm}>{g.label}</div>
-              {g.items.map(([l, h]) => <Link key={l} href={L(lang, h)} onClick={() => setOpen(false)}>{l}</Link>)}
-            </div>
-          ))}
+          <div ref={menuScrollRef} className={s.mmScroll} onScroll={onMenuScroll}>
+            {MENU[lang].map((g) => (
+              <div key={g.label} className={s.mmGroup}>
+                <div className={s.mmLabel}>{g.label}</div>
+                <div className={s.mmCard}>
+                  {g.items.map(([l, h, d, icon]) => (
+                    <Link key={l} href={L(lang, h)} prefetch={h === '/map' ? false : undefined} className={s.mmItem} onClick={() => setOpen(false)}>
+                      <span className={s.mmIcon}><MenuIcon name={icon} /></span>
+                      <span className={s.mmText}><span className={s.mmTitle}>{l}</span><span className={s.mmDesc}>{d}</span></span>
+                      <span className={s.mmChev} aria-hidden="true">›</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className={`${s.mmFade} ${atEnd ? s.mmHidden : ''}`} aria-hidden="true" />
+          {!scrolled && (
+            <button type="button" className={s.mmMore} onClick={() => menuScrollRef.current?.scrollBy({ top: 320, behavior: 'smooth' })}>
+              {MENU_UI[lang].more}
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>
+            </button>
+          )}
+          <div className={s.mmBar}>
+            <a href="tel:+13055634920" className={s.mmCall}><PhoneIcon size={15} /> {MENU_UI[lang].call}</a>
+            <Link href={L(lang, '/free-review')} className={s.mmReview} onClick={() => setOpen(false)}>{MENU_UI[lang].review} <span aria-hidden="true">→</span></Link>
+          </div>
         </div>
       )}
     </header>
