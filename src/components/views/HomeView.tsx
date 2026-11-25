@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import MoneyExample from '@/components/home/MoneyExample'
+import HeroVideo from '@/components/home/HeroVideo'
 import ReviewsStrip from '@/components/ReviewsStrip'
 import s from '@/components/home/home.module.css'
 import { L, type Lang } from '@/lib/i18n'
@@ -123,10 +124,7 @@ export default function HomeView({ lang }: { lang: Lang }) {
           <source media="(max-width: 900px)" srcSet="/home/hero-poster-sm.webp" />
           <img className={s.heroVideo} src="/home/hero-poster-lg.webp" alt="" aria-hidden="true" fetchPriority="high" decoding="async" />
         </picture>
-        <video className={s.heroVideo} autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-          <source src="/home/hero-720.mp4" type="video/mp4" media="(max-width: 900px)" />
-          <source src="/home/hero-1080.mp4" type="video/mp4" />
-        </video>
+        <HeroVideo className={s.heroVideo} />
         <div className={s.heroFade} aria-hidden="true" />
         <div className={s.heroInner}>
           <div className={s.heroContent}>
