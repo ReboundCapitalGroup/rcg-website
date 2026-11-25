@@ -16,8 +16,17 @@ export default function HeroVideo({ className }: { className: string }) {
     const phone = window.matchMedia('(max-width: 900px)').matches
     const start = () => {
       if (cancelled) return
+      // iPhones only autoplay a video that is muted and inline. React doesn't always
+      // put these on the element, so set them directly before starting.
+      v.muted = true
+      v.defaultMuted = true
+      v.setAttribute('muted', '')
+      v.setAttribute('playsinline', '')
+      v.setAttribute('autoplay', '')
       v.src = phone ? '/home/hero-720.mp4' : '/home/hero-1080.mp4'
-      v.play().catch(() => {}) // blocked (e.g. Low Power Mode): the still image stays
+      v.load()
+      const p = v.play()
+      if (p) p.catch(() => {}) // blocked (e.g. Low Power Mode): the still image stays
     }
     // Desktop starts as soon as the page has loaded; phones wait a moment so the slower connection finishes the page first.
     const later = () => setTimeout(start, phone ? 1500 : 0)
