@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation'
 import { isEs, toEn, toEs } from '@/lib/i18n'
 
 const SITE = 'https://reboundcapitalgroup.com'
-const abs = (p: string) => SITE + (p === '/' ? '' : p)
+const abs = (p: string) => SITE + p  // '/' stays '/' so it matches the canonical URL exactly
 
 /**
  * hreflang links pairing each English page with its Spanish twin.

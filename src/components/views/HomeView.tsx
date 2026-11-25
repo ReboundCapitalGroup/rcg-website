@@ -119,7 +119,11 @@ export default function HomeView({ lang }: { lang: Lang }) {
     <div className={s.page}>
       {/* HERO */}
       <section className={s.hero}>
-        <video className={s.heroVideo} autoPlay muted loop playsInline preload="metadata" poster="/home/hero-poster.webp" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 900px)" srcSet="/home/hero-poster-sm.webp" />
+          <img className={s.heroVideo} src="/home/hero-poster-lg.webp" alt="" aria-hidden="true" fetchPriority="high" decoding="async" />
+        </picture>
+        <video className={s.heroVideo} autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
           <source src="/home/hero-720.mp4" type="video/mp4" media="(max-width: 900px)" />
           <source src="/home/hero-1080.mp4" type="video/mp4" />
         </video>

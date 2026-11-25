@@ -176,7 +176,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .whyDesc { font-size: 15px; line-height: 1.6; color: #c3cfee; }
 
 /* ---------- closing ---------- */
-.closing { position: relative; overflow: hidden; background: var(--navy) url('/home/cta.webp') 60% 40% / cover no-repeat; }
+.closing { position: relative; overflow: hidden; background: var(--navy) url('/home/cta-lg.webp') 60% 40% / cover no-repeat; }
+@media (max-width: 900px) { .closing { background-image: url('/home/cta-sm.webp'); } }
 .closingFade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(249,248,246,0.92) 0%, rgba(249,248,246,0.82) 45%, rgba(249,248,246,0.35) 70%, rgba(249,248,246,0.1) 100%); }
 .closingInner { position: relative; padding-top: 110px; padding-bottom: 110px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
 .closingH { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 1; color: var(--navy); }
@@ -203,7 +204,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .mono { font-family: 'Space Mono', ui-monospace, monospace; font-size: 10px; color: #8f9fc8; }
 .mono a { color: var(--light); }
 .kr8 { color: var(--accent) !important; letter-spacing: 0.34em; font-size: 13px; font-family: 'Michroma', 'Eurostile', 'Arial Narrow', sans-serif; }
-.disclaimer { margin: 0; padding: 0 0 22px; font-family: 'Space Mono', ui-monospace, monospace; font-size: 8px; line-height: 1.8; color: rgba(195,207,238,0.45); white-space: nowrap; text-align: center; }
+.disclaimer { margin: 0; padding: 0 0 22px; font-family: 'Space Mono', ui-monospace, monospace; font-size: 8px; line-height: 1.8; color: rgba(195,207,238,0.72); white-space: nowrap; text-align: center; }
 
 @media (prefers-reduced-motion: reduce) {
   .btnPrimary, .btnOutline, .btnWhite, .barDebt, .barLeft, .svcArrow { transition: none; }
